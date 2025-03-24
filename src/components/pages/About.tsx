@@ -56,7 +56,7 @@ const About = () => {
       name: "Mamunur Siddique",
       role: "Founder & Head Instructor",
       image:
-        "/public/images/certifications/c1.png",
+        "/images/certifications/c1.png",
       bio: "Autonomous Vehicle safety operator with 8+ years of experience as a driving instructor. Passionate about road safety and innovative teaching methods.",
       specialties: [
         "Defensive Driving",
@@ -70,7 +70,7 @@ const About = () => {
       name: "Sarah Johnson",
       role: "Senior Instructor",
       image:
-        "/public/images/certifications/c2.png",
+        "/images/certifications/c2.png",
       bio: "Former racing driver with 6 years of teaching experience. Known for helping anxious drivers build confidence quickly.",
       specialties: ["Anxiety Management", "City Driving", "Parallel Parking"],
       students: 350,
@@ -80,7 +80,7 @@ const About = () => {
       name: "David Chen",
       role: "Instructor & Theory Specialist",
       image:
-        "/public/images/certifications/C3.png",
+        "/images/certifications/C3.png",
       bio: "Certified theory test expert with a background in traffic psychology. Makes complex concepts simple and memorable.",
       specialties: ["Theory Test Prep", "Hazard Perception", "Roundabouts"],
       students: 420,
@@ -95,7 +95,7 @@ const About = () => {
       passRate: 37,
       description: "Known for its mix of urban and residential routes.",
       region: "east",
-      imageId: "/public/images/certifications/Chi.jpg",
+      imageId: "/images/certifications/Chi.jpg",
     },
     {
       name: "Wanstead Test Centre",
@@ -103,7 +103,7 @@ const About = () => {
       passRate: 35,
       description: "Features various road types and challenging roundabouts.",
       region: "east",
-      imageId: "/public/images/certifications/Wanstead.jpg",
+      imageId: "/images/certifications/Wanstead.jpg",
     },
     {
       name: "Hornchurch Test Centre",
@@ -119,7 +119,7 @@ const About = () => {
       passRate: 45,
       description: "Diverse road types, including high-speed A roads.",
       region: "essex",
-      imageId: "/public/images/certifications/Loughton.jpg",
+      imageId: "/images/certifications/Loughton.jpg",
     },
     {
       name: "Goodmayes Test Centre",
@@ -127,7 +127,7 @@ const About = () => {
       passRate: 39,
       description: "Challenging urban routes and junctions.",
       region: "east",
-      imageId: "/public/images/certifications/Goodmayes.png",
+      imageId: "/images/certifications/Goodmayes.png",
     },
     {
       name: "Barking Test Centre",
@@ -135,7 +135,7 @@ const About = () => {
       passRate: 41,
       description: "High-speed dual carriageways and complex routes.",
       region: "essex",
-      imageId: "/public/images/certifications/Tan.jpg",
+      imageId: "/images/certifications/Tan.jpg",
     },
   ];
 
@@ -216,10 +216,10 @@ const About = () => {
               className="w-full h-full object-cover"
               loop
               muted
-              poster="/public/images/certifications/4.png"
+              poster="/images/certifications/4.png"
             >
               <source
-                src="/public/images/certifications/BANNER_MAIN3276.png"
+                src="/images/certifications/BANNER_MAIN3276.png"
                 type="video/mp4"
               />
             </video>
@@ -723,7 +723,7 @@ const About = () => {
                       >
                         <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-blue-500">
                           <img
-                            src="/public/images/certifications/1.png"
+                            src="/images/certifications/1.png"
                             alt="Sophie Chen"
                             className="w-full h-full object-cover"
                           />

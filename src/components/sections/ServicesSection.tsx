@@ -145,9 +145,9 @@ const ServicesSection = ({
       icon: <Award className="h-6 w-6 text-white" />,
       title: "Pro-Level Instructors",
       description:
-        "Learn from the best! Our instructors are top-tier with advanced certifications and are regularly evaluated to ensure quality.",
+        "Learn from the best! Our instructors are top-tier with advanced driving instructor certifications and are regularly evaluated to ensure quality.",
       image:
-        "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+        "/images/certifications/12.png",
       emoji: "🏆",
       color: "bg-gradient-to-br from-purple-900/95 to-indigo-900/95",
     },

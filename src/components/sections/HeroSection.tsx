@@ -71,7 +71,7 @@ const HeroSection = ({
     {
       name: "Alex, 19",
       image:
-        "/public/images/certifications/1.png",
+        "/images/certifications/1.png",
       achievement: "Passed First Time!",
       quote:
         "After just 20 hours with Drive Dojo, I passed with only 2 minor faults!",
@@ -83,7 +83,7 @@ const HeroSection = ({
     {
       name: "Alina S.",
       image:
-        "/public/images/certifications/4.png",
+        "/images/certifications/4.png",
       achievement: "Effective Teaching Methods",
       quote:
         "Instructor's teaching methods were very effective. He broke down complex maneuvers into simple, manageable steps, allowing me to grasp each concept at my own pace.",
@@ -95,7 +95,7 @@ const HeroSection = ({
     {
       name: "Alexei W.",
       image:
-        "/public/images/certifications/3.png",
+        "/images/certifications/3.png",
       achievement: "From Zero to Hero",
       quote:
         "I begin my driving lessons with no previous knowledge having zero hours of driving lessons or experience. Mamunur was also very flexible in the lesson times.",
@@ -107,7 +107,7 @@ const HeroSection = ({
     {
       name: "Sarah K.",
       image:
-        "/public/images/certifications/5.png",
+        "/images/certifications/5.png",
       achievement: "Highway Confidence",
       quote:
         "The motorway confidence course was fantastic! I used to avoid highways completely, but now I feel completely at ease merging and changing lanes even in heavy traffic.",
@@ -119,7 +119,7 @@ const HeroSection = ({
     {
       name: "Raj P.",
       image:
-        "/public/images/certifications/7.png",
+        "/images/certifications/7.png",
       achievement: "International License Success",
       quote:
         "Converting my international license was so much easier with Drive Dojo's specialized course. They helped me adapt to UK roads and pass my test with flying colors!",
