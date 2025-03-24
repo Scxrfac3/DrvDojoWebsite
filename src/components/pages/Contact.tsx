@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 
+// Contact page for Drive Dojo Driving School in London, East London, UK
+// Offering driving lessons across East London areas including Tower Hamlets, Stratford, Bow, and more
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: "",
@@ -111,14 +113,16 @@ const Contact = () => {
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Let's Start
+              East London's
             </span>
-            <span className="text-white"> Your Journey</span>
+            <span className="text-white"> Premier Driving School</span>
           </h1>
 
           <p className="text-slate-300 max-w-2xl mx-auto text-lg">
-            Ready to become a confident driver? We're just a message away from
-            helping you crush your driving goals!
+            Ready to become a confident driver with the best driving school in
+            East London? We're just a message away from helping you crush your
+            driving goals across Tower Hamlets, Stratford, and all East London
+            areas!
           </p>
         </motion.div>
 
@@ -677,27 +681,34 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-lg">
                     <h3 className="text-xl font-bold text-white mb-4">
-                      Service Areas
+                      Service Areas - London Driving School
                     </h3>
                     <p className="text-slate-300 mb-4">
-                      We provide driving lessons throughout Greater London,
-                      including:
+                      We provide professional driving lessons throughout Greater
+                      London and East London, including these areas:
                     </p>
 
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       {[
-                        "East London",
-                        "North London",
-                        "West London",
-                        "South London",
-                        "Hackney",
-                        "Islington",
-                        "Camden",
-                        "Westminster",
-                        "Southwark",
-                        "Lambeth",
-                        "Tower Hamlets",
-                        "Newham",
+                        "Driving School East London",
+                        "Driving School Stepney",
+                        "Driving School Isle of Dogs",
+                        "Driving School Ilford",
+                        "Driving School Upton Park",
+                        "Driving School Seven Kings",
+                        "Driving School East Ham",
+                        "Driving School Tower Hamlets",
+                        "Driving School Goodmayes",
+                        "Driving School Whitechapel",
+                        "Driving School Forest Gate",
+                        "Driving School Barking",
+                        "Driving School Stratford",
+                        "Driving School Bow",
+                        "Driving School Canning Town",
+                        "Driving School Mile End",
+                        "Driving School Bethnal Green",
+                        "Driving School Dalston",
+                        "Driving School Docklands",
                       ].map((area, index) => (
                         <motion.div
                           key={index}
@@ -714,7 +725,9 @@ const Contact = () => {
                     </div>
 
                     <p className="text-slate-400 text-sm">
-                      Don't see your area? Contact us to check availability.
+                      Don't see your East London area? Contact London's
+                      top-rated driving school to check availability for driving
+                      lessons near you.
                     </p>
                   </div>
 
@@ -809,10 +822,11 @@ const Contact = () => {
         >
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-white mb-2">
-              Trusted by Thousands of Students
+              East London's Most Trusted Driving School
             </h2>
             <p className="text-slate-300">
-              Join our community of successful drivers
+              Join thousands of successful drivers who learned with London's
+              premier driving instruction service
             </p>
           </div>
 
