@@ -407,7 +407,7 @@ const Services = () => {
                           transition={{ delay: 0.5 }}
                         >
                           <img
-                            src="/images/certifications/c1.png"
+                            src="/images/certifications/4.png"
                             alt="Driving instructor with student"
                             className="w-full h-full object-cover rounded-xl"
                           />
