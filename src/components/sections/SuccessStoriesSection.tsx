@@ -46,7 +46,7 @@ const SuccessStoriesSection = () => {
       achievement: "First Time Pass",
       background: "from-blue-400 to-purple-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+        "/public/images/certifications/9.png",
     },
     {
       name: "Priya Sharma",
@@ -56,7 +56,7 @@ const SuccessStoriesSection = () => {
       achievement: "Most Improved",
       background: "from-pink-400 to-purple-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+        "/public/images/certifications/6.png",
     },
     {
       name: "Morgan Chen",
@@ -66,7 +66,7 @@ const SuccessStoriesSection = () => {
       achievement: "Intensive Champion",
       background: "from-green-400 to-teal-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&q=80",
+        "/public/images/certifications/7.png",
     },
     {
       name: "Sam Williams",
@@ -87,7 +87,7 @@ const SuccessStoriesSection = () => {
       achievement: "Zero Stress Star",
       background: "from-indigo-400 to-blue-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1471479917193-f00955256257?w=800&q=80",
+        "/public/images/certifications/2.png",
     },
     {
       name: "Taylor Reed",
@@ -97,7 +97,7 @@ const SuccessStoriesSection = () => {
       achievement: "Quick Learner",
       background: "from-purple-400 to-indigo-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80",
+        "/public/images/certifications/4.png",
     },
     {
       name: "Jordan Quinn",
@@ -107,7 +107,7 @@ const SuccessStoriesSection = () => {
       achievement: "Theory Master",
       background: "from-yellow-400 to-orange-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+        "/public/images/certifications/5.png",
     },
   ];
 

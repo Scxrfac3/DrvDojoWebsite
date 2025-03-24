@@ -126,7 +126,7 @@ const Booking = () => {
     {
       id: "starter",
       name: "Starter Package",
-      price: "£35",
+      price: "£30",
       unit: "/hour",
       description: "Perfect for beginners",
       features: [
@@ -155,7 +155,7 @@ const Booking = () => {
     {
       id: "intensive",
       name: "Intensive Course",
-      price: "£570",
+      price: "£589",
       unit: "/20 hours",
       description: "Fast-track your learning",
       features: [
