@@ -95,7 +95,7 @@ const About = () => {
       passRate: 37,
       description: "Known for its mix of urban and residential routes.",
       region: "east",
-      imageId: "1519501025264-65ba15a82390",
+      imageId: "/public/images/certifications/Chi.jpg",
     },
     {
       name: "Wanstead Test Centre",
@@ -103,7 +103,7 @@ const About = () => {
       passRate: 35,
       description: "Features various road types and challenging roundabouts.",
       region: "east",
-      imageId: "1464219222984-8a76f9ae58ce",
+      imageId: "/public/images/certifications/Wanstead.jpg",
     },
     {
       name: "Hornchurch Test Centre",
@@ -111,7 +111,7 @@ const About = () => {
       passRate: 42,
       description: "Suburban location with complex roundabouts.",
       region: "east",
-      imageId: "1449965408869-ebd427f62e8c",
+      imageId: "/public/images/certifications/Horn.png",
     },
     {
       name: "Loughton Test Centre",
@@ -119,7 +119,7 @@ const About = () => {
       passRate: 45,
       description: "Diverse road types, including high-speed A roads.",
       region: "essex",
-      imageId: "1543465077-db45f5d90bee",
+      imageId: "/public/images/certifications/Loughton.jpg",
     },
     {
       name: "Goodmayes Test Centre",
@@ -127,7 +127,7 @@ const About = () => {
       passRate: 39,
       description: "Challenging urban routes and junctions.",
       region: "east",
-      imageId: "1529369623210-8519cf022be2",
+      imageId: "/public/images/certifications/Goodmayes.png",
     },
     {
       name: "Barking Test Centre",
@@ -135,7 +135,7 @@ const About = () => {
       passRate: 41,
       description: "High-speed dual carriageways and complex routes.",
       region: "essex",
-      imageId: "1605040742661-5b2c7f5e4cfd",
+      imageId: "/public/images/certifications/Tan.jpg",
     },
   ];
 
@@ -216,10 +216,10 @@ const About = () => {
               className="w-full h-full object-cover"
               loop
               muted
-              poster="/public/images/certifications/BANNER_MAIN3276.png"
+              poster="/public/images/certifications/4.png"
             >
               <source
-                src="https://player.vimeo.com/external/492713015.sd.mp4?s=3e1631d74c1f92dfabcb4cd112f6d883e2a7b03f&profile_id=164&oauth2_token_id=57447761"
+                src="/public/images/certifications/BANNER_MAIN3276.png"
                 type="video/mp4"
               />
             </video>
