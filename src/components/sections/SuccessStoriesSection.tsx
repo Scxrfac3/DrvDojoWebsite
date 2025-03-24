@@ -77,7 +77,7 @@ const SuccessStoriesSection = () => {
       achievement: "Perseverance Award",
       background: "from-orange-400 to-red-500",
       backgroundImage:
-        "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80",
+        "/public/images/certifications/8.png",
     },
     {
       name: "Jamie Lee",
@@ -97,7 +97,7 @@ const SuccessStoriesSection = () => {
       achievement: "Quick Learner",
       background: "from-purple-400 to-indigo-500",
       backgroundImage:
-        "/public/images/certifications/4.png",
+        "/public/images/certifications/2.png",
     },
     {
       name: "Jordan Quinn",
@@ -187,7 +187,7 @@ const SuccessStoriesSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 opacity-10">
         <img
-          src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&q=80"
+          src="/public/images/certifications/1.png"
           alt="Background"
           className="w-full h-full object-cover"
         />
