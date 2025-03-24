@@ -39,37 +39,37 @@ const SuccessStoriesSection = () => {
 
   const successStories: SuccessStory[] = [
     {
-      name: "Alex Johnson",
+      name: "Alex J",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=alex",
       quote: "Passed first time with only 2 minor faults!",
       date: "March 2023",
       achievement: "First Time Pass",
       background: "from-blue-400 to-purple-500",
       backgroundImage:
-        "/public/images/certifications/9.png",
+        "/images/certifications/9.png",
     },
     {
-      name: "Priya Sharma",
+      name: "Priya S",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya",
       quote: "From nervous beginner to confident driver in just 3 months!",
       date: "January 2023",
       achievement: "Most Improved",
       background: "from-pink-400 to-purple-500",
       backgroundImage:
-        "/public/images/certifications/6.png",
+        "/images/certifications/6.png",
     },
     {
-      name: "Morgan Chen",
+      name: "Morgan C",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=morgan",
       quote: "The intensive course was perfect for my busy schedule!",
       date: "April 2023",
       achievement: "Intensive Champion",
       background: "from-green-400 to-teal-500",
       backgroundImage:
-        "/public/images/certifications/7.png",
+        "/images/certifications/7.png",
     },
     {
-      name: "Sam Williams",
+      name: "Sam W",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=sam",
       quote:
         "After failing twice elsewhere, Drive Dojo helped me pass with confidence!",
@@ -77,37 +77,37 @@ const SuccessStoriesSection = () => {
       achievement: "Perseverance Award",
       background: "from-orange-400 to-red-500",
       backgroundImage:
-        "/public/images/certifications/8.png",
+        "/images/certifications/8.png",
     },
     {
-      name: "Jamie Lee",
+      name: "Jamie L",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=jamie",
       quote: "The instructors made learning to drive fun and stress-free!",
       date: "February 2023",
       achievement: "Zero Stress Star",
       background: "from-indigo-400 to-blue-500",
       backgroundImage:
-        "/public/images/certifications/2.png",
+        "/images/certifications/2.png",
     },
     {
-      name: "Taylor Reed",
+      name: "Taylor R",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=taylor",
       quote: "Passed my test after just 20 lessons! Incredible experience!",
       date: "June 2023",
       achievement: "Quick Learner",
       background: "from-purple-400 to-indigo-500",
       backgroundImage:
-        "/public/images/certifications/2.png",
+        "/images/certifications/2.png",
     },
     {
-      name: "Jordan Quinn",
+      name: "Jordan Q",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=jordan",
       quote: "The theory test prep materials were incredibly helpful!",
       date: "July 2023",
-      achievement: "Theory Master",
+      achievement: "First time pass",
       background: "from-yellow-400 to-orange-500",
       backgroundImage:
-        "/public/images/certifications/5.png",
+        "/images/certifications/5.png",
     },
   ];
 
@@ -187,7 +187,7 @@ const SuccessStoriesSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 opacity-10">
         <img
-          src="/public/images/certifications/1.png"
+          src="/images/certifications/1.png"
           alt="Background"
           className="w-full h-full object-cover"
         />

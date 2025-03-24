@@ -56,7 +56,7 @@ const About = () => {
       name: "Mamunur Siddique",
       role: "Founder & Head Instructor",
       image:
-        "/images/certifications/c1.png",
+        "/images/certifications/4.png",
       bio: "Autonomous Vehicle safety operator with 8+ years of experience as a driving instructor. Passionate about road safety and innovative teaching methods.",
       specialties: [
         "Defensive Driving",
