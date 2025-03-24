@@ -49,7 +49,7 @@ const Footer = ({
   quickLinks = [
     { title: "About Us", href: "/about" },
     { title: "Contact", href: "/contact" },
-    { title: "Blog", href: "/blog" },
+    { title: "Driving Insights", href: "/blog" },
     { title: "FAQ", href: "/" },
     { title: "Terms & Conditions", href: "/" },
     { title: "Privacy Policy", href: "/" },
