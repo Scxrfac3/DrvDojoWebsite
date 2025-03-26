@@ -56,7 +56,7 @@ const About = () => {
       name: "Mamunur Siddique",
       role: "Founder & Head Instructor",
       image:
-        "/images/certifications/4.png",
+        "/images/certifications/c1.png",
       bio: "Autonomous Vehicle safety operator with 8+ years of experience as a driving instructor. Passionate about road safety and innovative teaching methods.",
       specialties: [
         "Defensive Driving",
@@ -70,7 +70,7 @@ const About = () => {
       name: "Mamunur S.",
       role: "Senior Instructor",
       image:
-        "/images/certifications/c2.png",
+        "/images/certifications/4.png",
       bio: "Former racing driver with 6 years of teaching experience. Known for helping anxious drivers build confidence quickly.",
       specialties: ["Anxiety Management", "City Driving", "Parallel Parking"],
       students: 350,
@@ -111,7 +111,7 @@ const About = () => {
       passRate: 42,
       description: "Suburban location with complex roundabouts.",
       region: "east",
-      imageId: "/public/images/certifications/Horn.png",
+      imageId: "/images/certifications/Horn.png",
     },
     {
       name: "Loughton Test Centre",

@@ -1968,7 +1968,7 @@ const servicesData = [
     ],
     reviews: [
       {
-        name: "Raj Patel",
+        name: "Jaswinder Patel",
         rating: 5,
         date: "1 month ago",
         comment:
@@ -1979,7 +1979,7 @@ const servicesData = [
         rating: 4,
         date: "2 months ago",
         comment:
-          "Great course that helped me pass after failing with another school. The intensive format worked well for me as I could fully focus on driving without forgetting things between lessons.",
+          "Great course that helped me pass after failing with another instructor. The intensive lessons worked well for me as I could fully focus on driving without forgetting things between lessons.",
       },
       {
         name: "Omar Hassan",
