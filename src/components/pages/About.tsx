@@ -56,7 +56,7 @@ const About = () => {
       name: "Mamunur Siddique",
       role: "Founder & Head Instructor",
       image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+        "/images/certifications/4.png",
       bio: "Autonomous Vehicle safety operator with 8+ years of experience as a driving instructor. Passionate about road safety and innovative teaching methods.",
       specialties: [
         "Defensive Driving",
@@ -67,10 +67,10 @@ const About = () => {
       passRate: 95,
     },
     {
-      name: "Sarah Johnson",
+      name: "Mamunur S.",
       role: "Senior Instructor",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+        "/images/certifications/c2.png",
       bio: "Former racing driver with 6 years of teaching experience. Known for helping anxious drivers build confidence quickly.",
       specialties: ["Anxiety Management", "City Driving", "Parallel Parking"],
       students: 350,
@@ -80,7 +80,7 @@ const About = () => {
       name: "David Chen",
       role: "Instructor & Theory Specialist",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+        "/images/certifications/C6.png",
       bio: "Certified theory test expert with a background in traffic psychology. Makes complex concepts simple and memorable.",
       specialties: ["Theory Test Prep", "Hazard Perception", "Roundabouts"],
       students: 420,
@@ -95,7 +95,7 @@ const About = () => {
       passRate: 37,
       description: "Known for its mix of urban and residential routes.",
       region: "east",
-      imageId: "1519501025264-65ba15a82390",
+      imageId: "/images/certifications/Chi.jpg",
     },
     {
       name: "Wanstead Test Centre",
@@ -103,7 +103,7 @@ const About = () => {
       passRate: 35,
       description: "Features various road types and challenging roundabouts.",
       region: "east",
-      imageId: "1464219222984-8a76f9ae58ce",
+      imageId: "/images/certifications/Wanstead.jpg",
     },
     {
       name: "Hornchurch Test Centre",
@@ -111,7 +111,7 @@ const About = () => {
       passRate: 42,
       description: "Suburban location with complex roundabouts.",
       region: "east",
-      imageId: "1449965408869-ebd427f62e8c",
+      imageId: "/public/images/certifications/Horn.png",
     },
     {
       name: "Loughton Test Centre",
@@ -119,7 +119,7 @@ const About = () => {
       passRate: 45,
       description: "Diverse road types, including high-speed A roads.",
       region: "essex",
-      imageId: "1543465077-db45f5d90bee",
+      imageId: "/images/certifications/Loughton.jpg",
     },
     {
       name: "Goodmayes Test Centre",
@@ -127,7 +127,7 @@ const About = () => {
       passRate: 39,
       description: "Challenging urban routes and junctions.",
       region: "east",
-      imageId: "1529369623210-8519cf022be2",
+      imageId: "/images/certifications/Goodmayes.png",
     },
     {
       name: "Barking Test Centre",
@@ -135,7 +135,7 @@ const About = () => {
       passRate: 41,
       description: "High-speed dual carriageways and complex routes.",
       region: "essex",
-      imageId: "1605040742661-5b2c7f5e4cfd",
+      imageId: "/images/certifications/Tan.jpg",
     },
   ];
 
@@ -216,10 +216,10 @@ const About = () => {
               className="w-full h-full object-cover"
               loop
               muted
-              poster="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&q=80"
+              poster="/images/certifications/4.png"
             >
               <source
-                src="https://player.vimeo.com/external/492713015.sd.mp4?s=3e1631d74c1f92dfabcb4cd112f6d883e2a7b03f&profile_id=164&oauth2_token_id=57447761"
+                src="/images/certifications/BANNER_MAIN3276.png"
                 type="video/mp4"
               />
             </video>
@@ -723,7 +723,7 @@ const About = () => {
                       >
                         <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-blue-500">
                           <img
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                            src="/images/certifications/1.png"
                             alt="Sophie Chen"
                             className="w-full h-full object-cover"
                           />
