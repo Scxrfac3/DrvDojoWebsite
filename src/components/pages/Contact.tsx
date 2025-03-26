@@ -53,36 +53,28 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-slate-900 min-h-screen relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white relative overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-600/20 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-600/20 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-600/20 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-600/20 rounded-full opacity-20 blur-3xl"></div>
-
-      {/* Animated particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-white/10 backdrop-blur-sm"
             style={{
-              width: Math.random() * 60 + 20,
-              height: Math.random() * 60 + 20,
+              width: Math.random() * 100 + 50,
+              height: Math.random() * 100 + 50,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
-            initial={{ opacity: 0.1, scale: 0 }}
             animate={{
+              y: [Math.random() * 100, Math.random() * -100],
+              x: [Math.random() * 100, Math.random() * -100],
               opacity: [0.1, 0.3, 0.1],
-              scale: [0, 1, 0],
-              x: [0, Math.random() * 100 - 50, 0],
-              y: [0, Math.random() * 100 - 50, 0],
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              repeatType: "reverse",
+              duration: Math.random() * 10 + 10,
             }}
           />
         ))}
@@ -98,7 +90,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="inline-flex items-center mb-3 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+            className="inline-flex items-center mb-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-pink-300 border border-white/20 shadow-lg"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -109,38 +101,35 @@ const Contact = () => {
             Get in Touch
           </motion.div>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Let's Start
-            </span>
-            <span className="text-white"> Your Journey</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
+            Let's Start Your Journey
           </h1>
 
-          <p className="text-slate-300 max-w-2xl mx-auto text-lg">
+          <p className="text-lg text-purple-100 max-w-2xl mx-auto">
             Ready to become a confident driver? We're just a message away from
-            helping you crush your driving goals!
+            helping you achieve your driving goals in London!
           </p>
         </motion.div>
 
         <Tabs defaultValue="message" className="w-full max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-slate-800/50 p-1 rounded-xl">
+          <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/10 backdrop-blur-sm p-1 rounded-xl border border-white/20">
             <TabsTrigger
               value="message"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
             >
               <MessageSquare className="h-4 w-4 mr-2" />
               Message Us
             </TabsTrigger>
             <TabsTrigger
               value="book"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
             >
               <Calendar className="h-4 w-4 mr-2" />
               Book a Lesson
             </TabsTrigger>
             <TabsTrigger
               value="info"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
             >
               <MapPin className="h-4 w-4 mr-2" />
               Find Us
@@ -151,11 +140,17 @@ const Contact = () => {
             <TabsContent value="message" className="mt-0">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-4">
                 <motion.div
-                  className="lg:col-span-3 bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 shadow-xl"
+                  className="lg:col-span-3 bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-xl relative overflow-hidden group"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
+                  whileHover={{ y: -5 }}
                 >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  />
                   {formState.submitted ? (
                     <motion.div
                       className="text-center py-12"
@@ -191,7 +186,7 @@ const Contact = () => {
                     </motion.div>
                   ) : (
                     <>
-                      <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                      <h2 className="text-2xl font-bold text-white mb-6 flex items-center relative z-10">
                         <Send className="h-5 w-5 mr-2 text-blue-400" />
                         Send Us a Message
                       </h2>
@@ -331,43 +326,58 @@ const Contact = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-lg">
-                    <h3 className="text-xl font-bold text-white mb-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg relative overflow-hidden group">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                    <h3 className="text-xl font-bold text-white mb-4 relative z-10">
                       Quick Response Guarantee
                     </h3>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-purple-100 mb-4 relative z-10">
                       We respond to all inquiries within 24 hours. Need an
                       urgent response? Give us a call!
                     </p>
 
                     <div className="space-y-4 mt-6">
                       <motion.div
-                        className="flex items-start p-4 bg-slate-700/50 rounded-lg hover:bg-slate-700/70 transition-colors"
+                        className="flex items-start p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors relative overflow-hidden group"
                         whileHover={{ x: 5 }}
                       >
-                        <div className="bg-blue-500/30 p-3 rounded-lg mr-4">
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        />
+                        <div className="bg-blue-500/30 p-3 rounded-lg mr-4 relative z-10">
                           <Phone className="h-5 w-5 text-blue-400" />
                         </div>
-                        <div>
+                        <div className="relative z-10">
                           <h3 className="text-white font-semibold">Call Us</h3>
-                          <p className="text-slate-300">+44 20 1234 5678</p>
-                          <p className="text-slate-400 text-sm mt-1">
+                          <p className="text-purple-100">+44 20 1234 5678</p>
+                          <p className="text-purple-200 text-sm mt-1">
                             Mon-Fri from 9am to 6pm
                           </p>
                         </div>
                       </motion.div>
 
                       <motion.div
-                        className="flex items-start p-4 bg-slate-700/50 rounded-lg hover:bg-slate-700/70 transition-colors"
+                        className="flex items-start p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors relative overflow-hidden group"
                         whileHover={{ x: 5 }}
                       >
-                        <div className="bg-purple-500/30 p-3 rounded-lg mr-4">
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        />
+                        <div className="bg-purple-500/30 p-3 rounded-lg mr-4 relative z-10">
                           <Mail className="h-5 w-5 text-purple-400" />
                         </div>
-                        <div>
+                        <div className="relative z-10">
                           <h3 className="text-white font-semibold">Email</h3>
-                          <p className="text-slate-300">info@drivedojo.com</p>
-                          <p className="text-slate-400 text-sm mt-1">
+                          <p className="text-purple-100">info@drivedojo.com</p>
+                          <p className="text-purple-200 text-sm mt-1">
                             24/7 support for urgent inquiries
                           </p>
                         </div>
@@ -375,14 +385,19 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm rounded-xl p-6 border border-blue-800/30 shadow-lg">
-                    <div className="flex items-center mb-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg relative overflow-hidden group">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                    <div className="flex items-center mb-4 relative z-10">
                       <Clock className="h-5 w-5 text-blue-400 mr-2" />
                       <h3 className="text-xl font-bold text-white">
                         Fast-Track Booking
                       </h3>
                     </div>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-purple-100 mb-4 relative z-10">
                       Need lessons ASAP? Mention "Fast-Track" in your message
                       for priority scheduling!
                     </p>
@@ -391,7 +406,7 @@ const Contact = () => {
                       whileTap={{ scale: 0.97 }}
                     >
                       <Button
-                        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 mt-2"
+                        className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 mt-2 relative z-10 border border-white/20"
                         onClick={() => (window.location.href = "/booking")}
                       >
                         Request Fast-Track
@@ -404,16 +419,22 @@ const Contact = () => {
 
             <TabsContent value="book" className="mt-0">
               <motion.div
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 shadow-xl mt-4"
+                className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-xl mt-4 relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                whileHover={{ y: -5 }}
               >
-                <div className="text-center mb-8">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                />
+                <div className="text-center mb-8 relative z-10">
                   <h2 className="text-2xl font-bold text-white mb-2">
                     Book Your First Lesson
                   </h2>
-                  <p className="text-slate-300">
+                  <p className="text-purple-100 relative z-10">
                     Choose your preferred package and we'll contact you to
                     schedule your lessons
                   </p>
@@ -422,12 +443,17 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Starter Package */}
                   <motion.div
-                    className="bg-gradient-to-b from-blue-900/40 to-blue-800/20 rounded-xl overflow-hidden border border-blue-700/30 shadow-lg"
+                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative h-full group"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
                     }}
                   >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-blue-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-white mb-2">
                         Starter Package
@@ -476,12 +502,17 @@ const Contact = () => {
 
                   {/* Popular Package */}
                   <motion.div
-                    className="bg-gradient-to-b from-purple-900/40 to-purple-800/20 rounded-xl overflow-hidden border border-purple-700/30 shadow-lg relative"
+                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative h-full group"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
                     }}
                   >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-purple-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
                       MOST POPULAR
                     </div>
@@ -534,12 +565,17 @@ const Contact = () => {
 
                   {/* Intensive Package */}
                   <motion.div
-                    className="bg-gradient-to-b from-green-900/40 to-green-800/20 rounded-xl overflow-hidden border border-green-700/30 shadow-lg"
+                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative h-full group"
                     whileHover={{
                       y: -5,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
                     }}
                   >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-green-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-white mb-2">
                         Intensive Course
@@ -610,8 +646,13 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 shadow-xl">
-                  <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-xl relative overflow-hidden group">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  />
+                  <h2 className="text-2xl font-bold text-white mb-6 flex items-center relative z-10">
                     <MapPin className="h-5 w-5 mr-2 text-blue-400" />
                     Find Us
                   </h2>
@@ -632,40 +673,50 @@ const Contact = () => {
 
                     <div className="space-y-4">
                       <motion.div
-                        className="flex items-start p-4 bg-slate-700/50 rounded-lg hover:bg-slate-700/70 transition-colors"
+                        className="flex items-start p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors relative overflow-hidden group"
                         whileHover={{ x: 5 }}
                       >
-                        <div className="bg-green-500/30 p-3 rounded-lg mr-4">
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        />
+                        <div className="bg-green-500/30 p-3 rounded-lg mr-4 relative z-10">
                           <MapPin className="h-5 w-5 text-green-400" />
                         </div>
-                        <div>
+                        <div className="relative z-10">
                           <h3 className="text-white font-semibold">
                             Main Office
                           </h3>
-                          <p className="text-slate-300">
+                          <p className="text-purple-100">
                             123 Driving Street, London, UK
                           </p>
-                          <p className="text-slate-400 text-sm mt-1">
+                          <p className="text-purple-200 text-sm mt-1">
                             Open Monday to Friday, 9am to 6pm
                           </p>
                         </div>
                       </motion.div>
 
                       <motion.div
-                        className="flex items-start p-4 bg-slate-700/50 rounded-lg hover:bg-slate-700/70 transition-colors"
+                        className="flex items-start p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors relative overflow-hidden group"
                         whileHover={{ x: 5 }}
                       >
-                        <div className="bg-blue-500/30 p-3 rounded-lg mr-4">
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        />
+                        <div className="bg-blue-500/30 p-3 rounded-lg mr-4 relative z-10">
                           <MapPin className="h-5 w-5 text-blue-400" />
                         </div>
-                        <div>
+                        <div className="relative z-10">
                           <h3 className="text-white font-semibold">
                             Training Center
                           </h3>
-                          <p className="text-slate-300">
+                          <p className="text-purple-100">
                             456 Learning Avenue, London, UK
                           </p>
-                          <p className="text-slate-400 text-sm mt-1">
+                          <p className="text-purple-200 text-sm mt-1">
                             Open 7 days a week, 8am to 8pm
                           </p>
                         </div>
@@ -675,11 +726,16 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-6">
-                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-lg">
-                    <h3 className="text-xl font-bold text-white mb-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg relative overflow-hidden group">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                    <h3 className="text-xl font-bold text-white mb-4 relative z-10">
                       Service Areas
                     </h3>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-purple-100 mb-4 relative z-10">
                       We provide driving lessons throughout Greater London,
                       including:
                     </p>
@@ -701,10 +757,11 @@ const Contact = () => {
                       ].map((area, index) => (
                         <motion.div
                           key={index}
-                          className="bg-slate-700/50 px-3 py-2 rounded-lg text-slate-300 text-sm flex items-center"
+                          className="bg-white/10 px-3 py-2 rounded-lg text-purple-100 text-sm flex items-center relative overflow-hidden group"
                           whileHover={{
-                            backgroundColor: "rgba(100, 116, 139, 0.5)",
+                            backgroundColor: "rgba(255, 255, 255, 0.2)",
                             color: "#ffffff",
+                            y: -2,
                           }}
                         >
                           <MapPin className="h-3 w-3 mr-2 text-blue-400" />
@@ -713,21 +770,26 @@ const Contact = () => {
                       ))}
                     </div>
 
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-purple-200 text-sm relative z-10">
                       Don't see your area? Contact us to check availability.
                     </p>
                   </div>
 
-                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-lg">
-                    <h3 className="text-xl font-bold text-white mb-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg relative overflow-hidden group">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                    <h3 className="text-xl font-bold text-white mb-4 relative z-10">
                       Business Hours
                     </h3>
 
                     <div className="space-y-3">
-                      <div className="flex justify-between items-center pb-2 border-b border-slate-700">
+                      <div className="flex justify-between items-center pb-2 border-b border-white/20 relative z-10">
                         <div className="flex items-center">
                           <Clock className="h-4 w-4 mr-2 text-blue-400" />
-                          <span className="text-slate-300">
+                          <span className="text-purple-100">
                             Monday - Friday
                           </span>
                         </div>
@@ -736,20 +798,20 @@ const Contact = () => {
                         </span>
                       </div>
 
-                      <div className="flex justify-between items-center pb-2 border-b border-slate-700">
+                      <div className="flex justify-between items-center pb-2 border-b border-white/20 relative z-10">
                         <div className="flex items-center">
                           <Clock className="h-4 w-4 mr-2 text-blue-400" />
-                          <span className="text-slate-300">Saturday</span>
+                          <span className="text-purple-100">Saturday</span>
                         </div>
                         <span className="text-white font-medium">
                           10:00 AM - 4:00 PM
                         </span>
                       </div>
 
-                      <div className="flex justify-between items-center pb-2 border-b border-slate-700">
+                      <div className="flex justify-between items-center pb-2 border-b border-white/20 relative z-10">
                         <div className="flex items-center">
                           <Clock className="h-4 w-4 mr-2 text-blue-400" />
-                          <span className="text-slate-300">Sunday</span>
+                          <span className="text-purple-100">Sunday</span>
                         </div>
                         <span className="text-white font-medium">
                           Closed (Lessons Only)
@@ -757,8 +819,8 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="mt-4 p-3 bg-blue-900/30 rounded-lg border border-blue-800/30">
-                      <p className="text-slate-300 text-sm">
+                    <div className="mt-4 p-3 bg-white/10 rounded-lg border border-white/20 relative z-10">
+                      <p className="text-purple-100 text-sm">
                         <span className="font-semibold text-blue-400">
                           Note:
                         </span>{" "}
@@ -768,14 +830,19 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm rounded-xl p-6 border border-blue-800/30 shadow-lg">
-                    <div className="flex items-center mb-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg relative overflow-hidden group">
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                    <div className="flex items-center mb-4 relative z-10">
                       <Phone className="h-5 w-5 text-blue-400 mr-2" />
                       <h3 className="text-xl font-bold text-white">
                         Need Immediate Assistance?
                       </h3>
                     </div>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-purple-100 mb-4 relative z-10">
                       Our customer support team is ready to help you with any
                       questions.
                     </p>
@@ -784,7 +851,7 @@ const Contact = () => {
                       whileTap={{ scale: 0.97 }}
                     >
                       <Button
-                        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+                        className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 relative z-10 border border-white/20"
                         onClick={() =>
                           (window.location.href = "tel:+442012345678")
                         }
@@ -808,34 +875,80 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Trusted by Thousands of Students
+            <h2 className="text-2xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
+              Trusted by Thousands of London Students
             </h2>
-            <p className="text-slate-300">
+            <p className="text-purple-100">
               Join our community of successful drivers
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-              <p className="text-3xl font-bold text-blue-400 mb-2">98%</p>
-              <p className="text-slate-300 text-sm">Pass Rate</p>
-            </div>
+            <motion.div
+              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 relative overflow-hidden group"
+              whileHover={{ y: -5 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-blue-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+              <p className="text-3xl font-bold text-blue-300 mb-2 relative z-10">
+                98%
+              </p>
+              <p className="text-purple-100 text-sm relative z-10">Pass Rate</p>
+            </motion.div>
 
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-              <p className="text-3xl font-bold text-purple-400 mb-2">10,000+</p>
-              <p className="text-slate-300 text-sm">Students Taught</p>
-            </div>
+            <motion.div
+              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 relative overflow-hidden group"
+              whileHover={{ y: -5 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-purple-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+              <p className="text-3xl font-bold text-purple-300 mb-2 relative z-10">
+                10,000+
+              </p>
+              <p className="text-purple-100 text-sm relative z-10">
+                London Students
+              </p>
+            </motion.div>
 
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-              <p className="text-3xl font-bold text-green-400 mb-2">4.9/5</p>
-              <p className="text-slate-300 text-sm">Average Rating</p>
-            </div>
+            <motion.div
+              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 relative overflow-hidden group"
+              whileHover={{ y: -5 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-green-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+              <p className="text-3xl font-bold text-green-300 mb-2 relative z-10">
+                4.9/5
+              </p>
+              <p className="text-purple-100 text-sm relative z-10">
+                Average Rating
+              </p>
+            </motion.div>
 
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-              <p className="text-3xl font-bold text-yellow-400 mb-2">12+</p>
-              <p className="text-slate-300 text-sm">Years Experience</p>
-            </div>
+            <motion.div
+              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 relative overflow-hidden group"
+              whileHover={{ y: -5 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-yellow-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+              <p className="text-3xl font-bold text-yellow-300 mb-2 relative z-10">
+                12+
+              </p>
+              <p className="text-purple-100 text-sm relative z-10">
+                Years Experience
+              </p>
+            </motion.div>
           </div>
         </motion.div>
       </div>

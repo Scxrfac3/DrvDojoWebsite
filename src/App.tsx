@@ -1,16 +1,23 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import routes from "tempo-routes";
-import Services from "./components/pages/Services";
-import About from "./components/pages/About";
-import Contact from "./components/pages/Contact";
-import Booking from "./components/pages/Booking";
+// Use lazy loading for page components
+const Services = lazy(() => import("./components/pages/Services"));
+const About = lazy(() => import("./components/pages/About"));
+const Contact = lazy(() => import("./components/pages/Contact"));
+const Booking = lazy(() => import("./components/pages/Booking"));
 // import Portal from "./components/pages/Portal"; // Coming soon
 
 function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center bg-slate-900">
+          <p className="text-white text-xl">Loading...</p>
+        </div>
+      }
+    >
       <>
         <Routes>
           <Route path="/" element={<Home />} />
