@@ -10,32 +10,32 @@ const CertificationsBar = ({ className = "" }: CertificationsBarProps) => {
   const certifications = [
     {
       name: "ORDIT Certified",
-      logo: "https://images.unsplash.com/photo-1569012871812-f38ee64cd54c?w=400&q=80",
+      logo: "/images/certifications/ORDIT.png",
       color: "#3B82F6",
     },
     {
       name: "Driving Standards Agency",
-      logo: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&q=80",
+      logo: "/images/certifications/DVSA-ADI.png",
       color: "#10B981",
     },
     {
       name: "DBS Checked",
-      logo: "https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80",
+      logo: "/images/certifications/DBS.png",
       color: "#6366F1",
     },
     {
       name: "Drive Dojo",
-      logo: "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=400&q=80",
+      logo: "/images/certifications/DDOJO.png",
       color: "#F43F5E",
     },
     {
       name: "Pass Plus Certified",
-      logo: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=400&q=80",
+      logo: "/images/certifications/PassPLUS.png",
       color: "#8B5CF6",
     },
     {
       name: "Driving License",
-      logo: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80",
+      logo: "/images/certifications/licenseUK.jpg",
       color: "#EC4899",
     },
   ];

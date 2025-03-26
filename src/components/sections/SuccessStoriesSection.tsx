@@ -25,38 +25,60 @@ const SuccessStoriesSection = () => {
   const testimonialCards: TestimonialCard[] = [
     {
       image:
-        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+        "/images/certifications/10.png",
       background: "from-blue-400 to-purple-500",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+        "/images/certifications/12.png",
       background: "from-pink-400 to-purple-500",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&q=80",
+        "/images/certifications/1.png",
       background: "from-green-400 to-teal-500",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80",
+        "/images/certifications/4.png",
       background: "from-orange-400 to-red-500",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1471479917193-f00955256257?w=800&q=80",
+        "/images/certifications/3.png",
       background: "from-indigo-400 to-blue-500",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80",
+        "/images/certifications/5.png",
       background: "from-purple-400 to-indigo-500",
     },
     {
       image:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+        "/images/certifications/6.png",
       background: "from-yellow-400 to-orange-500",
+    },
+
+    {
+      image:
+        "/images/certifications/7.png",
+      background: "from-yellow-400 to-orange-500",
+    },
+    {
+      image:
+        "/images/certifications/8.png",
+      background: "from-yellow-400 to-orange-500",
+    },
+    {
+      image:
+        "/images/certifications/9.png",
+      background: "from-yellow-400 to-orange-500",
+    },
+
+    {
+      image:
+        "/images/certifications/10.png",
+      background: "from-purple-400 to-orange-500",
     },
   ];
 
@@ -120,7 +142,7 @@ const SuccessStoriesSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 opacity-10">
         <img
-          src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&q=80"
+          src="/images/certifications/6.png"
           alt="Background"
           className="w-full h-full object-cover"
         />

@@ -76,21 +76,21 @@ const DrivingGallery = () => {
           {[
             {
               image:
-                "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+                "/images/certifications/1729007102786.jpg",
               title: "Modern Dual-Control Vehicles",
               description:
                 "Learn in our fleet of latest model cars with dual controls for safety",
             },
             {
               image:
-                "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+                "/images/certifications/C8.png",
               title: "Digital Learning Tools",
               description:
                 "Access to digital resources and apps to enhance your learning",
             },
             {
               image:
-                "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&q=80",
+                "/images/certifications/C2.png",
               title: "Practice Routes",
               description:
                 "Carefully designed routes to build your skills progressively",
@@ -220,7 +220,7 @@ const Services = () => {
                     transition={{ duration: 8, repeat: Infinity }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200&q=80"
+                      src="/images/certifications/C5.png"
                       alt="Modern driving lesson"
                       className="w-full h-full object-cover"
                     />
@@ -233,7 +233,7 @@ const Services = () => {
                     transition={{ duration: 8, repeat: Infinity, delay: 4 }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80"
+                      src="/images/certifications/18.jpg"
                       alt="Urban driving"
                       className="w-full h-full object-cover"
                     />
@@ -407,7 +407,7 @@ const Services = () => {
                           transition={{ delay: 0.5 }}
                         >
                           <img
-                            src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80"
+                            src="/images/certifications/DVSA.jpg"
                             alt="Driving instructor with student"
                             className="w-full h-full object-cover rounded-xl"
                           />
@@ -1670,7 +1670,7 @@ const servicesData = [
     shortDescription:
       "Perfect for first-time drivers with no previous experience",
     image:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+      "/images/certifications/8.png",
     icon: <Car className="h-5 w-5 text-blue-400" />,
     colorClass: "bg-blue-600/30 text-blue-400",
     buttonClass: "bg-blue-600 hover:bg-blue-700",
@@ -1770,7 +1770,7 @@ const servicesData = [
     shortDescription:
       "Our most popular package with structured learning and progress tracking",
     image:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+      "/images/certifications/C7.png",
     icon: <Award className="h-5 w-5 text-purple-400" />,
     colorClass: "bg-purple-600/30 text-purple-400",
     buttonClass:
@@ -1884,7 +1884,7 @@ const servicesData = [
     shortDescription:
       "Fast-track your learning with our comprehensive intensive course",
     image:
-      "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&q=80",
+      "/images/certifications/9.png",
     icon: <Zap className="h-5 w-5 text-green-400" />,
     colorClass: "bg-green-600/30 text-green-400",
     buttonClass:
@@ -1998,7 +1998,7 @@ const servicesData = [
     shortDescription:
       "Build confidence and skills after passing your test with this government-recognized course",
     image:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+      "/images/certifications/PassPlus.png",
     icon: <Award className="h-5 w-5 text-yellow-400" />,
     colorClass: "bg-yellow-600/30 text-yellow-400",
     buttonClass:

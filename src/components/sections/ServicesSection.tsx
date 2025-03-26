@@ -147,7 +147,7 @@ const ServicesSection = ({
       description:
         "Learn from the best! Our instructors are top-tier with advanced certifications and are regularly evaluated to ensure quality.",
       image:
-        "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+        "/images/certifications/C1.png",
       emoji: "🏆",
       color: "bg-gradient-to-br from-purple-900/95 to-indigo-900/95",
     },
@@ -157,7 +157,7 @@ const ServicesSection = ({
       description:
         "Get the most out of every lesson with our full 2-hour sessions - no shortcuts, just quality learning time!",
       image:
-        "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=800&q=80",
+        "/images/certifications/15.png",
       emoji: "⏱️",
       color: "bg-gradient-to-br from-blue-900/95 to-slate-900/95",
     },
@@ -167,7 +167,7 @@ const ServicesSection = ({
       description:
         "No need to worry about transportation! We'll pick you up and drop you off wherever is most convenient for you.",
       image:
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+        "/images/certifications/14.png",
       emoji: "🏠",
       color: "bg-gradient-to-br from-green-900/95 to-emerald-900/95",
     },
@@ -177,7 +177,7 @@ const ServicesSection = ({
       description:
         "Manual or automatic? You decide! Learn in the type of car that suits your style and future driving plans.",
       image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
+        "/images/certifications/18.png",
       emoji: "🚗",
       color: "bg-gradient-to-br from-red-900/95 to-orange-900/95",
     },
@@ -187,7 +187,7 @@ const ServicesSection = ({
       description:
         "Choose a male or female instructor based on who you feel most comfortable learning with - your preference matters!",
       image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+        "/images/certifications/DVSA.jpg",
       emoji: "👩‍🏫",
       color: "bg-gradient-to-br from-yellow-900/95 to-amber-900/95",
     },

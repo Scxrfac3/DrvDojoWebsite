@@ -71,7 +71,7 @@ const HeroSection = ({
     {
       name: "Alex, 19",
       image:
-        "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&q=80",
+        "/images/certifications/1.png",
       achievement: "Passed First Time!",
       quote:
         "After just 20 hours with Drive Dojo, I passed with only 2 minor faults!",
@@ -83,7 +83,7 @@ const HeroSection = ({
     {
       name: "Alina S.",
       image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+        "/images/certifications/4.png",
       achievement: "Effective Teaching Methods",
       quote:
         "Instructor's teaching methods were very effective. He broke down complex maneuvers into simple, manageable steps, allowing me to grasp each concept at my own pace.",
@@ -95,7 +95,7 @@ const HeroSection = ({
     {
       name: "Alexei W.",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+        "/images/certifications/1.png",
       achievement: "From Zero to Hero",
       quote:
         "I begin my driving lessons with no previous knowledge having zero hours of driving lessons or experience. Mamunur was also very flexible in the lesson times.",
@@ -105,9 +105,9 @@ const HeroSection = ({
       date: "1 week ago",
     },
     {
-      name: "Sarah K.",
+      name: "Amie L K.",
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80",
+        "/images/certifications/5.png",
       achievement: "Highway Confidence",
       quote:
         "The motorway confidence course was fantastic! I used to avoid highways completely, but now I feel completely at ease merging and changing lanes even in heavy traffic.",
@@ -117,12 +117,12 @@ const HeroSection = ({
       date: "5 days ago",
     },
     {
-      name: "Raj P.",
+      name: "Jaswinder P.",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
-      achievement: "International License Success",
+        "/images/certifications/2.png",
+      achievement: " License Success",
       quote:
-        "Converting my international license was so much easier with Drive Dojo's specialized course. They helped me adapt to UK roads and pass my test with flying colors!",
+        "Converting my license was so much easier with Drive Dojo's specialized course. They helped me adapt to UK roads and pass my test with flying colors!",
       emoji: "🌍",
       color: "from-purple-600/80 to-indigo-600/80",
       tag: "#InternationalDriver",
