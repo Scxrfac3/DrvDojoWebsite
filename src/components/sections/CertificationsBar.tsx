@@ -35,7 +35,7 @@ const CertificationsBar = ({ className = "" }: CertificationsBarProps) => {
     },
     {
       name: "Driving License",
-      logo: "/images/certifications/licenseUK.jpg",
+      logo: "/images/certifications/LicenseUK.pngg",
       color: "#EC4899",
     },
   ];
