@@ -37,6 +37,28 @@ const Home = () => {
         <WhyChooseUsSection />
         <SuccessStoriesSection />
         <TestimonialsSection />
+
+        {/* Free Theory Test Section */}
+        <div className="py-16 bg-gradient-to-r from-teal-50 to-cyan-50">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Free Theory Test Practice
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Prepare for your official DVSA theory test with our free online practice tool. Access a wide range of questions and mock tests.
+            </p>
+            <a
+              href="https://drivedojodriving.autos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out"
+            >
+              Start Practicing Now
+              <Zap className="ml-2 h-5 w-5" />
+            </a>
+          </div>
+        </div>
+
         {/* StudentPortalPreview coming soon */}
         <div className="py-20 px-4 bg-white relative overflow-hidden">
           <div className="container mx-auto relative z-10 text-center">
