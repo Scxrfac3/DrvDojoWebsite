@@ -19,6 +19,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import supabase from "@/lib/supabase";
 
 const Contact = () => {
   const [formState, setFormState] = useState({

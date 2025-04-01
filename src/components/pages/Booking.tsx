@@ -28,6 +28,7 @@ import {
   PartyPopper,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import supabase from "@/lib/supabase";
 
 const Booking = () => {
   const [step, setStep] = useState(1);
