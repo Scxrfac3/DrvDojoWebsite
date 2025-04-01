@@ -197,7 +197,7 @@ const ServicesSection = ({
       description:
         "All our vehicles are strictly non-smoking, ensuring a clean and comfortable learning environment for everyone.",
       image:
-        "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80",
+        "/images/certifications/13.png",
       emoji: "💨",
       color: "bg-gradient-to-br from-cyan-900/95 to-blue-900/95",
     },

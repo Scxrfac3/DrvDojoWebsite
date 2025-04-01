@@ -1665,8 +1665,8 @@ const servicesData = [
   {
     id: "beginner",
     title: "Beginner Course",
-    price: "£35",
-    priceUnit: "/hour",
+    price: "£65",
+    priceUnit: "/2hour",
     shortDescription:
       "Perfect for first-time drivers with no previous experience",
     image:
@@ -1975,16 +1975,16 @@ const servicesData = [
           "I needed to pass my test quickly for a new job and the intensive course was perfect. Completed it in 8 days and passed first time! The instructor was fantastic and really helped me build confidence quickly.",
       },
       {
-        name: "Sophie Williams",
+        name: "Maria J",
         rating: 4,
         date: "2 months ago",
         comment:
           "Great course that helped me pass after failing with another instructor. The intensive lessons worked well for me as I could fully focus on driving without forgetting things between lessons.",
       },
       {
-        name: "Omar Hassan",
+        name: "Omar H",
         rating: 5,
-        date: "3 weeks ago",
+        date: "6 weeks ago",
         comment:
           "Excellent experience! I was nervous about the intensive approach but it actually helped me progress much faster than weekly lessons. The instructor was patient and professional throughout.",
       },
@@ -1993,7 +1993,7 @@ const servicesData = [
   {
     id: "pass-plus",
     title: "Pass Plus Course",
-    price: "£200",
+    price: "£100",
     priceUnit: "/course",
     shortDescription:
       "Build confidence and skills after passing your test with this government-recognized course",

@@ -216,7 +216,7 @@ const About = () => {
               className="w-full h-full object-cover"
               loop
               muted
-              poster="/images/certifications/4.png"
+              poster="/images/certifications/BANNER_MAIN3276.png"
             >
               <source
                 src="/images/certifications/BANNER_MAIN3276.png"
@@ -730,7 +730,7 @@ const About = () => {
                         </div>
                         <div className="text-left">
                           <div className="text-white font-medium text-lg">
-                            Sophie Chen
+                            Mike Rashid
                           </div>
                           <div className="text-blue-400 text-sm flex items-center">
                             <Star
