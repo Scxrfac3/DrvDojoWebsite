@@ -40,16 +40,16 @@ interface FooterProps {
 }
 
 const Footer = ({
-  logo = "/vite.svg",
+  logo = "/favicon.png",
   contactInfo = {
     email: "drivedojo@gmail.com",
-    phone: "+447487228866",
+    phone: "+447 487 228 866",
     address: "Goodmayes, Essex",
   },
   quickLinks = [
     { title: "About Us", href: "/about" },
     { title: "Contact", href: "/contact" },
-    { title: "Driving Insights", href: "/blog" },
+    { title: "Driving Insights", href: "/about" },
     { title: "FAQ", href: "/" },
     { title: "Terms & Conditions", href: "/" },
     { title: "Privacy Policy", href: "/" },

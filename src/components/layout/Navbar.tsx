@@ -23,7 +23,7 @@ interface NavbarProps {
   transparent?: boolean;
 }
 
-const Navbar = ({ logo = "/vite.svg", transparent = false }: NavbarProps) => {
+const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 

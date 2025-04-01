@@ -178,12 +178,12 @@ const About = () => {
     {
       year: 2017,
       title: "Expansion",
-      description: "Grew to 5 instructors and introduced specialized courses",
+      description: "Grew to 3 instructors and introduced specialised courses",
     },
     {
       year: 2019,
       title: "Recognition",
-      description: "Named 'Best Driving School in East London'",
+      description: "Named 'EAZY Driving School of the Year' by the Driving Instructors Association",
     },
     {
       year: 2022,
@@ -216,7 +216,7 @@ const About = () => {
               className="w-full h-full object-cover"
               loop
               muted
-              poster="/images/certifications/4.png"
+              poster="/images/certifications/BANNER_MAIN3276.png"
             >
               <source
                 src="/images/certifications/BANNER_MAIN3276.png"
