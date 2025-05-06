@@ -25,7 +25,7 @@ const SuccessStoriesSection = () => {
   const testimonialCards: TestimonialCard[] = [
     {
       image:
-        "/images/certifications/10.png",
+        "/images/certifications/13.png",
       background: "from-blue-400 to-purple-500",
     },
     {
@@ -35,7 +35,7 @@ const SuccessStoriesSection = () => {
     },
     {
       image:
-        "/images/certifications/1.png",
+        "/images/certifications/11.png",
       background: "from-green-400 to-teal-500",
     },
     {

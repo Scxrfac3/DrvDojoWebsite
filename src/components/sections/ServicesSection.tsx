@@ -183,7 +183,7 @@ const ServicesSection = ({
       title: "Instructor Options",
       description:
         "Choose a male or female instructor based on who you feel most comfortable learning with - your preference matters!",
-      image: "/images/certifications/DVSA.jpg",
+      image: "/images/certifications/DVSA.png",
       emoji: "👩‍🏫",
       color: "bg-gradient-to-br from-yellow-900/95 to-amber-900/95",
     },
