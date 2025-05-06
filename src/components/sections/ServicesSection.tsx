@@ -12,6 +12,7 @@ import {
   Camera,
   ThumbsUp,
   Flame,
+  Wrench as Tool,
 } from "lucide-react";
 
 interface ServiceFeatureProps {
@@ -146,8 +147,7 @@ const ServicesSection = ({
       title: "Pro-Level Instructors",
       description:
         "Learn from the best! Our instructors are top-tier with advanced certifications and are regularly evaluated to ensure quality.",
-      image:
-        "/images/certifications/C1.png",
+      image: "/images/certifications/C1.png",
       emoji: "🏆",
       color: "bg-gradient-to-br from-purple-900/95 to-indigo-900/95",
     },
@@ -156,8 +156,7 @@ const ServicesSection = ({
       title: "Full 2-Hour Sessions",
       description:
         "Get the most out of every lesson with our full 2-hour sessions - no shortcuts, just quality learning time!",
-      image:
-        "/images/certifications/15.png",
+      image: "/images/certifications/15.png",
       emoji: "⏱️",
       color: "bg-gradient-to-br from-blue-900/95 to-slate-900/95",
     },
@@ -166,8 +165,7 @@ const ServicesSection = ({
       title: "Door-to-Door Service",
       description:
         "No need to worry about transportation! We'll pick you up and drop you off wherever is most convenient for you.",
-      image:
-        "/images/certifications/14.png",
+      image: "/images/certifications/14.png",
       emoji: "🏠",
       color: "bg-gradient-to-br from-green-900/95 to-emerald-900/95",
     },
@@ -176,8 +174,7 @@ const ServicesSection = ({
       title: "Choose Your Ride",
       description:
         "Manual or automatic? You decide! Learn in the type of car that suits your style and future driving plans.",
-      image:
-        "/images/certifications/18.png",
+      image: "/images/certifications/18.png",
       emoji: "🚗",
       color: "bg-gradient-to-br from-red-900/95 to-orange-900/95",
     },
@@ -186,8 +183,7 @@ const ServicesSection = ({
       title: "Instructor Options",
       description:
         "Choose a male or female instructor based on who you feel most comfortable learning with - your preference matters!",
-      image:
-        "/images/certifications/DVSA.jpg",
+      image: "/images/certifications/DVSA.jpg",
       emoji: "👩‍🏫",
       color: "bg-gradient-to-br from-yellow-900/95 to-amber-900/95",
     },
@@ -200,6 +196,16 @@ const ServicesSection = ({
         "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80",
       emoji: "💨",
       color: "bg-gradient-to-br from-cyan-900/95 to-blue-900/95",
+    },
+    {
+      icon: <Tool className="h-6 w-6 text-white" />,
+      title: "Dual Control Installation",
+      description:
+        "Official He-Man dual control systems installed by certified technicians. Premium service for driving instructors.",
+      image:
+        "https://images.unsplash.com/photo-1581093458791-9d09a5c0d6e5?w=800&q=80",
+      emoji: "🔧",
+      color: "bg-gradient-to-br from-blue-900/95 to-purple-900/95",
     },
   ];
 

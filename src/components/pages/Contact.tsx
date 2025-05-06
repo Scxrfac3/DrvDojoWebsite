@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import supabase from "@/lib/supabase";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -17,10 +18,10 @@ import {
   ArrowRight,
   Send,
   Sparkles,
+  AlertCircle,
+  Lock,
 } from "lucide-react";
 import confetti from "canvas-confetti";
-import supabase from "@/lib/supabase";
-
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: "",
@@ -29,26 +30,67 @@ const Contact = () => {
     message: "",
     submitted: false,
     loading: false,
+    error: null,
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormState({ ...formState, loading: true });
+    setFormState({ ...formState, loading: true, error: null });
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Check if form is valid
+    const form = e.target as HTMLFormElement;
+    if (!form.checkValidity()) {
+      setFormState({
+        ...formState,
+        loading: false,
+        error: "Please fill out all required fields correctly.",
+      });
+      return;
+    }
+
+    try {
+      // Send data to Supabase
+      const { error } = await supabase.from("contact_messages").insert([
+        {
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone || null,
+          message: formState.message,
+          created_at: new Date().toISOString(),
+        },
+      ]);
+
+      if (error) {
+        console.error("Supabase error:", error);
+        throw error;
+      }
+
+      // Success! Show confirmation and trigger confetti
       setFormState({ ...formState, submitted: true, loading: false });
 
       // Trigger confetti effect
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 150,
+        spread: 90,
         origin: { y: 0.6 },
+        colors: ["#8B5CF6", "#EC4899", "#3B82F6"],
       });
-    }, 1500);
+
+      console.log("Form submitted successfully to Supabase!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormState({
+        ...formState,
+        loading: false,
+        error:
+          "Oops! Something went wrong. Please try again or contact us directly.",
+      });
+    }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { id, value } = e.target;
     setFormState({ ...formState, [id]: value });
   };
@@ -106,10 +148,17 @@ const Contact = () => {
             Let's Start Your Journey
           </h1>
 
-          <p className="text-lg text-purple-100 max-w-2xl mx-auto">
-            Ready to become a confident driver? We're just a message away from
-            helping you achieve your driving goals in London!
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <p className="text-xl text-purple-100 max-w-2xl mx-auto">
+              Ready to become a confident driver? We're just a message away from
+              helping you achieve your driving goals in London!{" "}
+              <span className="text-pink-300 font-medium">No cap fr fr</span> 🔥
+            </p>
+          </motion.div>
         </motion.div>
 
         <Tabs defaultValue="message" className="w-full max-w-5xl mx-auto">
@@ -159,31 +208,84 @@ const Contact = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <CheckCircle className="h-10 w-10 text-green-500" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-4">
-                        Message Sent Successfully!
-                      </h3>
-                      <p className="text-slate-300 mb-6">
-                        Thanks for reaching out! We'll get back to you within 24
-                        hours.
-                      </p>
-                      <Button
-                        onClick={() =>
-                          setFormState({
-                            ...formState,
-                            submitted: false,
-                            name: "",
-                            email: "",
-                            phone: "",
-                            message: "",
-                          })
-                        }
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                      <motion.div
+                        className="w-24 h-24 bg-gradient-to-br from-green-500/30 to-blue-500/30 rounded-full flex items-center justify-center mx-auto mb-6 relative"
+                        animate={{
+                          boxShadow: [
+                            "0 0 0 0 rgba(74, 222, 128, 0.2)",
+                            "0 0 0 20px rgba(74, 222, 128, 0)",
+                            "0 0 0 0 rgba(74, 222, 128, 0)",
+                          ],
+                        }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 2,
+                        }}
                       >
-                        Send Another Message
-                      </Button>
+                        <motion.div
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ repeat: Infinity, duration: 2 }}
+                        >
+                          <CheckCircle className="h-12 w-12 text-green-400" />
+                        </motion.div>
+                      </motion.div>
+
+                      <motion.h3
+                        className="text-3xl font-bold text-white mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        Message Sent! <span className="text-green-400">✨</span>
+                      </motion.h3>
+
+                      <motion.p
+                        className="text-slate-300 mb-8 text-lg"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        Thanks for reaching out! We'll slide into your inbox
+                        within 24 hours.
+                      </motion.p>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                      >
+                        <Button
+                          onClick={() =>
+                            setFormState({
+                              ...formState,
+                              submitted: false,
+                              name: "",
+                              email: "",
+                              phone: "",
+                              message: "",
+                              error: null,
+                            })
+                          }
+                          className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 px-8 py-3 text-lg font-medium"
+                        >
+                          Send Another Message
+                        </Button>
+                      </motion.div>
+
+                      <motion.div
+                        className="mt-8 p-4 bg-blue-500/20 border border-blue-500/30 rounded-lg inline-block"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.6 }}
+                      >
+                        <p className="text-blue-300 flex items-center">
+                          <Sparkles className="h-4 w-4 mr-2" />
+                          <span>
+                            Want faster response? Call us at{" "}
+                            <span className="font-bold">+44 748 722 8866</span>
+                          </span>
+                        </p>
+                      </motion.div>
                     </motion.div>
                   ) : (
                     <>
@@ -196,16 +298,16 @@ const Contact = () => {
                           <div className="space-y-2">
                             <label
                               htmlFor="name"
-                              className="text-white font-medium block"
+                              className="text-white font-medium flex items-center"
                             >
-                              Your Name
+                              <span className="mr-2">👋</span> Your Name
                             </label>
                             <Input
                               id="name"
                               value={formState.name}
                               onChange={handleInputChange}
-                              placeholder="John Smith"
-                              className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500"
+                              placeholder="Your name here"
+                              className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-pink-500 focus:ring-pink-500 transition-all duration-300 hover:border-purple-400"
                               required
                             />
                           </div>
@@ -213,17 +315,17 @@ const Contact = () => {
                           <div className="space-y-2">
                             <label
                               htmlFor="email"
-                              className="text-white font-medium block"
+                              className="text-white font-medium flex items-center"
                             >
-                              Email Address
+                              <span className="mr-2">📧</span> Email Address
                             </label>
                             <Input
                               id="email"
                               type="email"
                               value={formState.email}
                               onChange={handleInputChange}
-                              placeholder="john@example.com"
-                              className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500"
+                              placeholder="your.email@example.com"
+                              className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-pink-500 focus:ring-pink-500 transition-all duration-300 hover:border-purple-400"
                               required
                             />
                           </div>
@@ -232,48 +334,61 @@ const Contact = () => {
                         <div className="space-y-2">
                           <label
                             htmlFor="phone"
-                            className="text-white font-medium block"
+                            className="text-white font-medium flex items-center"
                           >
-                            Phone Number (Optional)
+                            <span className="mr-2">📱</span> Phone Number
+                            (Optional)
                           </label>
                           <Input
                             id="phone"
                             type="tel"
                             value={formState.phone}
                             onChange={handleInputChange}
-                            placeholder="+44 7123 456789"
-                            className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500"
+                            placeholder="Your phone number"
+                            className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-pink-500 focus:ring-pink-500 transition-all duration-300 hover:border-purple-400"
                           />
                         </div>
 
                         <div className="space-y-2">
                           <label
                             htmlFor="message"
-                            className="text-white font-medium block"
+                            className="text-white font-medium flex items-center"
                           >
-                            Your Message
+                            <span className="mr-2">💬</span> Your Message
                           </label>
                           <Textarea
                             id="message"
                             value={formState.message}
                             onChange={handleInputChange}
-                            placeholder="I'd like to book driving lessons..."
-                            className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500 min-h-[150px]"
+                            placeholder="Tell us what you need! We're here to help you become a confident driver..."
+                            className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-pink-500 focus:ring-pink-500 min-h-[120px] transition-all duration-300 hover:border-purple-400"
                             required
                           />
                         </div>
 
+                        {formState.error && (
+                          <motion.div
+                            className="bg-red-500/20 border border-red-500/50 text-white p-3 rounded-lg flex items-start"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0 mt-0.5 text-red-400" />
+                            <span>{formState.error}</span>
+                          </motion.div>
+                        )}
+
                         <motion.div
                           whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
+                          whileTap={{ scale: 0.95 }}
                         >
                           <Button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 relative overflow-hidden group"
+                            className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 relative overflow-hidden group text-lg py-6 font-bold shadow-lg shadow-purple-500/20"
                             disabled={formState.loading}
                           >
                             {formState.loading ? (
-                              <span className="flex items-center">
+                              <span className="flex items-center justify-center">
                                 <svg
                                   className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                                   xmlns="http://www.w3.org/2000/svg"
@@ -294,12 +409,13 @@ const Contact = () => {
                                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                   ></path>
                                 </svg>
-                                Sending...
+                                Sending your message...
                               </span>
                             ) : (
                               <>
-                                Send Message
-                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                <span className="mr-2">🚀</span>
+                                Send Message Now
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
                                 <motion.div
                                   className="absolute inset-0 bg-white"
                                   initial={{ x: "-100%" }}
@@ -312,10 +428,12 @@ const Contact = () => {
                           </Button>
                         </motion.div>
 
-                        <p className="text-slate-400 text-sm text-center mt-4">
-                          We'll get back to you within 24 hours. Your data is
-                          secure and won't be shared.
-                        </p>
+                        <div className="flex items-center justify-center space-x-2 mt-4">
+                          <Lock className="h-4 w-4 text-green-400" />
+                          <p className="text-green-300 text-sm font-medium">
+                            Secure form - we'll respond within 24hrs
+                          </p>
+                        </div>
                       </form>
                     </>
                   )}
@@ -356,7 +474,7 @@ const Contact = () => {
                         </div>
                         <div className="relative z-10">
                           <h3 className="text-white font-semibold">Call Us</h3>
-                          <p className="text-purple-100">+44 20 1234 5678</p>
+                          <p className="text-purple-100">+44 748 722 8866</p>
                           <p className="text-purple-200 text-sm mt-1">
                             Mon-Fri from 9am to 6pm
                           </p>
@@ -377,7 +495,7 @@ const Contact = () => {
                         </div>
                         <div className="relative z-10">
                           <h3 className="text-white font-semibold">Email</h3>
-                          <p className="text-purple-100">info@drivedojo.com</p>
+                          <p className="text-purple-100">drivedojo@gmail.com</p>
                           <p className="text-purple-200 text-sm mt-1">
                             24/7 support for urgent inquiries
                           </p>
@@ -408,7 +526,9 @@ const Contact = () => {
                     >
                       <Button
                         className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 mt-2 relative z-10 border border-white/20"
-                        onClick={() => (window.location.href = "/booking")}
+                        onClick={() =>
+                          (window.location.href = "/booking?package=intensive")
+                        }
                       >
                         Request Fast-Track
                       </Button>
@@ -493,7 +613,9 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-blue-600 hover:bg-blue-700"
-                          onClick={() => (window.location.href = "/booking")}
+                          onClick={() =>
+                            (window.location.href = "/booking?package=starter")
+                          }
                         >
                           Book Now
                         </Button>
@@ -556,7 +678,9 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-                          onClick={() => (window.location.href = "/booking")}
+                          onClick={() =>
+                            (window.location.href = "/booking?package=popular")
+                          }
                         >
                           Book Now
                         </Button>
@@ -616,7 +740,10 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-green-600 hover:bg-green-700"
-                          onClick={() => (window.location.href = "/booking")}
+                          onClick={() =>
+                            (window.location.href =
+                              "/booking?package=intensive")
+                          }
                         >
                           Book Now
                         </Button>
@@ -737,24 +864,24 @@ const Contact = () => {
                       Service Areas
                     </h3>
                     <p className="text-purple-100 mb-4 relative z-10">
-                      We provide driving lessons throughout Greater London,
-                      including:
+                      We provide driving lessons throughout East London and
+                      Essex, specializing in these areas:
                     </p>
 
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       {[
-                        "East London",
-                        "North London",
-                        "West London",
-                        "South London",
-                        "Hackney",
-                        "Islington",
-                        "Camden",
-                        "Westminster",
-                        "Southwark",
-                        "Lambeth",
-                        "Tower Hamlets",
-                        "Newham",
+                        "Barking",
+                        "Canning Town",
+                        "Docklands",
+                        "East Ham",
+                        "Forest Gate",
+                        "Goodmayes",
+                        "Ilford",
+                        "Isle of Dogs",
+                        "Romford",
+                        "Walthamstow",
+                        "Stratford",
+                        "Leytonstone",
                       ].map((area, index) => (
                         <motion.div
                           key={index}
@@ -854,10 +981,10 @@ const Contact = () => {
                       <Button
                         className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 relative z-10 border border-white/20"
                         onClick={() =>
-                          (window.location.href = "tel:+442012345678")
+                          (window.location.href = "tel:+447487228866")
                         }
                       >
-                        Call +44 20 1234 5678
+                        Call +44 748 722 8866
                       </Button>
                     </motion.div>
                   </div>

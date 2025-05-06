@@ -7,6 +7,7 @@ import GetStartedSection from "../sections/GetStartedSection";
 import TestimonialsSection from "../sections/TestimonialsSection";
 import FAQSection from "../sections/FAQSection";
 import ServicesSection from "../sections/ServicesSection";
+import IntensiveCourseDetails from "../sections/IntensiveCourseDetails";
 import { Button } from "../ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -75,22 +76,19 @@ const DrivingGallery = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              image:
-                "/images/certifications/1729007102786.jpg",
+              image: "/images/certifications/1729007102786.jpg",
               title: "Modern Dual-Control Vehicles",
               description:
                 "Learn in our fleet of latest model cars with dual controls for safety",
             },
             {
-              image:
-                "/images/certifications/C8.png",
+              image: "/images/certifications/C8.png",
               title: "Digital Learning Tools",
               description:
                 "Access to digital resources and apps to enhance your learning",
             },
             {
-              image:
-                "/images/certifications/C2.png",
+              image: "/images/certifications/C2.png",
               title: "Practice Routes",
               description:
                 "Carefully designed routes to build your skills progressively",
@@ -844,6 +842,9 @@ const Services = () => {
 
               {/* Driving Gallery */}
               <DrivingGallery />
+
+              {/* Intensive Course Details */}
+              <IntensiveCourseDetails />
 
               {/* Services Section with Enhanced Content */}
               <ServicesOverview
@@ -1669,8 +1670,7 @@ const servicesData = [
     priceUnit: "/hour",
     shortDescription:
       "Perfect for first-time drivers with no previous experience",
-    image:
-      "/images/certifications/8.png",
+    image: "/images/certifications/8.png",
     icon: <Car className="h-5 w-5 text-blue-400" />,
     colorClass: "bg-blue-600/30 text-blue-400",
     buttonClass: "bg-blue-600 hover:bg-blue-700",
@@ -1769,8 +1769,7 @@ const servicesData = [
     priceUnit: "/10 hours",
     shortDescription:
       "Our most popular package with structured learning and progress tracking",
-    image:
-      "/images/certifications/C7.png",
+    image: "/images/certifications/C7.png",
     icon: <Award className="h-5 w-5 text-purple-400" />,
     colorClass: "bg-purple-600/30 text-purple-400",
     buttonClass:
@@ -1883,8 +1882,7 @@ const servicesData = [
     priceUnit: "/20 hours",
     shortDescription:
       "Fast-track your learning with our comprehensive intensive course",
-    image:
-      "/images/certifications/9.png",
+    image: "/images/certifications/9.png",
     icon: <Zap className="h-5 w-5 text-green-400" />,
     colorClass: "bg-green-600/30 text-green-400",
     buttonClass:
@@ -1997,8 +1995,7 @@ const servicesData = [
     priceUnit: "/course",
     shortDescription:
       "Build confidence and skills after passing your test with this government-recognized course",
-    image:
-      "/images/certifications/PassPlus.png",
+    image: "/images/certifications/PassPlus.png",
     icon: <Award className="h-5 w-5 text-yellow-400" />,
     colorClass: "bg-yellow-600/30 text-yellow-400",
     buttonClass:
