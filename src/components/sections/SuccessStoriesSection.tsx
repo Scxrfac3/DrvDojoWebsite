@@ -30,7 +30,12 @@ const SuccessStoriesSection = () => {
     },
     {
       image:
-        "/images/certifications/6.png",
+        "/images/certifications/11.jpeg",
+      background: "from-blue-400 to-purple-500",
+    },
+    {
+      image:
+        "/images/certifications/12.png",
       background: "from-pink-400 to-purple-500",
     },
     {
