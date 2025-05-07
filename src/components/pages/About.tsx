@@ -56,7 +56,7 @@ const About = () => {
       name: "Mamunur Siddique",
       role: "Founder & Head Instructor",
       image:
-        "/images/certifications/4.png",
+        "/images/certifications/c1.png",
       bio: "Autonomous Vehicle safety operator with 8+ years of experience as a driving instructor. Passionate about road safety and innovative teaching methods.",
       specialties: [
         "Defensive Driving",
@@ -67,10 +67,10 @@ const About = () => {
       passRate: 95,
     },
     {
-      name: "Sarah Johnson",
+      name: "Mamunur S.",
       role: "Senior Instructor",
       image:
-        "/images/certifications/c2.png",
+        "/images/certifications/4.png",
       bio: "Former racing driver with 6 years of teaching experience. Known for helping anxious drivers build confidence quickly.",
       specialties: ["Anxiety Management", "City Driving", "Parallel Parking"],
       students: 350,
@@ -80,7 +80,7 @@ const About = () => {
       name: "David Chen",
       role: "Instructor & Theory Specialist",
       image:
-        "/images/certifications/C3.png",
+        "/images/certifications/C6.png",
       bio: "Certified theory test expert with a background in traffic psychology. Makes complex concepts simple and memorable.",
       specialties: ["Theory Test Prep", "Hazard Perception", "Roundabouts"],
       students: 420,
@@ -111,7 +111,7 @@ const About = () => {
       passRate: 42,
       description: "Suburban location with complex roundabouts.",
       region: "east",
-      imageId: "/public/images/certifications/Horn.png",
+      imageId: "/images/certifications/Horn.png",
     },
     {
       name: "Loughton Test Centre",
@@ -178,12 +178,12 @@ const About = () => {
     {
       year: 2017,
       title: "Expansion",
-      description: "Grew to 3 instructors and introduced specialised courses",
+      description: "Grew to 5 instructors and introduced specialized courses",
     },
     {
       year: 2019,
       title: "Recognition",
-      description: "Named 'EAZY Driving School of the Year' by the Driving Instructors Association",
+      description: "Named 'Best Driving School in East London'",
     },
     {
       year: 2022,
@@ -216,7 +216,7 @@ const About = () => {
               className="w-full h-full object-cover"
               loop
               muted
-              poster="/images/certifications/BANNER_MAIN3276.png"
+              poster="/images/certifications/4.png"
             >
               <source
                 src="/images/certifications/BANNER_MAIN3276.png"

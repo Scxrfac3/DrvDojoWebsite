@@ -43,14 +43,14 @@ const Footer = ({
   logo = "/favicon.png",
   contactInfo = {
     email: "drivedojo@gmail.com",
-    phone: "+447 487 228 866",
+    phone: "+44 748 722 8866",
     address: "Goodmayes, Essex",
   },
   quickLinks = [
     { title: "About Us", href: "/about" },
     { title: "Contact", href: "/contact" },
-    { title: "Driving Insights", href: "/about" },
-    { title: "FAQ", href: "/" },
+    { title: "Blog", href: "/about" },
+    { title: "FAQ", href: "/about" },
     { title: "Terms & Conditions", href: "/" },
     { title: "Privacy Policy", href: "/" },
     { title: "Careers", href: "/" },

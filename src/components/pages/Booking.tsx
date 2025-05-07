@@ -28,6 +28,7 @@ import {
   PartyPopper,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import supabase from "@/lib/supabase";
 
 const Booking = () => {
   const [step, setStep] = useState(1);
@@ -168,15 +169,21 @@ const Booking = () => {
     },
   ];
 
-  const availableDates = [
-    "2023-10-15",
-    "2023-10-16",
-    "2023-10-17",
-    "2023-10-18",
-    "2023-10-19",
-    "2023-10-20",
-    "2023-10-21",
-  ];
+  // Generate dates for the next 7 days starting from today
+  const generateAvailableDates = () => {
+    const dates = [];
+    const today = new Date();
+
+    for (let i = 1; i <= 7; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + i);
+      dates.push(date.toISOString().split("T")[0]); // Format as YYYY-MM-DD
+    }
+
+    return dates;
+  };
+
+  const availableDates = generateAvailableDates();
 
   const availableTimes = [
     "09:00",

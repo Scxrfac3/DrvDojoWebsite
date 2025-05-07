@@ -95,7 +95,7 @@ const HeroSection = ({
     {
       name: "Alexei W.",
       image:
-        "/images/certifications/3.png",
+        "/images/certifications/1.png",
       achievement: "From Zero to Hero",
       quote:
         "I begin my driving lessons with no previous knowledge having zero hours of driving lessons or experience. Mamunur was also very flexible in the lesson times.",
@@ -105,7 +105,7 @@ const HeroSection = ({
       date: "1 week ago",
     },
     {
-      name: "Sarah K.",
+      name: "Amie L K.",
       image:
         "/images/certifications/5.png",
       achievement: "Highway Confidence",
@@ -117,12 +117,12 @@ const HeroSection = ({
       date: "5 days ago",
     },
     {
-      name: "Raj P.",
+      name: "Jaswinder P.",
       image:
-        "/images/certifications/7.png",
-      achievement: "International License Success",
+        "/images/certifications/2.png",
+      achievement: " License Success",
       quote:
-        "Converting my international license was so much easier with Drive Dojo's specialized course. They helped me adapt to UK roads and pass my test with flying colors!",
+        "Converting my license was so much easier with Drive Dojo's specialized course. They helped me adapt to UK roads and pass my test with flying colors!",
       emoji: "🌍",
       color: "from-purple-600/80 to-indigo-600/80",
       tag: "#InternationalDriver",

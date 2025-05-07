@@ -62,25 +62,137 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="px-4 py-2 text-sm font-medium text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
                 >
                   Home
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link
-                  to="/services"
-                  className="px-4 py-2 text-sm font-medium text-white hover:text-blue-300 transition-colors"
-                >
+                <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 text-white hover:text-blue-300 text-base font-semibold">
                   Services
-                </Link>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-slate-800/95 border border-slate-700 p-4 rounded-lg shadow-xl">
+                  <div className="grid grid-cols-2 gap-3 p-4 w-[500px]">
+                    <Link
+                      to="/services"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        All Services
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        View our complete range of driving lessons
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/goodmayes"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Goodmayes
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Goodmayes
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/barking"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Barking
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Barking
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/romford"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Romford
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Romford
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/isle-of-dogs"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Isle of Dogs
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Isle of Dogs
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/east-ham"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        East Ham
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in East Ham
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/forest-gate"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Forest Gate
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Forest Gate
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/canning-town"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Canning Town
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Canning Town
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/docklands"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Docklands
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Driving lessons in Docklands
+                      </div>
+                    </Link>
+                    <Link
+                      to="/dual-control-installation"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-800/30"
+                    >
+                      <div className="text-sm font-medium text-white flex items-center">
+                        <span className="text-yellow-400 mr-1">🔧</span> Dual
+                        Control Installation
+                      </div>
+                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                        Official He-Man partner for instructors
+                      </div>
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <Link
                   to="/about"
-                  className="px-4 py-2 text-sm font-medium text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
                 >
                   About
                 </Link>
@@ -89,14 +201,23 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="px-4 py-2 text-sm font-medium text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
                 >
                   Contact
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <span className="px-4 py-2 text-sm font-medium text-gray-400 flex items-center cursor-not-allowed">
+                <Link
+                  to="/blog"
+                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
+                >
+                  Blog
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <span className="px-4 py-2 text-base font-semibold text-gray-400 flex items-center cursor-not-allowed">
                   Student Portal
                   <span className="ml-2 text-xs bg-blue-500/30 px-1.5 py-0.5 rounded-full">
                     Coming Soon
@@ -160,7 +281,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <nav className="flex flex-col space-y-3 py-4">
                 <Link
                   to="/"
-                  className="px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-md"
+                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -168,7 +289,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
                 <Link
                   to="/services"
-                  className="px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-md"
+                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Services
@@ -176,7 +297,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
                 <Link
                   to="/about"
-                  className="px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-md"
+                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About
@@ -184,13 +305,21 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
                 <Link
                   to="/contact"
-                  className="px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-md"
+                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
                 </Link>
 
-                <span className="px-4 py-2 text-sm font-medium text-gray-400 flex items-center cursor-not-allowed">
+                <Link
+                  to="/blog"
+                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+
+                <span className="px-4 py-2 text-base font-semibold text-gray-400 flex items-center cursor-not-allowed">
                   Student Portal
                   <span className="ml-2 text-xs bg-blue-500/30 px-1.5 py-0.5 rounded-full">
                     Coming Soon

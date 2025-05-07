@@ -7,6 +7,7 @@ import GetStartedSection from "../sections/GetStartedSection";
 import TestimonialsSection from "../sections/TestimonialsSection";
 import FAQSection from "../sections/FAQSection";
 import ServicesSection from "../sections/ServicesSection";
+import IntensiveCourseDetails from "../sections/IntensiveCourseDetails";
 import { Button } from "../ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -75,22 +76,19 @@ const DrivingGallery = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              image:
-                "/images/certifications/c7.png",
+              image: "/images/certifications/1729007102786.jpg",
               title: "Modern Dual-Control Vehicles",
               description:
                 "Learn in our fleet of latest model cars with dual controls for safety",
             },
             {
-              image:
-                "/images/certifications/c3.png",
+              image: "/images/certifications/C8.png",
               title: "Digital Learning Tools",
               description:
                 "Access to digital resources and apps to enhance your learning",
             },
             {
-              image:
-                "/images/certifications/c8.png",
+              image: "/images/certifications/C2.png",
               title: "Practice Routes",
               description:
                 "Carefully designed routes to build your skills progressively",
@@ -220,7 +218,7 @@ const Services = () => {
                     transition={{ duration: 8, repeat: Infinity }}
                   >
                     <img
-                      src="/images/certifications/BANNER_MAIN3276.png"
+                      src="/images/certifications/C5.png"
                       alt="Modern driving lesson"
                       className="w-full h-full object-cover"
                     />
@@ -233,7 +231,7 @@ const Services = () => {
                     transition={{ duration: 8, repeat: Infinity, delay: 4 }}
                   >
                     <img
-                      src="/images/certifications/c3.png"
+                      src="/images/certifications/18.jpg"
                       alt="Urban driving"
                       className="w-full h-full object-cover"
                     />
@@ -407,7 +405,7 @@ const Services = () => {
                           transition={{ delay: 0.5 }}
                         >
                           <img
-                            src="/images/certifications/4.png"
+                            src="/images/certifications/DVSA.png"
                             alt="Driving instructor with student"
                             className="w-full h-full object-cover rounded-xl"
                           />
@@ -844,6 +842,9 @@ const Services = () => {
 
               {/* Driving Gallery */}
               <DrivingGallery />
+
+              {/* Intensive Course Details */}
+              <IntensiveCourseDetails />
 
               {/* Services Section with Enhanced Content */}
               <ServicesOverview
@@ -1669,8 +1670,7 @@ const servicesData = [
     priceUnit: "/hour",
     shortDescription:
       "Perfect for first-time drivers with no previous experience",
-    image:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    image: "/images/certifications/8.png",
     icon: <Car className="h-5 w-5 text-blue-400" />,
     colorClass: "bg-blue-600/30 text-blue-400",
     buttonClass: "bg-blue-600 hover:bg-blue-700",
@@ -1769,8 +1769,7 @@ const servicesData = [
     priceUnit: "/10 hours",
     shortDescription:
       "Our most popular package with structured learning and progress tracking",
-    image:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+    image: "/images/certifications/C7.png",
     icon: <Award className="h-5 w-5 text-purple-400" />,
     colorClass: "bg-purple-600/30 text-purple-400",
     buttonClass:
@@ -1883,8 +1882,7 @@ const servicesData = [
     priceUnit: "/20 hours",
     shortDescription:
       "Fast-track your learning with our comprehensive intensive course",
-    image:
-      "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&q=80",
+    image: "/images/certifications/9.png",
     icon: <Zap className="h-5 w-5 text-green-400" />,
     colorClass: "bg-green-600/30 text-green-400",
     buttonClass:
@@ -1968,7 +1966,7 @@ const servicesData = [
     ],
     reviews: [
       {
-        name: "Raj Patel",
+        name: "Jaswinder Patel",
         rating: 5,
         date: "1 month ago",
         comment:
@@ -1979,7 +1977,7 @@ const servicesData = [
         rating: 4,
         date: "2 months ago",
         comment:
-          "Great course that helped me pass after failing with another school. The intensive format worked well for me as I could fully focus on driving without forgetting things between lessons.",
+          "Great course that helped me pass after failing with another instructor. The intensive lessons worked well for me as I could fully focus on driving without forgetting things between lessons.",
       },
       {
         name: "Omar Hassan",
@@ -1997,8 +1995,7 @@ const servicesData = [
     priceUnit: "/course",
     shortDescription:
       "Build confidence and skills after passing your test with this government-recognized course",
-    image:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    image: "/images/certifications/PassPlus.png",
     icon: <Award className="h-5 w-5 text-yellow-400" />,
     colorClass: "bg-yellow-600/30 text-yellow-400",
     buttonClass:
