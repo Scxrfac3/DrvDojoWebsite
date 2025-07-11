@@ -428,6 +428,113 @@ const Contact = () => {
                           </Button>
                         </motion.div>
 
+                        {/* WhatsApp and Call Buttons */}
+                        <div className="mt-6 flex justify-center space-x-4">
+<a
+  href="https://wa.me/447487228866?text=Hey%20Drive%20Dojo!%20💫%20I'm%20ready%20to%20start%20my%20driving%20journey%20with%20you%20guys!%20🚗✨"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-gradient-to-r from-green-400 via-green-500 to-emerald-600 hover:from-green-500 hover:via-emerald-500 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center group overflow-hidden"
+  style={{
+    animation: "gentlePulse 3s ease-in-out infinite, floatUpDown 4s ease-in-out infinite",
+  }}
+>
+  {/* Background glow effect */}
+  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full opacity-50 blur-lg animate-pulse"></div>
+  
+  {/* Sparkle effects */}
+  <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-300 rounded-full animate-ping"></div>
+  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white rounded-full animate-bounce"></div>
+  
+  {/* Main content */}
+  <div className="relative flex items-center">
+    <div
+      className="mr-2 text-xl"
+    >
+      💬
+    </div>
+    
+    <span className="font-extrabold tracking-wide">Let's Chat!</span>
+    
+    <div
+      className="ml-2 text-lg"
+    >
+      ✨
+    </div>
+  </div>
+</a>
+                          <a
+                            href="tel:+447487228866"
+                            className="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-900 text-white font-bold py-3 px-6 rounded-full shadow-md hover:scale-105 transition-all duration-300 flex items-center"
+                            style={{ animation: "pulse 2s infinite" }}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="mr-2 animate-spin"
+                            >
+                              <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 0-8.63-3.07 19.5 19.5 0 0 0-6-6.08A1.82 1.82 0 0 1 3 9.08V6a2 2 0 0 1 1.4-2 4.01 4.01 0 0 1 .53-1.06 4 4 0 0 1 2.38-1.04 4.05 4.05 0 0 1 1.02.16 4 4 0 0 1 2.1 2.2" />
+                              <line x1="16" y1="2" x2="16" y2="8" />
+                              <line x1="23" y1="11" x2="17" y2="11" />
+                            </svg>
+                            Ring Us! 📞
+                          </a>
+                        </div>
+                        <style>
+                          {`
+                            @keyframes gentlePulse {
+                              0%, 100% {
+                                transform: scale(1);
+                                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+                              }
+                              50% {
+                                transform: scale(1.05);
+                                box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+                              }
+                            }
+                            @keyframes floatUpDown {
+                              0%, 100% {
+                                transform: translateY(0px);
+                              }
+                              50% {
+                                transform: translateY(-5px);
+                              }
+                            }
+                            @keyframes shine {
+                              0% {
+                                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+                              }
+                              50% {
+                                box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+                              }
+                              100% {
+                                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+                              }
+                            }
+                            @keyframes pulse {
+                              0% {
+                                transform: scale(1);
+                                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+                              }
+                              70% {
+                                transform: scale(1.1);
+                                box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+                              }
+                              100% {
+                                transform: scale(1);
+                                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+                              }
+                            }
+                          `}
+                        </style>
+
                         <div className="flex items-center justify-center space-x-2 mt-4">
                           <Lock className="h-4 w-4 text-green-400" />
                           <p className="text-green-300 text-sm font-medium">
@@ -613,9 +720,7 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-blue-600 hover:bg-blue-700"
-                          onClick={() =>
-                            (window.location.href = "/booking?package=starter")
-                          }
+                          onClick={() => {window.location.href = "/booking?package=starter"}}
                         >
                           Book Now
                         </Button>
@@ -678,9 +783,7 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-                          onClick={() =>
-                            (window.location.href = "/booking?package=popular")
-                          }
+                          onClick={() => {window.location.href = "/booking?package=popular"}}
                         >
                           Book Now
                         </Button>
@@ -740,10 +843,7 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-green-600 hover:bg-green-700"
-                          onClick={() =>
-                            (window.location.href =
-                              "/booking?package=intensive")
-                          }
+                          onClick={() => {window.location.href = "/booking?package=intensive"}}
                         >
                           Book Now
                         </Button>
@@ -792,10 +892,7 @@ const Contact = () => {
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="absolute inset-0"
+                        allowFullScreen
                       ></iframe>
                     </div>
 
@@ -817,7 +914,7 @@ const Contact = () => {
                             Main Office
                           </h3>
                           <p className="text-purple-100">
-                            123 Driving Street, London, UK
+                            10 James town way, E14 2DH, London
                           </p>
                           <p className="text-purple-200 text-sm mt-1">
                             Open Monday to Friday, 9am to 6pm

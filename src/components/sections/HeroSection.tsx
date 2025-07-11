@@ -31,8 +31,8 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-  title = "Start Your Driving Journey Today",
-  subtitle = "Learn to drive with confidence from DVSA-approved instructors. Flexible scheduling, competitive rates, and a high pass rate.",
+  title = "Master London's Roads. Drive with Confidence.",
+  subtitle = "Your Licence, Faster. Expert Lessons. Real Results.",
   ctaPrimaryText = "Book a Lesson",
   ctaSecondaryText = "Call Now",
   onBookLesson = () => (window.location.href = "/booking"),

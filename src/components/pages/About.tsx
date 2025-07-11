@@ -103,7 +103,7 @@ const About = () => {
       passRate: 35,
       description: "Features various road types and challenging roundabouts.",
       region: "east",
-      imageId: "/images/certifications/Wanstead.jpg",
+      imageId: "/images/certifications/Wanstead.png",
     },
     {
       name: "Hornchurch Test Centre",
@@ -1524,11 +1524,11 @@ const About = () => {
                   }}
                 >
                   <div className="h-48 relative overflow-hidden rounded-t-xl">
-                    <img
-                      src={`https://images.unsplash.com/photo-${center.imageId}?w=800&q=80`}
-                      alt={center.name}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                  <img
+                    src={center.imageId}
+                    alt={center.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                     <div className="absolute top-0 left-0 w-full h-full opacity-80 bg-gradient-to-br from-blue-900/90 via-purple-800/70 to-transparent"></div>
                     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                       <div className="text-center px-4">

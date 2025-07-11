@@ -25,13 +25,13 @@ const CertificationsBar = ({ className = "" }: CertificationsBarProps) => {
     },
     {
       name: "Drive Dojo",
-      logo: "/images/certifications/DDOJO.png",
-      color: "#F43F5E",
+     logo: "/images/certifications/DDojo.png",
+     color: "#F43F5E",
     },
     {
       name: "Pass Plus Certified",
-      logo: "/images/certifications/PassPLUS.png",
-      color: "#8B5CF6",
+     logo: "/images/certifications/PassPlus.png",
+     color: "#8B5CF6",
     },
     {
       name: "Driving License",

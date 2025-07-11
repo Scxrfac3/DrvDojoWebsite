@@ -218,8 +218,8 @@ const Services = () => {
                     transition={{ duration: 8, repeat: Infinity }}
                   >
                     <img
-                      src="/images/certifications/C5.png"
-                      alt="Modern driving lesson"
+                      src="/images/certifications/18.jpg"
+                      alt="Urban driving"
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
@@ -231,8 +231,8 @@ const Services = () => {
                     transition={{ duration: 8, repeat: Infinity, delay: 4 }}
                   >
                     <img
-                      src="/images/certifications/18.jpg"
-                      alt="Urban driving"
+                      src="/images/certifications/c5.png"
+                      alt="Modern driving lesson"
                       className="w-full h-full object-cover"
                     />
                   </motion.div>

@@ -91,7 +91,7 @@ const BarkingLessons = () => {
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/images/certifications/C5.png"
+                    src="/images/certifications/c5.png"
                     alt="Driving lessons in Barking"
                     className="w-full h-auto object-cover rounded-2xl"
                   />
@@ -138,7 +138,7 @@ const BarkingLessons = () => {
                   whileHover={{ scale: 1.1, rotate: -5 }}
                 >
                   <img
-                    src="/images/certifications/PassPLUS.png"
+                    src="/images/certifications/PassPlus.png"
                     alt="Pass Plus"
                     className="h-14 w-14 object-contain"
                   />

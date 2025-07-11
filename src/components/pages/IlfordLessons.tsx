@@ -138,7 +138,7 @@ const IlfordLessons = () => {
                   whileHover={{ scale: 1.1, rotate: -5 }}
                 >
                   <img
-                    src="/images/certifications/PassPLUS.png"
+                    src="/images/certifications/PassPlus.png"
                     alt="Pass Plus"
                     className="h-14 w-14 object-contain"
                   />

@@ -189,33 +189,45 @@ const FAQSection = ({
                   value={`item-${index}`}
                   className={"overflow-hidden"}
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-gray-50 text-base font-medium group transition-all">
-                    <div className="flex justify-between items-center w-full pr-4">
-                      <span>{faq.question}</span>
-                      <motion.div
-                        initial={{ rotate: 0 }}
-                        animate={{ rotate: 0 }}
-                        exit={{ rotate: 180 }}
-                        className="text-blue-500 flex-shrink-0 ml-2"
-                      >
-                        <ChevronDown className="h-5 w-5 group-data-[state=open]:hidden" />
-                        <ChevronUp className="h-5 w-5 hidden group-data-[state=open]:block" />
-                      </motion.div>
-                    </div>
-                  </AccordionTrigger>
+<AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-gray-50 text-base font-medium group transition-all">
+  <div className="flex justify-between items-center w-full pr-4">
+    <div>
+      <span>{faq.question}</span>
+      <p className="text-gray-500 text-sm mt-1">{faq.answer.split(".")[0]}.</p>
+    </div>
+    <motion.div
+      initial={{ rotate: 0 }}
+      animate={{ rotate: 0 }}
+      exit={{ rotate: 180 }}
+      transition={{ duration: 0.2 }}
+      className="text-blue-500 flex-shrink-0 ml-2 group-hover:rotate-180 group-data-[state=open]:rotate-180"
+    >
+      <ChevronDown className="h-5 w-5 group-data-[state=open]:hidden" />
+      <ChevronUp className="h-5 w-5 hidden group-data-[state=open]:block" />
+    </motion.div>
+  </div>
+</AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-gray-600 animate-in fade-in-50 duration-300">
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {faq.answer}
-                      {faq.category && (
-                        <span className="inline-block mt-2 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                          {faq.category}
-                        </span>
-                      )}
-                    </motion.div>
+{faq.answer}
+  {faq.category && (
+    <span className="inline-block mt-2 text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+      {faq.category}
+    </span>
+  )}
+  <div className="flex justify-end mt-4 space-x-4">
+    <Button variant="outline" size="sm">
+      Yes
+    </Button>
+    <Button variant="outline" size="sm">
+      No
+    </Button>
+  </div>
+</motion.div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
