@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
+import WhatsAppStickyButton from "./components/ui/WhatsAppStickyButton";
 import routes from "tempo-routes";
 // Use lazy loading for page components
 const Services = lazy(() => import("./components/pages/Services"));
@@ -32,6 +33,7 @@ const DocklandsLessons = lazy(
 const DualControlInstallation = lazy(
   () => import("./components/pages/DualControlInstallation"),
 );
+const Terms = lazy(() => import("./components/pages/Terms"));
 // import Portal from "./components/pages/Portal"; // Coming soon
 
 function App() {
@@ -81,6 +83,7 @@ function App() {
             path="/dual-control-installation"
             element={<DualControlInstallation />}
           />
+          <Route path="/terms" element={<Terms />} />
           <Route
             path="/blog/:slug"
             element={
@@ -97,6 +100,7 @@ function App() {
           />
           {import.meta.env.VITE_TEMPO && <Route path="/tempobook/*" />}
         </Routes>
+        <WhatsAppStickyButton />
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
       </>
     </Suspense>

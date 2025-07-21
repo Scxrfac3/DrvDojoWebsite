@@ -56,7 +56,7 @@ const About = () => {
       name: "Mamunur Siddique",
       role: "Founder & Head Instructor",
       image:
-        "/images/certifications/c1.png",
+        "/images/certifications/C1.png",
       bio: "Autonomous Vehicle safety operator with 8+ years of experience as a driving instructor. Passionate about road safety and innovative teaching methods.",
       specialties: [
         "Defensive Driving",
@@ -80,7 +80,7 @@ const About = () => {
       name: "David Chen",
       role: "Instructor & Theory Specialist",
       image:
-        "/images/certifications/C6.png",
+        "/images/certifications/c6.png",
       bio: "Certified theory test expert with a background in traffic psychology. Makes complex concepts simple and memorable.",
       specialties: ["Theory Test Prep", "Hazard Perception", "Roundabouts"],
       students: 420,
@@ -258,8 +258,7 @@ const About = () => {
                 </Button>
                 <Button
                   onClick={toggleVideo}
-                  variant="outline"
-                  className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 px-8 py-6 rounded-full text-lg flex items-center gap-2"
+                  className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white px-8 py-6 rounded-full text-lg flex items-center gap-2"
                 >
                   {isVideoPlaying ? (
                     <>
@@ -286,8 +285,8 @@ const About = () => {
                 <Button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  variant={activeTab === tab ? "default" : "outline"}
-                  className={`px-6 py-3 rounded-full ${activeTab === tab ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                  variant={activeTab === tab ? "default" : "default"}
+                  className={`px-6 py-3 rounded-full ${activeTab === tab ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
                 >
                   {tab === "story" && "Our Journey"}
                   {tab === "team" && "Meet The Team"}
@@ -537,8 +536,7 @@ const About = () => {
                       instructors to join Drive Dojo.
                     </p>
                     <Button
-                      variant="outline"
-                      className="border-slate-700 text-white hover:bg-slate-800"
+                      className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"
                     >
                       View Careers
                     </Button>
@@ -808,9 +806,9 @@ const About = () => {
                     <Button
                       onClick={() => setActiveServiceTab("new")}
                       variant={
-                        activeServiceTab === "new" ? "default" : "outline"
+                        activeServiceTab === "new" ? "default" : "default"
                       }
-                      className={`px-6 py-3 rounded-full ${activeServiceTab === "new" ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                      className={`px-6 py-3 rounded-full ${activeServiceTab === "new" ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
                     >
                       New Students
                     </Button>
@@ -819,9 +817,9 @@ const About = () => {
                       variant={
                         activeServiceTab === "specialized"
                           ? "default"
-                          : "outline"
+                          : "default"
                       }
-                      className={`px-6 py-3 rounded-full ${activeServiceTab === "specialized" ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                      className={`px-6 py-3 rounded-full ${activeServiceTab === "specialized" ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
                     >
                       Specialized Training
                     </Button>
@@ -895,12 +893,11 @@ const About = () => {
                                 </li>
                               </ul>
                               <Button
-                                variant="outline"
-                                className="w-full border-slate-700 text-white hover:bg-slate-800 mb-4"
+                                className="w-full bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white mb-4"
                               >
                                 See all features
                               </Button>
-                              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group">
+                              <Button className="w-full bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white group">
                                 <span>Book Now</span>
                                 <motion.span
                                   className="ml-2 inline-block"
@@ -925,11 +922,11 @@ const About = () => {
                                 "0 10px 30px -5px rgba(59, 130, 246, 0.3)",
                             }}
                           >
-                            <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                            <div className="absolute top-0 right-0 bg-gradient-to-r from-red-800 to-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                               Popular 🔥
                             </div>
-                            <div className="bg-gradient-to-br from-blue-600/30 to-purple-600/20 p-4 text-center">
-                              <div className="text-blue-400 font-medium mb-1">
+                            <div className="bg-gradient-to-br from-red-800/30 to-amber-500/20 p-4 text-center">
+                              <div className="text-amber-400 font-medium mb-1">
                                 Save £50
                               </div>
                               <h3 className="text-xl font-bold text-white mb-1">
@@ -969,12 +966,11 @@ const About = () => {
                                 </li>
                               </ul>
                               <Button
-                                variant="outline"
-                                className="w-full border-slate-700 text-white hover:bg-slate-800 mb-4"
+                                className="w-full bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white mb-4"
                               >
                                 See all features
                               </Button>
-                              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group">
+                              <Button className="w-full bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white group">
                                 <span>Book Now</span>
                                 <motion.span
                                   className="ml-2 inline-block"
@@ -998,8 +994,8 @@ const About = () => {
                               boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
                             }}
                           >
-                            <div className="bg-gradient-to-br from-purple-600/20 to-purple-600/10 p-4 text-center">
-                              <div className="text-purple-400 font-medium mb-1">
+                            <div className="bg-gradient-to-br from-red-800/20 to-amber-500/10 p-4 text-center">
+                              <div className="text-amber-400 font-medium mb-1">
                                 Best Value 💯
                               </div>
                               <h3 className="text-xl font-bold text-white mb-1">
@@ -1036,12 +1032,11 @@ const About = () => {
                                 </li>
                               </ul>
                               <Button
-                                variant="outline"
-                                className="w-full border-slate-700 text-white hover:bg-slate-800 mb-4"
+                                className="w-full bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white mb-4"
                               >
                                 See all features
                               </Button>
-                              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group">
+                              <Button className="w-full bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white group">
                                 <span>Book Now</span>
                                 <motion.span
                                   className="ml-2 inline-block"
@@ -1117,7 +1112,7 @@ const About = () => {
                                 <div className="text-white font-medium">
                                   From £55 per hour
                                 </div>
-                                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                                <Button className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white">
                                   Book Now
                                 </Button>
                               </div>
@@ -1161,7 +1156,7 @@ const About = () => {
                                 </li>
                               </ul>
                               <div className="flex justify-end">
-                                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                                <Button className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white">
                                   Book Now
                                 </Button>
                               </div>
@@ -1208,7 +1203,7 @@ const About = () => {
                                 <div className="text-white font-medium">
                                   £70 per 2-hour session
                                 </div>
-                                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                                <Button className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white">
                                   Book Now
                                 </Button>
                               </div>
@@ -1261,7 +1256,7 @@ const About = () => {
                                 package
                               </div>
                               <div className="flex justify-end">
-                                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                                <Button className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white">
                                   Book Now
                                 </Button>
                               </div>
@@ -1408,7 +1403,7 @@ const About = () => {
                   </motion.div>
                 );
               })}
-            </div>
+            </div >
 
             <AnimatePresence>
               {showMoreStats && (
@@ -1455,8 +1450,7 @@ const About = () => {
 
             <div className="text-center mt-6">
               <Button
-                variant="outline"
-                className="border-slate-700 text-white hover:bg-slate-800"
+                className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"
                 onClick={() => setShowMoreStats(!showMoreStats)}
               >
                 {showMoreStats ? "Show Less" : "Show More Stats"}
@@ -1482,29 +1476,29 @@ const About = () => {
             <div className="flex flex-wrap justify-center mb-8 gap-2">
               <Button
                 onClick={() => setActiveTestCenter("all")}
-                variant={activeTestCenter === "all" ? "default" : "outline"}
-                className={`${activeTestCenter === "all" ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                variant={activeTestCenter === "all" ? "default" : "default"}
+                className={`${activeTestCenter === "all" ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
               >
                 All Centres
               </Button>
               <Button
                 onClick={() => setActiveTestCenter("highest")}
-                variant={activeTestCenter === "highest" ? "default" : "outline"}
-                className={`${activeTestCenter === "highest" ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                variant={activeTestCenter === "highest" ? "default" : "default"}
+                className={`${activeTestCenter === "highest" ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
               >
                 Highest Pass Rate
               </Button>
               <Button
                 onClick={() => setActiveTestCenter("east")}
-                variant={activeTestCenter === "east" ? "default" : "outline"}
-                className={`${activeTestCenter === "east" ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                variant={activeTestCenter === "east" ? "default" : "default"}
+                className={`${activeTestCenter === "east" ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
               >
                 East London
               </Button>
               <Button
                 onClick={() => setActiveTestCenter("essex")}
-                variant={activeTestCenter === "essex" ? "default" : "outline"}
-                className={`${activeTestCenter === "essex" ? "bg-blue-600 text-white" : "border-slate-700 text-white hover:bg-slate-800"}`}
+                variant={activeTestCenter === "essex" ? "default" : "default"}
+                className={`${activeTestCenter === "essex" ? "bg-blue-600 text-white" : "bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white"}`}
               >
                 Essex
               </Button>
@@ -1555,9 +1549,8 @@ const About = () => {
                     <p className="text-slate-300 mb-3">{center.description}</p>
                     <div className="mt-2">
                       <Button
-                        variant="outline"
                         size="sm"
-                        className="text-blue-300 border-blue-500/30 hover:bg-blue-500/20 w-full"
+                        className="bg-gradient-to-r from-red-800 to-amber-500 hover:from-red-900 hover:to-amber-600 text-white w-full"
                       >
                         <MapPin className="h-4 w-4 mr-2" /> View on Map
                       </Button>
