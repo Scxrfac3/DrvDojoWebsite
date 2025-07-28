@@ -605,7 +605,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-blue-600 hover:bg-blue-700 group relative overflow-hidden"
-                            onClick={triggerConfetti}
+                            onClick={() => window.location.href = "/booking"}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -674,7 +674,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
-                            onClick={triggerConfetti}
+                            onClick={() => window.location.href = "/booking"}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -737,7 +737,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 group relative overflow-hidden"
-                            onClick={triggerConfetti}
+                            onClick={() => window.location.href = "/booking"}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />

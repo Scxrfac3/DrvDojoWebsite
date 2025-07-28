@@ -4,7 +4,6 @@ import {
   ArrowRight,
   Calendar,
   Phone,
-  ChevronRight,
   Star,
   CheckCircle,
   Users,
@@ -18,7 +17,6 @@ import {
   Flame,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import GradientBackground from "../ui/gradient-background";
 import confetti from "canvas-confetti";
 
 interface HeroSectionProps {
@@ -70,40 +68,35 @@ const HeroSection = ({
   const successStories = [
     {
       name: "Amie L K.",
-      image:
-        "/images/certifications/5.png",
+      image: "/images/certifications/5.png",
       achievement: "Passed First Time!",
       emoji: "🚗",
       date: "2 weeks ago",
     },
     {
       name: "Alina S.",
-      image:
-        "/images/certifications/4.png",
+      image: "/images/certifications/4.png",
       achievement: "Effective Teaching Methods",
       emoji: "💪",
       date: "3 days ago",
     },
     {
       name: "Alexei W.",
-      image:
-        "/images/certifications/13.png",
+      image: "/images/certifications/13.png",
       achievement: "Passed with Zero Faults",
       emoji: "🏆",
       date: "1 week ago",
     },
     {
       name: "Hazel C",
-      image:
-        "/images/certifications/11.png",
+      image: "/images/certifications/11.png",
       achievement: "Mock test success",
       emoji: "🛣️",
       date: "5 days ago",
     },
     {
       name: "James T",
-      image:
-        "/images/certifications/9.png",
+      image: "/images/certifications/9.png",
       achievement: " License Success",
       emoji: "🌍",
       date: "1 month ago",
@@ -112,8 +105,24 @@ const HeroSection = ({
 
   return (
     <section className="relative w-full overflow-hidden py-0 -mt-1">
-      <GradientBackground>
-        <div className="container mx-auto px-4 py-16 md:py-20 h-full">
+      <div className="relative w-full h-full overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/certifications/HERO1.jpg')",
+          }}
+        />
+        
+        {/* Gradient Overlay with reduced opacity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-indigo-900/40" />
+        
+        {/* Animated gradient orbs with reduced opacity */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+        <div className="relative z-10 container mx-auto px-4 py-16 md:py-20 h-full">
           {/* Top Section with Logo and Location */}
           <div className="flex flex-wrap justify-between items-center mb-8">
             <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-0">
@@ -127,7 +136,7 @@ const HeroSection = ({
               </motion.div>
 
               <motion.div
-                className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full"
+                className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -226,7 +235,7 @@ const HeroSection = ({
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
+                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "rgba(255,255,255,0.2)",
@@ -239,7 +248,7 @@ const HeroSection = ({
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
+                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "rgba(255,255,255,0.2)",
@@ -252,7 +261,7 @@ const HeroSection = ({
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
+                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "rgba(255,255,255,0.2)",
@@ -265,7 +274,7 @@ const HeroSection = ({
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full"
+                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
                   whileHover={{
                     scale: 1.05,
                     backgroundColor: "rgba(255,255,255,0.2)",
@@ -443,33 +452,6 @@ const HeroSection = ({
               </div>
             </div>
           </div>
-        </div>
-      </GradientBackground>
-
-      {/* Special Offer Banner */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-red-600 to-pink-600 py-2 px-4 text-white text-center z-20">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <motion.p
-            className="font-medium flex items-center justify-center gap-2"
-            animate={{
-              scale: [1, 1.03, 1],
-            }}
-            transition={{ repeat: Infinity, duration: 2 }}
-          >
-            <Flame className="h-5 w-5 text-yellow-300" />
-            Special Offer: Save £50 on 10-hour packages! Limited time only.
-          </motion.p>
-
-          <Button
-            size="sm"
-            className="bg-white text-red-600 hover:bg-gray-100 mt-2 sm:mt-0 font-bold shadow-md"
-            onClick={() => {
-              triggerConfetti();
-              window.location.href = "/booking";
-            }}
-          >
-            Book Now
-          </Button>
         </div>
       </div>
     </section>
