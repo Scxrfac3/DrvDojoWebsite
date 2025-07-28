@@ -332,18 +332,10 @@ const WhyChooseUsSection = () => {
               </motion.div>
             </div>
             <div className="md:w-3/4 md:pl-8">
-              <p className="text-xl italic mb-4">
-                "At Drive Dojo, we don't just teach driving - we build
-                confident, safe drivers for life. Our London-focused approach
-                means you'll learn on the actual roads where you'll be driving
-                and taking your test."
+              <p className="text-xl mb-4">
+                We're committed to providing the highest quality driving education
+                in London with a focus on safety, confidence, and success.
               </p>
-              <div>
-                <p className="font-bold">Sarah Johnson</p>
-                <p className="text-pink-300">
-                  Head Instructor, Drive Dojo London
-                </p>
-              </div>
             </div>
           </div>
         </motion.div>

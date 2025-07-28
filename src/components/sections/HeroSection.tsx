@@ -42,11 +42,11 @@ const HeroSection = ({
   const [activeSuccessStory, setActiveSuccessStory] = useState(0);
   const [showEmoji, setShowEmoji] = useState(false);
 
-  // Auto-rotate success stories every 5 seconds
+  // Auto-rotate success stories every 8 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSuccessStory((prev) => (prev + 1) % successStories.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
@@ -69,15 +69,11 @@ const HeroSection = ({
 
   const successStories = [
     {
-      name: "Alex, 19",
+      name: "Amie L K.",
       image:
-        "/images/certifications/1.png",
+        "/images/certifications/5.png",
       achievement: "Passed First Time!",
-      quote:
-        "After just 20 hours with Drive Dojo, I passed with only 2 minor faults!",
       emoji: "🚗",
-      color: "from-blue-600/80 to-purple-600/80",
-      tag: "#FirstTimePasser",
       date: "2 weeks ago",
     },
     {
@@ -85,47 +81,31 @@ const HeroSection = ({
       image:
         "/images/certifications/4.png",
       achievement: "Effective Teaching Methods",
-      quote:
-        "Instructor's teaching methods were very effective. He broke down complex maneuvers into simple, manageable steps, allowing me to grasp each concept at my own pace.",
       emoji: "💪",
-      color: "from-pink-600/80 to-purple-600/80",
-      tag: "#PassedWithConfidence",
       date: "3 days ago",
     },
     {
       name: "Alexei W.",
       image:
-        "/images/certifications/1.png",
-      achievement: "From Zero to Hero",
-      quote:
-        "I begin my driving lessons with no previous knowledge having zero hours of driving lessons or experience. Mamunur was also very flexible in the lesson times.",
+        "/images/certifications/13.png",
+      achievement: "Passed with Zero Faults",
       emoji: "🏆",
-      color: "from-amber-600/80 to-red-600/80",
-      tag: "#PassedFirst",
       date: "1 week ago",
     },
     {
-      name: "Amie L K.",
+      name: "Hazel C",
       image:
-        "/images/certifications/5.png",
-      achievement: "Highway Confidence",
-      quote:
-        "The motorway confidence course was fantastic! I used to avoid highways completely, but now I feel completely at ease merging and changing lanes even in heavy traffic.",
+        "/images/certifications/11.png",
+      achievement: "Mock test success",
       emoji: "🛣️",
-      color: "from-green-600/80 to-blue-600/80",
-      tag: "#RoadConfident",
       date: "5 days ago",
     },
     {
-      name: "Jaswinder P.",
+      name: "James T",
       image:
-        "/images/certifications/2.png",
+        "/images/certifications/9.png",
       achievement: " License Success",
-      quote:
-        "Converting my license was so much easier with Drive Dojo's specialized course. They helped me adapt to UK roads and pass my test with flying colors!",
       emoji: "🌍",
-      color: "from-purple-600/80 to-indigo-600/80",
-      tag: "#InternationalDriver",
       date: "1 month ago",
     },
   ];
@@ -314,7 +294,7 @@ const HeroSection = ({
                 <span className="text-sm font-bold">#SuccessStories</span>
               </motion.div>
 
-              <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative h-[400px] rounded-xl shadow-2xl">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeSuccessStory}
@@ -324,34 +304,21 @@ const HeroSection = ({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    {/* Background Image */}
+                    {/* Background Image - Full fit without cropping */}
                     <img
                       src={successStories[activeSuccessStory].image}
                       alt={successStories[activeSuccessStory].name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain rounded-xl"
                     />
 
-                    {/* Gradient Overlay */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${successStories[activeSuccessStory].color}`}
-                    ></div>
+                    {/* Glass gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-xl"></div>
 
                     {/* Content */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                      <div className="flex justify-between items-start">
+                      <div className="flex justify-end items-start">
                         <motion.div
-                          className="bg-black/30 backdrop-blur-sm text-white px-3 py-1.5 rounded-full flex items-center gap-1"
-                          initial={{ x: -50, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ delay: 0.3 }}
-                        >
-                          <span className="text-sm">
-                            {successStories[activeSuccessStory].tag}
-                          </span>
-                        </motion.div>
-
-                        <motion.div
-                          className="text-xs text-white/80 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full"
+                          className="text-xs text-white/90 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20"
                           initial={{ x: 50, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: 0.3 }}
@@ -359,7 +326,6 @@ const HeroSection = ({
                           {successStories[activeSuccessStory].date}
                         </motion.div>
                       </div>
-
                       <div>
                         <motion.div
                           className="flex items-center gap-3 mb-3"
@@ -368,7 +334,7 @@ const HeroSection = ({
                           transition={{ delay: 0.4 }}
                         >
                           <motion.div
-                            className="bg-white/20 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center text-2xl"
+                            className="bg-white/20 backdrop-blur-md w-12 h-12 rounded-full flex items-center justify-center text-2xl border border-white/20"
                             animate={{
                               rotate: [0, 10, -10, 0],
                               scale: [1, 1.1, 1],
@@ -396,13 +362,13 @@ const HeroSection = ({
                         </motion.div>
 
                         <motion.div
-                          className="bg-black/30 backdrop-blur-sm p-4 rounded-lg mb-4"
+                          className="bg-white/10 backdrop-blur-md p-4 rounded-lg mb-4 border border-white/20"
                           initial={{ y: 20, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
                           transition={{ delay: 0.5 }}
                         >
-                          <p className="text-white text-lg italic">
-                            "{successStories[activeSuccessStory].quote}"
+                          <p className="text-white text-lg">
+                            {successStories[activeSuccessStory].achievement}
                           </p>
                         </motion.div>
 
@@ -414,7 +380,7 @@ const HeroSection = ({
                         >
                           <div className="flex space-x-2">
                             <motion.button
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full"
+                              className="bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/20"
                               whileHover={{
                                 scale: 1.1,
                                 backgroundColor: "rgba(255,255,255,0.3)",
@@ -425,7 +391,7 @@ const HeroSection = ({
                             </motion.button>
 
                             <motion.button
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full"
+                              className="bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/20"
                               whileHover={{
                                 scale: 1.1,
                                 backgroundColor: "rgba(255,255,255,0.3)",
@@ -436,7 +402,7 @@ const HeroSection = ({
                             </motion.button>
 
                             <motion.button
-                              className="bg-white/20 backdrop-blur-sm p-2 rounded-full"
+                              className="bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/20"
                               whileHover={{
                                 scale: 1.1,
                                 backgroundColor: "rgba(255,255,255,0.3)",
@@ -448,7 +414,7 @@ const HeroSection = ({
                           </div>
 
                           <motion.button
-                            className="bg-white text-blue-600 hover:bg-white/90 px-4 py-2 rounded-full font-medium text-sm flex items-center gap-1 shadow-lg"
+                            className="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full font-medium text-sm border border-white/20 hover:bg-white/30"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={onBookLesson}

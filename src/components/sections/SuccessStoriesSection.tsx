@@ -12,7 +12,6 @@ import confetti from "canvas-confetti";
 
 interface TestimonialCard {
   image: string;
-  background: string;
 }
 
 const SuccessStoriesSection = () => {
@@ -24,61 +23,37 @@ const SuccessStoriesSection = () => {
 
   const testimonialCards: TestimonialCard[] = [
     {
-      image:
-        "/images/certifications/13.png",
-      background: "from-blue-400 to-purple-500",
+      image: "/images/certifications/13.png",
     },
     {
-      image:
-        "/images/certifications/12.png",
-      background: "from-pink-400 to-purple-500",
+      image: "/images/certifications/12.png",
     },
     {
-      image:
-        "/images/certifications/11.png",
-      background: "from-green-400 to-teal-500",
+      image: "/images/certifications/11.png",
     },
     {
-      image:
-        "/images/certifications/4.png",
-      background: "from-orange-400 to-red-500",
+      image: "/images/certifications/4.png",
     },
     {
-      image:
-        "/images/certifications/3.png",
-      background: "from-indigo-400 to-blue-500",
+      image: "/images/certifications/3.png",
     },
     {
-      image:
-        "/images/certifications/5.png",
-      background: "from-purple-400 to-indigo-500",
+      image: "/images/certifications/5.png",
     },
     {
-      image:
-        "/images/certifications/6.png",
-      background: "from-yellow-400 to-orange-500",
-    },
-
-    {
-      image:
-        "/images/certifications/7.png",
-      background: "from-yellow-400 to-orange-500",
+      image: "/images/certifications/6.png",
     },
     {
-      image:
-        "/images/certifications/8.png",
-      background: "from-yellow-400 to-orange-500",
+      image: "/images/certifications/7.png",
     },
     {
-      image:
-        "/images/certifications/9.png",
-      background: "from-yellow-400 to-orange-500",
+      image: "/images/certifications/8.png",
     },
-
     {
-      image:
-        "/images/certifications/10.png",
-      background: "from-purple-400 to-orange-500",
+      image: "/images/certifications/9.png",
+    },
+    {
+      image: "/images/certifications/10.png",
     },
   ];
 
@@ -234,16 +209,15 @@ const SuccessStoriesSection = () => {
                 className="rounded-xl overflow-hidden"
               >
                 <div className="h-96 relative">
-                  {/* Testimonial card image with gradient overlay */}
+                  {/* Testimonial card image with glass gradient overlay */}
                   <div className="absolute inset-0 z-0">
                     <img
                       src={testimonialCards[activeIndex].image}
                       alt="Testimonial"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain rounded-xl"
                     />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${testimonialCards[activeIndex].background} opacity-50`}
-                    ></div>
+                    {/* Glass gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-xl"></div>
                   </div>
                 </div>
               </motion.div>
