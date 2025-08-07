@@ -42,8 +42,8 @@ const Home = () => {
           <HeroSection />
           <CertificationsBar />
           <ServicesSection />
-          <WhyChooseUsSection />
           <SuccessStoriesSection />
+          <WhyChooseUsSection />
           <TestimonialsSection />
 
           {/* Free Theory Test Section */}

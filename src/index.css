@@ -243,4 +243,48 @@
   .animate-blob {
     animation: blob 7s infinite;
   }
+
+  /* CSS 3D Car Animation */
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .transform {
+    transform: translateZ(0);
+  }
+
+  .rotate-x-15 {
+    transform: rotateX(15deg);
+  }
+
+  .animate-spin-slow {
+    animation: spin3d 8s linear infinite;
+  }
+
+  @keyframes spin3d {
+    0% {
+      transform: rotateX(15deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(15deg) rotateY(360deg);
+    }
+  }
+
+  /* Enhanced 3D transforms for better visual effect */
+  .car-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .car-body {
+    transform: translateZ(10px);
+  }
+
+  .car-roof {
+    transform: translateZ(20px);
+  }
+
+  .wheel {
+    transform: translateZ(-5px);
+  }
 }

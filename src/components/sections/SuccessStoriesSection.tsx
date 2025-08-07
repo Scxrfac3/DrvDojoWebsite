@@ -23,19 +23,16 @@ const SuccessStoriesSection = () => {
 
   const testimonialCards: TestimonialCard[] = [
     {
-      image: "/images/certifications/13.png",
+      image: "/images/certifications/1.png",
     },
     {
-      image: "/images/certifications/12.png",
-    },
-    {
-      image: "/images/certifications/11.png",
-    },
-    {
-      image: "/images/certifications/4.png",
+      image: "/images/certifications/2.png",
     },
     {
       image: "/images/certifications/3.png",
+    },
+    {
+      image: "/images/certifications/4.png",
     },
     {
       image: "/images/certifications/5.png",
@@ -54,6 +51,15 @@ const SuccessStoriesSection = () => {
     },
     {
       image: "/images/certifications/10.png",
+    },
+    {
+      image: "/images/certifications/11.png",
+    },
+    {
+      image: "/images/certifications/12.png",
+    },
+    {
+      image: "/images/certifications/13.png",
     },
   ];
 
