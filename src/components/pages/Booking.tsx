@@ -198,7 +198,7 @@ const Booking = () => {
   ];
 
   const formatDate = (dateString) => {
-    const options = { weekday: "long", month: "long", day: "numeric" };
+    const options = { weekday: "long", month: "long", day: "numeric" } as const;
     return new Date(dateString).toLocaleDateString("en-GB", options);
   };
 

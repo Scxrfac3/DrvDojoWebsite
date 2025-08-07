@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Award,
   Clock,
@@ -6,11 +5,44 @@ import {
   Users,
   Flame,
   Zap,
-  Tool,
+  Wrench,
 } from "lucide-react";
 
+// Define the type for service data
+export interface ServiceData {
+  id: string;
+  title: string;
+  price: string;
+  priceUnit: string;
+  shortDescription: string;
+  image: string;
+  icon: React.ComponentType<{ className?: string }>;
+  colorClass: string;
+  buttonClass: string;
+  category: string;
+  duration: string;
+  students: number;
+  rating: number;
+  features: string[];
+  description: string[];
+  outcomes: string[];
+  audience: string[];
+  curriculum: {
+    title: string;
+    duration: string;
+    lessons: number;
+    topics: string[];
+  }[];
+  reviews: {
+    name: string;
+    rating: number;
+    date: string;
+    comment: string;
+  }[];
+}
+
 // Services Data
-export const servicesData = [
+export const servicesData: ServiceData[] = [
   {
     id: "beginner",
     title: "Beginner Course",
@@ -19,7 +51,7 @@ export const servicesData = [
     shortDescription:
       "Perfect for first-time drivers with no previous experience",
     image: "/images/certifications/8.png",
-    icon: <Car className="h-5 w-5 text-blue-400" />,
+    icon: Car,
     colorClass: "bg-blue-600/30 text-blue-400",
     buttonClass: "bg-blue-600 hover:bg-blue-700",
     category: "beginner",
@@ -118,7 +150,7 @@ export const servicesData = [
     shortDescription:
       "Our most popular package with structured learning and progress tracking",
     image: "/images/certifications/C7.png",
-    icon: <Award className="h-5 w-5 text-purple-400" />,
+    icon: Award,
     colorClass: "bg-purple-600/30 text-purple-400",
     buttonClass:
       "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700",
@@ -231,7 +263,7 @@ export const servicesData = [
     shortDescription:
       "Fast-track your learning with our comprehensive intensive course",
     image: "/images/certifications/9.png",
-    icon: <Zap className="h-5 w-5 text-green-400" />,
+    icon: Zap,
     colorClass: "bg-green-600/30 text-green-400",
     buttonClass:
       "bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700",
@@ -344,7 +376,7 @@ export const servicesData = [
     shortDescription:
       "Build confidence and skills after passing your test with this government-recognized course",
     image: "/images/certifications/PassPlus.png",
-    icon: <Award className="h-5 w-5 text-yellow-400" />,
+    icon: Award,
     colorClass: "bg-yellow-600/30 text-yellow-400",
     buttonClass:
       "bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700",
@@ -479,7 +511,7 @@ export const servicesData = [
     shortDescription:
       "Professional He-Man dual control systems installed by certified technicians",
     image: "https://images.unsplash.com/photo-1581093458791-9d09a5c0d6e5?w=800&q=80",
-    icon: <Tool className="h-5 w-5 text-blue-400" />,
+    icon: Wrench,
     colorClass: "bg-blue-600/30 text-blue-400",
     buttonClass:
       "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700",
@@ -555,14 +587,14 @@ export const servicesData = [
         rating: 5,
         date: "2 weeks ago",
         comment:
-          "Excellent service from start to finish. The technician was professional and completed the installation quickly. The dual controls work perfectly and the quality is outstanding. Highly recommend!"
+          "Excellent service from start to finish. The technician was professional and completed the installation quickly. The dual controls work perfectly and the quality is outstanding. Highly recommend!",
       },
       {
         name: "Sarah Ahmed",
         rating: 5,
         date: "1 month ago",
         comment:
-          "As a new instructor, I was worried about getting the right setup. The team was incredibly helpful, explaining everything and completing the installation the same day I called. Great service!"
+          "As a new instructor, I was worried about getting the right setup. The team was incredibly helpful, explaining everything and completing the installation the same day I called. Great service!",
       },
       {
         name: "Michael Chen",

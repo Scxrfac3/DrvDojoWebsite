@@ -15,7 +15,6 @@
     "jsx": "react-jsx",
 
     "strict": false,
-    "suppressImplicitAnyIndexErrors": true,
     "paths": {
       "@/*": ["./src/*"]
     }
