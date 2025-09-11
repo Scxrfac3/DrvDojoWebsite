@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
 
     // SuperSaaS API configuration
     const apiKey = process.env.SUPERSAAS_API_KEY;
-    const accountId = 'drivedojodrivingschool'; // This should be your SuperSaaS account name
+    const accountId = 'drivedojodrivingschool'; // Your SuperSaaS account name
     const scheduleId = '1'; // This should be your schedule ID for driving lessons
     
     // Format the date and time for SuperSaaS
