@@ -45,6 +45,8 @@ const Booking = () => {
     specialRequests: "",
     promoCode: "",
     agreeToTerms: false,
+    selectedDate: "",
+    selectedTime: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
@@ -206,16 +208,92 @@ const Booking = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const createSuperSaaSBooking = async () => {
+    try {
+      const apiUrl = '/api/create-supersaas-booking';
+      const netlifyFunctionUrl = '/.netlify/functions/create-supersaas-booking';
+      
+      let response;
+      
+      try {
+        // Try the API path first
+        response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            customerName: `${formData.firstName} ${formData.lastName}`,
+            customerEmail: formData.email,
+            customerPhone: formData.phone,
+            selectedDate: formData.selectedDate,
+            selectedTime: formData.selectedTime,
+            packageType: selectedPackage,
+            address: formData.address,
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}`);
+        }
+        
+        return await response.json();
+        
+      } catch (error) {
+        console.log('API path failed, trying direct Netlify function path:', error.message);
+        
+        // If the API path fails, try the direct Netlify function path
+        response = await fetch(netlifyFunctionUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            customerName: `${formData.firstName} ${formData.lastName}`,
+            customerEmail: formData.email,
+            customerPhone: formData.phone,
+            selectedDate: formData.selectedDate,
+            selectedTime: formData.selectedTime,
+            packageType: selectedPackage,
+            address: formData.address,
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Netlify function request failed with status ${response.status}`);
+        }
+        
+        return await response.json();
+      }
+    } catch (error) {
+      console.error('Error creating SuperSaaS booking:', error);
+      throw error;
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Create the SuperSaaS booking
+      const bookingResult = await createSuperSaaSBooking();
+      
+      if (bookingResult.success) {
+        // Show success message
+        setIsSubmitting(false);
+        setIsComplete(true);
+        setStep(2);
+      } else {
+        // Show error message
+        alert(`Booking failed: ${bookingResult.message || 'Unknown error'}`);
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert(`Unable to create booking: ${error.message || 'Please try again later.'}`);
       setIsSubmitting(false);
-      setIsComplete(true);
-      setStep(2);
-    }, 1500);
+    }
   };
 
   const packages = [
@@ -590,6 +668,46 @@ const Booking = () => {
                     placeholder="Any specific requirements or questions..."
                     className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500 min-h-[100px]"
                   />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="selectedDate" className="text-white">
+                      Preferred Date
+                    </Label>
+                    <Input
+                      id="selectedDate"
+                      name="selectedDate"
+                      type="date"
+                      value={formData.selectedDate}
+                      onChange={handleInputChange}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="bg-slate-700/70 border-slate-600 text-white placeholder:text-slate-400 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="selectedTime" className="text-white">
+                      Preferred Time (2-hour slots)
+                    </Label>
+                    <select
+                      id="selectedTime"
+                      name="selectedTime"
+                      value={formData.selectedTime}
+                      onChange={handleInputChange}
+                      className="w-full bg-slate-700/70 border-slate-600 text-white rounded-md px-3 py-2 focus:border-blue-500 focus:outline-none"
+                      required
+                    >
+                      <option value="">Select a time slot</option>
+                      <option value="08:00">08:00 - 10:00</option>
+                      <option value="10:00">10:00 - 12:00</option>
+                      <option value="12:00">12:00 - 14:00</option>
+                      <option value="14:00">14:00 - 16:00</option>
+                      <option value="16:00">16:00 - 18:00</option>
+                      <option value="18:00">18:00 - 20:00</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="space-y-2">

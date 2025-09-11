@@ -30,6 +30,12 @@
   status = 200
   force = true
 
+[[redirects]]
+  from = "/api/create-supersaas-booking"
+  to = "/.netlify/functions/create-supersaas-booking"
+  status = 200
+  force = true
+
 # Headers for better security and performance
 [[headers]]
   for = "/*"
