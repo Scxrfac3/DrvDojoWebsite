@@ -103,7 +103,10 @@ const Booking = () => {
         const netlifyFunctionUrl = '/.netlify/functions/create-checkout-session';
         
         let response;
+        let session;
+        
         try {
+          // Try the API path first
           response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -115,23 +118,51 @@ const Booking = () => {
               customerEmail: formData.email || '',
             }),
           });
+          
+          if (!response.ok) {
+            throw new Error(`API request failed with status ${response.status}`);
+          }
+          
+          session = await response.json();
+          
         } catch (error) {
-          // If the API path fails, try the direct Netlify function path
-          console.log('API path failed, trying direct Netlify function path');
-          response = await fetch(netlifyFunctionUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              priceId: selectedPkg.stripePriceId,
-              packageName: selectedPkg.name,
-              customerEmail: formData.email || '',
-            }),
-          });
+          console.log('API path failed, trying direct Netlify function path:', error.message);
+          
+          try {
+            // If the API path fails, try the direct Netlify function path
+            response = await fetch(netlifyFunctionUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                priceId: selectedPkg.stripePriceId,
+                packageName: selectedPkg.name,
+                customerEmail: formData.email || '',
+              }),
+            });
+            
+            if (!response.ok) {
+              throw new Error(`Netlify function request failed with status ${response.status}`);
+            }
+            
+            session = await response.json();
+            
+          } catch (innerError) {
+            console.error('Both API paths failed:', innerError.message);
+            alert('Unable to connect to payment service. Please try again later.');
+            setIsLoading(false);
+            return;
+          }
         }
         
-        const session = await response.json();
+        // Check if session has the required id
+        if (!session || !session.id) {
+          console.error('Invalid session response:', session);
+          alert('Invalid response from payment service. Please try again.');
+          setIsLoading(false);
+          return;
+        }
         
         // Redirect to Stripe Checkout
         const result = await stripe.redirectToCheckout({
@@ -139,8 +170,8 @@ const Booking = () => {
         });
         
         if (result.error) {
-          console.error(result.error.message);
-          // Handle error (show a message to the user)
+          console.error('Stripe checkout error:', result.error.message);
+          alert(`Payment error: ${result.error.message}`);
           setIsLoading(false);
         }
       } catch (error) {
