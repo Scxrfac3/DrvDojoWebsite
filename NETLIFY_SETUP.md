@@ -52,8 +52,9 @@ If you still encounter issues:
 
 1. Check the Netlify function logs in the dashboard under **Functions** > **create-checkout-session**
 2. Ensure all environment variables are correctly set
-3. Verify that the redirect rules in `netlify.toml` are properly configured
+3. Verify that the redirect rules in `netlify.toml` are properly configured and in the correct order (API redirects must come BEFORE the catch-all redirect)
 4. Check the browser console for any errors
+5. Make sure you've redeployed your site after making changes to environment variables or redirect rules
 
 ## SuperSaaS Integration
 

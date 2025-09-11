@@ -8,7 +8,16 @@
 [functions]
   directory = "netlify/functions"
 
+# Redirect rules for SPA (Single Page Application)
+# This must come AFTER the specific API redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["anon"]}
+
 # Redirect API endpoints to Netlify Functions
+# These must come BEFORE the catch-all redirect
 [[redirects]]
   from = "/api/create-checkout-session"
   to = "/.netlify/functions/create-checkout-session"
@@ -17,12 +26,6 @@
 [[redirects]]
   from = "/api/get-checkout-session"
   to = "/.netlify/functions/get-checkout-session"
-  status = 200
-
-# Redirect rules for SPA (Single Page Application)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
   status = 200
 
 # Headers for better security and performance
