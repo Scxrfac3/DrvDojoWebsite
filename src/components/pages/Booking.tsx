@@ -33,10 +33,8 @@ import { loadStripe } from "@stripe/stripe-js";
 
 const Booking = () => {
   const [step, setStep] = useState(1);
-  const [progress, setProgress] = useState(20);
+  const [progress, setProgress] = useState(50);
   const [selectedPackage, setSelectedPackage] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -56,11 +54,8 @@ const Booking = () => {
   useEffect(() => {
     // Update progress based on current step
     const progressValues = {
-      1: 20,
-      2: 40,
-      3: 60,
-      4: 80,
-      5: 100,
+      1: 50,
+      2: 100,
     };
     setProgress(progressValues[step] || 0);
 
@@ -186,17 +181,9 @@ const Booking = () => {
     }
   };
 
-  const handleDateSelect = (date) => {
-    setSelectedDate(date);
-  };
-
-  const handleTimeSelect = (time) => {
-    setSelectedTime(time);
-    setTimeout(() => nextStep(), 300);
-  };
 
   const nextStep = () => {
-    if (step < 5) {
+    if (step < 2) {
       setStep(step + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -217,7 +204,7 @@ const Booking = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsComplete(true);
-      setStep(5);
+      setStep(2);
     }, 1500);
   };
 
@@ -315,33 +302,6 @@ const Booking = () => {
     },
   ];
 
-  // Generate dates for the next 7 days starting from today
-  const generateAvailableDates = () => {
-    const dates = [];
-    const today = new Date();
-
-    for (let i = 1; i <= 7; i++) {
-      const date = new Date(today);
-      date.setDate(today.getDate() + i);
-      dates.push(date.toISOString().split("T")[0]); // Format as YYYY-MM-DD
-    }
-
-    return dates;
-  };
-
-  const availableDates = generateAvailableDates();
-
-  const availableTimes = [
-    "09:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-  ];
 
   const formatDate = (dateString) => {
     const options = { weekday: "long", month: "long", day: "numeric" } as const;
@@ -368,6 +328,11 @@ const Booking = () => {
                 Not sure which one? We recommend our most popular 10-hour
                 package.
               </p>
+              <div className="mt-4 p-4 bg-blue-900/30 rounded-lg border border-blue-700/50">
+                <p className="text-blue-200 text-sm">
+                  <strong>Important:</strong> After payment, you'll be able to schedule your lessons using our booking system.
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -459,191 +424,11 @@ const Booking = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Choose Your Preferred Date
-              </h2>
-              <p className="text-slate-300 max-w-2xl mx-auto">
-                Select a date for your first lesson. Don't worry, you can always
-                reschedule if needed.
-              </p>
-            </div>
-
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {availableDates.map((date) => (
-                  <motion.div
-                    key={date}
-                    className={`p-4 rounded-lg border ${selectedDate === date ? "border-blue-500 bg-blue-900/30" : "border-slate-700 bg-slate-800/50"} cursor-pointer hover:border-blue-400 hover:bg-slate-700/50 transition-colors`}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => handleDateSelect(date)}
-                  >
-                    <div className="flex items-center">
-                      <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${selectedDate === date ? "bg-blue-600/50 text-blue-200" : "bg-slate-700 text-slate-300"}`}
-                      >
-                        <Calendar className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <p className="text-white font-medium">
-                          {formatDate(date)}
-                        </p>
-                        <p className="text-slate-400 text-sm">
-                          {new Date(date).toLocaleDateString("en-GB", {
-                            weekday: "long",
-                          })}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-6 flex justify-between">
-                <Button
-                  variant="outline"
-                  className="border-slate-600 text-white hover:bg-slate-800"
-                  onClick={prevStep}
-                >
-                  <ChevronLeft className="mr-2 h-4 w-4" />
-                  Back
-                </Button>
-                <Button
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                  onClick={nextStep}
-                  disabled={!selectedDate}
-                >
-                  Continue
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border border-blue-800/30 shadow-lg">
-              <div className="flex items-center mb-4">
-                <CalendarClock className="h-5 w-5 text-blue-400 mr-2" />
-                <h3 className="text-xl font-bold text-white">
-                  Flexible Scheduling
-                </h3>
-              </div>
-              <p className="text-slate-300 mb-2">
-                Can't find a suitable date? We offer flexible scheduling options
-                to accommodate your needs.
-              </p>
-              <p className="text-slate-400 text-sm">
-                You can also call us at +44 20 1234 5678 for personalized
-                scheduling assistance.
-              </p>
-            </div>
-          </motion.div>
-        );
-
-      case 3:
-        return (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-            className="space-y-8"
-          >
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Choose Your Preferred Time
-              </h2>
-              <p className="text-slate-300 max-w-2xl mx-auto">
-                Select a time slot that works best for you on{" "}
-                {selectedDate && formatDate(selectedDate)}.
-              </p>
-            </div>
-
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-xl">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {availableTimes.map((time) => (
-                  <motion.div
-                    key={time}
-                    className={`p-4 rounded-lg border ${selectedTime === time ? "border-blue-500 bg-blue-900/30" : "border-slate-700 bg-slate-800/50"} cursor-pointer hover:border-blue-400 hover:bg-slate-700/50 transition-colors`}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => handleTimeSelect(time)}
-                  >
-                    <div className="flex items-center justify-center">
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${selectedTime === time ? "bg-blue-600/50 text-blue-200" : "bg-slate-700 text-slate-300"}`}
-                      >
-                        <Clock className="h-4 w-4" />
-                      </div>
-                      <p className="text-white font-medium">{time}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-6 flex justify-between">
-                <Button
-                  variant="outline"
-                  className="border-slate-600 text-white hover:bg-slate-800"
-                  onClick={prevStep}
-                >
-                  <ChevronLeft className="mr-2 h-4 w-4" />
-                  Back
-                </Button>
-                <Button
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                  onClick={nextStep}
-                  disabled={!selectedTime}
-                >
-                  Continue
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border border-purple-800/30 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <Shield className="h-5 w-5 text-purple-400 mr-2" />
-                  <h3 className="text-xl font-bold text-white">
-                    Our Guarantee
-                  </h3>
-                </div>
-                <p className="text-slate-300 mb-2">
-                  If you need to reschedule, you can do so up to 24 hours before
-                  your lesson at no extra cost.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl p-6 border border-blue-800/30 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <MapPin className="h-5 w-5 text-blue-400 mr-2" />
-                  <h3 className="text-xl font-bold text-white">
-                    Pick-up Point
-                  </h3>
-                </div>
-                <p className="text-slate-300 mb-2">
-                  Your instructor will pick you up from your preferred location
-                  within our service area.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        );
-
-      case 4:
-        return (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-            className="space-y-8"
-          >
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Complete Your Booking
               </h2>
               <p className="text-slate-300 max-w-2xl mx-auto">
-                We're almost there! Fill in your details to confirm your
-                booking.
+                We're almost there! Fill in your details to complete your purchase.
+                After payment, you'll be able to schedule your lessons.
               </p>
             </div>
 
@@ -885,7 +670,7 @@ const Booking = () => {
                         </span>
                       ) : (
                         <>
-                          Complete Booking
+                          Complete Purchase
                           <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                           <motion.div
                             className="absolute inset-0 bg-white"
@@ -910,121 +695,11 @@ const Booking = () => {
                 </h3>
               </div>
               <p className="text-slate-300 mb-2">
-                Your personal information is encrypted and secure. No payment is
-                required now - you'll pay directly to your instructor.
+                Your personal information is encrypted and secure. After payment,
+                you'll receive access to our booking system where you can schedule
+                your lessons at your convenience.
               </p>
             </div>
-          </motion.div>
-        );
-
-      case 5:
-        return (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-center py-12 max-w-2xl mx-auto"
-          >
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8"
-            >
-              <PartyPopper className="h-12 w-12 text-white" />
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
-            >
-              Booking Confirmed!
-            </motion.h2>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="space-y-4 mb-8"
-            >
-              <p className="text-xl text-slate-300">
-                Your driving lesson has been successfully booked.
-              </p>
-              <p className="text-slate-400">
-                We've sent a confirmation email to{" "}
-                <span className="text-white font-medium">
-                  {formData.email || "your email address"}
-                </span>
-                . Your instructor will contact you 24 hours before your lesson.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 shadow-xl mb-8"
-            >
-              <h3 className="text-xl font-bold text-white mb-4">
-                Booking Details
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div>
-                  <p className="text-slate-400 text-sm">Package</p>
-                  <p className="text-white font-medium">
-                    {selectedPackage === "starter"
-                      ? "Starter Package"
-                      : selectedPackage === "popular"
-                        ? "10-Hour Package"
-                        : selectedPackage === "intensive"
-                          ? "Intensive Course"
-                          : "Custom Package"}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-slate-400 text-sm">Date & Time</p>
-                  <p className="text-white font-medium">
-                    {selectedDate && formatDate(selectedDate)},{" "}
-                    {selectedTime || "Time to be confirmed"}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-slate-400 text-sm">Student</p>
-                  <p className="text-white font-medium">
-                    {formData.firstName} {formData.lastName}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-slate-400 text-sm">Location</p>
-                  <p className="text-white font-medium">
-                    {formData.address || "Address to be confirmed"}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="space-y-4"
-            >
-              <p className="text-slate-300">What would you like to do next?</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  View My Bookings
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-slate-600 text-white hover:bg-slate-800"
-                  onClick={() => (window.location.href = "/")}
-                >
-                  Return to Homepage
-                </Button>
-              </div>
-            </motion.div>
           </motion.div>
         );
 
@@ -1119,7 +794,7 @@ const Booking = () => {
         >
           <div className="flex justify-between mb-2">
             <span className="text-slate-400 text-sm">
-              Step {isComplete ? 5 : step} of 5
+              Step {isComplete ? 2 : step} of 2
             </span>
             <span className="text-slate-400 text-sm">{progress}% Complete</span>
           </div>
@@ -1127,20 +802,14 @@ const Booking = () => {
 
           <div className="flex justify-between mt-2">
             <div className="flex space-x-1 md:space-x-2">
-              {[1, 2, 3, 4, 5].map((stepNumber) => (
+              {[1, 2].map((stepNumber) => (
                 <div
                   key={stepNumber}
                   className={`text-xs px-2 py-1 rounded ${step === stepNumber ? "bg-blue-600 text-white" : step > stepNumber || isComplete ? "bg-green-600 text-white" : "bg-slate-700 text-slate-300"}`}
                 >
                   {stepNumber === 1
                     ? "Package"
-                    : stepNumber === 2
-                      ? "Date"
-                      : stepNumber === 3
-                        ? "Time"
-                        : stepNumber === 4
-                          ? "Details"
-                          : "Confirm"}
+                    : "Details"}
                 </div>
               ))}
             </div>

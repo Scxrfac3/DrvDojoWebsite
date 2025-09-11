@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowLeft, PartyPopper } from "lucide-react";
+import { CheckCircle, ArrowLeft, PartyPopper, Calendar, Car } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const BookingSuccess = () => {
@@ -133,7 +133,7 @@ const BookingSuccess = () => {
             className="space-y-4"
           >
             <p className="text-slate-300 mb-6">
-              Thank you for your payment! We've received your booking and will contact you shortly to confirm your lesson details.
+              Thank you for your payment! Your purchase is complete. Now you can schedule your driving lessons at your convenience using our booking system below.
             </p>
 
             {/* SuperSaaS Scheduling Widget */}
@@ -143,10 +143,15 @@ const BookingSuccess = () => {
               transition={{ delay: 0.6 }}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-xl mt-8"
             >
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">Schedule Your Lessons</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">Schedule Your Driving Lessons</h3>
               <p className="text-slate-300 mb-6 text-center">
-                Use the calendar below to schedule your driving lessons. Your purchased hours will be automatically deducted.
+                <strong>Important:</strong> Use the calendar below to schedule your driving lessons. Your purchased hours will be automatically deducted from your package.
               </p>
+              <div className="bg-blue-900/30 rounded-lg p-4 mb-6 border border-blue-700/50">
+                <p className="text-blue-200 text-sm text-center">
+                  Please schedule your first lesson within the next 7 days to secure your preferred time slots.
+                </p>
+              </div>
               <div className="bg-white rounded-lg p-4">
                 <iframe
                   src="https://www.supersaas.com/schedule/drive_dojo/Driving_Lessons?api_key=y2Qp49ZINgve0gtnEkz4IA"
@@ -158,7 +163,35 @@ const BookingSuccess = () => {
                 ></iframe>
               </div>
             </motion.div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-xl p-6 border border-green-800/30 shadow-xl mt-8">
+              <h3 className="text-xl font-bold text-white mb-4 text-center">What's Next?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Calendar className="h-6 w-6 text-blue-400" />
+                  </div>
+                  <h4 className="text-white font-medium mb-2">Schedule Your Lessons</h4>
+                  <p className="text-slate-300 text-sm">Use the booking system above to schedule your lessons at times that work for you.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <CheckCircle className="h-6 w-6 text-purple-400" />
+                  </div>
+                  <h4 className="text-white font-medium mb-2">Confirmation Email</h4>
+                  <p className="text-slate-300 text-sm">You'll receive a confirmation email for each scheduled lesson.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-green-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Car className="h-6 w-6 text-green-400" />
+                  </div>
+                  <h4 className="text-white font-medium mb-2">Start Learning</h4>
+                  <p className="text-slate-300 text-sm">Your instructor will pick you up at your chosen location for each lesson.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
                 onClick={() => (window.location.href = "/")}
@@ -171,7 +204,7 @@ const BookingSuccess = () => {
                 onClick={() => (window.location.href = "/booking")}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Book Another Lesson
+                Book Another Package
               </Button>
             </div>
           </motion.div>
