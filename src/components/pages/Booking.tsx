@@ -111,11 +111,13 @@ const Booking = () => {
               priceId: selectedPkg.stripePriceId,
               packageName: selectedPkg.name,
               customerEmail: formData.email || '',
+              promoCode: formData.promoCode || '',
             }),
           });
           
           if (!response.ok) {
-            throw new Error(`API request failed with status ${response.status}`);
+            const errorData = await response.json();
+            throw new Error(errorData.error || `API request failed with status ${response.status}`);
           }
           
           session = await response.json();
@@ -134,18 +136,26 @@ const Booking = () => {
                 priceId: selectedPkg.stripePriceId,
                 packageName: selectedPkg.name,
                 customerEmail: formData.email || '',
+                promoCode: formData.promoCode || '',
               }),
             });
             
             if (!response.ok) {
-              throw new Error(`Netlify function request failed with status ${response.status}`);
+              const errorData = await response.json();
+              throw new Error(errorData.error || `Netlify function request failed with status ${response.status}`);
             }
             
             session = await response.json();
             
           } catch (innerError) {
             console.error('Both API paths failed:', innerError.message);
-            alert('Unable to connect to payment service. Please try again later.');
+            
+            // Check if it's a promo code error
+            if (innerError.message === 'Invalid promo code') {
+              alert('The promo code you entered is not valid. Please check and try again.');
+            } else {
+              alert('Unable to connect to payment service. Please try again later.');
+            }
             setIsLoading(false);
             return;
           }

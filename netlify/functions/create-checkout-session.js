@@ -2,7 +2,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event, context) => {
   try {
-    const { priceId, packageName, customerEmail } = JSON.parse(event.body);
+    const { priceId, packageName, customerEmail, promoCode } = JSON.parse(event.body);
 
     if (!priceId) {
       return {
@@ -11,7 +11,8 @@ exports.handler = async (event, context) => {
       };
     }
 
-    const session = await stripe.checkout.sessions.create({
+    // Create the session configuration
+    const sessionConfig = {
       payment_method_types: ['card'],
       line_items: [
         {
@@ -26,7 +27,19 @@ exports.handler = async (event, context) => {
       metadata: {
         packageName: packageName,
       },
-    });
+    };
+
+    // Add promo code if provided
+    if (promoCode) {
+      // Add the promo code as a discount
+      sessionConfig.discounts = [{
+        coupon: promoCode,
+      }];
+      // Also add promo code to metadata for tracking
+      sessionConfig.metadata.promoCode = promoCode;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
     return {
       statusCode: 200,
@@ -35,6 +48,19 @@ exports.handler = async (event, context) => {
   } catch (error) {
     console.error('Error creating checkout session:', error);
     console.error('Error details:', JSON.stringify(error, null, 2));
+    
+    // Check if the error is related to an invalid coupon
+    if (error.type === 'StripeInvalidRequestError' && error.message.includes('coupon')) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          error: 'Invalid promo code',
+          message: 'The promo code you entered is not valid. Please check and try again.',
+          type: error.type
+        }),
+      };
+    }
+    
     return {
       statusCode: 500,
       body: JSON.stringify({
