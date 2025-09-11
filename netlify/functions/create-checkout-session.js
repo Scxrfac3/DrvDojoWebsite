@@ -20,8 +20,8 @@ exports.handler = async (event, context) => {
         },
       ],
       mode: 'payment',
-      success_url: `${event.headers.origin}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${event.headers.origin}/booking/cancel`,
+      success_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/booking/cancel`,
       customer_email: customerEmail || undefined,
       metadata: {
         packageName: packageName,
@@ -34,9 +34,14 @@ exports.handler = async (event, context) => {
     };
   } catch (error) {
     console.error('Error creating checkout session:', error);
+    console.error('Error details:', JSON.stringify(error, null, 2));
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Internal server error' }),
+      body: JSON.stringify({
+        error: 'Internal server error',
+        message: error.message,
+        type: error.type
+      }),
     };
   }
 };
