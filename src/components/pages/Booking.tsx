@@ -227,7 +227,7 @@ const Booking = () => {
       name: "Pay-as-you-go",
       price: "£76",
       unit: "/2 hours",
-      stripePriceId: "price_1S6GRVRlA1HTbrricB4qeFpM",
+      stripePriceId: "price_1S6H9NRlA1HTbrriNchUFbIA",
       description: "Perfect for trying us out",
       features: [
         "2 hours lesson",
@@ -242,7 +242,7 @@ const Booking = () => {
       name: "6-Hour Package",
       price: "£210",
       unit: "/package",
-      stripePriceId: "price_1S6GRiRlA1HTbrriCIFh7xW0",
+      stripePriceId: "price_1S6H9wRlA1HTbrrim0mFUNGe",
       description: "Save money with our starter package",
       features: [
         "6 hours of lessons",
@@ -257,7 +257,7 @@ const Booking = () => {
       name: "10-Hour Package",
       price: "£340",
       unit: "/package",
-      stripePriceId: "price_1S6GRvRlA1HTbrrimTbt7QFy",
+      stripePriceId: "price_1S6HAiRlA1HTbrricC4gXlkX",
       description: "Most Popular - Best value for money!",
       features: [
         "10 hours of lessons",
@@ -287,7 +287,7 @@ const Booking = () => {
       name: "Mock Driving Test",
       price: "£90",
       unit: "/test",
-      stripePriceId: "price_1S6GS7RlA1HTbrriwbF2Gmqo",
+      stripePriceId: "price_1S6HB8RlA1HTbrriLZOEa12C",
       description: "Perfect practice before your test",
       features: [
         "Real test conditions",
@@ -302,7 +302,7 @@ const Booking = () => {
       name: "Driving Test Car Rental",
       price: "£150",
       unit: "/3 hours",
-      stripePriceId: "price_1S6GSIRlA1HTbrriCSnwPBMI",
+      stripePriceId: "price_1S6HC3RlA1HTbrri3N5rvXwz",
       description: "3 hours: arrive 15min early, practice maneuvers, home drop-off",
       features: [
         "3 hours booking",
