@@ -70,29 +70,29 @@ const About = () => {
 
   const timelineEvents = [
     {
-      year: "2015",
-      title: "Drive Dojo Founded",
-      description: "Mamunur Siddique established Drive Dojo, bringing together his unique blend of autonomous vehicle expertise and driving instruction experience.",
-    },
-    {
-      year: "2017",
-      title: "Technology Integration",
-      description: "Launched custom theory test applications and digital learning tools, revolutionizing how students prepare for their tests.",
-    },
-    {
       year: "2019",
-      title: "Autonomous Vehicle Expertise",
-      description: "Began incorporating insights from autonomous vehicle safety operations into driving instruction methods.",
+      title: "Drive Dojo Founded",
+      description: "Established with a mission to provide exceptional driving instruction across London, focusing on personalized teaching methods and comprehensive test preparation.",
+    },
+    {
+      year: "2020",
+      title: "Expansion Across London",
+      description: "Grew our service area to cover multiple London boroughs, helping students from diverse backgrounds prepare for tests at centres throughout the city.",
+    },
+    {
+      year: "2021",
+      title: "Specialized Test Route Training",
+      description: "Developed specialized training programs for specific test centres across London, giving students local knowledge and confidence for their particular test routes.",
     },
     {
       year: "2022",
-      title: "10,000+ Students",
-      description: "Reached the milestone of teaching over 10,000 students, maintaining our exceptional 95% first-time pass rate.",
+      title: "5,000+ Successful Students",
+      description: "Celebrated helping over 5,000 students pass their driving tests at various London test centres, maintaining our exceptional pass rates.",
     },
     {
       year: "2024",
-      title: "Industry Recognition",
-      description: "Recognized as East London's premier driving school for innovative teaching methods and outstanding results.",
+      title: "London-Wide Recognition",
+      description: "Recognized as one of London's most trusted driving schools, with students successfully passing at test centres from Barking to Canning Town and beyond.",
     },
   ];
 
@@ -145,7 +145,7 @@ const About = () => {
                 The Drive Dojo Difference
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-                Expertise Forged on Every Road. Meet Mamunur Siddique - the founder whose unique journey through autonomous vehicles, software development, and proven instruction creates an unparalleled learning experience.
+                Expertise Forged on Every Road. Meet Mamunur - the founder whose unique journey through autonomous vehicles, software development, and proven instruction creates an unparalleled learning experience.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
@@ -210,13 +210,13 @@ const About = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl"></div>
                         <img
                           src="/images/certifications/C1.png"
-                          alt="Mamunur Siddique - Founder of Drive Dojo"
+                          alt="Mamunur - Founder of Drive Dojo"
                           className="relative rounded-2xl shadow-2xl w-full h-auto"
                         />
                         <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-sm rounded-xl p-4">
                           <div className="flex items-center justify-between">
                             <div>
-                              <div className="text-white font-bold text-lg">Mamunur Siddique</div>
+                              <div className="text-white font-bold text-lg">Mamunur</div>
                               <div className="text-blue-400 text-sm">Founder & Head Instructor</div>
                             </div>
                             <div className="text-right">
@@ -234,12 +234,12 @@ const About = () => {
                       transition={{ duration: 0.6, delay: 0.2 }}
                     >
                       <h2 className="text-4xl font-bold text-white mb-6">
-                        Mamunur Siddique
+                        Mamunur
                         <span className="block text-2xl text-blue-400 font-normal mt-2">Founder & Visionary</span>
                       </h2>
                       
                       <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                        At the heart of Drive Dojo Driving School is Mamunur Siddique, a founder whose journey through the automotive world offers an unparalleled depth of expertise. More than just a driving instructor, Mamunur's vision for Drive Dojo is built on a unique blend of practical experience, cutting-edge technology, and a proven track record of success.
+                        At the heart of Drive Dojo Driving School is Mamunur, a founder whose journey through the automotive world offers an unparalleled depth of expertise. More than just a driving instructor, Mamunur's vision for Drive Dojo is built on a unique blend of practical experience, cutting-edge technology, and a proven track record of success.
                       </p>
 
                       <div className="space-y-4">

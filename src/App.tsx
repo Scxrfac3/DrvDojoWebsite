@@ -34,6 +34,9 @@ const DualControlInstallation = lazy(
   () => import("./components/pages/DualControlInstallation"),
 );
 const Terms = lazy(() => import("./components/pages/Terms"));
+const Waitlist = lazy(() => import("./components/pages/Waitlist"));
+const BookingSuccess = lazy(() => import("./components/pages/BookingSuccess"));
+const BookingCancel = lazy(() => import("./components/pages/BookingCancel"));
 // import Portal from "./components/pages/Portal"; // Coming soon
 
 function App() {
@@ -84,6 +87,9 @@ function App() {
             element={<DualControlInstallation />}
           />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/waitlist" element={<Waitlist />} />
+          <Route path="/booking/success" element={<BookingSuccess />} />
+          <Route path="/booking/cancel" element={<BookingCancel />} />
           <Route
             path="/blog/:slug"
             element={

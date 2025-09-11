@@ -62,7 +62,7 @@ const GetStartedSection = ({
   };
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 text-white">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (

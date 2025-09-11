@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import supabase from "@/lib/supabase";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Booking = () => {
   const [step, setStep] = useState(1);
@@ -50,6 +51,7 @@ const Booking = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [animateBackground, setAnimateBackground] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Update progress based on current step
@@ -83,9 +85,53 @@ const Booking = () => {
     setFormData({ ...formData, agreeToTerms: checked });
   };
 
-  const handlePackageSelect = (packageName) => {
+  const handlePackageSelect = async (packageName) => {
+    setIsLoading(true);
     setSelectedPackage(packageName);
-    setTimeout(() => nextStep(), 300);
+    
+    // Find the selected package to get its Stripe Price ID
+    const selectedPkg = packages.find(pkg => pkg.id === packageName);
+    
+    if (selectedPkg && selectedPkg.stripePriceId) {
+      try {
+        // Initialize Stripe
+        const stripe = await loadStripe('pk_test_51S6EZwDwpTXQ4PFJLdvKNdpTEXWlUypGmPrrIZOpD4kCnXWFbfRntEpbCY6TCz3mF4yC3sRm2yroUIKeeGPNxzLT00Dny18chv');
+        
+        // Create a checkout session
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            priceId: selectedPkg.stripePriceId,
+            packageName: selectedPkg.name,
+            customerEmail: formData.email || '',
+          }),
+        });
+        
+        const session = await response.json();
+        
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.id,
+        });
+        
+        if (result.error) {
+          console.error(result.error.message);
+          // Handle error (show a message to the user)
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        // Handle error (show a message to the user)
+        setIsLoading(false);
+      }
+    } else {
+      // If no Stripe Price ID (like for Intensive Lessons), proceed with normal flow
+      setTimeout(() => nextStep(), 300);
+      setIsLoading(false);
+    }
   };
 
   const handleDateSelect = (date) => {
@@ -125,13 +171,14 @@ const Booking = () => {
 
   const packages = [
     {
-      id: "starter",
-      name: "Starter Package",
-      price: "£30",
-      unit: "/hour",
-      description: "Perfect for beginners",
+      id: "payg",
+      name: "Pay-as-you-go",
+      price: "£76",
+      unit: "/2 hours",
+      stripePriceId: "price_1S5j0ZRlA1HTbrri8vGQBtNW",
+      description: "Perfect for trying us out",
       features: [
-        "Pay-as-you-go flexibility",
+        "2 hours lesson",
         "Personalized learning",
         "Beginner friendly",
       ],
@@ -139,13 +186,29 @@ const Booking = () => {
       icon: <Car className="h-6 w-6" />,
     },
     {
-      id: "popular",
-      name: "10-Hour Package",
-      price: "£300",
+      id: "6hour",
+      name: "6-Hour Package",
+      price: "£210",
       unit: "/package",
-      description: "Save £50 compared to hourly rate",
+      stripePriceId: "price_1S5j0oRlA1HTbrriT8DRuJAy",
+      description: "Save money with our starter package",
       features: [
+        "6 hours of lessons",
         "Structured learning plan",
+        "Progress tracking",
+      ],
+      color: "purple",
+      icon: <Award className="h-6 w-6" />,
+    },
+    {
+      id: "10hour",
+      name: "10-Hour Package",
+      price: "£340",
+      unit: "/package",
+      stripePriceId: "price_1S5j13RlA1HTbrriP6cJntsz",
+      description: "Most Popular - Best value for money!",
+      features: [
+        "10 hours of lessons",
         "Progress tracking",
         "Best value for most learners",
       ],
@@ -155,17 +218,48 @@ const Booking = () => {
     },
     {
       id: "intensive",
-      name: "Intensive Course",
-      price: "£589",
-      unit: "/20 hours",
+      name: "Intensive Lessons",
+      price: "Contact for Quote",
+      unit: "/tailored",
       description: "Fast-track your learning",
       features: [
+        "Tailored to student needs",
+        "Contact for quote based on location",
         "Comprehensive training",
-        "Theory test support",
-        "Test preparation included",
       ],
       color: "green",
       icon: <Zap className="h-6 w-6" />,
+    },
+    {
+      id: "mocktest",
+      name: "Mock Driving Test",
+      price: "£90",
+      unit: "/test",
+      stripePriceId: "price_1S5j1LRlA1HTbrriSEFccIjh",
+      description: "Perfect practice before your test",
+      features: [
+        "Real test conditions",
+        "45 minutes duration",
+        "Detailed feedback",
+      ],
+      color: "blue",
+      icon: <CheckCircle className="h-6 w-6" />,
+    },
+    {
+      id: "testrental",
+      name: "Driving Test Car Rental",
+      price: "£150",
+      unit: "/3 hours",
+      stripePriceId: "price_1S5j1bRlA1HTbrriiqImrIJa",
+      description: "3 hours: arrive 15min early, practice maneuvers, home drop-off",
+      features: [
+        "3 hours booking",
+        "Arrive 15 minutes before test",
+        "Practice maneuvers",
+        "Home drop-off after test",
+      ],
+      color: "green",
+      icon: <Car className="h-6 w-6" />,
     },
   ];
 
@@ -276,8 +370,9 @@ const Booking = () => {
                     >
                       <Button
                         className={`w-full ${pkg.color === "blue" ? "bg-blue-600 hover:bg-blue-700" : pkg.color === "purple" ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" : "bg-green-600 hover:bg-green-700"}`}
+                        disabled={isLoading}
                       >
-                        Select Package
+                        {isLoading ? "Processing..." : (pkg.stripePriceId ? "Pay Now" : "Select Package")}
                       </Button>
                     </motion.div>
                   </div>
@@ -888,13 +983,15 @@ const Booking = () => {
 
   return (
     <div
-      className={`bg-slate-900 min-h-screen relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
+      className={`min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
       {/* Animated background elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-600/20 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-600/20 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-600/20 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-600/20 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
+        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+      </div>
 
       {/* Animated particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -934,27 +1031,30 @@ const Booking = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="inline-flex items-center mb-3 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+            className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Sparkles className="h-4 w-4 mr-2" />
+            <Zap className="h-4 w-4 mr-2" />
             Book Your Lessons
           </motion.div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Start Your
+            <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+              Drive Like a
             </span>
-            <span className="text-white"> Driving Journey</span>
+            <br />
+            <span className="text-orange-400 animate-bounce inline-block">Pro</span>
+            <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 
-          <p className="text-slate-300 max-w-2xl mx-auto text-lg">
-            Just a few steps away from becoming a confident driver. Book your
-            lessons now and get on the road to success!
+          <p className="text-blue-100 max-w-2xl mx-auto text-lg">
+            London's <span className="text-orange-400 font-bold">coolest</span> driving school!
+            Get your licence fast with our <span className="text-green-400 font-bold">legendary</span> instructors
+            who actually make learning fun 🎯
           </p>
         </motion.div>
 

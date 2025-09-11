@@ -110,7 +110,7 @@ const Footer = ({
   };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-16 px-4 md:px-8 lg:px-12">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white py-16 px-4 md:px-8 lg:px-12">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
@@ -158,7 +158,7 @@ const Footer = ({
                 />
               </div>
             </motion.div>
-            <p className="text-slate-300 text-sm">
+            <p className="text-blue-100 text-sm">
               Professional driving instruction with a focus on safety,
               confidence, and skill development. Based in London to bring
               innovation to driver education.
@@ -183,7 +183,7 @@ const Footer = ({
             <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
               Connect With Us
             </h3>
-            <ul className="space-y-3 text-slate-300">
+            <ul className="space-y-3 text-blue-100">
               <motion.li
                 className="flex items-center space-x-2"
                 whileHover={{ x: 5, color: "#60a5fa" }}
@@ -193,7 +193,7 @@ const Footer = ({
                 </div>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-300 transition-colors"
                 >
                   {contactInfo.email}
                 </a>
@@ -207,7 +207,7 @@ const Footer = ({
                 </div>
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-300 transition-colors"
                 >
                   {contactInfo.phone}
                 </a>
@@ -235,7 +235,7 @@ const Footer = ({
             <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
               Quick Links
             </h3>
-            <div className="grid grid-cols-2 gap-2 text-slate-300">
+            <div className="grid grid-cols-2 gap-2 text-blue-100">
               {quickLinks.map((link, index) => (
                 <motion.div
                   key={index}
@@ -245,14 +245,14 @@ const Footer = ({
                 >
                   <a
                     href={link.href}
-                    className="hover:text-blue-400 transition-colors flex items-center space-x-1"
+                    className="hover:text-blue-300 transition-colors flex items-center space-x-1"
                   >
                     <motion.span
                       animate={{
                         rotate:
                           hoveredLink === link.title ? [0, 15, -15, 0] : 0,
                         color:
-                          hoveredLink === link.title ? "#60a5fa" : "#cbd5e1",
+                          hoveredLink === link.title ? "#60a5fa" : "#dbeafe",
                       }}
                       transition={{ duration: 0.5 }}
                     >
@@ -276,7 +276,7 @@ const Footer = ({
             <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
               Get Exclusive Updates
             </h3>
-            <p className="text-slate-300 text-sm">
+            <p className="text-blue-100 text-sm">
               Subscribe for driving tips, special offers, and early access to
               new features.
             </p>
@@ -285,18 +285,18 @@ const Footer = ({
                 <Input
                   type="email"
                   placeholder="Your email address"
-                  className="pl-10 bg-slate-800/50 border-slate-700 focus:border-blue-500 text-white"
+                  className="pl-10 bg-blue-900/50 border-blue-700 focus:border-blue-500 text-white"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isSubmitting}
                   required
                 />
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-blue-300" />
               </div>
               <AnimatePresence>
                 {isSubscribed ? (
                   <motion.div
-                    className="bg-green-900/50 text-green-300 p-2 rounded-md flex items-center space-x-2"
+                    className="bg-green-600/50 text-green-200 p-2 rounded-md flex items-center space-x-2"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -306,7 +306,7 @@ const Footer = ({
                   </motion.div>
                 ) : subscribeError ? (
                   <motion.div
-                    className="bg-red-900/50 text-red-300 p-2 rounded-md flex items-center space-x-2"
+                    className="bg-red-600/50 text-red-200 p-2 rounded-md flex items-center space-x-2"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}

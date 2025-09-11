@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -12,11 +12,60 @@ import {
   Car,
   Shield,
   Award,
+  Zap,
+  Trophy,
+  Users,
+  Heart,
+  Play,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 import SpecialOffersSection from "../sections/SpecialOffersSection";
 
+// SEO Meta Tags Component
+const SEOMetaTags = ({ location }: { location: string }) => (
+  <>
+    <title>{`Driving Lessons in ${location} | Drive Dojo - 98% Pass Rate`}</title>
+    <meta name="description" content={`Learn to drive in ${location} with DVSA-approved instructors. 98% pass rate, modern cars, flexible booking. Book your first lesson from £35. WhatsApp us now!`} />
+    <meta name="keywords" content={`driving lessons ${location.toLowerCase()}, driving school ${location.toLowerCase()}, learn to drive ${location.toLowerCase()}, driving instructor ${location.toLowerCase()}`} />
+    <meta property="og:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
+    <meta property="og:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
+    <meta name="twitter:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
+  </>
+);
+
 const GoodmayesLessons = () => {
   const [postcode, setPostcode] = useState("");
+  const [currentStat, setCurrentStat] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [likedFeatures, setLikedFeatures] = useState<Set<number>>(new Set());
+
+  const stats = [
+    { icon: Star, number: '98%', label: 'Pass Rate', color: 'text-yellow-400' },
+    { icon: Users, number: '2000+', label: 'Students', color: 'text-blue-300' },
+    { icon: Trophy, number: '8+', label: 'Years', color: 'text-green-400' },
+    { icon: Zap, number: '24hr', label: 'Response', color: 'text-orange-400' }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStat((prev) => (prev + 1) % stats.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleLike = (index: number) => {
+    const newLiked = new Set(likedFeatures);
+    if (newLiked.has(index)) {
+      newLiked.delete(index);
+    } else {
+      newLiked.add(index);
+    }
+    setLikedFeatures(newLiked);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +74,9 @@ const GoodmayesLessons = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+    <>
+      <SEOMetaTags location="Goodmayes" />
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
@@ -314,7 +365,7 @@ const GoodmayesLessons = () => {
         <SpecialOffersSection />
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -358,6 +409,7 @@ const GoodmayesLessons = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

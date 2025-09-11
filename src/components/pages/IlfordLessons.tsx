@@ -167,7 +167,7 @@ const IlfordLessons = () => {
                   Quality instruction
                 </h3>
                 <p className="text-gray-700">
-                  When you choose an AA driving instructor in Ilford, you know
+                  When you choose our driving instructor in Ilford, you know
                   you're in the safe hands of a qualified driving instructor who
                   knows their stuff to help you pass your test.
                 </p>

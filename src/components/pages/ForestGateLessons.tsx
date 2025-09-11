@@ -25,7 +25,7 @@ const ForestGateLessons = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
@@ -46,16 +46,20 @@ const ForestGateLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    Learn to drive in
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
+                    Expert Driving Lessons
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span>Forest Gate</span>
+                  <span className="text-white">in Forest Gate</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 mb-8">
-                  Driving lessons in Forest Gate from one of the most trusted
-                  schools in London.
+                <p className="text-xl text-gray-200 mb-8">
+                  <span className="font-semibold">
+                    Professional instruction tailored to your needs
+                  </span>{" "}
+                  — Join over 10,000 successful students who've passed with our
+                  DVSA-approved instructors. Comprehensive training on Forest Gate
+                  test routes with London's highest-rated driving school.
                 </p>
 
                 <form
@@ -75,10 +79,17 @@ const ForestGateLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group relative overflow-hidden"
                   >
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Started Today
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <motion.div
+                      className="absolute inset-0 bg-white"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.4 }}
+                      style={{ opacity: 0.2 }}
+                    />
                   </Button>
                 </form>
               </motion.div>
@@ -301,7 +312,7 @@ const ForestGateLessons = () => {
         <SpecialOffersSection />
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"

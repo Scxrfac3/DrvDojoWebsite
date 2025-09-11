@@ -20,6 +20,7 @@ import {
   Sparkles,
   AlertCircle,
   Lock,
+  Zap,
 } from "lucide-react";
 import confetti from "canvas-confetti";
 const Contact = () => {
@@ -96,99 +97,115 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-white/10 backdrop-blur-sm"
-            style={{
-              width: Math.random() * 100 + 50,
-              height: Math.random() * 100 + 50,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [Math.random() * 100, Math.random() * -100],
-              x: [Math.random() * 100, Math.random() * -100],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "reverse",
-              duration: Math.random() * 10 + 10,
-            }}
-          />
-        ))}
-      </div>
+    <>
+      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
+          <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+        </div>
 
-      <Navbar />
+        {/* Animated particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+              style={{
+                width: Math.random() * 60 + 20,
+                height: Math.random() * 60 + 20,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              initial={{ opacity: 0.1, scale: 0 }}
+              animate={{
+                opacity: [0.1, 0.3, 0.1],
+                scale: [0, 1, 0],
+                x: [0, Math.random() * 100 - 50, 0],
+                y: [0, Math.random() * 100 - 50, 0],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+              }}
+            />
+          ))}
+        </div>
 
-      <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+        <Navbar />
+
+        <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
+          className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ delay: 0.2 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <motion.div
-            className="inline-flex items-center mb-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-pink-300 border border-white/20 shadow-lg"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Sparkles className="h-4 w-4 mr-2" />
-            Get in Touch
-          </motion.div>
-
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
-            Let's Start Your Journey
-          </h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <p className="text-xl text-purple-100 max-w-2xl mx-auto">
-              Ready to become a confident driver? We're just a message away from
-              helping you achieve your driving goals in London!{" "}
-              <span className="text-pink-300 font-medium">No cap fr fr</span> 🔥
-            </p>
-          </motion.div>
+          <Sparkles className="h-4 w-4 mr-2" />
+          Get in Touch
         </motion.div>
 
-        <Tabs defaultValue="message" className="w-full max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/10 backdrop-blur-sm p-1 rounded-xl border border-white/20">
-            <TabsTrigger
-              value="message"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
-            >
-              <MessageSquare className="h-4 w-4 mr-2" />
-              Message Us
-            </TabsTrigger>
-            <TabsTrigger
-              value="book"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
-            >
-              <Calendar className="h-4 w-4 mr-2" />
-              Book a Lesson
-            </TabsTrigger>
-            <TabsTrigger
-              value="info"
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
-            >
-              <MapPin className="h-4 w-4 mr-2" />
-              Find Us
-            </TabsTrigger>
-          </TabsList>
+        <h1 className="text-4xl md:text-6xl font-black mb-4">
+          <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+            Let's Start Your
+          </span>
+          <br />
+          <span className="text-orange-400 animate-bounce inline-block">Driving Journey</span>
+          <span className="text-2xl lg:text-3xl ml-4">🚗</span>
+        </h1>
 
-          <div className="relative">
-            <TabsContent value="message" className="mt-0">
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            Ready to become a confident driver? We're just a message away from
+            helping you achieve your driving goals in London!{" "}
+            <span className="text-orange-400 font-bold">No cap fr fr</span> 🔥
+          </p>
+        </motion.div>
+      </motion.div>
+
+      <Tabs defaultValue="message" className="w-full max-w-5xl mx-auto">
+        <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/10 backdrop-blur-sm p-1 rounded-xl border border-white/20">
+          <TabsTrigger
+            value="message"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
+          >
+            <MessageSquare className="h-4 w-4 mr-2" />
+            Message Us
+          </TabsTrigger>
+          <TabsTrigger
+            value="book"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
+          >
+            <Calendar className="h-4 w-4 mr-2" />
+            Book a Lesson
+          </TabsTrigger>
+          <TabsTrigger
+            value="info"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-purple-100"
+          >
+            <MapPin className="h-4 w-4 mr-2" />
+            Find Us
+          </TabsTrigger>
+        </TabsList>
+
+        <div className="relative">
+          <TabsContent value="message" className="mt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-4">
                 <motion.div
                   className="lg:col-span-3 bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-xl relative overflow-hidden group"
                   initial={{ opacity: 0, x: -50 }}
@@ -645,9 +662,9 @@ const Contact = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="book" className="mt-0">
+          <TabsContent value="book" className="mt-0">
               <motion.div
-                className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20 shadow-xl mt-4 relative overflow-hidden group"
+                className="bg-gradient-to-br from-blue-900/30 via-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-white/20 shadow-xl mt-4 relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -659,193 +676,219 @@ const Contact = () => {
                   whileHover={{ opacity: 1 }}
                 />
                 <div className="text-center mb-8 relative z-10">
-                  <h2 className="text-2xl font-bold text-white mb-2">
+                  <motion.div
+                    className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Zap className="h-4 w-4 mr-2" />
                     Book Your First Lesson
+                  </motion.div>
+                  <h2 className="text-2xl font-bold text-white mb-2">
+                    Choose Your Perfect Package
                   </h2>
                   <p className="text-purple-100 relative z-10">
-                    Choose your preferred package and we'll contact you to
-                    schedule your lessons
+                    Select the package that best fits your learning style and goals. We'll contact you to schedule your lessons!
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {/* Starter Package */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Pay-as-you-go */}
                   <motion.div
-                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative h-full group"
+                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                     whileHover={{
                       y: -5,
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-blue-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    />
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        Starter Package
+                    <div className="absolute top-4 left-4 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+                      🚗 Try Us Out
+                    </div>
+                    <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-blue-50 to-white">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">
+                        Pay-as-you-go
                       </h3>
-                      <div className="text-3xl font-bold text-white mb-2">
-                        £35<span className="text-sm font-normal">/hour</span>
-                      </div>
-                      <p className="text-slate-300 text-sm mb-4">
-                        Perfect for beginners
+                      <p className="text-sm text-gray-500 mb-3">
+                        Perfect for trying us out
                       </p>
-
+                      <div className="flex items-end mb-4">
+                        <span className="text-3xl font-bold text-gray-900">
+                          £76
+                        </span>
+                        <span className="text-lg text-gray-500 ml-2 mb-1">
+                          /2 hours
+                        </span>
+                      </div>
                       <ul className="space-y-2 mb-6">
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Pay-as-you-go flexibility
-                          </span>
+                          <span>2 hours lesson</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Personalized learning
-                          </span>
+                          <span>Personalized learning</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Beginner friendly
-                          </span>
+                          <span>Beginner friendly</span>
                         </li>
                       </ul>
-
                       <motion.div
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                       >
                         <Button
-                          className="w-full bg-blue-600 hover:bg-blue-700"
-                          onClick={() => {window.location.href = "/booking?package=starter"}}
+                          className="w-full bg-blue-600 hover:bg-blue-700 group relative overflow-hidden"
+                          onClick={() => {window.location.href = "/booking?package=payg"}}
                         >
                           Book Now
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                          <motion.div
+                            className="absolute inset-0 bg-white"
+                            initial={{ x: "-100%" }}
+                            whileHover={{ x: "100%" }}
+                            transition={{ duration: 0.4 }}
+                            style={{ opacity: 0.2 }}
+                          />
                         </Button>
                       </motion.div>
                     </div>
                   </motion.div>
 
-                  {/* Popular Package */}
+                  {/* 10-Hour Package */}
                   <motion.div
-                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative h-full group"
+                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                     whileHover={{
                       y: -5,
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-purple-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    />
-                    <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
-                      MOST POPULAR
+                    <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-400 rotate-12 flex items-end justify-start pb-2 pl-2 text-white font-bold">
+                      <span>Popular</span>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-white mb-2">
+                    <div className="absolute top-4 left-4 bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
+                      🔥 Best Value
+                    </div>
+                    <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-orange-50 to-white">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">
                         10-Hour Package
                       </h3>
-                      <div className="text-3xl font-bold text-white mb-2">
-                        £300
-                        <span className="text-sm font-normal">/package</span>
-                      </div>
-                      <p className="text-slate-300 text-sm mb-4">
-                        Save £50 compared to hourly rate
+                      <p className="text-sm text-gray-500 mb-3">
+                        Most Popular - Best value for money!
                       </p>
-
+                      <div className="flex items-end mb-4">
+                        <span className="text-3xl font-bold text-gray-900">
+                          £340
+                        </span>
+                        <span className="text-lg text-gray-500 ml-2 mb-1">
+                          /package
+                        </span>
+                      </div>
                       <ul className="space-y-2 mb-6">
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Structured learning plan
-                          </span>
+                          <span>10 hours of lessons</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Progress tracking
-                          </span>
+                          <span>Progress tracking</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Best value for most learners
-                          </span>
+                          <span>Best value for most learners</span>
                         </li>
                       </ul>
-
                       <motion.div
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                       >
                         <Button
-                          className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-                          onClick={() => {window.location.href = "/booking?package=popular"}}
+                          className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
+                          onClick={() => {window.location.href = "/booking?package=10hour"}}
                         >
                           Book Now
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                          <motion.div
+                            className="absolute inset-0 bg-white"
+                            initial={{ x: "-100%" }}
+                            whileHover={{ x: "100%" }}
+                            transition={{ duration: 0.4 }}
+                            style={{ opacity: 0.2 }}
+                          />
                         </Button>
                       </motion.div>
                     </div>
                   </motion.div>
 
-                  {/* Intensive Package */}
+                  {/* Intensive Lessons */}
                   <motion.div
-                    className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative h-full group"
+                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                     whileHover={{
                       y: -5,
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-green-500/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    />
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        Intensive Course
+                    <div className="absolute top-4 left-4 bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                      ⚡ Fast Track
+                    </div>
+                    <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-green-50 to-white">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">
+                        Intensive Lessons
                       </h3>
-                      <div className="text-3xl font-bold text-white mb-2">
-                        £570
-                        <span className="text-sm font-normal">/20 hours</span>
-                      </div>
-                      <p className="text-slate-300 text-sm mb-4">
+                      <p className="text-sm text-gray-500 mb-3">
                         Fast-track your learning
                       </p>
-
+                      <div className="flex items-end mb-4">
+                        <span className="text-3xl font-bold text-gray-900">
+                          Contact for Quote
+                        </span>
+                        <span className="text-lg text-gray-500 ml-2 mb-1">
+                          /tailored
+                        </span>
+                      </div>
                       <ul className="space-y-2 mb-6">
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Comprehensive training
-                          </span>
+                          <span>Tailored to student needs</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Theory test support
-                          </span>
+                          <span>Contact for quote based on location</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-slate-300">
-                            Test preparation included
-                          </span>
+                          <span>Comprehensive training</span>
                         </li>
                       </ul>
-
                       <motion.div
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                       >
                         <Button
-                          className="w-full bg-green-600 hover:bg-green-700"
+                          className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 group relative overflow-hidden"
                           onClick={() => {window.location.href = "/booking?package=intensive"}}
                         >
-                          Book Now
+                          Get Quote
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                          <motion.div
+                            className="absolute inset-0 bg-white"
+                            initial={{ x: "-100%" }}
+                            whileHover={{ x: "100%" }}
+                            transition={{ duration: 0.4 }}
+                            style={{ opacity: 0.2 }}
+                          />
                         </Button>
                       </motion.div>
                     </div>
@@ -859,15 +902,23 @@ const Contact = () => {
                   </p>
                   <Button
                     variant="outline"
-                    className="border-slate-600 text-white hover:bg-slate-800"
+                    className="border-slate-600 text-white hover:bg-slate-800 group relative overflow-hidden"
+                    onClick={() => {window.location.href = "/contact"}}
                   >
                     Request Callback
+                    <motion.div
+                      className="absolute inset-0 bg-white"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.4 }}
+                      style={{ opacity: 0.2 }}
+                    />
                   </Button>
                 </div>
               </motion.div>
             </TabsContent>
 
-            <TabsContent value="info" className="mt-0">
+          <TabsContent value="info" className="mt-0">
               <motion.div
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4"
                 initial={{ opacity: 0, y: 20 }}
@@ -1088,11 +1139,11 @@ const Contact = () => {
                 </div>
               </motion.div>
             </TabsContent>
-          </div>
-        </Tabs>
+        </div>
+      </Tabs>
 
-        {/* Social Proof Section */}
-        <motion.div
+      {/* Social Proof Section */}
+      <motion.div
           className="mt-16 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1175,11 +1226,11 @@ const Contact = () => {
               </p>
             </motion.div>
           </div>
-        </motion.div>
+      </motion.div>
+        </div>
       </div>
-
       <Footer />
-    </div>
+    </>
   );
 };
 

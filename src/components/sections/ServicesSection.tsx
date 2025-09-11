@@ -138,81 +138,83 @@ interface EliteServicesSectionProps {
 }
 
 const ServicesSection = ({
-  title = "ELITE SERVICES AS STANDARD",
-  subtitle = "We provide premium services to all our students at no extra cost",
+  title = "Why Choose Drive Dojo? ✨",
+  subtitle = "Professional driving instruction with proven results across London and Essex",
 }: EliteServicesSectionProps) => {
   const features = [
     {
       icon: <Award className="h-6 w-6 text-white" />,
-      title: "Pro-Level Instructors",
+      title: "DVSA Approved Instructors",
       description:
-        "Learn from the best! Our instructors are top-tier with advanced certifications and are regularly evaluated to ensure quality.",
-      image: "/images/certifications/C1.png",
+        "Fully qualified driving instructors with extensive experience and excellent pass rates across London and Essex.",
+      image: "/images/certifications/DVSA-ADI.png",
       emoji: "🏆",
-      color: "bg-gradient-to-br from-purple-900/95 to-indigo-900/95",
+      color: "bg-gradient-to-br from-blue-900/95 to-indigo-900/95",
     },
     {
       icon: <Clock className="h-6 w-6 text-white" />,
-      title: "Full 2-Hour Sessions",
+      title: "Flexible Lesson Times",
       description:
-        "Get the most out of every lesson with our full 2-hour sessions - no shortcuts, just quality learning time!",
+        "Convenient scheduling with early morning, evening, and weekend availability to fit your busy lifestyle.",
       image: "/images/certifications/15.png",
-      emoji: "⏱️",
-      color: "bg-gradient-to-br from-blue-900/95 to-slate-900/95",
-    },
-    {
-      icon: <Home className="h-6 w-6 text-white" />,
-      title: "Door-to-Door Service",
-      description:
-        "No need to worry about transportation! We'll pick you up and drop you off wherever is most convenient for you.",
-      image: "/images/certifications/14.png",
-      emoji: "🏠",
+      emoji: "⏰",
       color: "bg-gradient-to-br from-green-900/95 to-emerald-900/95",
     },
     {
-      icon: <Car className="h-6 w-6 text-white" />,
-      title: "Choose Your Ride",
+      icon: <Home className="h-6 w-6 text-white" />,
+      title: "Local Pickup Service",
       description:
-        "Manual or automatic? You decide! Learn in the type of car that suits your style and future driving plans.",
+        "Door-to-door service across London and Essex. We collect you from home, work, or any convenient location.",
+      image: "/images/certifications/14.png",
+      emoji: "📍",
+      color: "bg-gradient-to-br from-purple-900/95 to-pink-900/95",
+    },
+    {
+      icon: <Car className="h-6 w-6 text-white" />,
+      title: "Manual & Automatic Cars",
+      description:
+        "Choose between manual or automatic transmission vehicles. Modern, well-maintained cars for comfortable learning.",
       image: "/images/certifications/18.png",
       emoji: "🚗",
       color: "bg-gradient-to-br from-red-900/95 to-orange-900/95",
     },
     {
       icon: <Users className="h-6 w-6 text-white" />,
-      title: "Instructor Options",
+      title: "Male & Female Instructors",
       description:
-        "Choose a male or female instructor based on who you feel most comfortable learning with - your preference matters!",
+        "Professional male and female driving instructors available. Learn with someone you feel comfortable with.",
       image: "/images/certifications/DVSA.png",
-      emoji: "👩‍🏫",
-      color: "bg-gradient-to-br from-yellow-900/95 to-amber-900/95",
+      emoji: "👨‍🏫",
+      color: "bg-gradient-to-br from-teal-900/95 to-cyan-900/95",
     },
     {
       icon: <Flame className="h-6 w-6 text-white" />,
-      title: "Fresh Air Guarantee",
+      title: "First Time Pass Focus",
       description:
-        "All our vehicles are strictly non-smoking, ensuring a clean and comfortable learning environment for everyone.",
-      image:
-        "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80",
-      emoji: "💨",
-      color: "bg-gradient-to-br from-cyan-900/95 to-blue-900/95",
+        "Structured lessons designed to help you pass your driving test first time. Comprehensive test preparation included.",
+      image: "/images/certifications/PassPlus.png",
+      emoji: "🎯",
+      color: "bg-gradient-to-br from-amber-900/95 to-yellow-900/95",
     },
     {
       icon: <Tool className="h-6 w-6 text-white" />,
-      title: "Dual Control Installation",
+      title: "Competitive Pricing",
       description:
-        "Official He-Man dual control systems installed by certified technicians. Premium service for driving instructors.",
-      image:
-        "https://images.unsplash.com/photo-1581093458791-9d09a5c0d6e5?w=800&q=80",
-      emoji: "🔧",
-      color: "bg-gradient-to-br from-blue-900/95 to-purple-900/95",
+        "Transparent pricing with no hidden fees. Block booking discounts available for affordable driving lessons.",
+      image: "/images/certifications/C1.png",
+      emoji: "💰",
+      color: "bg-gradient-to-br from-indigo-900/95 to-purple-900/95",
     },
   ];
 
   return (
     <section className="py-16 px-4 md:px-8 relative overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-950 via-purple-900 to-red-800 z-0 overflow-hidden"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+      </div>
       <div className="absolute top-0 right-0 w-64 h-64 bg-magenta-500/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/30 rounded-full blur-3xl"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
@@ -226,30 +228,30 @@ const ServicesSection = ({
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center mb-3 bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+            className="inline-flex items-center mb-3 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Sparkles className="h-4 w-4 mr-2" />
-            Premium Experience
+            <Award className="h-4 w-4 mr-2" />
+            Professional Excellence
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-5xl font-bold mb-4 text-white"
+            className="text-3xl md:text-5xl font-bold mb-4 text-gray-900"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-500">
               {title}
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-gray-300 text-lg max-w-2xl mx-auto"
+            className="text-gray-600 text-lg max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -282,7 +284,7 @@ const ServicesSection = ({
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium shadow-lg flex items-center mx-auto"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium shadow-lg flex items-center mx-auto"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
@@ -290,7 +292,7 @@ const ServicesSection = ({
             whileTap={{ scale: 0.95 }}
           >
             <Zap className="mr-2 h-5 w-5" />
-            Book Your Premium Experience
+            Book Your Driving Lesson
           </motion.button>
         </motion.div>
       </div>

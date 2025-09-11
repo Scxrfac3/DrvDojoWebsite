@@ -91,7 +91,7 @@ const WalthamstowLessons = () => {
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/images/certifications/C3.png"
+                    src="/images/certifications/HERO1.jpg"
                     alt="Driving lessons in Walthamstow"
                     className="w-full h-auto object-cover rounded-2xl"
                   />
@@ -211,7 +211,7 @@ const WalthamstowLessons = () => {
                   One of the UK's biggest and best
                 </h3>
                 <p className="text-gray-700">
-                  Thanks to the expertise of our AA driving instructors, our
+                  Thanks to the expertise of our driving instructors, our
                   pupils need just 40 hours on average to be test-ready. Let us
                   teach you and we'll have you feeling good about driving and
                   safely behind the wheel in Walthamstow as safely as we can.

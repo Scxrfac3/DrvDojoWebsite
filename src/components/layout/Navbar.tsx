@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Globe, Rocket } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown, Globe, Rocket, Phone, MessageCircle, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -26,6 +26,15 @@ interface NavbarProps {
 const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { name: 'Home', path: '/', emoji: '🏠' },
+    { name: 'Services', path: '/services', emoji: '💰' },
+    { name: 'About', path: '/about', emoji: '👥' },
+    { name: 'Contact', path: '/contact', emoji: '📞' },
+    { name: 'Blog', path: '/blog', emoji: '📝' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,15 +50,19 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 right-0 z-50 ${isScrolled ? "bg-gradient-to-r from-slate-900/95 via-blue-900/95 to-slate-900/95 shadow-lg" : transparent ? "bg-transparent" : "bg-gradient-to-r from-slate-900/95 via-blue-900/95 to-slate-900/95"}`}
+      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-xl'
+          : transparent ? 'bg-transparent' : 'bg-white shadow-lg'
+      }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex-shrink-0 flex items-center group">
           <motion.img
             src="/images/certifications/DDojo.png"
             alt="Drive Dojo Logo"
-            className="h-10 w-auto"
+            className="h-12 w-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           />
@@ -62,126 +75,126 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
                 >
                   Home
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 text-white hover:text-blue-300 text-base font-semibold">
+                <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 text-gray-900 hover:text-blue-600 text-base font-semibold">
                   Services
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-slate-800/95 border border-slate-700 p-4 rounded-lg shadow-xl">
+                <NavigationMenuContent className="bg-white/95 border border-gray-200 p-4 rounded-lg shadow-xl">
                   <div className="grid grid-cols-2 gap-3 p-4 w-[500px]">
                     <Link
                       to="/services"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         All Services
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         View our complete range of driving lessons
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/goodmayes"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Goodmayes
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Goodmayes
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/barking"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Barking
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Barking
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/romford"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Romford
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Romford
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/isle-of-dogs"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Isle of Dogs
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Isle of Dogs
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/east-ham"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         East Ham
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in East Ham
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/forest-gate"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Forest Gate
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Forest Gate
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/canning-town"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Canning Town
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Canning Town
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/docklands"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-gray-900">
                         Docklands
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Driving lessons in Docklands
                       </div>
                     </Link>
                     <Link
                       to="/dual-control-installation"
-                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-slate-700/50 transition-colors bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-800/30"
+                      className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100 transition-colors bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-800/30"
                     >
-                      <div className="text-sm font-medium text-white flex items-center">
+                      <div className="text-sm font-medium text-gray-900 flex items-center">
                         <span className="text-yellow-400 mr-1">🔧</span> Dual
                         Control Installation
                       </div>
-                      <div className="text-xs text-slate-400 group-hover:text-slate-300">
+                      <div className="text-xs text-gray-500 group-hover:text-gray-700">
                         Official He-Man partner for instructors
                       </div>
                     </Link>
@@ -192,7 +205,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/about"
-                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
                 >
                   About
                 </Link>
@@ -201,7 +214,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
                 >
                   Contact
                 </Link>
@@ -210,14 +223,14 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/blog"
-                  className="px-4 py-2 text-base font-semibold text-white hover:text-blue-300 transition-colors"
+                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
                 >
                   Blog
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <span className="px-4 py-2 text-base font-semibold text-gray-400 flex items-center cursor-not-allowed">
+                <span className="px-4 py-2 text-base font-semibold text-gray-500 flex items-center cursor-not-allowed">
                   Student Portal
                   <span className="ml-2 text-xs bg-blue-500/30 px-1.5 py-0.5 rounded-full">
                     Coming Soon
@@ -227,39 +240,34 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="ml-4 flex items-center space-x-2">
-            <motion.div
-              className="text-xs bg-slate-800/50 px-2 py-1 rounded-full flex items-center space-x-1 text-slate-400"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(30, 41, 59, 0.7)",
-              }}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a
+              href="https://wa.me/442012345678"
+              className="flex items-center text-green-600 hover:text-green-700 transition-colors group"
             >
-              <Globe className="h-3 w-3 mr-1" />
-              <span>EN</span>
-            </motion.div>
-
-            <Button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md group"
-              asChild
+              <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-bounce" />
+              <span className="font-semibold">WhatsApp</span>
+            </a>
+            <a
+              href="tel:+442012345678"
+              className="flex items-center text-gray-700 hover:text-blue-700 transition-colors group"
             >
-              <Link to="/booking" className="flex items-center">
-                Book Now
-                <motion.span
-                  className="ml-2 inline-block"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  →
-                </motion.span>
-              </Link>
-            </Button>
+              <Phone className="h-4 w-4 mr-2 group-hover:animate-bounce" />
+              <span className="font-semibold">020 1234 5678</span>
+            </a>
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
+            >
+              <Zap className="h-4 w-4 mr-2 animate-pulse" />
+              Book Now!
+            </Link>
           </div>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 rounded-md text-white hover:bg-white/10"
+          className="md:hidden p-2 rounded-md text-black hover:bg-black/10"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -271,96 +279,54 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="md:hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 border-t border-white/10"
+            className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="container mx-auto px-4 py-2">
-              <nav className="flex flex-col space-y-3 py-4">
-                <Link
-                  to="/"
-                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-
-                <Link
-                  to="/services"
-                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </Link>
-
-                <Link
-                  to="/about"
-                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-
-                <Link
-                  to="/blog"
-                  className="px-4 py-2 text-base font-semibold text-white hover:bg-white/10 rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-
-                <span className="px-4 py-2 text-base font-semibold text-gray-400 flex items-center cursor-not-allowed">
-                  Student Portal
-                  <span className="ml-2 text-xs bg-blue-500/30 px-1.5 py-0.5 rounded-full">
-                    Coming Soon
-                  </span>
-                </span>
-
-                <div className="pt-2">
-                  <Button
-                    className="w-full justify-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md group"
-                    asChild
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`flex items-center px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
+                      location.pathname === item.path
+                        ? 'text-white bg-gradient-to-r from-blue-600 to-purple-600'
+                        : 'text-gray-700 hover:text-white hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    <Link
-                      to="/booking"
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center justify-center"
-                    >
-                      Book Now
-                      <motion.span
-                        className="ml-2 inline-block"
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.5 }}
-                      >
-                        →
-                      </motion.span>
-                    </Link>
-                  </Button>
-                </div>
-
-                <div className="flex justify-center mt-4">
-                  <motion.div
-                    className="text-xs bg-slate-800/50 px-2 py-1 rounded-full flex items-center space-x-1 text-slate-400"
-                    whileHover={{
-                      scale: 1.05,
-                      backgroundColor: "rgba(30, 41, 59, 0.7)",
-                    }}
+                    <span className="mr-3 text-lg">{item.emoji}</span>
+                    {item.name}
+                  </Link>
+                ))}
+                
+                <div className="pt-4 border-t border-gray-200 space-y-2">
+                  <a
+                    href="https://wa.me/442012345678"
+                    className="flex items-center px-4 py-3 text-base font-medium text-green-600 hover:text-green-700 rounded-xl hover:bg-green-50 transition-colors"
                   >
-                    <Rocket className="h-3 w-3 mr-1" />
-                    <span>London Based</span>
-                  </motion.div>
+                    <MessageCircle className="h-5 w-5 mr-3" />
+                    WhatsApp Us 💬
+                  </a>
+                  <a
+                    href="tel:+442012345678"
+                    className="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-700 rounded-xl hover:bg-blue-50 transition-colors"
+                  >
+                    <Phone className="h-5 w-5 mr-3" />
+                    020 1234 5678
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="block mx-4 mt-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-4 rounded-2xl font-bold text-center transition-all duration-300 transform hover:scale-105"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    🚀 Book Now!
+                  </Link>
                 </div>
-              </nav>
+              </div>
             </div>
           </motion.div>
         )}

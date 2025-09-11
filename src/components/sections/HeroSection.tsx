@@ -1,251 +1,207 @@
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Calendar,
-  Phone,
-  Star,
-  CheckCircle,
-  Users,
-  Sparkles,
-  Zap,
-  Trophy,
-  MessageCircle,
-  Heart,
-  Share2,
-  Clock,
-  Flame,
-} from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import confetti from "canvas-confetti";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { CheckCircle, Star, Users, Zap, Trophy, ArrowRight, Play, Calendar } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
-interface HeroSectionProps {
-  title?: string;
-  subtitle?: string;
-  ctaPrimaryText?: string;
-  ctaSecondaryText?: string;
-  onBookLesson?: () => void;
-  onCheckPricing?: () => void;
-}
+export default function HeroSection() {
+  const [currentStat, setCurrentStat] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
-const HeroSection = ({
-  title = "Master London's Roads. Drive with Confidence.",
-  subtitle = "Your Licence, Faster. Expert Lessons. Real Results.",
-  ctaPrimaryText = "Book a Lesson",
-  ctaSecondaryText = "Call Now",
-  onBookLesson = () => (window.location.href = "/booking"),
-  onCheckPricing = () => (window.location.href = "tel:+447487228866"),
-}: HeroSectionProps) => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [showEmoji, setShowEmoji] = useState(false);
-
-  // Show emoji animation periodically
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowEmoji(true);
-      setTimeout(() => setShowEmoji(false), 2000);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
+  const stats = [
+    { icon: Star, number: '98%', label: 'Pass Rate', color: 'text-accent-400' },
+    { icon: Users, number: '2000+', label: 'Students', color: 'text-primary-300' },
+    { icon: Trophy, number: '8+', label: 'Years', color: 'text-secondary-400' },
+    { icon: Zap, number: '24hr', label: 'Response', color: 'text-accent-400' }
+  ];
 
   const triggerConfetti = () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-    });
+    const duration = 15 * 1000;
+    const animationEnd = Date.now() + duration;
+
+    function randomInRange(min: number, max: number) {
+      return Math.random() * (max - min) + min;
+    }
+
+    (function frame() {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return;
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      confetti({
+        particleCount,
+        startVelocity: randomInRange(50, 100),
+        spread: randomInRange(50, 70),
+        origin: {
+          x: randomInRange(0.1, 0.3),
+          y: Math.random() - 0.2
+        }
+      });
+      confetti({
+        particleCount,
+        startVelocity: randomInRange(50, 100),
+        spread: randomInRange(50, 70),
+        origin: {
+          x: randomInRange(0.7, 0.9),
+          y: Math.random() - 0.2
+        }
+      });
+
+      requestAnimationFrame(frame);
+    }());
   };
 
-
   return (
-    <section className="relative w-full overflow-hidden py-0 -mt-1">
-      <div className="relative w-full h-full overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/certifications/HERO1.jpg')",
-          }}
-        />
-        
-        {/* Gradient Overlay with reduced opacity */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/40 to-indigo-900/40" />
-        
-        {/* Animated gradient orbs with reduced opacity */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+    <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white overflow-hidden min-h-screen flex items-center">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
+        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+      </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-16 md:py-20 h-full">
-          {/* Top Section with Logo and Location */}
-          <div className="flex flex-wrap justify-between items-center mb-8">
-            <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-0">
-              <motion.div
-                className="inline-flex items-center bg-primary/90 text-primary-foreground px-4 py-2 rounded-full"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="font-bold">Drive Dojo</span>
-                <span className="ml-2 text-sm">Driving School</span>
-              </motion.div>
-
-              <motion.div
-                className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="text-sm">
-                  East London's Premier Driving School
-                </span>
-              </motion.div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="flex items-center space-x-4 animate-fade-in">
+              <div className="flex items-center bg-green-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-green-400/30">
+                <CheckCircle className="h-5 w-5 text-green-400 mr-2 animate-pulse" />
+                <span className="text-sm font-medium">DVSA Approved ✨</span>
+              </div>
+              <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
+                <Zap className="h-5 w-5 text-orange-400 mr-2" />
+                <span className="text-sm font-medium">Quick Start 🚀</span>
+              </div>
             </div>
 
-            <motion.div
-              className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={triggerConfetti}
-            >
-              <Flame className="h-4 w-4 text-orange-400" />
-              <span className="text-white text-xs font-medium">
-                95% Pass Rate
+            <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+              <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+                Drive Like a
               </span>
-            </motion.div>
+              <br />
+              <span className="text-orange-400 animate-bounce inline-block">Pro</span>
+              <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
+            </h1>
+
+            <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed">
+              Pass first time with Drive Dojo. Our DVSA-approved instructors are dedicated to helping you achieve your licence goals.
+            </p>
+
+            {/* Animated Stats */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <div className="grid grid-cols-4 gap-4">
+                {stats.map((stat, index) => {
+                  const IconComponent = stat.icon;
+                  return (
+                    <div
+                      key={index}
+                      className={`text-center transition-all duration-500 ${
+                        currentStat === index ? 'scale-110 transform' : 'scale-100'
+                      }`}
+                    >
+                      <IconComponent className={`h-6 w-6 mx-auto mb-2 ${stat.color} ${
+                        currentStat === index ? 'animate-bounce' : ''
+                      }`} />
+                      <div className={`text-2xl font-bold ${stat.color}`}>{stat.number}</div>
+                      <div className="text-xs text-blue-200">{stat.label}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/booking"
+                className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 text-center relative overflow-hidden"
+                onClick={triggerConfetti}
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  🚗 Book Your First Lesson
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              </Link>
+              <Link
+                to="/packages"
+                className="group bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 text-center"
+              >
+                <span className="flex items-center justify-center">
+                  💰 View Packages
+                  <Zap className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                </span>
+              </Link>
+            </div>
+
+            {/* Social Proof */}
+            <div className="flex items-center space-x-6 text-sm">
+              <div className="flex items-center">
+                <div className="flex -space-x-2 mr-3">
+                  {[1,2,3,4].map((i) => (
+                    <div key={i} className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-500 rounded-full border-2 border-white"></div>
+                  ))}
+                </div>
+                <span className="text-blue-200">2000+ happy drivers</span>
+              </div>
+              <div className="flex items-center">
+                <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                <span className="text-blue-200">4.9/5 rating</span>
+              </div>
+            </div>
           </div>
 
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Hero Content */}
-            <div className="max-w-3xl mx-auto">
-              {/* Hero Text */}
-              <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {title}
-                <motion.span
-                  className="inline-block ml-2"
-                  animate={{
-                    rotate: showEmoji ? [0, 15, -15, 0] : 0,
-                    scale: showEmoji ? [1, 1.5, 1] : 1,
-                  }}
-                  transition={{ duration: 0.5 }}
-                >
-                  🚀
-                </motion.span>
-              </motion.h1>
+          {/* Right Content - Hero Image */}
+          <div className="relative">
+            <div className="relative z-10 group">
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                <img
+                  src="/images/certifications/BANNER_MAIN3276.png"
+                  alt="Professional driving instructor in modern training vehicle"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
-              <motion.p
-                className="text-xl text-white/90 mb-8 max-w-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                {subtitle}
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold flex items-center gap-2 shadow-lg"
-                  onClick={() => {
-                    triggerConfetti();
-                    onBookLesson();
-                  }}
-                >
-                  <Calendar className="w-5 h-5" />
-                  {ctaPrimaryText}
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button
+                    onClick={() => setIsVideoPlaying(!isVideoPlaying)}
+                    className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110 group"
                   >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.span>
-                </Button>
+                    <Play className="h-8 w-8 ml-1" />
+                  </button>
+                </div>
 
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:text-white flex items-center gap-2"
-                  onClick={onCheckPricing}
-                >
-                  <Phone className="w-5 h-5" />
-                  {ctaSecondaryText}
-                </Button>
-              </motion.div>
+                {/* Floating Success Badge */}
+                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-2xl shadow-xl animate-bounce">
+                  <div className="text-2xl font-bold">98%</div>
+                  <div className="text-xs">Pass Rate 🎉</div>
+                </div>
+              </div>
+            </div>
 
-              {/* Trust Indicators */}
-              <motion.div
-                className="flex flex-wrap items-center gap-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                  }}
-                >
-                  <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                  <span className="text-white text-xs font-medium">
-                    5-star rated
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                  }}
-                >
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span className="text-white text-xs font-medium">
-                    DVSA certified
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                  }}
-                >
-                  <Users className="w-4 h-4 text-blue-400" />
-                  <span className="text-white text-xs font-medium">
-                    10,000+ students
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                  }}
-                >
-                  <Clock className="w-4 h-4 text-purple-400" />
-                  <span className="text-white text-xs font-medium">
-                    Flexible scheduling
-                  </span>
-                </motion.div>
-              </motion.div>
+            {/* Floating Elements */}
+            <div className="absolute -top-6 -left-6 bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-2xl shadow-xl animate-pulse">
+              <Trophy className="h-8 w-8 text-white" />
+            </div>
+            <div className="absolute top-20 -right-8 bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-xl shadow-xl animate-bounce">
+              <span className="text-white font-bold text-sm">DVSA ✓</span>
             </div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
       </div>
+
+
     </section>
   );
-};
-
-export default HeroSection;
+}

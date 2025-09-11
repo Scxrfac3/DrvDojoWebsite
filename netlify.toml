@@ -5,6 +5,9 @@
 [build.environment]
   NODE_VERSION = "18.18.0"
 
+[functions]
+  directory = "netlify/functions"
+
 # Redirect rules for SPA (Single Page Application)
 [[redirects]]
   from = "/*"

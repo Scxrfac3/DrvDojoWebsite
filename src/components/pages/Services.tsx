@@ -4,10 +4,11 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import CertificationsBar from "../sections/CertificationsBar";
 import GetStartedSection from "../sections/GetStartedSection";
-import TestimonialsSection from "../sections/TestimonialsSection";
+import NewTestimonialsSection from "../sections/NewTestimonialsSection";
 import FAQSection from "../sections/FAQSection";
 import ServicesSection from "../sections/ServicesSection";
 import IntensiveCourseDetails from "../sections/IntensiveCourseDetails";
+import TestCentresSection from "../sections/TestCentresSection";
 import { Button } from "../ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -34,6 +35,14 @@ import {
   ChevronRight,
   ChevronLeft,
   BookOpen,
+  CheckCircle,
+  Trophy,
+  Target,
+  Book,
+  TrendingUp,
+  Smartphone,
+  MessageSquare,
+  Play,
 } from "lucide-react";
 import confetti from "canvas-confetti";
 
@@ -129,6 +138,36 @@ const Services = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [animateBackground, setAnimateBackground] = useState(false);
   const [hoverService, setHoverService] = useState(null);
+  const [transmissionType, setTransmissionType] = useState('manual');
+  const [likedPackages, setLikedPackages] = useState<Set<string>>(new Set());
+  const [hoveredPackage, setHoveredPackage] = useState<string | null>(null);
+
+  // Add CSS animations
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes gradient {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
   const triggerConfetti = () => {
     confetti({
@@ -151,21 +190,24 @@ const Services = () => {
     setTimeout(() => setSelectedService(null), 300);
   };
 
+  const handleLike = (packageId: string) => {
+    const newLiked = new Set(likedPackages);
+    if (newLiked.has(packageId)) {
+      newLiked.delete(packageId);
+    } else {
+      newLiked.add(packageId);
+    }
+    setLikedPackages(newLiked);
+  };
+
   return (
-    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div
-        className={`absolute -top-40 -right-40 w-80 h-80 bg-blue-600/20 rounded-full opacity-20 blur-3xl ${animateBackground ? "animate-pulse-slow" : ""}`}
-      ></div>
-      <div
-        className={`absolute top-1/3 -left-40 w-80 h-80 bg-purple-600/20 rounded-full opacity-20 blur-3xl ${animateBackground ? "animate-pulse-slow" : ""}`}
-      ></div>
-      <div
-        className={`absolute bottom-1/3 -right-40 w-80 h-80 bg-green-600/20 rounded-full opacity-20 blur-3xl ${animateBackground ? "animate-pulse-slow" : ""}`}
-      ></div>
-      <div
-        className={`absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-600/20 rounded-full opacity-20 blur-3xl ${animateBackground ? "animate-pulse-slow" : ""}`}
-      ></div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 relative overflow-hidden">
+      {/* Background decorative elements with new design */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-40 h-40 bg-orange-500 rounded-full opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-green-500 rounded-full opacity-15 animate-bounce"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-500 rounded-full opacity-10 animate-ping"></div>
+      </div>
 
       {/* Animated particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -207,121 +249,96 @@ const Services = () => {
             />
           ) : (
             <>
-              {/* Hero Banner */}
-              <section className="relative py-32 overflow-hidden">
-                {/* Dynamic background with multiple images */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0 w-full h-full"
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: [1, 0.8, 1] }}
-                    transition={{ duration: 8, repeat: Infinity }}
-                  >
-                    <img
-                      src="/images/certifications/18.jpg"
-                      alt="Urban driving"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    className="absolute inset-0 w-full h-full"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.6, 0] }}
-                    transition={{ duration: 8, repeat: Infinity, delay: 4 }}
-                  >
-                    <img
-                      src="/images/certifications/c5.png"
-                      alt="Modern driving lesson"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80 mix-blend-multiply"></div>
-
-                  {/* Animated particles/shapes */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    {[...Array(15)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute rounded-full bg-white/20 backdrop-blur-sm"
-                        style={{
-                          width: Math.random() * 60 + 20,
-                          height: Math.random() * 60 + 20,
-                          left: `${Math.random() * 100}%`,
-                          top: `${Math.random() * 100}%`,
-                        }}
-                        initial={{ opacity: 0.1, scale: 0 }}
-                        animate={{
-                          opacity: [0.1, 0.3, 0.1],
-                          scale: [0, 1, 0],
-                          x: [0, Math.random() * 100 - 50, 0],
-                          y: [0, Math.random() * 100 - 50, 0],
-                        }}
-                        transition={{
-                          duration: Math.random() * 10 + 10,
-                          repeat: Infinity,
-                          delay: Math.random() * 5,
-                        }}
-                      />
-                    ))}
-                  </div>
+              {/* Hero Banner - Updated Design */}
+              <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white py-20 relative overflow-hidden min-h-screen flex items-center">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0">
+                  <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
+                  <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
+                  <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    {/* Left side - Text content */}
-                    <motion.div
-                      className="text-left"
-                      initial={{ opacity: 0, x: -50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <motion.div
-                        className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-4"
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Content */}
+                    <div className="space-y-8">
+                      <div className="flex items-center space-x-4 animate-fade-in">
+                        <div className="flex items-center bg-green-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-green-400/30">
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 animate-pulse" />
+                          <span className="text-sm font-medium">DVSA Approved ✨</span>
+                        </div>
+                        <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
+                          <Zap className="h-5 w-5 text-orange-400 mr-2" />
+                          <span className="text-sm font-medium">Intensive Courses 🚀</span>
+                        </div>
+                      </div>
+                      
+                      <motion.h1
+                        className="text-5xl lg:text-7xl font-black leading-tight"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        whileHover={{
-                          scale: 1.05,
-                          backgroundColor: "rgba(255,255,255,0.2)",
-                        }}
+                        transition={{ duration: 0.5 }}
                       >
-                        <span className="mr-2">🔥</span> Most Popular Driving
-                        School in 2024
-                      </motion.div>
-
-                      <motion.h1
-                        className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight"
+                        <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+                          Intensive Driving
+                        </span>
+                        <br />
+                        <span className="text-orange-400 animate-bounce inline-block">Courses</span>
+                        <span className="text-2xl lg:text-3xl ml-4">🎯</span>
+                      </motion.h1>
+                      
+                      <motion.p
+                        className="text-xl lg:text-2xl text-blue-100 leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                       >
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                          Level Up
-                        </span>{" "}
-                        Your Driving Skills
-                      </motion.h1>
+                        Fast-track your driving success with our <span className="text-orange-400 font-bold">intensive courses</span>!
+                        Pass your test with our <span className="text-green-400 font-bold">DVSA-approved instructors</span> and
+                        <span className="text-blue-400 font-bold"> structured training</span> 🏆
+                      </motion.p>
 
-                      <motion.p
-                        className="text-xl mb-8 text-white/90"
+                      {/* Animated Stats */}
+                      <motion.div
+                        className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
                       >
-                        From zero to hero in record time. Our instructors are
-                        the real MVPs who'll help you crush your driving test.
-                      </motion.p>
+                        <div className="grid grid-cols-4 gap-4">
+                          <div className="text-center">
+                            <Trophy className="h-6 w-6 mx-auto mb-2 text-yellow-400 animate-bounce" />
+                            <div className="text-2xl font-bold text-yellow-400">98%</div>
+                            <div className="text-xs text-blue-200">Pass Rate</div>
+                          </div>
+                          <div className="text-center">
+                            <Users className="h-6 w-6 mx-auto mb-2 text-blue-300" />
+                            <div className="text-2xl font-bold text-blue-300">2000+</div>
+                            <div className="text-xs text-blue-200">Students</div>
+                          </div>
+                          <div className="text-center">
+                            <Star className="h-6 w-6 mx-auto mb-2 text-green-400" />
+                            <div className="text-2xl font-bold text-green-400">8+</div>
+                            <div className="text-xs text-blue-200">Years</div>
+                          </div>
+                          <div className="text-center">
+                            <Zap className="h-6 w-6 mx-auto mb-2 text-orange-400" />
+                            <div className="text-2xl font-bold text-orange-400">1 Week</div>
+                            <div className="text-xs text-blue-200">Fast Track</div>
+                          </div>
+                        </div>
+                      </motion.div>
 
                       <motion.div
                         className="flex flex-col sm:flex-row gap-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
                       >
                         <Button
                           size="lg"
-                          className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg group relative overflow-hidden"
+                          className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group relative overflow-hidden"
                           asChild
                         >
                           <motion.a
@@ -329,7 +346,7 @@ const Services = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
-                            Book Your First Lesson
+                            🚗 Book Intensive Course
                             <motion.span
                               className="ml-2 inline-block"
                               initial={{ x: 0 }}
@@ -355,145 +372,84 @@ const Services = () => {
                           asChild
                         >
                           <motion.a
-                            href="#pricing"
+                            href="#courses"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
-                            View Pricing
+                            💰 View All Courses
                           </motion.a>
                         </Button>
                       </motion.div>
 
                       {/* Social proof */}
                       <motion.div
-                        className="mt-8 flex items-center gap-4"
+                        className="flex items-center space-x-6 text-sm"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.6 }}
+                        transition={{ delay: 0.8 }}
                       >
-                        <div className="flex -space-x-2">
-                          {[1, 2, 3, 4].map((i) => (
-                            <img
-                              key={i}
-                              src={`https://api.dicebear.com/7.x/avataaars/svg?seed=student${i}`}
-                              alt="Student"
-                              className="w-8 h-8 rounded-full border-2 border-white"
-                            />
-                          ))}
+                        <div className="flex items-center">
+                          <div className="flex -space-x-2 mr-3">
+                            {[1,2,3,4].map((i) => (
+                              <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
+                            ))}
+                          </div>
+                          <span className="text-blue-200">2000+ successful drivers</span>
                         </div>
-                        <div className="text-white/90 text-sm">
-                          <span className="font-bold">4.9/5</span> from over{" "}
-                          <span className="font-bold">2,000+</span> happy
-                          students
+                        <div className="flex items-center">
+                          <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                          <span className="text-blue-200">4.9/5 rating</span>
                         </div>
                       </motion.div>
-                    </motion.div>
+                    </div>
 
-                    {/* Right side - Interactive visual element */}
-                    <motion.div
-                      className="relative hidden md:block"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10 shadow-xl">
-                        {/* Main image */}
-                        <motion.div
-                          className="absolute inset-0 p-3"
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: 0.5 }}
-                        >
+                    {/* Right Content - Interactive visual element */}
+                    <div className="relative">
+                      <div className="relative z-10 group">
+                        <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                           <img
-                            src="/images/certifications/DVSA.png"
-                            alt="Driving instructor with student"
-                            className="w-full h-full object-cover rounded-xl"
+                            src="/images/certifications/BANNER_MAIN3276.png"
+                            alt="Professional driving instructor in modern training vehicle"
+                            className="w-full h-96 object-cover"
                           />
-                        </motion.div>
-
-                        {/* Floating elements */}
-                        <motion.div
-                          className="absolute -right-6 -top-6 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full p-4 shadow-lg"
-                          animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
-                          transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                        >
-                          <Car className="h-6 w-6 text-white" />
-                        </motion.div>
-
-                        <motion.div
-                          className="absolute left-4 -bottom-3 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full p-3 shadow-lg"
-                          animate={{ y: [0, 10, 0], rotate: [0, -5, 0] }}
-                          transition={{
-                            duration: 3.5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: 0.5,
-                          }}
-                        >
-                          <Zap className="h-5 w-5 text-white" />
-                        </motion.div>
-
-                        {/* Stats card */}
-                        <motion.div
-                          className="absolute right-4 bottom-4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 shadow-lg"
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.8 }}
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          <div className="text-white text-sm font-medium">
-                            Pass Rate
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                          
+                          {/* Play Button Overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <button className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110">
+                              <Play className="h-8 w-8 ml-1" />
+                            </button>
                           </div>
-                          <div className="text-2xl font-bold text-white">
-                            98%
+
+                          {/* Floating Success Badge */}
+                          <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-2xl shadow-xl animate-bounce">
+                            <div className="text-2xl font-bold">FAST</div>
+                            <div className="text-xs">TRACK 🚀</div>
                           </div>
-                          <div className="w-full h-1.5 bg-white/20 rounded-full mt-1 overflow-hidden">
-                            <motion.div
-                              className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"
-                              initial={{ width: 0 }}
-                              animate={{ width: "98%" }}
-                              transition={{ delay: 1, duration: 1 }}
-                            />
-                          </div>
-                        </motion.div>
+                        </div>
                       </div>
-                    </motion.div>
+
+                      {/* Floating Elements */}
+                      <div className="absolute -top-6 -left-6 bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-2xl shadow-xl animate-pulse">
+                        <Trophy className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="absolute top-20 -right-8 bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-xl shadow-xl animate-bounce">
+                        <span className="text-white font-bold text-sm">INTENSIVE ✓</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Interactive scroll indicator */}
-                <motion.div
-                  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, y: [0, 10, 0] }}
-                  transition={{ delay: 0.8, duration: 1.5, repeat: Infinity }}
-                  onClick={() =>
-                    window.scrollTo({
-                      top: window.innerHeight,
-                      behavior: "smooth",
-                    })
-                  }
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <span className="text-white/80 text-sm mb-2 font-medium">
-                    Swipe up to explore
-                  </span>
-                  <div className="w-10 h-14 border-2 border-white/30 rounded-full flex justify-center p-1 backdrop-blur-sm bg-white/5">
-                    <motion.div
-                      className="w-2 h-2 bg-white rounded-full"
-                      animate={{ y: [0, 20, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    />
+                {/* Scroll Indicator */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                  <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                    <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
                   </div>
-                </motion.div>
+                </div>
               </section>
 
-              {/* Packages for New Students */}
-              <section className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden">
+              {/* Featured Courses - Updated with Booking Page Services */}
+              <section id="courses" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
 
@@ -534,7 +490,7 @@ const Services = () => {
                     viewport={{ once: true }}
                   >
                     <motion.div
-                      className="inline-flex items-center mb-3 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                      className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
                       initial={{ opacity: 0, y: -20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
@@ -542,20 +498,19 @@ const Services = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Flame className="h-4 w-4 mr-2" />
-                      New Student Offers
+                      <Zap className="h-4 w-4 mr-2" />
+                      Featured Courses
                     </motion.div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                      Packages for New Students
+                      Choose Your Perfect Course
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                      Choose the perfect package to start your driving journey
-                      with confidence
+                      Select from our most popular courses designed to get you on the road quickly and safely
                     </p>
                   </motion.div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* 2-Hour Introductory Lesson */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Pay-as-you-go */}
                     <motion.div
                       className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
                       initial={{ opacity: 0, y: 20 }}
@@ -568,35 +523,35 @@ const Services = () => {
                       }}
                     >
                       <div className="absolute top-4 left-4 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
-                        🚀 2-Hour Intro
+                        🚗 Try Us Out
                       </div>
                       <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-blue-50 to-white">
                         <h3 className="text-xl font-bold mb-2 text-gray-900">
-                          Introductory Lesson
+                          Pay-as-you-go
                         </h3>
                         <p className="text-sm text-gray-500 mb-3">
-                          Special offer for new students only - first lesson!
+                          Perfect for trying us out
                         </p>
                         <div className="flex items-end mb-4">
                           <span className="text-3xl font-bold text-gray-900">
-                            £60.00
+                            £76
                           </span>
-                          <span className="text-lg text-gray-500 line-through ml-2 mb-1">
-                            £75.00
+                          <span className="text-lg text-gray-500 ml-2 mb-1">
+                            /2 hours
                           </span>
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Manual or Automatic</span>
+                            <span>2 hours lesson</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Flexible scheduling</span>
+                            <span>Personalized learning</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Door-to-door service</span>
+                            <span>Beginner friendly</span>
                           </li>
                         </ul>
                         <motion.div
@@ -621,7 +576,7 @@ const Services = () => {
                       </div>
                     </motion.div>
 
-                    {/* 10-Hour Package */}
+                    {/* 6-Hour Package */}
                     <motion.div
                       className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
                       initial={{ opacity: 0, y: 20 }}
@@ -633,31 +588,28 @@ const Services = () => {
                         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-400 rotate-12 flex items-end justify-start pb-2 pl-2 text-white font-bold">
-                        <span>Popular</span>
+                      <div className="absolute top-4 left-4 bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">
+                        💰 Save Money
                       </div>
-                      <div className="absolute top-4 left-4 bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
-                        🔥 Save £50
-                      </div>
-                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-orange-50 to-white">
+                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-purple-50 to-white">
                         <h3 className="text-xl font-bold mb-2 text-gray-900">
-                          10-Hour Package
+                          6-Hour Package
                         </h3>
                         <p className="text-sm text-gray-500 mb-3">
-                          Special offer for new learners - Save £50!
+                          Save money with our starter package
                         </p>
                         <div className="flex items-end mb-4">
                           <span className="text-3xl font-bold text-gray-900">
-                            £300.00
+                            £210
                           </span>
-                          <span className="text-lg text-gray-500 line-through ml-2 mb-1">
-                            £350.00
+                          <span className="text-lg text-gray-500 ml-2 mb-1">
+                            /package
                           </span>
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Save £50 on individual lessons</span>
+                            <span>6 hours of lessons</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -666,6 +618,75 @@ const Services = () => {
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                             <span>Progress tracking</span>
+                          </li>
+                        </ul>
+                        <motion.div
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          <Button
+                            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 group relative overflow-hidden"
+                            onClick={() => window.location.href = "/booking"}
+                          >
+                            Book Now
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                            <motion.div
+                              className="absolute inset-0 bg-white"
+                              initial={{ x: "-100%" }}
+                              whileHover={{ x: "100%" }}
+                              transition={{ duration: 0.4 }}
+                              style={{ opacity: 0.2 }}
+                            />
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
+                    {/* 10-Hour Package */}
+                    <motion.div
+                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{
+                        y: -5,
+                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+                      }}
+                    >
+                      <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-400 rotate-12 flex items-end justify-start pb-2 pl-2 text-white font-bold">
+                        <span>Popular</span>
+                      </div>
+                      <div className="absolute top-4 left-4 bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
+                        🔥 Best Value
+                      </div>
+                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-orange-50 to-white">
+                        <h3 className="text-xl font-bold mb-2 text-gray-900">
+                          10-Hour Package
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-3">
+                          Most Popular - Best value for money!
+                        </p>
+                        <div className="flex items-end mb-4">
+                          <span className="text-3xl font-bold text-gray-900">
+                            £340
+                          </span>
+                          <span className="text-lg text-gray-500 ml-2 mb-1">
+                            /package
+                          </span>
+                        </div>
+                        <ul className="space-y-2 mb-6">
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span>10 hours of lessons</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span>Progress tracking</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span>Best value for most learners</span>
                           </li>
                         </ul>
                         <motion.div
@@ -689,54 +710,174 @@ const Services = () => {
                         </motion.div>
                       </div>
                     </motion.div>
+                  </div>
+                </div>
+              </section>
 
-                    {/* 20-Hour Package */}
+              {/* Intensive Driving Courses - Highlighted Section */}
+              <section className="py-20 bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 relative overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6b00' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                  }}></div>
+                </div>
+
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center mb-16">
                     <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                      className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Zap className="h-4 w-4 mr-2" />
+                      FAST TRACK YOUR SUCCESS
+                    </motion.div>
+                    <motion.h2
+                      className="text-5xl font-black text-gray-900 mb-6"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: true }}
+                    >
+                      <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Intensive Driving</span> Courses 🚀
+                    </motion.h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                      Pass your driving test with our DVSA-approved intensive courses!
+                      <span className="text-orange-500 font-bold"> Designed for efficient learning and test success!</span>
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    {/* Intensive Lessons */}
+                    <motion.div
+                      className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-orange-200 relative"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
                       viewport={{ once: true }}
                       whileHover={{
-                        y: -5,
-                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+                        y: -10,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                       }}
                     >
-                      <div className="absolute top-4 left-4 bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
-                        💯 Best Value
+                      <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
+                        MOST POPULAR
                       </div>
-                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-green-50 to-white">
-                        <h3 className="text-xl font-bold mb-2 text-gray-900">
-                          20-Hour Package
-                        </h3>
-                        <p className="text-sm text-gray-500 mb-3">
-                          Best value for complete beginners
-                        </p>
-                        <div className="flex items-end mb-4">
-                          <span className="text-3xl font-bold text-gray-900">
-                            £570.00
-                          </span>
+                      <div className="p-8">
+                        <div className="flex items-center mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mr-4">
+                            <Zap className="h-8 w-8 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900">Intensive Lessons</h3>
+                            <p className="text-orange-600 font-medium">Fast-track your learning</p>
+                          </div>
                         </div>
-                        <ul className="space-y-2 mb-6">
+                        
+                        <div className="mb-6">
+                          <div className="text-4xl font-bold text-gray-900 mb-2">Contact for Quote</div>
+                          <div className="text-gray-600">/tailored course</div>
+                        </div>
+
+                        <ul className="space-y-3 mb-8">
                           <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Maximum savings</span>
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Tailored to student needs</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Comprehensive training</span>
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Contact for quote based on location</span>
                           </li>
                           <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Theory test support</span>
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Comprehensive training</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Pass your test in 1-2 weeks</span>
                           </li>
                         </ul>
+
                         <motion.div
                           whileHover={{ scale: 1.03 }}
                           whileTap={{ scale: 0.97 }}
                         >
                           <Button
-                            className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 group relative overflow-hidden"
+                            className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group relative overflow-hidden"
+                            onClick={() => window.location.href = "/booking"}
+                          >
+                            Get Quote
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                            <motion.div
+                              className="absolute inset-0 bg-white"
+                              initial={{ x: "-100%" }}
+                              whileHover={{ x: "100%" }}
+                              transition={{ duration: 0.4 }}
+                              style={{ opacity: 0.2 }}
+                            />
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
+                    {/* Mock Driving Test */}
+                    <motion.div
+                      className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-blue-200 relative"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{
+                        y: -10,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      }}
+                    >
+                      <div className="p-8">
+                        <div className="flex items-center mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-4">
+                            <CheckCircle className="h-8 w-8 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900">Mock Driving Test</h3>
+                            <p className="text-blue-600 font-medium">Perfect practice before your test</p>
+                          </div>
+                        </div>
+                        
+                        <div className="mb-6">
+                          <div className="text-4xl font-bold text-gray-900 mb-2">£90</div>
+                          <div className="text-gray-600">/test</div>
+                        </div>
+
+                        <ul className="space-y-3 mb-8">
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Real test conditions</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">45 minutes duration</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Detailed feedback</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">Increase your chances of passing</span>
+                          </li>
+                        </ul>
+
+                        <motion.div
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          <Button
+                            className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg group relative overflow-hidden"
                             onClick={() => window.location.href = "/booking"}
                           >
                             Book Now
@@ -753,384 +894,300 @@ const Services = () => {
                       </div>
                     </motion.div>
                   </div>
+
+                  {/* Driving Test Car Rental */}
+                  <motion.div
+                    className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-200 relative max-w-2xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{
+                      y: -10,
+                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                    }}
+                  >
+                    <div className="p-8">
+                      <div className="flex items-center mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4">
+                          <Car className="h-8 w-8 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold text-gray-900">Driving Test Car Rental</h3>
+                          <p className="text-green-600 font-medium">Everything you need for test day</p>
+                        </div>
+                      </div>
+                      
+                      <div className="mb-6">
+                        <div className="text-4xl font-bold text-gray-900 mb-2">£150</div>
+                        <div className="text-gray-600">/3 hours</div>
+                      </div>
+
+                      <ul className="space-y-3 mb-8">
+                        <li className="flex items-start">
+                          <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">3 hours booking</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Arrive 15 minutes before test</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Practice maneuvers</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">Home drop-off after test</span>
+                        </li>
+                      </ul>
+
+                      <motion.div
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        <Button
+                          className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white shadow-lg group relative overflow-hidden"
+                          onClick={() => window.location.href = "/booking"}
+                        >
+                          Book Now
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                          <motion.div
+                            className="absolute inset-0 bg-white"
+                            initial={{ x: "-100%" }}
+                            whileHover={{ x: "100%" }}
+                            transition={{ duration: 0.4 }}
+                            style={{ opacity: 0.2 }}
+                          />
+                        </Button>
+                      </motion.div>
+                    </div>
+                  </motion.div>
                 </div>
               </section>
+
+              {/* Test Centres Section */}
+              <TestCentresSection />
 
               <CertificationsBar />
 
-              {/* Why Choose Us */}
-              <section className="py-20 relative overflow-hidden">
-                <div className="container mx-auto px-4">
-                  <motion.h2
-                    className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    Why Choose Drive Dojo?
-                  </motion.h2>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {[
-                      {
-                        icon: <Award className="h-8 w-8 text-blue-600" />,
-                        title: "Certified Instructors",
-                        description:
-                          "All our instructors are DVSA approved with years of teaching experience",
-                        color: "from-blue-500 to-blue-600",
-                        delay: 0,
-                      },
-                      {
-                        icon: <Clock className="h-8 w-8 text-purple-600" />,
-                        title: "Flexible Scheduling",
-                        description:
-                          "Book lessons at times that suit your schedule, including evenings and weekends",
-                        color: "from-purple-500 to-purple-600",
-                        delay: 0.1,
-                      },
-                      {
-                        icon: <Shield className="h-8 w-8 text-green-600" />,
-                        title: "Modern, Safe Vehicles",
-                        description:
-                          "Learn in dual-controlled cars with the latest safety features",
-                        color: "from-green-500 to-green-600",
-                        delay: 0.2,
-                      },
-                      {
-                        icon: <Calendar className="h-8 w-8 text-red-600" />,
-                        title: "Structured Learning",
-                        description:
-                          "Follow a personalized curriculum designed to help you progress efficiently",
-                        color: "from-red-500 to-red-600",
-                        delay: 0.3,
-                      },
-                    ].map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        className="glass-card p-6 rounded-xl text-center relative overflow-hidden group"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: feature.delay }}
-                        viewport={{ once: true }}
-                        whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                      >
-                        <motion.div
-                          className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${feature.color}`}
-                          whileHover={{ width: "100%" }}
-                          transition={{ duration: 0.3 }}
-                        />
-
-                        <motion.div
-                          className="bg-gradient-to-br from-blue-50 to-purple-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
-                          whileHover={{ rotate: 360, scale: 1.1 }}
-                          transition={{ duration: 0.8 }}
-                        >
-                          {feature.icon}
-                        </motion.div>
-
-                        <h3 className="text-xl font-semibold mb-2 text-slate-900">
-                          {feature.title}
-                        </h3>
-
-                        <p className="text-slate-600">{feature.description}</p>
-                      </motion.div>
-                    ))}
-                  </div>
+              {/* Why Choose Us - New Design */}
+              <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                  }}></div>
                 </div>
-              </section>
 
-              {/* Driving Gallery */}
-              <DrivingGallery />
-
-              {/* Intensive Course Details */}
-              <IntensiveCourseDetails />
-
-              {/* Services Section with Enhanced Content */}
-              <ServicesOverview
-                onServiceSelect={handleServiceClick}
-                hoveredService={hoverService}
-                setHoveredService={setHoverService}
-              />
-
-              {/* Services Section with Enhanced Content */}
-              <section
-                id="pricing"
-                className="py-16 bg-gradient-to-r from-red-600 via-yellow-500 to-purple-600"
-              >
-                <div className="container mx-auto px-4">
-                  <motion.div
-                    className="text-center mb-12"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                      Choose Your Perfect Lesson Package
-                    </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                      We offer a range of packages to suit every driver's needs
-                      and experience level
-                    </p>
-                  </motion.div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Beginner Package */}
-                    <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center mb-16">
+                    <motion.h2
+                      className="text-5xl font-black text-gray-900 mb-6"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                       viewport={{ once: true }}
-                      whileHover={{
-                        y: -5,
-                        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-                      }}
                     >
-                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
-                        <h3 className="text-xl font-bold mb-2">
-                          Beginner Package
-                        </h3>
-                        <div className="flex items-end">
-                          <span className="text-3xl font-bold">£35</span>
-                          <span className="text-sm ml-1 mb-1">/ hour</span>
-                        </div>
-                        <p className="text-blue-100 mt-2 text-sm">
-                          Perfect for first-time drivers
-                        </p>
-                      </div>
-                      <div className="p-6">
-                        <ul className="space-y-3">
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Fundamentals of vehicle control</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Basic maneuvers and road positioning</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Introduction to road signs and rules</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Confidence building in quiet areas</span>
-                          </li>
-                        </ul>
-                        <Button
-                          className="w-full mt-6 bg-blue-600 hover:bg-blue-700"
-                          onClick={triggerConfetti}
-                        >
-                          Book Now
-                        </Button>
-                      </div>
-                    </motion.div>
-
-                    {/* Standard Package */}
-                    <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{
-                        y: -5,
-                        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
-                      <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
-                        MOST POPULAR
-                      </div>
-                      <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white">
-                        <h3 className="text-xl font-bold mb-2">
-                          Standard Package
-                        </h3>
-                        <div className="flex items-end">
-                          <span className="text-3xl font-bold">£320</span>
-                          <span className="text-sm ml-1 mb-1">/ 10 hours</span>
-                        </div>
-                        <p className="text-purple-100 mt-2 text-sm">
-                          Save £30 compared to hourly rate
-                        </p>
-                      </div>
-                      <div className="p-6">
-                        <ul className="space-y-3">
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>All beginner package features</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>
-                              Advanced maneuvers (parallel parking, etc.)
-                            </span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Busy road and junction navigation</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Mock test preparation</span>
-                          </li>
-                        </ul>
-                        <Button
-                          className="w-full mt-6 bg-purple-600 hover:bg-purple-700"
-                          onClick={triggerConfetti}
-                        >
-                          Book Now
-                        </Button>
-                      </div>
-                    </motion.div>
-
-                    {/* Intensive Package */}
-                    <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      viewport={{ once: true }}
-                      whileHover={{
-                        y: -5,
-                        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
-                      <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
-                        <h3 className="text-xl font-bold mb-2">
-                          Intensive Package
-                        </h3>
-                        <div className="flex items-end">
-                          <span className="text-3xl font-bold">£600</span>
-                          <span className="text-sm ml-1 mb-1">/ 20 hours</span>
-                        </div>
-                        <p className="text-green-100 mt-2 text-sm">
-                          Best value for quick progress
-                        </p>
-                      </div>
-                      <div className="p-6">
-                        <ul className="space-y-3">
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>All standard package features</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Comprehensive test routes practice</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Night and adverse weather driving</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Free theory test support materials</span>
-                          </li>
-                        </ul>
-                        <Button
-                          className="w-full mt-6 bg-green-600 hover:bg-green-700"
-                          onClick={triggerConfetti}
-                        >
-                          Book Now
-                        </Button>
-                      </div>
-                    </motion.div>
+                      Why We're <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">Different</span> ✨
+                    </motion.h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                      We provide professional, DVSA-approved driving instruction with modern teaching methods.
+                      <span className="text-orange-500 font-bold"> Committed to your driving success.</span> 🚗
+                    </p>
                   </div>
 
-                  <div className="mt-16">
-                    <h3 className="text-2xl font-bold mb-8 text-center text-gray-900">
-                      Specialized Training
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                      {[
-                        {
-                          title: "Pass Plus",
-                          price: "£200",
-                          description:
-                            "Additional training for new drivers to build confidence",
-                          color: "bg-blue-100 text-blue-800",
-                          icon: <Award className="h-6 w-6" />,
-                        },
-                        {
-                          title: "Motorway Lessons",
-                          price: "£45/hr",
-                          description:
-                            "Specialized training for high-speed motorway driving",
-                          color: "bg-purple-100 text-purple-800",
-                          icon: <Car className="h-6 w-6" />,
-                        },
-                        {
-                          title: "Refresher Course",
-                          price: "£40/hr",
-                          description:
-                            "For licensed drivers who need to rebuild confidence",
-                          color: "bg-amber-100 text-amber-800",
-                          icon: <Zap className="h-6 w-6" />,
-                        },
-                        {
-                          title: "Theory Test Prep",
-                          price: "£30/hr",
-                          description:
-                            "One-on-one guidance for theory test preparation",
-                          color: "bg-green-100 text-green-800",
-                          icon: <BookOpen className="h-6 w-6" />,
-                        },
-                      ].map((service, index) => (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[
+                      {
+                        icon: CheckCircle,
+                        title: 'DVSA-Approved Instructors',
+                        description: 'Our fully qualified instructors provide professional training to help you pass your test. 🎯',
+                        emoji: '🏆',
+                        color: 'from-green-400 to-emerald-500'
+                      },
+                      {
+                        icon: Car,
+                        title: 'Modern Training Vehicles',
+                        description: 'Dual-controlled manual and automatic cars for safe, professional instruction. 🚗',
+                        emoji: '🚙',
+                        color: 'from-blue-400 to-cyan-500'
+                      },
+                      {
+                        icon: TrendingUp,
+                        title: 'High Pass Rate',
+                        description: '98% of our students pass first time with our structured training approach. 📈',
+                        emoji: '📈',
+                        color: 'from-purple-400 to-pink-500'
+                      },
+                      {
+                        icon: Smartphone,
+                        title: 'Easy Booking System',
+                        description: 'Simple online booking with prompt responses and convenient scheduling. 📱',
+                        emoji: '⚡',
+                        color: 'from-green-400 to-teal-500'
+                      },
+                      {
+                        icon: BookOpen,
+                        title: 'Progress Tracking',
+                        description: 'Monitor your development with our structured progress assessment system. 📊',
+                        emoji: '📊',
+                        color: 'from-orange-400 to-red-500'
+                      },
+                      {
+                        icon: Heart,
+                        title: 'Patient Instructors',
+                        description: 'Professional, calm instruction with clear explanations and supportive guidance. ✨',
+                        emoji: '😎',
+                        color: 'from-pink-400 to-rose-500'
+                      },
+                      {
+                        icon: Target,
+                        title: 'Local Test Route Knowledge',
+                        description: 'Comprehensive knowledge of local test centres and routes for effective preparation. 🗺️',
+                        emoji: '🎯',
+                        color: 'from-indigo-400 to-purple-500'
+                      },
+                      {
+                        icon: Zap,
+                        title: 'Flexible Learning',
+                        description: 'Personalised lesson plans tailored to your schedule and learning requirements. 🌟',
+                        emoji: '🎨',
+                        color: 'from-yellow-400 to-orange-500'
+                      }
+                    ].map((benefit, index) => {
+                      const IconComponent = benefit.icon;
+                      const isHovered = hoverService === `benefit-${index}`;
+                      const isLiked = likedPackages.has(`benefit-${index}`);
+                      
+                      return (
                         <motion.div
                           key={index}
-                          className="rounded-xl p-6 border border-gray-200 flex flex-col h-full"
+                          onMouseEnter={() => setHoverService(`benefit-${index}`)}
+                          onMouseLeave={() => setHoverService(null)}
+                          className={`relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group cursor-pointer ${
+                            isHovered ? 'scale-105 -rotate-1' : 'scale-100 rotate-0'
+                          }`}
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           viewport={{ once: true }}
-                          whileHover={{
-                            y: -5,
-                            boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)",
-                          }}
                         >
-                          <div
-                            className={`${service.color} p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4`}
-                          >
-                            {service.icon}
+                          {/* Gradient Background */}
+                          <div className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                          
+                          <div className="relative p-6 text-center">
+                            {/* Emoji Badge */}
+                            <div className="absolute -top-3 -right-3 text-3xl animate-bounce">
+                              {benefit.emoji}
+                            </div>
+
+                            {/* Like Button */}
+                            <button
+                              onClick={() => handleLike(`benefit-${index}`)}
+                              className={`absolute top-4 left-4 p-2 rounded-full transition-all duration-300 ${
+                                isLiked ? 'bg-red-500 text-white scale-110' : 'bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-500'
+                              }`}
+                            >
+                              <Heart className={`h-4 w-4 ${isLiked ? 'fill-current' : ''}`} />
+                            </button>
+
+                            {/* Icon */}
+                            <div className={`w-16 h-16 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center mx-auto mb-6 transition-transform duration-300 ${
+                              isHovered ? 'rotate-12 scale-110' : 'rotate-0 scale-100'
+                            }`}>
+                              <IconComponent className="h-8 w-8 text-white" />
+                            </div>
+
+                            <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
+                              {benefit.title}
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed text-sm">
+                              {benefit.description}
+                            </p>
+
+                            {/* Interactive Progress Bar */}
+                            <div className="mt-4 bg-gray-200 rounded-full h-2 overflow-hidden">
+                              <div
+                                className={`h-full bg-gradient-to-r ${benefit.color} transition-all duration-1000 ${
+                                  isHovered ? 'w-full' : 'w-0'
+                                }`}
+                              ></div>
+                            </div>
                           </div>
-                          <h4 className="text-lg font-semibold mb-2">
-                            {service.title}
-                          </h4>
-                          <p className="text-2xl font-bold text-gray-900 mb-2">
-                            {service.price}
-                          </p>
-                          <p className="text-gray-600 text-sm flex-grow">
-                            {service.description}
-                          </p>
-                          <Button
-                            variant="outline"
-                            className="mt-4 w-full"
-                            onClick={triggerConfetti}
-                          >
-                            Learn More
-                          </Button>
                         </motion.div>
-                      ))}
+                      );
+                    })}
+                  </div>
+
+                  {/* Interactive CTA */}
+                  <div className="mt-16 text-center">
+                    <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-3xl">
+                      <div className="bg-white rounded-3xl px-8 py-6">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          Ready to Start Your Driving Journey? 🎉
+                        </h3>
+                        <p className="text-gray-600 mb-4">Join 2000+ successful students with our professional training.</p>
+                        <Button
+                          className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105"
+                          onClick={() => window.location.href = "/contact"}
+                        >
+                          Book Your Lesson 🚗
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </section>
 
+
               {/* Booking Process */}
               <GetStartedSection />
 
               {/* Testimonials */}
-              <TestimonialsSection />
+              <NewTestimonialsSection />
 
               {/* FAQ Section */}
               <FAQSection />
 
-              {/* Call to Action */}
-              <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-xl"></div>
+              {/* Call to Action - Updated Design */}
+              <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white text-center relative overflow-hidden">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0">
+                  <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
+                  <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
+                  <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+                </div>
+
+                {/* Animated particles */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  {[...Array(15)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+                      style={{
+                        width: Math.random() * 60 + 20,
+                        height: Math.random() * 60 + 20,
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                      }}
+                      initial={{ opacity: 0.1, scale: 0 }}
+                      animate={{
+                        opacity: [0.1, 0.3, 0.1],
+                        scale: [0, 1, 0],
+                        x: [0, Math.random() * 100 - 50, 0],
+                        y: [0, Math.random() * 100 - 50, 0],
+                      }}
+                      transition={{
+                        duration: Math.random() * 10 + 10,
+                        repeat: Infinity,
+                        delay: Math.random() * 5,
+                      }}
+                    />
+                  ))}
+                </div>
 
                 <div className="container mx-auto px-4 relative z-10">
                   <motion.div
@@ -1139,16 +1196,36 @@ const Services = () => {
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                      Ready to Start Your Driving Journey?
+                    <motion.div
+                      className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Sparkles className="h-4 w-4 mr-2" />
+                      Start Your Journey
+                    </motion.div>
+                    
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+                      <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+                        Ready to Start Your
+                      </span>
+                      <br />
+                      <span className="text-orange-400 animate-bounce inline-block">Driving Journey?</span>
+                      <span className="text-3xl lg:text-4xl ml-4">🚗</span>
                     </h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto">
+                    
+                    <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8 max-w-3xl mx-auto">
                       Book your first lesson today and take the first step
-                      towards driving confidence.
+                      towards <span className="text-orange-400 font-bold">driving confidence</span> with our
+                      <span className="text-green-400 font-bold"> DVSA-approved instructors</span>! 🏆
                     </p>
                   </motion.div>
 
-                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                  <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -1157,8 +1234,7 @@ const Services = () => {
                     >
                       <Button
                         size="lg"
-                        variant="secondary"
-                        className="bg-white text-blue-700 hover:bg-gray-100 shadow-lg group"
+                        className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group relative overflow-hidden"
                         onClick={() => {
                           triggerConfetti();
                           window.location.href = "/booking";
@@ -1169,7 +1245,7 @@ const Services = () => {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          Book a Lesson
+                          🚗 Book a Lesson
                           <motion.span
                             className="ml-2 inline-block"
                             initial={{ x: 0 }}
@@ -1179,6 +1255,13 @@ const Services = () => {
                             <ArrowRight className="h-4 w-4" />
                           </motion.span>
                         </motion.span>
+                        <motion.div
+                          className="absolute inset-0 bg-white"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 0.4 }}
+                          style={{ opacity: 0.2 }}
+                        />
                       </Button>
                     </motion.div>
 
@@ -1191,18 +1274,39 @@ const Services = () => {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="border-white text-white hover:bg-white/20"
+                        className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
                         onClick={() => (window.location.href = "/contact")}
                       >
                         <motion.span
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          Contact Us
+                          💬 Contact Us
                         </motion.span>
                       </Button>
                     </motion.div>
                   </div>
+
+                  {/* Social proof */}
+                  <motion.div
+                    className="flex items-center justify-center space-x-8 text-sm mt-10"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                  >
+                    <div className="flex items-center">
+                      <div className="flex -space-x-2 mr-3">
+                        {[1,2,3,4].map((i) => (
+                          <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
+                        ))}
+                      </div>
+                      <span className="text-blue-200">2000+ successful drivers</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                      <span className="text-blue-200">4.9/5 rating</span>
+                    </div>
+                  </motion.div>
                 </div>
               </section>
             </>
@@ -1544,6 +1648,7 @@ const ServiceDetails = ({ service, onClose, triggerConfetti }) => {
   );
 };
 
+
 // Service Card Component
 const ServiceCard = ({ service, onClick, isHovered, onHover, onLeave }) => {
   return (
@@ -1666,7 +1771,7 @@ const servicesData = [
   {
     id: "beginner",
     title: "Beginner Course",
-    price: "£35",
+    price: "£38",
     priceUnit: "/hour",
     shortDescription:
       "Perfect for first-time drivers with no previous experience",
