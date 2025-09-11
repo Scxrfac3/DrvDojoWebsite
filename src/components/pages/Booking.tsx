@@ -95,20 +95,41 @@ const Booking = () => {
     if (selectedPkg && selectedPkg.stripePriceId) {
       try {
         // Initialize Stripe
-        const stripe = await loadStripe('pk_test_51S6EZwDwpTXQ4PFJLdvKNdpTEXWlUypGmPrrIZOpD4kCnXWFbfRntEpbCY6TCz3mF4yC3sRm2yroUIKeeGPNxzLT00Dny18chv');
+        const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_51S6EZwDwpTXQ4PFJLdvKNdpTEXWlUypGmPrrIZOpD4kCnXWFbfRntEpbCY6TCz3mF4yC3sRm2yroUIKeeGPNxzLT00Dny18chv');
         
         // Create a checkout session
-        const response = await fetch('/api/create-checkout-session', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            priceId: selectedPkg.stripePriceId,
-            packageName: selectedPkg.name,
-            customerEmail: formData.email || '',
-          }),
-        });
+        // Try the API path first, then fall back to the direct Netlify function path
+        const apiUrl = '/api/create-checkout-session';
+        const netlifyFunctionUrl = '/.netlify/functions/create-checkout-session';
+        
+        let response;
+        try {
+          response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              priceId: selectedPkg.stripePriceId,
+              packageName: selectedPkg.name,
+              customerEmail: formData.email || '',
+            }),
+          });
+        } catch (error) {
+          // If the API path fails, try the direct Netlify function path
+          console.log('API path failed, trying direct Netlify function path');
+          response = await fetch(netlifyFunctionUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              priceId: selectedPkg.stripePriceId,
+              packageName: selectedPkg.name,
+              customerEmail: formData.email || '',
+            }),
+          });
+        }
         
         const session = await response.json();
         

@@ -8,6 +8,17 @@
 [functions]
   directory = "netlify/functions"
 
+# Redirect API endpoints to Netlify Functions
+[[redirects]]
+  from = "/api/create-checkout-session"
+  to = "/.netlify/functions/create-checkout-session"
+  status = 200
+
+[[redirects]]
+  from = "/api/get-checkout-session"
+  to = "/.netlify/functions/get-checkout-session"
+  status = 200
+
 # Redirect rules for SPA (Single Page Application)
 [[redirects]]
   from = "/*"

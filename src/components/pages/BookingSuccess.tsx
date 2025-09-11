@@ -16,8 +16,20 @@ const BookingSuccess = () => {
   useEffect(() => {
     const fetchSessionDetails = async () => {
       if (sessionId) {
+        // Try the API path first, then fall back to the direct Netlify function path
+        const apiUrl = `/api/get-checkout-session?session_id=${sessionId}`;
+        const netlifyFunctionUrl = `/.netlify/functions/get-checkout-session?session_id=${sessionId}`;
+        
         try {
-          const response = await fetch(`/api/get-checkout-session?session_id=${sessionId}`);
+          let response;
+          try {
+            response = await fetch(apiUrl);
+          } catch (error) {
+            // If the API path fails, try the direct Netlify function path
+            console.log('API path failed, trying direct Netlify function path');
+            response = await fetch(netlifyFunctionUrl);
+          }
+          
           const session = await response.json();
           setSessionDetails(session);
           
