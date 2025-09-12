@@ -13,11 +13,11 @@ interface CTASectionProps {
 }
 
 const CTASection = ({
-  title = "Ready to Start Your Driving Journey?",
-  description = "Book your first lesson today and take the first step towards driving confidence.",
-  primaryButtonText = "Book a Lesson",
+  title = "Start Driving?",
+  description = "Book now. Pass first time. Drive with confidence.",
+  primaryButtonText = "Book",
   primaryButtonLink = "/booking",
-  secondaryButtonText = "Contact Us",
+  secondaryButtonText = "Contact",
   secondaryButtonLink = "/contact",
 }: CTASectionProps) => {
   return (

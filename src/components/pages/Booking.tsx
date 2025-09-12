@@ -434,16 +434,15 @@ const Booking = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Choose Your Perfect Package
+                Select a Package
               </h2>
               <p className="text-slate-300 max-w-2xl mx-auto">
-                Select the package that best fits your learning style and goals.
-                Not sure which one? We recommend our most popular 10-hour
-                package.
+                Pick the best plan for your needs. We recommend the 10-hour
+                package for best value.
               </p>
               <div className="mt-4 p-4 bg-blue-900/30 rounded-lg border border-blue-700/50">
                 <p className="text-blue-200 text-sm">
-                  <strong>Important:</strong> After payment, you'll be able to schedule your lessons using our booking system.
+                  <strong>Note:</strong> After payment, book your lesson times.
                 </p>
               </div>
             </div>
@@ -512,15 +511,14 @@ const Booking = () => {
 
             <div className="text-center mt-8">
               <p className="text-slate-400 mb-4">
-                All packages include a free theory test preparation app and
-                access to our online learning portal.
+                All packages include free theory test prep.
               </p>
               <Button
                 variant="outline"
                 className="border-slate-600 text-white hover:bg-slate-800"
                 onClick={() => nextStep()}
               >
-                I'm not sure yet, let me continue
+                Continue
               </Button>
             </div>
           </motion.div>
@@ -537,11 +535,10 @@ const Booking = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Complete Your Booking
+                Complete Booking
               </h2>
               <p className="text-slate-300 max-w-2xl mx-auto">
-                We're almost there! Fill in your details to complete your purchase.
-                After payment, you'll be able to schedule your lessons.
+                Almost done! Fill in your details. After payment, book your lesson times.
               </p>
             </div>
 
@@ -649,7 +646,7 @@ const Booking = () => {
                         htmlFor="beginner"
                         className="text-slate-300 cursor-pointer"
                       >
-                        Complete Beginner (Never driven before)
+                        Beginner (No experience)
                       </Label>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -662,7 +659,7 @@ const Booking = () => {
                         htmlFor="some-experience"
                         className="text-slate-300 cursor-pointer"
                       >
-                        Some Experience (Had a few lessons)
+                        Some Experience (Few lessons)
                       </Label>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -675,7 +672,7 @@ const Booking = () => {
                         htmlFor="experienced"
                         className="text-slate-300 cursor-pointer"
                       >
-                        Experienced (Preparing for test)
+                        Experienced (Ready for test)
                       </Label>
                     </div>
                   </RadioGroup>
@@ -714,7 +711,7 @@ const Booking = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="selectedTime" className="text-white">
-                      Preferred Time (2-hour slots)
+                      Preferred Time
                     </Label>
                     <select
                       id="selectedTime"
@@ -844,13 +841,11 @@ const Booking = () => {
               <div className="flex items-center mb-4">
                 <Shield className="h-5 w-5 text-blue-400 mr-2" />
                 <h3 className="text-xl font-bold text-white">
-                  Secure Booking Promise
+                  Secure Booking
                 </h3>
               </div>
               <p className="text-slate-300 mb-2">
-                Your personal information is encrypted and secure. After payment,
-                you'll receive access to our booking system where you can schedule
-                your lessons at your convenience.
+                Your data is safe. After payment, access our booking system to schedule lessons.
               </p>
             </div>
           </motion.div>
@@ -924,17 +919,15 @@ const Booking = () => {
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
-              Drive Like a
+              Drive
             </span>
             <br />
-            <span className="text-orange-400 animate-bounce inline-block">Pro</span>
+            <span className="text-orange-400 animate-bounce inline-block">Smart</span>
             <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 
           <p className="text-blue-100 max-w-2xl mx-auto text-lg">
-            London's <span className="text-orange-400 font-bold">coolest</span> driving school!
-            Get your licence fast with our <span className="text-green-400 font-bold">legendary</span> instructors
-            who actually make learning fun 🎯
+            Expert DVSA-approved training to help you pass first time and drive with confidence.
           </p>
         </motion.div>
 
@@ -961,8 +954,8 @@ const Booking = () => {
                   className={`text-xs px-2 py-1 rounded ${step === stepNumber ? "bg-blue-600 text-white" : step > stepNumber || isComplete ? "bg-green-600 text-white" : "bg-slate-700 text-slate-300"}`}
                 >
                   {stepNumber === 1
-                    ? "Package"
-                    : "Details"}
+                    ? "Plan"
+                    : "Info"}
                 </div>
               ))}
             </div>

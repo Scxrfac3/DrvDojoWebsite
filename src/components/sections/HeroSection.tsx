@@ -80,15 +80,15 @@ export default function HeroSection() {
 
             <h1 className="text-5xl lg:text-7xl font-black leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
-                Drive Like a
+                Drive
               </span>
               <br />
-              <span className="text-orange-400 animate-bounce inline-block">Pro</span>
+              <span className="text-orange-400 animate-bounce inline-block">Smart</span>
               <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
             </h1>
 
             <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed">
-              Pass first time with Drive Dojo. Our DVSA-approved instructors are dedicated to helping you achieve your licence goals.
+              Expert DVSA-approved training to help you pass first time and drive with confidence.
             </p>
 
             {/* Animated Stats */}
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 onClick={triggerConfetti}
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  🚗 Book Your First Lesson
+                  🚗 Book Now
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity"></div>
@@ -131,7 +131,7 @@ export default function HeroSection() {
                 className="group bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 text-center"
               >
                 <span className="flex items-center justify-center">
-                  💰 View Packages
+                  💰 Packages
                   <Zap className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 </span>
               </Link>
@@ -145,7 +145,7 @@ export default function HeroSection() {
                     <div key={i} className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-500 rounded-full border-2 border-white"></div>
                   ))}
                 </div>
-                <span className="text-blue-200">2000+ happy drivers</span>
+                <span className="text-blue-200">2000+ drivers</span>
               </div>
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-yellow-400 mr-1" />

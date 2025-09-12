@@ -158,10 +158,10 @@ const Contact = () => {
 
         <h1 className="text-4xl md:text-6xl font-black mb-4">
           <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
-            Let's Start Your
+            Drive
           </span>
           <br />
-          <span className="text-orange-400 animate-bounce inline-block">Driving Journey</span>
+          <span className="text-orange-400 animate-bounce inline-block">With Confidence</span>
           <span className="text-2xl lg:text-3xl ml-4">🚗</span>
         </h1>
 
@@ -171,9 +171,7 @@ const Contact = () => {
           transition={{ delay: 0.3 }}
         >
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Ready to become a confident driver? We're just a message away from
-            helping you achieve your driving goals in London!{" "}
-            <span className="text-orange-400 font-bold">No cap fr fr</span> 🔥
+            DVSA-approved instruction to help you pass first time and drive with confidence.
           </p>
         </motion.div>
       </motion.div>
@@ -308,7 +306,7 @@ const Contact = () => {
                     <>
                       <h2 className="text-2xl font-bold text-white mb-6 flex items-center relative z-10">
                         <Send className="h-5 w-5 mr-2 text-blue-400" />
-                        Send Us a Message
+                        Contact
                       </h2>
                       <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -576,11 +574,10 @@ const Contact = () => {
                       whileHover={{ opacity: 1 }}
                     />
                     <h3 className="text-xl font-bold text-white mb-4 relative z-10">
-                      Quick Response Guarantee
+                      Fast Response
                     </h3>
                     <p className="text-purple-100 mb-4 relative z-10">
-                      We respond to all inquiries within 24 hours. Need an
-                      urgent response? Give us a call!
+                      We reply within 24 hours. Need help now? Call us!
                     </p>
 
                     <div className="space-y-4 mt-6">
@@ -637,12 +634,11 @@ const Contact = () => {
                     <div className="flex items-center mb-4 relative z-10">
                       <Clock className="h-5 w-5 text-blue-400 mr-2" />
                       <h3 className="text-xl font-bold text-white">
-                        Fast-Track Booking
+                        Quick Start
                       </h3>
                     </div>
                     <p className="text-purple-100 mb-4 relative z-10">
-                      Need lessons ASAP? Mention "Fast-Track" in your message
-                      for priority scheduling!
+                      Need lessons fast? Ask for priority booking.
                     </p>
                     <motion.div
                       whileHover={{ scale: 1.03 }}
@@ -688,10 +684,10 @@ const Contact = () => {
                     Book Your First Lesson
                   </motion.div>
                   <h2 className="text-2xl font-bold text-white mb-2">
-                    Choose Your Perfect Package
+                    Select a Package
                   </h2>
                   <p className="text-purple-100 relative z-10">
-                    Select the package that best fits your learning style and goals. We'll contact you to schedule your lessons!
+                    Pick the best plan for you. We'll set up your lessons.
                   </p>
                 </div>
 
@@ -933,7 +929,7 @@ const Contact = () => {
                   />
                   <h2 className="text-2xl font-bold text-white mb-6 flex items-center relative z-10">
                     <MapPin className="h-5 w-5 mr-2 text-blue-400" />
-                    Find Us
+                    Locations
                   </h2>
 
                   <div className="space-y-6">
@@ -1009,11 +1005,10 @@ const Contact = () => {
                       whileHover={{ opacity: 1 }}
                     />
                     <h3 className="text-xl font-bold text-white mb-4 relative z-10">
-                      Service Areas
+                      Areas
                     </h3>
                     <p className="text-purple-100 mb-4 relative z-10">
-                      We provide driving lessons throughout East London and
-                      Essex, specializing in these areas:
+                      We serve East London and Essex. Main areas:
                     </p>
 
                     <div className="grid grid-cols-2 gap-2 mb-4">
@@ -1058,7 +1053,7 @@ const Contact = () => {
                       whileHover={{ opacity: 1 }}
                     />
                     <h3 className="text-xl font-bold text-white mb-4 relative z-10">
-                      Business Hours
+                      Hours
                     </h3>
 
                     <div className="space-y-3">
@@ -1115,12 +1110,11 @@ const Contact = () => {
                     <div className="flex items-center mb-4 relative z-10">
                       <Phone className="h-5 w-5 text-blue-400 mr-2" />
                       <h3 className="text-xl font-bold text-white">
-                        Need Immediate Assistance?
+                        Need Help?
                       </h3>
                     </div>
                     <p className="text-purple-100 mb-4 relative z-10">
-                      Our customer support team is ready to help you with any
-                      questions.
+                      Our team is here to answer your questions.
                     </p>
                     <motion.div
                       whileHover={{ scale: 1.03 }}
@@ -1152,10 +1146,10 @@ const Contact = () => {
         >
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
-              Trusted by Thousands of London Students
+              Trusted by London Drivers
             </h2>
             <p className="text-purple-100">
-              Join our community of successful drivers
+              Join our success story
             </p>
           </div>
 

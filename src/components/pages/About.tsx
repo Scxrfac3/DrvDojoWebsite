@@ -142,10 +142,10 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 mb-6">
-                The Drive Dojo Difference
+                Drive Dojo
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-                Expertise Forged on Every Road. Meet Mamunur - the founder whose unique journey through autonomous vehicles, software development, and proven instruction creates an unparalleled learning experience.
+                Expert DVSA-approved training to help you pass first time and drive with confidence.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
@@ -156,14 +156,14 @@ const About = () => {
                   }
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 rounded-full text-lg flex items-center gap-2 group"
                 >
-                  <span>Discover The Founder</span>
+                  <span>Meet The Founder</span>
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
                   onClick={() => (window.location.href = "/booking")}
                   className="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-6 rounded-full text-lg"
                 >
-                  Book Your Lesson
+                  Book Now
                 </Button>
               </div>
             </motion.div>
@@ -288,7 +288,7 @@ const About = () => {
                   transition={{ duration: 0.5 }}
                   className="mb-16"
                 >
-                  <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Journey to Excellence</h2>
+                  <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Journey</h2>
                   
                   <div className="relative">
                     <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 to-purple-600 z-0"></div>
@@ -341,7 +341,7 @@ const About = () => {
                   className="mb-16"
                 >
                   <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-white mb-4">Multi-Faceted Expertise</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4">Our Expertise</h2>
                     <p className="text-slate-300 text-lg max-w-3xl mx-auto">
                       What truly sets Drive Dojo apart is Mamunur's diverse background that brings together cutting-edge technology, real-world experience, and proven teaching excellence.
                     </p>
@@ -375,7 +375,7 @@ const About = () => {
                   </div>
 
                   <div className="mt-12 bg-gradient-to-br from-slate-800/50 to-blue-900/30 rounded-2xl p-8 border border-slate-700">
-                    <h3 className="text-2xl font-bold text-white mb-4 text-center">The Drive Dojo Philosophy</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4 text-center">Our Philosophy</h3>
                     <p className="text-slate-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
                       Mamunur's lifelong dedication to driving excellence, combined with his diverse roles, means every lesson at Drive Dojo is informed by a holistic understanding of the road – from the mechanics of a vehicle to the psychology of a safe driver, and the cutting-edge of autonomous technology.
                     </p>
@@ -394,7 +394,7 @@ const About = () => {
                   className="mb-16"
                 >
                   <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-white mb-4">Transforming Lives Through Expert Instruction</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4">Student Success</h2>
                     <p className="text-slate-300 text-lg max-w-3xl mx-auto">
                       Choose Drive Dojo Driving School for expert driving lessons in East London that go beyond the basics, equipping you with the skills and confidence to pass your test first time and master any road.
                     </p>
@@ -467,7 +467,7 @@ const About = () => {
 
                   {/* Call to Action */}
                   <div className="text-center bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl p-8 border border-blue-500/20">
-                    <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Journey?</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">Start Driving?</h3>
                     <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
                       Join thousands of successful students who have experienced the Drive Dojo difference. With Mamunur's expert guidance and our proven methods, you're not just learning to drive – you're mastering the road.
                     </p>
@@ -476,7 +476,7 @@ const About = () => {
                         onClick={() => (window.location.href = "/booking")}
                         className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg"
                       >
-                        Book Your Lesson
+                        Book Now
                       </Button>
                       <Button
                         onClick={() => (window.location.href = "tel:+447487228866")}
@@ -494,7 +494,7 @@ const About = () => {
 
           {/* FAQ Section */}
           <div className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-white mb-8 text-center">FAQs</h2>
             
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
@@ -542,7 +542,7 @@ const About = () => {
                   className="bg-blue-600 hover:bg-blue-700 text-white"
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  Contact Us
+                  Contact
                 </Button>
                 <Button
                   onClick={() => (window.location.href = "tel:+447487228866")}

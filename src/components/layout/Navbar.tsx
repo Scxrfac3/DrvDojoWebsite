@@ -231,7 +231,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
               <NavigationMenuItem>
                 <span className="px-4 py-2 text-base font-semibold text-gray-500 flex items-center cursor-not-allowed">
-                  Student Portal
+                  Portal
                   <span className="ml-2 text-xs bg-blue-500/30 px-1.5 py-0.5 rounded-full">
                     Coming Soon
                   </span>
@@ -260,7 +260,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
             >
               <Zap className="h-4 w-4 mr-2 animate-pulse" />
-              Book Now!
+              Book
             </Link>
           </div>
         </div>
@@ -309,7 +309,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                     className="flex items-center px-4 py-3 text-base font-medium text-green-600 hover:text-green-700 rounded-xl hover:bg-green-50 transition-colors"
                   >
                     <MessageCircle className="h-5 w-5 mr-3" />
-                    WhatsApp Us 💬
+                    WhatsApp 💬
                   </a>
                   <a
                     href="tel:+442012345678"
@@ -323,7 +323,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                     className="block mx-4 mt-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-4 rounded-2xl font-bold text-center transition-all duration-300 transform hover:scale-105"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    🚀 Book Now!
+                    🚀 Book
                   </Link>
                 </div>
               </div>

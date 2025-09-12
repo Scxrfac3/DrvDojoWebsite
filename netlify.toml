@@ -8,14 +8,6 @@
 [functions]
   directory = "netlify/functions"
 
-# Redirect rules for SPA (Single Page Application)
-# This must come AFTER the specific API redirects
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["anon"]}
-
 # Redirect API endpoints to Netlify Functions
 # These must come BEFORE the catch-all redirect
 [[redirects]]
@@ -35,6 +27,140 @@
   to = "/.netlify/functions/create-supersaas-booking"
   status = 200
   force = true
+
+# Redirects for common driving school pages (301 permanent redirects)
+[[redirects]]
+  from = "/driving-lessons"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/driving-school"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/prices"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cost"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/intensive-courses"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/automatic-lessons"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/manual-lessons"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pass-plus"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/theory-test"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/instructor-training"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/book-now"
+  to = "/booking"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/our-services"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/testimonials"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/news"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/areas-covered"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/locations"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/test-centers"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/gift-vouchers"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/referral"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cookies"
+  to = "/"
+  status = 301
+
+# Redirect rules for SPA (Single Page Application)
+# This must come AFTER the specific API redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["anon"]}
 
 # Headers for better security and performance
 [[headers]]
