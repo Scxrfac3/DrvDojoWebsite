@@ -154,13 +154,14 @@
   to = "/"
   status = 301
 
-# Redirect rules for SPA (Single Page Application)
-# This must come AFTER the specific API redirects
+# IMPORTANT: This rule must be the LAST redirect rule in the file.
+# It tells Netlify to redirect all other requests to the main index.html file
+# so your React Router can take over.
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {Role = ["anon"]}
 
 # Headers for better security and performance
 [[headers]]
