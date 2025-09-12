@@ -1,18 +1,23 @@
 const axios = require('axios');
 
 exports.handler = async (event, context) => {
+  console.log('Starting SuperSaaS booking creation...');
+  
   try {
-    const { 
-      customerName, 
-      customerEmail, 
-      customerPhone, 
-      selectedDate, 
-      selectedTime, 
+    const {
+      customerName,
+      customerEmail,
+      customerPhone,
+      selectedDate,
+      selectedTime,
       packageType,
-      address 
+      address
     } = JSON.parse(event.body);
 
+    console.log('Received booking request:', { customerName, customerEmail, selectedDate, selectedTime });
+
     if (!customerName || !customerEmail || !selectedDate || !selectedTime) {
+      console.error('Missing required fields');
       return {
         statusCode: 400,
         body: JSON.stringify({ error: 'Missing required fields' }),
@@ -21,11 +26,14 @@ exports.handler = async (event, context) => {
 
     // SuperSaaS API configuration
     const apiKey = process.env.SUPERSAAS_API_KEY;
+    console.log('API Key available:', !!apiKey);
+    
     const accountId = 'drivedojodrivingschool'; // Your SuperSaaS account name
     const scheduleId = '1'; // This should be your schedule ID for driving lessons
     
     // Format the date and time for SuperSaaS
     const formattedDate = new Date(selectedDate).toISOString().split('T')[0];
+    console.log('Formatted date:', formattedDate);
     
     // Create the booking data
     const bookingData = {
@@ -43,9 +51,14 @@ exports.handler = async (event, context) => {
       }
     };
 
+    console.log('Booking data:', JSON.stringify(bookingData, null, 2));
+
     // Make the API call to SuperSaaS
+    const apiUrl = `https://www.supersaas.com/api/${accountId}/schedules/${scheduleId}/bookings.json`;
+    console.log('Making API call to:', apiUrl);
+    
     const response = await axios.post(
-      `https://www.supersaas.com/api/${accountId}/schedules/${scheduleId}/bookings.json`,
+      apiUrl,
       bookingData,
       {
         headers: {
@@ -55,11 +68,13 @@ exports.handler = async (event, context) => {
       }
     );
 
+    console.log('API response:', response.data);
+
     // Return success response
     return {
       statusCode: 200,
-      body: JSON.stringify({ 
-        success: true, 
+      body: JSON.stringify({
+        success: true,
         bookingId: response.data.id,
         message: 'Booking created successfully'
       }),
@@ -84,6 +99,7 @@ exports.handler = async (event, context) => {
       };
     } else if (error.request) {
       // The request was made but no response was received
+      console.error('No response received:', error.request);
       return {
         statusCode: 500,
         body: JSON.stringify({
@@ -93,6 +109,7 @@ exports.handler = async (event, context) => {
       };
     } else {
       // Something happened in setting up the request that triggered an Error
+      console.error('Request setup error:', error.message);
       return {
         statusCode: 500,
         body: JSON.stringify({
