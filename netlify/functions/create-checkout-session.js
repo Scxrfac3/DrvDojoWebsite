@@ -2,7 +2,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event, context) => {
   try {
-    const { priceId, packageName, customerEmail, promoCode } = JSON.parse(event.body);
+    const { priceId, packageName, customerEmail, promoCode, customerDetails } = JSON.parse(event.body);
 
     if (!priceId) {
       return {
@@ -26,6 +26,8 @@ exports.handler = async (event, context) => {
       customer_email: customerEmail || undefined,
       metadata: {
         packageName: packageName,
+        // Include customer details in metadata for later use
+        customerDetails: customerDetails ? JSON.stringify(customerDetails) : null,
       },
     };
 

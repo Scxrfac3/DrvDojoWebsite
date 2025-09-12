@@ -82,7 +82,7 @@ const Booking = () => {
     setFormData({ ...formData, agreeToTerms: checked });
   };
 
-  const handlePackageSelect = async (packageName) => {
+  const handlePackageSelect = (packageName) => {
     setIsLoading(true);
     setSelectedPackage(packageName);
     
@@ -90,102 +90,9 @@ const Booking = () => {
     const selectedPkg = packages.find(pkg => pkg.id === packageName);
     
     if (selectedPkg && selectedPkg.stripePriceId) {
-      try {
-        // Initialize Stripe
-        const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_51S6EZwDwpTXQ4PFJLdvKNdpTEXWlUypGmPrrIZOpD4kCnXWFbfRntEpbCY6TCz3mF4yC3sRm2yroUIKeeGPNxzLT00Dny18chv');
-        
-        // Create a checkout session
-        // Try the API path first, then fall back to the direct Netlify function path
-        const apiUrl = '/api/create-checkout-session';
-        const netlifyFunctionUrl = '/.netlify/functions/create-checkout-session';
-        
-        let response;
-        let session;
-        
-        try {
-          // Try the API path first
-          response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              priceId: selectedPkg.stripePriceId,
-              packageName: selectedPkg.name,
-              customerEmail: formData.email || '',
-              promoCode: formData.promoCode || '',
-            }),
-          });
-          
-          if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || `API request failed with status ${response.status}`);
-          }
-          
-          session = await response.json();
-          
-        } catch (error) {
-          console.log('API path failed, trying direct Netlify function path:', error.message);
-          
-          try {
-            // If the API path fails, try the direct Netlify function path
-            response = await fetch(netlifyFunctionUrl, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                priceId: selectedPkg.stripePriceId,
-                packageName: selectedPkg.name,
-                customerEmail: formData.email || '',
-                promoCode: formData.promoCode || '',
-              }),
-            });
-            
-            if (!response.ok) {
-              const errorData = await response.json();
-              throw new Error(errorData.error || `Netlify function request failed with status ${response.status}`);
-            }
-            
-            session = await response.json();
-            
-          } catch (innerError) {
-            console.error('Both API paths failed:', innerError.message);
-            
-            // Check if it's a promo code error
-            if (innerError.message === 'Invalid promo code') {
-              alert('The promo code you entered is not valid. Please check and try again.');
-            } else {
-              alert('Unable to connect to payment service. Please try again later.');
-            }
-            setIsLoading(false);
-            return;
-          }
-        }
-        
-        // Check if session has the required id
-        if (!session || !session.id) {
-          console.error('Invalid session response:', session);
-          alert('Invalid response from payment service. Please try again.');
-          setIsLoading(false);
-          return;
-        }
-        
-        // Redirect to Stripe Checkout
-        const result = await stripe.redirectToCheckout({
-          sessionId: session.id,
-        });
-        
-        if (result.error) {
-          console.error('Stripe checkout error:', result.error.message);
-          alert(`Payment error: ${result.error.message}`);
-          setIsLoading(false);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        // Handle error (show a message to the user)
-        setIsLoading(false);
-      }
+      // If package has Stripe Price ID, move to details step for payment
+      setTimeout(() => nextStep(), 300);
+      setIsLoading(false);
     } else {
       // If no Stripe Price ID (like for Intensive Lessons), proceed with normal flow
       setTimeout(() => nextStep(), 300);
@@ -276,22 +183,140 @@ const Booking = () => {
     setIsSubmitting(true);
 
     try {
-      // Create the SuperSaaS booking
-      const bookingResult = await createSuperSaaSBooking();
+      // Find the selected package to get its Stripe Price ID
+      const selectedPkg = packages.find(pkg => pkg.id === selectedPackage);
       
-      if (bookingResult.success) {
-        // Show success message
-        setIsSubmitting(false);
-        setIsComplete(true);
-        setStep(2);
+      if (selectedPkg && selectedPkg.stripePriceId) {
+        // Initialize Stripe
+        const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_51S6EZwDwpTXQ4PFJLdvKNdpTEXWlUypGmPrrIZOpD4kCnXWFbfRntEpbCY6TCz3mF4yC3sRm2yroUIKeeGPNxzLT00Dny18chv');
+        
+        // Create a checkout session
+        // Try the API path first, then fall back to the direct Netlify function path
+        const apiUrl = '/api/create-checkout-session';
+        const netlifyFunctionUrl = '/.netlify/functions/create-checkout-session';
+        
+        let response;
+        let session;
+        
+        try {
+          // Try the API path first
+          response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              priceId: selectedPkg.stripePriceId,
+              packageName: selectedPkg.name,
+              customerEmail: formData.email || '',
+              promoCode: formData.promoCode || '',
+              // Include user details in the session metadata
+              customerDetails: {
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                phone: formData.phone,
+                address: formData.address,
+                experience: formData.experience,
+                specialRequests: formData.specialRequests,
+                selectedDate: formData.selectedDate,
+                selectedTime: formData.selectedTime
+              }
+            }),
+          });
+          
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || `API request failed with status ${response.status}`);
+          }
+          
+          session = await response.json();
+          
+        } catch (error) {
+          console.log('API path failed, trying direct Netlify function path:', error.message);
+          
+          try {
+            // If the API path fails, try the direct Netlify function path
+            response = await fetch(netlifyFunctionUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                priceId: selectedPkg.stripePriceId,
+                packageName: selectedPkg.name,
+                customerEmail: formData.email || '',
+                promoCode: formData.promoCode || '',
+                // Include user details in the session metadata
+                customerDetails: {
+                  firstName: formData.firstName,
+                  lastName: formData.lastName,
+                  phone: formData.phone,
+                  address: formData.address,
+                  experience: formData.experience,
+                  specialRequests: formData.specialRequests,
+                  selectedDate: formData.selectedDate,
+                  selectedTime: formData.selectedTime
+                }
+              }),
+            });
+            
+            if (!response.ok) {
+              const errorData = await response.json();
+              throw new Error(errorData.error || `Netlify function request failed with status ${response.status}`);
+            }
+            
+            session = await response.json();
+            
+          } catch (innerError) {
+            console.error('Both API paths failed:', innerError.message);
+            
+            // Check if it's a promo code error
+            if (innerError.message === 'Invalid promo code') {
+              alert('The promo code you entered is not valid. Please check and try again.');
+            } else {
+              alert('Unable to connect to payment service. Please try again later.');
+            }
+            setIsSubmitting(false);
+            return;
+          }
+        }
+        
+        // Check if session has the required id
+        if (!session || !session.id) {
+          console.error('Invalid session response:', session);
+          alert('Invalid response from payment service. Please try again.');
+          setIsSubmitting(false);
+          return;
+        }
+        
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.id,
+        });
+        
+        if (result.error) {
+          console.error('Stripe checkout error:', result.error.message);
+          alert(`Payment error: ${result.error.message}`);
+          setIsSubmitting(false);
+        }
       } else {
-        // Show error message
-        alert(`Booking failed: ${bookingResult.message || 'Unknown error'}`);
-        setIsSubmitting(false);
+        // If no Stripe Price ID (like for Intensive Lessons), create SuperSaaS booking directly
+        const bookingResult = await createSuperSaaSBooking();
+        
+        if (bookingResult.success) {
+          // Show success message
+          setIsSubmitting(false);
+          setIsComplete(true);
+          setStep(2);
+        } else {
+          // Show error message
+          alert(`Booking failed: ${bookingResult.message || 'Unknown error'}`);
+          setIsSubmitting(false);
+        }
       }
     } catch (error) {
       console.error('Error:', error);
-      alert(`Unable to create booking: ${error.message || 'Please try again later.'}`);
+      alert(`Unable to process your request: ${error.message || 'Please try again later.'}`);
       setIsSubmitting(false);
     }
   };
@@ -477,7 +502,7 @@ const Booking = () => {
                         className={`w-full ${pkg.color === "blue" ? "bg-blue-600 hover:bg-blue-700" : pkg.color === "purple" ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" : "bg-green-600 hover:bg-green-700"}`}
                         disabled={isLoading}
                       >
-                        {isLoading ? "Processing..." : (pkg.stripePriceId ? "Pay Now" : "Select Package")}
+                        {isLoading ? "Processing..." : "Select Package"}
                       </Button>
                     </motion.div>
                   </div>
@@ -798,7 +823,7 @@ const Booking = () => {
                         </span>
                       ) : (
                         <>
-                          Complete Purchase
+                          {selectedPackage && packages.find(pkg => pkg.id === selectedPackage)?.stripePriceId ? "Complete Payment" : "Complete Purchase"}
                           <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                           <motion.div
                             className="absolute inset-0 bg-white"

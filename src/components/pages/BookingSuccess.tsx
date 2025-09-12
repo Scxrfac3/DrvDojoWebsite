@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowLeft, PartyPopper, Calendar, Car } from "lucide-react";
+import { CheckCircle, ArrowLeft, PartyPopper, Calendar, Car, Clock } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const BookingSuccess = () => {
@@ -12,6 +12,8 @@ const BookingSuccess = () => {
   const sessionId = searchParams.get("session_id");
   const [isLoading, setIsLoading] = useState(true);
   const [sessionDetails, setSessionDetails] = useState(null);
+  const [isBookingCreated, setIsBookingCreated] = useState(false);
+  const [isCreatingBooking, setIsCreatingBooking] = useState(false);
 
   useEffect(() => {
     const fetchSessionDetails = async () => {
@@ -39,6 +41,11 @@ const BookingSuccess = () => {
             spread: 100,
             origin: { y: 0.6 },
           });
+          
+          // Create SuperSaaS booking if customer details are available
+          if (session.payment_status === 'paid' && session.metadata?.customerDetails) {
+            await createSuperSaaSBooking(session.metadata.customerDetails, session.customer_details?.email);
+          }
         } catch (error) {
           console.error("Error fetching session details:", error);
         } finally {
@@ -51,6 +58,88 @@ const BookingSuccess = () => {
 
     fetchSessionDetails();
   }, [sessionId]);
+
+  const createSuperSaaSBooking = async (customerDetailsJson, customerEmail) => {
+    try {
+      setIsCreatingBooking(true);
+      
+      // Parse customer details from metadata
+      const customerDetails = JSON.parse(customerDetailsJson);
+      
+      // Try the API path first, then fall back to the direct Netlify function path
+      const apiUrl = '/api/create-supersaas-booking';
+      const netlifyFunctionUrl = '/.netlify/functions/create-supersaas-booking';
+      
+      let response;
+      
+      try {
+        // Try the API path first
+        response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            customerName: `${customerDetails.firstName} ${customerDetails.lastName}`,
+            customerEmail: customerEmail || customerDetails.email,
+            customerPhone: customerDetails.phone,
+            selectedDate: customerDetails.selectedDate,
+            selectedTime: customerDetails.selectedTime,
+            packageType: sessionDetails?.metadata?.packageName || 'Standard Lesson',
+            address: customerDetails.address,
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          setIsBookingCreated(true);
+        } else {
+          console.error('SuperSaaS booking failed:', result.message);
+        }
+        
+      } catch (error) {
+        console.log('API path failed, trying direct Netlify function path:', error.message);
+        
+        // If the API path fails, try the direct Netlify function path
+        response = await fetch(netlifyFunctionUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            customerName: `${customerDetails.firstName} ${customerDetails.lastName}`,
+            customerEmail: customerEmail || customerDetails.email,
+            customerPhone: customerDetails.phone,
+            selectedDate: customerDetails.selectedDate,
+            selectedTime: customerDetails.selectedTime,
+            packageType: sessionDetails?.metadata?.packageName || 'Standard Lesson',
+            address: customerDetails.address,
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Netlify function request failed with status ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          setIsBookingCreated(true);
+        } else {
+          console.error('SuperSaaS booking failed:', result.message);
+        }
+      }
+    } catch (error) {
+      console.error('Error creating SuperSaaS booking:', error);
+    } finally {
+      setIsCreatingBooking(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800">
@@ -133,7 +222,19 @@ const BookingSuccess = () => {
             className="space-y-4"
           >
             <p className="text-slate-300 mb-6">
-              Thank you for your payment! Your purchase is complete. Now you can schedule your driving lessons at your convenience using our booking system below.
+              Thank you for your payment! Your purchase is complete.
+              {isCreatingBooking && (
+                <span className="flex items-center justify-center text-blue-300 mt-2">
+                  <Clock className="h-4 w-4 mr-2 animate-spin" />
+                  Creating your booking in our system...
+                </span>
+              )}
+              {isBookingCreated && (
+                <span className="flex items-center justify-center text-green-300 mt-2">
+                  <CheckCircle className="h-4 w-4 mr-2" />
+                  Your lesson has been booked successfully!
+                </span>
+              )}
             </p>
 
             {/* SuperSaaS Scheduling Widget */}
