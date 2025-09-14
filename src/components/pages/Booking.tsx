@@ -82,7 +82,7 @@ const Booking = () => {
     setFormData({ ...formData, agreeToTerms: checked });
   };
 
-  const handlePackageSelect = (packageName) => {
+  const handlePackageSelect = async (packageName) => {
     setIsLoading(true);
     setSelectedPackage(packageName);
     
@@ -90,9 +90,105 @@ const Booking = () => {
     const selectedPkg = packages.find(pkg => pkg.id === packageName);
     
     if (selectedPkg && selectedPkg.stripePriceId) {
-      // If package has Stripe Price ID, move to details step for payment
-      setTimeout(() => nextStep(), 300);
-      setIsLoading(false);
+      // If package has Stripe Price ID, redirect directly to Stripe checkout
+      try {
+        // Initialize Stripe
+        const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_51S6EZwDwpTXQ4PFJLdvKNdpTEXWlUypGmPrrIZOpD4kCnXWFbfRntEpbCY6TCz3mF4yC3sRm2yroUIKeeGPNxzLT00Dny18chv');
+        
+        // Create a checkout session
+        // Try the API path first, then fall back to the direct Netlify function path
+        const apiUrl = '/api/create-checkout-session';
+        const netlifyFunctionUrl = '/.netlify/functions/create-checkout-session';
+        
+        let response;
+        let session;
+        
+        try {
+          // Try the API path first
+          response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              priceId: selectedPkg.stripePriceId,
+              packageName: selectedPkg.name,
+              customerEmail: '', // Will be collected after payment
+              promoCode: '',
+              // Include minimal customer details in the session metadata
+              customerDetails: {
+                packageType: selectedPkg.id,
+              }
+            }),
+          });
+          
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || `API request failed with status ${response.status}`);
+          }
+          
+          session = await response.json();
+          
+        } catch (error) {
+          console.log('API path failed, trying direct Netlify function path:', error.message);
+          
+          try {
+            // If the API path fails, try the direct Netlify function path
+            response = await fetch(netlifyFunctionUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                priceId: selectedPkg.stripePriceId,
+                packageName: selectedPkg.name,
+                customerEmail: '', // Will be collected after payment
+                promoCode: '',
+                // Include minimal customer details in the session metadata
+                customerDetails: {
+                  packageType: selectedPkg.id,
+                }
+              }),
+            });
+            
+            if (!response.ok) {
+              const errorData = await response.json();
+              throw new Error(errorData.error || `Netlify function request failed with status ${response.status}`);
+            }
+            
+            session = await response.json();
+            
+          } catch (innerError) {
+            console.error('Both API paths failed:', innerError.message);
+            alert('Unable to connect to payment service. Please try again later.');
+            setIsLoading(false);
+            return;
+          }
+        }
+        
+        // Check if session has the required id
+        if (!session || !session.id) {
+          console.error('Invalid session response:', session);
+          alert('Invalid response from payment service. Please try again.');
+          setIsLoading(false);
+          return;
+        }
+        
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.id,
+        });
+        
+        if (result.error) {
+          console.error('Stripe checkout error:', result.error.message);
+          alert(`Payment error: ${result.error.message}`);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert(`Unable to process your request: ${error.message || 'Please try again later.'}`);
+        setIsLoading(false);
+      }
     } else {
       // If no Stripe Price ID (like for Intensive Lessons), proceed with normal flow
       setTimeout(() => nextStep(), 300);

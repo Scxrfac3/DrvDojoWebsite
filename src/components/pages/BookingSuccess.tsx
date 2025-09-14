@@ -42,9 +42,11 @@ const BookingSuccess = () => {
             origin: { y: 0.6 },
           });
           
-          // Create SuperSaaS booking if customer details are available
-          if (session.payment_status === 'paid' && session.metadata?.customerDetails) {
-            await createSuperSaaSBooking(session.metadata.customerDetails, session.customer_details?.email);
+          // Create SuperSaaS booking if payment is successful
+          if (session.payment_status === 'paid') {
+            // For the new flow, we don't have customer details yet
+            // The customer will book their lessons using the SuperSaaS widget
+            console.log('Payment successful. Customer will book lessons using SuperSaaS widget.');
           }
         } catch (error) {
           console.error("Error fetching session details:", error);
@@ -223,18 +225,6 @@ const BookingSuccess = () => {
           >
             <p className="text-slate-300 mb-6">
               Thank you for your payment! Your purchase is complete.
-              {isCreatingBooking && (
-                <span className="flex items-center justify-center text-blue-300 mt-2">
-                  <Clock className="h-4 w-4 mr-2 animate-spin" />
-                  Creating your booking in our system...
-                </span>
-              )}
-              {isBookingCreated && (
-                <span className="flex items-center justify-center text-green-300 mt-2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Your lesson has been booked successfully!
-                </span>
-              )}
             </p>
 
             {/* SuperSaaS Scheduling Widget */}
@@ -246,11 +236,11 @@ const BookingSuccess = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-4 text-center">Schedule Your Driving Lessons</h3>
               <p className="text-slate-300 mb-6 text-center">
-                <strong>Important:</strong> Use the calendar below to schedule your driving lessons. Your purchased hours will be automatically deducted from your package.
+                <strong>Next Step:</strong> Use the calendar below to schedule your driving lessons. Your purchased package will be automatically applied when you book.
               </p>
               <div className="bg-blue-900/30 rounded-lg p-4 mb-6 border border-blue-700/50">
                 <p className="text-blue-200 text-sm text-center">
-                  Please schedule your first lesson within the next 7 days to secure your preferred time slots.
+                  Please schedule your first lesson within the next 7 days to secure your preferred time slots. You'll need to enter your details when booking.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4">
@@ -272,22 +262,22 @@ const BookingSuccess = () => {
                   <div className="w-12 h-12 bg-blue-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Calendar className="h-6 w-6 text-blue-400" />
                   </div>
-                  <h4 className="text-white font-medium mb-2">Schedule Your Lessons</h4>
-                  <p className="text-slate-300 text-sm">Use the booking system above to schedule your lessons at times that work for you.</p>
+                  <h4 className="text-white font-medium mb-2">Book Your Lessons</h4>
+                  <p className="text-slate-300 text-sm">Use the calendar above to select your preferred lesson times and enter your details.</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-purple-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle className="h-6 w-6 text-purple-400" />
                   </div>
-                  <h4 className="text-white font-medium mb-2">Confirmation Email</h4>
-                  <p className="text-slate-300 text-sm">You'll receive a confirmation email for each scheduled lesson.</p>
+                  <h4 className="text-white font-medium mb-2">Get Confirmation</h4>
+                  <p className="text-slate-300 text-sm">Receive instant confirmation for each lesson you book via email.</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-green-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Car className="h-6 w-6 text-green-400" />
                   </div>
-                  <h4 className="text-white font-medium mb-2">Start Learning</h4>
-                  <p className="text-slate-300 text-sm">Your instructor will pick you up at your chosen location for each lesson.</p>
+                  <h4 className="text-white font-medium mb-2">Start Driving</h4>
+                  <p className="text-slate-300 text-sm">Your instructor will pick you up at your location for each scheduled lesson.</p>
                 </div>
               </div>
             </div>
