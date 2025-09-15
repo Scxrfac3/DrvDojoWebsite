@@ -106,12 +106,15 @@ exports.handler = async (event, context) => {
       }
     } catch (priceError) {
       console.error('Error verifying price:', priceError);
+      console.error('Invalid priceId received:', priceId);
+      console.error('Full error details:', JSON.stringify(priceError, null, 2));
       return {
         statusCode: 400,
         headers,
         body: JSON.stringify({
           error: 'Invalid package selected',
           message: 'The selected package is not valid. Please select a different package.',
+          invalidPriceId: priceId,
           type: priceError.type
         }),
       };
