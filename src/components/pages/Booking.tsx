@@ -211,68 +211,8 @@ const Booking = () => {
     }
   };
 
-  const createSuperSaaSBooking = async () => {
-    try {
-      const apiUrl = '/api/create-supersaas-booking';
-      const netlifyFunctionUrl = '/.netlify/functions/create-supersaas-booking';
-      
-      let response;
-      
-      try {
-        // Try the API path first
-        response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            customerName: `${formData.firstName} ${formData.lastName}`,
-            customerEmail: formData.email,
-            customerPhone: formData.phone,
-            selectedDate: formData.selectedDate,
-            selectedTime: formData.selectedTime,
-            packageType: selectedPackage,
-            address: formData.address,
-          }),
-        });
-        
-        if (!response.ok) {
-          throw new Error(`API request failed with status ${response.status}`);
-        }
-        
-        return await response.json();
-        
-      } catch (error) {
-        console.log('API path failed, trying direct Netlify function path:', error.message);
-        
-        // If the API path fails, try the direct Netlify function path
-        response = await fetch(netlifyFunctionUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            customerName: `${formData.firstName} ${formData.lastName}`,
-            customerEmail: formData.email,
-            customerPhone: formData.phone,
-            selectedDate: formData.selectedDate,
-            selectedTime: formData.selectedTime,
-            packageType: selectedPackage,
-            address: formData.address,
-          }),
-        });
-        
-        if (!response.ok) {
-          throw new Error(`Netlify function request failed with status ${response.status}`);
-        }
-        
-        return await response.json();
-      }
-    } catch (error) {
-      console.error('Error creating SuperSaaS booking:', error);
-      throw error;
-    }
-  };
+  // Note: SuperSaaS booking functionality has been replaced with Calendly widget
+  // All bookings now go through Stripe payment flow, then use Calendly for scheduling
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -396,19 +336,10 @@ const Booking = () => {
           setIsSubmitting(false);
         }
       } else {
-        // If no Stripe Price ID (like for Intensive Lessons), create SuperSaaS booking directly
-        const bookingResult = await createSuperSaaSBooking();
-        
-        if (bookingResult.success) {
-          // Show success message
-          setIsSubmitting(false);
-          setIsComplete(true);
-          setStep(2);
-        } else {
-          // Show error message
-          alert(`Booking failed: ${bookingResult.message || 'Unknown error'}`);
-          setIsSubmitting(false);
-        }
+        // All packages now require payment through Stripe
+        // After payment, customers will use the Calendly widget to schedule their lessons
+        alert('This package requires payment processing. Please select a different package or contact us for assistance.');
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.error('Error:', error);
@@ -423,7 +354,7 @@ const Booking = () => {
       name: "Pay-as-you-go",
       price: "£76",
       unit: "/2 hours",
-      stripePriceId: "price_1LK8IGRlA1HTbrriOI7rfvg8", // Updated to match live Stripe account
+      stripePriceId: "price_1S6Hk0RlA1HTbrri5GHxTCBT", // Updated to match live Stripe account
       description: "Perfect for trying us out",
       features: [
         "2 hours lesson",
@@ -438,7 +369,7 @@ const Booking = () => {
       name: "6-Hour Package",
       price: "£210",
       unit: "/package",
-      stripePriceId: "price_1LK8IGRlA1HTbrriOI8rfvg8", // Updated to match live Stripe account
+      stripePriceId: "price_1S6HkYRlA1HTbrri9GCcpnJ0", // Updated to match live Stripe account
       description: "Save money with our starter package",
       features: [
         "6 hours of lessons",
@@ -453,7 +384,7 @@ const Booking = () => {
       name: "10-Hour Package",
       price: "£340",
       unit: "/package",
-      stripePriceId: "price_1LK8IGRlA1HTbrriOI9rfvg8", // Updated to match live Stripe account
+      stripePriceId: "price_1S6HlURlA1HTbrrixRKO6sUP", // Updated to match live Stripe account
       description: "Most Popular - Best value for money!",
       features: [
         "10 hours of lessons",
@@ -467,8 +398,9 @@ const Booking = () => {
     {
       id: "intensive",
       name: "Intensive Lessons",
-      price: "Contact for Quote",
-      unit: "/tailored",
+      price: "£40",
+      unit: "/hour",
+      stripePriceId: "price_1S6HpsRlA1HTbrriTVRRonz6", // Updated to match live Stripe account
       description: "Fast-track your learning",
       features: [
         "Tailored to student needs",
@@ -483,7 +415,7 @@ const Booking = () => {
       name: "Mock Driving Test",
       price: "£90",
       unit: "/test",
-      stripePriceId: "price_1LK8IGRlA1HTbrriOI0rfvg8", // Updated to match live Stripe account
+      stripePriceId: "price_1S6Hm0RlA1HTbrriSsI96XYS", // Updated to match live Stripe account
       description: "Perfect practice before your test",
       features: [
         "Real test conditions",
@@ -498,7 +430,7 @@ const Booking = () => {
       name: "Driving Test Car Rental",
       price: "£150",
       unit: "/3 hours",
-      stripePriceId: "price_1LK8IGRlA1HTbrriOI1rfvg8", // Updated to match live Stripe account
+      stripePriceId: "price_1S6Hn4RlA1HTbrriiVZv6sIz", // Updated to match live Stripe account
       description: "3 hours: arrive 15min early, practice maneuvers, home drop-off",
       features: [
         "3 hours booking",

@@ -42,11 +42,11 @@ const BookingSuccess = () => {
             origin: { y: 0.6 },
           });
           
-          // Create SuperSaaS booking if payment is successful
+          // Create Calendly booking if payment is successful
           if (session.payment_status === 'paid') {
             // For the new flow, we don't have customer details yet
-            // The customer will book their lessons using the SuperSaaS widget
-            console.log('Payment successful. Customer will book lessons using SuperSaaS widget.');
+            // The customer will book their lessons using the Calendly widget
+            console.log('Payment successful. Customer will book lessons using Calendly widget.');
           }
         } catch (error) {
           console.error("Error fetching session details:", error);
@@ -61,87 +61,8 @@ const BookingSuccess = () => {
     fetchSessionDetails();
   }, [sessionId]);
 
-  const createSuperSaaSBooking = async (customerDetailsJson, customerEmail) => {
-    try {
-      setIsCreatingBooking(true);
-      
-      // Parse customer details from metadata
-      const customerDetails = JSON.parse(customerDetailsJson);
-      
-      // Try the API path first, then fall back to the direct Netlify function path
-      const apiUrl = '/api/create-supersaas-booking';
-      const netlifyFunctionUrl = '/.netlify/functions/create-supersaas-booking';
-      
-      let response;
-      
-      try {
-        // Try the API path first
-        response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            customerName: `${customerDetails.firstName} ${customerDetails.lastName}`,
-            customerEmail: customerEmail || customerDetails.email,
-            customerPhone: customerDetails.phone,
-            selectedDate: customerDetails.selectedDate,
-            selectedTime: customerDetails.selectedTime,
-            packageType: sessionDetails?.metadata?.packageName || 'Standard Lesson',
-            address: customerDetails.address,
-          }),
-        });
-        
-        if (!response.ok) {
-          throw new Error(`API request failed with status ${response.status}`);
-        }
-        
-        const result = await response.json();
-        
-        if (result.success) {
-          setIsBookingCreated(true);
-        } else {
-          console.error('SuperSaaS booking failed:', result.message);
-        }
-        
-      } catch (error) {
-        console.log('API path failed, trying direct Netlify function path:', error.message);
-        
-        // If the API path fails, try the direct Netlify function path
-        response = await fetch(netlifyFunctionUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            customerName: `${customerDetails.firstName} ${customerDetails.lastName}`,
-            customerEmail: customerEmail || customerDetails.email,
-            customerPhone: customerDetails.phone,
-            selectedDate: customerDetails.selectedDate,
-            selectedTime: customerDetails.selectedTime,
-            packageType: sessionDetails?.metadata?.packageName || 'Standard Lesson',
-            address: customerDetails.address,
-          }),
-        });
-        
-        if (!response.ok) {
-          throw new Error(`Netlify function request failed with status ${response.status}`);
-        }
-        
-        const result = await response.json();
-        
-        if (result.success) {
-          setIsBookingCreated(true);
-        } else {
-          console.error('SuperSaaS booking failed:', result.message);
-        }
-      }
-    } catch (error) {
-      console.error('Error creating SuperSaaS booking:', error);
-    } finally {
-      setIsCreatingBooking(false);
-    }
-  };
+  // Note: SuperSaaS booking function has been replaced with Calendly widget
+  // The Calendly widget handles booking directly without needing server-side integration
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800">
@@ -227,7 +148,7 @@ const BookingSuccess = () => {
               Thank you for your payment! Your purchase is complete.
             </p>
 
-            {/* SuperSaaS Scheduling Widget */}
+            {/* Calendly Scheduling Widget */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -244,14 +165,10 @@ const BookingSuccess = () => {
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4">
-                <iframe
-                  src="https://www.supersaas.com/schedule/drive_dojo/Driving_Lessons?api_key=y2Qp49ZINgve0gtnEkz4IA"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  scrolling="yes"
-                  title="Schedule Your Driving Lessons"
-                ></iframe>
+                {/* Calendly inline widget begin */}
+                <div className="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=c191ff" style={{minWidth: '320px', height: '700px'}}></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                {/* Calendly inline widget end */}
               </div>
             </motion.div>
             
@@ -263,7 +180,7 @@ const BookingSuccess = () => {
                     <Calendar className="h-6 w-6 text-blue-400" />
                   </div>
                   <h4 className="text-white font-medium mb-2">Book Your Lessons</h4>
-                  <p className="text-slate-300 text-sm">Use the calendar above to select your preferred lesson times and enter your details.</p>
+                  <p className="text-slate-300 text-sm">Use the Calendly calendar above to select your preferred lesson times and enter your details.</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-purple-600/30 rounded-full flex items-center justify-center mx-auto mb-3">
