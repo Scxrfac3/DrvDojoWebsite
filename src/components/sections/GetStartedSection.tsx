@@ -62,13 +62,13 @@ const GetStartedSection = ({
   };
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 text-white">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-white-subtle text-gray-800">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-blue-100/50 backdrop-blur-sm"
             style={{
               width: Math.random() * 100 + 50,
               height: Math.random() * 100 + 50,
@@ -98,22 +98,22 @@ const GetStartedSection = ({
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200"
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4 text-pink-400" />
-              <span className="text-sm font-medium text-pink-300">
+              <MapPin className="h-4 w-4 text-pink-500" />
+              <span className="text-sm font-medium text-pink-600">
                 Drive Dojo
               </span>
             </div>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 via-blue-600 to-orange-500">
             Start Your Driving Journey
           </h2>
 
-          <p className="text-lg text-purple-100 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Getting your license with Drive Dojo is straightforward and
             efficient. Follow these three simple steps to start your journey to
             driving freedom on the London roads.
@@ -130,32 +130,32 @@ const GetStartedSection = ({
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 flex flex-col items-center text-center h-full relative overflow-hidden group"
+              className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 flex flex-col items-center text-center h-full relative overflow-hidden group"
               variants={itemVariants}
               whileHover={{
                 scale: 1.03,
-                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
               }}
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-gradient-to-br from-pink-100/50 via-purple-100/50 to-blue-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
               />
 
               <motion.div
-                className="mb-4 p-4 rounded-full bg-white/10 relative z-10"
+                className="mb-4 p-4 rounded-full bg-white/80 relative z-10"
                 whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                 transition={{ duration: 0.5 }}
               >
                 {step.icon}
               </motion.div>
 
-              <h3 className="text-xl font-bold mb-2 text-white relative z-10">
+              <h3 className="text-xl font-bold mb-2 text-gray-800 relative z-10">
                 {step.title}
               </h3>
 
-              <p className="text-purple-100 flex-grow relative z-10">
+              <p className="text-gray-600 flex-grow relative z-10">
                 {step.description}
               </p>
 
@@ -206,7 +206,7 @@ const GetStartedSection = ({
           </Button>
 
           <motion.p
-            className="mt-4 text-sm text-purple-200 opacity-80"
+            className="mt-4 text-sm text-gray-600 opacity-80"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}

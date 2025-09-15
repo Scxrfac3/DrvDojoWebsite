@@ -30,12 +30,12 @@ const Home = () => {
   return (
     <>
       {/* Main Page Content */}
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-white-subtle relative overflow-hidden">
         {/* Background decorative elements */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-100 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-100 rounded-full opacity-30 blur-3xl"></div>
 
         <Banner />
         <Navbar />
@@ -48,13 +48,13 @@ const Home = () => {
           <NewTestimonialsSection />
 
           {/* Free Theory Test Section */}
-          <section className="py-16 bg-gradient-to-br from-purple-900 via-violet-800 to-indigo-900 relative overflow-hidden">
+          <section className="py-16 bg-gradient-white-subtle relative overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
               {[...Array(10)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute rounded-full bg-white/10"
+                  className="absolute rounded-full bg-purple-100/50"
                   style={{
                     width: Math.random() * 100 + 50,
                     height: Math.random() * 100 + 50,
@@ -81,7 +81,7 @@ const Home = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="text-center lg:text-left">
                   <motion.div
-                    className="inline-flex items-center mb-3 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                    className="inline-flex items-center mb-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
@@ -94,7 +94,7 @@ const Home = () => {
                   </motion.div>
 
                   <motion.h2
-                    className="text-3xl md:text-5xl font-bold mb-4 text-white"
+                    className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -105,7 +105,7 @@ const Home = () => {
                   </motion.h2>
 
                   <motion.p
-                    className="text-xl text-white/90 mb-6"
+                    className="text-xl text-gray-700 mb-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -123,19 +123,19 @@ const Home = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-1" />
-                      <span className="text-white text-sm">3000+ Questions</span>
+                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mr-1" />
+                      <span className="text-gray-800 text-sm">3000+ Questions</span>
                     </div>
 
-                    <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      <CheckCircle className="h-4 w-4 text-green-400 mr-1" />
-                      <span className="text-white text-sm">DVSA Approved</span>
+                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                      <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
+                      <span className="text-gray-800 text-sm">DVSA Approved</span>
                     </div>
 
-                    <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      <Sparkles className="h-4 w-4 text-blue-400 mr-1" />
-                      <span className="text-white text-sm">Updated for 2024</span>
+                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                      <Sparkles className="h-4 w-4 text-blue-500 mr-1" />
+                      <span className="text-gray-800 text-sm">Updated for 2024</span>
                     </div>
                   </motion.div>
 
@@ -272,22 +272,22 @@ const Home = () => {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl text-white">
+                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
                     <div className="font-bold text-2xl">95%</div>
                     <div className="text-sm">Pass Rate</div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl text-white">
+                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
                     <div className="font-bold text-2xl">10k+</div>
                     <div className="text-sm">Users</div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl text-white">
+                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
                     <div className="font-bold text-2xl">4.9</div>
                     <div className="text-sm">App Rating</div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl text-white">
+                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
                     <div className="font-bold text-2xl">Free</div>
                     <div className="text-sm">Forever</div>
                   </div>

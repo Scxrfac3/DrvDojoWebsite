@@ -21,10 +21,10 @@ const CTASection = ({
   secondaryButtonLink = "/contact",
 }: CTASectionProps) => {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center relative overflow-hidden">
+    <section className="py-20 bg-gradient-white-subtle text-gray-800 text-center relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-xl"></div>
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full blur-xl"></div>
+      <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-100 rounded-full blur-xl"></div>
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-purple-100 rounded-full blur-xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -47,7 +47,7 @@ const CTASection = ({
             <Button
               size="lg"
               variant="secondary"
-              className="bg-white text-blue-700 hover:bg-gray-100 shadow-lg group"
+              className="bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:from-blue-700 hover:to-blue-900 shadow-lg group"
               asChild
             >
               <motion.a
@@ -77,7 +77,7 @@ const CTASection = ({
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/20"
+              className="border-gray-600 text-gray-700 hover:bg-gray-100"
               asChild
             >
               <motion.a

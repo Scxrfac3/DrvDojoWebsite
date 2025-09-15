@@ -136,6 +136,10 @@
     background: linear-gradient(to right, #f59e0b, #ef4444);
   }
 
+  .bg-gradient-white-subtle {
+    background: linear-gradient(to bottom, #FFFFFF, #F8F9FA);
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
