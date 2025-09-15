@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -17,19 +17,58 @@ import confetti from "canvas-confetti";
 
 const Booking = () => {
   const [animateBackground, setAnimateBackground] = useState(false);
-  const [selectedCalendlyUrl, setSelectedCalendlyUrl] = useState("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff");
+  const [selectedPackage, setSelectedPackage] = useState("payg");
+  const [isCalendlyLoaded, setIsCalendlyLoaded] = useState(false);
+  const calendlyWidgetRef = useRef(null);
 
   useEffect(() => {
     // Load Calendly widget script
-    const script = document.createElement('script');
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-    
-    return () => {
-      document.body.removeChild(script);
+    const loadCalendlyScript = () => {
+      if (window.Calendly) {
+        setIsCalendlyLoaded(true);
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.onload = () => {
+        setIsCalendlyLoaded(true);
+      };
+      document.body.appendChild(script);
+      
+      return () => {
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
     };
+
+    loadCalendlyScript();
   }, []);
+
+  useEffect(() => {
+    // Update Calendly widget when package changes
+    if (isCalendlyLoaded && calendlyWidgetRef.current) {
+      // Destroy existing widget
+      calendlyWidgetRef.current.innerHTML = '';
+      
+      // Get the selected package URL
+      const selectedPkg = packages.find(pkg => pkg.id === selectedPackage);
+      if (selectedPkg) {
+        // Initialize new widget
+        window.Calendly.initInlineWidget({
+          url: selectedPkg.calendlyUrl,
+          parentElement: calendlyWidgetRef.current,
+          prefill: {},
+          styles: {
+            height: '700px',
+            width: '100%'
+          }
+        });
+      }
+    }
+  }, [selectedPackage, isCalendlyLoaded]);
 
   const triggerConfetti = () => {
     confetti({
@@ -136,9 +175,19 @@ const Booking = () => {
     },
   ];
 
-  const handlePackageSelect = (calendlyUrl) => {
-    setSelectedCalendlyUrl(calendlyUrl);
+  const handlePackageSelect = (packageId) => {
+    setSelectedPackage(packageId);
     triggerConfetti();
+    
+    // Scroll to Calendly widget on mobile
+    if (window.innerWidth < 1024) {
+      setTimeout(() => {
+        const widgetElement = document.getElementById('calendly-widget-container');
+        if (widgetElement) {
+          widgetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
   };
 
   return (
@@ -230,12 +279,12 @@ const Booking = () => {
               {packages.map((pkg) => (
                 <motion.div
                   key={pkg.id}
-                  className={`bg-gradient-to-b ${pkg.color === "blue" ? "from-blue-900/40 to-blue-800/20" : pkg.color === "purple" ? "from-purple-900/40 to-purple-800/20" : "from-green-900/40 to-green-800/20"} rounded-xl overflow-hidden border ${pkg.color === "blue" ? "border-blue-700/30" : pkg.color === "purple" ? "border-purple-700/30" : "border-green-700/30"} shadow-lg relative cursor-pointer ${selectedCalendlyUrl === pkg.calendlyUrl ? 'ring-2 ring-orange-400' : ''}`}
+                  className={`bg-gradient-to-b ${pkg.color === "blue" ? "from-blue-900/40 to-blue-800/20" : pkg.color === "purple" ? "from-purple-900/40 to-purple-800/20" : "from-green-900/40 to-green-800/20"} rounded-xl overflow-hidden border ${pkg.color === "blue" ? "border-blue-700/30" : pkg.color === "purple" ? "border-purple-700/30" : "border-green-700/30"} shadow-lg relative cursor-pointer ${selectedPackage === pkg.id ? 'ring-2 ring-orange-400' : ''}`}
                   whileHover={{
                     y: -5,
                     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
                   }}
-                  onClick={() => handlePackageSelect(pkg.calendlyUrl)}
+                  onClick={() => handlePackageSelect(pkg.id)}
                 >
                   {pkg.popular && (
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
@@ -279,9 +328,9 @@ const Booking = () => {
                     </ul>
 
                     <Button
-                      className={`w-full ${selectedCalendlyUrl === pkg.calendlyUrl ? 'bg-orange-600 hover:bg-orange-700' : pkg.color === "blue" ? "bg-blue-600 hover:bg-blue-700" : pkg.color === "purple" ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" : "bg-green-600 hover:bg-green-700"}`}
+                      className={`w-full ${selectedPackage === pkg.id ? 'bg-orange-600 hover:bg-orange-700' : pkg.color === "blue" ? "bg-blue-600 hover:bg-blue-700" : pkg.color === "purple" ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" : "bg-green-600 hover:bg-green-700"}`}
                     >
-                      {selectedCalendlyUrl === pkg.calendlyUrl ? 'Selected' : 'Select Package'}
+                      {selectedPackage === pkg.id ? 'Selected' : 'Select Package'}
                     </Button>
                   </div>
                 </motion.div>
@@ -294,6 +343,7 @@ const Booking = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            id="calendly-widget-container"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
               Book Your Lesson
@@ -306,12 +356,17 @@ const Booking = () => {
                 <p className="text-blue-200 text-sm">
                   All bookings include payment processing through our secure system.
                 </p>
+                <div className="mt-2 p-3 bg-blue-900/30 rounded-lg border border-blue-700/50">
+                  <p className="text-blue-200 text-sm font-medium">
+                    Selected: <span className="text-orange-300">{packages.find(p => p.id === selectedPackage)?.name}</span>
+                  </p>
+                </div>
               </div>
               
               {/* Calendly Inline Widget */}
               <div
+                ref={calendlyWidgetRef}
                 className="calendly-inline-widget rounded-lg overflow-hidden bg-white"
-                data-url={selectedCalendlyUrl}
                 style={{ minWidth: '100%', height: '700px' }}
               ></div>
               
