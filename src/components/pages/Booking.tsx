@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -20,6 +21,27 @@ const Booking = () => {
   const [selectedPackage, setSelectedPackage] = useState("payg");
   const [isCalendlyLoaded, setIsCalendlyLoaded] = useState(false);
   const calendlyWidgetRef = useRef(null);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    // Read package from URL parameter
+    const packageParam = searchParams.get('package');
+    if (packageParam) {
+      // Map URL parameter values to package IDs
+      const packageMapping = {
+        'payg': 'payg',
+        '6hour': '6hour',
+        '10hour': '10hour',
+        'intensive': 'intensive',
+        'mocktest': 'mocktest',
+        'testrental': 'testrental'
+      };
+      
+      if (packageMapping[packageParam]) {
+        setSelectedPackage(packageMapping[packageParam]);
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Load Calendly widget script
@@ -265,17 +287,59 @@ const Booking = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Package Selection */}
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Calendly Widget - Now first on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            id="calendly-widget-container"
+            className="lg:w-1/2 min-h-[80vh]"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              Book Your Lesson
+            </h2>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-xl h-full flex flex-col">
+              <div className="mb-4">
+                <p className="text-blue-100 mb-2">
+                  Select a package below, then choose your preferred date and time.
+                </p>
+                <p className="text-blue-200 text-sm">
+                  All bookings include payment processing through our secure system.
+                </p>
+                <div className="mt-2 p-3 bg-blue-900/30 rounded-lg border border-blue-700/50">
+                  <p className="text-blue-200 text-sm font-medium">
+                    Selected: <span className="text-orange-300">{packages.find(p => p.id === selectedPackage)?.name}</span>
+                  </p>
+                </div>
+              </div>
+              
+              {/* Calendly Inline Widget */}
+              <div
+                ref={calendlyWidgetRef}
+                className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow"
+                style={{ minWidth: '100%', height: '100%' }}
+              ></div>
+              
+              <div className="mt-4 text-center">
+                <p className="text-blue-200 text-sm">
+                  Need help? Contact us at <span className="text-blue-300">info@drivedojo.co.uk</span>
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Package Selection - Now second on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="lg:w-1/2"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
               Select Your Package
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
               {packages.map((pkg) => (
                 <motion.div
                   key={pkg.id}
@@ -335,46 +399,6 @@ const Booking = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Calendly Widget */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            id="calendly-widget-container"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-              Book Your Lesson
-            </h2>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-xl">
-              <div className="mb-4">
-                <p className="text-blue-100 mb-2">
-                  Select a package from the left, then choose your preferred date and time below.
-                </p>
-                <p className="text-blue-200 text-sm">
-                  All bookings include payment processing through our secure system.
-                </p>
-                <div className="mt-2 p-3 bg-blue-900/30 rounded-lg border border-blue-700/50">
-                  <p className="text-blue-200 text-sm font-medium">
-                    Selected: <span className="text-orange-300">{packages.find(p => p.id === selectedPackage)?.name}</span>
-                  </p>
-                </div>
-              </div>
-              
-              {/* Calendly Inline Widget */}
-              <div
-                ref={calendlyWidgetRef}
-                className="calendly-inline-widget rounded-lg overflow-hidden bg-white"
-                style={{ minWidth: '100%', height: '700px' }}
-              ></div>
-              
-              <div className="mt-4 text-center">
-                <p className="text-blue-200 text-sm">
-                  Need help? Contact us at <span className="text-blue-300">info@drivedojo.co.uk</span>
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>
