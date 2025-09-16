@@ -16,7 +16,7 @@ const Booking10Hour = () => {
       ]}
       packageColor="purple"
       packageIcon={<Award className="h-6 w-6" />}
-      calendlyUrl="https://calendly.com/drivedojo-qnua/6-hour-package-clone?background_color=96bdff"
+      calendlyUrl="https://calendly.com/drivedojo-qnua/10-hour-package-clone?background_color=96bdff"
       bookingPageTitle="Book Your 10-Hour Package"
     />
   );

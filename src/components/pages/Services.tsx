@@ -342,8 +342,7 @@ const Services = () => {
                           asChild
                         >
                           <motion.a
-                            href="https://calendly.com/drivedojo-qnua/intensive?background_color=ffa5f0"
-                            target="_blank"
+                            href="/booking/intensive"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
@@ -561,7 +560,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-blue-600 hover:bg-blue-700 group relative overflow-hidden"
-                            onClick={() => window.open("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff", "_blank")}
+                            onClick={() => window.location.href = '/booking/payg'}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -627,7 +626,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 group relative overflow-hidden"
-                            onClick={() => window.open("https://calendly.com/drivedojo-qnua/6-hour-package?background_color=c2e5ff", "_blank")}
+                            onClick={() => window.location.href = '/booking/6hour'}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -696,7 +695,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
-                            onClick={() => window.open("https://calendly.com/drivedojo-qnua/6-hour-package-clone?background_color=96bdff", "_blank")}
+                            onClick={() => window.location.href = '/booking/10hour'}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -810,9 +809,9 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group relative overflow-hidden"
-                            onClick={() => window.open("https://calendly.com/drivedojo-qnua/intensive?background_color=ffa5f0", "_blank")}
+                            onClick={() => window.location.href = '/booking/intensive'}
                           >
-                            Get Quote
+                            Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
                             <motion.div
                               className="absolute inset-0 bg-white"
@@ -1635,7 +1634,7 @@ const ServiceDetails = ({ service, onClose, triggerConfetti }) => {
                   className="border-white/30 text-white hover:bg-white/10"
                   onClick={() => {
                     triggerConfetti();
-                    window.open("https://calendly.com/drivedojo-qnua/intensive?background_color=ffa5f0", "_blank");
+                    window.location.href = '/booking/intensive';
                   }}
                 >
                   Book a Trial Lesson

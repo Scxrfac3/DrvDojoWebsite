@@ -49,32 +49,47 @@ const BaseBooking: React.FC<BaseBookingProps> = ({
   const [widgetId] = useState(`calendly-widget-${Math.random().toString(36).substr(2, 9)}`);
 
   useEffect(() => {
-    // Load Calendly widget script
-    const script = document.createElement('script');
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    script.onload = () => {
+    // Load Calendly widget script if not already loaded
+    if (!window.Calendly) {
+      const script = document.createElement('script');
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.onload = () => {
+        initializeCalendlyWidget();
+      };
+      document.body.appendChild(script);
+      
+      return () => {
+        // Clean up script on unmount
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
+    } else {
+      // If script is already loaded, initialize widget directly
+      initializeCalendlyWidget();
+    }
+    
+    function initializeCalendlyWidget() {
       // Initialize the widget after script loads
       if (window.Calendly) {
-        window.Calendly.initInlineWidget({
-          url: calendlyUrl,
-          parentElement: document.getElementById(widgetId),
-          prefill: {},
-          styles: {
-            height: '100%',
-            width: '100%'
-          }
-        });
+        const widgetElement = document.getElementById(widgetId);
+        if (widgetElement) {
+          // Clear any existing content
+          widgetElement.innerHTML = '';
+          
+          window.Calendly.initInlineWidget({
+            url: calendlyUrl,
+            parentElement: widgetElement,
+            prefill: {},
+            styles: {
+              height: '100%',
+              width: '100%'
+            }
+          });
+        }
       }
-    };
-    document.body.appendChild(script);
-    
-    return () => {
-      // Clean up script on unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
+    }
   }, [calendlyUrl, widgetId]);
 
   const triggerConfetti = () => {

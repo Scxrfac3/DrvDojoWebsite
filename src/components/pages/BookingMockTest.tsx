@@ -16,7 +16,7 @@ const BookingMockTest = () => {
       ]}
       packageColor="blue"
       packageIcon={<CheckCircle className="h-6 w-6" />}
-      calendlyUrl="https://calendly.com/drivedojo-qnua/10-hour-package-clone?background_color=ff87df"
+      calendlyUrl="https://calendly.com/drivedojo-qnua/mock-driving-test?background_color=ff87df"
       bookingPageTitle="Book Your Mock Driving Test"
     />
   );

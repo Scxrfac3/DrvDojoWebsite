@@ -17,7 +17,7 @@ const BookingTestRental = () => {
       ]}
       packageColor="green"
       packageIcon={<Car className="h-6 w-6" />}
-      calendlyUrl="https://calendly.com/drivedojo-qnua/10-hour-package-clone"
+      calendlyUrl="https://calendly.com/drivedojo-qnua/driving-test-car-rental"
       bookingPageTitle="Book Your Driving Test Car Rental"
     />
   );
