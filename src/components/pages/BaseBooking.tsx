@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -14,13 +14,6 @@ import {
   Zap,
 } from "lucide-react";
 import confetti from "canvas-confetti";
-
-// Add type declaration for Calendly
-declare global {
-  interface Window {
-    Calendly: any;
-  }
-}
 
 interface BaseBookingProps {
   packageName: string;
@@ -46,52 +39,6 @@ const BaseBooking: React.FC<BaseBookingProps> = ({
   bookingPageTitle
 }) => {
   const [animateBackground, setAnimateBackground] = useState(false);
-  const [isCalendlyLoaded, setIsCalendlyLoaded] = useState(false);
-  const calendlyWidgetRef = useRef(null);
-
-  useEffect(() => {
-    // Load Calendly widget script
-    const loadCalendlyScript = () => {
-      if (window.Calendly) {
-        setIsCalendlyLoaded(true);
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
-      script.async = true;
-      script.onload = () => {
-        setIsCalendlyLoaded(true);
-      };
-      document.body.appendChild(script);
-      
-      return () => {
-        if (document.body.contains(script)) {
-          document.body.removeChild(script);
-        }
-      };
-    };
-
-    loadCalendlyScript();
-  }, []);
-
-  useEffect(() => {
-    // Initialize Calendly widget when script is loaded
-    if (isCalendlyLoaded && calendlyWidgetRef.current && calendlyUrl) {
-      // Initialize widget with the hardcoded URL
-      if (window.Calendly) {
-        window.Calendly.initInlineWidget({
-          url: calendlyUrl,
-          parentElement: calendlyWidgetRef.current,
-          prefill: {},
-          styles: {
-            height: '100%',
-            width: '100%'
-          }
-        });
-      }
-    }
-  }, [isCalendlyLoaded, calendlyUrl]);
 
   const triggerConfetti = () => {
     confetti({
@@ -309,21 +256,17 @@ const BaseBooking: React.FC<BaseBookingProps> = ({
                 </div>
               </div>
               
-              {/* Calendly Inline Widget */}
-              {isCalendlyLoaded ? (
-                <div
-                  ref={calendlyWidgetRef}
-                  className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow"
-                  style={{ minWidth: '100%', height: '100%' }}
-                ></div>
-              ) : (
-                <div className="flex items-center justify-center h-96">
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-                    <p className="text-white">Loading booking calendar...</p>
-                  </div>
-                </div>
-              )}
+              {/* Calendly Inline Widget - Using iframe instead of JavaScript API */}
+              <div className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow" style={{ minWidth: '100%', height: '100%' }}>
+                <iframe
+                  src={calendlyUrl}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  title="Book Your Lesson"
+                  className="rounded-lg"
+                ></iframe>
+              </div>
               
               <div className="mt-4 text-center">
                 <p className="text-blue-200 text-sm">
