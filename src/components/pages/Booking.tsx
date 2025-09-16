@@ -27,7 +27,8 @@ const Booking = () => {
   const [animateBackground, setAnimateBackground] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("payg");
   const [isCalendlyLoaded, setIsCalendlyLoaded] = useState(false);
-  const [calendlyUrl, setCalendlyUrl] = useState("");
+  // Initialize with a default URL to prevent null/undefined values
+  const [calendlyUrl, setCalendlyUrl] = useState("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff");
   const [isLoading, setIsLoading] = useState(true);
   const calendlyWidgetRef = useRef(null);
   const [searchParams] = useSearchParams();
@@ -59,6 +60,9 @@ const Booking = () => {
     const selectedPkg = packages.find(pkg => pkg.id === packageId);
     if (selectedPkg && selectedPkg.calendlyUrl) {
       setCalendlyUrl(selectedPkg.calendlyUrl);
+    } else {
+      // Fallback to default package URL if something goes wrong
+      setCalendlyUrl("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff");
     }
     
     setIsLoading(false);
