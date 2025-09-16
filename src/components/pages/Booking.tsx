@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
+
+// Add type declaration for Calendly
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
 import {
   Calendar,
   Car,
@@ -20,12 +27,16 @@ const Booking = () => {
   const [animateBackground, setAnimateBackground] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("payg");
   const [isCalendlyLoaded, setIsCalendlyLoaded] = useState(false);
+  const [calendlyUrl, setCalendlyUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const calendlyWidgetRef = useRef(null);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    // Read package from URL parameter
+    // Read package from URL parameter and set the Calendly URL
     const packageParam = searchParams.get('package');
+    let packageId = "payg"; // Default package
+    
     if (packageParam) {
       // Map URL parameter values to package IDs
       const packageMapping = {
@@ -38,9 +49,19 @@ const Booking = () => {
       };
       
       if (packageMapping[packageParam]) {
-        setSelectedPackage(packageMapping[packageParam]);
+        packageId = packageMapping[packageParam];
       }
     }
+    
+    setSelectedPackage(packageId);
+    
+    // Find the selected package and set its Calendly URL
+    const selectedPkg = packages.find(pkg => pkg.id === packageId);
+    if (selectedPkg && selectedPkg.calendlyUrl) {
+      setCalendlyUrl(selectedPkg.calendlyUrl);
+    }
+    
+    setIsLoading(false);
   }, [searchParams]);
 
   useEffect(() => {
@@ -70,27 +91,25 @@ const Booking = () => {
   }, []);
 
   useEffect(() => {
-    // Update Calendly widget when package changes
-    if (isCalendlyLoaded && calendlyWidgetRef.current) {
+    // Update Calendly widget when package changes or URL is set
+    if (isCalendlyLoaded && calendlyWidgetRef.current && calendlyUrl) {
       // Destroy existing widget
       calendlyWidgetRef.current.innerHTML = '';
       
-      // Get the selected package URL
-      const selectedPkg = packages.find(pkg => pkg.id === selectedPackage);
-      if (selectedPkg) {
-        // Initialize new widget
+      // Initialize new widget only if we have a valid URL
+      if (window.Calendly && calendlyUrl) {
         window.Calendly.initInlineWidget({
-          url: selectedPkg.calendlyUrl,
+          url: calendlyUrl,
           parentElement: calendlyWidgetRef.current,
           prefill: {},
           styles: {
-            height: '700px',
+            height: '100%',
             width: '100%'
           }
         });
       }
     }
-  }, [selectedPackage, isCalendlyLoaded]);
+  }, [selectedPackage, isCalendlyLoaded, calendlyUrl]);
 
   const triggerConfetti = () => {
     confetti({
@@ -199,6 +218,13 @@ const Booking = () => {
 
   const handlePackageSelect = (packageId) => {
     setSelectedPackage(packageId);
+    
+    // Update the Calendly URL when a package is selected
+    const selectedPkg = packages.find(pkg => pkg.id === packageId);
+    if (selectedPkg && selectedPkg.calendlyUrl) {
+      setCalendlyUrl(selectedPkg.calendlyUrl);
+    }
+    
     triggerConfetti();
     
     // Scroll to Calendly widget on mobile
@@ -315,11 +341,38 @@ const Booking = () => {
               </div>
               
               {/* Calendly Inline Widget */}
-              <div
-                ref={calendlyWidgetRef}
-                className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow"
-                style={{ minWidth: '100%', height: '100%' }}
-              ></div>
+              {isLoading ? (
+                <div className="flex items-center justify-center h-96">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                    <p className="text-white">Loading booking calendar...</p>
+                  </div>
+                </div>
+              ) : calendlyUrl ? (
+                <div
+                  ref={calendlyWidgetRef}
+                  className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow"
+                  style={{ minWidth: '100%', height: '100%' }}
+                ></div>
+              ) : (
+                <div className="flex items-center justify-center h-96 bg-red-50 rounded-lg">
+                  <div className="text-center p-6">
+                    <p className="text-red-600 mb-4">Unable to load booking calendar. Please select a package below.</p>
+                    <Button
+                      onClick={() => {
+                        const defaultPkg = packages.find(pkg => pkg.id === "payg");
+                        if (defaultPkg) {
+                          setCalendlyUrl(defaultPkg.calendlyUrl);
+                          setSelectedPackage("payg");
+                        }
+                      }}
+                      className="bg-blue-600 hover:bg-blue-700"
+                    >
+                      Load Default Package
+                    </Button>
+                  </div>
+                </div>
+              )}
               
               <div className="mt-4 text-center">
                 <p className="text-blue-200 text-sm">
