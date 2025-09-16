@@ -8,7 +8,7 @@ const testimonials = [
     name: "Jamaima G",
     role: "New Driver",
     quote:
-      "I just passed my driving test on the first try with only 1 minor fault, thanks to The Pass Master Course! My instructor taught me helpful techniques and was extremely patient throughout my lessons. They provided honest feedback.",
+      "I just passed my driving test on the first try with only 1 minor fault, thanks to Mamunur! My instructor taught me helpful techniques and was extremely patient throughout my lessons. They provided honest feedback.",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=jamaima",
     emoji: "🎉",
@@ -74,6 +74,54 @@ const testimonials = [
     emoji: "🚗",
     testResult: "PASSED ✅",
     likes: 145
+  },
+  {
+    id: 7,
+    name: "Ibrahim A",
+    role: "New Driver",
+    quote:
+      "After taking a few driving lessons with other schools and not feeling fully satisfied, a friend recommended Driving Dojo—and I'm so glad they did. My instructor, Mamunur, was excellent, and I would gladly recommend him to anyone seeking an efficient, coherent, and strategic driving instructor. He planned each lesson effectively, always focusing on areas where I needed improvement. His teaching techniques were clear and practical, and he used his iPad to visually demonstrate real road situations, which made it much easier to understand and retain key concepts. Overall, a very professional and supportive experience. The cherry on top of the cake being I passed my practical first time! Thanks Mamunur!",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=ibrahim",
+    emoji: "🎓",
+    testResult: "PASSED ✅",
+    likes: 142
+  },
+  {
+    id: 8,
+    name: "Shazil",
+    role: "New Driver",
+    quote:
+      "Great Driving School, The instructor was patient, professional, and made learning enjoyable. Lessons were well-structured and tailored to individual needs. I gained confidence quickly and passed my test on the first try. Highly recommended to anyone looking for expert guidance and a supportive learning environment. Couldn't be happier!",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=shazil",
+    emoji: "🏆",
+    testResult: "PASSED ✅",
+    likes: 165
+  },
+  {
+    id: 9,
+    name: "Mark W",
+    role: "Student",
+    quote:
+      "I couldn't have asked for a more professional and hardworking driving instructor. Mamunur was very quick to find my weaknesses and turn them around to a high standard. Also, the level of knowledge for test centers and routes is really impressive. Thanks again for all of your efforts.",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=mark",
+    emoji: "👍",
+    testResult: "PASSED ✅",
+    likes: 131
+  },
+  {
+    id: 10,
+    name: "Alexei W.",
+    role: "New Driver",
+    quote:
+      "I begin my driving lessons with Mamunur with no previous knowledge having zero hours of driving lessons or experience. Throughout my lessons I gained all the necessary skills and knowledge to enable me to pass my practical test on the first attempt. Throughout my learning journey I was supported and given clear instructions on what my strengths were and areas that I also needed to improve upon to become a qualified driver. Mamunur style of teaching was very direct and compressive giving me detailed and specific feedback after each lesson. Mamunur was also very flexible in the lesson times planned around my limited availability and going above and beyond to carter to my needs. Mamunur helped manage my anxiety prior to the test in the build up, laying out clearly what I needed to work on and the requirements for me to be able to pass. I was delighted to pass my test on the first attempt. I would highly recommend Mamunur as a driving interaction for all wishing to learn.",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=alexei",
+    emoji: "🚗",
+    testResult: "PASSED ✅",
+    likes: 187
   }
 ];
 

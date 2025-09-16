@@ -134,7 +134,7 @@ const NewHeroSection = ({
                     </span>
                   </Link>
                   <Link
-                    to="/packages"
+                    to="/services"
                     className="group bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 text-center"
                   >
                     <span className="flex items-center justify-center">
@@ -154,11 +154,11 @@ const NewHeroSection = ({
                     <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
                   ))}
                 </div>
-                <span className="text-blue-200">2000+ happy drivers</span>
+                <span className="text-blue-200">1000+ happy drivers</span>
               </div>
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                <span className="text-blue-200">4.9/5 rating</span>
+                <span className="text-blue-200">4.5/5 rating</span>
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ const NewHeroSection = ({
 
                 {/* Floating Success Badge */}
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-2xl shadow-xl">
-                  <div className="text-2xl font-bold">98%</div>
+                  <div className="text-2xl font-bold">87%</div>
                   <div className="text-xs">Pass Rate 🎉</div>
                 </div>
               </div>
