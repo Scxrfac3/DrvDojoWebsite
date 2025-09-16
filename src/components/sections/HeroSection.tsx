@@ -116,22 +116,22 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                to="/booking"
+                to="/services"
                 className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 text-center relative overflow-hidden"
                 onClick={triggerConfetti}
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  🚗 Book Now
+                  🚗 Book Your First Lesson
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity"></div>
               </Link>
               <Link
-                to="/packages"
+                to="/services"
                 className="group bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 text-center"
               >
                 <span className="flex items-center justify-center">
-                  💰 Packages
+                  💰 View Packages
                   <Zap className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 </span>
               </Link>
