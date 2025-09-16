@@ -36,7 +36,7 @@ const GetStartedSection = ({
     },
   ],
   ctaText = "Start Your Journey",
-  ctaLink = "/booking",
+  ctaLink = "/services",
   location = "Phoenix",
 }: GetStartedSectionProps) => {
   const containerVariants = {

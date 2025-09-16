@@ -122,8 +122,8 @@ export default function PostcodeChecker({ onPostcodeChecked, onLessonSelected, c
         <div className="pt-4">
           <button
             onClick={() => {
-              // Navigate to booking page
-              window.location.href = `/booking?postcode=${encodeURIComponent(postcode)}`;
+              // Navigate to services page
+              window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
             }}
             className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white py-3 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2"
           >

@@ -19,7 +19,7 @@ const NewHeroSection = ({
   subtitle = "Pass first time with Drive Dojo. Our DVSA-approved instructors are dedicated to helping you achieve your licence goals.",
   ctaPrimaryText = "🚗 Book Your First Lesson",
   ctaSecondaryText = "💰 View Packages",
-  onBookLesson = () => (window.location.href = "/booking"),
+  onBookLesson = () => (window.location.href = "/services"),
   onCheckPricing = () => (window.location.href = "/services"),
 }: HeroSectionProps) => {
   const [currentStat, setCurrentStat] = useState(0);
@@ -113,7 +113,7 @@ const NewHeroSection = ({
             <div className="flex flex-col sm:flex-row gap-4">
               {postcodeCheckResult?.isCovered && selectedLesson ? (
                 <Link
-                  to={`/booking?lesson=${selectedLesson}&postcode=${encodeURIComponent(postcodeCheckResult.postcode || '')}`}
+                  to="/services"
                   className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 text-center flex items-center justify-center"
                 >
                   <span className="flex items-center justify-center">
@@ -124,7 +124,7 @@ const NewHeroSection = ({
               ) : (
                 <>
                   <Link
-                    to="/booking"
+                    to="/services"
                     className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 text-center"
                     onClick={triggerConfetti}
                   >

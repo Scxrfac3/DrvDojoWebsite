@@ -647,7 +647,7 @@ const Contact = () => {
                       <Button
                         className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 mt-2 relative z-10 border border-white/20"
                         onClick={() =>
-                          (window.location.href = "/booking?package=intensive")
+                          (window.location.href = "/services?package=intensive")
                         }
                       >
                         Request Fast-Track
@@ -741,7 +741,7 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-blue-600 hover:bg-blue-700 group relative overflow-hidden"
-                          onClick={() => {window.location.href = "/booking?package=payg"}}
+                          onClick={() => {window.location.href = "/services?package=payg"}}
                         >
                           Book Now
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -809,7 +809,7 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
-                          onClick={() => {window.location.href = "/booking?package=10hour"}}
+                          onClick={() => {window.location.href = "/services?package=10hour"}}
                         >
                           Book Now
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -874,7 +874,7 @@ const Contact = () => {
                       >
                         <Button
                           className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 group relative overflow-hidden"
-                          onClick={() => {window.location.href = "/booking?package=intensive"}}
+                          onClick={() => {window.location.href = "/services?package=intensive"}}
                         >
                           Get Quote
                           <ArrowRight className="ml-2 h-4 w-4" />

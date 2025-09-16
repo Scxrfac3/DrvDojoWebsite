@@ -160,7 +160,7 @@ const About = () => {
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
-                  onClick={() => (window.location.href = "/booking")}
+                  onClick={() => (window.location.href = "/services")}
                   className="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-6 rounded-full text-lg"
                 >
                   Book Now
@@ -473,7 +473,7 @@ const About = () => {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                       <Button
-                        onClick={() => (window.location.href = "/booking")}
+                        onClick={() => (window.location.href = "/services")}
                         className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg"
                       >
                         Book Now

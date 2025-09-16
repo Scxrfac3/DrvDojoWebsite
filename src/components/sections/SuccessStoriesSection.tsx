@@ -3,8 +3,8 @@ import { CheckCircle, Calendar, Heart, Trophy, Zap, Star } from 'lucide-react';
 
 const students = [
   {
-    name: 'Alex M.',
-    testCenter: 'Wood Green',
+    name: 'Alex W.',
+    testCenter: 'Goodmayes DTC',
     passDate: 'Jan 2024',
     image: '/images/certifications/1.png',
     emoji: '🎉',
@@ -12,17 +12,17 @@ const students = [
     likes: 89
   },
   {
-    name: 'Lisa P.',
-    testCenter: 'Barnet',
-    passDate: 'Dec 2023',
+    name: 'Alina S.',
+    testCenter: 'Goodmayes DTC',
+    passDate: 'Dec 2024',
     image: '/images/certifications/4.png',
     emoji: '🔥',
     achievement: 'Zero Faults!',
     likes: 156
   },
   {
-    name: 'Mo A.',
-    testCenter: 'Hendon',
+    name: 'Aimee L.',
+    testCenter: 'Goodmayes',
     passDate: 'Jan 2024',
     image: '/images/certifications/5.png',
     emoji: '⚡',
@@ -30,8 +30,8 @@ const students = [
     likes: 203
   },
   {
-    name: 'Emma W.',
-    testCenter: 'Tottenham',
+    name: 'Mark W.',
+    testCenter: 'Chingford DTC',
     passDate: 'Feb 2024',
     image: '/images/certifications/12.png',
     emoji: '🌟',
@@ -39,18 +39,18 @@ const students = [
     likes: 127
   },
   {
-    name: 'Ryan C.',
-    testCenter: 'Mill Hill',
-    passDate: 'Feb 2024',
+    name: 'Mao V.',
+    testCenter: 'Goodmayes DTC',
+    passDate: 'Feb 2025',
     image: '/images/certifications/13.png',
     emoji: '🎯',
-    achievement: 'Adult Learner Success!',
+    achievement: 'First Attempt!',
     likes: 94
   },
   {
-    name: 'Zara A.',
-    testCenter: 'Wanstead',
-    passDate: 'Mar 2024',
+    name: 'Hazel C.',
+    testCenter: 'Goodmayes',
+    passDate: 'June 2025',
     image: '/images/certifications/11.png',
     emoji: '💫',
     achievement: 'Quick Learner!',
@@ -195,7 +195,7 @@ export default function SuccessStoriesSection() {
           <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-4 rounded-3xl shadow-xl">
             <Trophy className="h-6 w-6 text-white mr-3 animate-bounce" />
             <span className="text-white font-bold text-lg">
-              98% Pass Rate - Join Our Success Stories!
+              87% Pass Rate - Join Our Success Stories!
             </span>
             <Zap className="h-6 w-6 text-yellow-300 ml-3 animate-pulse" />
           </div>
