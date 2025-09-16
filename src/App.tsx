@@ -8,6 +8,12 @@ const Services = lazy(() => import("./components/pages/Services"));
 const About = lazy(() => import("./components/pages/About"));
 const Contact = lazy(() => import("./components/pages/Contact"));
 const Booking = lazy(() => import("./components/pages/Booking"));
+const BookingPayg = lazy(() => import("./components/pages/BookingPayg"));
+const Booking6Hour = lazy(() => import("./components/pages/Booking6Hour"));
+const Booking10Hour = lazy(() => import("./components/pages/Booking10Hour"));
+const BookingIntensive = lazy(() => import("./components/pages/BookingIntensive"));
+const BookingMockTest = lazy(() => import("./components/pages/BookingMockTest"));
+const BookingTestRental = lazy(() => import("./components/pages/BookingTestRental"));
 const BlogPage = lazy(() => import("./components/pages/BlogPage"));
 const BlogArticleDetail = lazy(
   () => import("./components/pages/BlogArticleDetail"),
@@ -55,6 +61,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/booking/payg" element={<BookingPayg />} />
+          <Route path="/booking/6hour" element={<Booking6Hour />} />
+          <Route path="/booking/10hour" element={<Booking10Hour />} />
+          <Route path="/booking/intensive" element={<BookingIntensive />} />
+          <Route path="/booking/mocktest" element={<BookingMockTest />} />
+          <Route path="/booking/testrental" element={<BookingTestRental />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route
             path="/driving-lessons/goodmayes"
