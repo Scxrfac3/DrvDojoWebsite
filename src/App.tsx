@@ -7,7 +7,6 @@ import routes from "tempo-routes";
 const Services = lazy(() => import("./components/pages/Services"));
 const About = lazy(() => import("./components/pages/About"));
 const Contact = lazy(() => import("./components/pages/Contact"));
-const Booking = lazy(() => import("./components/pages/Booking"));
 const BookingPayg = lazy(() => import("./components/pages/BookingPayg"));
 const Booking6Hour = lazy(() => import("./components/pages/Booking6Hour"));
 const Booking10Hour = lazy(() => import("./components/pages/Booking10Hour"));
@@ -60,7 +59,6 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/booking" element={<Booking />} />
           <Route path="/booking/payg" element={<BookingPayg />} />
           <Route path="/booking/6hour" element={<Booking6Hour />} />
           <Route path="/booking/10hour" element={<Booking10Hour />} />

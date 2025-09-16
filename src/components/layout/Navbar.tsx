@@ -24,6 +24,8 @@ interface NavbarProps {
 }
 
 const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => {
+  // Force non-transparent background on booking pages
+  const isBookingPage = window.location.pathname.startsWith('/booking');
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -51,7 +53,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
   return (
     <header
       className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isBookingPage
           ? 'bg-white/95 backdrop-blur-md shadow-xl'
           : transparent ? 'bg-transparent' : 'bg-white shadow-lg'
       }`}

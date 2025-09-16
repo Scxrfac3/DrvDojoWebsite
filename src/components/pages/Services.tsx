@@ -878,7 +878,7 @@ const Services = () => {
                         >
                           <Button
                             className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg group relative overflow-hidden"
-                            onClick={() => window.open("https://calendly.com/drivedojo-qnua/10-hour-package-clone?background_color=ff87df", "_blank")}
+                            onClick={() => window.location.href = '/booking/mocktest'}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -948,7 +948,7 @@ const Services = () => {
                       >
                         <Button
                           className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white shadow-lg group relative overflow-hidden"
-                          onClick={() => window.open("https://calendly.com/drivedojo-qnua/10-hour-package-clone", "_blank")}
+                          onClick={() => window.location.href = '/booking/testrental'}
                         >
                           Book Now
                           <ArrowRight className="ml-2 h-4 w-4" />
