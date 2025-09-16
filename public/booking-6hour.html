@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your 6-Hour Package - DriveDojo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 120px);
+        }
+        .package-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .package-info h2 {
+            margin-top: 0;
+            color: #ff9800;
+        }
+        .package-info ul {
+            padding-left: 20px;
+        }
+        .package-info li {
+            margin-bottom: 5px;
+        }
+        .calendly-container {
+            flex-grow: 1;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            min-height: 700px;
+        }
+        .other-packages {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .package-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .package-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .calendly-container {
+                min-height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DriveDojo</h1>
+        <p>Book Your 6-Hour Package</p>
+    </div>
+    
+    <div class="container">
+        <div class="package-info">
+            <h2>6-Hour Package</h2>
+            <p><strong>Price:</strong> £210 / package</p>
+            <p><strong>Description:</strong> Save money with our starter package</p>
+            <h3>Features:</h3>
+            <ul>
+                <li>6 hours of lessons</li>
+                <li>Structured learning plan</li>
+                <li>Progress tracking</li>
+            </ul>
+        </div>
+        
+        <div class="calendly-container">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua/6-hour-package?background_color=c2e5ff" style="min-width: 320px; height: 100%;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
+        
+        <div class="other-packages">
+            <a href="/booking-payg.html" class="package-btn">Pay As You Go</a>
+            <a href="/booking-10hour.html" class="package-btn">10-Hour Package</a>
+            <a href="/booking-intensive.html" class="package-btn">Intensive Course</a>
+            <a href="/booking-mocktest.html" class="package-btn">Mock Test</a>
+            <a href="/booking-testrental.html" class="package-btn">Test Car Rental</a>
+        </div>
+    </div>
+</body>
+</html>

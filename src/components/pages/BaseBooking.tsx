@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -14,6 +14,13 @@ import {
   Zap,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+
+// Add type declaration for Calendly
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
 
 interface BaseBookingProps {
   packageName: string;
@@ -39,6 +46,36 @@ const BaseBooking: React.FC<BaseBookingProps> = ({
   bookingPageTitle
 }) => {
   const [animateBackground, setAnimateBackground] = useState(false);
+  const [widgetId] = useState(`calendly-widget-${Math.random().toString(36).substr(2, 9)}`);
+
+  useEffect(() => {
+    // Load Calendly widget script
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => {
+      // Initialize the widget after script loads
+      if (window.Calendly) {
+        window.Calendly.initInlineWidget({
+          url: calendlyUrl,
+          parentElement: document.getElementById(widgetId),
+          prefill: {},
+          styles: {
+            height: '100%',
+            width: '100%'
+          }
+        });
+      }
+    };
+    document.body.appendChild(script);
+    
+    return () => {
+      // Clean up script on unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, [calendlyUrl, widgetId]);
 
   const triggerConfetti = () => {
     confetti({
@@ -256,17 +293,13 @@ const BaseBooking: React.FC<BaseBookingProps> = ({
                 </div>
               </div>
               
-              {/* Calendly Inline Widget - Using iframe instead of JavaScript API */}
-              <div className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow" style={{ minWidth: '100%', height: '100%' }}>
-                <iframe
-                  src={calendlyUrl}
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  title="Book Your Lesson"
-                  className="rounded-lg"
-                ></iframe>
-              </div>
+              {/* Calendly Inline Widget - Using direct embed */}
+              <div
+                id={widgetId}
+                className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow"
+                data-url={calendlyUrl}
+                style={{ minWidth: '100%', height: '100%' }}
+              ></div>
               
               <div className="mt-4 text-center">
                 <p className="text-blue-200 text-sm">

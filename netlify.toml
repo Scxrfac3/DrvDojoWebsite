@@ -84,6 +84,37 @@
   to = "/booking"
   status = 301
 
+# Redirects for booking pages
+[[redirects]]
+  from = "/booking/payg"
+  to = "/booking-payg.html"
+  status = 200
+
+[[redirects]]
+  from = "/booking/6hour"
+  to = "/booking-6hour.html"
+  status = 200
+
+[[redirects]]
+  from = "/booking/10hour"
+  to = "/booking-10hour.html"
+  status = 200
+
+[[redirects]]
+  from = "/booking/intensive"
+  to = "/booking-intensive.html"
+  status = 200
+
+[[redirects]]
+  from = "/booking/mocktest"
+  to = "/booking-mocktest.html"
+  status = 200
+
+[[redirects]]
+  from = "/booking/testrental"
+  to = "/booking-testrental.html"
+  status = 200
+
 [[redirects]]
   from = "/contact-us"
   to = "/contact"
