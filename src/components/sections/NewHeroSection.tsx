@@ -28,8 +28,8 @@ const NewHeroSection = ({
   const [selectedLesson, setSelectedLesson] = useState<string | null>(null);
 
   const stats = [
-    { icon: Star, number: '98%', label: 'Pass Rate', color: 'text-yellow-400' },
-    { icon: Users, number: '2000+', label: 'Students', color: 'text-blue-300' },
+    { icon: Star, number: '87%', label: 'Pass Rate', color: 'text-yellow-400' },
+    { icon: Users, number: '1000+', label: 'Students', color: 'text-blue-300' },
     { icon: Trophy, number: '8+', label: 'Years', color: 'text-green-400' },
     { icon: Zap, number: '24hr', label: 'Response', color: 'text-orange-400' }
   ];
