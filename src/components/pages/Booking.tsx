@@ -1,16 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 
-// Add type declaration for Calendly
-declare global {
-  interface Window {
-    Calendly: any;
-  }
-}
 import {
   Calendar,
   Car,
@@ -26,11 +20,8 @@ import confetti from "canvas-confetti";
 const Booking = () => {
   const [animateBackground, setAnimateBackground] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("payg");
-  const [isCalendlyLoaded, setIsCalendlyLoaded] = useState(false);
-  // Initialize with a default URL to prevent null/undefined values
-  const [calendlyUrl, setCalendlyUrl] = useState("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff");
+  const [calendlyEmbedHTML, setCalendlyEmbedHTML] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const calendlyWidgetRef = useRef(null);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
@@ -56,64 +47,27 @@ const Booking = () => {
     
     setSelectedPackage(packageId);
     
-    // Find the selected package and set its Calendly URL
+    // Find the selected package and set its Calendly embed HTML
     const selectedPkg = packages.find(pkg => pkg.id === packageId);
     if (selectedPkg && selectedPkg.calendlyUrl) {
-      setCalendlyUrl(selectedPkg.calendlyUrl);
+      setCalendlyEmbedHTML(`
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="${selectedPkg.calendlyUrl}" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      `);
     } else {
       // Fallback to default package URL if something goes wrong
-      setCalendlyUrl("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff");
+      setCalendlyEmbedHTML(`
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua/120min" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      `);
     }
     
     setIsLoading(false);
   }, [searchParams]);
-
-  useEffect(() => {
-    // Load Calendly widget script
-    const loadCalendlyScript = () => {
-      if (window.Calendly) {
-        setIsCalendlyLoaded(true);
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
-      script.async = true;
-      script.onload = () => {
-        setIsCalendlyLoaded(true);
-      };
-      document.body.appendChild(script);
-      
-      return () => {
-        if (document.body.contains(script)) {
-          document.body.removeChild(script);
-        }
-      };
-    };
-
-    loadCalendlyScript();
-  }, []);
-
-  useEffect(() => {
-    // Update Calendly widget when package changes or URL is set
-    if (isCalendlyLoaded && calendlyWidgetRef.current && calendlyUrl) {
-      // Destroy existing widget
-      calendlyWidgetRef.current.innerHTML = '';
-      
-      // Initialize new widget only if we have a valid URL
-      if (window.Calendly && calendlyUrl) {
-        window.Calendly.initInlineWidget({
-          url: calendlyUrl,
-          parentElement: calendlyWidgetRef.current,
-          prefill: {},
-          styles: {
-            height: '100%',
-            width: '100%'
-          }
-        });
-      }
-    }
-  }, [selectedPackage, isCalendlyLoaded, calendlyUrl]);
 
   const triggerConfetti = () => {
     confetti({
@@ -139,7 +93,7 @@ const Booking = () => {
       ],
       color: "blue",
       icon: <Car className="h-6 w-6" />,
-      calendlyUrl: "https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff"
+      calendlyUrl: "https://calendly.com/drivedojo-qnua/120min"
     },
     {
       id: "6hour",
@@ -154,7 +108,7 @@ const Booking = () => {
       ],
       color: "purple",
       icon: <Award className="h-6 w-6" />,
-      calendlyUrl: "https://calendly.com/drivedojo-qnua/6-hour-package?background_color=c2e5ff"
+      calendlyUrl: "https://calendly.com/drivedojo-qnua/6-hour-package"
     },
     {
       id: "10hour",
@@ -170,7 +124,7 @@ const Booking = () => {
       color: "purple",
       popular: true,
       icon: <Award className="h-6 w-6" />,
-      calendlyUrl: "https://calendly.com/drivedojo-qnua/6-hour-package-clone?background_color=96bdff"
+      calendlyUrl: "https://calendly.com/drivedojo-qnua/6-hour-package-clone"
     },
     {
       id: "intensive",
@@ -185,7 +139,7 @@ const Booking = () => {
       ],
       color: "green",
       icon: <Zap className="h-6 w-6" />,
-      calendlyUrl: "https://calendly.com/drivedojo-qnua/intensive?background_color=ffa5f0"
+      calendlyUrl: "https://calendly.com/drivedojo-qnua/intensive"
     },
     {
       id: "mocktest",
@@ -200,7 +154,7 @@ const Booking = () => {
       ],
       color: "blue",
       icon: <CheckCircle className="h-6 w-6" />,
-      calendlyUrl: "https://calendly.com/drivedojo-qnua/10-hour-package-clone?background_color=ff87df"
+      calendlyUrl: "https://calendly.com/drivedojo-qnua/10-hour-package-clone"
     },
     {
       id: "testrental",
@@ -216,17 +170,22 @@ const Booking = () => {
       ],
       color: "green",
       icon: <Car className="h-6 w-6" />,
-      calendlyUrl: "https://calendly.com/drivedojo-qnua/10-hour-package-clone"
+      calendlyUrl: "https://calendly.com/drivedojo-qnua/mock-driving-test-clone"
     },
   ];
 
   const handlePackageSelect = (packageId) => {
     setSelectedPackage(packageId);
     
-    // Update the Calendly URL when a package is selected
+    // Update the Calendly embed HTML when a package is selected
     const selectedPkg = packages.find(pkg => pkg.id === packageId);
     if (selectedPkg && selectedPkg.calendlyUrl) {
-      setCalendlyUrl(selectedPkg.calendlyUrl);
+      setCalendlyEmbedHTML(`
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="${selectedPkg.calendlyUrl}" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      `);
     }
     
     triggerConfetti();
@@ -344,7 +303,7 @@ const Booking = () => {
                 </div>
               </div>
               
-              {/* Calendly Inline Widget */}
+              {/* Calendly Inline Widget - Using raw HTML embed */}
               {isLoading ? (
                 <div className="flex items-center justify-center h-96">
                   <div className="text-center">
@@ -352,12 +311,11 @@ const Booking = () => {
                     <p className="text-white">Loading booking calendar...</p>
                   </div>
                 </div>
-              ) : calendlyUrl ? (
-                <div
-                  ref={calendlyWidgetRef}
-                  className="calendly-inline-widget rounded-lg overflow-hidden bg-white flex-grow"
-                  style={{ minWidth: '100%', height: '100%' }}
-                ></div>
+              ) : calendlyEmbedHTML ? (
+                <div 
+                  className="rounded-lg overflow-hidden bg-white flex-grow"
+                  dangerouslySetInnerHTML={{ __html: calendlyEmbedHTML }}
+                />
               ) : (
                 <div className="flex items-center justify-center h-96 bg-red-50 rounded-lg">
                   <div className="text-center p-6">
@@ -366,7 +324,12 @@ const Booking = () => {
                       onClick={() => {
                         const defaultPkg = packages.find(pkg => pkg.id === "payg");
                         if (defaultPkg) {
-                          setCalendlyUrl(defaultPkg.calendlyUrl);
+                          setCalendlyEmbedHTML(`
+                            <!-- Calendly inline widget begin -->
+                            <div class="calendly-inline-widget" data-url="${defaultPkg.calendlyUrl}" style="min-width:320px;height:700px;"></div>
+                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                            <!-- Calendly inline widget end -->
+                          `);
                           setSelectedPackage("payg");
                         }
                       }}
