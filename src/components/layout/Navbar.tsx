@@ -255,7 +255,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               className="flex items-center text-gray-700 hover:text-blue-700 transition-colors group"
             >
               <Phone className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-              <span className="font-semibold">020 1234 5678</span>
+              <span className="font-semibold">+4474 8722 8866</span>
             </a>
             <Link
               to="/contact"
