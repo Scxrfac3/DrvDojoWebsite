@@ -111,9 +111,7 @@ const Home = () => {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: true }}
                   >
-                    Our free practice app is giving everything it's supposed to
-                    give! Quick tests, full mock exams, and progress tracking that
-                    actually helps you pass.
+                    Our free DVSA-approved practice app offers comprehensive theory test preparation. Quick tests, full mock exams, and progress tracking designed specifically for automatic driving students.
                   </motion.p>
 
                   <motion.div

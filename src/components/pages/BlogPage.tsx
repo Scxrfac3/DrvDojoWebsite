@@ -21,9 +21,9 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "How Many Driving Lessons Do You Actually Need? The Real Tea 🚗",
+    title: "How Many Driving Lessons Do You Need? A Complete Guide",
     excerpt:
-      "Wondering how many driving lessons you'll need before test day? From the average 40-45 hours to hacks for fast-tracking your progress, get the real tea on what affects your learning timeline. No cap!",
+      "Discover the optimal number of driving lessons required to pass your test. Learn about the average 40-45 hours of professional instruction and factors that can affect your learning timeline.",
     featuredImage:
       "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
     date: "August 28, 2023",
@@ -45,9 +45,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "3",
-    title: "Ace Your Hazard Perception Test: 10 Fire Tips You Need RN 👀",
+    title: "Master Your Hazard Perception Test: 10 Essential Tips",
     excerpt:
-      "Struggling with the hazard perception test? These 10 fire tips will help you spot dangers early, avoid the algorithm checking you for spam clicks, and pass first time! Perfect for Gen Z learners who want practical, no-cap advice.",
+      "Preparing for the hazard perception test? These expert tips will help you identify potential hazards early, develop proper scanning techniques, and pass your test with confidence.",
     featuredImage:
       "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
     date: "June 30, 2023",
@@ -81,9 +81,9 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: "6",
-    title: "Why Now Is The Perfect Time To Become A Driving Instructor 🔥",
+    title: "Becoming a Driving Instructor: A Rewarding Career Path",
     excerpt:
-      "Ready for a career that's actually giving? London's driving instructor shortage is your opportunity era! Flexible hours, £30K+ earning potential, and the chance to be your own boss—find out why becoming a driving instructor is the ultimate career move right now.",
+      "Considering a career as a driving instructor? Learn about the qualifications needed, earning potential of £30K+, flexible working hours, and how to join this rewarding profession in London's growing market.",
     featuredImage:
       "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&q=80",
     date: "January 20, 2023",
@@ -166,8 +166,7 @@ export default function BlogPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                Level up your driving knowledge with our fire content — no cap
-                fr fr
+                Expert driving tips and insights from DVSA-approved instructors to help you pass your test with confidence
               </motion.p>
 
               <motion.div
@@ -177,11 +176,11 @@ export default function BlogPage() {
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 {[
-                  "Test Tips",
-                  "Learning Hacks",
-                  "Instructor Vibes",
-                  "Career Moves",
-                  "Safety First",
+                  "Test Preparation",
+                  "Learning Techniques",
+                  "Instructor Advice",
+                  "Career Opportunities",
+                  "Road Safety",
                 ].map((tag, index) => (
                   <motion.div
                     key={index}
@@ -211,14 +210,10 @@ export default function BlogPage() {
                       Featured Post
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                      How Many Driving Lessons Do You Actually Need? The Real
-                      Tea 🚗
+                      How Many Driving Lessons Do You Need? A Complete Guide
                     </h2>
                     <p className="text-white/80 mb-4 max-w-2xl">
-                      Wondering how many driving lessons you'll need before test
-                      day? From the average 40-45 hours to hacks for
-                      fast-tracking your progress, get the real tea on what
-                      affects your learning timeline. No cap!
+                      Discover the optimal number of driving lessons required to pass your test. Learn about the average 40-45 hours of professional instruction and factors that can affect your learning timeline.
                     </p>
                     <Button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white w-fit">
                       Read Featured Post
@@ -250,6 +245,76 @@ export default function BlogPage() {
                   </svg>
                 </motion.div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Automatic Driving Lessons Promotion Section */}
+        <section className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-blue-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-flex items-center mb-4 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg">
+                    <span className="mr-2">🚗</span>
+                    Special Offer
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                    Learn to Drive in an <span className="text-orange-500">Automatic Car</span>
+                  </h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    Discover the benefits of automatic driving lessons with our DVSA-approved instructors.
+                    No clutch, no stalling - just smooth, confident driving from day one!
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <svg className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">Easier to learn - no clutch control needed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">Perfect for nervous drivers and city driving</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">Quick progress - most students learn faster</span>
+                    </li>
+                  </ul>
+                  <Link to="/automatic-driving-lessons">
+                    <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group">
+                      Explore Automatic Lessons
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
+                <div className="relative">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1553440569-bcc63803a29d?w=800&q=80"
+                      alt="Automatic driving lesson"
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-orange-500 text-white px-4 py-2 rounded-full inline-block mb-2">
+                        Automatic Only
+                      </div>
+                      <h3 className="text-xl font-bold text-white">
+                        Specialized Automatic Tuition
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

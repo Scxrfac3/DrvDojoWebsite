@@ -14,6 +14,7 @@ const BookingIntensive = lazy(() => import("./components/pages/BookingIntensive"
 const BookingMockTest = lazy(() => import("./components/pages/BookingMockTest"));
 const BookingTestRental = lazy(() => import("./components/pages/BookingTestRental"));
 const BlogPage = lazy(() => import("./components/pages/BlogPage"));
+const AutomaticDrivingLessons = lazy(() => import("./components/pages/AutomaticDrivingLessons"));
 const BlogArticleDetail = lazy(
   () => import("./components/pages/BlogArticleDetail"),
 );
@@ -66,6 +67,7 @@ function App() {
           <Route path="/booking/mocktest" element={<BookingMockTest />} />
           <Route path="/booking/testrental" element={<BookingTestRental />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/automatic-driving-lessons" element={<AutomaticDrivingLessons />} />
           <Route
             path="/driving-lessons/goodmayes"
             element={<GoodmayesLessons />}

@@ -16,8 +16,8 @@ interface HeroSectionProps {
 
 const NewHeroSection = ({
   title = "Drive Like a Pro",
-  subtitle = "Pass first time with Drive Dojo. Our DVSA-approved instructors are dedicated to helping you achieve your licence goals.",
-  ctaPrimaryText = "🚗 Book Your First Lesson",
+  subtitle = "Pass first time with Drive Dojo. Our DVSA-approved instructors specialize in automatic driving lessons to help you achieve your licence goals.",
+  ctaPrimaryText = "🚗 Book Your Automatic Lesson",
   ctaSecondaryText = "💰 View Packages",
   onBookLesson = () => (window.location.href = "/services"),
   onCheckPricing = () => (window.location.href = "/services"),

@@ -88,7 +88,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed">
-              Expert DVSA-approved training to help you pass first time and drive with confidence.
+              Expert DVSA-approved automatic driving lessons to help you pass first time and drive with confidence.
             </p>
 
             {/* Animated Stats */}
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 onClick={triggerConfetti}
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  🚗 Book Your First Lesson
+                  🚗 Book Your Automatic Lesson
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity"></div>

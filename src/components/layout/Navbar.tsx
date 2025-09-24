@@ -33,6 +33,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
   const navItems = [
     { name: 'Home', path: '/', emoji: '🏠' },
     { name: 'Services', path: '/services', emoji: '💰' },
+    { name: 'Automatic Lessons', path: '/automatic-driving-lessons', emoji: '🚗' },
     { name: 'About', path: '/about', emoji: '👥' },
     { name: 'Contact', path: '/contact', emoji: '📞' },
     { name: 'Blog', path: '/blog', emoji: '📝' },
@@ -219,6 +220,15 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                   className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
                 >
                   Contact
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link
+                  to="/automatic-driving-lessons"
+                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                >
+                  Automatic Lessons
                 </Link>
               </NavigationMenuItem>
 

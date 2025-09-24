@@ -229,11 +229,10 @@ const Blog = () => {
             className="text-center mb-8"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-indigo-100">
-              Drive Dojo Insights
+              Professional Driving Tips & Resources
             </h1>
             <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-              Expert advice, success stories, and driving tips from East
-              London's premier driving instructors
+              Expert advice, DVSA-approved guidance, and practical driving tips from East London's premier automatic driving instructors
             </p>
           </motion.div>
 
@@ -606,11 +605,10 @@ const Blog = () => {
             className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-indigo-100">
-              Get Driving Tips in Your Inbox
+              Professional Driving Tips Delivered
             </h2>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Subscribe to our newsletter for exclusive driving advice, special
-              offers, and early access to new articles
+              Subscribe to our newsletter for exclusive DVSA-approved driving advice, special offers on automatic driving lessons, and early access to new educational resources
             </p>
           </motion.div>
 
@@ -648,11 +646,10 @@ const Blog = () => {
       <section className="container mx-auto max-w-6xl py-16 px-4 md:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-800 mb-4">
-            You Might Also Like
+            Additional Resources
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
-            Explore our most popular resources to help you become a confident
-            driver
+            Explore our professional resources to help you become a confident automatic driver
           </p>
         </div>
 
@@ -665,11 +662,10 @@ const Blog = () => {
               <BookOpen className="h-6 w-6 text-blue-600" />
             </div>
             <h3 className="text-xl font-bold text-slate-800 mb-2">
-              Free Resources
+              Free Learning Resources
             </h3>
             <p className="text-slate-600 mb-4">
-              Download our theory test practice questions, hazard perception
-              guides, and road sign flashcards.
+              Download our DVSA-approved theory test practice questions, hazard perception guides, and automatic driving technique resources.
             </p>
             <Button
               variant="link"
@@ -688,11 +684,10 @@ const Blog = () => {
               <Calendar className="h-6 w-6 text-purple-600" />
             </div>
             <h3 className="text-xl font-bold text-slate-800 mb-2">
-              Book a Lesson
+              Book an Automatic Lesson
             </h3>
             <p className="text-slate-600 mb-4">
-              Ready to start driving? Book your first lesson with one of our
-              expert instructors in East London.
+              Ready to start driving? Book your first automatic driving lesson with one of our DVSA-approved instructors in East London.
             </p>
             <Button
               variant="link"
@@ -714,8 +709,7 @@ const Blog = () => {
               Ask an Instructor
             </h3>
             <p className="text-slate-600 mb-4">
-              Have a specific driving question? Our instructors are here to help
-              with personalized advice.
+              Have a specific question about automatic driving? Our DVSA-approved instructors are here to help with personalized professional advice.
             </p>
             <Button
               variant="link"
