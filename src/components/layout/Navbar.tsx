@@ -56,8 +56,8 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
     <header
       className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isBookingPage
-          ? 'bg-white/95 backdrop-blur-md shadow-xl'
-          : transparent ? 'bg-transparent' : 'bg-white shadow-lg'
+          ? 'bg-gradient-to-r from-white to-sky-100/95 backdrop-blur-md shadow-xl'
+          : transparent ? 'bg-transparent' : 'bg-gradient-to-r from-white to-sky-100 shadow-lg'
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -79,7 +79,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap"
                 >
                   Home
                 </Link>
@@ -209,7 +209,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/about"
-                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap"
                 >
                   About
                 </Link>
@@ -218,7 +218,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap"
                 >
                   Contact
                 </Link>
@@ -227,7 +227,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/automatic-driving-lessons"
-                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap"
                 >
                   Automatic Lessons
                 </Link>
@@ -236,7 +236,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/intensive-driving-courses-ilford"
-                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap"
                 >
                   Intensive Courses
                 </Link>
@@ -245,7 +245,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/blog"
-                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                  className="px-3 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap"
                 >
                   Blog
                 </Link>
