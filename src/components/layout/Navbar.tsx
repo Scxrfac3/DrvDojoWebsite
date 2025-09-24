@@ -34,6 +34,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
     { name: 'Home', path: '/', emoji: '🏠' },
     { name: 'Services', path: '/services', emoji: '💰' },
     { name: 'Automatic Lessons', path: '/automatic-driving-lessons', emoji: '🚗' },
+    { name: 'Intensive Courses', path: '/intensive-driving-courses-ilford', emoji: '⚡' },
     { name: 'About', path: '/about', emoji: '👥' },
     { name: 'Contact', path: '/contact', emoji: '📞' },
     { name: 'Blog', path: '/blog', emoji: '📝' },
@@ -234,6 +235,15 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
               <NavigationMenuItem>
                 <Link
+                  to="/intensive-driving-courses-ilford"
+                  className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                >
+                  Intensive Courses
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link
                   to="/blog"
                   className="px-4 py-2 text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors"
                 >
@@ -241,14 +251,6 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                 </Link>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <span className="px-4 py-2 text-base font-semibold text-gray-500 flex items-center cursor-not-allowed">
-                  Portal
-                  <span className="ml-2 text-xs bg-blue-500/30 px-1.5 py-0.5 rounded-full">
-                    Coming Soon
-                  </span>
-                </span>
-              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 

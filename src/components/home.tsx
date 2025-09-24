@@ -4,7 +4,6 @@ import NewHeroSection from "./sections/NewHeroSection";
 import HeroSection from "./sections/HeroSection";
 import ServicesSection from "./sections/ServicesSection";
 import NewTestimonialsSection from "./sections/NewTestimonialsSection";
-// import StudentPortalPreview from "./sections/StudentPortalPreview"; // Coming soon
 import CertificationsBar from "./sections/CertificationsBar";
 import GetStartedSection from "./sections/GetStartedSection";
 import FAQSection from "./sections/FAQSection";

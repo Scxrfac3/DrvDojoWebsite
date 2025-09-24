@@ -15,6 +15,7 @@ const BookingMockTest = lazy(() => import("./components/pages/BookingMockTest"))
 const BookingTestRental = lazy(() => import("./components/pages/BookingTestRental"));
 const BlogPage = lazy(() => import("./components/pages/BlogPage"));
 const AutomaticDrivingLessons = lazy(() => import("./components/pages/AutomaticDrivingLessons"));
+const IntensiveDrivingCoursesIlford = lazy(() => import("./components/pages/IntensiveDrivingCoursesIlford"));
 const BlogArticleDetail = lazy(
   () => import("./components/pages/BlogArticleDetail"),
 );
@@ -43,7 +44,6 @@ const Terms = lazy(() => import("./components/pages/Terms"));
 const Waitlist = lazy(() => import("./components/pages/Waitlist"));
 const BookingSuccess = lazy(() => import("./components/pages/BookingSuccess"));
 const BookingCancel = lazy(() => import("./components/pages/BookingCancel"));
-// import Portal from "./components/pages/Portal"; // Coming soon
 
 function App() {
   return (
@@ -68,6 +68,7 @@ function App() {
           <Route path="/booking/testrental" element={<BookingTestRental />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/automatic-driving-lessons" element={<AutomaticDrivingLessons />} />
+          <Route path="/intensive-driving-courses-ilford" element={<IntensiveDrivingCoursesIlford />} />
           <Route
             path="/driving-lessons/goodmayes"
             element={<GoodmayesLessons />}

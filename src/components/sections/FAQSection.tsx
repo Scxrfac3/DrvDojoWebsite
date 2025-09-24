@@ -48,12 +48,12 @@ const FAQSection = ({
     },
     {
       question: "How do I book lessons? 📅",
-      answer: "Super easy! Click 'Book Now', pick your time, or call/whatsapp us. Online portal tracks everything.",
+      answer: "Super easy! Click 'Book Now', pick your time, or call/whatsapp us. We'll track your progress and keep you updated.",
       category: "Booking",
     },
     {
       question: "Can I cancel/reschedule? ❌",
-      answer: "Definitely! 24 hours notice needed to avoid fees. Manage everything through your student portal.",
+      answer: "Definitely! 24 hours notice needed to avoid fees. Just contact us by phone or WhatsApp to make any changes.",
       category: "Cancellations",
     },
     {
