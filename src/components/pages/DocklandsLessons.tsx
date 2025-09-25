@@ -4,6 +4,7 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "@/components/ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -13,7 +14,6 @@ import {
   Shield,
   Award,
 } from "lucide-react";
-import SpecialOffersSection from "../sections/SpecialOffersSection";
 
 const DocklandsLessons = () => {
   const [postcode, setPostcode] = useState("");
@@ -25,7 +25,13 @@ const DocklandsLessons = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-blue-100 relative overflow-hidden">
+      <SEO
+        title="Expert Driving Lessons in Docklands & E14 | DVSA Approved Instructor"
+        description="Learn from a DVSA approved instructor specializing in intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf. Former Red & AA Driving School instructor with first-time pass expertise. Serving all Docklands postcodes."
+        keywords="driving lessons docklands, intensive driving lessons e14 canary wharf, automatic driving lessons canary wharf, DVSA approved instructor, driving school docklands, E14 driving lessons, driving instructor canary wharf, first time pass driving lessons"
+        canonical="/driving-lessons/docklands"
+      />
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
@@ -46,20 +52,18 @@ const DocklandsLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
-                    Expert Driving Lessons
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-500">
+                    DVSA Approved Driving Lessons
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Docklands</span>
+                  <span className="text-slate-800">in Docklands & E14</span>
                 </h1>
 
-                <p className="text-xl text-gray-200 mb-8">
+                <p className="text-xl text-slate-700 mb-8">
                   <span className="font-semibold">
-                    Professional instruction tailored to your needs
+                    Professional intensive driving lessons in E14 Canary Wharf & automatic driving lessons in Canary Wharf
                   </span>{" "}
-                  — Join over 10,000 successful students who've passed with our
-                  DVSA-approved instructors. Comprehensive training on Docklands
-                  test routes with London's highest-rated driving school.
+                  — Learn from an official DVSA approved instructor who specializes in helping students pass first time. Former instructor with Red Driving School and AA Driving School, serving all Docklands postcodes.
                 </p>
 
                 <form
@@ -70,7 +74,7 @@ const DocklandsLessons = () => {
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <Input
                       type="text"
-                      placeholder="Enter pickup postcode"
+                      placeholder="Enter E14, E16, or other Docklands postcode"
                       className="pl-10 bg-white border-gray-200"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
@@ -79,7 +83,7 @@ const DocklandsLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group relative overflow-hidden"
+                    className="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white group relative overflow-hidden"
                   >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -164,67 +168,59 @@ const DocklandsLessons = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Quality instruction
+                  DVSA Approved Instruction
                 </h3>
                 <p className="text-gray-700">
-                  When you choose a Drive Dojo instructor in Docklands, you're
-                  learning with a fully qualified professional who knows the
-                  local area inside out and is committed to your success.
+                  Learn from an official DVSA approved instructor with experience at Red Driving School and AA Driving School. Specializing in intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md border border-purple-200"
+                className="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-xl shadow-md border border-blue-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-purple-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Top notch pass rates
+                  First-Time Pass Specialist
                 </h3>
                 <p className="text-gray-700">
-                  Our first-time pass rate is 13% higher than the national
-                  average. That's because all our instructors are fully
-                  qualified experts in driving instruction, with specific
-                  knowledge of Docklands roads and test routes.
+                  Our first-time pass rate is 13% higher than the national average. We specialize in helping students pass first time with comprehensive intensive driving lessons in E14 Canary Wharf and surrounding areas.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200"
+                className="bg-gradient-to-br from-sky-50 to-cyan-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-green-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  One of London's best
+                  Local Docklands Expert
                 </h3>
                 <p className="text-gray-700">
-                  Our reputation is the best in the business, which is why we
-                  deliver thousands of lessons every week. Learn with Drive Dojo
-                  and we'll have you feeling confident driving around Docklands
-                  and passing your test in no time.
+                  Serving all Docklands postcodes including E14, E16, and surrounding areas. Our automatic driving lessons in Canary Wharf are designed for the unique road conditions of the Docklands area.
                 </p>
               </motion.div>
             </div>
@@ -232,7 +228,7 @@ const DocklandsLessons = () => {
         </section>
 
         {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -242,12 +238,10 @@ const DocklandsLessons = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Learn to Drive in Docklands?
+                Comprehensive Driving Lessons Across Docklands
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Docklands offers a unique environment for learner drivers with
-                its modern road layout, waterfront views, and mix of busy and
-                quiet areas.
+                We offer specialized intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf, covering all Docklands postcodes with expert local knowledge.
               </p>
             </motion.div>
 
@@ -259,22 +253,19 @@ const DocklandsLessons = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  Perfect for Test Preparation
+                  Expertise in Docklands Test Routes
                 </h3>
                 <p className="text-gray-700 mb-6">
-                  Learning to drive in Docklands gives you access to a variety
-                  of road conditions that will prepare you for your driving
-                  test. Our instructors have extensive knowledge of all local
-                  test routes and will ensure you're fully prepared.
+                  Our intensive driving lessons in E14 Canary Wharf are designed by a DVSA approved instructor who knows every test route in the area. We specialize in helping students pass first time with focused training on local roads.
                 </p>
 
                 <ul className="space-y-3">
                   {[
-                    "Modern road layouts with clear markings",
-                    "Experience with multi-lane roundabouts",
-                    "Practice on the A1261 and Aspen Way",
-                    "Navigating one-way systems and complex junctions",
-                    "Instructors with specific knowledge of Docklands roads",
+                    "Serving E14, E16, and all Docklands postcodes",
+                    "Specialized automatic driving lessons in Canary Wharf",
+                    "Experience with Isle of Dogs and Poplar test routes",
+                    "Training on A1261, Aspen Way, and Limehouse Link",
+                    "Expert knowledge of Canary Wharf complex junctions",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -308,11 +299,8 @@ const DocklandsLessons = () => {
           </div>
         </section>
 
-        {/* Special Offers Section */}
-        <SpecialOffersSection />
-
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -321,7 +309,7 @@ const DocklandsLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Ready to Start Driving in Docklands?
+              Start Your Journey to Driving Success in Docklands
             </motion.h2>
 
             <motion.p
@@ -331,8 +319,7 @@ const DocklandsLessons = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Book your first lesson today and take the first step towards
-              driving freedom in Docklands.
+              Join thousands of successful students who passed their test first time with our intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf.
             </motion.p>
 
             <motion.div
@@ -343,10 +330,10 @@ const DocklandsLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/booking")}
+                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                onClick={() => (window.location.href = "/services")}
               >
-                Book Your First Lesson
+                Book Your Automatic Lesson Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>

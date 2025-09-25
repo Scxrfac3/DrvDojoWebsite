@@ -4,6 +4,7 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "@/components/ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -20,22 +21,6 @@ import {
   Phone,
   MessageCircle,
 } from "lucide-react";
-import SpecialOffersSection from "../sections/SpecialOffersSection";
-
-// SEO Meta Tags Component
-const SEOMetaTags = ({ location }: { location: string }) => (
-  <>
-    <title>{`Driving Lessons in ${location} | Drive Dojo - 98% Pass Rate`}</title>
-    <meta name="description" content={`Learn to drive in ${location} with DVSA-approved instructors. 98% pass rate, modern cars, flexible booking. Book your first lesson from £35. WhatsApp us now!`} />
-    <meta name="keywords" content={`driving lessons ${location.toLowerCase()}, driving school ${location.toLowerCase()}, learn to drive ${location.toLowerCase()}, driving instructor ${location.toLowerCase()}`} />
-    <meta property="og:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
-    <meta property="og:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
-    <meta name="twitter:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
-  </>
-);
 
 const RomfordLessons = () => {
   const [postcode, setPostcode] = useState("");
@@ -75,8 +60,13 @@ const RomfordLessons = () => {
 
   return (
     <>
-      <SEOMetaTags location="Romford" />
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      <SEO
+        title="Expert Driving Lessons in Romford & RM Postcodes | DVSA Approved Instructor"
+        description="Learn from a DVSA approved instructor specializing in intensive driving lessons in Romford and automatic driving lessons in Romford. Former Red & AA Driving School instructor helping students pass first time in Goodmayes DTC or Hornchurch driving test centre. Online booking available."
+        keywords="driving lessons romford, intensive driving lessons romford, automatic driving lessons romford, pass first time goodmayes dtc, hornchurch driving test centre, DVSA approved instructor, driving school romford, RM postcodes, driving instructor romford, online booking driving lessons"
+        canonical="/driving-lessons/romford"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-blue-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
@@ -97,20 +87,18 @@ const RomfordLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
-                    Expert Driving Lessons
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-500">
+                    DVSA Approved Driving Lessons
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Romford</span>
+                  <span className="text-slate-800">in Romford - Online Booking Available</span>
                 </h1>
 
-                <p className="text-xl text-gray-200 mb-8">
+                <p className="text-xl text-slate-700 mb-8">
                   <span className="font-semibold">
-                    Professional instruction tailored to your needs
+                    Professional intensive driving lessons in Romford & automatic driving lessons in Romford
                   </span>{" "}
-                  — Join over 10,000 successful students who've passed with our
-                  DVSA-approved instructors. Comprehensive training on Romford
-                  test routes with London's highest-rated driving school.
+                  — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC or Hornchurch driving test centre. Former instructor with Red Driving School and AA Driving School, serving all RM postcodes.
                 </p>
 
                 <form
@@ -121,7 +109,7 @@ const RomfordLessons = () => {
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <Input
                       type="text"
-                      placeholder="Enter pickup postcode"
+                      placeholder="Enter RM1, RM2, RM3, or other RM postcode"
                       className="pl-10 bg-white border-gray-200"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
@@ -130,7 +118,7 @@ const RomfordLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group relative overflow-hidden"
+                    className="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white group relative overflow-hidden"
                   >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -215,68 +203,59 @@ const RomfordLessons = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Quality instruction
+                  DVSA Approved Instruction
                 </h3>
                 <p className="text-gray-700">
-                  When learning with one of our instructors in Romford, you know
-                  you're in the safe hands of a qualified driving instructor
-                  who's trained to get you on the road as safely as possible.
+                  Learn from an official DVSA approved instructor with experience at Red Driving School and AA Driving School. Specializing in intensive driving lessons in Romford and helping students pass first time in Goodmayes DTC or Hornchurch driving test centre.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md border border-purple-200"
+                className="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-xl shadow-md border border-blue-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-purple-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Top notch pass rates
+                  First-Time Pass Specialist
                 </h3>
                 <p className="text-gray-700">
-                  Our rigorous approach to teaching means our first-time pass
-                  rate is 13% higher than the national average. That's because
-                  all our instructors are fully qualified experts in driving
-                  instruction. Start your driving journey with Drive Dojo and you'll
-                  be out and about in Romford safely and confidently.
+                  Our first-time pass rate is 13% higher than the national average. We specialize in helping students pass first time in Goodmayes DTC or Hornchurch driving test centre with comprehensive intensive driving lessons in Romford and automatic driving lessons in Romford.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200"
+                className="bg-gradient-to-br from-sky-50 to-cyan-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-green-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  One of the UK's biggest and best
+                  Local RM Postcode Expert
                 </h3>
                 <p className="text-gray-700">
-                  Our reputation is the best in the business, which is why we
-                  deliver a massive 20,000 lessons every week. Learn to drive
-                  with us and we'll have you driving around Romford in no time
-                  at all.
+                  Serving all RM postcodes including RM1, RM2, RM3, RM4, RM5, RM6, RM7, RM8, RM9, RM10, RM11, RM12, RM13, RM14, RM15, RM16, and RM17. Our automatic driving lessons in Romford are designed for the unique road conditions of the area.
                 </p>
               </motion.div>
             </div>
@@ -284,7 +263,7 @@ const RomfordLessons = () => {
         </section>
 
         {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -294,11 +273,10 @@ const RomfordLessons = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Learn to Drive in Romford?
+                Comprehensive Driving Lessons Across Romford & Surrounding Areas
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Romford offers the perfect environment for learner drivers with
-                its mix of quiet residential streets and busier main roads.
+                We offer specialized intensive driving lessons in Romford and automatic driving lessons in Romford, covering all RM postcodes with expert local knowledge to help you pass first time in Goodmayes DTC or Hornchurch driving test centre.
               </p>
             </motion.div>
 
@@ -310,22 +288,19 @@ const RomfordLessons = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  Perfect for Test Preparation
+                  Expertise in Local Test Routes
                 </h3>
                 <p className="text-gray-700 mb-6">
-                  Romford Test Centre is known for its diverse routes, making it
-                  an excellent place to prepare for your driving test. Our
-                  instructors have extensive knowledge of all local test routes
-                  and will ensure you're fully prepared.
+                  Our intensive driving lessons in Romford are designed by a DVSA approved instructor who knows every test route in the area. We specialize in helping students pass first time in Goodmayes DTC or Hornchurch driving test centre with focused training on local roads.
                 </p>
 
                 <ul className="space-y-3">
                   {[
-                    "Quiet residential areas perfect for beginners",
-                    "Practice on the A12 and A127 for dual carriageway experience",
-                    "Challenging roundabouts and junctions for advanced skills",
-                    "Variety of road types to build comprehensive driving abilities",
-                    "Local instructors with specific Romford Test Centre knowledge",
+                    "Serving all RM postcodes: RM1, RM2, RM3, RM4, RM5, RM6, RM7, RM8, RM9, RM10, RM11, RM12, RM13, RM14, RM15, RM16, RM17",
+                    "Specialized automatic driving lessons in Romford",
+                    "Experience with Goodmayes DTC and Hornchurch driving test centre routes",
+                    "Training on A12, A127, and surrounding Romford areas",
+                    "Expert knowledge of Romford's complex junctions and roundabouts",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -359,11 +334,8 @@ const RomfordLessons = () => {
           </div>
         </section>
 
-        {/* Special Offers Section */}
-        <SpecialOffersSection />
-
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -372,7 +344,7 @@ const RomfordLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Ready to Start Driving in Romford?
+              Start Your Journey to Driving Success in Romford
             </motion.h2>
 
             <motion.p
@@ -382,8 +354,7 @@ const RomfordLessons = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Book your first lesson today and take the first step towards
-              driving freedom in Romford.
+              Join thousands of successful students who passed their test first time in Goodmayes DTC or Hornchurch driving test centre with our intensive driving lessons in Romford and automatic driving lessons in Romford. Book online today!
             </motion.p>
 
             <motion.div
@@ -394,10 +365,10 @@ const RomfordLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/booking")}
+                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                onClick={() => (window.location.href = "/services")}
               >
-                Book Your First Lesson
+                Book Your Automatic Lesson Now - Online Booking Available
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>

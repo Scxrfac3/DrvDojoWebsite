@@ -20,20 +20,19 @@ import {
   Phone,
   MessageCircle,
 } from "lucide-react";
-import SpecialOffersSection from "../sections/SpecialOffersSection";
 
 // SEO Meta Tags Component
 const SEOMetaTags = ({ location }: { location: string }) => (
   <>
-    <title>{`Driving Lessons in ${location} | Drive Dojo - 98% Pass Rate`}</title>
-    <meta name="description" content={`Learn to drive in ${location} with DVSA-approved instructors. 98% pass rate, modern cars, flexible booking. Book your first lesson from £35. WhatsApp us now!`} />
-    <meta name="keywords" content={`driving lessons ${location.toLowerCase()}, driving school ${location.toLowerCase()}, learn to drive ${location.toLowerCase()}, driving instructor ${location.toLowerCase()}`} />
-    <meta property="og:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
-    <meta property="og:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
+    <title>{`Automatic & Intensive Driving Lessons in Barking | DVSA Approved Instructor | First Time Pass`}</title>
+    <meta name="description" content={`Learn to drive in Barking with official DVSA approved instructor specializing in first time passes. Offering intensive and automatic driving lessons across all Barking postcodes. Former instructor with Red Driving School and AA Driving School. Book your lesson today!`} />
+    <meta name="keywords" content={`driving lessons barking, intensive driving lessons barking, automatic driving lessons barking, driving school barking, dvsa approved instructor barking, driving instructor barking, first time pass barking`} />
+    <meta property="og:title" content={`Automatic & Intensive Driving Lessons in Barking | First Time Pass Specialist`} />
+    <meta property="og:description" content={`Official DVSA approved driving instructor in Barking. Specializing in intensive and automatic driving lessons with high first time pass rate. Covering all Barking postcodes.`} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
-    <meta name="twitter:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
+    <meta name="twitter:title" content={`Automatic & Intensive Driving Lessons in Barking | First Time Pass Specialist`} />
+    <meta name="twitter:description" content={`Official DVSA approved driving instructor in Barking. Specializing in intensive and automatic driving lessons with high first time pass rate.`} />
   </>
 );
 
@@ -76,12 +75,12 @@ const BarkingLessons = () => {
   return (
     <>
       <SEOMetaTags location="Barking" />
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
 
       <Navbar />
 
@@ -97,8 +96,8 @@ const BarkingLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
-                    Expert Driving Lessons
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-sky-300">
+                    Automatic & Intensive Driving Lessons
                   </span>{" "}
                   <br className="hidden md:block" />
                   <span className="text-white">in Barking</span>
@@ -106,11 +105,11 @@ const BarkingLessons = () => {
 
                 <p className="text-xl text-gray-200 mb-8">
                   <span className="font-semibold">
-                    Professional instruction tailored to your needs
+                    DVSA Approved Instructor | First Time Pass Specialist
                   </span>{" "}
-                  — Join over 10,000 successful students who've passed with our
-                  DVSA-approved instructors. Comprehensive training on Barking
-                  test routes with London's highest-rated driving school.
+                  — Former instructor with Red Driving School and AA Driving School.
+                  Offering expert intensive driving lessons in Barking and automatic driving lessons in Barking
+                  with the highest pass rates. Covering all Barking postcodes with personalized training.
                 </p>
 
                 <form
@@ -213,71 +212,80 @@ const BarkingLessons = () => {
         {/* Features Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Barking Postcode Coverage
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                We provide comprehensive driving lessons across all Barking postcodes,
+                including IG11, IG6, IG7, RM8, RM9, and surrounding areas.
+              </p>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Quality instruction
+                  DVSA Approved Instruction
                 </h3>
                 <p className="text-gray-700">
-                  When you choose our driving instructor in Barking it means
-                  you can be safe in the knowledge that you are learning from an
-                  expert driving instructor who's trained to get you on the road
-                  as safely as possible.
+                  When you choose our intensive driving lessons in Barking, you're learning
+                  from an official DVSA approved instructor with experience at Red Driving School
+                  and AA Driving School. Specializing in automatic driving lessons in Barking with
+                  first-time pass focus.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md border border-purple-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-purple-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Top notch pass rates
+                  First Time Pass Specialist
                 </h3>
                 <p className="text-gray-700">
-                  Our rigorous approach to teaching means our first-time pass
-                  rate is 13% higher than the national average. That's all
-                  thanks to our team of expert instructors who are here to guide
-                  you every step of the way. Learn with the AA and you'll be on
-                  the roads in Barking confident in your new driving skills.
+                  Our intensive driving lessons in Barking have a 98% first-time pass rate,
+                  13% higher than the national average. Our automatic driving lessons in Barking
+                  are designed to get you passing quickly and confidently. We cover all test routes
+                  in Barking and surrounding areas.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-green-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  One of the UK's biggest and best
+                  Comprehensive Coverage
                 </h3>
                 <p className="text-gray-700">
-                  Our experience and expertise is called on to deliver 20,000
-                  lessons a week to pupils around the country. Learn to drive
-                  with us and we'll have you feeling good about driving and
-                  safely on the road in Barking in a jiffy.
+                  We provide intensive driving lessons in Barking across all postcodes:
+                  IG11 (Barking), IG6 (Chadwell Heath), IG7 (Hainault), RM8 (Dagenham),
+                  RM9 (Dagenham East). Our automatic driving lessons in Barking are available
+                  7 days a week with flexible scheduling.
                 </p>
               </motion.div>
             </div>
@@ -285,7 +293,7 @@ const BarkingLessons = () => {
         </section>
 
         {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -295,11 +303,12 @@ const BarkingLessons = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Learn to Drive in Barking?
+                Why Choose Our Intensive & Automatic Driving Lessons in Barking?
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Barking offers the perfect environment for learner drivers with
-                its mix of quiet residential streets and busier main roads.
+                its mix of quiet residential streets and busier main roads. Our intensive
+                driving lessons in Barking are designed to get you test-ready quickly.
               </p>
             </motion.div>
 
@@ -317,16 +326,18 @@ const BarkingLessons = () => {
                   Barking Test Centre is known for its challenging routes,
                   making it an excellent place to prepare for your driving test.
                   Our instructors have extensive knowledge of all local test
-                  routes and will ensure you're fully prepared.
+                  routes and will ensure you're fully prepared for both intensive
+                  driving lessons in Barking and automatic driving lessons in Barking.
                 </p>
 
                 <ul className="space-y-3">
                   {[
-                    "Quiet residential areas perfect for beginners",
+                    "Quiet residential areas in IG11 perfect for beginners",
                     "Practice on the A13 for dual carriageway experience",
                     "Challenging roundabouts and junctions for advanced skills",
-                    "Variety of road types to build comprehensive driving abilities",
+                    "Automatic driving lessons in Barking for easier learning",
                     "Local instructors with specific Barking Test Centre knowledge",
+                    "Intensive driving courses in Barking for fast test preparation",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -360,11 +371,8 @@ const BarkingLessons = () => {
           </div>
         </section>
 
-        {/* Special Offers Section */}
-        <SpecialOffersSection />
-
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -373,7 +381,7 @@ const BarkingLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Ready to Start Driving in Barking?
+              Ready to Start Your Automatic Driving Lessons in Barking?
             </motion.h2>
 
             <motion.p
@@ -383,8 +391,9 @@ const BarkingLessons = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Book your first lesson today and take the first step towards
-              driving freedom in Barking.
+              Join hundreds of successful students who passed their test first time with our
+              intensive driving lessons in Barking and automatic driving lessons in Barking.
+              DVSA approved instructor with experience at Red Driving School and AA Driving School.
             </motion.p>
 
             <motion.div
@@ -395,10 +404,10 @@ const BarkingLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/booking")}
+                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                onClick={() => (window.location.href = "/services")}
               >
-                Book Your First Lesson
+                Book Your Automatic Lesson Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>

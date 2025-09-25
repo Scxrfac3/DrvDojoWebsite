@@ -4,6 +4,7 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "../ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -13,7 +14,6 @@ import {
   Shield,
   Award,
 } from "lucide-react";
-import SpecialOffersSection from "../sections/SpecialOffersSection";
 
 const ForestGateLessons = () => {
   const [postcode, setPostcode] = useState("");
@@ -25,12 +25,19 @@ const ForestGateLessons = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+    <>
+      <SEO
+        title="Driving Lessons Forest Gate | DVSA Approved Instructor | E7 Postcode Coverage"
+        description="Expert intensive driving lessons in E7 and automatic driving lessons in Forest Gate from a DVSA approved instructor. Former Red Driving School & AA Driving School instructor specializing in first-time passes. Covering all E postcodes including E6, E7, E11, E12, E13, E15, E16 and IG postcodes."
+        keywords="driving lessons Forest Gate, intensive driving lessons E7, automatic driving lessons Forest Gate, DVSA approved instructor, Red Driving School, AA Driving School, driving lessons E7, driving instructor Forest Gate, first time pass, E postcode driving lessons, driving lessons East London"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-sky-300 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full opacity-20 blur-3xl"></div>
 
       <Navbar />
 
@@ -46,20 +53,18 @@ const ForestGateLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
-                    Expert Driving Lessons
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-blue-600">
+                    Expert Driving Lessons in Forest Gate
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Forest Gate</span>
+                  <span className="text-gray-800">DVSA Approved Instructor</span>
                 </h1>
 
-                <p className="text-xl text-gray-200 mb-8">
+                <p className="text-xl text-gray-700 mb-8">
                   <span className="font-semibold">
-                    Professional instruction tailored to your needs
+                    Professional intensive driving lessons in E7 and automatic driving lessons in Forest Gate
                   </span>{" "}
-                  — Join over 10,000 successful students who've passed with our
-                  DVSA-approved instructors. Comprehensive training on Forest Gate
-                  test routes with London's highest-rated driving school.
+                  — Learn from an official DVSA approved instructor who specializes in helping students pass first time. With experience working with national driving schools like Red Driving School and AA Driving School, I provide expert instruction across all E postcodes.
                 </p>
 
                 <form
@@ -162,69 +167,70 @@ const ForestGateLessons = () => {
         {/* Features Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Why Choose My Driving Lessons in Forest Gate?
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                As a DVSA approved instructor with experience at Red Driving School and AA Driving School,
+                I specialize in helping students pass first time with intensive driving lessons in E7 and automatic driving lessons in Forest Gate.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Quality instruction
+                  DVSA Approved Expertise
                 </h3>
                 <p className="text-gray-700">
-                  When you choose a Drive Dojo instructor in Forest Gate, you're
-                  learning with a fully qualified professional who knows the
-                  local area inside out and is committed to your success.
+                  When you choose my intensive driving lessons in E7, you're learning with a fully qualified DVSA approved instructor who knows Forest Gate and all E postcodes inside out. My experience with national driving schools ensures professional, structured lessons tailored to your success.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md border border-purple-200"
+                className="bg-gradient-to-br from-blue-50 to-sky-100 p-6 rounded-xl shadow-md border border-blue-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-purple-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Top notch pass rates
+                  First-Time Pass Specialization
                 </h3>
                 <p className="text-gray-700">
-                  Our first-time pass rate is 13% higher than the national
-                  average. That's because all our instructors are fully
-                  qualified experts in driving instruction, with specific
-                  knowledge of Forest Gate roads and test routes.
+                  My first-time pass rate exceeds the national average by 13%. Through specialized automatic driving lessons in Forest Gate and intensive courses across E7, E11, E12, and E15 postcodes, I've helped countless students pass their driving test confidently and efficiently.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-green-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  One of London's best
+                  Comprehensive Local Coverage
                 </h3>
                 <p className="text-gray-700">
-                  Our reputation is the best in the business, which is why we
-                  deliver thousands of lessons every week. Learn with Drive Dojo
-                  and we'll have you feeling confident driving around Forest
-                  Gate and passing your test in no time.
+                  I provide expert driving lessons across all E postcodes including E7 (Forest Gate), E11 (Leytonstone), E12 (Manor Park), E15 (Stratford), E6 (East Ham), E13 (Plaistow), E16 (Canning Town), and IG postcodes. My automatic driving lessons in Forest Gate are designed for maximum success.
                 </p>
               </motion.div>
             </div>
@@ -232,7 +238,7 @@ const ForestGateLessons = () => {
         </section>
 
         {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -242,12 +248,11 @@ const ForestGateLessons = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Learn to Drive in Forest Gate?
+                Comprehensive Coverage Across E Postcodes
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Forest Gate offers an excellent environment for learner drivers
-                with its mix of residential streets, main roads, and proximity
-                to test centers.
+                My intensive driving lessons in E7 and automatic driving lessons in Forest Gate cover all East London areas,
+                providing expert instruction tailored to local test routes and driving conditions.
               </p>
             </motion.div>
 
@@ -259,22 +264,23 @@ const ForestGateLessons = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  Perfect for Test Preparation
+                  Local Expertise for First-Time Success
                 </h3>
                 <p className="text-gray-700 mb-6">
-                  Learning to drive in Forest Gate gives you access to a variety
-                  of road conditions that will prepare you for your driving
-                  test. Our instructors have extensive knowledge of all local
-                  test routes and will ensure you're fully prepared.
+                  As a DVSA approved instructor with experience at Red Driving School and AA Driving School,
+                  I specialize in intensive driving lessons in E7 and automatic driving lessons in Forest Gate.
+                  My comprehensive knowledge of local test routes across all E postcodes gives my students the best chance of passing first time.
                 </p>
 
                 <ul className="space-y-3">
                   {[
-                    "Quiet residential areas perfect for beginners",
-                    "Practice on the A118 Romford Road for busy road experience",
-                    "Challenging roundabouts and junctions for advanced skills",
-                    "Close proximity to Wanstead and Barking test centers",
-                    "Instructors with specific knowledge of Forest Gate roads",
+                    "Expert intensive driving lessons in E7 (Forest Gate) and surrounding areas",
+                    "Specialized automatic driving lessons in Forest Gate with modern vehicles",
+                    "Comprehensive coverage of E postcodes: E6, E7, E11, E12, E13, E15, E16",
+                    "Experience with IG postcodes including IG1, IG2, IG3, IG4, IG5, IG6",
+                    "In-depth knowledge of local test centers: Wanstead, Barking, Goodmayes",
+                    "Flexible lesson scheduling for intensive courses across East London",
+                    "Proven track record of helping students pass first time with structured lessons",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -308,11 +314,84 @@ const ForestGateLessons = () => {
           </div>
         </section>
 
-        {/* Special Offers Section */}
-        <SpecialOffersSection />
+
+        {/* Instructor Credentials Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Your DVSA Approved Driving Instructor
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                With extensive experience at national driving schools, I bring expert knowledge and proven teaching methods to help you pass first time.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <motion.div
+                className="rounded-xl overflow-hidden shadow-lg order-2 md:order-1"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="/images/certifications/DVSA-ADI.png"
+                  alt="DVSA Approved Instructor"
+                  className="w-full h-auto object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                className="order-1 md:order-2"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                  National Experience, Local Expertise
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  As a fully qualified DVSA approved instructor, I've worked with some of the UK's most respected national driving schools including Red Driving School and AA Driving School. This experience has given me unique insights into the most effective teaching methods for helping students pass their driving test first time.
+                </p>
+
+                <ul className="space-y-3">
+                  {[
+                    "DVSA Approved Driving Instructor with full certification",
+                    "Extensive experience with Red Driving School and AA Driving School",
+                    "Specialized in intensive driving lessons in E7 and automatic driving lessons in Forest Gate",
+                    "Proven track record of first-time passes across all E postcodes",
+                    "In-depth knowledge of local test routes and examination criteria",
+                    "Patient, professional instruction tailored to individual learning styles",
+                    "Modern dual-control vehicles for safe, effective learning",
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 * index }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -321,7 +400,7 @@ const ForestGateLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Ready to Start Driving in Forest Gate?
+              Start Your Driving Journey in Forest Gate Today
             </motion.h2>
 
             <motion.p
@@ -331,8 +410,8 @@ const ForestGateLessons = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Book your first lesson today and take the first step towards
-              driving freedom in Forest Gate.
+              Book your automatic driving lesson today and take the first step towards
+              driving freedom in Forest Gate and surrounding E postcodes.
             </motion.p>
 
             <motion.div
@@ -343,10 +422,10 @@ const ForestGateLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/booking")}
+                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                onClick={() => (window.location.href = "/services")}
               >
-                Book Your First Lesson
+                Book Your Automatic Lesson Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
@@ -356,6 +435,7 @@ const ForestGateLessons = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

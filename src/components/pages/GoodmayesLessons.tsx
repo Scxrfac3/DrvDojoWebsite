@@ -4,6 +4,7 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "@/components/ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -20,22 +21,6 @@ import {
   Phone,
   MessageCircle,
 } from "lucide-react";
-import SpecialOffersSection from "../sections/SpecialOffersSection";
-
-// SEO Meta Tags Component
-const SEOMetaTags = ({ location }: { location: string }) => (
-  <>
-    <title>{`Driving Lessons in ${location} | Drive Dojo - 98% Pass Rate`}</title>
-    <meta name="description" content={`Learn to drive in ${location} with DVSA-approved instructors. 98% pass rate, modern cars, flexible booking. Book your first lesson from £35. WhatsApp us now!`} />
-    <meta name="keywords" content={`driving lessons ${location.toLowerCase()}, driving school ${location.toLowerCase()}, learn to drive ${location.toLowerCase()}, driving instructor ${location.toLowerCase()}`} />
-    <meta property="og:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
-    <meta property="og:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`Driving Lessons in ${location} | Drive Dojo`} />
-    <meta name="twitter:description" content={`Expert driving instruction in ${location} with 98% pass rate. Book your lesson today!`} />
-  </>
-);
 
 const GoodmayesLessons = () => {
   const [postcode, setPostcode] = useState("");
@@ -75,8 +60,13 @@ const GoodmayesLessons = () => {
 
   return (
     <>
-      <SEOMetaTags location="Goodmayes" />
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      <SEO
+        title="Expert Driving Lessons in Goodmayes & IG Postcodes | DVSA Approved Instructor"
+        description="Learn from a DVSA approved instructor specializing in intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings. Former Red & AA Driving School instructor helping students pass first time in Goodmayes DTC. Online booking available."
+        keywords="driving lessons goodmayes, intensive driving lessons goodmayes, automatic driving lessons seven kings, pass first time goodmayes dtc, DVSA approved instructor, driving school goodmayes, IG postcodes, driving instructor goodmayes, online booking driving lessons"
+        canonical="/driving-lessons/goodmayes"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-blue-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
@@ -97,20 +87,18 @@ const GoodmayesLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
-                    Expert Driving Lessons
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-500">
+                    DVSA Approved Driving Lessons
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Goodmayes</span>
+                  <span className="text-slate-800">in Goodmayes - Online Booking Available</span>
                 </h1>
 
-                <p className="text-xl text-gray-200 mb-8">
+                <p className="text-xl text-slate-700 mb-8">
                   <span className="font-semibold">
-                    Professional instruction tailored to your needs
+                    Professional intensive driving lessons in Goodmayes & automatic driving lessons in Seven Kings
                   </span>{" "}
-                  — Join over 10,000 successful students who've passed with our
-                  DVSA-approved instructors. Comprehensive training on Goodmayes
-                  test routes with London's highest-rated driving school.
+                  — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC. Former instructor with Red Driving School and AA Driving School, serving all IG postcodes.
                 </p>
 
                 <form
@@ -121,7 +109,7 @@ const GoodmayesLessons = () => {
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <Input
                       type="text"
-                      placeholder="Enter pickup postcode"
+                      placeholder="Enter IG1, IG2, IG3, or other IG postcode"
                       className="pl-10 bg-white border-gray-200"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
@@ -130,7 +118,7 @@ const GoodmayesLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group relative overflow-hidden"
+                    className="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white group relative overflow-hidden"
                   >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -216,69 +204,59 @@ const GoodmayesLessons = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Expert Instruction
+                  DVSA Approved Instruction
                 </h3>
                 <p className="text-gray-700">
-                  When you choose Drive Dojo in Goodmayes, you'll learn with
-                  fully qualified DVSA-approved instructors who specialize in
-                  the local area and test routes, providing personalized
-                  coaching tailored to your learning style.
+                  Learn from an official DVSA approved instructor with experience at Red Driving School and AA Driving School. Specializing in intensive driving lessons in Goodmayes and helping students pass first time in Goodmayes DTC.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md border border-purple-200"
+                className="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-xl shadow-md border border-blue-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-purple-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Top notch pass rates
+                  First-Time Pass Specialist
                 </h3>
                 <p className="text-gray-700">
-                  Our first-time pass rate is 13% higher than the national
-                  average. That's because all our instructors are fully
-                  qualified experts in driving instruction. Learn with Drive
-                  Dojo and you'll be on the roads in Goodmayes confident in your
-                  new driving skills.
+                  Our first-time pass rate is 13% higher than the national average. We specialize in helping students pass first time in Goodmayes DTC with comprehensive intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200"
+                className="bg-gradient-to-br from-sky-50 to-cyan-50 p-6 rounded-xl shadow-md border border-sky-200"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-green-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-sky-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  One of the UK's biggest and best
+                  Local IG Postcode Expert
                 </h3>
                 <p className="text-gray-700">
-                  Our reputation is the best in the business, which is why we
-                  deliver a massive 20,000 lessons every week. Let us teach you
-                  and we'll have you feeling good about driving and safely
-                  cruising around Goodmayes safely and confidently.
+                  Serving all IG postcodes including IG1, IG2, IG3, IG4, IG5, IG6, IG7, IG8, IG9, IG10, and IG11. Our automatic driving lessons in Seven Kings are designed for the unique road conditions of the Goodmayes area.
                 </p>
               </motion.div>
             </div>
@@ -286,7 +264,7 @@ const GoodmayesLessons = () => {
         </section>
 
         {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -296,11 +274,10 @@ const GoodmayesLessons = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Learn to Drive in Goodmayes?
+                Comprehensive Driving Lessons Across Goodmayes & Seven Kings
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Goodmayes offers the perfect environment for learner drivers
-                with its mix of quiet residential streets and busier main roads.
+                We offer specialized intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings, covering all IG postcodes with expert local knowledge to help you pass first time in Goodmayes DTC.
               </p>
             </motion.div>
 
@@ -312,22 +289,19 @@ const GoodmayesLessons = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  Perfect for Test Preparation
+                  Expertise in Goodmayes Test Routes
                 </h3>
                 <p className="text-gray-700 mb-6">
-                  Goodmayes Test Centre is known for its challenging routes,
-                  making it an excellent place to prepare for your driving test.
-                  Our instructors have extensive knowledge of all local test
-                  routes and will ensure you're fully prepared.
+                  Our intensive driving lessons in Goodmayes are designed by a DVSA approved instructor who knows every test route in the area. We specialize in helping students pass first time in Goodmayes DTC with focused training on local roads.
                 </p>
 
                 <ul className="space-y-3">
                   {[
-                    "Quiet residential areas perfect for beginners",
-                    "Practice on the A12 Eastern Avenue for dual carriageway experience",
-                    "Challenging roundabouts and junctions for advanced skills",
-                    "Variety of road types to build comprehensive driving abilities",
-                    "Local instructors with specific Goodmayes Test Centre knowledge",
+                    "Serving all IG postcodes: IG1, IG2, IG3, IG4, IG5, IG6, IG7, IG8, IG9, IG10, IG11",
+                    "Specialized automatic driving lessons in Seven Kings",
+                    "Experience with Goodmayes DTC test routes and challenges",
+                    "Training on A12 Eastern Avenue and surrounding areas",
+                    "Expert knowledge of Seven Kings and Goodmayes complex junctions",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -361,11 +335,8 @@ const GoodmayesLessons = () => {
           </div>
         </section>
 
-        {/* Special Offers Section */}
-        <SpecialOffersSection />
-
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-slate-800 to-blue-800 text-white">
+        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -374,7 +345,7 @@ const GoodmayesLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Ready to Start Driving in Goodmayes?
+              Start Your Journey to Driving Success in Goodmayes
             </motion.h2>
 
             <motion.p
@@ -384,8 +355,7 @@ const GoodmayesLessons = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Book your first lesson today and take the first step towards
-              driving freedom in Goodmayes.
+              Join thousands of successful students who passed their test first time in Goodmayes DTC with our intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings.
             </motion.p>
 
             <motion.div
@@ -396,10 +366,10 @@ const GoodmayesLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/booking")}
+                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                onClick={() => (window.location.href = "/services")}
               >
-                Book Your First Lesson
+                Book Your Automatic Lesson Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
