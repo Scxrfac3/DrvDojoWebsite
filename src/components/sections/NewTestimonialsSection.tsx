@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Star, Heart, MessageCircle, Trophy } from 'lucide-react';
+import ElectricBorder from '../ui/ElectricBorder';
 
 const testimonials = [
   {
@@ -182,8 +183,8 @@ export default function NewTestimonialsSection() {
         <div className="relative max-w-5xl mx-auto">
           {/* Main Testimonial Card */}
           <div className="relative">
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
-              <div className="border-4 border-gray-200 rounded-3xl">
+            <ElectricBorder color="#FFD700" intensity="high" className="transform transition-all duration-500 hover:scale-105">
+              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
                 <div className="p-8 md:p-12">
                   <div className="flex flex-col md:flex-row items-center gap-8">
                     {/* Profile Section */}
@@ -253,7 +254,7 @@ export default function NewTestimonialsSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ElectricBorder>
           </div>
 
           {/* Navigation */}

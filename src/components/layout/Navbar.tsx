@@ -62,6 +62,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
+        {/* Logo */}
         <Link to="/" className="flex-shrink-0 flex items-center group">
           <motion.img
             src="/images/certifications/DDojo.png"
@@ -71,7 +72,6 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
             whileTap={{ scale: 0.95 }}
           />
         </Link>
-
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1">
           <NavigationMenu>

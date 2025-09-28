@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -12,6 +12,7 @@ import TestCentresSection from "../sections/TestCentresSection";
 import { Button } from "../ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ElectricBorder from "../ui/ElectricBorder";
 import {
   ArrowRight,
   Award,
@@ -141,6 +142,8 @@ const Services = () => {
   const [transmissionType, setTransmissionType] = useState('manual');
   const [likedPackages, setLikedPackages] = useState<Set<string>>(new Set());
   const [hoveredPackage, setHoveredPackage] = useState<string | null>(null);
+  const [isCourseSectionVisible, setIsCourseSectionVisible] = useState(false);
+  const courseSectionRef = useRef(null);
 
   // Add CSS animations
   useEffect(() => {
@@ -161,11 +164,40 @@ const Services = () => {
       .animate-fade-in {
         animation: fadeIn 1s ease-out;
       }
+      .gpu-accelerated {
+        transform: translateZ(0);
+        will-change: transform;
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
     `;
     document.head.appendChild(style);
     
     return () => {
       document.head.removeChild(style);
+    };
+  }, []);
+
+  // Intersection Observer for performance optimization
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsCourseSectionVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (courseSectionRef.current) {
+      observer.observe(courseSectionRef.current);
+    }
+
+    return () => {
+      if (courseSectionRef.current) {
+        observer.unobserve(courseSectionRef.current);
+      }
     };
   }, []);
 
@@ -449,65 +481,71 @@ const Services = () => {
               </section>
 
               {/* Featured Courses - Updated with Booking Page Services */}
-              <section id="courses" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
+              <div ref={courseSectionRef} className="gpu-accelerated">
+                <ElectricBorder
+                  color="#FFD700"
+                  intensity="medium"
+                  className="rounded-2xl"
+                >
+                  <section id="courses" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden rounded-2xl">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
 
-                {/* Animated particles */}
-                <div className="absolute inset-0 overflow-hidden">
-                  {[...Array(10)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 backdrop-blur-sm"
-                      style={{
-                        width: Math.random() * 60 + 20,
-                        height: Math.random() * 60 + 20,
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                      }}
-                      initial={{ opacity: 0.1, scale: 0 }}
-                      animate={{
-                        opacity: [0.1, 0.3, 0.1],
-                        scale: [0, 1, 0],
-                        x: [0, Math.random() * 100 - 50, 0],
-                        y: [0, Math.random() * 100 - 50, 0],
-                      }}
-                      transition={{
-                        duration: Math.random() * 10 + 10,
-                        repeat: Infinity,
-                        delay: Math.random() * 5,
-                      }}
-                    />
-                  ))}
-                </div>
+                    {/* Animated particles */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      {[...Array(10)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 backdrop-blur-sm"
+                          style={{
+                            width: Math.random() * 60 + 20,
+                            height: Math.random() * 60 + 20,
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                          }}
+                          initial={{ opacity: 0.1, scale: 0 }}
+                          animate={{
+                            opacity: [0.1, 0.3, 0.1],
+                            scale: [0, 1, 0],
+                            x: [0, Math.random() * 100 - 50, 0],
+                            y: [0, Math.random() * 100 - 50, 0],
+                          }}
+                          transition={{
+                            duration: Math.random() * 10 + 10,
+                            repeat: Infinity,
+                            delay: Math.random() * 5,
+                          }}
+                        />
+                      ))}
+                    </div>
 
-                <div className="container mx-auto px-4 relative z-10">
-                  <motion.div
-                    className="text-center mb-12"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.div
-                      className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
-                      initial={{ opacity: 0, y: -20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Zap className="h-4 w-4 mr-2" />
-                      Featured Courses
-                    </motion.div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                      Choose Your Perfect Course
-                    </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                      Select from our most popular courses designed to get you on the road quickly and safely
-                    </p>
-                  </motion.div>
+                    <div className="container mx-auto px-4 relative z-10">
+                      <motion.div
+                        className="text-center mb-12"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <motion.div
+                          className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                          initial={{ opacity: 0, y: -20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Zap className="h-4 w-4 mr-2" />
+                          Featured Courses
+                        </motion.div>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                          Choose Your Perfect Course
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                          Select from our most popular courses designed to get you on the road quickly and safely
+                        </p>
+                      </motion.div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Pay-as-you-go */}
@@ -713,6 +751,8 @@ const Services = () => {
                   </div>
                 </div>
               </section>
+            </ElectricBorder>
+          </div>
 
               {/* Intensive Driving Courses - Highlighted Section */}
               <section className="py-20 bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 relative overflow-hidden">
