@@ -106,7 +106,7 @@ const DocklandsLessons = () => {
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/images/certifications/C8.png"
+                    src="/images/certifications/BANNER_MAIN3276.png"
                     alt="Driving lessons in Docklands"
                     className="w-full h-auto object-cover rounded-2xl"
                   />

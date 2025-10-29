@@ -237,7 +237,7 @@ const AutomaticDrivingLessons = () => {
                 <div className="relative z-10 group">
                   <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                     <img
-                      src="/images/certifications/1729007102786 .jpg" 
+                      src="/images/certifications/MercShard.png"
                       alt="Modern automatic driving lesson car"
                       className="w-full h-96 object-cover"
                     />

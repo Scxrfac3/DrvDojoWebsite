@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Star, Users, Zap, Trophy, ArrowRight, Play, Calendar } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function HeroSection() {
   const [currentStat, setCurrentStat] = useState(0);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const heroImages = [
+    "/images/certifications/explodedMerc.png",
+    "/images/certifications/angles.png"
+  ];
 
   const stats = [
     { icon: Star, number: '98%', label: 'Pass Rate', color: 'text-accent-400' },
@@ -154,25 +159,29 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* Right Content - Hero Image Slideshow */}
           <div className="relative">
             <div className="relative z-10 group">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/images/certifications/BANNER_MAIN3276.png"
+                  src={heroImages[currentImageIndex]}
                   alt="Professional driving instructor in modern training vehicle"
                   className="w-full h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    onClick={() => setIsVideoPlaying(!isVideoPlaying)}
-                    className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110 group"
-                  >
-                    <Play className="h-8 w-8 ml-1" />
-                  </button>
+                {/* Image Indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {heroImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        currentImageIndex === index ? 'bg-white scale-125' : 'bg-white/50'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
                 </div>
 
                 {/* Floating Success Badge */}
@@ -204,4 +213,13 @@ export default function HeroSection() {
 
     </section>
   );
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 }

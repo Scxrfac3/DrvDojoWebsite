@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle, Star, Users, Zap, Trophy, ArrowRight, Play, Calendar, Phone, Sparkles, Flame } from "lucide-react";
+import { CheckCircle, Star, Users, Zap, Trophy, ArrowRight, Calendar, Phone, Sparkles, Flame } from "lucide-react";
 import confetti from "canvas-confetti";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import { PostcodeCheckResult } from "@/lib/postcodeChecker";
@@ -23,7 +23,7 @@ const NewHeroSection = ({
   onCheckPricing = () => (window.location.href = "/services"),
 }: HeroSectionProps) => {
   const [currentStat, setCurrentStat] = useState(0);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [postcodeCheckResult, setPostcodeCheckResult] = useState<PostcodeCheckResult | null>(null);
   const [selectedLesson, setSelectedLesson] = useState<string | null>(null);
 
@@ -34,11 +34,26 @@ const NewHeroSection = ({
     { icon: Zap, number: '24hr', label: 'Response', color: 'text-orange-400' }
   ];
 
+  const heroImages = [
+    "/images/certifications/explodedMerc.png",
+    "/images/certifications/angles.png",
+    "/images/certifications/FrontLOW.png",
+    "/images/certifications/MercShard.png"
+  ];
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    const statInterval = setInterval(() => {
       setCurrentStat((prev) => (prev + 1) % stats.length);
     }, 2000);
-    return () => clearInterval(interval);
+    
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+    
+    return () => {
+      clearInterval(statInterval);
+      clearInterval(imageInterval);
+    };
   }, []);
 
   const triggerConfetti = () => {
@@ -168,20 +183,22 @@ const NewHeroSection = ({
             <div className="relative z-10 group">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/images/certifications/FrontLOW.png"
+                  src={heroImages[currentImageIndex]}
                   alt="Professional driving instructor in modern training vehicle"
-                  className="w-full h-96 object-cover"
+                  className="w-full h-96 object-cover transition-opacity duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    onClick={() => setIsVideoPlaying(!isVideoPlaying)}
-                    className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110"
-                  >
-                    <Play className="h-8 w-8 ml-1" />
-                  </button>
+                {/* Image Indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {heroImages.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
                 </div>
 
                 {/* Floating Success Badge */}
