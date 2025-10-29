@@ -282,7 +282,7 @@ const Services = () => {
           ) : (
             <>
               {/* Hero Banner - Updated Design */}
-              <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white py-20 relative overflow-hidden min-h-screen flex items-center">
+              <section className="relative bg-slate-900 text-white py-20 relative overflow-hidden min-h-screen flex items-center">
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0">
                   <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
@@ -440,7 +440,7 @@ const Services = () => {
                       <div className="relative z-10 group">
                         <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                           <img
-                            src="/images/certifications/BANNER_MAIN3276.png"
+                            src="/images/certifications/FrontLOW.png"
                             alt="Professional driving instructor in modern training vehicle"
                             className="w-full h-96 object-cover"
                           />
@@ -482,12 +482,7 @@ const Services = () => {
 
               {/* Featured Courses - Updated with Booking Page Services */}
               <div ref={courseSectionRef} className="gpu-accelerated">
-                <ElectricBorder
-                  color="#FFD700"
-                  intensity="medium"
-                  className="rounded-2xl"
-                >
-                  <section id="courses" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden rounded-2xl">
+                <section id="courses" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden rounded-2xl">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
 
@@ -751,7 +746,6 @@ const Services = () => {
                   </div>
                 </div>
               </section>
-            </ElectricBorder>
           </div>
 
               {/* Intensive Driving Courses - Highlighted Section */}

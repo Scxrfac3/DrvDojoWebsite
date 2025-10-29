@@ -75,18 +75,13 @@ const BarkingLessons = () => {
   return (
     <>
       <SEOMetaTags location="Barking" />
-      <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl"></div>
+      <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
 
       <Navbar />
 
       <main className="pt-[100px] pb-20 relative z-10">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
+        <section className="relative bg-slate-900 text-white overflow-hidden min-h-screen flex items-center">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -95,15 +90,27 @@ const BarkingLessons = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-sky-300">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="flex items-center bg-green-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-green-400/30">
+                    <CheckCircle className="h-5 w-5 text-green-400 mr-2 animate-pulse" />
+                    <span className="text-sm font-medium">DVSA Approved ✨</span>
+                  </div>
+                  <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
+                    <Zap className="h-5 w-5 text-orange-400 mr-2" />
+                    <span className="text-sm font-medium">Quick Start 🚀</span>
+                  </div>
+                </div>
+                
+                <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-6">
+                  <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent">
                     Automatic & Intensive Driving Lessons
-                  </span>{" "}
-                  <br className="hidden md:block" />
-                  <span className="text-white">in Barking</span>
+                  </span>
+                  <br />
+                  <span className="text-orange-400 inline-block">in Barking</span>
+                  <span className="text-2xl lg:text-3xl ml-4">🚗</span>
                 </h1>
 
-                <p className="text-xl text-gray-200 mb-8">
+                <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8">
                   <span className="font-semibold">
                     DVSA Approved Instructor | First Time Pass Specialist
                   </span>{" "}
@@ -111,6 +118,29 @@ const BarkingLessons = () => {
                   Offering expert intensive driving lessons in Barking and automatic driving lessons in Barking
                   with the highest pass rates. Covering all Barking postcodes with personalized training.
                 </p>
+
+                {/* Animated Stats */}
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 mb-8">
+                  <div className="grid grid-cols-4 gap-4">
+                    {stats.map((stat, index) => {
+                      const IconComponent = stat.icon;
+                      return (
+                        <div
+                          key={index}
+                          className={`text-center transition-all duration-500 ${
+                            currentStat === index ? 'scale-110 transform' : 'scale-100'
+                          }`}
+                        >
+                          <IconComponent className={`h-6 w-6 mx-auto mb-2 ${stat.color} ${
+                            currentStat === index ? 'animate-bounce' : ''
+                          }`} />
+                          <div className={`text-2xl font-bold ${stat.color}`}>{stat.number}</div>
+                          <div className="text-xs text-blue-200">{stat.label}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
 
                 <form
                   onSubmit={handleSubmit}
@@ -121,7 +151,7 @@ const BarkingLessons = () => {
                     <Input
                       type="text"
                       placeholder="Enter pickup postcode"
-                      className="pl-10 bg-white border-gray-200"
+                      className="pl-10 bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
                       required
@@ -129,7 +159,7 @@ const BarkingLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group relative overflow-hidden"
+                    className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white group relative overflow-hidden"
                   >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -142,6 +172,22 @@ const BarkingLessons = () => {
                     />
                   </Button>
                 </form>
+
+                {/* Social Proof */}
+                <div className="flex items-center space-x-6 text-sm mt-6">
+                  <div className="flex items-center">
+                    <div className="flex -space-x-2 mr-3">
+                      {[1,2,3,4].map((i) => (
+                        <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
+                      ))}
+                    </div>
+                    <span className="text-blue-200">2000+ successful drivers</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                    <span className="text-blue-200">4.9/5 rating</span>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div

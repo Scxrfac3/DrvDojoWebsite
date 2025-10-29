@@ -76,12 +76,7 @@ const IsleOfDogsLessons = () => {
   return (
     <>
       <SEOMetaTags location="Isle of Dogs" />
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
 
       <Navbar />
 

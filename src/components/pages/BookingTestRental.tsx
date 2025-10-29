@@ -28,7 +28,7 @@ const BookingTestRental = () => {
 
   return (
     <div
-      className={`min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
+      className={`min-h-screen bg-slate-900 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
       {/* Animated background elements */}
       <div className="absolute inset-0">
@@ -165,37 +165,37 @@ const BookingTestRental = () => {
             <div className="mt-6">
               <h3 className="text-xl font-bold text-white mb-4">Other Packages</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Button 
-                  variant="outline" 
-                  className="text-white border-white/20 hover:bg-white/10"
+                <Button
+                  variant="outline"
+                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
                   onClick={() => window.location.href = '/booking/payg'}
                 >
                   Pay As You Go
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="text-white border-white/20 hover:bg-white/10"
+                <Button
+                  variant="outline"
+                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
                   onClick={() => window.location.href = '/booking/6hour'}
                 >
                   6-Hour Package
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="text-white border-white/20 hover:bg-white/10"
+                <Button
+                  variant="outline"
+                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
                   onClick={() => window.location.href = '/booking/10hour'}
                 >
                   10-Hour Package
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="text-white border-white/20 hover:bg-white/10"
+                <Button
+                  variant="outline"
+                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
                   onClick={() => window.location.href = '/booking/intensive'}
                 >
                   Intensive Course
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="text-white border-white/20 hover:bg-white/10"
+                <Button
+                  variant="outline"
+                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
                   onClick={() => window.location.href = '/booking/mocktest'}
                 >
                   Mock Test

@@ -44,74 +44,73 @@ const Terms = () => {
 
       <main className="pt-[100px] relative z-10">
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Learner Driver – Terms and conditions</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Terms of Service</h1>
 
           <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">In order to have driving lessons you must:</h2>
-            <ul className="list-disc list-inside ml-4 text-white/90">
-              <li>Be aged 17 or older (16 or over if disabled)</li>
-              <li>Hold a driving licence that is valid for the UK (provisional, full or an appropriate foreign licence)</li>
-            </ul>
-            <p className="mt-4 text-white/90">It is your responsibility to provide your instructor with proof that you have a valid licence to drive before the commencement of your first driving lesson. If you fail to provide this proof, your instructor is entitled to refuse to conduct the driving lesson but may still charge you for such driving lesson.</p>
+            <p className="text-lg text-white/90 mb-6">Welcome to Drive Dojo Driving School! We are committed to providing you with the highest quality of driving tuition. Please take a moment to read through our terms of service, which govern our lessons and services.</p>
+            
+            <div className="bg-blue-900/30 border-l-4 border-blue-500 p-4 mb-6 rounded">
+              <h3 className="text-xl font-semibold text-blue-300 mb-2">Important Policy: Driving Test Car Hire</h3>
+              <p className="text-white/90">Please note that the hire of a Drive Dojo Driving School car for a practical driving test is exclusively available to students who have completed a minimum of 10 hours of practical training with one of our instructors.</p>
+            </div>
           </section>
 
           <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">PAYING FOR LESSONS</h2>
-
-            <h3 className="text-xl font-medium mb-2 text-white">PRE-PAYING WITH DrvDojo Driving School</h3>
-            <p className="mb-4 text-white/90">DrvDojo Driving School operates its website and its contact centre in order to allow you, the customer, to purchase driving lessons packages with a DrvDojo Driving School driving instructor. You can pay for driving lessons in advance via one of the following methods:</p>
-            <ul className="list-disc list-inside ml-4 mb-4 text-white/90">
-              <li>Payment by credit or debit card online at drvdojo.co.uk (example URL, please replace with actual)</li>
-            </ul>
-            <p className="mb-4 text-white/90">As part of its booking service, DrvDojo Driving School confirm and agree that the following shall apply to all pre-paid bookings:</p>
-            <ul className="list-disc list-inside ml-4 mb-4 text-white/90">
-              <li>Payment from your funds to the instructor for lessons delivered will only be made in circumstances where you have not raised a dispute with DrvDojo Driving School in line with the policy detailed below;</li>
-              <li>Following delivery of each driving lesson, your instructor will confirm to DrvDojo Driving School that the driving lesson has been delivered.</li>
-            </ul>
-            <p className="mb-4 text-white/90">In the event of a query or dispute about any aspect of your driving lessons or your instructor, you should contact DrvDojo Driving School within the time frame detailed above and we will endeavour to resolve the issue promptly.</p>
-
-            <h3 className="text-xl font-medium mb-2 text-white">PAYING YOUR INSTRUCTOR DIRECTLY</h3>
-            <p className="mb-4 text-white/90">You can also pay for lessons by paying your instructor directly without involving DrvDojo Driving School. Your instructor will confirm which payment methods they can accept. If you pay your instructor directly you should obtain a receipt. DrvDojo Driving School does not accept any responsibility for any payments you make directly to your instructor.</p>
+            <h2 className="text-2xl font-semibold mb-4 text-white">1. Your Lessons & Instructor</h2>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Provisional Licence</h3>
+            <p className="mb-4 text-white/90">You are required to be in possession of a current, valid UK provisional driving licence. On your first lesson, you must present this to your instructor for verification. It is your responsibility to inform your instructor of any changes to your licence.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Instructor Relationship</h3>
+            <p className="mb-4 text-white/90">Your instructor is a self-employed franchisee of Drive Dojo Driving School. You and your instructor are responsible for agreeing on all matters relating to the timing, location, and duration of individual lessons.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Payments</h3>
+            <p className="mb-4 text-white/90">Financial transactions for lessons are made directly between you and your instructor. Any refund or reimbursement must be claimed from your instructor directly. Lesson fees shall be paid in advance of each session.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Block Bookings</h3>
+            <p className="text-white/90">Any block lessons paid for must be taken within 6 months of purchase. Refunds for partially used block bookings will be calculated based on the lessons taken, charged at the standard non-discounted hourly rate.</p>
           </section>
 
           <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">REFUND POLICY</h2>
-            <p className="mb-4 text-white/90">DrvDojo Driving School operates a “No Quibble Refund Guarantee”. If you decide you no longer wish to have driving lessons through DrvDojo Driving School, we will refund any funds remaining in your in line with the refund terms below, with 10% charge.</p>
-            <p className="mb-4 text-white/90">For security reasons, any refund of your funds will be made back to the card from which the original payment was taken. If for any reason those card details have become invalid before any refund can be made, DrvDojo Driving School reserves the right to verify the identity of the person requesting the refund and seek verification of the validity of any alternative card or bank account details provided by you.</p>
-            <p className="mb-4 text-white/90">Any funds paid directly to your instructor are not protected.</p>
-            <p className="mb-4 text-white/90">Funds paid to DrvDojo Driving School for prepaid driving lessons to be provided by your instructor must be applied to driving lessons by you within six months of the date of your original payment to DrvDojo Driving School. You acknowledge that after the expiry of this six month period, you will not be entitled to a refund of any funds not applied to driving lessons or to utilise these funds for booking further driving lessons. If, at any point during this six month period you determine that you do not wish to take any more of your prepaid driving lessons, you are entitled to a refund of the balance of your funds.</p>
-            <p className="mb-4 text-white/90">You can only pay for driving lessons via the methods outlined above. You cannot pay for driving lessons via any other method and neither DrvDojo Driving School nor your instructor accept any liability for monies for lessons paid for by any other method than those outlined above. We do not for example arrange driving lessons through any social media channel or auction site or any other website.</p>
+            <h2 className="text-2xl font-semibold mb-4 text-white">2. The Practical Driving Test</h2>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Instructor's Discretion</h3>
+            <p className="mb-4 text-white/90">Your instructor reserves the right to refuse the use of their car for a practical test if they feel you have not reached a safe and competent standard of driving.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Vehicle Responsibility</h3>
+            <p className="mb-4 text-white/90">During the practical driving test, you (not the examiner or instructor) are responsible for the vehicle. In the unlikely event of a road traffic accident, you would be liable for any insurance excess (up to £800).</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Short Notice Tests</h3>
+            <p className="text-white/90">A "short notice test" is defined as a test booked with two weeks or less notice from the first planned lesson. These packages require a minimum purchase of five hours of tuition (2-hour assessment, 3-hour test day hire). If your instructor deems you are not test-ready after the assessment, they are not obligated to take you, and we are not liable for any lost DVSA test fees.</p>
           </section>
 
           <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">REDEEMING PREPAID LESSONS</h2>
-            <p className="mb-4 text-white/90">You and your instructor are responsible for agreeing such matters as the timing, location and duration of individual driving lessons.</p>
-            <p className="mb-4 text-white/90">You must notify your instructor of any matters existing at any time that may affect your ability or entitlement to have driving lessons, for example, but not limited to, any lack, or loss, of a valid driving licence.</p>
-            <p className="mb-4 text-white/90">Your instructor cannot guarantee that they will be available each time you choose.</p>
+            <h2 className="text-2xl font-semibold mb-4 text-white">3. Cancellations, Changes & Refunds</h2>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Cancelling a Lesson</h3>
+            <p className="mb-4 text-white/90">You must give your instructor a minimum of 48 hours' notice to cancel a scheduled lesson. Cancellations made with less than 48 hours' notice will be charged in full. This must be done by contacting your instructor directly.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Instructor Cancellations</h3>
+            <p className="mb-4 text-white/90">If your instructor needs to cancel a lesson due to mechanical breakdown or any other cause, they reserve the right to rearrange the lesson to a time convenient for both parties.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Cancelling a Driving Test</h3>
+            <p className="mb-4 text-white/90">The DVSA requires 10 clear working days to cancel or reschedule a driving test. You may lose your DVSA test fee if you do not provide sufficient notice.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Refunds</h3>
+            <p className="text-white/90">Refunds for pre-paid tuition are subject to our cancellation policy. Partial block booking refunds will be calculated pro-rata, with lessons already taken being charged at the full standard rate.</p>
           </section>
 
           <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">CANCELLATION OF LESSONS</h2>
-            <p className="mb-4 text-white/90">If You or Your Instructor wish to cancel a lesson a minimum of 48 hours’ prior notice should be given. If Your Instructor cancels a lesson without giving this minimum period of notice Your Instructor shall rearrange the lesson. Cancellations made by You must be made through the office or directly between You and Your Instructor. Please note that the office is not open on Sundays. Cancellation requests cannot be actioned outside of office hours.</p>
-            <p className="mb-4 text-white/90">If you do not give at least 48 hours’ notice of cancellation You will be charged for the lesson(s) concerned in full.</p>
-            <p className="mb-4 text-white/90">In the event of you having booked your driving test, the Driver and Vehicle Standards Agency (DVSA) requires you to give three clear working days to cancel your test. This may mean that you may lose your DVSA test fee if your instructor says you’re not ready for your test within this three-day notice period.</p>
-          </section>
-
-          <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">PAYMENTS AND LESSON BOOKINGS</h2>
-            <p className="mb-4 text-white/90">You must pay for any tuition at least 48 hours before the start of the lesson. Please note that the office is not open on Sundays. Payments cannot be taken outside office hours. You can use one of the following methods of payment:</p>
-            <ul className="list-disc list-inside ml-4 mb-4 text-white/90">
-              <li>Voucher and gift cards have no cash value and have to be redeemed against tuition.</li>
-              <li>Voucher and gift cards are not transferable once they have been redeemed.</li>
-              <li>Payment by cash or cheque direct to Your Instructor (any cheque must be made payable to Your Instructor)</li>
-            </ul>
-            <p className="mb-4 text-white/90">Please note debit and cards are valid until the date shown thereon.</p>
-            <p className="mb-4 text-white/90">DrvDojo Driving School has no responsibility or liability to You for payments made by any other means. If You pay Your Instructor directly by any method, You should obtain a receipt. DrvDojo Driving School accepts no responsibility for any payments made directly to instructors.</p>
-          </section>
-
-          <section className="mb-12 p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-white">PRICE CHANGES</h2>
-            <p className="mb-4 text-white/90">The cost of prepaid tuition is based on the lesson price in force at the time of booking and with the exception of the circumstances set out below, will be honoured for 12 months thereafter irrespective of any price increase that may occur between the date of booking and when the lessons are taken. Any unused lessons remaining after 12 months have elapsed shall have any lesson price increase applied prior to the lessons being taken.</p>
+            <h2 className="text-2xl font-semibold mb-4 text-white">4. General Terms</h2>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Changes to Terms</h3>
+            <p className="mb-4 text-white/90">We may change the terms of this Agreement at any time by publishing modified terms on our website. Your continued use of our services after a change has been posted will signify your acceptance of the modified terms.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Transferability</h3>
+            <p className="mb-4 text-white/90">You cannot sell or transfer lessons which have been purchased in your name to any other person.</p>
+            
+            <h3 className="text-xl font-medium mb-2 text-blue-300">Your Rights</h3>
+            <p className="text-white/90">Your statutory rights as a consumer are not affected by these terms. If you have just changed your mind about our services, you may be able to get a refund if you are within the 14-day cooling-off period, subject to deductions for any services already provided.</p>
           </section>
         </div>
       </main>

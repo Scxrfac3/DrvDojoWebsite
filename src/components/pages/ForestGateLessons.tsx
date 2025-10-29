@@ -32,12 +32,7 @@ const ForestGateLessons = () => {
         keywords="driving lessons Forest Gate, intensive driving lessons E7, automatic driving lessons Forest Gate, DVSA approved instructor, Red Driving School, AA Driving School, driving lessons E7, driving instructor Forest Gate, first time pass, E postcode driving lessons, driving lessons East London"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
       />
-      <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-sky-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-sky-300 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full opacity-20 blur-3xl"></div>
+      <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
 
       <Navbar />
 
@@ -107,7 +102,7 @@ const ForestGateLessons = () => {
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/images/certifications/C4.png"
+                    src="/images/certifications/FrontLOW.png"
                     alt="Driving lessons in Forest Gate"
                     className="w-full h-auto object-cover rounded-2xl"
                   />

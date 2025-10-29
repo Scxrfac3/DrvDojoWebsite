@@ -108,7 +108,7 @@ const BlogArticleContent = ({ content }: BlogArticleContentProps) => {
               viewport={{ once: true, margin: "-50px" }}
             >
               {items.map((item, itemIndex) => {
-                // Remove the bullet point or number prefix
+                // Remove bullet point or number prefix
                 const cleanItem = isNumbered
                   ? item.replace(/^\d+\. /, "")
                   : item.startsWith("- ")

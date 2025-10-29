@@ -19,135 +19,70 @@ import {
   Filter,
   ArrowRight,
 } from "lucide-react";
+import { BlogArticle } from "../../types/BlogArticle";
+import { blogArticles } from "../../data/blogArticles";
+
+// Debug: Check if blogArticles is imported correctly
+console.log("Imported blogArticles:", blogArticles);
+console.log("Import path check:", typeof blogArticles, blogArticles.length);
 
 interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
   content: string;
-  author: string;
+  author: { name: string; avatar?: string };
   date: string;
-  readTime: string;
+  readTime: number;
   category: string;
   tags: string[];
   imageUrl: string;
   likes: number;
   comments: number;
   featured?: boolean;
+  slug: string;
 }
 
-const CATEGORIES = [
-  "Beginner Tips",
-  "Advanced Skills",
-  "Test Preparation",
-  "Driving Psychology",
-  "Road Safety",
-  "Instructor Insights",
-];
+// Convert blog articles to the format expected by the Blog component
+const convertToBlogPost = (article: BlogArticle): BlogPost => ({
+  id: article.id,
+  title: article.title,
+  excerpt: article.excerpt,
+  content: article.content,
+  author: {
+    name: article.author.name,
+    avatar: article.author.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo"
+  },
+  date: article.publishedDate,
+  readTime: article.readTime || 5,
+  category: article.category,
+  tags: article.tags,
+  imageUrl: article.featuredImage || "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+  likes: article.likes || 0,
+  comments: article.comments || 0,
+  featured: article.tags.includes("featured") || false,
+  slug: article.slug,
+});
 
-const MOCK_POSTS: BlogPost[] = [
-  {
-    id: "1",
-    title: "5 Essential Tips for First-Time Drivers in East London",
-    excerpt:
-      "Navigate East London's busy streets confidently with these proven beginner techniques that will help you master urban driving.",
-    content: "",
-    author: "Sarah Johnson",
-    date: "2023-09-15",
-    readTime: "5 min",
-    category: "Beginner Tips",
-    tags: ["beginners", "east london", "confidence", "urban driving"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
-    likes: 124,
-    comments: 32,
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "How to Master Parallel Parking in Tight London Spaces",
-    excerpt:
-      "Learn the step-by-step technique our instructors use to help students conquer one of driving's most challenging skills.",
-    content: "",
-    author: "Michael Chen",
-    date: "2023-08-28",
-    readTime: "7 min",
-    category: "Advanced Skills",
-    tags: ["parking", "techniques", "london", "skills"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1473042904451-00171c69419d?w=800&q=80",
-    likes: 98,
-    comments: 24,
-  },
-  {
-    id: "3",
-    title: "Driving Test Day: What to Expect and How to Prepare",
-    excerpt:
-      "Our expert instructors reveal insider tips to help you stay calm and pass your driving test on the first attempt.",
-    content: "",
-    author: "Emma Williams",
-    date: "2023-09-02",
-    readTime: "8 min",
-    category: "Test Preparation",
-    tags: ["test", "preparation", "anxiety", "success"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
-    likes: 156,
-    comments: 41,
-  },
-  {
-    id: "4",
-    title: "Overcoming Driving Anxiety: A Student's Journey",
-    excerpt:
-      "Read how one of our students went from terrified to confident on London's busiest roads using these mental techniques.",
-    content: "",
-    author: "James Peterson",
-    date: "2023-08-15",
-    readTime: "6 min",
-    category: "Driving Psychology",
-    tags: ["anxiety", "confidence", "mental health", "success story"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1541199249251-f713e6145474?w=800&q=80",
-    likes: 203,
-    comments: 57,
-  },
-  {
-    id: "5",
-    title: "Night Driving in London: Essential Safety Tips",
-    excerpt:
-      "Discover how to navigate London after dark with confidence using these proven safety techniques from our experienced instructors.",
-    content: "",
-    author: "Olivia Thompson",
-    date: "2023-09-10",
-    readTime: "5 min",
-    category: "Road Safety",
-    tags: ["night driving", "safety", "london", "visibility"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?w=800&q=80",
-    likes: 87,
-    comments: 19,
-  },
-  {
-    id: "6",
-    title: "From Instructor to Student: Lessons I've Learned",
-    excerpt:
-      "Our senior instructor shares surprising insights from 15 years of teaching East London drivers that will change how you approach learning.",
-    content: "",
-    author: "David Wilson",
-    date: "2023-08-20",
-    readTime: "9 min",
-    category: "Instructor Insights",
-    tags: ["instructor", "experience", "teaching", "learning"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=800&q=80",
-    likes: 112,
-    comments: 28,
-  },
-];
+// Get unique categories from blog articles
+const CATEGORIES = Array.from(new Set(blogArticles.map(article => article.category)));
+
+// Convert all blog articles to BlogPost format
+const BLOG_POSTS: BlogPost[] = blogArticles.map(convertToBlogPost);
+
+// Debug: Log the blog articles and converted posts
+console.log("Blog articles from data file:", blogArticles);
+console.log("Converted blog posts:", BLOG_POSTS);
+console.log("Number of blog articles:", blogArticles.length);
+console.log("Number of converted posts:", BLOG_POSTS.length);
 
 const Blog = () => {
-  const [posts, setPosts] = useState<BlogPost[]>(MOCK_POSTS);
-  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(MOCK_POSTS);
+  const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>(BLOG_POSTS);
+  
+  // Debug: Log the state
+  console.log("Posts state:", posts);
+  console.log("Filtered posts state:", filteredPosts);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -375,7 +310,7 @@ const Blog = () => {
                     <div className="flex items-center text-sm text-slate-500 mb-4">
                       <div className="flex items-center mr-4">
                         <User className="h-4 w-4 mr-1" />
-                        {featuredPost.author}
+                        {featuredPost.author.name}
                       </div>
                       <div className="flex items-center mr-4">
                         <Calendar className="h-4 w-4 mr-1" />
@@ -488,7 +423,7 @@ const Blog = () => {
                   <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
                     <div className="flex items-center">
                       <User className="h-3 w-3 mr-1" />
-                      {post.author}
+                      {post.author.name}
                     </div>
                     <div className="flex items-center">
                       <Calendar className="h-3 w-3 mr-1" />
@@ -499,7 +434,7 @@ const Blog = () => {
                     </div>
                     <div className="flex items-center">
                       <Clock className="h-3 w-3 mr-1" />
-                      {post.readTime}
+                      {post.readTime} min
                     </div>
                   </div>
                   <div className="flex justify-between items-center pt-2 border-t border-slate-100">

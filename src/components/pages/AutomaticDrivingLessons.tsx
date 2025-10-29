@@ -74,7 +74,7 @@ const AutomaticDrivingLessons = () => {
 
       <main className="pt-[100px] relative z-10">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white py-20 relative overflow-hidden min-h-screen flex items-center">
+        <section className="relative bg-slate-900 text-white py-20 relative overflow-hidden min-h-screen flex items-center">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>

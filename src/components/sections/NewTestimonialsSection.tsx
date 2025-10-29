@@ -171,8 +171,8 @@ export default function NewTestimonialsSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black text-gray-900 mb-6">
-            Real Talk from Our 
-            <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent"> Squad</span> 💬
+            Driving lesson Reviews and
+            <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent"> Testimonials</span> 💬
           </h2>
           <p className="text-xl text-gray-600">
             Don't just take our word for it - see what our students are saying! 

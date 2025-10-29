@@ -51,7 +51,7 @@ const Footer = ({
     { title: "Contact", href: "/contact" },
     { title: "Blog", href: "/about" },
     { title: "FAQ", href: "/about" },
-    { title: "Terms & Conditions", href: "/terms" },
+    { title: "Terms of Service", href: "/terms" },
     { title: "Privacy Policy", href: "/" },
     { title: "Careers", href: "/" },
   ],

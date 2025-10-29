@@ -168,7 +168,7 @@ const NewHeroSection = ({
             <div className="relative z-10 group">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/images/certifications/BANNER_MAIN3276.png"
+                  src="/images/certifications/FrontLOW.png"
                   alt="Professional driving instructor in modern training vehicle"
                   className="w-full h-96 object-cover"
                 />

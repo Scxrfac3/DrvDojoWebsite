@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
-import { Clock, Tag, ArrowRight } from "lucide-react";
+import { Clock, Tag, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { BlogArticle } from "../../types/BlogArticle";
+import { blogArticles } from "../../data/blogArticles";
+
+// Debug: Check if blogArticles is imported correctly
+console.log("BlogPage - Imported blogArticles:", blogArticles);
+console.log("BlogPage - Number of articles:", blogArticles.length);
 
 interface BlogPost {
   id: string;
@@ -18,14 +24,15 @@ interface BlogPost {
   readTime?: number;
 }
 
-const blogPosts: BlogPost[] = [
+// Original blog posts (hardcoded ones that were already on the page)
+const originalBlogPosts: BlogPost[] = [
   {
     id: "1",
     title: "How Many Driving Lessons Do You Need? A Complete Guide",
     excerpt:
       "Discover the optimal number of driving lessons required to pass your test. Learn about the average 40-45 hours of professional instruction and factors that can affect your learning timeline.",
     featuredImage:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+      "/images/certifications/FrontLOW.png",
     date: "August 28, 2023",
     slug: "how-many-driving-lessons-do-you-need",
     category: "Learning Tips",
@@ -37,7 +44,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Deciding between intensive and standard driving courses? Learn the pros and cons of each approach to find the best option for your learning style, schedule, and experience level.",
     featuredImage:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+      "/images/certifications/FrontLOW.png",
     date: "August 20, 2023",
     slug: "intensive-vs-standard-driving-courses",
     category: "Learning Tips",
@@ -49,7 +56,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Preparing for the hazard perception test? These expert tips will help you identify potential hazards early, develop proper scanning techniques, and pass your test with confidence.",
     featuredImage:
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
+      "/images/certifications/FrontLOW.png",
     date: "June 30, 2023",
     slug: "hazard-perception-test-tips",
     category: "Test Preparation",
@@ -61,7 +68,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Failed your driving test? You're not alone—over 50% of learners don't pass first time! Discover 7 proven strategies to bounce back, manage test anxiety, and pass your next driving test with confidence.",
     featuredImage:
-      "https://images.unsplash.com/photo-1494905998402-395d579af36f?w=800&q=80",
+      "/images/certifications/FrontLOW.png",
     date: "January 23, 2023",
     slug: "get-over-failing-your-driving-test",
     category: "Test Preparation",
@@ -73,7 +80,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Looking for the perfect driving instructor in London, especially near Goodmayes test centre? Discover the essential qualities that make a great instructor who'll help you pass your test first time!",
     featuredImage:
-      "https://images.unsplash.com/photo-1560009320-c01920eef9f8?w=800&q=80",
+      "/images/certifications/FrontLOW.png",
     date: "April 23, 2023",
     slug: "top-5-qualities-london-driving-instructor-goodmayes",
     category: "Instructor Tips",
@@ -85,7 +92,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Considering a career as a driving instructor? Learn about the qualifications needed, earning potential of £30K+, flexible working hours, and how to join this rewarding profession in London's growing market.",
     featuredImage:
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&q=80",
+      "/images/certifications/FrontLOW.png",
     date: "January 20, 2023",
     slug: "why-now-is-perfect-time-to-become-driving-instructor",
     category: "Career Opportunities",
@@ -93,7 +100,63 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
+// Convert blog articles to the format expected by the BlogPage component
+const convertToBlogPost = (article: BlogArticle): BlogPost => ({
+  id: article.id,
+  title: article.title,
+  excerpt: article.excerpt,
+  featuredImage: article.featuredImage || "/images/certifications/FrontLOW.png",
+  date: new Date(article.publishedDate).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }),
+  slug: article.slug,
+  category: article.category,
+  readTime: article.readTime || 5,
+});
+
+// Convert all blog articles to BlogPost format
+const newBlogPosts: BlogPost[] = blogArticles.map(convertToBlogPost);
+
+// Debug: Log the converted posts
+console.log("BlogPage - Converted new blog posts:", newBlogPosts);
+
+// Group new articles by question type (based on title prefix)
+const groupArticlesByQuestionType = (articles: BlogPost[]) => {
+  const groups: Record<string, BlogPost[]> = {};
+  
+  articles.forEach(article => {
+    const title = article.title.toLowerCase();
+    let questionType = "Other";
+    
+    if (title.startsWith("how ")) questionType = "HOW";
+    else if (title.startsWith("why ")) questionType = "WHY";
+    else if (title.startsWith("which ")) questionType = "WHICH";
+    else if (title.startsWith("where ")) questionType = "WHERE";
+    else if (title.startsWith("when ")) questionType = "WHEN";
+    else if (title.startsWith("what ")) questionType = "WHAT";
+    else if (title.startsWith("can ")) questionType = "CAN";
+    else if (title.startsWith("are ")) questionType = "ARE";
+    
+    if (!groups[questionType]) {
+      groups[questionType] = [];
+    }
+    groups[questionType].push(article);
+  });
+  
+  return groups;
+};
+
+const articleGroups = groupArticlesByQuestionType(newBlogPosts);
+
 export default function BlogPage() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  
+  const toggleDropdown = (questionType: string) => {
+    setOpenDropdown(openDropdown === questionType ? null : questionType);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -201,7 +264,7 @@ export default function BlogPage() {
               >
                 <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80"
+                    src="/images/certifications/FrontLOW.png"
                     alt="Featured blog post"
                     className="w-full h-full object-cover"
                   />
@@ -299,7 +362,7 @@ export default function BlogPage() {
                 <div className="relative">
                   <div className="relative overflow-hidden rounded-2xl shadow-lg">
                     <img
-                      src="https://images.unsplash.com/photo-1553440569-bcc63803a29d?w=800&q=80"
+                      src="/images/certifications/FrontLOW.png"
                       alt="Automatic driving lesson"
                       className="w-full h-80 object-cover"
                     />
@@ -320,23 +383,25 @@ export default function BlogPage() {
         </section>
 
         <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-              Latest Articles
-            </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Stay updated with our freshest content to help you become a
-              confident and skilled driver.
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+          {/* Original Articles Section */}
+          <div className="mb-16">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                Featured Articles
+              </h2>
+              <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+                Our most popular driving tips and guides to help you on your journey to becoming a confident driver.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {originalBlogPosts.map((post, index) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -385,6 +450,104 @@ export default function BlogPage() {
                 </Card>
               </motion.div>
             ))}
+            </div>
+          </div>
+
+          {/* New Articles Section with Dropdowns */}
+          <div>
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-600">
+                SEO Article Collection
+              </h2>
+              <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+                Browse our comprehensive collection of articles organized by question type to find exactly what you're looking for.
+              </p>
+            </motion.div>
+
+            <div className="space-y-6">
+              {Object.entries(articleGroups).map(([questionType, articles]) => (
+                <motion.div
+                  key={questionType}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <button
+                    onClick={() => toggleDropdown(questionType)}
+                    className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  >
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">{questionType} Articles</h3>
+                      <p className="text-gray-600">{articles.length} articles in this category</p>
+                    </div>
+                    {openDropdown === questionType ? (
+                      <ChevronUp className="h-5 w-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-gray-500" />
+                    )}
+                  </button>
+
+                  <AnimatePresence>
+                    {openDropdown === questionType && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="border-t border-gray-200"
+                      >
+                        <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {articles.map((article, index) => (
+                            <motion.div
+                              key={article.id}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.3, delay: index * 0.1 }}
+                              className="flex space-x-4"
+                            >
+                              <div className="flex-shrink-0">
+                                <img
+                                  src={article.featuredImage}
+                                  alt={article.title}
+                                  className="w-24 h-24 rounded-lg object-cover"
+                                />
+                              </div>
+                              <div className="flex-grow">
+                                <h4 className="font-bold text-gray-800 mb-2 line-clamp-2">
+                                  {article.title}
+                                </h4>
+                                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                                  {article.excerpt}
+                                </p>
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center text-xs text-gray-500">
+                                    <Clock className="h-3 w-3 mr-1" />
+                                    <span>{article.readTime} min read</span>
+                                  </div>
+                                  <Link
+                                    to={`/blog/${article.slug}`}
+                                    className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                                  >
+                                    Read
+                                    <ArrowRight className="ml-1 h-3 w-3 inline" />
+                                  </Link>
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </main>

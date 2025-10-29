@@ -98,7 +98,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white relative overflow-hidden">
+      <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
@@ -694,7 +694,7 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Pay-as-you-go */}
                   <motion.div
-                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                    className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/20 relative h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -706,33 +706,33 @@ const Contact = () => {
                     <div className="absolute top-4 left-4 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
                       🚗 Try Us Out
                     </div>
-                    <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-blue-50 to-white">
-                      <h3 className="text-xl font-bold mb-2 text-gray-900">
+                    <div className="pt-14 pb-6 px-6">
+                      <h3 className="text-xl font-bold mb-2 text-white">
                         Pay-as-you-go
                       </h3>
-                      <p className="text-sm text-gray-500 mb-3">
+                      <p className="text-sm text-blue-100 mb-3">
                         Perfect for trying us out
                       </p>
                       <div className="flex items-end mb-4">
-                        <span className="text-3xl font-bold text-gray-900">
+                        <span className="text-3xl font-bold text-white">
                           £76
                         </span>
-                        <span className="text-lg text-gray-500 ml-2 mb-1">
+                        <span className="text-lg text-blue-200 ml-2 mb-1">
                           /2 hours
                         </span>
                       </div>
                       <ul className="space-y-2 mb-6">
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>2 hours lesson</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-blue-100">2 hours lesson</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Personalized learning</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-blue-100">Personalized learning</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Beginner friendly</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-blue-100">Beginner friendly</span>
                         </li>
                       </ul>
                       <motion.div
@@ -759,7 +759,7 @@ const Contact = () => {
 
                   {/* 10-Hour Package */}
                   <motion.div
-                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                    className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/20 relative h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -774,33 +774,33 @@ const Contact = () => {
                     <div className="absolute top-4 left-4 bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
                       🔥 Best Value
                     </div>
-                    <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-orange-50 to-white">
-                      <h3 className="text-xl font-bold mb-2 text-gray-900">
+                    <div className="pt-14 pb-6 px-6">
+                      <h3 className="text-xl font-bold mb-2 text-white">
                         10-Hour Package
                       </h3>
-                      <p className="text-sm text-gray-500 mb-3">
+                      <p className="text-sm text-orange-100 mb-3">
                         Most Popular - Best value for money!
                       </p>
                       <div className="flex items-end mb-4">
-                        <span className="text-3xl font-bold text-gray-900">
+                        <span className="text-3xl font-bold text-white">
                           £340
                         </span>
-                        <span className="text-lg text-gray-500 ml-2 mb-1">
+                        <span className="text-lg text-orange-200 ml-2 mb-1">
                           /package
                         </span>
                       </div>
                       <ul className="space-y-2 mb-6">
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>10 hours of lessons</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-orange-100">10 hours of lessons</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Progress tracking</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-orange-100">Progress tracking</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Best value for most learners</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-orange-100">Best value for most learners</span>
                         </li>
                       </ul>
                       <motion.div
@@ -827,7 +827,7 @@ const Contact = () => {
 
                   {/* Intensive Lessons */}
                   <motion.div
-                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                    className="bg-white/10 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-white/20 relative h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -839,33 +839,33 @@ const Contact = () => {
                     <div className="absolute top-4 left-4 bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
                       ⚡ Fast Track
                     </div>
-                    <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-green-50 to-white">
-                      <h3 className="text-xl font-bold mb-2 text-gray-900">
+                    <div className="pt-14 pb-6 px-6">
+                      <h3 className="text-xl font-bold mb-2 text-white">
                         Intensive Lessons
                       </h3>
-                      <p className="text-sm text-gray-500 mb-3">
+                      <p className="text-sm text-green-100 mb-3">
                         Fast-track your learning
                       </p>
                       <div className="flex items-end mb-4">
-                        <span className="text-3xl font-bold text-gray-900">
+                        <span className="text-3xl font-bold text-white">
                           Contact for Quote
                         </span>
-                        <span className="text-lg text-gray-500 ml-2 mb-1">
+                        <span className="text-lg text-green-200 ml-2 mb-1">
                           /tailored
                         </span>
                       </div>
                       <ul className="space-y-2 mb-6">
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Tailored to student needs</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-green-100">Tailored to student needs</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Contact for quote based on location</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-green-100">Contact for quote based on location</span>
                         </li>
                         <li className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                          <span>Comprehensive training</span>
+                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-green-100">Comprehensive training</span>
                         </li>
                       </ul>
                       <motion.div
