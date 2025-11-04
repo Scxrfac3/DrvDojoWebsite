@@ -84,36 +84,36 @@
   to = "/booking"
   status = 301
 
-# Redirects for booking pages
+# Redirects for booking pages (301 permanent redirects)
 [[redirects]]
-  from = "/booking/payg"
-  to = "/booking-payg.html"
-  status = 200
+   from = "/booking/payg"
+   to = "/booking-payg.html"
+   status = 301
 
 [[redirects]]
-  from = "/booking/6hour"
-  to = "/booking-6hour.html"
-  status = 200
+   from = "/booking/6hour"
+   to = "/booking-6hour.html"
+   status = 301
 
 [[redirects]]
-  from = "/booking/10hour"
-  to = "/booking-10hour.html"
-  status = 200
+   from = "/booking/10hour"
+   to = "/booking-10hour.html"
+   status = 301
 
 [[redirects]]
-  from = "/booking/intensive"
-  to = "/booking-intensive.html"
-  status = 200
+   from = "/booking/intensive"
+   to = "/booking-intensive.html"
+   status = 301
 
 [[redirects]]
-  from = "/booking/mocktest"
-  to = "/booking-mocktest.html"
-  status = 200
+   from = "/booking/mocktest"
+   to = "/booking-mocktest.html"
+   status = 301
 
 [[redirects]]
-  from = "/booking/testrental"
-  to = "/booking-testrental.html"
-  status = 200
+   from = "/booking/testrental"
+   to = "/booking-testrental.html"
+   status = 301
 
 [[redirects]]
   from = "/contact-us"
@@ -171,19 +171,19 @@
   status = 301
 
 [[redirects]]
-  from = "/terms"
-  to = "/"
-  status = 301
+   from = "/terms"
+   to = "/terms"
+   status = 301
 
 [[redirects]]
-  from = "/privacy"
-  to = "/"
-  status = 301
+   from = "/privacy"
+   to = "/terms"
+   status = 301
 
 [[redirects]]
-  from = "/cookies"
-  to = "/"
-  status = 301
+   from = "/cookies"
+   to = "/terms"
+   status = 301
 
 # IMPORTANT: This rule must be the LAST redirect rule in the file.
 # It tells Netlify to redirect all other requests to the main index.html file
