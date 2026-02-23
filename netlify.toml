@@ -84,36 +84,67 @@
   to = "/booking"
   status = 301
 
-# Redirects for booking pages (301 permanent redirects)
+# Redirects for booking pages - Point to React app (index.html) so React Router handles them
 [[redirects]]
    from = "/booking/payg"
-   to = "/booking-payg.html"
-   status = 301
+   to = "/index.html"
+   status = 200
 
 [[redirects]]
    from = "/booking/6hour"
-   to = "/booking-6hour.html"
-   status = 301
+   to = "/index.html"
+   status = 200
 
 [[redirects]]
    from = "/booking/10hour"
-   to = "/booking-10hour.html"
-   status = 301
+   to = "/index.html"
+   status = 200
 
 [[redirects]]
    from = "/booking/intensive"
-   to = "/booking-intensive.html"
-   status = 301
+   to = "/index.html"
+   status = 200
 
 [[redirects]]
    from = "/booking/mocktest"
-   to = "/booking-mocktest.html"
-   status = 301
+   to = "/index.html"
+   status = 200
 
 [[redirects]]
    from = "/booking/testrental"
-   to = "/booking-testrental.html"
-   status = 301
+   to = "/index.html"
+   status = 200
+
+# Also redirect the old .html URLs to the React app for consistency
+[[redirects]]
+   from = "/booking-payg.html"
+   to = "/index.html"
+   status = 200
+
+[[redirects]]
+   from = "/booking-6hour.html"
+   to = "/index.html"
+   status = 200
+
+[[redirects]]
+   from = "/booking-10hour.html"
+   to = "/index.html"
+   status = 200
+
+[[redirects]]
+   from = "/booking-intensive.html"
+   to = "/index.html"
+   status = 200
+
+[[redirects]]
+   from = "/booking-mocktest.html"
+   to = "/index.html"
+   status = 200
+
+[[redirects]]
+   from = "/booking-testrental.html"
+   to = "/index.html"
+   status = 200
 
 [[redirects]]
   from = "/contact-us"
