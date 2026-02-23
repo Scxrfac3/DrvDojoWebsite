@@ -44,6 +44,7 @@ const Terms = lazy(() => import("./components/pages/Terms"));
 const Waitlist = lazy(() => import("./components/pages/Waitlist"));
 const BookingSuccess = lazy(() => import("./components/pages/BookingSuccess"));
 const BookingCancel = lazy(() => import("./components/pages/BookingCancel"));
+const EastLondonAutomatic = lazy(() => import("./components/pages/EastLondonAutomatic"));
 
 function App() {
   return (
@@ -103,6 +104,7 @@ function App() {
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/booking/success" element={<BookingSuccess />} />
           <Route path="/booking/cancel" element={<BookingCancel />} />
+          <Route path="/east-london-automatic" element={<EastLondonAutomatic />} />
           <Route
             path="/blog/:slug"
             element={

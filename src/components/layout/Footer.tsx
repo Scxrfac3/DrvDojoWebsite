@@ -110,13 +110,13 @@ const Footer = ({
   };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-white via-sky-100 to-blue-100 text-gray-900 py-16 px-4 md:px-8 lg:px-12">
+    <footer className="relative overflow-hidden bg-[#0d0d0d] text-white border-t border-white/10">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 rounded-full bg-white/10"
+            className="absolute w-2 h-2 rounded-full bg-primary/10"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
@@ -135,7 +135,7 @@ const Footer = ({
         ))}
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 px-4 md:px-8 lg:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and About */}
           <motion.div
@@ -150,25 +150,23 @@ const Footer = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-full">
+              <div className="bg-primary/20 p-2 rounded-full border border-primary/30">
                 <img
-                  src="/images/certifications/DDojo.png"
+                  src="/images/certifications/ADI-Footer.png"
                   alt="Drive Dojo Logo"
                   className="h-10 w-10"
                 />
               </div>
             </motion.div>
-            <p className="text-gray-700 text-sm">
-              Professional driving instruction with a focus on safety,
-              confidence, and skill development. Based in London to bring
-              innovation to driver education.
+            <p className="text-gray-400 text-sm">
+              Premium automatic driving lessons in East London & Essex. Learn to drive in a Mercedes-Benz A-Class with DVSA approved instructors.
             </p>
             <motion.div
-              className="flex items-center space-x-2 text-sm text-sky-600"
+              className="flex items-center space-x-2 text-sm text-primary"
               whileHover={{ x: 5 }}
             >
               <Rocket className="h-4 w-4" />
-              <span>London Based</span>
+              <span>East London & Essex</span>
             </motion.div>
           </motion.div>
 
@@ -180,44 +178,44 @@ const Footer = ({
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            <h3 className="text-lg font-semibold text-white">
               Connect With Us
             </h3>
-            <ul className="space-y-3 text-gray-700">
+            <ul className="space-y-3 text-gray-400">
               <motion.li
                 className="flex items-center space-x-2"
-                whileHover={{ x: 5, color: "#60a5fa" }}
+                whileHover={{ x: 5, color: "#ff6b35" }}
               >
-                <div className="bg-sky-100/50 p-2 rounded-full">
-                  <Mail className="h-4 w-4 text-sky-500" />
+                <div className="bg-white/5 p-2 rounded-full">
+                  <Mail className="h-4 w-4 text-primary" />
                 </div>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="hover:text-sky-600 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   {contactInfo.email}
                 </a>
               </motion.li>
               <motion.li
                 className="flex items-center space-x-2"
-                whileHover={{ x: 5, color: "#60a5fa" }}
+                whileHover={{ x: 5, color: "#ff6b35" }}
               >
-                <div className="bg-sky-100/50 p-2 rounded-full">
-                  <Phone className="h-4 w-4 text-sky-500" />
+                <div className="bg-white/5 p-2 rounded-full">
+                  <Phone className="h-4 w-4 text-primary" />
                 </div>
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="hover:text-sky-600 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   {contactInfo.phone}
                 </a>
               </motion.li>
               <motion.li
                 className="flex items-start space-x-2"
-                whileHover={{ x: 5, color: "#60a5fa" }}
+                whileHover={{ x: 5, color: "#ff6b35" }}
               >
-                <div className="bg-sky-100/50 p-2 rounded-full mt-0.5">
-                  <MapPin className="h-4 w-4 text-sky-500" />
+                <div className="bg-white/5 p-2 rounded-full mt-0.5">
+                  <MapPin className="h-4 w-4 text-primary" />
                 </div>
                 <span>{contactInfo.address}</span>
               </motion.li>
@@ -232,10 +230,10 @@ const Footer = ({
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            <h3 className="text-lg font-semibold text-white">
               Quick Links
             </h3>
-            <div className="grid grid-cols-2 gap-2 text-gray-700">
+            <div className="grid grid-cols-2 gap-2 text-gray-400">
               {quickLinks.map((link, index) => (
                 <motion.div
                   key={index}
@@ -245,14 +243,14 @@ const Footer = ({
                 >
                   <a
                     href={link.href}
-                    className="hover:text-sky-600 transition-colors flex items-center space-x-1"
+                    className="hover:text-primary transition-colors flex items-center space-x-1"
                   >
                     <motion.span
                       animate={{
                         rotate:
                           hoveredLink === link.title ? [0, 15, -15, 0] : 0,
                         color:
-                          hoveredLink === link.title ? "#0ea5e9" : "#cbd5e1",
+                          hoveredLink === link.title ? "#ff6b35" : "#888888",
                       }}
                       transition={{ duration: 0.5 }}
                     >
@@ -273,30 +271,29 @@ const Footer = ({
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            <h3 className="text-lg font-semibold text-white">
               Get Exclusive Updates
             </h3>
-            <p className="text-gray-700 text-sm">
-              Subscribe for driving tips, special offers, and early access to
-              new features.
+            <p className="text-gray-400 text-sm">
+              Subscribe for driving tips, special offers, and early access to new features.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-2">
               <div className="relative">
                 <Input
                   type="email"
                   placeholder="Your email address"
-                  className="pl-10 bg-sky-100/50 border-sky-300 focus:border-sky-500 text-gray-900"
+                  className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-primary focus:ring-primary"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isSubmitting}
                   required
                 />
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-sky-500" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
               </div>
               <AnimatePresence>
                 {isSubscribed ? (
                   <motion.div
-                    className="bg-green-100/50 text-green-700 p-2 rounded-md flex items-center space-x-2"
+                    className="bg-success/20 text-success p-2 rounded-md flex items-center space-x-2"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -306,7 +303,7 @@ const Footer = ({
                   </motion.div>
                 ) : subscribeError ? (
                   <motion.div
-                    className="bg-red-100/50 text-red-700 p-2 rounded-md flex items-center space-x-2"
+                    className="bg-danger/20 text-danger p-2 rounded-md flex items-center space-x-2"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -316,7 +313,7 @@ const Footer = ({
                 ) : (
                   <motion.button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-600 hover:to-blue-600 text-white py-2 rounded-md flex items-center justify-center space-x-2 relative overflow-hidden group"
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-md flex items-center justify-center space-x-2 relative overflow-hidden group"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     disabled={isSubmitting}
@@ -349,7 +346,7 @@ const Footer = ({
         </div>
 
         {/* Social Media and Copyright */}
-        <div className="mt-12 pt-8 border-t border-sky-200/50 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="flex space-x-3">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -357,12 +354,11 @@ const Footer = ({
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`bg-gradient-to-br ${socialColors[social.platform]} p-2 rounded-full hover:shadow-lg transition-all duration-300`}
+                className={`bg-white/5 hover:bg-primary p-2 rounded-full hover:shadow-glow transition-all duration-300`}
                 aria-label={`Follow us on ${social.platform}`}
                 whileHover={{
                   y: -5,
                   scale: 1.1,
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.3)",
                 }}
                 whileTap={{ scale: 0.9 }}
                 onHoverStart={() => setHoveredSocial(social.platform)}
@@ -379,24 +375,24 @@ const Footer = ({
               </motion.a>
             ))}
           </div>
-          <div className="text-gray-600 text-sm flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div className="text-gray-500 text-sm flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
             <motion.div
               className="flex items-center space-x-2"
-              whileHover={{ color: "#0ea5e9" }}
+              whileHover={{ color: "#ff6b35" }}
             >
               <Globe className="h-4 w-4" />
               <span>English (UK)</span>
             </motion.div>
             <span>© {new Date().getFullYear()} Drive Dojo Driving School</span>
             <motion.div
-              className="text-xs bg-sky-100/50 px-2 py-1 rounded-full flex items-center space-x-1"
+              className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full flex items-center space-x-1"
               whileHover={{
                 scale: 1.05,
-                backgroundColor: "rgba(224, 242, 254, 0.7)",
+                backgroundColor: "rgba(255, 107, 53, 0.3)",
               }}
             >
               <Star className="h-3 w-3 text-yellow-400" />
-              <span>London Based</span>
+              <span>DVSA Approved</span>
             </motion.div>
           </div>
         </div>

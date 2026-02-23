@@ -76,22 +76,22 @@ export default function WhyChooseUsSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
+    <section className="py-20 bg-[#1a1a1a] relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black text-gray-900 mb-6">
-            Why We're <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">Different</span> ✨
+          <h2 className="text-5xl font-black text-white mb-6">
+            Why We're <span className="text-primary">Different</span> ✨
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             We're not your boring old driving school - we're the future of learning to drive!
-            <span className="text-orange-500 font-bold animate-pulse"> Ready to level up?</span> 🚀
+            <span className="text-primary font-bold"> Ready to level up?</span> 🚀
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export default function WhyChooseUsSection() {
                 key={index}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group cursor-pointer ${
+                className={`relative bg-[#1a1a1a] border border-white/10 rounded-3xl hover:border-primary/30 transition-all duration-500 overflow-hidden group cursor-pointer ${
                   isHovered ? 'scale-105 -rotate-1' : 'scale-100 rotate-0'
                 }`}
               >
@@ -115,7 +115,7 @@ export default function WhyChooseUsSection() {
 
                 <div className="relative p-6 text-center">
                   {/* Emoji Badge */}
-                  <div className="absolute -top-3 -right-3 text-3xl animate-bounce">
+                  <div className="absolute -top-3 -right-3 text-3xl">
                     {benefit.emoji}
                   </div>
 
@@ -123,7 +123,7 @@ export default function WhyChooseUsSection() {
                   <button
                     onClick={() => handleLike(index)}
                     className={`absolute top-4 left-4 p-2 rounded-full transition-all duration-300 ${
-                      isLiked ? 'bg-red-500 text-white scale-110' : 'bg-gray-100 text-gray-400 hover:bg-red-100 hover:text-red-500'
+                      isLiked ? 'bg-red-500 text-white scale-110' : 'bg-white/5 text-gray-500 hover:bg-red-500/20 hover:text-red-400'
                     }`}
                   >
                     <Heart className={`h-4 w-4 ${isLiked ? 'fill-current' : ''}`} />
@@ -136,15 +136,15 @@ export default function WhyChooseUsSection() {
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-all duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-gray-400 leading-relaxed text-sm">
                     {benefit.description}
                   </p>
 
                   {/* Interactive Progress Bar */}
-                  <div className="mt-4 bg-gray-200 rounded-full h-2 overflow-hidden">
+                  <div className="mt-4 bg-white/5 rounded-full h-2 overflow-hidden">
                     <div
                       className={`h-full bg-gradient-to-r ${benefit.color} transition-all duration-1000 ${
                         isHovered ? 'w-full' : 'w-0'
@@ -159,15 +159,15 @@ export default function WhyChooseUsSection() {
 
         {/* Interactive CTA */}
         <div className="mt-16 text-center">
-          <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-3xl">
-            <div className="bg-white rounded-3xl px-8 py-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="inline-block bg-primary/20 border border-primary/30 p-1 rounded-3xl">
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl px-8 py-6">
+              <h3 className="text-2xl font-bold text-white mb-2">
                 Ready to Start Your Journey? 🎉
               </h3>
-              <p className="text-gray-600 mb-4">Join 2000+ students who chose the fun way to learn!</p>
+              <p className="text-gray-400 mb-4">Join 2000+ students who chose the fun way to learn!</p>
               <Link
                 to="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-glow hover:shadow-glow-lg"
               >
                 Let's Go! 🚀
                 <ArrowRight className="ml-2 h-5 w-5" />

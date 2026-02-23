@@ -93,14 +93,14 @@ const FAQSection = ({
 
   return (
     <section
-      className={`relative py-20 bg-gradient-white-subtle overflow-hidden ${className}`}
+      className={`relative py-20 bg-[#1a1a1a] overflow-hidden ${className}`}
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-15 animate-bounce"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-10 animate-ping"></div>
-        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-15 animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-primary/5 rounded-full"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-primary/5 rounded-full"></div>
+        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-primary/5 rounded-full"></div>
       </div>
       <div className="relative container mx-auto px-4 z-10">
         <motion.div
@@ -110,14 +110,14 @@ const FAQSection = ({
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center mb-6 bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm px-6 py-3 rounded-full border border-orange-400/30 text-sm font-bold text-orange-600">
-            <HelpCircle className="h-5 w-5 mr-2 text-orange-500" />
+          <div className="inline-flex items-center mb-6 bg-primary/10 border border-primary/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold text-primary">
+            <HelpCircle className="h-5 w-5 mr-2" />
             Get Your Questions Answered! 💬
           </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-gray-800 via-blue-600 to-orange-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
             {title}
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">{subtitle}</p>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">{subtitle}</p>
         </motion.div>
 
         {/* Search and filter */}
@@ -129,15 +129,15 @@ const FAQSection = ({
           viewport={{ once: true }}
         >
           {/* Search Box */}
-          <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 border border-gray-200 shadow-2xl">
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl p-8">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                <Search className="h-6 w-6 text-gray-400" />
+                <Search className="h-6 w-6 text-gray-500" />
               </div>
               <input
                 type="text"
                 placeholder="🔍 Search for answers..."
-                className="pl-16 py-4 bg-white border-gray-300 text-gray-800 placeholder-gray-500 focus:bg-gray-50 focus:border-orange-400 focus:ring-orange-400 rounded-2xl text-lg w-full"
+                className="pl-16 py-4 bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:bg-white/10 focus:border-primary rounded-2xl text-lg w-full"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -149,8 +149,8 @@ const FAQSection = ({
                 onClick={() => setActiveCategory(null)}
                 className={`px-6 py-3 rounded-full font-bold transition-all duration-300 ${
                   !activeCategory
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg scale-110'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300'
+                    ? 'bg-primary text-white shadow-glow'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10'
                 }`}
               >
                 🌟 All Questions
@@ -161,8 +161,8 @@ const FAQSection = ({
                   onClick={() => setActiveCategory(category)}
                   className={`px-6 py-3 rounded-full font-bold transition-all duration-300 ${
                     activeCategory === category
-                      ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg scale-110'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300'
+                      ? 'bg-primary text-white shadow-glow'
+                      : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10'
                   }`}
                 >
                   {category}
@@ -188,19 +188,19 @@ const FAQSection = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200 overflow-hidden hover:scale-102 transition-all duration-300"
+                  className="bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300"
                 >
                   <button
                     onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                    className="w-full px-8 py-6 hover:bg-gray-50 transition-colors group"
+                    className="w-full px-8 py-6 hover:bg-white/5 transition-colors group"
                   >
                     <div className="flex justify-between items-center w-full">
                       <div className="text-left">
-                        <h3 className="text-xl font-bold text-gray-800 text-left mb-2 group-hover:text-orange-600 transition-colors">
+                        <h3 className="text-xl font-bold text-white text-left mb-2 group-hover:text-primary transition-colors">
                           {faq.question}
                         </h3>
                         {faq.category && (
-                          <span className="inline-block text-xs font-medium text-orange-600 bg-orange-100 px-3 py-1 rounded-full border border-orange-200">
+                          <span className="inline-block text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
                             {faq.category}
                           </span>
                         )}
@@ -208,7 +208,7 @@ const FAQSection = ({
                       <motion.div
                         animate={{ rotate: expandedIndex === index ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className="text-orange-500 ml-4 flex-shrink-0"
+                        className="text-primary ml-4 flex-shrink-0"
                       >
                         <ChevronDown className="h-6 w-6" />
                       </motion.div>
@@ -223,7 +223,7 @@ const FAQSection = ({
                         transition={{ duration: 0.3 }}
                         className="px-8 pb-6"
                       >
-                        <div className="text-gray-600 text-lg leading-relaxed pt-2 border-t border-gray-200">
+                        <div className="text-gray-400 text-lg leading-relaxed pt-2 border-t border-white/10">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -234,14 +234,14 @@ const FAQSection = ({
             </div>
           ) : (
             <motion.div
-              className="text-center py-12 bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200"
+              className="text-center py-12 bg-[#1a1a1a] border border-white/10 rounded-2xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
               <div className="text-6xl mb-4">🤷‍♀️</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">No answers found for "{searchTerm}"</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-bold text-white mb-4">No answers found for "{searchTerm}"</h3>
+              <p className="text-gray-400 mb-6">
                 Can't find what you're looking for? Let us help you personally!
               </p>
               <button
@@ -249,7 +249,7 @@ const FAQSection = ({
                   setSearchTerm("");
                   setShowContactForm(true);
                 }}
-                className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 inline-flex items-center gap-3"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-glow hover:shadow-glow-lg inline-flex items-center gap-3"
               >
                 <MessageCircle className="h-5 w-5" />
                 Ask Us Directly
@@ -262,19 +262,19 @@ const FAQSection = ({
         <AnimatePresence>
           {showContactForm && (
             <motion.div
-              className="max-w-3xl mx-auto mt-12 p-8 bg-white/80 backdrop-blur-md rounded-3xl border border-gray-200 shadow-2xl"
+              className="max-w-3xl mx-auto mt-12 p-8 bg-[#1a1a1a] border border-white/10 rounded-3xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-800">
+                <h3 className="text-2xl font-bold text-white">
                   ✉️ Ask Your Question
                 </h3>
                 <button
                   onClick={() => setShowContactForm(false)}
-                  className="text-gray-600 hover:text-orange-500 transition-colors"
+                  className="text-gray-400 hover:text-primary transition-colors"
                 >
                   <ChevronUp className="h-6 w-6" />
                 </button>
@@ -283,18 +283,18 @@ const FAQSection = ({
                 <input
                   type="text"
                   placeholder="👤 Your name"
-                  className="w-full bg-white border-gray-300 text-gray-800 placeholder-gray-500 focus:bg-gray-50 focus:border-orange-400 rounded-2xl px-4 py-3"
+                  className="w-full bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:bg-white/10 focus:border-primary rounded-2xl px-4 py-3"
                 />
                 <input
                   type="email"
                   placeholder="📧 Your email"
-                  className="w-full bg-white border-gray-300 text-gray-800 placeholder-gray-500 focus:bg-gray-50 focus:border-orange-400 rounded-2xl px-4 py-3"
+                  className="w-full bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:bg-white/10 focus:border-primary rounded-2xl px-4 py-3"
                 />
                 <textarea
                   placeholder="💭 What can we help you with?"
-                  className="w-full min-h-[120px] p-4 bg-white border border-gray-300 text-gray-600 placeholder-gray-500 focus:bg-gray-50 focus:border-orange-400 rounded-2xl resize-none"
+                  className="w-full min-h-[120px] p-4 bg-white/5 border border-white/10 text-gray-300 placeholder-gray-500 focus:bg-white/10 focus:border-primary rounded-2xl resize-none"
                 ></textarea>
-                <button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105">
+                <button className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-glow hover:shadow-glow-lg">
                   📬 Send Question
                 </button>
               </div>
@@ -309,11 +309,11 @@ const FAQSection = ({
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-orange-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-orange-300/50 inline-block">
-            <p className="text-orange-700 mb-2">Still have questions? 🤔</p>
+          <div className="bg-primary/10 border border-primary/20 rounded-2xl px-8 py-4 inline-block">
+            <p className="text-primary mb-2">Still have questions? 🤔</p>
             <motion.button
               onClick={() => setShowContactForm(true)}
-              className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 inline-flex items-center gap-2"
+              className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-glow hover:shadow-glow-lg inline-flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

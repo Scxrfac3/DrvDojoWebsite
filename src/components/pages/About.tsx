@@ -124,11 +124,11 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-slate-900 min-h-screen relative overflow-hidden">
+    <div className="bg-[#0d0d0d] min-h-screen relative overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-600/10 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-600/10 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d0d0d] via-[#1a1a2e] to-[#0d0d0d]"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#ff6b35]/10 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#ff6b35]/10 to-transparent rounded-full blur-3xl"></div>
 
       <div className="relative z-10">
         <Navbar />
@@ -141,10 +141,10 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-[#ff6b35] to-[#ff6b35] mb-6">
                 Drive Dojo
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-[rgba(255,255,255,0.8)] max-w-4xl mx-auto mb-8 leading-relaxed">
                 Expert DVSA-approved training to help you pass first time and drive with confidence.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -154,14 +154,14 @@ const About = () => {
                       .getElementById("founder-story")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 rounded-full text-lg flex items-center gap-2 group"
+                  className="bg-gradient-to-r from-[#ff6b35] to-[#f5a623] hover:from-[#ff8555] hover:to-[#f5a623] text-white px-8 py-6 rounded-full text-lg flex items-center gap-2 group"
                 >
                   <span>Meet The Founder</span>
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
                   onClick={() => (window.location.href = "/services")}
-                  className="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-6 rounded-full text-lg"
+                  className="bg-gradient-to-r from-[#ff6b35] to-[#f5a623] hover:from-[#ff8555] hover:to-[#f5a623] text-white px-8 py-6 rounded-full text-lg"
                 >
                   Book Now
                 </Button>
@@ -179,7 +179,7 @@ const About = () => {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   variant={activeTab === tab ? "default" : "default"}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${activeTab === tab ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white" : "bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 border border-slate-700"}`}
+                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${activeTab === tab ? "bg-gradient-to-r from-[#ff6b35] to-[#f5a623] text-white" : "bg-[rgba(255,255,255,0.05)] text-[rgba(255,255,255,0.7)] hover:bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.1)]"}`}
                 >
                   {tab === "founder" && "Meet The Founder"}
                   {tab === "journey" && "Our Journey"}
@@ -207,21 +207,21 @@ const About = () => {
                       transition={{ duration: 0.6 }}
                     >
                       <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b35]/20 to-[#ff6b35]/10 rounded-2xl blur-xl"></div>
                         <img
                           src="/images/certifications/C1.png"
                           alt="Mamunur - Founder of Drive Dojo"
                           className="relative rounded-2xl shadow-2xl w-full h-auto"
                         />
-                        <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-sm rounded-xl p-4">
+                        <div className="absolute bottom-4 left-4 right-4 bg-[#0d0d0d]/80 backdrop-blur-sm rounded-xl p-4">
                           <div className="flex items-center justify-between">
                             <div>
                               <div className="text-white font-bold text-lg">Mamunur</div>
-                              <div className="text-blue-400 text-sm">Founder & Head Instructor</div>
+                              <div className="text-[#ff6b35] text-sm">Founder & Head Instructor</div>
                             </div>
                             <div className="text-right">
                               <div className="text-white font-bold text-2xl">95%</div>
-                              <div className="text-slate-400 text-xs">Pass Rate</div>
+                              <div className="text-[rgba(255,255,255,0.6)] text-xs">Pass Rate</div>
                             </div>
                           </div>
                         </div>
@@ -235,41 +235,41 @@ const About = () => {
                     >
                       <h2 className="text-4xl font-bold text-white mb-6">
                         Mamunur
-                        <span className="block text-2xl text-blue-400 font-normal mt-2">Founder & Visionary</span>
+                        <span className="block text-2xl text-[#ff6b35] font-normal mt-2">Founder & Visionary</span>
                       </h2>
                       
-                      <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                      <p className="text-[rgba(255,255,255,0.8)] text-lg leading-relaxed mb-6">
                         At the heart of Drive Dojo Driving School is Mamunur, a founder whose journey through the automotive world offers an unparalleled depth of expertise. More than just a driving instructor, Mamunur's vision for Drive Dojo is built on a unique blend of practical experience, cutting-edge technology, and a proven track record of success.
                       </p>
 
                       <div className="space-y-4">
                         <div className="flex items-start">
-                          <div className="bg-blue-600/20 p-2 rounded-lg mr-4">
-                            <Star className="h-5 w-5 text-blue-400" />
+                          <div className="bg-[#ff6b35]/20 p-2 rounded-lg mr-4">
+                            <Star className="h-5 w-5 text-[#ff6b35]" />
                           </div>
                           <div>
                             <div className="text-white font-semibold">8+ Years Experience</div>
-                            <div className="text-slate-400 text-sm">As a driving instructor with exceptional first-time pass rates</div>
+                            <div className="text-[rgba(255,255,255,0.6)] text-sm">As a driving instructor with exceptional first-time pass rates</div>
                           </div>
                         </div>
 
                         <div className="flex items-start">
-                          <div className="bg-green-600/20 p-2 rounded-lg mr-4">
-                            <Users className="h-5 w-5 text-green-400" />
+                          <div className="bg-green-500/20 p-2 rounded-lg mr-4">
+                            <Users className="h-5 w-5 text-green-500" />
                           </div>
                           <div>
                             <div className="text-white font-semibold">10,000+ Students</div>
-                            <div className="text-slate-400 text-sm">Successfully taught and passed their driving tests</div>
+                            <div className="text-[rgba(255,255,255,0.6)] text-sm">Successfully taught and passed their driving tests</div>
                           </div>
                         </div>
 
                         <div className="flex items-start">
-                          <div className="bg-purple-600/20 p-2 rounded-lg mr-4">
-                            <Award className="h-5 w-5 text-purple-400" />
+                          <div className="bg-[#ff6b35]/20 p-2 rounded-lg mr-4">
+                            <Award className="h-5 w-5 text-[#ff6b35]" />
                           </div>
                           <div>
                             <div className="text-white font-semibold">95% Pass Rate</div>
-                            <div className="text-slate-400 text-sm">Consistently exceeding industry standards</div>
+                            <div className="text-[rgba(255,255,255,0.6)] text-sm">Consistently exceeding industry standards</div>
                           </div>
                         </div>
                       </div>
@@ -291,7 +291,7 @@ const About = () => {
                   <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Journey</h2>
                   
                   <div className="relative">
-                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 to-purple-600 z-0"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#ff6b35] to-[#f5a623] z-0"></div>
 
                     {timelineEvents.map((event, index) => (
                       <motion.div
@@ -309,15 +309,15 @@ const About = () => {
                           transition={{ duration: 0.5 }}
                           viewport={{ once: true }}
                         >
-                          <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 max-w-md hover:border-blue-500/50 transition-colors">
-                            <div className="text-blue-400 font-bold text-2xl mb-2">{event.year}</div>
+                          <div className="bg-[rgba(255,255,255,0.03)] p-6 rounded-xl border border-[rgba(255,255,255,0.1)] max-w-md hover:border-[#ff6b35]/50 transition-colors">
+                            <div className="text-[#ff6b35] font-bold text-2xl mb-2">{event.year}</div>
                             <div className="text-white font-bold text-xl mb-2">{event.title}</div>
-                            <div className="text-slate-300">{event.description}</div>
+                            <div className="text-[rgba(255,255,255,0.7)]">{event.description}</div>
                           </div>
                         </motion.div>
 
                         <motion.div
-                          className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 border-4 border-slate-900 flex items-center justify-center shadow-lg"
+                          className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#f5a623] border-4 border-[#0d0d0d] flex items-center justify-center shadow-lg"
                           whileHover={{ scale: 1.1 }}
                         >
                           <span className="text-white font-bold">{index + 1}</span>
@@ -342,7 +342,7 @@ const About = () => {
                 >
                   <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-white mb-4">Our Expertise</h2>
-                    <p className="text-slate-300 text-lg max-w-3xl mx-auto">
+                    <p className="text-[rgba(255,255,255,0.7)] text-lg max-w-3xl mx-auto">
                       What truly sets Drive Dojo apart is Mamunur's diverse background that brings together cutting-edge technology, real-world experience, and proven teaching excellence.
                     </p>
                   </div>
@@ -353,30 +353,30 @@ const About = () => {
                       return (
                         <motion.div
                           key={index}
-                          className="bg-slate-800/50 rounded-xl p-8 border border-slate-700 relative overflow-hidden group hover:border-blue-500/50 transition-all"
+                          className="bg-[rgba(255,255,255,0.03)] rounded-xl p-8 border border-[rgba(255,255,255,0.06)] relative overflow-hidden group hover:border-[#ff6b35]/50 transition-all"
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           whileHover={{ y: -5, scale: 1.02 }}
                         >
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-600/10 to-transparent rounded-bl-full"></div>
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#ff6b35]/10 to-transparent rounded-bl-full"></div>
                           
                           <div className="relative z-10">
-                            <div className={`bg-${area.color}-600/20 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                              <IconComponent className={`w-8 h-8 text-${area.color}-400`} />
+                            <div className="bg-[#ff6b35]/20 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                              <IconComponent className="w-8 h-8 text-[#ff6b35]" />
                             </div>
                             
                             <h3 className="text-2xl font-bold text-white mb-3">{area.title}</h3>
-                            <p className="text-slate-300 leading-relaxed">{area.description}</p>
+                            <p className="text-[rgba(255,255,255,0.7)] leading-relaxed">{area.description}</p>
                           </div>
                         </motion.div>
                       );
                     })}
                   </div>
 
-                  <div className="mt-12 bg-gradient-to-br from-slate-800/50 to-blue-900/30 rounded-2xl p-8 border border-slate-700">
+                  <div className="mt-12 bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,107,53,0.05)] rounded-2xl p-8 border border-[rgba(255,255,255,0.06)]">
                     <h3 className="text-2xl font-bold text-white mb-4 text-center">Our Philosophy</h3>
-                    <p className="text-slate-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+                    <p className="text-[rgba(255,255,255,0.7)] text-lg leading-relaxed text-center max-w-4xl mx-auto">
                       Mamunur's lifelong dedication to driving excellence, combined with his diverse roles, means every lesson at Drive Dojo is informed by a holistic understanding of the road – from the mechanics of a vehicle to the psychology of a safe driver, and the cutting-edge of autonomous technology.
                     </p>
                   </div>
@@ -395,7 +395,7 @@ const About = () => {
                 >
                   <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-white mb-4">Student Success</h2>
-                    <p className="text-slate-300 text-lg max-w-3xl mx-auto">
+                    <p className="text-[rgba(255,255,255,0.7)] text-lg max-w-3xl mx-auto">
                       Choose Drive Dojo Driving School for expert driving lessons in East London that go beyond the basics, equipping you with the skills and confidence to pass your test first time and master any road.
                     </p>
                   </div>
@@ -433,7 +433,7 @@ const About = () => {
                         return (
                           <motion.div
                             key={idx}
-                            className={`bg-gradient-to-br from-slate-800/50 to-${stat.color}-900/20 rounded-xl p-6 border border-${stat.color}-500/30 text-center relative overflow-hidden`}
+                            className="bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,107,53,0.05)] rounded-xl p-6 border border-[rgba(255,255,255,0.1)] text-center relative overflow-hidden"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={
                               statsInView
@@ -447,7 +447,7 @@ const About = () => {
                               <IconComponent className="w-20 h-20" />
                             </div>
                             <motion.div
-                              className={`text-4xl font-bold text-white mb-2`}
+                              className="text-4xl font-bold bg-gradient-to-r from-white to-[rgba(255,255,255,0.7)] bg-clip-text text-transparent mb-2"
                               initial={{ opacity: 0, y: 20 }}
                               animate={
                                 statsInView
@@ -458,7 +458,7 @@ const About = () => {
                             >
                               {stat.value}
                             </motion.div>
-                            <div className="text-slate-300">{stat.label}</div>
+                            <div className="text-[rgba(255,255,255,0.7)]">{stat.label}</div>
                           </motion.div>
                         );
                       })}
@@ -466,21 +466,21 @@ const About = () => {
                   </div>
 
                   {/* Call to Action */}
-                  <div className="text-center bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl p-8 border border-blue-500/20">
+                  <div className="text-center bg-gradient-to-r from-[rgba(255,107,53,0.1)] to-[rgba(255,107,53,0.05)] rounded-2xl p-8 border border-[rgba(255,107,53,0.2)]">
                     <h3 className="text-2xl font-bold text-white mb-4">Start Driving?</h3>
-                    <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+                    <p className="text-[rgba(255,255,255,0.7)] mb-6 max-w-2xl mx-auto">
                       Join thousands of successful students who have experienced the Drive Dojo difference. With Mamunur's expert guidance and our proven methods, you're not just learning to drive – you're mastering the road.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                       <Button
                         onClick={() => (window.location.href = "/services")}
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg"
+                        className="bg-gradient-to-r from-[#ff6b35] to-[#f5a623] hover:from-[#ff8555] hover:to-[#f5a623] text-white px-8 py-4 rounded-full text-lg"
                       >
                         Book Now
                       </Button>
                       <Button
                         onClick={() => (window.location.href = "tel:+447487228866")}
-                        className="bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-full text-lg"
+                        className="bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.2)] text-white px-8 py-4 rounded-full text-lg"
                       >
                         <Phone className="h-5 w-5 mr-2" />
                         Call Now
@@ -500,19 +500,19 @@ const About = () => {
               {faqs.map((faq, idx) => (
                 <motion.div
                   key={idx}
-                  className={`bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 ${expandedFAQ === idx ? "bg-slate-800/70" : ""}`}
+                  className={`bg-[rgba(255,255,255,0.03)] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.06)] ${expandedFAQ === idx ? "bg-[rgba(255,255,255,0.05)]" : ""}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <button
-                    className="w-full text-left p-6 flex justify-between items-center hover:bg-slate-700/50 transition-colors"
+                    className="w-full text-left p-6 flex justify-between items-center hover:bg-[rgba(255,255,255,0.05)] transition-colors"
                     onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
                   >
                     <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
                     <div className={`rounded-full p-1 transition-transform ${expandedFAQ === idx ? "rotate-180" : ""}`}>
-                      <ChevronDown className="h-5 w-5 text-blue-400" />
+                      <ChevronDown className="h-5 w-5 text-[#ff6b35]" />
                     </div>
                   </button>
                   <AnimatePresence>
@@ -524,7 +524,7 @@ const About = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 text-slate-300 leading-relaxed">
+                        <div className="px-6 pb-6 text-[rgba(255,255,255,0.7)] leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -535,18 +535,18 @@ const About = () => {
             </div>
 
             <div className="text-center mt-12">
-              <p className="text-slate-300 mb-6">Still have questions? We're here to help!</p>
+              <p className="text-[rgba(255,255,255,0.7)] mb-6">Still have questions? We're here to help!</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
                   onClick={() => (window.location.href = "/contact")}
-                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                  className="bg-[#ff6b35] hover:bg-[#ff8555] text-white"
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
                   Contact
                 </Button>
                 <Button
                   onClick={() => (window.location.href = "tel:+447487228866")}
-                  className="bg-green-600 hover:bg-green-700 text-white"
+                  className="bg-green-500 hover:bg-green-600 text-white"
                 >
                   <Phone className="h-5 w-5 mr-2" />
                   Call Now

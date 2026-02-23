@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { CheckCircle, Star, Users, Zap, Trophy, ArrowRight, Calendar, Phone, Sparkles, Flame } from "lucide-react";
 import confetti from "canvas-confetti";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
@@ -34,11 +35,11 @@ const NewHeroSection = ({
     { icon: Zap, number: '24hr', label: 'Response', color: 'text-orange-400' }
   ];
 
-  const heroImages = [
-    "/images/certifications/explodedMerc.png",
-    "/images/certifications/angles.png",
-    "/images/certifications/FrontLOW.png",
-    "/images/certifications/MercShard.png"
+  const heroVideos = [
+    "/images/certifications/kling_20260203_Image_to_Video_create_a_s_5342_0.mp4",
+    "/images/certifications/kling_20260203_Image_to_Video_create_a_s_5415_0.mp4",
+    "/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4",
+    "/images/certifications/kling_20260210_Image_to_Video__zoomed_in_4973_0.mp4"
   ];
 
   useEffect(() => {
@@ -47,8 +48,8 @@ const NewHeroSection = ({
     }, 2000);
     
     const imageInterval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
+      setCurrentImageIndex((prev) => (prev + 1) % heroVideos.length);
+    }, 5000); // Change video every 5 seconds
     
     return () => {
       clearInterval(statInterval);
@@ -65,7 +66,7 @@ const NewHeroSection = ({
   };
 
   return (
-    <section className="relative bg-slate-900 text-white overflow-hidden min-h-screen flex items-center">
+    <section className="relative bg-[#0d0d0d] text-white overflow-hidden min-h-screen flex items-center">
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -83,15 +84,15 @@ const NewHeroSection = ({
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-black leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-white to-primary bg-clip-text text-transparent">
                 Drive Like a
               </span>
               <br />
-              <span className="text-orange-400 inline-block">Pro</span>
+              <span className="text-primary inline-block">Pro</span>
               <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8">
+            <p className="text-xl lg:text-2xl text-gray-400 leading-relaxed mb-8">
               {subtitle}
             </p>
 
@@ -99,11 +100,47 @@ const NewHeroSection = ({
             <PostcodeChecker
               onPostcodeChecked={setPostcodeCheckResult}
               onLessonSelected={setSelectedLesson}
-              className="mb-8"
+              className="mb-6"
             />
 
+            {/* Urgency Banner */}
+            <motion.div
+              className="bg-primary rounded-xl p-4 mb-6 shadow-glow"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <div className="flex items-center justify-center text-white">
+                <Sparkles className="h-5 w-5 mr-2" />
+                <span className="font-bold">⚡ Limited Availability:</span>
+                <span className="ml-2">Only <span className="font-black text-xl">3 slots</span> left this week!</span>
+                <span className="ml-4 text-white/80 text-sm">Book now to secure your preferred time →</span>
+              </div>
+            </motion.div>
+
+            {/* Quick Package Preview */}
+            <motion.div
+              className="flex flex-wrap gap-3 mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <div className="bg-white/5 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
+                <span className="text-primary font-bold">£49</span>
+                <span className="text-gray-400 text-sm ml-1">/ 2hr trial</span>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
+                <span className="text-primary font-bold">£340</span>
+                <span className="text-gray-400 text-sm ml-1">/ 10hr</span>
+              </div>
+              <div className="bg-primary/20 backdrop-blur-md rounded-lg px-3 py-2 border border-primary/30">
+                <span className="text-primary font-bold">£689</span>
+                <span className="text-gray-400 text-sm ml-1">/ 20hr (Popular)</span>
+              </div>
+            </motion.div>
+
             {/* Animated Stats */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
               <div className="grid grid-cols-4 gap-4">
                 {stats.map((stat, index) => {
                   const IconComponent = stat.icon;
@@ -118,7 +155,7 @@ const NewHeroSection = ({
                         currentStat === index ? 'animate-bounce' : ''
                       }`} />
                       <div className={`text-2xl font-bold ${stat.color}`}>{stat.number}</div>
-                      <div className="text-xs text-blue-200">{stat.label}</div>
+                      <div className="text-xs text-gray-400">{stat.label}</div>
                     </div>
                   );
                 })}
@@ -140,7 +177,7 @@ const NewHeroSection = ({
                 <>
                   <Link
                     to="/services"
-                    className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 text-center"
+                    className="group bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5 text-center"
                     onClick={triggerConfetti}
                   >
                     <span className="flex items-center justify-center">
@@ -166,14 +203,14 @@ const NewHeroSection = ({
               <div className="flex items-center">
                 <div className="flex -space-x-2 mr-3">
                   {[1,2,3,4].map((i) => (
-                    <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
+                    <div key={i} className="w-8 h-8 bg-primary/30 rounded-full border-2 border-white/20"></div>
                   ))}
                 </div>
-                <span className="text-blue-200">1000+ happy drivers</span>
+                <span className="text-gray-400">1000+ happy drivers</span>
               </div>
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                <span className="text-blue-200">4.5/5 rating</span>
+                <span className="text-gray-400">4.5/5 rating</span>
               </div>
             </div>
           </div>
@@ -182,16 +219,21 @@ const NewHeroSection = ({
           <div className="relative">
             <div className="relative z-10 group">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
-                <img
-                  src={heroImages[currentImageIndex]}
-                  alt="Professional driving instructor in modern training vehicle"
-                  className="w-full h-96 object-cover transition-opacity duration-1000"
-                />
+                <video
+                  key={heroVideos[currentImageIndex]}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-96 object-cover transition-opacity duration-700"
+                >
+                  <source src={heroVideos[currentImageIndex]} type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
-                {/* Image Indicators */}
+                {/* Video Indicators */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {heroImages.map((_, index) => (
+                  {heroVideos.map((_, index) => (
                     <div
                       key={index}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
@@ -202,7 +244,7 @@ const NewHeroSection = ({
                 </div>
 
                 {/* Floating Success Badge */}
-                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-2xl shadow-xl">
+                <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-xl shadow-glow">
                   <div className="text-2xl font-bold">87%</div>
                   <div className="text-xs">Pass Rate 🎉</div>
                 </div>
@@ -210,11 +252,11 @@ const NewHeroSection = ({
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-6 -left-6 bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-2xl shadow-xl">
-              <Trophy className="h-8 w-8 text-white" />
+            <div className="absolute -top-6 -left-6 bg-primary/20 border border-primary/30 p-4 rounded-xl">
+              <Trophy className="h-8 w-8 text-primary" />
             </div>
-            <div className="absolute top-20 -right-8 bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-xl shadow-xl">
-              <span className="text-white font-bold text-sm">DVSA ✓</span>
+            <div className="absolute top-20 -right-8 bg-primary/20 border border-primary/30 p-3 rounded-xl">
+              <span className="text-primary font-bold text-sm">DVSA ✓</span>
             </div>
           </div>
         </div>

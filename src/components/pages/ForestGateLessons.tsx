@@ -32,7 +32,12 @@ const ForestGateLessons = () => {
         keywords="driving lessons Forest Gate, intensive driving lessons E7, automatic driving lessons Forest Gate, DVSA approved instructor, Red Driving School, AA Driving School, driving lessons E7, driving instructor Forest Gate, first time pass, E postcode driving lessons, driving lessons East London"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
       />
-      <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
+      <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
+      {/* Background decorative elements - Dark theme */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
 
       <Navbar />
 
@@ -48,15 +53,15 @@ const ForestGateLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-blue-600">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
                     Expert Driving Lessons in Forest Gate
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-gray-800">DVSA Approved Instructor</span>
+                  <span className="text-white">DVSA Approved Instructor</span>
                 </h1>
 
-                <p className="text-xl text-gray-700 mb-8">
-                  <span className="font-semibold">
+                <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
+                  <span className="font-semibold text-orange-400">
                     Professional intensive driving lessons in E7 and automatic driving lessons in Forest Gate
                   </span>{" "}
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time. With experience working with national driving schools like Red Driving School and AA Driving School, I provide expert instruction across all E postcodes.
@@ -67,11 +72,11 @@ const ForestGateLessons = () => {
                   className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0"
                 >
                   <div className="relative flex-grow">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[rgba(255,255,255,0.5)]" />
                     <Input
                       type="text"
                       placeholder="Enter pickup postcode"
-                      className="pl-10 bg-white border-gray-200"
+                      className="pl-10 bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.1)] text-white placeholder:text-[rgba(255,255,255,0.4)]"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
                       required
@@ -79,7 +84,7 @@ const ForestGateLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group relative overflow-hidden"
+                    className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white group relative overflow-hidden"
                   >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -101,11 +106,15 @@ const ForestGateLessons = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="/images/certifications/FrontLOW.png"
-                    alt="Driving lessons in Forest Gate"
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     className="w-full h-auto object-cover rounded-2xl"
-                  />
+                  >
+                    <source src="/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4" type="video/mp4" />
+                  </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-center space-x-1 mb-2">
@@ -128,7 +137,7 @@ const ForestGateLessons = () => {
 
                 {/* Floating badges */}
                 <motion.div
-                  className="absolute -top-5 -right-5 bg-white rounded-full p-4 shadow-lg"
+                  className="absolute -top-5 -right-5 bg-[rgba(255,255,255,0.1)] backdrop-blur-md rounded-full p-4 shadow-lg border border-[rgba(255,255,255,0.1)]"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.5, type: "spring" }}
@@ -142,7 +151,7 @@ const ForestGateLessons = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute -bottom-5 -left-5 bg-white rounded-full p-3 shadow-lg"
+                  className="absolute -bottom-5 -left-5 bg-[rgba(255,255,255,0.1)] backdrop-blur-md rounded-full p-3 shadow-lg border border-[rgba(255,255,255,0.1)]"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.7, type: "spring" }}
@@ -159,72 +168,72 @@ const ForestGateLessons = () => {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-16 bg-white">
+        {/* Features Section - Dark Theme */}
+        <section className="py-16 bg-[#0d0d0d]">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Why Choose My Driving Lessons in Forest Gate?
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
                 As a DVSA approved instructor with experience at Red Driving School and AA Driving School,
                 I specialize in helping students pass first time with intensive driving lessons in E7 and automatic driving lessons in Forest Gate.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
+                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   DVSA Approved Expertise
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-[rgba(255,255,255,0.7)]">
                   When you choose my intensive driving lessons in E7, you're learning with a fully qualified DVSA approved instructor who knows Forest Gate and all E postcodes inside out. My experience with national driving schools ensures professional, structured lessons tailored to your success.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-sky-100 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   First-Time Pass Specialization
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-[rgba(255,255,255,0.7)]">
                   My first-time pass rate exceeds the national average by 13%. Through specialized automatic driving lessons in Forest Gate and intensive courses across E7, E11, E12, and E15 postcodes, I've helped countless students pass their driving test confidently and efficiently.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
+                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   Comprehensive Local Coverage
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-[rgba(255,255,255,0.7)]">
                   I provide expert driving lessons across all E postcodes including E7 (Forest Gate), E11 (Leytonstone), E12 (Manor Park), E15 (Stratford), E6 (East Ham), E13 (Plaistow), E16 (Canning Town), and IG postcodes. My automatic driving lessons in Forest Gate are designed for maximum success.
                 </p>
               </motion.div>
@@ -232,8 +241,8 @@ const ForestGateLessons = () => {
           </div>
         </section>
 
-        {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
+        {/* Local Area Section - Dark Theme */}
+        <section className="py-16 bg-[#0d0d0d]">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -242,10 +251,10 @@ const ForestGateLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Comprehensive Coverage Across E Postcodes
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
                 My intensive driving lessons in E7 and automatic driving lessons in Forest Gate cover all East London areas,
                 providing expert instruction tailored to local test routes and driving conditions.
               </p>
@@ -258,10 +267,10 @@ const ForestGateLessons = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="text-2xl font-bold mb-4 text-white">
                   Local Expertise for First-Time Success
                 </h3>
-                <p className="text-gray-700 mb-6">
+                <p className="text-[rgba(255,255,255,0.7)] mb-6">
                   As a DVSA approved instructor with experience at Red Driving School and AA Driving School,
                   I specialize in intensive driving lessons in E7 and automatic driving lessons in Forest Gate.
                   My comprehensive knowledge of local test routes across all E postcodes gives my students the best chance of passing first time.
@@ -286,7 +295,7 @@ const ForestGateLessons = () => {
                       viewport={{ once: true }}
                     >
                       <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="text-[rgba(255,255,255,0.8)]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -310,8 +319,8 @@ const ForestGateLessons = () => {
         </section>
 
 
-        {/* Instructor Credentials Section */}
-        <section className="py-16 bg-white">
+        {/* Instructor Credentials Section - Dark Theme */}
+        <section className="py-16 bg-[#0d0d0d]">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -320,10 +329,10 @@ const ForestGateLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Your DVSA Approved Driving Instructor
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
                 With extensive experience at national driving schools, I bring expert knowledge and proven teaching methods to help you pass first time.
               </p>
             </motion.div>
@@ -350,10 +359,10 @@ const ForestGateLessons = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="text-2xl font-bold mb-4 text-white">
                   National Experience, Local Expertise
                 </h3>
-                <p className="text-gray-700 mb-6">
+                <p className="text-[rgba(255,255,255,0.7)] mb-6">
                   As a fully qualified DVSA approved instructor, I've worked with some of the UK's most respected national driving schools including Red Driving School and AA Driving School. This experience has given me unique insights into the most effective teaching methods for helping students pass their driving test first time.
                 </p>
 
@@ -376,7 +385,7 @@ const ForestGateLessons = () => {
                       viewport={{ once: true }}
                     >
                       <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="text-[rgba(255,255,255,0.8)]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -386,7 +395,7 @@ const ForestGateLessons = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -417,7 +426,7 @@ const ForestGateLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                className="bg-white text-orange-600 hover:bg-gray-100 shadow-lg"
                 onClick={() => (window.location.href = "/services")}
               >
                 Book Your Automatic Lesson Now

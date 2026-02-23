@@ -233,12 +233,12 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* Background decorative elements with new design */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-40 h-40 bg-orange-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-32 h-32 bg-green-500 rounded-full opacity-15 animate-bounce"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-500 rounded-full opacity-10 animate-ping"></div>
+        <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-primary/5 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-primary/5 rounded-full"></div>
       </div>
 
       {/* Animated particles */}
@@ -282,13 +282,13 @@ const Services = () => {
           ) : (
             <>
               {/* Hero Banner - Updated Design */}
-              <section className="relative bg-slate-900 text-white py-20 relative overflow-hidden min-h-screen flex items-center">
+              <section className="relative bg-[#0d0d0d] text-white py-20 relative overflow-hidden min-h-screen flex items-center">
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0">
-                  <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
-                  <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
-                  <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
-                  <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full"></div>
+                  <div className="absolute top-40 right-20 w-24 h-24 bg-primary/5 rounded-full"></div>
+                  <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-primary/5 rounded-full"></div>
+                  <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-primary/5 rounded-full"></div>
                 </div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -296,12 +296,12 @@ const Services = () => {
                     {/* Left Content */}
                     <div className="space-y-8">
                       <div className="flex items-center space-x-4 animate-fade-in">
-                        <div className="flex items-center bg-green-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-green-400/30">
-                          <CheckCircle className="h-5 w-5 text-green-400 mr-2 animate-pulse" />
+                        <div className="flex items-center bg-success/20 backdrop-blur-sm px-4 py-2 rounded-full border border-success/30">
+                          <CheckCircle className="h-5 w-5 text-success mr-2" />
                           <span className="text-sm font-medium">DVSA Approved ✨</span>
                         </div>
-                        <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
-                          <Zap className="h-5 w-5 text-orange-400 mr-2" />
+                        <div className="flex items-center bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/30">
+                          <Zap className="h-5 w-5 text-primary mr-2" />
                           <span className="text-sm font-medium">Intensive Courses 🚀</span>
                         </div>
                       </div>
@@ -312,28 +312,28 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+                        <span className="text-white">
                           Intensive Driving
                         </span>
                         <br />
-                        <span className="text-orange-400 animate-bounce inline-block">Courses</span>
+                        <span className="text-primary inline-block">Courses</span>
                         <span className="text-2xl lg:text-3xl ml-4">🎯</span>
                       </motion.h1>
                       
                       <motion.p
-                        className="text-xl lg:text-2xl text-blue-100 leading-relaxed"
+                        className="text-xl lg:text-2xl text-gray-400 leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                       >
-                        Fast-track your driving success with our <span className="text-orange-400 font-bold">intensive courses</span>!
-                        Pass your test with our <span className="text-green-400 font-bold">DVSA-approved instructors</span> and
-                        <span className="text-blue-400 font-bold"> structured training</span> 🏆
+                        Fast-track your driving success with our <span className="text-primary font-bold">intensive courses</span>!
+                        Pass your test with our <span className="text-success font-bold">DVSA-approved instructors</span> and
+                        <span className="text-primary font-bold"> structured training</span> 🏆
                       </motion.p>
 
                       {/* Animated Stats */}
                       <motion.div
-                        className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
+                        className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
@@ -439,22 +439,19 @@ const Services = () => {
                     <div className="relative">
                       <div className="relative z-10 group">
                         <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
-                          <img
-                            src="/images/certifications/FrontLOW.png"
-                            alt="Professional driving instructor in modern training vehicle"
+                          <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
                             className="w-full h-96 object-cover"
-                          />
+                          >
+                            <source src="/images/certifications/kling_20260203_Image_to_Video_create_a_s_5415_0.mp4" type="video/mp4" />
+                          </video>
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                          
-                          {/* Play Button Overlay */}
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <button className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110">
-                              <Play className="h-8 w-8 ml-1" />
-                            </button>
-                          </div>
 
                           {/* Floating Success Badge */}
-                          <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-2xl shadow-xl animate-bounce">
+                          <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-xl shadow-glow">
                             <div className="text-2xl font-bold">FAST</div>
                             <div className="text-xs">TRACK 🚀</div>
                           </div>
@@ -462,11 +459,11 @@ const Services = () => {
                       </div>
 
                       {/* Floating Elements */}
-                      <div className="absolute -top-6 -left-6 bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-2xl shadow-xl animate-pulse">
-                        <Trophy className="h-8 w-8 text-white" />
+                      <div className="absolute -top-6 -left-6 bg-primary/20 border border-primary/30 p-4 rounded-xl">
+                        <Trophy className="h-8 w-8 text-primary" />
                       </div>
-                      <div className="absolute top-20 -right-8 bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-xl shadow-xl animate-bounce">
-                        <span className="text-white font-bold text-sm">INTENSIVE ✓</span>
+                      <div className="absolute top-20 -right-8 bg-primary/20 border border-primary/30 p-3 rounded-xl">
+                        <span className="text-primary font-bold text-sm">INTENSIVE ✓</span>
                       </div>
                     </div>
                   </div>
@@ -481,71 +478,70 @@ const Services = () => {
               </section>
 
               {/* Featured Courses - Updated with Booking Page Services */}
-              <div ref={courseSectionRef} className="gpu-accelerated">
-                <section id="courses" className="py-16 bg-gradient-to-r from-blue-50 to-purple-50 relative overflow-hidden rounded-2xl">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
+              <section id="courses" ref={courseSectionRef} className="py-16 bg-[#0d0d0d] relative overflow-hidden rounded-2xl">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
 
-                    {/* Animated particles */}
-                    <div className="absolute inset-0 overflow-hidden">
-                      {[...Array(10)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 backdrop-blur-sm"
-                          style={{
-                            width: Math.random() * 60 + 20,
-                            height: Math.random() * 60 + 20,
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                          }}
-                          initial={{ opacity: 0.1, scale: 0 }}
-                          animate={{
-                            opacity: [0.1, 0.3, 0.1],
-                            scale: [0, 1, 0],
-                            x: [0, Math.random() * 100 - 50, 0],
-                            y: [0, Math.random() * 100 - 50, 0],
-                          }}
-                          transition={{
-                            duration: Math.random() * 10 + 10,
-                            repeat: Infinity,
-                            delay: Math.random() * 5,
-                          }}
-                        />
-                      ))}
-                    </div>
-
-                    <div className="container mx-auto px-4 relative z-10">
-                      <motion.div
-                        className="text-center mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
-                      >
-                        <motion.div
-                          className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
-                          initial={{ opacity: 0, y: -20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.2 }}
-                          viewport={{ once: true }}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Zap className="h-4 w-4 mr-2" />
-                          Featured Courses
-                        </motion.div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                          Choose Your Perfect Course
-                        </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
-                          Select from our most popular courses designed to get you on the road quickly and safely
-                        </p>
-                      </motion.div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Pay-as-you-go */}
+                {/* Animated particles */}
+                <div className="absolute inset-0 overflow-hidden">
+                  {[...Array(10)].map((_, i) => (
                     <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                      key={i}
+                      className="absolute rounded-full bg-gradient-to-r from-[#ff6b35]/20 to-[#f5a623]/20 backdrop-blur-sm"
+                      style={{
+                        width: Math.random() * 60 + 20,
+                        height: Math.random() * 60 + 20,
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                      }}
+                      initial={{ opacity: 0.1, scale: 0 }}
+                      animate={{
+                        opacity: [0.1, 0.3, 0.1],
+                        scale: [0, 1, 0],
+                        x: [0, Math.random() * 100 - 50, 0],
+                        y: [0, Math.random() * 100 - 50, 0],
+                      }}
+                      transition={{
+                        duration: Math.random() * 10 + 10,
+                        repeat: Infinity,
+                        delay: Math.random() * 5,
+                      }}
+                    />
+                  ))}
+                </div>
+
+                <div className="container mx-auto px-4 relative z-10">
+                  <motion.div
+                    className="text-center mb-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className="inline-flex items-center mb-3 bg-gradient-to-r from-[#ff6b35] to-[#f5a623] px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Zap className="h-4 w-4 mr-2" />
+                      Featured Courses
+                    </motion.div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                      Choose Your Perfect Course
+                    </h2>
+                    <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
+                      Select from our most popular courses designed to get you on the road quickly and safely
+                    </p>
+                  </motion.div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* First 2 Hours - Lead Magnet */}
+                    <motion.div
+                      className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-[rgba(255,255,255,0.1)] relative h-full"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
@@ -555,36 +551,39 @@ const Services = () => {
                         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="absolute top-4 left-4 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
-                        🚗 Try Us Out
+                      <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-2 text-center">
+                        🎯 INTRO OFFER
                       </div>
-                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-blue-50 to-white">
-                        <h3 className="text-xl font-bold mb-2 text-gray-900">
-                          Pay-as-you-go
+                      <div className="pt-12 pb-6 px-6 bg-gradient-to-b from-[rgba(255,107,53,0.1)] to-[rgba(255,255,255,0.05)]">
+                        <h3 className="text-xl font-bold mb-2 text-white">
+                          First 2 Hours
                         </h3>
-                        <p className="text-sm text-gray-500 mb-3">
-                          Perfect for trying us out
+                        <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">
+                          Try before you commit
                         </p>
-                        <div className="flex items-end mb-4">
-                          <span className="text-3xl font-bold text-gray-900">
-                            £76
-                          </span>
-                          <span className="text-lg text-gray-500 ml-2 mb-1">
-                            /2 hours
-                          </span>
+                        <div className="mb-4">
+                          <span className="text-4xl font-black text-white">£49</span>
+                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(was £76 - use SAVE25)</span>
+                        </div>
+                        <div className="bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-500/50 text-green-400 text-xs font-bold px-4 py-2 rounded-lg mb-4 inline-block">
+                          🎉 Use code <span className="text-white font-black">SAVE25</span> at checkout - Save £27!
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>2 hours lesson</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">2 hours lesson</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Personalized learning</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Personalized learning</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Beginner friendly</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Beginner friendly</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]"> Mercedes-Benz car</span>
                           </li>
                         </ul>
                         <motion.div
@@ -592,74 +591,8 @@ const Services = () => {
                           whileTap={{ scale: 0.97 }}
                         >
                           <Button
-                            className="w-full bg-blue-600 hover:bg-blue-700 group relative overflow-hidden"
+                            className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
                             onClick={() => window.location.href = '/booking/payg'}
-                          >
-                            Book Now
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                            <motion.div
-                              className="absolute inset-0 bg-white"
-                              initial={{ x: "-100%" }}
-                              whileHover={{ x: "100%" }}
-                              transition={{ duration: 0.4 }}
-                              style={{ opacity: 0.2 }}
-                            />
-                          </Button>
-                        </motion.div>
-                      </div>
-                    </motion.div>
-
-                    {/* 6-Hour Package */}
-                    <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{
-                        y: -5,
-                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
-                      <div className="absolute top-4 left-4 bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">
-                        💰 Save Money
-                      </div>
-                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-purple-50 to-white">
-                        <h3 className="text-xl font-bold mb-2 text-gray-900">
-                          6-Hour Package
-                        </h3>
-                        <p className="text-sm text-gray-500 mb-3">
-                          Save money with our starter package
-                        </p>
-                        <div className="flex items-end mb-4">
-                          <span className="text-3xl font-bold text-gray-900">
-                            £210
-                          </span>
-                          <span className="text-lg text-gray-500 ml-2 mb-1">
-                            /package
-                          </span>
-                        </div>
-                        <ul className="space-y-2 mb-6">
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>6 hours of lessons</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Structured learning plan</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Progress tracking</span>
-                          </li>
-                        </ul>
-                        <motion.div
-                          whileHover={{ scale: 1.03 }}
-                          whileTap={{ scale: 0.97 }}
-                        >
-                          <Button
-                            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 group relative overflow-hidden"
-                            onClick={() => window.location.href = '/booking/6hour'}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -677,49 +610,49 @@ const Services = () => {
 
                     {/* 10-Hour Package */}
                     <motion.div
-                      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative h-full"
+                      className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-[rgba(255,255,255,0.1)] relative h-full"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{
                         y: -5,
                         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="absolute -right-12 -top-12 w-24 h-24 bg-gradient-to-br from-orange-400 to-red-400 rotate-12 flex items-end justify-start pb-2 pl-2 text-white font-bold">
-                        <span>Popular</span>
+                      <div className="absolute top-4 left-4 bg-[#ff6b35]/20 text-[#ff6b35] text-xs font-bold px-3 py-1 rounded-full">
+                        💰 Popular Choice
                       </div>
-                      <div className="absolute top-4 left-4 bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
-                        🔥 Best Value
-                      </div>
-                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-orange-50 to-white">
-                        <h3 className="text-xl font-bold mb-2 text-gray-900">
+                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-[rgba(255,107,53,0.1)] to-[rgba(255,255,255,0.05)]">
+                        <h3 className="text-xl font-bold mb-2 text-white">
                           10-Hour Package
                         </h3>
-                        <p className="text-sm text-gray-500 mb-3">
-                          Most Popular - Best value for money!
+                        <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">
+                          Perfect for most learners
                         </p>
-                        <div className="flex items-end mb-4">
-                          <span className="text-3xl font-bold text-gray-900">
-                            £340
-                          </span>
-                          <span className="text-lg text-gray-500 ml-2 mb-1">
-                            /package
-                          </span>
+                        <div className="mb-4">
+                          <span className="text-4xl font-black text-white">£340</span>
+                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(£34/hr)</span>
+                        </div>
+                        <div className="bg-[#ff6b35]/20 text-[#ff6b35] text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
+                          🎉 You save £50!
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>10 hours of lessons</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">10 hours of lessons</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Progress tracking</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Structured learning plan</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>Best value for most learners</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Progress tracking</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Mock test included</span>
                           </li>
                         </ul>
                         <motion.div
@@ -727,8 +660,153 @@ const Services = () => {
                           whileTap={{ scale: 0.97 }}
                         >
                           <Button
-                            className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
+                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 group relative overflow-hidden"
                             onClick={() => window.location.href = '/booking/10hour'}
+                          >
+                            Book Now
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                            <motion.div
+                              className="absolute inset-0 bg-white"
+                              initial={{ x: "-100%" }}
+                              whileHover={{ x: "100%" }}
+                              transition={{ duration: 0.4 }}
+                              style={{ opacity: 0.2 }}
+                            />
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
+                    {/* 20-Hour Package - MOST POPULAR */}
+                    <motion.div
+                      className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.1)] relative h-full transform scale-105 z-10"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      whileHover={{
+                        y: -5,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      }}
+                    >
+                      <div className="absolute -right-16 -top-16 w-32 h-32 bg-gradient-to-br from-[#ff6b35] to-[#f5a623] rotate-45 flex items-center justify-center shadow-lg">
+                        <span className="text-white font-black text-sm -rotate-45">BEST VALUE</span>
+                      </div>
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-[#ff6b35] to-[#f5a623] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                        ⭐ MOST POPULAR
+                      </div>
+                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-[rgba(255,107,53,0.15)] to-[rgba(255,255,255,0.05)]">
+                        <h3 className="text-xl font-bold mb-2 text-white">
+                          20-Hour Package
+                        </h3>
+                        <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">
+                          Complete course - Most booked!
+                        </p>
+                        <div className="mb-4">
+                          <span className="text-4xl font-black text-white">£689</span>
+                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(£34.45/hr)</span>
+                        </div>
+                        <div className="bg-[#ff6b35]/20 text-[#ff6b35] text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
+                          🎉 You save £150!
+                        </div>
+                        <ul className="space-y-2 mb-6">
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm font-medium text-[rgba(255,255,255,0.8)]">20 hours of lessons</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm font-medium text-[rgba(255,255,255,0.8)]">Full learning plan</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm font-medium text-[rgba(255,255,255,0.8)]">2 Mock tests included</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm font-medium text-[rgba(255,255,255,0.8)]">Theory support</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm font-medium text-[rgba(255,255,255,0.8)]">Priority booking</span>
+                          </li>
+                        </ul>
+                        <motion.div
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          <Button
+                            className="w-full bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-orange-600 hover:via-red-600 hover:to-pink-600 text-white font-bold shadow-lg group relative overflow-hidden"
+                            onClick={() => window.location.href = '/booking/10hour'}
+                          >
+                            Book Now
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                            <motion.div
+                              className="absolute inset-0 bg-white"
+                              initial={{ x: "-100%" }}
+                              whileHover={{ x: "100%" }}
+                              transition={{ duration: 0.4 }}
+                              style={{ opacity: 0.2 }}
+                            />
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
+                    {/* Intensive Course */}
+                    <motion.div
+                      className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-[rgba(255,255,255,0.1)] relative h-full"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      whileHover={{
+                        y: -5,
+                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+                      }}
+                    >
+                      <div className="absolute top-4 left-4 bg-purple-500/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full">
+                        🚀 Fast Track
+                      </div>
+                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-[rgba(147,51,234,0.1)] to-[rgba(255,255,255,0.05)]">
+                        <h3 className="text-xl font-bold mb-2 text-white">
+                          Intensive Course
+                        </h3>
+                        <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">
+                          Pass in 2 weeks
+                        </p>
+                        <div className="mb-4">
+                          <span className="text-4xl font-black text-white">£999</span>
+                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(30 hours)</span>
+                        </div>
+                        <div className="bg-purple-500/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
+                          🎉 Intensive 2-Week Course
+                        </div>
+                        <ul className="space-y-2 mb-6">
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">30 hours total</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">2-week intensive</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Test booking included</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Car rental for test</span>
+                          </li>
+                        </ul>
+                        <motion.div
+                          whileHover={{ scale: 1.03 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          <Button
+                            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 group relative overflow-hidden"
+                            onClick={() => window.location.href = '/booking/intensive'}
                           >
                             Book Now
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -746,21 +824,45 @@ const Services = () => {
                   </div>
                 </div>
               </section>
-          </div>
 
-              {/* Intensive Driving Courses - Highlighted Section */}
-              <section className="py-20 bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6b00' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-                  }}></div>
+              {/* Intensive Driving Courses - Highlighted Section - Updated with Dark Premium Aesthetics */}
+              <section className="py-20 bg-[#0d0d0d] relative overflow-hidden">
+                {/* Background blur effects */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+                
+                {/* Animated particles */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  {[...Array(8)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute rounded-full bg-gradient-to-r from-[#ff6b35]/20 to-[#f5a623]/20 backdrop-blur-sm"
+                      style={{
+                        width: Math.random() * 60 + 20,
+                        height: Math.random() * 60 + 20,
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                      }}
+                      initial={{ opacity: 0.1, scale: 0 }}
+                      animate={{
+                        opacity: [0.1, 0.3, 0.1],
+                        scale: [0, 1, 0],
+                        x: [0, Math.random() * 100 - 50, 0],
+                        y: [0, Math.random() * 100 - 50, 0],
+                      }}
+                      transition={{
+                        duration: Math.random() * 10 + 10,
+                        repeat: Infinity,
+                        delay: Math.random() * 5,
+                      }}
+                    />
+                  ))}
                 </div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center mb-16">
                     <motion.div
-                      className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+                      className="inline-flex items-center mb-3 bg-gradient-to-r from-[#ff6b35] to-[#f5a623] px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
                       initial={{ opacity: 0, y: -20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
@@ -772,7 +874,7 @@ const Services = () => {
                       FAST TRACK YOUR SUCCESS
                     </motion.div>
                     <motion.h2
-                      className="text-5xl font-black text-gray-900 mb-6"
+                      className="text-5xl font-black text-white mb-6"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
@@ -780,16 +882,16 @@ const Services = () => {
                     >
                       <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Intensive Driving</span> Courses 🚀
                     </motion.h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-xl text-[rgba(255,255,255,0.7)] max-w-3xl mx-auto">
                       Pass your driving test with our DVSA-approved intensive courses!
-                      <span className="text-orange-500 font-bold"> Designed for efficient learning and test success!</span>
+                      <span className="text-orange-400 font-bold"> Designed for efficient learning and test success!</span>
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     {/* Intensive Lessons */}
                     <motion.div
-                      className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-orange-200 relative"
+                      className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-[rgba(255,255,255,0.1)] relative"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
@@ -802,38 +904,38 @@ const Services = () => {
                       <div className="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
                         MOST POPULAR
                       </div>
-                      <div className="p-8">
+                      <div className="p-8 bg-gradient-to-b from-[rgba(255,107,53,0.1)] to-transparent">
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mr-4">
                             <Zap className="h-8 w-8 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-gray-900">Intensive Lessons</h3>
-                            <p className="text-orange-600 font-medium">Fast-track your learning</p>
+                            <h3 className="text-2xl font-bold text-white">Intensive Lessons</h3>
+                            <p className="text-orange-400 font-medium">Fast-track your learning</p>
                           </div>
                         </div>
                         
                         <div className="mb-6">
-                          <div className="text-4xl font-bold text-gray-900 mb-2">Contact for Quote</div>
-                          <div className="text-gray-600">/tailored course</div>
+                          <div className="text-4xl font-bold text-white mb-2">Contact for Quote</div>
+                          <div className="text-[rgba(255,255,255,0.6)]">/tailored course</div>
                         </div>
 
                         <ul className="space-y-3 mb-8">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Tailored to student needs</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Tailored to student needs</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Contact for quote based on location</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Contact for quote based on location</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Comprehensive training</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Comprehensive training</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Pass your test in 1-2 weeks</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Pass your test in 1-2 weeks</span>
                           </li>
                         </ul>
 
@@ -861,7 +963,7 @@ const Services = () => {
 
                     {/* Mock Driving Test */}
                     <motion.div
-                      className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-blue-200 relative"
+                      className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-[rgba(255,255,255,0.1)] relative"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 }}
@@ -871,38 +973,38 @@ const Services = () => {
                         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                       }}
                     >
-                      <div className="p-8">
+                      <div className="p-8 bg-gradient-to-b from-[rgba(59,130,246,0.1)] to-transparent">
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-4">
                             <CheckCircle className="h-8 w-8 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-gray-900">Mock Driving Test</h3>
-                            <p className="text-blue-600 font-medium">Perfect practice before your test</p>
+                            <h3 className="text-2xl font-bold text-white">Mock Driving Test</h3>
+                            <p className="text-blue-400 font-medium">Perfect practice before your test</p>
                           </div>
                         </div>
                         
                         <div className="mb-6">
-                          <div className="text-4xl font-bold text-gray-900 mb-2">£90</div>
-                          <div className="text-gray-600">/test</div>
+                          <div className="text-4xl font-bold text-white mb-2">£90</div>
+                          <div className="text-[rgba(255,255,255,0.6)]">/test</div>
                         </div>
 
                         <ul className="space-y-3 mb-8">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Real test conditions</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Real test conditions</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">45 minutes duration</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">45 minutes duration</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Detailed feedback</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Detailed feedback</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">Increase your chances of passing</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Increase your chances of passing</span>
                           </li>
                         </ul>
 
@@ -931,7 +1033,7 @@ const Services = () => {
 
                   {/* Driving Test Car Rental */}
                   <motion.div
-                    className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-200 relative max-w-2xl mx-auto"
+                    className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-[rgba(255,255,255,0.1)] relative max-w-2xl mx-auto"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -941,38 +1043,38 @@ const Services = () => {
                       boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                     }}
                   >
-                    <div className="p-8">
+                    <div className="p-8 bg-gradient-to-b from-[rgba(34,197,94,0.1)] to-transparent">
                       <div className="flex items-center mb-6">
                         <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4">
                           <Car className="h-8 w-8 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold text-gray-900">Driving Test Car Rental</h3>
-                          <p className="text-green-600 font-medium">Everything you need for test day</p>
+                          <h3 className="text-2xl font-bold text-white">Driving Test Car Rental</h3>
+                          <p className="text-green-400 font-medium">Everything you need for test day</p>
                         </div>
                       </div>
                       
                       <div className="mb-6">
-                        <div className="text-4xl font-bold text-gray-900 mb-2">£150</div>
-                        <div className="text-gray-600">/3 hours</div>
+                        <div className="text-4xl font-bold text-white mb-2">£150</div>
+                        <div className="text-[rgba(255,255,255,0.6)]">/3 hours</div>
                       </div>
 
                       <ul className="space-y-3 mb-8">
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">3 hours booking</span>
+                          <span className="text-[rgba(255,255,255,0.8)]">3 hours booking</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">Arrive 15 minutes before test</span>
+                          <span className="text-[rgba(255,255,255,0.8)]">Arrive 15 minutes before test</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">Practice maneuvers</span>
+                          <span className="text-[rgba(255,255,255,0.8)]">Practice maneuvers</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">Home drop-off after test</span>
+                          <span className="text-[rgba(255,255,255,0.8)]">Home drop-off after test</span>
                         </li>
                       </ul>
 
@@ -1231,44 +1333,44 @@ const Services = () => {
                     viewport={{ once: true }}
                   >
                     <motion.div
-                      className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
-                      initial={{ opacity: 0, y: -20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Sparkles className="h-4 w-4 mr-2" />
-                      Start Your Journey
-                    </motion.div>
-                    
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-                      <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
-                        Ready to Start Your
-                      </span>
-                      <br />
-                      <span className="text-orange-400 animate-bounce inline-block">Driving Journey?</span>
-                      <span className="text-3xl lg:text-4xl ml-4">🚗</span>
-                    </h2>
-                    
-                    <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed mb-8 max-w-3xl mx-auto">
-                      Book your first lesson today and take the first step
-                      towards <span className="text-orange-400 font-bold">driving confidence</span> with our
-                      <span className="text-green-400 font-bold"> DVSA-approved instructors</span>! 🏆
-                    </p>
-                  </motion.div>
-
-                  <div className="flex flex-col sm:flex-row justify-center gap-6">
-                    <motion.div
+                      className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10"
                       initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      viewport={{ once: true }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      <div className="grid grid-cols-4 gap-4">
+                        <div className="text-center">
+                          <Trophy className="h-6 w-6 mx-auto mb-2 text-yellow-400" />
+                          <div className="text-2xl font-bold text-yellow-400">98%</div>
+                          <div className="text-xs text-gray-400">Pass Rate</div>
+                        </div>
+                        <div className="text-center">
+                          <Users className="h-6 w-6 mx-auto mb-2 text-primary" />
+                          <div className="text-2xl font-bold text-primary">2000+</div>
+                          <div className="text-xs text-gray-400">Students</div>
+                        </div>
+                        <div className="text-center">
+                          <Star className="h-6 w-6 mx-auto mb-2 text-success" />
+                          <div className="text-2xl font-bold text-success">8+</div>
+                          <div className="text-xs text-gray-400">Years</div>
+                        </div>
+                        <div className="text-center">
+                          <Zap className="h-6 w-6 mx-auto mb-2 text-primary" />
+                          <div className="text-2xl font-bold text-primary">1 Week</div>
+                          <div className="text-xs text-gray-400">Fast Track</div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      className="flex flex-col sm:flex-row gap-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
                     >
                       <Button
                         size="lg"
-                        className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group relative overflow-hidden"
+                        className="bg-primary hover:bg-primary/90 text-white shadow-glow hover:shadow-glow-lg group relative overflow-hidden"
                         onClick={() => {
                           triggerConfetti();
                           window.open("https://calendly.com/drivedojo-qnua/120min?background_color=b8c7ff", "_blank");
@@ -1297,18 +1399,11 @@ const Services = () => {
                           style={{ opacity: 0.2 }}
                         />
                       </Button>
-                    </motion.div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                      viewport={{ once: true }}
-                    >
                       <Button
                         size="lg"
                         variant="outline"
-                        className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                        className="border-white/10 text-white hover:bg-white/10 backdrop-blur-sm"
                         onClick={() => (window.location.href = "/contact")}
                       >
                         <motion.span
@@ -1319,27 +1414,27 @@ const Services = () => {
                         </motion.span>
                       </Button>
                     </motion.div>
-                  </div>
 
-                  {/* Social proof */}
-                  <motion.div
-                    className="flex items-center justify-center space-x-8 text-sm mt-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                  >
-                    <div className="flex items-center">
-                      <div className="flex -space-x-2 mr-3">
-                        {[1,2,3,4].map((i) => (
-                          <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
-                        ))}
+                    {/* Social proof */}
+                    <motion.div
+                      className="flex items-center space-x-6 text-sm mt-8"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.8 }}
+                    >
+                      <div className="flex items-center">
+                        <div className="flex -space-x-2 mr-3">
+                          {[1,2,3,4].map((i) => (
+                            <div key={i} className="w-8 h-8 bg-primary/30 rounded-full border-2 border-white/20"></div>
+                          ))}
+                        </div>
+                        <span className="text-gray-400">2000+ successful drivers</span>
                       </div>
-                      <span className="text-blue-200">2000+ successful drivers</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                      <span className="text-blue-200">4.9/5 rating</span>
-                    </div>
+                      <div className="flex items-center">
+                        <Star className="h-4 w-4 text-yellow-400 mr-1" />
+                        <span className="text-gray-400">4.9/5 rating</span>
+                      </div>
+                    </motion.div>
                   </motion.div>
                 </div>
               </section>

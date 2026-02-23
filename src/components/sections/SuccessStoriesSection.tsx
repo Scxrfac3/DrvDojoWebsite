@@ -73,24 +73,24 @@ export default function SuccessStoriesSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+    <section className="py-20 bg-[#0d0d0d] text-white relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-40 h-40 bg-orange-500 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-32 h-32 bg-blue-500 rounded-full opacity-15 animate-bounce"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-purple-500 rounded-full opacity-10 animate-ping"></div>
+        <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-primary/5 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-primary/5 rounded-full"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black mb-6">
-            <span className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-white">
               Hall of Fame
             </span> 🏆
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Check out our recent legends who smashed their driving test!
-            <span className="text-green-400 font-bold animate-pulse">You could be next!</span> ✨
+            <span className="text-primary font-bold"> You could be next!</span> ✨
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function SuccessStoriesSection() {
                 key={index}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`relative bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden transition-all duration-500 border border-white/20 group ${
+                className={`relative bg-[#1a1a1a] backdrop-blur-md rounded-3xl overflow-hidden transition-all duration-500 border border-white/10 group hover:border-primary/30 ${
                   isHovered ? 'scale-105 rotate-1' : 'scale-100 rotate-0'
                 }`}
               >
@@ -122,12 +122,12 @@ export default function SuccessStoriesSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                   {/* Success Badge */}
-                  <div className="absolute top-4 right-4 bg-green-500 text-white p-3 rounded-full animate-bounce">
+                  <div className="absolute top-4 right-4 bg-success text-white p-3 rounded-full">
                     <CheckCircle className="h-6 w-6" />
                   </div>
 
                   {/* Emoji */}
-                  <div className="absolute top-4 left-4 text-4xl animate-pulse">
+                  <div className="absolute top-4 left-4 text-4xl">
                     {student.emoji}
                   </div>
 
@@ -136,15 +136,15 @@ export default function SuccessStoriesSection() {
                     onClick={() => handleLike(index)}
                     className={`absolute bottom-4 right-4 p-3 rounded-full transition-all duration-300 ${
                       isLiked
-                        ? 'bg-red-500 text-white scale-110 animate-pulse'
-                        : 'bg-white/20 backdrop-blur-sm text-white hover:bg-red-500/50'
+                        ? 'bg-red-500 text-white scale-110'
+                        : 'bg-white/10 backdrop-blur-sm text-white hover:bg-red-500/50'
                     }`}
                   >
                     <Heart className={`h-5 w-5 ${isLiked ? 'fill-current' : ''}`} />
                   </button>
 
                   {/* Achievement Badge */}
-                  <div className="absolute bottom-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                  <div className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
                     {student.achievement}
                   </div>
                 </div>
@@ -153,16 +153,16 @@ export default function SuccessStoriesSection() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 flex items-center">
                     {student.name}
-                    <Trophy className="h-5 w-5 text-yellow-400 ml-2 animate-bounce" />
+                    <Trophy className="h-5 w-5 text-yellow-400 ml-2" />
                   </h3>
 
-                  <div className="space-y-2 text-blue-100 text-sm">
+                  <div className="space-y-2 text-gray-400 text-sm">
                     <div className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+                      <CheckCircle className="h-4 w-4 text-success mr-2" />
                       <span>Passed at {student.testCenter}</span>
                     </div>
                     <div className="flex items-center">
-                      <Calendar className="h-4 w-4 text-blue-400 mr-2" />
+                      <Calendar className="h-4 w-4 text-primary mr-2" />
                       <span>{student.passDate}</span>
                     </div>
                   </div>
@@ -174,7 +174,7 @@ export default function SuccessStoriesSection() {
                         <Star key={star} className="h-4 w-4 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <div className="flex items-center text-blue-100 text-sm">
+                    <div className="flex items-center text-gray-400 text-sm">
                       <Heart className="h-4 w-4 mr-1" />
                       <span>{isLiked ? student.likes + 1 : student.likes}</span>
                     </div>
@@ -182,7 +182,7 @@ export default function SuccessStoriesSection() {
                 </div>
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 transition-opacity duration-300 ${
+                <div className={`absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 ${
                   isHovered ? 'opacity-100' : 'opacity-0'
                 }`}></div>
               </div>
@@ -192,17 +192,16 @@ export default function SuccessStoriesSection() {
 
         {/* Success Counter */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-4 rounded-3xl shadow-xl">
-            <Trophy className="h-6 w-6 text-white mr-3 animate-bounce" />
+          <div className="inline-flex items-center bg-primary px-8 py-4 rounded-xl shadow-glow">
+            <Trophy className="h-6 w-6 text-white mr-3" />
             <span className="text-white font-bold text-lg">
               87% Pass Rate - Join Our Success Stories!
             </span>
-            <Zap className="h-6 w-6 text-yellow-300 ml-3 animate-pulse" />
+            <Zap className="h-6 w-6 text-white/80 ml-3" />
           </div>
 
-          <p className="mt-4 text-blue-100">
-            <span className="animate-pulse">🎯</span> Your success story starts here!
-            <span className="animate-pulse">🎯</span>
+          <p className="mt-4 text-gray-400">
+            🎯 Your success story starts here! 🎯
           </p>
         </div>
       </div>

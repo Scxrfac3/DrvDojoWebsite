@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { motion } from "framer-motion";
@@ -8,6 +8,12 @@ import confetti from "canvas-confetti";
 
 const BookingIntensive = () => {
   const [animateBackground, setAnimateBackground] = React.useState(false);
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
+
+  const calendlyEmbedHTML = `
+    <div class="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua/intensive" style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  `;
 
   const triggerConfetti = () => {
     confetti({
@@ -17,50 +23,51 @@ const BookingIntensive = () => {
     });
     setAnimateBackground(true);
     setTimeout(() => setAnimateBackground(false), 2000);
+    
+    // Scroll to the Calendly widget
+    if (widgetContainerRef.current) {
+      widgetContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
-
-  const calendlyEmbedHTML = `
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua/intensive" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
-  `;
 
   return (
     <div
-      className={`min-h-screen bg-slate-900 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
+      className={`min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
-      {/* Animated background elements */}
+      {/* Premium dark background with subtle grid pattern */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-bounce"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full opacity-25 animate-ping"></div>
-        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
       </div>
 
-      {/* Animated particles */}
+      {/* Animated accent lights */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Subtle animated particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20 backdrop-blur-sm"
             style={{
-              width: Math.random() * 60 + 20,
-              height: Math.random() * 60 + 20,
+              width: Math.random() * 40 + 10,
+              height: Math.random() * 40 + 10,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
-            initial={{ opacity: 0.1, scale: 0 }}
+            initial={{ opacity: 0 }}
             animate={{
-              opacity: [0.1, 0.3, 0.1],
+              opacity: [0, 0.5, 0],
               scale: [0, 1, 0],
-              x: [0, Math.random() * 100 - 50, 0],
-              y: [0, Math.random() * 100 - 50, 0],
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: Math.random() * 8 + 8,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: Math.random() * 4,
             }}
           />
         ))}
@@ -76,28 +83,28 @@ const BookingIntensive = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="inline-flex items-center mb-3 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+            className="inline-flex items-center mb-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 px-5 py-2.5 rounded-full text-sm font-medium text-emerald-300 backdrop-blur-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Zap className="h-4 w-4 mr-2" />
-            Book Your Lessons
+            <Zap className="h-4 w-4 mr-2 text-emerald-400" />
+            Premium Booking Experience
           </motion.div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
+            <span className="bg-gradient-to-r from-white via-emerald-100 to-emerald-300 bg-clip-text text-transparent">
               Drive
             </span>
             <br />
-            <span className="text-orange-400 animate-bounce inline-block">Smart</span>
+            <span className="text-emerald-400 inline-block">Smart</span>
             <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 
-          <p className="text-blue-100 max-w-2xl mx-auto text-lg">
-            Book your driving lessons directly with our easy-to-use scheduling system.
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            Book your intensive driving course with our premium scheduling system.
           </p>
         </motion.div>
 
@@ -110,88 +117,105 @@ const BookingIntensive = () => {
             className="lg:w-1/2"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-              Book Your Intensive Driving Course
+              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Intensive Driving Course
+              </span>
             </h2>
-            <div className="bg-gradient-to-b from-green-900/40 to-green-800/20 rounded-xl overflow-hidden border border-green-700/30 shadow-lg relative">
-              <div className="p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-2">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center mr-3 bg-green-600/30 text-green-400">
-                        <Zap className="h-6 w-6" />
+            
+            {/* Premium card with electric border effect */}
+            <div className="relative group">
+              {/* Electric border gradient */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 rounded-xl opacity-50 group-hover:opacity-75 transition duration-500 blur"></div>
+              
+              <div className="relative bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl border border-slate-800 shadow-2xl overflow-hidden">
+                <div className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center mb-3">
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center mr-3 bg-gradient-to-br from-emerald-500/30 to-teal-600/30 border border-emerald-500/20">
+                          <Zap className="h-6 w-6 text-emerald-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-white">
+                            Intensive Driving Course
+                          </h3>
+                          <p className="text-xs text-emerald-400">Fast-Track Your Learning</p>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-bold text-white">
-                        Intensive Driving Course
-                      </h3>
+                      <div className="text-3xl font-bold text-white mb-2">
+                        £150
+                        <span className="text-sm font-normal text-slate-400">/lesson</span>
+                      </div>
+                      <p className="text-sm mb-4 text-slate-300">
+                        Complete your training quickly with our intensive course designed to get you test-ready fast.
+                      </p>
                     </div>
-                    <div className="text-2xl font-bold text-white mb-2">
-                      £600
-                      <span className="text-sm font-normal">/course</span>
-                    </div>
-                    <p className="text-sm mb-3 text-green-300">
-                      Fast-track your learning
-                    </p>
                   </div>
+
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-center text-sm">
+                      <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
+                      <span className="text-slate-300">Comprehensive intensive training</span>
+                    </li>
+                    <li className="flex items-center text-sm">
+                      <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
+                      <span className="text-slate-300">Flexible scheduling options</span>
+                    </li>
+                    <li className="flex items-center text-sm">
+                      <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
+                      <span className="text-slate-300">Test preparation included</span>
+                    </li>
+                    <li className="flex items-center text-sm">
+                      <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
+                      <span className="text-slate-300">Dedicated instructor</span>
+                    </li>
+                  </ul>
+
+                  <Button
+                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 shadow-lg shadow-emerald-500/20"
+                    onClick={triggerConfetti}
+                  >
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Book This Course
+                  </Button>
                 </div>
-
-                <ul className="space-y-1 mb-4">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                    <span className="text-slate-300">Comprehensive training</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                    <span className="text-slate-300">Flexible scheduling</span>
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                    <span className="text-slate-300">Test preparation included</span>
-                  </li>
-                </ul>
-
-                <Button
-                  className="w-full bg-green-600 hover:bg-green-700"
-                  onClick={triggerConfetti}
-                >
-                  Book This Package
-                </Button>
               </div>
             </div>
             
             <div className="mt-6">
-              <h3 className="text-xl font-bold text-white mb-4">Other Packages</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <h3 className="text-lg font-semibold text-slate-300 mb-4">Other Packages</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Button
                   variant="outline"
-                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-emerald-500/50 transition-colors"
                   onClick={() => window.location.href = '/booking/payg'}
                 >
                   Pay As You Go
                 </Button>
                 <Button
                   variant="outline"
-                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-emerald-500/50 transition-colors"
                   onClick={() => window.location.href = '/booking/6hour'}
                 >
                   6-Hour Package
                 </Button>
                 <Button
                   variant="outline"
-                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-emerald-500/50 transition-colors"
                   onClick={() => window.location.href = '/booking/10hour'}
                 >
                   10-Hour Package
                 </Button>
                 <Button
                   variant="outline"
-                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-emerald-500/50 transition-colors"
                   onClick={() => window.location.href = '/booking/mocktest'}
                 >
                   Mock Test
                 </Button>
                 <Button
                   variant="outline"
-                  className="text-white border-white/20 hover:bg-white/10 backdrop-blur-sm bg-white/10"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-emerald-500/50 transition-colors"
                   onClick={() => window.location.href = '/booking/testrental'}
                 >
                   Test Car Rental
@@ -202,39 +226,51 @@ const BookingIntensive = () => {
 
           {/* Calendly Widget */}
           <motion.div
+            ref={widgetContainerRef}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="lg:w-1/2 min-h-[80vh]"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-              Book Your Lesson
+              Select Your Time
             </h2>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-xl h-full flex flex-col">
-              <div className="mb-4">
-                <p className="text-blue-100 mb-2">
-                  Select your preferred date and time below.
-                </p>
-                <p className="text-blue-200 text-sm">
-                  All bookings include payment processing through our secure system.
-                </p>
-                <div className="mt-2 p-3 bg-blue-900/30 rounded-lg border border-blue-700/50">
-                  <p className="text-blue-200 text-sm font-medium">
-                    Selected: <span className="text-orange-300">Intensive Driving Course</span>
+            
+            {/* Premium widget container with electric border */}
+            <div className="relative group">
+              {/* Electric border gradient */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 rounded-xl opacity-40 group-hover:opacity-60 transition duration-500 blur"></div>
+              
+              <div className="relative bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl border border-slate-800 shadow-2xl h-full flex flex-col overflow-hidden">
+                <div className="p-5 border-b border-slate-800">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-slate-300 mb-1">
+                        Select your preferred date and time
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Instant confirmation & secure booking
+                      </p>
+                    </div>
+                    <div className="px-3 py-1.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full">
+                      <p className="text-xs text-emerald-400 font-medium">
+                        Intensive Course
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Calendly Widget Container */}
+                <div 
+                  className="rounded-lg overflow-hidden bg-white flex-grow"
+                  dangerouslySetInnerHTML={{ __html: calendlyEmbedHTML }}
+                />
+                
+                <div className="p-4 border-t border-slate-800 text-center bg-slate-900/50">
+                  <p className="text-slate-500 text-xs">
+                    Powered by <span className="text-slate-400">Calendly</span> • Need help? <span className="text-emerald-400">drivedojo@gmail.com</span>
                   </p>
                 </div>
-              </div>
-              
-              {/* Calendly Inline Widget - Using raw HTML embed */}
-              <div 
-                className="rounded-lg overflow-hidden bg-white flex-grow"
-                dangerouslySetInnerHTML={{ __html: calendlyEmbedHTML }}
-              />
-              
-              <div className="mt-4 text-center">
-                <p className="text-blue-200 text-sm">
-                  Need help? Contact us at <span className="text-blue-300">info@drivedojo.co.uk</span>
-                </p>
               </div>
             </div>
           </motion.div>

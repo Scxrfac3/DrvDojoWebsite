@@ -66,12 +66,12 @@ const GoodmayesLessons = () => {
         keywords="driving lessons goodmayes, intensive driving lessons goodmayes, automatic driving lessons seven kings, pass first time goodmayes dtc, DVSA approved instructor, driving school goodmayes, IG postcodes, driving instructor goodmayes, online booking driving lessons"
         canonical="/driving-lessons/goodmayes"
       />
-      <div className="min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-blue-100 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
+      {/* Background decorative elements - Dark theme */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
 
       <Navbar />
 
@@ -87,15 +87,15 @@ const GoodmayesLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-500">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
                     DVSA Approved Driving Lessons
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-slate-800">in Goodmayes - Online Booking Available</span>
+                  <span className="text-white">in Goodmayes - Online Booking Available</span>
                 </h1>
 
-                <p className="text-xl text-slate-700 mb-8">
-                  <span className="font-semibold">
+                <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
+                  <span className="font-semibold text-orange-400">
                     Professional intensive driving lessons in Goodmayes & automatic driving lessons in Seven Kings
                   </span>{" "}
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC. Former instructor with Red Driving School and AA Driving School, serving all IG postcodes.
@@ -110,7 +110,7 @@ const GoodmayesLessons = () => {
                     <Input
                       type="text"
                       placeholder="Enter IG1, IG2, IG3, or other IG postcode"
-                      className="pl-10 bg-white border-gray-200"
+                      className="pl-10 bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.1)] text-white placeholder:text-[rgba(255,255,255,0.4)]"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
                       required
@@ -118,7 +118,7 @@ const GoodmayesLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white group relative overflow-hidden"
+                    className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white group relative overflow-hidden"
                   >
                     Get Started Today
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -199,63 +199,63 @@ const GoodmayesLessons = () => {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-16 bg-white">
+        {/* Features Section - Dark Theme */}
+        <section className="py-16 bg-[#0d0d0d]">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
-                className="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-xl shadow-md border border-sky-200"
+                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-sky-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   DVSA Approved Instruction
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-[rgba(255,255,255,0.7)]">
                   Learn from an official DVSA approved instructor with experience at Red Driving School and AA Driving School. Specializing in intensive driving lessons in Goodmayes and helping students pass first time in Goodmayes DTC.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-xl shadow-md border border-blue-200"
+                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Award className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   First-Time Pass Specialist
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-[rgba(255,255,255,0.7)]">
                   Our first-time pass rate is 13% higher than the national average. We specialize in helping students pass first time in Goodmayes DTC with comprehensive intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings.
                 </p>
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-br from-sky-50 to-cyan-50 p-6 rounded-xl shadow-md border border-sky-200"
+                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-sky-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                   <Car className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   Local IG Postcode Expert
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-[rgba(255,255,255,0.7)]">
                   Serving all IG postcodes including IG1, IG2, IG3, IG4, IG5, IG6, IG7, IG8, IG9, IG10, and IG11. Our automatic driving lessons in Seven Kings are designed for the unique road conditions of the Goodmayes area.
                 </p>
               </motion.div>
@@ -264,7 +264,7 @@ const GoodmayesLessons = () => {
         </section>
 
         {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-sky-50 to-white">
+        <section className="py-16 bg-[#0d0d0d]">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-12"
@@ -273,10 +273,10 @@ const GoodmayesLessons = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Comprehensive Driving Lessons Across Goodmayes & Seven Kings
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
                 We offer specialized intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings, covering all IG postcodes with expert local knowledge to help you pass first time in Goodmayes DTC.
               </p>
             </motion.div>
@@ -288,10 +288,10 @@ const GoodmayesLessons = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="text-2xl font-bold mb-4 text-white">
                   Expertise in Goodmayes Test Routes
                 </h3>
-                <p className="text-gray-700 mb-6">
+                <p className="text-[rgba(255,255,255,0.7)] mb-6">
                   Our intensive driving lessons in Goodmayes are designed by a DVSA approved instructor who knows every test route in the area. We specialize in helping students pass first time in Goodmayes DTC with focused training on local roads.
                 </p>
 
@@ -312,7 +312,7 @@ const GoodmayesLessons = () => {
                       viewport={{ once: true }}
                     >
                       <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="text-[rgba(255,255,255,0.8)]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -336,7 +336,7 @@ const GoodmayesLessons = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-sky-600 to-blue-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -366,7 +366,7 @@ const GoodmayesLessons = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-sky-700 hover:bg-sky-50 shadow-lg"
+                className="bg-white text-orange-600 hover:bg-gray-100 shadow-lg"
                 onClick={() => (window.location.href = "/services")}
               >
                 Book Your Automatic Lesson Now

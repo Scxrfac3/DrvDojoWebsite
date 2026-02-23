@@ -62,13 +62,13 @@ const GetStartedSection = ({
   };
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-[#0d0d0d] text-white">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-white/10 backdrop-blur-sm"
+            className="absolute rounded-full bg-primary/5"
             style={{
               width: Math.random() * 60 + 20,
               height: Math.random() * 60 + 20,
@@ -76,7 +76,7 @@ const GetStartedSection = ({
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              opacity: [0.1, 0.3, 0.1],
+              opacity: [0.05, 0.15, 0.05],
               scale: [0, 1, 0],
               x: [0, Math.random() * 100 - 50, 0],
               y: [0, Math.random() * 100 - 50, 0],
@@ -99,24 +99,24 @@ const GetStartedSection = ({
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-orange-500/20 backdrop-blur-sm border border-orange-400/30"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30"
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4 text-orange-400" />
-              <span className="text-sm font-medium text-orange-300">
-                London Based
+              <MapPin className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium text-primary">
+                East London & Essex
               </span>
             </div>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent">
+            <span className="text-white">
               Start Your Journey
             </span>
           </h2>
 
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Three simple steps to get you on the road to driving success with our expert instructors.
           </p>
         </motion.div>
@@ -131,21 +131,21 @@ const GetStartedSection = ({
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 flex flex-col items-center text-center h-full relative overflow-hidden group"
+              className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 flex flex-col items-center text-center h-full relative overflow-hidden group"
               variants={itemVariants}
               whileHover={{
                 scale: 1.03,
-                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                backgroundColor: "rgba(255, 255, 255, 0.08)",
               }}
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
               />
 
               <motion.div
-                className="mb-4 p-4 rounded-full bg-white/10 relative z-10"
+                className="mb-4 p-4 rounded-full bg-white/5 relative z-10"
                 whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                 transition={{ duration: 0.5 }}
               >
@@ -156,7 +156,7 @@ const GetStartedSection = ({
                 {step.title}
               </h3>
 
-              <p className="text-blue-100 flex-grow relative z-10">
+              <p className="text-gray-400 flex-grow relative z-10">
                 {step.description}
               </p>
 
@@ -166,7 +166,7 @@ const GetStartedSection = ({
                     animate={{ x: [0, 5, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
                   >
-                    <ArrowRight className="h-6 w-6 text-orange-400" />
+                    <ArrowRight className="h-6 w-6 text-primary" />
                   </motion.div>
                 </div>
               )}
@@ -183,14 +183,13 @@ const GetStartedSection = ({
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-6 rounded-full text-lg shadow-lg border-2 border-white/20"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl text-lg shadow-glow hover:shadow-glow-lg"
             asChild
           >
             <motion.a
               href={ctaLink}
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 20px rgba(236, 72, 153, 0.5)",
               }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center font-bold"
@@ -207,7 +206,7 @@ const GetStartedSection = ({
           </Button>
 
           <motion.p
-            className="mt-4 text-sm text-blue-200 opacity-80"
+            className="mt-4 text-sm text-gray-500"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}

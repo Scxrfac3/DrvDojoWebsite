@@ -90,11 +90,15 @@ const WalthamstowLessons = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="/images/certifications/HERO1.jpg"
-                    alt="Driving lessons in Walthamstow"
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     className="w-full h-auto object-cover rounded-2xl"
-                  />
+                  >
+                    <source src="/images/certifications/mercedesCTA.mp4" type="video/mp4" />
+                  </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-center space-x-1 mb-2">

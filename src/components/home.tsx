@@ -29,12 +29,11 @@ const Home = () => {
   return (
     <>
       {/* Main Page Content */}
-      <div className="min-h-screen bg-gradient-white-subtle relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-100 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-100 rounded-full opacity-30 blur-3xl"></div>
+      <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
+        {/* Background decorative elements - subtle dark theme */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
 
         <Banner />
         <Navbar />
@@ -47,13 +46,13 @@ const Home = () => {
           <NewTestimonialsSection />
 
           {/* Free Theory Test Section */}
-          <section className="py-16 bg-gradient-white-subtle relative overflow-hidden">
+          <section className="py-16 bg-[#1a1a1a] relative overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
               {[...Array(10)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute rounded-full bg-purple-100/50"
+                  className="absolute rounded-full bg-primary/5"
                   style={{
                     width: Math.random() * 100 + 50,
                     height: Math.random() * 100 + 50,
@@ -62,7 +61,7 @@ const Home = () => {
                   }}
                   initial={{ opacity: 0.1, scale: 0 }}
                   animate={{
-                    opacity: [0.1, 0.3, 0.1],
+                    opacity: [0.05, 0.15, 0.05],
                     scale: [0, 1, 0],
                     x: [0, Math.random() * 100 - 50, 0],
                     y: [0, Math.random() * 100 - 50, 0],
@@ -80,7 +79,7 @@ const Home = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="text-center lg:text-left">
                   <motion.div
-                    className="inline-flex items-center mb-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg"
+                    className="inline-flex items-center mb-3 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full text-sm font-medium text-white backdrop-blur-sm"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
@@ -93,18 +92,18 @@ const Home = () => {
                   </motion.div>
 
                   <motion.h2
-                    className="text-3xl md:text-5xl font-bold mb-4 text-gray-800"
+                    className="text-3xl md:text-5xl font-bold mb-4 text-white"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                   >
                     Ace Your Theory Test{" "}
-                    <span className="text-yellow-400">First Time</span>
+                    <span className="text-primary">First Time</span>
                   </motion.h2>
 
                   <motion.p
-                    className="text-xl text-gray-700 mb-6"
+                    className="text-xl text-gray-400 mb-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -114,25 +113,25 @@ const Home = () => {
                   </motion.p>
 
                   <motion.div
-                    className="flex flex-wrap gap-4 mb-6"
+                    className="flex flex-wrap gap-4 mb-6 justify-center lg:justify-start"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <div className="flex items-center bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
                       <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mr-1" />
-                      <span className="text-gray-800 text-sm">3000+ Questions</span>
+                      <span className="text-white text-sm">3000+ Questions</span>
                     </div>
 
-                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-                      <span className="text-gray-800 text-sm">DVSA Approved</span>
+                    <div className="flex items-center bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+                      <CheckCircle className="h-4 w-4 text-success mr-1" />
+                      <span className="text-white text-sm">DVSA Approved</span>
                     </div>
 
-                    <div className="flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                      <Sparkles className="h-4 w-4 text-blue-500 mr-1" />
-                      <span className="text-gray-800 text-sm">Updated for 2024</span>
+                    <div className="flex items-center bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+                      <Sparkles className="h-4 w-4 text-primary mr-1" />
+                      <span className="text-white text-sm">Updated for 2024</span>
                     </div>
                   </motion.div>
 
@@ -146,17 +145,10 @@ const Home = () => {
                       href="https://drivedojodriving.autos/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-medium rounded-full shadow-lg group relative overflow-hidden"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-xl shadow-glow hover:shadow-glow-lg transition-all"
                     >
                       Start Practicing Now - It's Free!
-                      <Zap className="ml-2 h-5 w-5 group-hover:animate-bounce" />
-                      <motion.div
-                        className="absolute inset-0 bg-white"
-                        initial={{ x: "-100%" }}
-                        whileHover={{ x: "100%" }}
-                        transition={{ duration: 0.4 }}
-                        style={{ opacity: 0.2 }}
-                      />
+                      <Zap className="ml-2 h-5 w-5" />
                     </a>
                   </motion.div>
                 </div>
@@ -168,7 +160,7 @@ const Home = () => {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-purple-800 rounded-3xl p-6 shadow-2xl border-2 border-purple-700/50 relative overflow-hidden">
+                  <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
                     <div className="absolute top-2 right-2 flex space-x-1">
                       <div className="w-3 h-3 rounded-full bg-red-500"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -177,7 +169,7 @@ const Home = () => {
 
                     <div className="flex justify-between items-center mb-6">
                       <div className="flex items-center">
-                        <div className="bg-purple-700 p-2 rounded-full mr-2">
+                        <div className="bg-primary/20 p-2 rounded-full mr-2">
                           <span role="img" aria-label="brain" className="text-xl">
                             🧠
                           </span>
@@ -188,10 +180,10 @@ const Home = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <div className="bg-purple-700/50 text-white px-3 py-1 rounded-lg text-sm">
+                        <div className="bg-white/10 text-white px-3 py-1 rounded-lg text-sm">
                           Quick Test (15)
                         </div>
-                        <div className="bg-purple-700/50 text-white px-3 py-1 rounded-lg text-sm">
+                        <div className="bg-white/10 text-white px-3 py-1 rounded-lg text-sm">
                           Mock Test (50)
                         </div>
                       </div>
@@ -199,9 +191,9 @@ const Home = () => {
                       <div className="text-white font-mono">⏱️ 3399s</div>
                     </div>
 
-                    <div className="w-full bg-purple-700/50 h-2 rounded-full mb-8">
+                    <div className="w-full bg-white/10 h-2 rounded-full mb-8">
                       <motion.div
-                        className="h-full bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"
+                        className="h-full bg-primary rounded-full"
                         style={{ width: "10%" }}
                         animate={{ width: ["10%", "12%", "10%"] }}
                         transition={{ duration: 2, repeat: Infinity }}
@@ -215,7 +207,7 @@ const Home = () => {
 
                     <div className="space-y-4">
                       <motion.div
-                        className="bg-purple-700/50 p-4 rounded-xl cursor-pointer border border-transparent hover:border-white/30 transition-colors"
+                        className="bg-white/5 p-4 rounded-xl cursor-pointer border border-transparent hover:border-primary/30 transition-colors text-white"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -223,7 +215,7 @@ const Home = () => {
                       </motion.div>
 
                       <motion.div
-                        className="bg-purple-700/50 p-4 rounded-xl cursor-pointer border border-transparent hover:border-white/30 transition-colors"
+                        className="bg-white/5 p-4 rounded-xl cursor-pointer border border-transparent hover:border-primary/30 transition-colors text-white"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -232,18 +224,18 @@ const Home = () => {
                     </div>
 
                     <div className="mt-8 flex justify-between items-center">
-                      <div className="text-white/70 text-sm">
+                      <div className="text-gray-400 text-sm">
                         <span className="font-bold text-white">Category:</span>{" "}
                         Junctions
                       </div>
 
                       <div className="flex items-center space-x-4">
-                        <div className="text-white/70 text-sm">
+                        <div className="text-gray-400 text-sm">
                           <span className="font-bold text-white">🏆 Points:</span>{" "}
                           0
                         </div>
 
-                        <div className="text-white/70 text-sm">
+                        <div className="text-gray-400 text-sm">
                           <span className="font-bold text-white">🔥 Streak:</span>{" "}
                           0
                         </div>
@@ -252,7 +244,7 @@ const Home = () => {
                   </div>
 
                   <motion.div
-                    className="absolute -bottom-4 -right-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full p-3 shadow-lg"
+                    className="absolute -bottom-4 -right-4 bg-primary rounded-full p-3 shadow-glow"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -269,24 +261,24 @@ const Home = () => {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
-                    <div className="font-bold text-2xl">95%</div>
-                    <div className="text-sm">Pass Rate</div>
+                  <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
+                    <div className="font-bold text-2xl text-white">95%</div>
+                    <div className="text-sm text-gray-400">Pass Rate</div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
-                    <div className="font-bold text-2xl">10k+</div>
-                    <div className="text-sm">Users</div>
+                  <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
+                    <div className="font-bold text-2xl text-white">10k+</div>
+                    <div className="text-sm text-gray-400">Users</div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
-                    <div className="font-bold text-2xl">4.9</div>
-                    <div className="text-sm">App Rating</div>
+                  <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
+                    <div className="font-bold text-2xl text-white">4.9</div>
+                    <div className="text-sm text-gray-400">App Rating</div>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl text-gray-800">
-                    <div className="font-bold text-2xl">Free</div>
-                    <div className="text-sm">Forever</div>
+                  <div className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
+                    <div className="font-bold text-2xl text-primary">Free</div>
+                    <div className="text-sm text-gray-400">Forever</div>
                   </div>
                 </motion.div>
               </div>
