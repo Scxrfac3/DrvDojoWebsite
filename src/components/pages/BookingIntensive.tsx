@@ -3,17 +3,13 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import CalendlyWidget from "../ui/CalendlyWidget";
 import { ArrowRight, Calendar, Car, CheckCircle, ChevronRight, Sparkles, Award, Shield, Zap } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const BookingIntensive = () => {
   const [animateBackground, setAnimateBackground] = React.useState(false);
   const widgetContainerRef = useRef<HTMLDivElement>(null);
-
-  const calendlyEmbedHTML = `
-    <div class="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua/intensive" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  `;
 
   const triggerConfetti = () => {
     confetti({
@@ -24,7 +20,6 @@ const BookingIntensive = () => {
     setAnimateBackground(true);
     setTimeout(() => setAnimateBackground(false), 2000);
     
-    // Scroll to the Calendly widget
     if (widgetContainerRef.current) {
       widgetContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -34,20 +29,17 @@ const BookingIntensive = () => {
     <div
       className={`min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
-      {/* Premium dark background with subtle grid pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
       </div>
 
-      {/* Animated accent lights */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-32 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Subtle animated particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <motion.div
@@ -109,7 +101,6 @@ const BookingIntensive = () => {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Package Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -122,9 +113,7 @@ const BookingIntensive = () => {
               </span>
             </h2>
             
-            {/* Premium card with electric border effect */}
             <div className="relative group">
-              {/* Electric border gradient */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 rounded-xl opacity-50 group-hover:opacity-75 transition duration-500 blur"></div>
               
               <div className="relative bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl border border-slate-800 shadow-2xl overflow-hidden">
@@ -224,7 +213,6 @@ const BookingIntensive = () => {
             </div>
           </motion.div>
 
-          {/* Calendly Widget */}
           <motion.div
             ref={widgetContainerRef}
             initial={{ opacity: 0, x: 20 }}
@@ -236,9 +224,7 @@ const BookingIntensive = () => {
               Select Your Time
             </h2>
             
-            {/* Premium widget container with electric border */}
             <div className="relative group">
-              {/* Electric border gradient */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 rounded-xl opacity-40 group-hover:opacity-60 transition duration-500 blur"></div>
               
               <div className="relative bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl border border-slate-800 shadow-2xl h-full flex flex-col overflow-hidden">
@@ -260,11 +246,11 @@ const BookingIntensive = () => {
                   </div>
                 </div>
                 
-                {/* Calendly Widget Container */}
                 <div 
                   className="rounded-lg overflow-hidden bg-white flex-grow"
-                  dangerouslySetInnerHTML={{ __html: calendlyEmbedHTML }}
-                />
+                >
+                  <CalendlyWidget url="https://calendly.com/drivedojo-qnua/intensive" height={650} />
+                </div>
                 
                 <div className="p-4 border-t border-slate-800 text-center bg-slate-900/50">
                   <p className="text-slate-500 text-xs">

@@ -3,17 +3,13 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import CalendlyWidget from "../ui/CalendlyWidget";
 import { ArrowRight, Calendar, Car, CheckCircle, ChevronRight, Sparkles, Award, Shield, Zap } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const BookingPayg = () => {
   const [animateBackground, setAnimateBackground] = React.useState(false);
   const widgetContainerRef = useRef<HTMLDivElement>(null);
-
-  const calendlyEmbedHTML = `
-    <div class="calendly-inline-widget" data-url="https://calendly.com/drivedojo-qnua/120min" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  `;
 
   const triggerConfetti = () => {
     confetti({
@@ -269,8 +265,9 @@ const BookingPayg = () => {
                 
                 <div 
                   className="rounded-lg overflow-hidden bg-white flex-grow"
-                  dangerouslySetInnerHTML={{ __html: calendlyEmbedHTML }}
-                />
+                >
+                  <CalendlyWidget url="https://calendly.com/drivedojo-qnua/120min" height={650} />
+                </div>
                 
                 <div className="p-4 border-t border-slate-800 text-center bg-slate-900/50">
                   <p className="text-slate-500 text-xs">
