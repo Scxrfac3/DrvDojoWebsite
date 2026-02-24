@@ -55,6 +55,33 @@ const students = [
     emoji: '💫',
     achievement: 'Quick Learner!',
     likes: 178
+  },
+  {
+    name: 'Dami S.',
+    testCenter: 'Hornchurch DTC',
+    passDate: 'July 2025',
+    image: '/images/certifications/14.jpg',
+    emoji: '🚀',
+    achievement: 'Amazing Pass!',
+    likes: 145
+  },
+  {
+    name: 'Oliver C.',
+    testCenter: 'Goodmayes DTC',
+    passDate: 'Aug 2025',
+    image: '/images/certifications/15.png',
+    emoji: '💪',
+    achievement: 'Nailed It!',
+    likes: 132
+  },
+  {
+    name: 'Yaren S.',
+    testCenter: 'Barking DTC',
+    passDate: 'Sept 2025',
+    image: '/images/certifications/16.png',
+    emoji: '🏆',
+    achievement: 'Outstanding!',
+    likes: 167
   }
 ];
 

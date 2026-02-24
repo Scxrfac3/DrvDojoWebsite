@@ -123,6 +123,30 @@ const testimonials = [
     emoji: "🚗",
     testResult: "PASSED ✅",
     likes: 187
+  },
+  {
+    id: 11,
+    name: "Damiola S",
+    role: "New Driver",
+    quote:
+      "Drive Dojo is absolutely fantastic! Patient, knowledgeable, professional, and excellent at clearly explaining driving techniques. Mamunur made me feel completely comfortable and confident behind the wheel from day one. He is incredibly reliable, and every lesson was smooth, well-structured, and easy to follow. The entire learning process felt seamless, which really helped refine my skills and prepare me thoroughly for my test. Thanks to his guidance and constant encouragement, I passed my test and now feel fully independent on the road. I would highly recommend him to anyone looking for a professional, supportive, and highly skilled driving instructor.",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=damiola",
+    emoji: "⭐",
+    testResult: "PASSED ✅",
+    likes: 150
+  },
+  {
+    id: 12,
+    name: "Oliver C",
+    role: "Student",
+    quote:
+      "Thanks to Mamunur's guidance, I was able to pass my test on my first attempt. He is calm, experienced, and teaches in a way that is effective and easy to follow. He also goes above and beyond to help his students pass their tests. In my case, he was available for extra lessons close to the test date, and gave mock tests with very helpful feedback. I highly recommend him as an instructor.",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=oliver",
+    emoji: "🎯",
+    testResult: "PASSED ✅",
+    likes: 140
   }
 ];
 
