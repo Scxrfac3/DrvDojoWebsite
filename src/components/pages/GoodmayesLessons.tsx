@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -20,6 +21,7 @@ import {
   Play,
   Phone,
   MessageCircle,
+  BookOpen,
 } from "lucide-react";
 
 const GoodmayesLessons = () => {
@@ -331,6 +333,79 @@ const GoodmayesLessons = () => {
                   className="w-full h-auto object-cover"
                 />
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Blog Articles */}
+        <section className="py-16 bg-[#111111]">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center mb-3 bg-orange-500/20 px-4 py-2 rounded-full text-sm font-medium text-orange-400 border border-orange-500/30">
+                <BookOpen className="h-4 w-4 mr-2" />
+                Related Guides
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                Useful Reading for Goodmayes Learners
+              </h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                {
+                  title: "How to Pass Your Test at Goodmayes: Insider Tips",
+                  excerpt: "Routes, common faults, and what the examiner is looking for.",
+                  slug: "pass-driving-test-goodmayes-tips",
+                  tag: "Test Prep",
+                },
+                {
+                  title: "What Is the Pass Rate at Goodmayes? (And How to Beat It)",
+                  excerpt: "The real numbers and a targeted action plan to beat the average.",
+                  slug: "goodmayes-driving-test-pass-rate",
+                  tag: "Statistics",
+                },
+                {
+                  title: "Failed at Goodmayes? Here's Exactly What to Do Next",
+                  excerpt: "Step-by-step recovery plan — from DL25 to resit success.",
+                  slug: "failed-driving-test-goodmayes-what-to-do",
+                  tag: "Recovery",
+                },
+                {
+                  title: "Mock Driving Tests in East London",
+                  excerpt: "Why a mock test is essential before your Goodmayes test day.",
+                  slug: "mock-driving-test-east-london",
+                  tag: "Mock Test",
+                },
+              ].map((article, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-xl p-5 border border-[rgba(255,255,255,0.1)] hover:border-orange-500/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-3 py-1 rounded-full mb-3">
+                    {article.tag}
+                  </span>
+                  <h3 className="font-bold text-white mb-2 leading-snug text-sm">
+                    {article.title}
+                  </h3>
+                  <p className="text-[rgba(255,255,255,0.6)] text-xs mb-4">{article.excerpt}</p>
+                  <Link
+                    to={`/blog/${article.slug}`}
+                    className="inline-flex items-center text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors"
+                  >
+                    Read guide
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

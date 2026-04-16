@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://DriveDojoDrivingSchool.com/sitemap.xml
+Sitemap: https://drivedojodrivingschool.com/sitemap.xml

@@ -8,6 +8,12 @@
 [functions]
   directory = "netlify/functions"
 
+# Force HTTPS redirect
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
 # Redirect API endpoints to Netlify Functions
 # These must come BEFORE the catch-all redirect
 [[redirects]]
@@ -27,6 +33,20 @@
   to = "/.netlify/functions/create-supersaas-booking"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to = "https://shdxtqktxjxpwwtqlllf.supabase.co/functions/v1/stripe-webhook"
+  status = 200
+  force = true
+
+# HTTP to HTTPS redirect for all pages
+[[redirects]]
+  from = "/*"
+  to = "https://drivedojodrivingschool.com/:splat"
+  status = 301
+  force = true
+  conditions = {Protocol = "http"}
 
 # Redirects for common driving school pages (301 permanent redirects)
 [[redirects]]
@@ -215,6 +235,99 @@
    from = "/cookies"
    to = "/terms"
    status = 301
+
+# Location pages - Point to React app
+[[redirects]]
+  from = "/driving-lessons/goodmayes"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/ilford"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/walthamstow"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/barking"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/romford"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/isle-of-dogs"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/east-ham"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/forest-gate"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/canning-town"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/driving-lessons/docklands"
+  to = "/index.html"
+  status = 200
+
+# Service pages - Point to React app
+[[redirects]]
+  from = "/automatic-driving-lessons"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/intensive-driving-courses-ilford"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/east-london-automatic"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dual-control-installation"
+  to = "/index.html"
+  status = 200
+
+# ADI Blueprint Routes - Redirect to React app
+[[redirects]]
+  from = "/adi-blueprint"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/academy/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/access-denied"
+  to = "/index.html"
+  status = 200
 
 # IMPORTANT: This rule must be the LAST redirect rule in the file.
 # It tells Netlify to redirect all other requests to the main index.html file

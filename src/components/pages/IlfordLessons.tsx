@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -12,15 +13,32 @@ import {
   Car,
   Shield,
   Award,
+  BookOpen,
 } from "lucide-react";
 import SpecialOffersSection from "../sections/SpecialOffersSection";
 
 const IlfordLessons = () => {
   const [postcode, setPostcode] = useState("");
 
+  // SEO Meta Tags
+  useEffect(() => {
+    document.title = "Driving Lessons in Ilford | Automatic & Intensive | Drive Dojo";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Expert DVSA-approved driving lessons in Ilford. Automatic & intensive courses available. 98% pass rate. Serving IG1, IG2, IG3, IG4, IG5 postcodes. Book today!");
+    }
+    // Add or update canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://drivedojodrivingschool.com/driving-lessons/ilford");
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle the postcode submission - in a real app this would redirect to booking
     window.location.href = `/booking?postcode=${postcode}`;
   };
 
@@ -47,15 +65,16 @@ const IlfordLessons = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    Learn to drive in
+                    Automatic Driving Lessons in
                   </span>{" "}
                   <br className="hidden md:block" />
                   <span>Ilford</span>
                 </h1>
 
                 <p className="text-xl text-gray-700 mb-8">
-                  Driving lessons in Ilford from one of the most trusted schools
-                  in the UK.
+                  Expert driving lessons in Ilford from a DVSA-approved instructor. 
+                  Automatic lessons, intensive courses & 98% first-time pass rate.
+                  Book your first lesson today!
                 </p>
 
                 <form
@@ -81,6 +100,18 @@ const IlfordLessons = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
+
+                <div className="mt-6 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+                  <span className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                    ✓ DVSA Approved
+                  </span>
+                  <span className="inline-flex items-center bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                    ✓ 98% Pass Rate
+                  </span>
+                  <span className="inline-flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    ✓ Automatic Only
+                  </span>
+                </div>
               </motion.div>
 
               <motion.div
@@ -92,7 +123,7 @@ const IlfordLessons = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src="/images/certifications/C1.png"
-                    alt="Driving lessons in Ilford"
+                    alt="Driving lessons in Ilford - Automatic lessons with Mercedes-Benz"
                     className="w-full h-auto object-cover rounded-2xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -125,7 +156,7 @@ const IlfordLessons = () => {
                 >
                   <img
                     src="/images/certifications/DVSA-ADI.png"
-                    alt="DVSA Approved"
+                    alt="DVSA Approved Instructor"
                     className="h-16 w-16 object-contain"
                   />
                 </motion.div>
@@ -139,7 +170,7 @@ const IlfordLessons = () => {
                 >
                   <img
                     src="/images/certifications/PassPlus.png"
-                    alt="Pass Plus"
+                    alt="Pass Plus Certified"
                     className="h-14 w-14 object-contain"
                   />
                 </motion.div>
@@ -151,6 +182,15 @@ const IlfordLessons = () => {
         {/* Features Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Why Choose Our Driving Lessons in Ilford?
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                We cover all Ilford postcodes including IG1, IG2, IG3, IG4, IG5 with 
+                door-to-door pickup included in all lessons.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
@@ -164,12 +204,11 @@ const IlfordLessons = () => {
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Quality instruction
+                  DVSA Approved Instructor
                 </h3>
                 <p className="text-gray-700">
-                  When you choose our driving instructor in Ilford, you know
-                  you're in the safe hands of a qualified driving instructor who
-                  knows their stuff to help you pass your test.
+                  Learn from a fully qualified DVSA-approved driving instructor in Ilford. 
+                  All lessons in automatic Mercedes-Benz vehicles for easier learning.
                 </p>
               </motion.div>
 
@@ -185,14 +224,11 @@ const IlfordLessons = () => {
                   <Award className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Top notch pass rates
+                  98% First-Time Pass Rate
                 </h3>
                 <p className="text-gray-700">
-                  Did you know that the AA's first-time pass rate is better than
-                  the UK average? 13% better in fact! That's because all our
-                  instructors are fully qualified experts in driving
-                  instruction. Learn with the AA and you'll be out and about in
-                  Ilford in a jiffy.
+                  Our intensive driving lessons in Ilford have a 98% first-time pass rate — 
+                  13% higher than the national average. Learn faster, pass first time!
                 </p>
               </motion.div>
 
@@ -208,13 +244,11 @@ const IlfordLessons = () => {
                   <Car className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  One of the UK's biggest and best
+                  Automatic Mercedes-Benz
                 </h3>
                 <p className="text-gray-700">
-                  Our experience and expertise mean that AA learners need, on
-                  average, only 40 hours of lessons to be test-ready. Let us
-                  teach you and we'll have you feeling good about driving and
-                  safely on the road in Ilford in a jiffy.
+                  Learn to drive in style with our automatic Mercedes-Benz A-Class. 
+                  No clutch, no gear changes — just smoother, faster learning in Ilford.
                 </p>
               </motion.div>
             </div>
@@ -259,7 +293,7 @@ const IlfordLessons = () => {
 
                 <ul className="space-y-3">
                   {[
-                    "Quiet residential areas perfect for beginners",
+                    "Quiet residential areas perfect for beginners in IG1-IG5",
                     "Practice on the A406 North Circular for dual carriageway experience",
                     "Challenging roundabouts and junctions for advanced skills",
                     "Variety of road types to build comprehensive driving abilities",
@@ -289,7 +323,7 @@ const IlfordLessons = () => {
               >
                 <img
                   src="/images/certifications/C2.png"
-                  alt="Ilford driving area"
+                  alt="Ilford driving area - Practice routes around Ilford"
                   className="w-full h-auto object-cover"
                 />
               </motion.div>
@@ -299,6 +333,73 @@ const IlfordLessons = () => {
 
         {/* Special Offers Section */}
         <SpecialOffersSection />
+
+        {/* Related Blog Articles */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center mb-3 bg-blue-50 px-4 py-2 rounded-full text-sm font-medium text-blue-700">
+                <BookOpen className="h-4 w-4 mr-2" />
+                Related Guides
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                Useful Reading for Ilford Learners
+              </h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Driving Lessons in Ilford: Complete 2025 Guide",
+                  excerpt: "Everything you need to know before booking — postcodes, prices, test centre, and what to expect.",
+                  slug: "driving-lessons-ilford-guide-2025",
+                  tag: "Local Guide",
+                },
+                {
+                  title: "Intensive Driving Courses in Ilford: Pass in 1–2 Weeks",
+                  excerpt: "Need your licence fast? Our Ilford intensive course includes mock test and test car hire.",
+                  slug: "intensive-driving-course-ilford-guide",
+                  tag: "Intensive",
+                },
+                {
+                  title: "Goodmayes, Ilford & Barking Test Centres Compared",
+                  excerpt: "Which East London test centre gives you the best chance? We compare pass rates and road types.",
+                  slug: "east-london-test-centres-compared",
+                  tag: "Test Prep",
+                },
+              ].map((article, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100 hover:shadow-md transition-shadow"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full mb-3">
+                    {article.tag}
+                  </span>
+                  <h3 className="font-bold text-gray-900 mb-2 leading-snug">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">{article.excerpt}</p>
+                  <Link
+                    to={`/blog/${article.slug}`}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
+                  >
+                    Read guide
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
@@ -321,7 +422,7 @@ const IlfordLessons = () => {
               viewport={{ once: true }}
             >
               Book your first lesson today and take the first step towards
-              driving freedom in Ilford.
+              driving freedom in Ilford. Free pickup from your home or work!
             </motion.p>
 
             <motion.div
@@ -333,7 +434,7 @@ const IlfordLessons = () => {
               <Button
                 size="lg"
                 className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/booking")}
+                onClick={() => (window.location.href = "/services")}
               >
                 Book Your First Lesson
                 <ArrowRight className="ml-2 h-4 w-4" />

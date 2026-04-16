@@ -1,0 +1,2561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete ADI Blueprint | Drive Dojo - Escape the Franchise Trap</title>
+    <meta name="description" content="Learn how to qualify, launch, and scale a profitable independent driving school without paying thousands in franchise fees. The ADI Blueprint by Drive Dojo.">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <style>
+        /* ========================================
+           CSS VARIABLES
+        ======================================== */
+        :root {
+            /* Backgrounds */
+            --bg-deep: #0a0a0a;
+            --bg-dark: #111111;
+            --bg-medium: #1a1a1a;
+            --bg-light: #2a2a2a;
+
+            /* Brand Colors */
+            --yellow-tron: #ffd700;
+            --yellow-light: #ffed4a;
+            --yellow-dark: #f0b400;
+            --red-primary: #e63946;
+            --red-dark: #c1121f;
+            --red-light: #ff4d5a;
+            --green-primary: #4ade80;
+            --green-dark: #22c55e;
+
+            /* Text */
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #888888;
+
+            /* Typography */
+            --font-display: 'Orbitron', sans-serif;
+            --font-heading: 'Rajdhani', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 5rem;
+
+            /* Effects */
+            --shadow-glow-yellow: 0 0 30px rgba(255, 215, 0, 0.4);
+            --shadow-glow-red: 0 0 30px rgba(230, 57, 70, 0.4);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
+
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* ========================================
+           RESET & BASE
+        ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            background: var(--bg-deep);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--yellow-tron);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--yellow-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .section {
+            padding: var(--space-4xl) 0;
+        }
+
+        /* ========================================
+           STICKY HEADER
+        ======================================== */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--space-md) 0;
+            transform: translateY(-100%);
+            transition: transform var(--transition-normal);
+        }
+
+        .sticky-header.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+        }
+
+        .header-logo span {
+            color: var(--yellow-tron);
+        }
+
+        .header-cta {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--yellow-tron);
+            color: var(--bg-deep);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 14px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-cta:hover {
+            background: var(--yellow-light);
+            box-shadow: var(--shadow-glow-yellow);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--space-4xl);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(230, 57, 70, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pre-headline {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-lg);
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--yellow-tron);
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-size: 11px;
+            color: var(--yellow-tron);
+            letter-spacing: 3px;
+            margin-bottom: var(--space-xl);
+            text-transform: uppercase;
+        }
+
+        .pre-headline i {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: var(--space-xl);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--yellow-tron);
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .hero h1 .red {
+            color: var(--red-primary);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-heading);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto var(--space-2xl);
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-lg) var(--space-2xl);
+            background: var(--yellow-tron);
+            color: var(--bg-deep);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: var(--shadow-glow-yellow);
+        }
+
+        .hero-cta:hover {
+            background: var(--yellow-light);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+
+        .hero-cta i {
+            font-size: 1.2rem;
+        }
+
+        .hero-note {
+            margin-top: var(--space-lg);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: var(--space-2xl);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-muted);
+            font-size: 14px;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll i {
+            color: var(--yellow-tron);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ========================================
+           PAIN SECTION
+        ======================================== */
+        .pain-section {
+            background: var(--bg-dark);
+            position: relative;
+        }
+
+        .pain-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.5), transparent);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: var(--red-primary);
+            background: rgba(230, 57, 70, 0.1);
+            padding: var(--space-sm) var(--space-lg);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            margin-bottom: var(--space-xl);
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: var(--space-2xl);
+            max-width: 800px;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .pain-card {
+            background: var(--bg-medium);
+            border-left: 4px solid var(--red-primary);
+            padding: var(--space-xl);
+            border-radius: 0 16px 16px 0;
+            transition: all var(--transition-normal);
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .pain-card-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(230, 57, 70, 0.1);
+            border-radius: 50%;
+            margin-bottom: var(--space-lg);
+        }
+
+        .pain-card-icon i {
+            font-size: 24px;
+            color: var(--red-primary);
+        }
+
+        .pain-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .pain-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           STORY SECTION
+        ======================================== */
+        .story-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 70% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--bg-medium), var(--bg-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--yellow-tron);
+            box-shadow: var(--shadow-glow-yellow);
+        }
+
+        .story-image-placeholder i {
+            font-size: 80px;
+            color: var(--yellow-tron);
+            opacity: 0.5;
+        }
+
+        .story-quote {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--yellow-tron);
+            color: var(--bg-deep);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .story-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: var(--space-xl);
+            line-height: 1.3;
+        }
+
+        .story-text h2 span {
+            color: var(--yellow-tron);
+        }
+
+        .story-text p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.8;
+        }
+
+        .story-text .highlight-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 16px;
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .story-text .highlight-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        /* ========================================
+           OFFER SECTION
+        ======================================== */
+        .offer-section {
+            background: var(--bg-dark);
+        }
+
+        .offer-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-3xl);
+        }
+
+        .offer-header .section-label {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--yellow-tron);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .offer-card {
+            background: var(--bg-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--space-xl);
+            border-radius: 16px;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--yellow-tron), var(--red-primary));
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .offer-card:hover::before {
+            opacity: 1;
+        }
+
+        .offer-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--yellow-tron), var(--yellow-dark));
+            border-radius: 16px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .offer-icon i {
+            font-size: 28px;
+            color: var(--bg-deep);
+        }
+
+        .offer-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .offer-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .offer-features {
+            list-style: none;
+            margin-top: var(--space-lg);
+        }
+
+        .offer-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            font-size: 15px;
+        }
+
+        .offer-features li i {
+            color: var(--green-primary);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        /* ========================================
+           VALUE SECTION
+        ======================================== */
+        .value-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(230, 57, 70, 0.1) 0%, transparent 50%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        .comparison-wrapper {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: var(--space-xl);
+            align-items: stretch;
+            margin-top: var(--space-3xl);
+        }
+
+        .comparison-card {
+            background: var(--bg-medium);
+            padding: var(--space-2xl);
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .comparison-card.bad {
+            border: 2px solid rgba(230, 57, 70, 0.3);
+        }
+
+        .comparison-card.good {
+            border: 2px solid var(--green-primary);
+            background: rgba(74, 222, 128, 0.05);
+        }
+
+        .comparison-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: var(--space-xs) var(--space-lg);
+            border-radius: 20px;
+            font-family: var(--font-display);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .comparison-card.bad .comparison-badge {
+            background: var(--red-primary);
+            color: var(--text-primary);
+        }
+
+        .comparison-card.good .comparison-badge {
+            background: var(--green-primary);
+            color: var(--bg-deep);
+        }
+
+        .comparison-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .comparison-card.bad .comparison-title {
+            color: var(--red-primary);
+        }
+
+        .comparison-card.good .comparison-title {
+            color: var(--green-primary);
+        }
+
+        .comparison-items {
+            list-style: none;
+        }
+
+        .comparison-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-items li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-items .item-name {
+            color: var(--text-muted);
+        }
+
+        .comparison-items .item-value {
+            font-family: var(--font-display);
+            font-weight: 600;
+        }
+
+        .comparison-card.bad .item-value {
+            color: var(--red-primary);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .comparison-card.good .item-value {
+            color: var(--green-primary);
+        }
+
+        .comparison-total {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .comparison-total-label {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .comparison-total-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .comparison-card.bad .comparison-total-value {
+            color: var(--red-primary);
+        }
+
+        .comparison-card.good .comparison-total-value {
+            color: var(--green-primary);
+        }
+
+        .comparison-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .comparison-arrow i {
+            font-size: 48px;
+            color: var(--yellow-tron);
+            animation: arrowPulse 1.5s infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(10px); opacity: 0.7; }
+        }
+
+        .savings-highlight {
+            background: rgba(74, 222, 128, 0.1);
+            border: 2px solid var(--green-primary);
+            border-radius: 16px;
+            padding: var(--space-2xl);
+            text-align: center;
+            margin-top: var(--space-3xl);
+        }
+
+        .savings-highlight h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--green-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .savings-amount {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            color: var(--green-primary);
+            text-shadow: 0 0 40px rgba(74, 222, 128, 0.3);
+        }
+
+        .savings-note {
+            color: var(--text-muted);
+            margin-top: var(--space-md);
+        }
+
+        /* ========================================
+           UPSELL SECTION
+        ======================================== */
+        .upsell-section {
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upsell-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                var(--bg-dark);
+            z-index: -1;
+        }
+
+        .upsell-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .upsell-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.02));
+            border: 2px solid var(--yellow-tron);
+            border-radius: 24px;
+            padding: var(--space-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upsell-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .upsell-badge {
+            display: inline-block;
+            background: var(--yellow-tron);
+            color: var(--bg-deep);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 30px;
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-xl);
+            text-transform: uppercase;
+        }
+
+        .upsell-card h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+
+        .upsell-card > p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-2xl);
+            position: relative;
+        }
+
+        .upsell-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
+            position: relative;
+        }
+
+        .upsell-features li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .upsell-features li i {
+            color: var(--yellow-tron);
+            font-size: 20px;
+        }
+
+        .upsell-features li span {
+            text-align: left;
+        }
+
+        .upsell-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-lg) var(--space-2xl);
+            background: var(--red-primary);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: var(--shadow-glow-red);
+            position: relative;
+        }
+
+        .upsell-cta:hover {
+            background: var(--red-light);
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px rgba(230, 57, 70, 0.5);
+        }
+
+        /* ========================================
+           TESTIMONIALS SECTION
+        ======================================== */
+        .testimonials-section {
+            position: relative;
+        }
+
+        .testimonials-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-deep);
+            z-index: -1;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .testimonial-card {
+            background: var(--bg-medium);
+            padding: var(--space-xl);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all var(--transition-normal);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-lg);
+        }
+
+        .testimonial-stars i {
+            color: var(--yellow-tron);
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-xl);
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--yellow-tron), var(--yellow-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--bg-deep);
+            font-size: 18px;
+        }
+
+        .testimonial-info strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .testimonial-info span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           FAQ SECTION
+        ======================================== */
+        .faq-section {
+            background: var(--bg-dark);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-medium);
+            border-radius: 12px;
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-lg) var(--space-xl);
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .faq-question:hover {
+            color: var(--yellow-tron);
+        }
+
+        .faq-question i {
+            color: var(--yellow-tron);
+            transition: transform var(--transition-normal);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-normal);
+        }
+
+        .faq-answer-content {
+            padding: 0 var(--space-xl) var(--space-xl);
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+        ======================================== */
+        .final-cta-section {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .final-cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 60%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: var(--space-lg);
+        }
+
+        .final-cta-content > p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .final-price {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .price-original {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: var(--space-sm);
+        }
+
+        .price-current {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 4rem);
+            font-weight: 900;
+            color: var(--yellow-tron);
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .price-note {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: var(--space-md);
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-xl) var(--space-3xl);
+            background: var(--yellow-tron);
+            color: var(--bg-deep);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: var(--shadow-glow-yellow);
+            animation: ctaPulse 2s infinite;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: var(--shadow-glow-yellow); }
+            50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.6); }
+        }
+
+        .final-cta-btn:hover {
+            background: var(--yellow-light);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .final-cta-btn i {
+            font-size: 1.3rem;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .guarantee i {
+            color: var(--green-primary);
+            font-size: 24px;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .site-footer {
+            background: var(--bg-deep);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--space-2xl) 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+        }
+
+        .footer-brand span {
+            color: var(--yellow-tron);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--space-xl);
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow-tron);
+        }
+
+        .footer-copy {
+            width: 100%;
+            text-align: center;
+            margin-top: var(--space-lg);
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           ANIMATIONS
+        ======================================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+        @media (max-width: 1024px) {
+            .comparison-wrapper {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .comparison-arrow {
+                transform: rotate(90deg);
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .story-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .story-quote {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: var(--space-3xl) 0;
+            }
+
+            .hero {
+                padding-top: var(--space-3xl);
+            }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+
+            .hero-cta,
+            .final-cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .comparison-card {
+                padding: var(--space-lg);
+            }
+
+            .upsell-card {
+                padding: var(--space-xl);
+            }
+        }
+    </style>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header" id="stickyHeader">
+        <div class="container">
+            <div class="header-logo">DRIVE <span>DOJO</span></div>
+            <button class="header-cta" onclick="scrollToSection('final-cta')">Get the Blueprint</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="pre-headline fade-up">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Attention: Aspiring & Current Driving Instructors</span>
+                </div>
+
+                <h1 class="fade-up stagger-1">
+                    The <span class="highlight">£2,200/Month</span> Franchise Trap<br>
+                    is <span class="red">Bankrupting</span> New Driving Instructors.<br>
+                    Here is Your Escape Route.
+                </h1>
+
+                <p class="hero-subtitle fade-up stagger-2">
+                    The Complete ADI Blueprint: How to qualify, launch, and scale a highly profitable independent driving school—without handing your hard-earned lesson fees to a national brand.
+                </p>
+
+                <button class="hero-cta fade-up stagger-3" onclick="scrollToSection('final-cta')">
+                    <span>Get Instant Access</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <p class="hero-note fade-up stagger-4">
+                    <i class="fas fa-lock"></i> Secure instant download • Lifetime access • No franchise fees
+                </p>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll to learn more</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="pain-section section" id="pain">
+        <div class="container">
+            <span class="section-label fade-up">The Franchise Trap</span>
+            <h2 class="section-title fade-up">
+                You want to be your own boss.<br>
+                But here's what the sales brochure leaves out:
+            </h2>
+
+            <div class="pain-grid">
+                <div class="pain-card fade-up stagger-1">
+                    <div class="pain-card-icon">
+                        <i class="fas fa-pound-sign"></i>
+                    </div>
+                    <h3>You Pay Before You Earn</h3>
+                    <p>Thousands in upfront fees before you even pass Part 2 or 3. You're investing huge amounts before you've proven you can teach.</p>
+                </div>
+
+                <div class="pain-card fade-up stagger-2">
+                    <div class="pain-card-icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3>The Weekly Fee Never Stops</h3>
+                    <p>Even in a slow week with zero new pupils, you still owe them £150+ a week. Talk about financial stress!</p>
+                </div>
+
+                <div class="pain-card fade-up stagger-3">
+                    <div class="pain-card-icon">
+                        <i class="fas fa-users-slash"></i>
+                    </div>
+                    <h3>You Build Their Business, Not Yours</h3>
+                    <p>Every 5-star review you earn goes to their brand, not your local reputation. All that hard work builds someone else's empire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section section" id="story">
+        <div class="story-bg"></div>
+        <div class="container">
+            <div class="story-content">
+                <div class="story-image fade-up">
+                    <div class="story-image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="story-quote">ADI Certified</div>
+                </div>
+
+                <div class="story-text fade-up">
+                    <span class="section-label">My Story</span>
+                    <h2>Hi, I'm <span>[Your Name]</span>, Founder of Drive Dojo.</h2>
+
+                    <p>I know exactly how suffocating the franchise trap is because I fell right into it. I qualified as an Approved Driving Instructor at just 21 while studying for my Computer Science degree. I thought joining a major franchise was the safe bet.</p>
+
+                    <p>The reality? I was paying astronomical franchise fees of up to <strong>£2,279 a month</strong>. There were months the franchise only gave me two new students. It got so bad that, despite being a fully qualified ADI, I had to drive delivery vans for Argos and Sainsbury's just to cover my franchise fees.</p>
+
+                    <div class="highlight-box">
+                        <p>I realised I had to break free. I went fully independent, launched Drive Dojo, and haven't looked back. Today, my diary is full, my business is 100% mine, and I keep every penny of my lesson fees.</p>
+                    </div>
+
+                    <p>I wrote <strong>The Complete ADI Blueprint</strong> to show you exactly how to do the same.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer-section section" id="offer">
+        <div class="container">
+            <div class="offer-header">
+                <span class="section-label fade-up">What You Get</span>
+                <h2 class="section-title fade-up">This isn't a boring PDF. It's a fully interactive, step-by-step roadmap.</h2>
+            </div>
+
+            <div class="offer-grid">
+                <div class="offer-card fade-up stagger-1">
+                    <div class="offer-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>The Zero-Franchise Qualification Route</h3>
+                    <p>How to pass Parts 1, 2, and 3 efficiently, including the exact apps and methods you need.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Theory Test 4 in 1 app recommendations</li>
+                        <li><i class="fas fa-check"></i> Part 2 training shortcuts</li>
+                        <li><i class="fas fa-check"></i> Part 3 examination strategies</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card fade-up stagger-2">
+                    <div class="offer-icon">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h3>The "Pink Badge" Strategy</h3>
+                    <p>How to legally start teaching and earning money while you are still training for your Part 3 test.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Legal requirements explained</li>
+                        <li><i class="fas fa-check"></i> Income generation timeline</li>
+                        <li><i class="fas fa-check"></i> Risk-free progression path</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card fade-up stagger-3">
+                    <div class="offer-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>The Real Cost Breakdown</h3>
+                    <p>An interactive calculator showing exactly how to save up to £11,500 in your first year.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Side-by-side comparisons</li>
+                        <li><i class="fas fa-check"></i> Hidden fee discoveries</li>
+                        <li><i class="fas fa-check"></i> Year-one savings tracker</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card fade-up stagger-4">
+                    <div class="offer-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>The 90-Day Action Plan</h3>
+                    <p>A clickable checklist taking you from registering with HMRC to securing your first 10 paying pupils.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Day-by-day breakdown</li>
+                        <li><i class="fas fa-check"></i> Progress tracking system</li>
+                        <li><i class="fas fa-check"></i> Milestone celebrations</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card fade-up stagger-5">
+                    <div class="offer-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>The Free Tech Stack</h3>
+                    <p>How to use Google Calendar and WhatsApp Business to automate your bookings and cut no-shows by 60%.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Zero software costs</li>
+                        <li><i class="fas fa-check"></i> Automated reminders</li>
+                        <li><i class="fas fa-check"></i> Booking system setup</li>
+                    </ul>
+                </div>
+
+                <div class="offer-card fade-up stagger-6">
+                    <div class="offer-icon">
+                        <i class="fas fa-file-copy"></i>
+                    </div>
+                    <h3>Copy-and-Paste Swipe Files</h3>
+                    <p>Get my exact text message templates for booking confirmations, cancellation policies, and review requests.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Ready-to-use scripts</li>
+                        <li><i class="fas fa-check"></i> Professional tone guide</li>
+                        <li><i class="fas fa-check"></i> Review request sequences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Section -->
+    <section class="value-section section" id="value">
+        <div class="value-bg"></div>
+        <div class="container">
+            <div class="offer-header">
+                <span class="section-label fade-up">The Math Speaks for Itself</span>
+                <h2 class="section-title fade-up">Why Pay £10,000+ When You Can Pay £49?</h2>
+            </div>
+
+            <div class="comparison-wrapper">
+                <div class="comparison-card bad fade-up">
+                    <div class="comparison-badge">Avoid</div>
+                    <h3 class="comparison-title">National Franchise</h3>
+                    <ul class="comparison-items">
+                        <li>
+                            <span class="item-name">Joining Fee</span>
+                            <span class="item-value">£2,000 - £3,000</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Weekly Territory Fee</span>
+                            <span class="item-value">£150+</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Inflated Car Lease</span>
+                            <span class="item-value">£300+/month</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Training Overheads</span>
+                            <span class="item-value">£500 - £1,000</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Marketing Levies</span>
+                            <span class="item-value">£50/month</span>
+                        </li>
+                    </ul>
+                    <div class="comparison-total">
+                        <div class="comparison-total-row">
+                            <span class="comparison-total-label">Year One Total</span>
+                            <span class="comparison-total-value">£15,000+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-arrow fade-up">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="comparison-card good fade-up">
+                    <div class="comparison-badge">Choose</div>
+                    <h3 class="comparison-title">The ADI Blueprint</h3>
+                    <ul class="comparison-items">
+                        <li>
+                            <span class="item-name">Complete Blueprint</span>
+                            <span class="item-value">£49</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Free Tools & Software</span>
+                            <span class="item-value">£0</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Your Own Branding</span>
+                            <span class="item-value">£0</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Keep 100% of Profits</span>
+                            <span class="item-value">∞</span>
+                        </li>
+                        <li>
+                            <span class="item-name">Lifetime Updates</span>
+                            <span class="item-value">£0</span>
+                        </li>
+                    </ul>
+                    <div class="comparison-total">
+                        <div class="comparison-total-row">
+                            <span class="comparison-total-label">One-Time Payment</span>
+                            <span class="comparison-total-value">£49</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-highlight fade-up">
+                <h3>Your Potential First-Year Savings</h3>
+                <div class="savings-amount">£11,500+</div>
+                <p class="savings-note">That's the cost of a brand new car, a dream holiday, or reinvested into your business</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upsell Section -->
+    <section class="upsell-section section" id="upsell">
+        <div class="upsell-bg"></div>
+        <div class="container">
+            <div class="upsell-content">
+                <div class="upsell-card fade-up">
+                    <div class="upsell-badge">Premium Service</div>
+                    <h2>Not a Tech Person? Let Me Build Your Driving School for You.</h2>
+                    <p>As a former Front-End Web Developer and Autonomous Vehicle Safety Operator, I know how to make driving schools look incredibly premium online.</p>
+
+                    <ul class="upsell-features">
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <span><strong>Custom Website</strong> – High-converting, mobile-optimised design that converts visitors into pupils</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-search-location"></i>
+                            <span><strong>Google Business Setup</strong> – Dominate local search and appear in the map pack</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-bullhorn"></i>
+                            <span><strong>Facebook Ads Management</strong> – Done-for-you campaigns that fill your diary</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-headset"></i>
+                            <span><strong>1-on-1 Strategy Call</strong> – Personal consultation to accelerate your launch</span>
+                        </li>
+                    </ul>
+
+                    <button class="upsell-cta" onclick="openCalendly()">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Your Free Consultation</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section" id="testimonials">
+        <div class="testimonials-bg"></div>
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="section-label fade-up">Success Stories</span>
+                <h2 class="section-title fade-up">What Other Instructors Are Saying</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up stagger-1">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was about to sign with a franchise when I found Drive Dojo. The Blueprint saved me over £12,000 in year one. My diary is now full and I'm building my own brand!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JM</div>
+                        <div class="testimonial-info">
+                            <strong>James M.</strong>
+                            <span>ADI, Birmingham</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-up stagger-2">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The 90-day action plan is gold. I went from zero to 8 pupils in just 6 weeks. The swipe files alone were worth the investment."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SP</div>
+                        <div class="testimonial-info">
+                            <strong>Sarah P.</strong>
+                            <span>ADI, Manchester</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-up stagger-3">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was working 60 hours a week for a franchise and barely breaking even. Now I work 35 hours, earn more, and keep 100% of my profits. Life-changing!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DK</div>
+                        <div class="testimonial-info">
+                            <strong>David K.</strong>
+                            <span>ADI, London</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <span class="section-label fade-up">Questions?</span>
+                <h2 class="section-title fade-up">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>Do I need any prior experience to use the Blueprint?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Not at all! The Blueprint is designed for complete beginners. It covers everything from "what is ADI qualification?" to launching your first pupil. Whether you're still working another job or transitioning from another career, the step-by-step process makes it simple.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>How is this different from free YouTube videos?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Free content gives you fragments. The Blueprint gives you a complete, proven system that works. It's the difference between "here are some tips" and "here's exactly what to do, when to do it, and why." Plus, there's no fluff, no padding, and no upsells inside.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>What if the Blueprint doesn't work for me?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The Blueprint is backed by a 30-day money-back guarantee. If you go through the material and don't find it valuable, just reach out for a full refund. No hoops to jump through, no questions asked.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>How long do I have access to the Blueprint?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Lifetime access. Pay once, keep it forever. This includes all future updates and additions to the Blueprint at no extra cost.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>Can I really start earning while training?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! The "Pink Badge" strategy section specifically covers how to legally teach as aADI trainee and start generating income before you even pass Part 3. Many instructors have used this to offset their qualification costs entirely.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>What format is the Blueprint in?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            It's a fully interactive digital guide accessible via any browser or device. Includes clickable checklists, calculators, swipe files you can copy/paste, and video walkthroughs where needed. Works on mobile, tablet, and desktop.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section section" id="final-cta">
+        <div class="final-cta-bg"></div>
+        <div class="container">
+            <div class="final-cta-content">
+                <h2 class="fade-up">Ready to Escape the Franchise Trap?</h2>
+                <p class="fade-up">Join thousands of instructors who have taken control of their destiny.</p>
+
+                <div class="final-price fade-up">
+                    <div class="price-original">£197</div>
+                    <div class="price-current">£49</div>
+                    <p class="price-note">One-time payment • Lifetime access • No hidden fees</p>
+                </div>
+
+                <button class="final-cta-btn fade-up" onclick="initiateCheckout()">
+                    <i class="fas fa-lock"></i>
+                    <span>Get Instant Access Now</span>
+                </button>
+
+                <div class="guarantee fade-up">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>30-Day Money-Back Guarantee • Secure Checkout via Stripe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">DRIVE <span>DOJO</span></div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-copy">
+                    &copy; 2026 Drive Dojo. All rights reserved. This site is not part of or endorsed by any national driving franchise.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendly Inline Widget -->
+    <div id="calendly-widget" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; overflow: auto;">
+        <button onclick="closeCalendly()" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 32px; cursor: pointer; z-index: 2001;">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY_LINK" style="min-width:320px;height:630px;margin: 50px auto;max-width: 800px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ========================================
+        // STICKY HEADER
+        // ========================================
+        const stickyHeader = document.getElementById('stickyHeader');
+        const heroSection = document.getElementById('hero');
+
+        function handleScroll() {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            if (window.scrollY > heroBottom - 100) {
+                stickyHeader.classList.add('visible');
+            } else {
+                stickyHeader.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // ========================================
+        // SMOOTH SCROLL
+        // ========================================
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offset = section.offsetTop - 80;
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // ========================================
+        // FAQ ACCORDION
+        // ========================================
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ========================================
+        // SCROLL ANIMATIONS
+        // ========================================
+        const animatedElements = document.querySelectorAll('.fade-up');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // ========================================
+        // STRIPE CHECKOUT
+        // ========================================
+        function initiateCheckout() {
+            // Track conversion event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', {
+                    content_name: 'ADI Blueprint',
+                    content_category: 'Digital Product',
+                    value: 49,
+                    currency: 'GBP'
+                });
+            }
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'begin_checkout', {
+                    currency: 'GBP',
+                    value: 49
+                });
+            }
+
+            // Redirect to Stripe Checkout
+            // Replace YOUR_STRIPE_PRICE_ID with your actual Stripe Price ID
+            window.location.href = 'https://buy.stripe.com/YOUR_STRIPE_PRICE_ID';
+        }
+
+        // ========================================
+        // CALENDLY MODAL
+        // ========================================
+        function openCalendly() {
+            const calendlyWidget = document.getElementById('calendly-widget');
+            calendlyWidget.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            // Track Calendly opens
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Schedule', {
+                    content_name: 'DFY Consultation',
+                    content_category: 'Service Inquiry'
+                });
+            }
+        }
+
+        function closeCalendly() {
+            const calendlyWidget = document.getElementById('calendly-widget');
+            calendlyWidget.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCalendly();
+            }
+        });
+
+        // ========================================
+        // CLICK TRACKING
+        // ========================================
+        document.querySelectorAll('.cta-btn, .hero-cta, .header-cta, .final-cta-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'cta_click', {
+                        event_category: 'engagement',
+                        event_label: btn.textContent.trim()
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // CONSOLE BRANDING
+        // ========================================
+        console.log('%c THE COMPLETE ADI BLUEPRINT ', 'background: #ffd700; color: #0a0a0a; font-size: 16px; padding: 10px 20px; border-radius: 4px; font-weight: bold;');
+        console.log('%c By Drive Dojo | drivedojodrivingschool.com ', 'color: #888; font-size: 12px;');
+    </script>
+
+<script>
+/**
+ * Iframe 元素高亮注入脚本
+ * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
+ *
+ * 使用方法：
+ * 1. 将此脚本添加到目标网站的 HTML 中
+ * 2. 或通过浏览器扩展、用户脚本等方式注入
+ */
+
+(function () {
+  "use strict";
+
+  // 检查是否在 iframe 中
+  if (window.self === window.top) {
+    return; // 不在 iframe 中，不执行
+  }
+
+  // 检查是否已经初始化过
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe 高亮脚本已加载");
+
+  // 创建高亮覆盖层
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // 创建悬停高亮框（虚线边框）
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // 创建选中节点的常驻高亮框（实线边框）
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // 创建悬停标签显示
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // 创建选中节点标签
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // 存储当前选中的元素
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // 更新选中元素的高亮显示
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // 更新选中高亮框位置
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新选中标签位置和内容
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // 优先检查唯一ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID唯一，无需继续向上
+      }
+
+      // 生成类名选择器（取第一个有效类名）
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // 生成位置索引（nth-child）
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // 处理根元素
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // 获取元素文本内容
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // 获取元素属性信息
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // 鼠标悬停事件处理
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免高亮 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 如果是已选中的元素，不显示悬停高亮
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // 更新悬停高亮框位置
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新标签位置和内容
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // 发送消息到父窗口
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 鼠标离开事件处理
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // 如果鼠标移动到高亮相关元素上，不隐藏高亮
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 点击事件处理
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免处理 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 检查是否是交互元素，这些元素需要保留默认行为
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // 立即更新选中高亮
+    updateSelectedHighlight(target);
+
+    // 隐藏悬停高亮，因为现在是选中状态
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 监听来自父窗口的消息
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // 启用高亮功能
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // 禁用高亮功能
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // 保持事件监听器，但通过 highlightEnabled 变量控制行为
+    // 这样可以保留选中状态的显示
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
+  }
+
+  // 完全禁用高亮功能（移除所有监听器）
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // 添加事件监听
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // 暴露全局函数供外部调用
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // 通过消息发送开关控制
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // 通知父窗口脚本已加载
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("无法发送就绪消息到父窗口:", error);
+  }
+
+  // 清理函数
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+</body>
+</html>

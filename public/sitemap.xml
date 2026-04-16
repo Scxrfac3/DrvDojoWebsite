@@ -1,182 +1,430 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+
+  <!-- ─── HOMEPAGE ─────────────────────────────────────────────────────────── -->
   <url>
     <loc>https://drivedojodrivingschool.com/</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Main Pages -->
+
+  <!-- ─── MAIN PAGES ────────────────────────────────────────────────────────── -->
   <url>
     <loc>https://drivedojodrivingschool.com/services</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/about</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/contact</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/booking</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog</loc>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Blog Pages -->
+
+  <!-- ─── BOOKING PAGES ─────────────────────────────────────────────────────── -->
   <url>
-    <loc>https://drivedojodrivingschool.com/blog</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/booking/payg</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/booking/6hour</loc>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://drivedojodrivingschool.com/booking/10hour</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/booking/intensive</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/booking/mocktest</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/booking/testrental</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ─── SPECIALITY SERVICE PAGES ─────────────────────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/automatic-driving-lessons</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/intensive-driving-courses-ilford</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/east-london-automatic</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/dual-control-installation</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/terms</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ─── LOCATION PAGES (HIGH PRIORITY) ───────────────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/ilford</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/goodmayes</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/barking</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/walthamstow</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/romford</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/east-ham</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/forest-gate</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/canning-town</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-lessons/docklands</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ─── LEGACY / ORIGINAL BLOG ARTICLES ──────────────────────────────────── -->
+  <url>
     <loc>https://drivedojodrivingschool.com/blog/how-many-driving-lessons-do-you-need</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2023-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/blog/intensive-vs-standard-driving-courses</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/blog/hazard-perception-test-tips</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2023-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/blog/get-over-failing-your-driving-test</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2023-01-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/blog/top-5-qualities-london-driving-instructor-goodmayes</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2023-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drivedojodrivingschool.com/blog/why-now-is-perfect-time-to-become-driving-instructor</loc>
-    <lastmod>2024-06-01</lastmod>
+    <lastmod>2023-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Location-specific Driving Lesson Pages -->
+
+  <!-- ─── SEO BLOG ARTICLES — BATCH 1 (data/blogArticles.ts, original 6) ───── -->
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/goodmayes</loc>
-    <lastmod>2024-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/barking</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/how-many-driving-lessons-to-pass</loc>
+    <lastmod>2024-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/romford</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/how-much-driving-lessons-cost</loc>
+    <lastmod>2024-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/how-many-driving-lessons-to-pass-test</loc>
+    <lastmod>2024-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/east-ham</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/why-are-driving-lessons-so-expensive</loc>
+    <lastmod>2024-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/forest-gate</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/which-type-of-driving-lessons</loc>
+    <lastmod>2024-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/canning-town</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/where-to-find-good-driving-instructor</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ─── SEO BLOG ARTICLES — BATCH 2 (BOFU local, high priority) ─────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/pass-driving-test-goodmayes-tips</loc>
+    <lastmod>2025-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-ilford-guide-2025</loc>
+    <lastmod>2025-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-cost-east-london-2025</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/failed-driving-test-goodmayes-what-to-do</loc>
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/intensive-driving-course-ilford-guide</loc>
+    <lastmod>2025-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/east-london-test-centres-compared</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/mock-driving-test-east-london</loc>
+    <lastmod>2025-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-nervous-drivers-east-london</loc>
+    <lastmod>2025-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ─── SEO BLOG ARTICLES — BATCH 3 (location + informational) ───────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-stratford-e15</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-romford-rm7</loc>
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-barking-ig11</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-canning-town-e16</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-east-ham-e6</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-walthamstow-e10</loc>
+    <lastmod>2025-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-forest-gate-e7</loc>
+    <lastmod>2025-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-dagenham-rm9</loc>
+    <lastmod>2025-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-chadwell-heath-rm6</loc>
+    <lastmod>2025-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/driving-lessons-isle-of-dogs-e14</loc>
+    <lastmod>2025-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/how-long-to-pass-driving-test-london</loc>
+    <lastmod>2025-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/docklands</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/goodmayes-driving-test-pass-rate</loc>
+    <lastmod>2025-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/choose-driving-instructor-east-london</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/ilford</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/first-driving-lesson-what-to-expect</loc>
+    <lastmod>2025-01-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/driving-lessons/walthamstow</loc>
-    <lastmod>2024-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Special Services -->
-  <url>
-    <loc>https://drivedojodrivingschool.com/dual-control-installation</loc>
-    <lastmod>2024-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Service Detail Pages -->
-  <url>
-    <loc>https://drivedojodrivingschool.com/services/beginner</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/learn-to-drive-two-weeks-intensive</loc>
+    <lastmod>2025-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/services/standard</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/are-automatic-driving-lessons-easier</loc>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/services/intensive</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/automatic-vs-manual-east-london</loc>
+    <lastmod>2025-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/services/pass-plus</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/overcome-driving-anxiety-east-london</loc>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/services/dual-control</loc>
-    <lastmod>2024-06-01</lastmod>
+    <loc>https://drivedojodrivingschool.com/blog/common-reasons-fail-driving-test-uk</loc>
+    <lastmod>2025-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/theory-test-revision-tips-2025</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/pass-hazard-perception-test-2025</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/book-dvsa-driving-test-east-london</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
