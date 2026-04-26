@@ -37,6 +37,20 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+<!-- Prerender.io for SEO - Renders pages for search engine crawlers -->
+<script>
+  window.prerenderReady = false;
+  (function() {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.prerender.io/prerender.js?token=zI9YgRULxkLZONjEYk8a';
+    script.async = true;
+    document.head.appendChild(script);
+    
+    script.onload = function() {
+      window.prerenderReady = true;
+    };
+  })();
+</script>
     <meta
       name="google-site-verification"
       content="A9YLmeKz6Eo3dH7anFMy15qfeXQRa85V4xsMqDtEbds"
@@ -44,10 +58,10 @@ function gtag_report_conversion(url) {
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Driving Lessons East London | Isle of Dogs, Barking, Romford | Drive Dojo</title>
+    <title>Driving Lessons in Canary Wharf & E14 | DVSA Approved | Drive Dojo</title>
     <meta
       name="description"
-      content="DVSA-approved driving lessons in East London. Serving Isle of Dogs, Barking, Romford, East Ham & more. Expert instructors, 98% pass rate. Book your lesson today!"
+      content="Expert driving lessons in Canary Wharf & E14. DVSA-approved instructor with 98% pass rate. Automatic & manual lessons in Isle of Dogs, Docklands & E14. Book today!"
     />
     <link
       rel="canonical"
@@ -55,41 +69,41 @@ function gtag_report_conversion(url) {
     />
     <meta
       name="keywords"
-      content="driving lessons East London, driving school Isle of Dogs, driving lessons Barking, driving instructor Romford, learn to drive East Ham, driving test Forest Gate, intensive driving course Canning Town, automatic driving lessons Docklands, manual driving lessons Goodmayes, DVSA approved driving instructor East London, cheap driving lessons East London, driving lessons E1, driving lessons IG, driving lessons RM"
+      content="driving lessons Canary Wharf, driving lessons E14, driving school Isle of Dogs, driving lessons Docklands, driving instructor E14, learn to drive Canary Wharf, driving test E14, intensive driving course Canary Wharf, automatic driving lessons Canary Wharf, manual driving lessons E14, DVSA approved driving instructor Canary Wharf, driving lessons E14 2DH, driving school E14, first time pass driving lessons"
     />
     <meta name="author" content="Drive Dojo Driving School">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Driving Lessons London | DVSA Approved | Drive Dojo">
-    <meta property="og:description" content="DVSA-approved driving lessons in London. Expert instructors, high pass rates, flexible booking. Pass first time with confidence.">
+    <meta property="og:title" content="Driving Lessons in Canary Wharf & E14 | DVSA Approved | Drive Dojo">
+    <meta property="og:description" content="Expert driving lessons in Canary Wharf & E14. DVSA-approved instructor, 98% pass rate. Book your lesson today!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drivedojodrivingschool.com/">
     <meta property="og:image" content="https://drivedojodrivingschool.com/images/certifications/DDojo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Driving Lessons London | DVSA Approved | Drive Dojo">
-    <meta name="twitter:description" content="DVSA-approved driving lessons in London. Expert instructors, high pass rates, flexible booking.">
+    <meta name="twitter:title" content="Driving Lessons in Canary Wharf & E14 | DVSA Approved | Drive Dojo">
+    <meta name="twitter:description" content="Expert driving lessons in Canary Wharf & E14. DVSA-approved instructor, 98% pass rate.">
     
-    <!-- Local Business Schema Markup -->
+    <!-- Local Business Schema Markup - Updated with exact address -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "DrivingSchool",
       "name": "Drive Dojo Driving School",
-      "description": "DVSA-approved driving lessons in East London. Expert instructors with high pass rates.",
+      "description": "DVSA-approved driving lessons in Canary Wharf, E14 & East London. Expert instructors with 98% first-time pass rate. Automatic and manual driving lessons.",
       "url": "https://drivedojodrivingschool.com",
       "telephone": "+442012345678",
       "email": "info@drivedojodrivingschool.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "East London",
+        "streetAddress": "10 James Town Way",
         "addressLocality": "London",
         "addressRegion": "Greater London",
-        "postalCode": "E1",
+        "postalCode": "E14 2DH",
         "addressCountry": "GB"
       },
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 51.5074,
-        "longitude": 0.1278
+        "longitude": -0.0235
       },
       "openingHours": [
         "Monday 08:00-20:00",
@@ -103,13 +117,15 @@ function gtag_report_conversion(url) {
       "priceRange": "££",
       "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer",
       "areaServed": [
+        "Canary Wharf",
         "Isle of Dogs",
+        "E14",
+        "Docklands",
         "Barking",
         "Romford",
         "East Ham",
         "Forest Gate",
         "Canning Town",
-        "Docklands",
         "Goodmayes",
         "East London"
       ],
@@ -118,7 +134,7 @@ function gtag_report_conversion(url) {
         "geoMidpoint": {
           "@type": "GeoCoordinates",
           "latitude": 51.5074,
-          "longitude": 0.1278
+          "longitude": -0.0235
         },
         "geoRadius": "15"
       },

@@ -39,6 +39,7 @@ const EastLondonAutomatic = lazy(() => import('./components/pages/EastLondonAuto
 // ADI Blueprint pages
 const ADILandingPage = lazy(() => import('./components/pages/ADILandingPage'));
 const AcademyPage = lazy(() => import('./components/pages/AcademyPage'));
+const BlueprintAccess = lazy(() => import('./components/pages/BlueprintAccess'));
 const LoginPage = lazy(() => import('./components/pages/LoginPage'));
 const AccessDeniedPage = lazy(() => import('./components/pages/AccessDeniedPage'));
 
@@ -114,6 +115,14 @@ function App() {
             element={
               <ProtectedRoute requireAuth={true}>
                 <AcademyPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/academy/blueprint-access'
+            element={
+              <ProtectedRoute requireAuth={true}>
+                <BlueprintAccess />
               </ProtectedRoute>
             }
           />

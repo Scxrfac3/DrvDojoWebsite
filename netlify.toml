@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18.18.0"
+  PRERENDER_TOKEN = "zI9YgRULxkLZONjEYk8a"
 
 [functions]
   directory = "netlify/functions"
@@ -36,7 +37,7 @@
 
 [[redirects]]
   from = "/api/stripe-webhook"
-  to = "https://shdxtqktxjxpwwtqlllf.supabase.co/functions/v1/stripe-webhook"
+  to = "/.netlify/functions/stripe-webhook"
   status = 200
   force = true
 
@@ -103,6 +104,9 @@
   from = "/book-now"
   to = "/booking"
   status = 301
+
+# NOTE: /terms is handled by React Router - do NOT add a redirect here
+# as it causes an infinite redirect loop
 
 # Redirects for booking pages - Point to React app (index.html) so React Router handles them
 [[redirects]]
@@ -221,11 +225,8 @@
   to = "/"
   status = 301
 
-[[redirects]]
-   from = "/terms"
-   to = "/terms"
-   status = 301
-
+# /terms is handled by React Router - no redirect needed
+# /privacy and /cookies redirect to /terms
 [[redirects]]
    from = "/privacy"
    to = "/terms"
@@ -347,3 +348,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "payment=(self \"https://calendly.com\")"
+
+# Prerender.io integration for SEO
+# The Prerender.io JavaScript SDK is loaded in index.html
+# It automatically detects search engine crawlers and serves prerendered content

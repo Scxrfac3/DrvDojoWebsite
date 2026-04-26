@@ -4,6 +4,7 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "@/components/ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -17,6 +18,46 @@ import {
   Users,
 } from "lucide-react";
 import SpecialOffersSection from "../sections/SpecialOffersSection";
+
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Isle of Dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Isle of Dogs start from £45 for a 90-minute session. We offer block booking discounts and intensive courses for faster learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer automatic driving lessons in Isle of Dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer both automatic and manual driving lessons in Isle of Dogs and all E14 postcodes. Our automatic lessons are popular for learners wanting a simpler driving experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to pass my driving test in Isle of Dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most students pass their driving test within 20-40 hours of lessons. Our 98% first-time pass rate means you'll be on the road sooner with expert instruction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve all E14 postcodes in Isle of Dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cover all E14 postcodes including Isle of Dogs, Canary Wharf, Poplar, and surrounding areas. Our instructors know all the local test routes."
+      }
+    }
+  ]
+};
 
 const IsleOfDogsLessons = () => {
   const [postcode, setPostcode] = useState("");
@@ -37,6 +78,17 @@ const IsleOfDogsLessons = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Inject FAQPage schema for SEO
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     window.location.href = `/booking?postcode=${postcode}`;
@@ -44,6 +96,12 @@ const IsleOfDogsLessons = () => {
 
   return (
     <>
+      <SEO
+        title="Expert Driving Lessons in Isle of Dogs & E14 | DVSA Approved"
+        description="Learn to drive in Isle of Dogs with our DVSA approved instructor. Automatic & manual lessons in E14. 98% first-time pass rate. Book your lesson in Isle of Dogs today!"
+        keywords="driving lessons isle of dogs, driving lessons E14, DVSA approved instructor isle of dogs, automatic driving lessons isle of dogs, driving test isle of dogs, learn to drive isle of dogs"
+        canonical="/driving-lessons/isle-of-dogs"
+      />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - Dark theme */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>

@@ -34,7 +34,7 @@ export default function ProtectedRoute({
 
   // If user is authenticated and trying to access login page, redirect to academy
   if (isAuthenticated && !requireAuth && location.pathname === '/login') {
-    return <Navigate to="/academy/adi-blueprint" replace />;
+    return <Navigate to="/academy/blueprint-access" replace />;
   }
 
   return <>{children}</>;

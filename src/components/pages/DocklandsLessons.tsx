@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -15,8 +15,59 @@ import {
   Award,
 } from "lucide-react";
 
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Docklands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Docklands and E14 start from £45 for a 90-minute session. We offer intensive courses and block booking discounts for E14 and Canary Wharf areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer automatic driving lessons in Canary Wharf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We specialize in automatic driving lessons in Canary Wharf and all E14 postcodes. Automatic lessons are perfect for busy professionals in the Docklands area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What driving test routes do you use in Docklands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our instructors know all the local test routes in Docklands including Isle of Dogs, Poplar, and Canary Wharf test routes. We practice on A1261, Aspen Way, and Limehouse Link."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover all E14 and E16 postcodes in Docklands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we serve all Docklands postcodes including E14, E16, and surrounding areas. Our intensive driving lessons in E14 Canary Wharf are popular with local residents."
+      }
+    }
+  ]
+};
+
 const DocklandsLessons = () => {
   const [postcode, setPostcode] = useState("");
+
+  // Inject FAQPage schema for SEO
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

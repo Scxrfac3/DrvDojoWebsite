@@ -85,10 +85,10 @@ export default function HeroSection() {
 
             <h1 className="text-5xl lg:text-7xl font-black leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-orange-300 bg-clip-text text-transparent animate-gradient">
-                Drive
+                Expert Driving Lessons
               </span>
               <br />
-              <span className="text-orange-400 animate-bounce inline-block">Smart</span>
+              <span className="text-orange-400 animate-bounce inline-block">in Canary Wharf & E14</span>
               <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
             </h1>
 

@@ -68,8 +68,8 @@ exports.handler = async (event, context) => {
         },
       ],
       mode: 'payment',
-      success_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/booking/cancel`,
+      success_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/login?Purchased=ADI+Blueprint`,
+      cancel_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/adi-blueprint?canceled=true`,
       customer_email: customerEmail || undefined,
       metadata: {
         packageName: packageName || 'Driving Lesson',

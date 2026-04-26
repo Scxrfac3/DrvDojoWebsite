@@ -7,6 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     // =======================================================================
+    // MAIN SITE HEADER MOBILE MENU
+    // =======================================================================
+    const siteMobileMenu = document.getElementById('siteMobileMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    if (siteMobileMenu && mobileNav) {
+        siteMobileMenu.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                siteMobileMenu.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                siteMobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    }
+
+    // =======================================================================
     // SIDEBAR NAVIGATION
     // =======================================================================
     const sidebar = document.getElementById('sidebar');

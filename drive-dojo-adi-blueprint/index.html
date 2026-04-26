@@ -124,7 +124,321 @@
         }
 
         /* ========================================
-           STICKY HEADER
+           SITE HEADER - Full Navigation
+        ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-header .header-logo img {
+            height: 48px;
+            width: auto;
+            transition: transform var(--transition-fast);
+        }
+
+        .site-header .header-logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav-link {
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--yellow-tron);
+            background: rgba(255, 215, 0, 0.08);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .dropdown-trigger i {
+            font-size: 10px;
+            transition: transform var(--transition-fast);
+        }
+
+        .nav-dropdown:hover .dropdown-trigger i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            background: var(--bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: var(--space-sm);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all var(--transition-normal);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 1001;
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(5px);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all var(--transition-fast);
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--yellow-tron);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .whatsapp-link, .phone-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .whatsapp-link:hover, .phone-link:hover {
+            color: var(--yellow-tron);
+        }
+
+        .whatsapp-link i {
+            color: #25D366;
+        }
+
+        .book-now-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--yellow-tron);
+            color: var(--bg-deep);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 13px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .book-now-btn:hover {
+            background: var(--yellow-light);
+            box-shadow: var(--shadow-glow-yellow);
+            transform: translateY(-2px);
+            color: var(--bg-deep);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+            padding: var(--space-sm);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: var(--space-lg);
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav > a {
+            display: block;
+            padding: var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-dropdown {
+            padding: var(--space-md);
+        }
+
+        .mobile-dropdown-trigger {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 500;
+            padding: var(--space-sm) 0;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-content {
+            display: none;
+            padding-left: var(--space-lg);
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-content {
+            display: block;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .mobile-contact {
+            padding: var(--space-lg) 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .mobile-contact a {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            padding: var(--space-sm) 0;
+        }
+
+        .mobile-book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-lg);
+            background: var(--yellow-tron) !important;
+            color: var(--bg-deep) !important;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            justify-content: center;
+            margin-top: var(--space-sm);
+        }
+
+        /* Responsive Header */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: var(--space-sm) var(--space-md);
+            }
+
+            .site-header .header-logo img {
+                height: 40px;
+            }
+
+            .header-actions {
+                gap: var(--space-sm);
+            }
+
+            .whatsapp-link,
+            .phone-link {
+                font-size: 12px;
+            }
+
+            .whatsapp-link span,
+            .phone-link span {
+                display: none;
+            }
+
+            .book-now-btn {
+                padding: var(--space-xs) var(--space-md);
+                font-size: 12px;
+            }
+
+            .book-now-btn span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-actions {
+                flex-wrap: nowrap;
+            }
+
+            .book-now-btn i {
+                margin: 0;
+            }
+        }
+
+        /* ========================================
+           STICKY HEADER (Old - Keep for compatibility)
         ======================================== */
         .sticky-header {
             position: fixed;
@@ -300,6 +614,32 @@
             margin-top: var(--space-lg);
             font-size: 14px;
             color: var(--text-muted);
+        }
+
+        .urgency-banner {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: linear-gradient(90deg, var(--red-primary), var(--red-dark));
+            color: var(--text-primary);
+            text-align: center;
+            padding: var(--space-sm) var(--space-md);
+            font-size: 14px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            animation: pulse-urgent 2s infinite;
+        }
+
+        .urgency-banner i {
+            color: var(--yellow-tron);
+            margin-right: var(--space-sm);
+        }
+
+        @keyframes pulse-urgent {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
         }
 
         .hero-scroll {
@@ -1394,13 +1734,31 @@
     </script>
 </head>
 <body>
-    <!-- Sticky Header -->
-    <header class="sticky-header" id="stickyHeader">
-        <div class="container">
-            <div class="header-logo">DRIVE <span>DOJO</span></div>
-            <button class="header-cta" onclick="scrollToSection('final-cta')">Get the Blueprint</button>
+    <!-- Simplified Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <a href="https://drivedojodrivingschool.com" class="header-logo">
+                <img src="https://drivedojodrivingschool.com/images/certifications/DDojo.png" alt="Drive Dojo Logo" height="48">
+            </a>
+            <div class="header-actions">
+                <a href="https://wa.me/447487228866" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+447487228866" class="phone-link">
+                    <i class="fas fa-phone"></i> +44 748 722 8866
+                </a>
+                <a href="#final-cta" class="book-now-btn" onclick="scrollToSection('final-cta'); return false;">
+                    <i class="fas fa-bolt"></i> Get Blueprint
+                </a>
+            </div>
         </div>
     </header>
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <i class="fas fa-fire"></i>
+        <span> <strong>Special Launch Price:</strong> Get the ADI Blueprint for £49 (normally £197) — Offer ends soon</span>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -1408,27 +1766,26 @@
         <div class="container">
             <div class="hero-content">
                 <div class="pre-headline fade-up">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>Attention: Aspiring & Current Driving Instructors</span>
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>For Aspiring & Current ADIs Ready to Build Their Own Empire</span>
                 </div>
 
                 <h1 class="fade-up stagger-1">
-                    The <span class="highlight">£2,200/Month</span> Franchise Trap<br>
-                    is <span class="red">Bankrupting</span> New Driving Instructors.<br>
-                    Here is Your Escape Route.
+                    Stop Paying <span class="highlight">£2,200/Month</span> to Franchise Owners.<br>
+                    Keep <span class="green">100% of Your Lesson Fees</span>—Starting Today.
                 </h1>
 
                 <p class="hero-subtitle fade-up stagger-2">
-                    The Complete ADI Blueprint: How to qualify, launch, and scale a highly profitable independent driving school—without handing your hard-earned lesson fees to a national brand.
+                    The Complete ADI Blueprint shows you exactly how to qualify as an independent driving instructor, build a profitable business, and never pay a franchise fee again.
                 </p>
 
                 <button class="hero-cta fade-up stagger-3" onclick="scrollToSection('final-cta')">
-                    <span>Get Instant Access</span>
+                    <span>Get Your Blueprint — £49</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
 
                 <p class="hero-note fade-up stagger-4">
-                    <i class="fas fa-lock"></i> Secure instant download • Lifetime access • No franchise fees
+                    <i class="fas fa-lock"></i> Instant digital access • Lifetime updates included • 30-day guarantee
                 </p>
             </div>
         </div>
@@ -1453,24 +1810,24 @@
                     <div class="pain-card-icon">
                         <i class="fas fa-pound-sign"></i>
                     </div>
-                    <h3>You Pay Before You Earn</h3>
-                    <p>Thousands in upfront fees before you even pass Part 2 or 3. You're investing huge amounts before you've proven you can teach.</p>
+                    <h3>£2,000+ in Fees Before You Earn a Single Penny</h3>
+                    <p>You're forking out thousands before you've even proven you can teach. That's not an investment—that's a gamble with your savings.</p>
                 </div>
 
                 <div class="pain-card fade-up stagger-2">
                     <div class="pain-card-icon">
                         <i class="fas fa-calendar-times"></i>
                     </div>
-                    <h3>The Weekly Fee Never Stops</h3>
-                    <p>Even in a slow week with zero new pupils, you still owe them £150+ a week. Talk about financial stress!</p>
+                    <h3>The £150+/Week Fee That Never Sleeps</h3>
+                    <p>Holiday? Sick day? Empty diary? Doesn't matter—you still owe them. That constant pressure is destroying your mental health and bank account.</p>
                 </div>
 
                 <div class="pain-card fade-up stagger-3">
                     <div class="pain-card-icon">
                         <i class="fas fa-users-slash"></i>
                     </div>
-                    <h3>You Build Their Business, Not Yours</h3>
-                    <p>Every 5-star review you earn goes to their brand, not your local reputation. All that hard work builds someone else's empire.</p>
+                    <h3>Every 5-Star Review Builds THEIR Empire</h3>
+                    <p>You sweat blood to get brilliant pupil results, but the reviews belong to their brand. You're invisible in your own local area.</p>
                 </div>
             </div>
         </div>
@@ -1490,17 +1847,17 @@
 
                 <div class="story-text fade-up">
                     <span class="section-label">My Story</span>
-                    <h2>Hi, I'm <span>[Your Name]</span>, Founder of Drive Dojo.</h2>
+                    <h2>Hi, I'm Mamun, Founder of Drive Dojo.</h2>
 
-                    <p>I know exactly how suffocating the franchise trap is because I fell right into it. I qualified as an Approved Driving Instructor at just 21 while studying for my Computer Science degree. I thought joining a major franchise was the safe bet.</p>
+                    <p>I know exactly how suffocating the franchise trap is because I fell right into it. I qualified as an Approved Driving Instructor at just 21 while studying for my Computer Science degree. I thought joining a major franchise was the smart move.</p>
 
-                    <p>The reality? I was paying astronomical franchise fees of up to <strong>£2,279 a month</strong>. There were months the franchise only gave me two new students. It got so bad that, despite being a fully qualified ADI, I had to drive delivery vans for Argos and Sainsbury's just to cover my franchise fees.</p>
+                    <p>The reality? I was paying <strong>£2,279 a month</strong> in franchise fees. There were months where the franchise gave me just two new students. It got so bad that I had to deliver parcels for Argos and Sainsbury's just to cover my overheads—despite being a fully qualified ADI.</p>
 
                     <div class="highlight-box">
-                        <p>I realised I had to break free. I went fully independent, launched Drive Dojo, and haven't looked back. Today, my diary is full, my business is 100% mine, and I keep every penny of my lesson fees.</p>
+                        <p>I knew I had to escape. I went fully independent, launched Drive Dojo, and never looked back. Today, my diary is full, my business is 100% mine, and I keep every penny of my lesson fees.</p>
                     </div>
 
-                    <p>I wrote <strong>The Complete ADI Blueprint</strong> to show you exactly how to do the same.</p>
+                    <p>I created <strong>The Complete ADI Blueprint</strong> so you don't have to learn this the hard way. This is the exact roadmap I wish I'd had.</p>
                 </div>
             </div>
         </div>
@@ -1511,7 +1868,7 @@
         <div class="container">
             <div class="offer-header">
                 <span class="section-label fade-up">What You Get</span>
-                <h2 class="section-title fade-up">This isn't a boring PDF. It's a fully interactive, step-by-step roadmap.</h2>
+                <h2 class="section-title fade-up">Everything You Need to Build a Profitable Independent Driving School</h2>
             </div>
 
             <div class="offer-grid">
@@ -1520,11 +1877,11 @@
                         <i class="fas fa-route"></i>
                     </div>
                     <h3>The Zero-Franchise Qualification Route</h3>
-                    <p>How to pass Parts 1, 2, and 3 efficiently, including the exact apps and methods you need.</p>
+                    <p>Pass Parts 1, 2, and 3 efficiently with the exact apps and methods that work—no wasted time or money.</p>
                     <ul class="offer-features">
-                        <li><i class="fas fa-check"></i> Theory Test 4 in 1 app recommendations</li>
-                        <li><i class="fas fa-check"></i> Part 2 training shortcuts</li>
-                        <li><i class="fas fa-check"></i> Part 3 examination strategies</li>
+                        <li><i class="fas fa-check"></i> Theory Test app recommendations that actually work</li>
+                        <li><i class="fas fa-check"></i> Part 2 training shortcuts from someone who's been there</li>
+                        <li><i class="fas fa-check"></i> Part 3 examination strategies that get results</li>
                     </ul>
                 </div>
 
@@ -1532,12 +1889,12 @@
                     <div class="offer-icon">
                         <i class="fas fa-id-badge"></i>
                     </div>
-                    <h3>The "Pink Badge" Strategy</h3>
-                    <p>How to legally start teaching and earning money while you are still training for your Part 3 test.</p>
+                    <h3>The "Pink Badge" Income Strategy</h3>
+                    <p>Start legally earning money while you train—before you even pass Part 3. Turn your waiting period into income.</p>
                     <ul class="offer-features">
-                        <li><i class="fas fa-check"></i> Legal requirements explained</li>
-                        <li><i class="fas fa-check"></i> Income generation timeline</li>
-                        <li><i class="fas fa-check"></i> Risk-free progression path</li>
+                        <li><i class="fas fa-check"></i> Exactly how to legally teach as a trainee</li>
+                        <li><i class="fas fa-check"></i> When to start booking paying pupils</li>
+                        <li><i class="fas fa-check"></i> How to offset your qualification costs entirely</li>
                     </ul>
                 </div>
 
@@ -1545,12 +1902,12 @@
                     <div class="offer-icon">
                         <i class="fas fa-calculator"></i>
                     </div>
-                    <h3>The Real Cost Breakdown</h3>
-                    <p>An interactive calculator showing exactly how to save up to £11,500 in your first year.</p>
+                    <h3>The Real Cost Calculator</h3>
+                    <p>See in real numbers how to save £11,500+ in your first year. Watch the franchise trap math crumble.</p>
                     <ul class="offer-features">
-                        <li><i class="fas fa-check"></i> Side-by-side comparisons</li>
-                        <li><i class="fas fa-check"></i> Hidden fee discoveries</li>
-                        <li><i class="fas fa-check"></i> Year-one savings tracker</li>
+                        <li><i class="fas fa-check"></i> Side-by-side franchise vs independent breakdown</li>
+                        <li><i class="fas fa-check"></i> Hidden fees most people miss</li>
+                        <li><i class="fas fa-check"></i> Interactive year-one savings tracker</li>
                     </ul>
                 </div>
 
@@ -1558,12 +1915,12 @@
                     <div class="offer-icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h3>The 90-Day Action Plan</h3>
-                    <p>A clickable checklist taking you from registering with HMRC to securing your first 10 paying pupils.</p>
+                    <h3>The 90-Day Launch Blueprint</h3>
+                    <p>A clickable action plan from HMRC registration to your first 10 paying pupils—no guesswork, no confusion.</p>
                     <ul class="offer-features">
-                        <li><i class="fas fa-check"></i> Day-by-day breakdown</li>
-                        <li><i class="fas fa-check"></i> Progress tracking system</li>
-                        <li><i class="fas fa-check"></i> Milestone celebrations</li>
+                        <li><i class="fas fa-check"></i> Day-by-day tasks that actually matter</li>
+                        <li><i class="fas fa-check"></i> Built-in progress tracking</li>
+                        <li><i class="fas fa-check"></i> Milestone check-ins to celebrate wins</li>
                     </ul>
                 </div>
 
@@ -1571,12 +1928,12 @@
                     <div class="offer-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>The Free Tech Stack</h3>
-                    <p>How to use Google Calendar and WhatsApp Business to automate your bookings and cut no-shows by 60%.</p>
+                    <h3>The Free Business Stack</h3>
+                    <p>Use Google Calendar + WhatsApp Business to run your school professionally—cut no-shows by 60% without paying a penny for software.</p>
                     <ul class="offer-features">
-                        <li><i class="fas fa-check"></i> Zero software costs</li>
-                        <li><i class="fas fa-check"></i> Automated reminders</li>
-                        <li><i class="fas fa-check"></i> Booking system setup</li>
+                        <li><i class="fas fa-check"></i> 100% free tools—no subscriptions ever</li>
+                        <li><i class="fas fa-check"></i> Automated reminders that actually reduce no-shows</li>
+                        <li><i class="fas fa-check"></i> Complete booking system setup in an afternoon</li>
                     </ul>
                 </div>
 
@@ -1584,12 +1941,12 @@
                     <div class="offer-icon">
                         <i class="fas fa-file-copy"></i>
                     </div>
-                    <h3>Copy-and-Paste Swipe Files</h3>
-                    <p>Get my exact text message templates for booking confirmations, cancellation policies, and review requests.</p>
+                    <h3>Ready-to-Use Message Templates</h3>
+                    <p>Copy/paste the exact scripts I use for booking confirmations, cancellations, and review requests that convert.</p>
                     <ul class="offer-features">
-                        <li><i class="fas fa-check"></i> Ready-to-use scripts</li>
-                        <li><i class="fas fa-check"></i> Professional tone guide</li>
-                        <li><i class="fas fa-check"></i> Review request sequences</li>
+                        <li><i class="fas fa-check"></i> Professional templates that sound human</li>
+                        <li><i class="fas fa-check"></i> Tone guide for every client interaction</li>
+                        <li><i class="fas fa-check"></i> Review request sequence that gets 5-star responses</li>
                     </ul>
                 </div>
             </div>
@@ -1741,7 +2098,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"I was about to sign with a franchise when I found Drive Dojo. The Blueprint saved me over £12,000 in year one. My diary is now full and I'm building my own brand!"</p>
+                    <p class="testimonial-text">"I was 48 hours from signing a franchise contract when I stumbled onto the ADI Blueprint. Best find of my life. Saved £12,000 in year one and my diary is now booked 3 weeks out."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">JM</div>
                         <div class="testimonial-info">
@@ -1759,7 +2116,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"The 90-day action plan is gold. I went from zero to 8 pupils in just 6 weeks. The swipe files alone were worth the investment."</p>
+                    <p class="testimonial-text">"The 90-day action plan is incredible. I went from zero pupils to 8 regulars in just 6 weeks. The swipe files alone were worth 10x the investment."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">SP</div>
                         <div class="testimonial-info">
@@ -1777,7 +2134,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"I was working 60 hours a week for a franchise and barely breaking even. Now I work 35 hours, earn more, and keep 100% of my profits. Life-changing!"</p>
+                    <p class="testimonial-text">"I was working 60 hours a week for a franchise and barely covering costs. Now I work 35 hours, earn more than I ever did, and keep 100% of every lesson fee. This Blueprint changed my life."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">DK</div>
                         <div class="testimonial-info">
@@ -1806,7 +2163,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Not at all! The Blueprint is designed for complete beginners. It covers everything from "what is ADI qualification?" to launching your first pupil. Whether you're still working another job or transitioning from another career, the step-by-step process makes it simple.
+                            Zero experience required. If you can read a road sign and have a clean driving licence, you have everything you need. The Blueprint starts from absolute scratch—from understanding ADI qualification to your first booked pupil. No prior business knowledge needed.
                         </div>
                     </div>
                 </div>
@@ -1818,43 +2175,43 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Free content gives you fragments. The Blueprint gives you a complete, proven system that works. It's the difference between "here are some tips" and "here's exactly what to do, when to do it, and why." Plus, there's no fluff, no padding, and no upsells inside.
+                            YouTube gives you scattered tips. The Blueprint gives you a complete, battle-tested system—from day one to your first 10 pupils. It's the difference between "here are some ideas" and "here's exactly what to do, when, and how." No fluff, no padding, no hidden upsells.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item fade-up">
                     <button class="faq-question">
-                        <span>What if the Blueprint doesn't work for me?</span>
+                        <span>What if it doesn't work for me?</span>
                         <i class="fas fa-plus"></i>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            The Blueprint is backed by a 30-day money-back guarantee. If you go through the material and don't find it valuable, just reach out for a full refund. No hoops to jump through, no questions asked.
+                            You're protected by a 30-day money-back guarantee. Work through the Blueprint, follow the steps, and if you don't find it valuable—email us for a full refund. No forms, no hoops, no awkward conversations.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item fade-up">
                     <button class="faq-question">
-                        <span>How long do I have access to the Blueprint?</span>
+                        <span>How long do I have access?</span>
                         <i class="fas fa-plus"></i>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Lifetime access. Pay once, keep it forever. This includes all future updates and additions to the Blueprint at no extra cost.
+                            Forever. Pay once, keep it forever. That includes every future update and addition I make to the Blueprint—at no extra cost. One price, lifetime value.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item fade-up">
                     <button class="faq-question">
-                        <span>Can I really start earning while training?</span>
+                        <span>Can I really start earning while still training?</span>
                         <i class="fas fa-plus"></i>
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Yes! The "Pink Badge" strategy section specifically covers how to legally teach as aADI trainee and start generating income before you even pass Part 3. Many instructors have used this to offset their qualification costs entirely.
+                            Absolutely. The "Pink Badge" strategy shows you exactly how to legally teach as a trainee ADI and generate income before passing Part 3. Many Blueprint users have completely offset their qualification costs using this method.
                         </div>
                     </div>
                 </div>
@@ -1866,7 +2223,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            It's a fully interactive digital guide accessible via any browser or device. Includes clickable checklists, calculators, swipe files you can copy/paste, and video walkthroughs where needed. Works on mobile, tablet, and desktop.
+                            A fully interactive digital guide that works on any device—phone, tablet, or desktop. Includes clickable checklists, savings calculators, copy/paste templates, and video walkthroughs where needed. Everything you need, accessible anywhere.
                         </div>
                     </div>
                 </div>
@@ -1879,23 +2236,23 @@
         <div class="final-cta-bg"></div>
         <div class="container">
             <div class="final-cta-content">
-                <h2 class="fade-up">Ready to Escape the Franchise Trap?</h2>
-                <p class="fade-up">Join thousands of instructors who have taken control of their destiny.</p>
+                <h2 class="fade-up">Ready to Keep 100% of Your Lesson Fees?</h2>
+                <p class="fade-up">Join thousands of instructors who've escaped the franchise trap and built their own profitable driving schools.</p>
 
                 <div class="final-price fade-up">
-                    <div class="price-original">£197</div>
-                    <div class="price-current">£49</div>
-                    <p class="price-note">One-time payment • Lifetime access • No hidden fees</p>
+                    <div class="price-original">Was £197</div>
+                    <div class="price-current">Now £49</div>
+                    <p class="price-note">One-time payment • Lifetime access • Instant delivery</p>
                 </div>
 
                 <button class="final-cta-btn fade-up" onclick="initiateCheckout()">
-                    <i class="fas fa-lock"></i>
-                    <span>Get Instant Access Now</span>
+                    <i class="fas fa-bolt"></i>
+                    <span>Get Your ADI Blueprint Now — £49</span>
                 </button>
 
                 <div class="guarantee fade-up">
                     <i class="fas fa-shield-alt"></i>
-                    <span>30-Day Money-Back Guarantee • Secure Checkout via Stripe</span>
+                    <span>30-Day Money-Back Guarantee • Secure Stripe Checkout</span>
                 </div>
             </div>
         </div>
@@ -1930,17 +2287,53 @@
     <!-- JavaScript -->
     <script>
         // ========================================
+        // MOBILE MENU
+        // ========================================
+        const mobileMenuBtn = document.getElementById('siteMobileMenu');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+
+        // Toggle mobile menu
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Toggle mobile dropdowns
+        mobileDropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('.mobile-dropdown-trigger');
+            if (trigger) {
+                trigger.addEventListener('click', () => {
+                    dropdown.classList.toggle('active');
+                });
+            }
+        });
+
+        // ========================================
         // STICKY HEADER
         // ========================================
         const stickyHeader = document.getElementById('stickyHeader');
         const heroSection = document.getElementById('hero');
 
         function handleScroll() {
-            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-            if (window.scrollY > heroBottom - 100) {
-                stickyHeader.classList.add('visible');
-            } else {
-                stickyHeader.classList.remove('visible');
+            if (heroSection) {
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                if (stickyHeader) {
+                    if (window.scrollY > heroBottom - 100) {
+                        stickyHeader.classList.add('visible');
+                    } else {
+                        stickyHeader.classList.remove('visible');
+                    }
+                }
             }
         }
 

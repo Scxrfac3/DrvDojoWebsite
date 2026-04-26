@@ -260,10 +260,25 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                     </Link>
                   </NavigationMenuItem>
 
+                  <NavigationMenuItem>
+                    <Link
+                      to="/adi-blueprint"
+                      className="px-3 py-2 text-base font-semibold text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
+                    >
+                      ADI Blueprint
+                    </Link>
+                  </NavigationMenuItem>
+
             </NavigationMenuList>
           </NavigationMenu>
 
           <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              to="/login"
+              className="flex items-center text-gray-300 hover:text-white transition-colors group px-3 py-2"
+            >
+              <span className="font-medium">Log In</span>
+            </Link>
             <a
               href="https://wa.me/442012345678"
               className="flex items-center text-green-400 hover:text-green-300 transition-colors group"

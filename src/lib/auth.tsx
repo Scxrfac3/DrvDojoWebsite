@@ -62,7 +62,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${window.location.origin}/academy/adi-blueprint`,
+          emailRedirectTo: `${window.location.origin}/academy/blueprint-access`,
         },
       });
       return { error };
@@ -102,7 +102,21 @@ export function useAuth() {
 
 // Check if user has access to ADI Blueprint
 export async function checkBlueprintAccess(userId: string): Promise<boolean> {
-  // For now, any authenticated user has access
-  // In production, you might check a purchases table
-  return !!userId;
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('has_blueprint_access')
+      .eq('id', userId)
+      .single();
+    
+    if (error) {
+      console.error('Error checking blueprint access:', error);
+      return false;
+    }
+    
+    return data?.has_blueprint_access === true;
+  } catch (error) {
+    console.error('Error checking blueprint access:', error);
+    return false;
+  }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { ArrowRight, MapPin, Search, Calendar, User } from "lucide-react";
+import { ArrowRight, MapPin, Search, Calendar, User, Sparkles } from "lucide-react";
 
 interface GetStartedSectionProps {
   steps?: {
@@ -39,6 +39,16 @@ const GetStartedSection = ({
   ctaLink = "/booking",
   location = "London",
 }: GetStartedSectionProps) => {
+  
+  // Additional steps for ADI Blueprint section
+  const adiSteps = [
+    {
+      icon: <Sparkles className="h-10 w-10 text-yellow-400" />,
+      title: "Become a Driving Instructor",
+      description:
+        "Use our free ADI Blueprint guide to start your journey to becoming a qualified Approved Driving Instructor.",
+    },
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -172,6 +182,70 @@ const GetStartedSection = ({
               )}
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* ADI Blueprint Section for aspiring driving instructors */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-2xl p-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            
+            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8">
+              <motion.div
+                className="flex-shrink-0"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 flex items-center justify-center">
+                  <Sparkles className="h-10 w-10 text-yellow-400" />
+                </div>
+              </motion.div>
+              
+              <div className="flex-grow text-center lg:text-left">
+                <motion.div
+                  className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-yellow-400 text-sm font-medium">🎓 Free Guide</span>
+                </motion.div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                  Want to Become a{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                    Driving Instructor?
+                  </span>
+                </h3>
+                
+                <p className="text-gray-400 mb-6 max-w-2xl">
+                  Our comprehensive ADI Blueprint guide shows you exactly how to qualify as an Approved Driving 
+                  Instructor — including how to avoid the £2,279/month franchise trap, pass all 3 ADI exams, 
+                  and build your own profitable driving school. Completely free.
+                </p>
+                
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                  <a
+                    href="/adi-blueprint"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:from-yellow-400 hover:to-orange-400 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  >
+                    <Sparkles className="h-5 w-5" />
+                    Get Your Free ADI Blueprint
+                  </a>
+                  <span className="flex items-center text-sm text-gray-500">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    Free • No signup required
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div

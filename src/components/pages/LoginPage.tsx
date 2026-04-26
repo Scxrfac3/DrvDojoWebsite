@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
-import { Mail, Lock, Loader2 } from 'lucide-react';
+import { Mail, Lock, Loader2, CheckCircle } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -11,9 +11,23 @@ export default function LoginPage() {
   const { signIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  
+  // Check if user just completed a purchase
+  const purchasedProduct = searchParams.get('Purchased');
   
   // Get the return URL from location state or default to academy
   const from = (location.state as any)?.from?.pathname || '/academy/adi-blueprint';
+  
+  // Show purchase success message if redirected from checkout
+  useEffect(() => {
+    if (purchasedProduct) {
+      setMessage({
+        type: 'success',
+        text: `Payment successful! Your ${purchasedProduct} account has been created. Check your email for the magic sign-in link.`
+      });
+    }
+  }, [purchasedProduct]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

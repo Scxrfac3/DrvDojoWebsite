@@ -100,6 +100,284 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+/* --------------------------------------------------------------------------
+   MAIN SITE HEADER (matching Drive Dojo website)
+   -------------------------------------------------------------------------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 0;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 48px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover img {
+    transform: scale(1.05);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-nav .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.header-nav .nav-link:hover {
+    color: #ff6b35;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #4ade80;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.whatsapp-link:hover {
+    color: #22c55e;
+}
+
+.phone-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.phone-link:hover {
+    color: #ffffff;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(13, 13, 13, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav a:hover {
+    color: #ff6b35;
+    background: rgba(255, 107, 53, 0.1);
+}
+
+.mobile-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-contact a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .header-nav {
+        display: none;
+    }
+    
+    .header-actions {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-logo img {
+        height: 40px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   SITE FOOTER (matching Drive Dojo website)
+   -------------------------------------------------------------------------- */
+.site-footer {
+    background: var(--black-dark);
+    border-top: 1px solid rgba(230, 57, 70, 0.3);
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-brand .brand-by {
+    font-family: var(--font-display);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gray-medium);
+}
+
+.footer-brand .brand-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--white-pure);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--yellow-tron);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: var(--gray-light);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: var(--red-primary);
+    color: var(--white-pure);
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    color: var(--gray-medium);
+    font-size: 0.85rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+.footer-copy p {
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   MAIN CONTENT OFFSET FOR FIXED HEADER
+   -------------------------------------------------------------------------- */
+.main-content {
+    padding-top: 80px; /* Offset for fixed site header */
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 70px;
+    }
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
