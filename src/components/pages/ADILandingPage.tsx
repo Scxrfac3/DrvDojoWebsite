@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, AlertTriangle, ArrowRight, Lock, BookOpen, Calculator, Calendar, Download, Users, Zap, Shield, Clock, Star, ChevronDown } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
-import { createBlueprintCheckout } from '@/lib/stripe';
 import EarningsCalculator from '@/components/EarningsCalculator';
 import FeatureExplorer from '@/components/FeatureExplorer';
 import Navbar from '@/components/layout/Navbar';
@@ -60,29 +59,7 @@ function GlassCard({ children, className = '' }: { children: React.ReactNode; cl
 }
 
 export default function ADILandingPage() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const handlePurchase = async () => {
-    setIsLoading(true);
-    try {
-      const result = await createBlueprintCheckout(email || undefined);
-      if (result.error) {
-        alert(result.error);
-        setIsLoading(false);
-        return;
-      }
-      
-      if (result.sessionId) {
-        window.location.href = `https://checkout.stripe.com/pay/${result.sessionId}`;
-      }
-    } catch (error) {
-      console.error('Checkout error:', error);
-      alert('Something went wrong. Please try again.');
-      setIsLoading(false);
-    }
-  };
 
   const features = [
     { icon: Calculator, title: 'Income Calculator', desc: 'See exactly how much you can earn' },
@@ -536,18 +513,11 @@ export default function ADILandingPage() {
 
                 <div className="text-center">
                   <button
-                    onClick={handlePurchase}
-                    disabled={isLoading}
-                    className="w-full max-w-md mx-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ffd700] hover:bg-[#ffed4a] text-[#0a0a0a] font-bold text-lg rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    onClick={() => window.location.href = 'https://buy.stripe.com/28EeVffD977Wg01dsM00000'}
+                    className="w-full max-w-md mx-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ffd700] hover:bg-[#ffed4a] text-[#0a0a0a] font-bold text-lg rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
-                    {isLoading ? (
-                      'Redirecting...'
-                    ) : (
-                      <>
-                        Get Instant Access — £49
-                        <ArrowRight className="w-5 h-5" />
-                      </>
-                    )}
+                    Get Instant Access — £49
+                    <ArrowRight className="w-5 h-5" />
                   </button>
                   
                   <div className="mt-6 flex items-center justify-center gap-4 text-sm text-gray-500">
