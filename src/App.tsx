@@ -42,6 +42,10 @@ const AcademyPage = lazy(() => import('./components/pages/AcademyPage'));
 const BlueprintAccess = lazy(() => import('./components/pages/BlueprintAccess'));
 const LoginPage = lazy(() => import('./components/pages/LoginPage'));
 const AccessDeniedPage = lazy(() => import('./components/pages/AccessDeniedPage'));
+const FinancePlannerPage = lazy(() => import('./components/pages/FinancePlannerPage'));
+const SubscriptionPage = lazy(() => import('./components/pages/SubscriptionPage'));
+const DashboardPage = lazy(() => import('./components/pages/DashboardPage'));
+const BillingPortalPage = lazy(() => import('./components/pages/BillingPortalPage'));
 
 function App() {
   return (
@@ -123,6 +127,28 @@ function App() {
             element={
               <ProtectedRoute requireAuth={true}>
                 <BlueprintAccess />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Finance Planner Route */}
+          <Route path='/finance-planner' element={<FinancePlannerPage />} />
+
+          {/* Subscription Routes */}
+          <Route path='/subscribe' element={<SubscriptionPage />} />
+          <Route
+            path='/dashboard'
+            element={
+              <ProtectedRoute requireAuth={true}>
+                <DashboardPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/billing-portal'
+            element={
+              <ProtectedRoute requireAuth={true}>
+                <BillingPortalPage />
               </ProtectedRoute>
             }
           />

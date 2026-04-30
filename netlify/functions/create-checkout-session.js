@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
     let requestBody;
     try {
       requestBody = JSON.parse(event.body);
-      console.log('Request body parsed successfully:', { priceId: requestBody.priceId, packageName: requestBody.packageName });
+      console.log('Request body:', requestBody);
     } catch (parseError) {
       console.error('Error parsing request body:', parseError);
       return {
@@ -35,8 +35,53 @@ exports.handler = async (event, context) => {
       };
     }
 
-    const { priceId, packageName, customerEmail, promoCode, customerDetails } = requestBody;
+    const { priceId, productType, planType, email, trialDays } = requestBody;
 
+    // Handle subscription checkout
+    if (productType === 'subscription') {
+      if (!priceId) {
+        return {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({ error: 'Price ID is required for subscription' }),
+        };
+      }
+
+      // Create subscription checkout session with trial
+      const sessionConfig = {
+        payment_method_types: ['card'],
+        line_items: [
+          {
+            price: priceId,
+            quantity: 1,
+          },
+        ],
+        mode: 'subscription',
+        subscription_data: {
+          trial_period_days: trialDays || 7,
+        },
+        success_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/dashboard?trial=started`,
+        cancel_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/subscribe?canceled=true`,
+        customer_email: email || undefined,
+        metadata: {
+          productType: 'subscription',
+          planType: planType || 'monthly',
+        },
+      };
+
+      console.log('Creating subscription session with config:', JSON.stringify(sessionConfig, null, 2));
+      
+      const session = await stripe.checkout.sessions.create(sessionConfig);
+      console.log('Subscription session created:', session.id);
+
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ url: session.url, sessionId: session.id }),
+      };
+    }
+
+    // Handle one-time payment (existing ADI Blueprint flow)
     if (!priceId) {
       console.error('Price ID is missing');
       return {
@@ -58,7 +103,7 @@ exports.handler = async (event, context) => {
 
     console.log('Validating Price ID:', priceId);
 
-    // Create the session configuration
+    // Create the session configuration for one-time payment
     const sessionConfig = {
       payment_method_types: ['card'],
       line_items: [
@@ -70,24 +115,10 @@ exports.handler = async (event, context) => {
       mode: 'payment',
       success_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/login?Purchased=ADI+Blueprint`,
       cancel_url: `${event.headers.origin || 'https://drivedojodrivingschool.com'}/adi-blueprint?canceled=true`,
-      customer_email: customerEmail || undefined,
       metadata: {
-        packageName: packageName || 'Driving Lesson',
-        // Include customer details in metadata for later use
-        customerDetails: customerDetails ? JSON.stringify(customerDetails) : null,
+        packageName: 'ADI Blueprint',
       },
     };
-
-    // Add promo code if provided
-    if (promoCode) {
-      console.log('Adding promo code:', promoCode);
-      // Add the promo code as a discount
-      sessionConfig.discounts = [{
-        coupon: promoCode,
-      }];
-      // Also add promo code to metadata for tracking
-      sessionConfig.metadata.promoCode = promoCode;
-    }
 
     console.log('Creating Stripe session with config:', JSON.stringify(sessionConfig, null, 2));
     
@@ -106,16 +137,12 @@ exports.handler = async (event, context) => {
       }
     } catch (priceError) {
       console.error('Error verifying price:', priceError);
-      console.error('Invalid priceId received:', priceId);
-      console.error('Full error details:', JSON.stringify(priceError, null, 2));
       return {
         statusCode: 400,
         headers,
         body: JSON.stringify({
           error: 'Invalid package selected',
           message: 'The selected package is not valid. Please select a different package.',
-          invalidPriceId: priceId,
-          type: priceError.type
         }),
       };
     }
@@ -126,35 +153,19 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ id: session.id }),
+      body: JSON.stringify({ url: session.url, id: session.id }),
     };
   } catch (error) {
     console.error('Error creating checkout session:', error);
     console.error('Error type:', error.type);
     console.error('Error message:', error.message);
-    console.error('Error stack:', error.stack);
-    
-    // Check if the error is related to an invalid coupon
-    if (error.type === 'StripeInvalidRequestError' && error.message.includes('coupon')) {
-      return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({
-          error: 'Invalid promo code',
-          message: 'The promo code you entered is not valid. Please check and try again.',
-          type: error.type
-        }),
-      };
-    }
     
     return {
       statusCode: 500,
       headers,
       body: JSON.stringify({
-        error: 'Internal server error',
+        error: 'Failed to create checkout session',
         message: error.message,
-        type: error.type,
-        stack: error.stack
       }),
     };
   }

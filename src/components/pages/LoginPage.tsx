@@ -16,8 +16,8 @@ export default function LoginPage() {
   // Check if user just completed a purchase
   const purchasedProduct = searchParams.get('Purchased');
   
-  // Get the return URL from location state or default to academy
-  const from = (location.state as any)?.from?.pathname || '/academy/adi-blueprint';
+  // Get the return URL from location state or query param
+  const redirectTo = searchParams.get('redirect') || searchParams.get('redirectTo') || '/dashboard';
   
   // Show purchase success message if redirected from checkout
   useEffect(() => {
@@ -40,15 +40,15 @@ export default function LoginPage() {
     setIsLoading(true);
     setMessage(null);
 
-    const { error } = await signIn(email);
+    const { error } = await signIn(email, redirectTo);
 
     if (error) {
       setMessage({ type: 'error', text: error.message || 'Failed to send magic link' });
       setIsLoading(false);
     } else {
-      setMessage({ 
-        type: 'success', 
-        text: 'Check your email! We sent you a magic link to sign in.' 
+      setMessage({
+        type: 'success',
+        text: 'Check your email! We sent you a magic link to sign in.'
       });
       setIsLoading(false);
     }

@@ -12,7 +12,7 @@ interface AuthContextType {
   user: User | null;
   session: any;
   loading: boolean;
-  signIn: (email: string) => Promise<{ error: Error | null }>;
+  signIn: (email: string, redirectTo?: string) => Promise<{ error: Error | null }>;
   signOut: () => Promise<void>;
   isAuthenticated: boolean;
 }
@@ -57,12 +57,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
     return () => subscription.unsubscribe();
   }, []);
 
-  const signIn = async (email: string) => {
+  const signIn = async (email: string, redirectTo: string = '/dashboard') => {
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${window.location.origin}/academy/blueprint-access`,
+          emailRedirectTo: `${window.location.origin}${redirectTo}`,
         },
       });
       return { error };
