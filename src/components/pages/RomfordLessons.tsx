@@ -61,10 +61,21 @@ const RomfordLessons = () => {
   return (
     <>
       <SEO
-        title="Expert Driving Lessons in Romford & RM Postcodes | DVSA Approved Instructor"
-        description="Learn from a DVSA approved instructor specializing in intensive driving lessons in Romford and automatic driving lessons in Romford. Former Red & AA Driving School instructor helping students pass first time in Goodmayes DTC or Hornchurch driving test centre. Online booking available."
-        keywords="driving lessons romford, intensive driving lessons romford, automatic driving lessons romford, pass first time goodmayes dtc, hornchurch driving test centre, DVSA approved instructor, driving school romford, RM postcodes, driving instructor romford, online booking driving lessons"
-        canonical="/driving-lessons/romford"
+        title="Best Driving Lessons in Romford | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Romford. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Romford, intensive driving lessons Romford, automatic driving lessons Romford, DVSA approved instructor, driving school Romford, RM postcodes"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/romford"
+        serviceSchema={{
+          name: "Driving Lessons in Romford",
+          description: "Professional driving lessons in Romford with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Romford, RM postcodes, East London"
+        }}
       />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* Background decorative elements - Dark theme */}
@@ -88,15 +99,22 @@ const RomfordLessons = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                    DVSA Approved Driving Lessons
+                    First 2 Hours Only £49
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Romford - Online Booking Available</span>
+                  <span className="text-white">Driving Lessons in Romford</span>
                 </h1>
+
+                <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
+                  <p className="text-lg text-white font-medium">
+                    <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
+                    <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
+                  </p>
+                </div>
 
                 <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                   <span className="font-semibold text-orange-400">
-                    Professional intensive driving lessons in Romford & automatic driving lessons in Romford
+                    Professional DVSA approved ADI instructor in Romford
                   </span>{" "}
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC or Hornchurch driving test centre. Former instructor with Red Driving School and AA Driving School, serving all RM postcodes.
                 </p>

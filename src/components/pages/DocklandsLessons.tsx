@@ -76,13 +76,25 @@ const DocklandsLessons = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
+    <>
       <SEO
-        title="Expert Driving Lessons in Docklands & E14 | DVSA Approved Instructor"
-        description="Learn from a DVSA approved instructor specializing in intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf. Former Red & AA Driving School instructor with first-time pass expertise. Serving all Docklands postcodes."
-        keywords="driving lessons docklands, intensive driving lessons e14 canary wharf, automatic driving lessons canary wharf, DVSA approved instructor, driving school docklands, E14 driving lessons, driving instructor canary wharf, first time pass driving lessons"
-        canonical="/driving-lessons/docklands"
+        title="Best Driving Lessons in Docklands | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Docklands. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Docklands, intensive driving lessons Docklands, automatic driving lessons Canary Wharf, DVSA approved instructor, driving school Docklands, E14 postcodes"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
+        serviceSchema={{
+          name: "Driving Lessons in Docklands",
+          description: "Professional driving lessons in Docklands with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Docklands, Canary Wharf, E14, East London"
+        }}
       />
+      <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* Background decorative elements - Dark theme */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
@@ -104,15 +116,22 @@ const DocklandsLessons = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                    DVSA Approved Driving Lessons
+                    First 2 Hours Only £49
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Docklands & E14</span>
+                  <span className="text-white">Driving Lessons in Docklands</span>
                 </h1>
+
+                <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
+                  <p className="text-lg text-white font-medium">
+                    <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
+                    <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
+                  </p>
+                </div>
 
                 <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                   <span className="font-semibold text-orange-400">
-                    Professional intensive driving lessons in E14 Canary Wharf & automatic driving lessons in Canary Wharf
+                    Professional DVSA approved ADI instructor in Docklands
                   </span>{" "}
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time. Former instructor with Red Driving School and AA Driving School, serving all Docklands postcodes.
                 </p>
@@ -394,6 +413,7 @@ const DocklandsLessons = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

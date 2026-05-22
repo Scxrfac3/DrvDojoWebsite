@@ -5,6 +5,7 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "@/components/ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -44,6 +45,23 @@ const BarkingLessons = () => {
 
   return (
     <>
+      <SEO
+        title="Best Driving Lessons in Barking | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Barking. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Barking, intensive driving lessons Barking, automatic driving lessons Barking, DVSA approved instructor, driving school Barking, IG postcodes"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/barking"
+        serviceSchema={{
+          name: "Driving Lessons in Barking",
+          description: "Professional driving lessons in Barking with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Barking, IG postcodes, East London"
+        }}
+      />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - Dark theme */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
@@ -77,11 +95,18 @@ const BarkingLessons = () => {
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                      Automatic & Intensive Driving Lessons
+                      First 2 Hours Only £49
                     </span>
                     <br />
-                    <span className="text-white">in Barking</span>
+                    <span className="text-white">Driving Lessons in Barking</span>
                   </h1>
+
+                  <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
+                    <p className="text-lg text-white font-medium">
+                      <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
+                      <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
+                    </p>
+                  </div>
 
                   <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                     <span className="font-semibold text-orange-400">

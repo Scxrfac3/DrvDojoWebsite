@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SEO from "@/components/ui/SEO";
 import {
   MapPin,
   CheckCircle,
@@ -18,30 +19,31 @@ import SpecialOffersSection from "../sections/SpecialOffersSection";
 const WalthamstowLessons = () => {
   const [postcode, setPostcode] = useState("");
 
-  // SEO Meta Tags
-  useEffect(() => {
-    document.title = "Driving Lessons in Walthamstow | Automatic & Intensive | Drive Dojo";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Expert DVSA-approved driving lessons in Walthamstow. Automatic & intensive courses available. 98% pass rate. Serving E10, E11, E17 postcodes. Book today!");
-    }
-    // Add or update canonical link
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", "https://drivedojodrivingschool.com/driving-lessons/walthamstow");
-  }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     window.location.href = `/booking?postcode=${postcode}`;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
+    <>
+      <SEO
+        title="Best Driving Lessons in Walthamstow | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Walthamstow. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Walthamstow, intensive driving lessons Walthamstow, automatic driving lessons Walthamstow, DVSA approved instructor, driving school Walthamstow, E10, E11, E17 postcodes"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/walthamstow"
+        serviceSchema={{
+          name: "Driving Lessons in Walthamstow",
+          description: "Professional driving lessons in Walthamstow with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Walthamstow, E10, E11, E17, East London"
+        }}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
@@ -63,14 +65,21 @@ const WalthamstowLessons = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    Automatic Driving Lessons in
+                    First 2 Hours Only £49
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span>Walthamstow</span>
+                  <span>Driving Lessons in Walthamstow</span>
                 </h1>
 
+                <div className="mb-8 p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30">
+                  <p className="text-lg text-gray-800 font-medium">
+                    <span className="text-blue-600 font-bold">£49</span> for your first 2 hours — then{" "}
+                    <span className="text-blue-600 font-bold">£25/hr</span> ongoing. Book now!
+                  </p>
+                </div>
+
                 <p className="text-xl text-gray-700 mb-8">
-                  Expert driving lessons in Walthamstow from a DVSA-approved instructor. 
+                  Expert driving lessons in Walthamstow from a DVSA-approved instructor.
                   Automatic lessons, intensive courses & 98% first-time pass rate.
                   Book your first lesson today!
                 </p>
@@ -381,6 +390,7 @@ const WalthamstowLessons = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

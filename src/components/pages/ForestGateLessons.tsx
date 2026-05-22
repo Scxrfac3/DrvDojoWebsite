@@ -27,10 +27,21 @@ const ForestGateLessons = () => {
   return (
     <>
       <SEO
-        title="Driving Lessons Forest Gate | DVSA Approved Instructor | E7 Postcode Coverage"
-        description="Expert intensive driving lessons in E7 and automatic driving lessons in Forest Gate from a DVSA approved instructor. Former Red Driving School & AA Driving School instructor specializing in first-time passes. Covering all E postcodes including E6, E7, E11, E12, E13, E15, E16 and IG postcodes."
-        keywords="driving lessons Forest Gate, intensive driving lessons E7, automatic driving lessons Forest Gate, DVSA approved instructor, Red Driving School, AA Driving School, driving lessons E7, driving instructor Forest Gate, first time pass, E postcode driving lessons, driving lessons East London"
+        title="Best Driving Lessons in Forest Gate | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Forest Gate. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Forest Gate, intensive driving lessons E7, automatic driving lessons Forest Gate, DVSA approved instructor, driving lessons E7, driving instructor Forest Gate, first time pass"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
+        serviceSchema={{
+          name: "Driving Lessons in Forest Gate",
+          description: "Professional driving lessons in Forest Gate with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Forest Gate, E7, East London"
+        }}
       />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
       {/* Background decorative elements - Dark theme */}
@@ -54,15 +65,22 @@ const ForestGateLessons = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                    Expert Driving Lessons in Forest Gate
+                    First 2 Hours Only £49
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">DVSA Approved Instructor</span>
+                  <span className="text-white">Driving Lessons in Forest Gate</span>
                 </h1>
+
+                <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
+                  <p className="text-lg text-white font-medium">
+                    <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
+                    <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
+                  </p>
+                </div>
 
                 <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                   <span className="font-semibold text-orange-400">
-                    Professional intensive driving lessons in E7 and automatic driving lessons in Forest Gate
+                    Professional DVSA approved ADI instructor in Forest Gate
                   </span>{" "}
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time. With experience working with national driving schools like Red Driving School and AA Driving School, I provide expert instruction across all E postcodes.
                 </p>

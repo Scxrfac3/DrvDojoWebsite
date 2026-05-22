@@ -1,13 +1,26 @@
 import { useEffect } from "react";
 
+interface ServiceSchema {
+  name: string;
+  description: string;
+  provider: {
+    name: string;
+    url: string;
+  };
+  price?: string;
+  priceCurrency?: string;
+  areaServed?: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
   keywords?: string;
   canonical?: string;
+  serviceSchema?: ServiceSchema;
 }
 
-const SEO = ({ title, description, keywords, canonical }: SEOProps) => {
+const SEO = ({ title, description, keywords, canonical, serviceSchema }: SEOProps) => {
   useEffect(() => {
     // Update document title
     document.title = title;
@@ -91,12 +104,47 @@ const SEO = ({ title, description, keywords, canonical }: SEOProps) => {
       document.head.appendChild(twitterDescription);
     }
 
+    // Add Service Schema markup for rich snippets
+    if (serviceSchema) {
+      const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": serviceSchema.name,
+        "description": serviceSchema.description,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": serviceSchema.provider.name,
+          "url": serviceSchema.provider.url
+        },
+        ...(serviceSchema.price && {
+          "offers": {
+            "@type": "Offer",
+            "price": serviceSchema.price,
+            "priceCurrency": serviceSchema.priceCurrency || "GBP"
+          }
+        }),
+        ...(serviceSchema.areaServed && {
+          "areaServed": serviceSchema.areaServed
+        })
+      };
+
+      let existingSchema = document.querySelector('script[type="application/ld+json"]');
+      if (existingSchema) {
+        existingSchema.textContent = JSON.stringify(schemaData);
+      } else {
+        const schemaScript = document.createElement("script");
+        schemaScript.type = "application/ld+json";
+        schemaScript.textContent = JSON.stringify(schemaData);
+        document.head.appendChild(schemaScript);
+      }
+    }
+
     // Cleanup function to reset meta tags when component unmounts
     return () => {
       // Reset to default values if needed
       // This is optional and depends on your application's needs
     };
-  }, [title, description, keywords, canonical]);
+  }, [title, description, keywords, canonical, serviceSchema]);
 
   return null; // This component doesn't render anything
 };

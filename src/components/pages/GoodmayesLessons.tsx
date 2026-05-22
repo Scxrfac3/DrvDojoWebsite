@@ -63,10 +63,21 @@ const GoodmayesLessons = () => {
   return (
     <>
       <SEO
-        title="Expert Driving Lessons in Goodmayes & IG Postcodes | DVSA Approved Instructor"
-        description="Learn from a DVSA approved instructor specializing in intensive driving lessons in Goodmayes and automatic driving lessons in Seven Kings. Former Red & AA Driving School instructor helping students pass first time in Goodmayes DTC. Online booking available."
-        keywords="driving lessons goodmayes, intensive driving lessons goodmayes, automatic driving lessons seven kings, pass first time goodmayes dtc, DVSA approved instructor, driving school goodmayes, IG postcodes, driving instructor goodmayes, online booking driving lessons"
-        canonical="/driving-lessons/goodmayes"
+        title="Best Driving Lessons in Goodmayes | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Goodmayes. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Goodmayes, intensive driving lessons Goodmayes, automatic driving lessons Seven Kings, DVSA approved instructor, driving school Goodmayes, IG postcodes, driving instructor Goodmayes"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/goodmayes"
+        serviceSchema={{
+          name: "Driving Lessons in Goodmayes",
+          description: "Professional driving lessons in Goodmayes with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Goodmayes, IG postcodes, East London"
+        }}
       />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* Background decorative elements - Dark theme */}
@@ -90,15 +101,22 @@ const GoodmayesLessons = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                    DVSA Approved Driving Lessons
+                    First 2 Hours Only £49
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span className="text-white">in Goodmayes - Online Booking Available</span>
+                  <span className="text-white">Driving Lessons in Goodmayes</span>
                 </h1>
+
+                <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
+                  <p className="text-lg text-white font-medium">
+                    <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
+                    <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
+                  </p>
+                </div>
 
                 <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                   <span className="font-semibold text-orange-400">
-                    Professional intensive driving lessons in Goodmayes & automatic driving lessons in Seven Kings
+                    Professional DVSA approved ADI instructor in Goodmayes
                   </span>{" "}
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC. Former instructor with Red Driving School and AA Driving School, serving all IG postcodes.
                 </p>

@@ -97,10 +97,21 @@ const IsleOfDogsLessons = () => {
   return (
     <>
       <SEO
-        title="Expert Driving Lessons in Isle of Dogs & E14 | DVSA Approved"
-        description="Learn to drive in Isle of Dogs with our DVSA approved instructor. Automatic & manual lessons in E14. 98% first-time pass rate. Book your lesson in Isle of Dogs today!"
-        keywords="driving lessons isle of dogs, driving lessons E14, DVSA approved instructor isle of dogs, automatic driving lessons isle of dogs, driving test isle of dogs, learn to drive isle of dogs"
-        canonical="/driving-lessons/isle-of-dogs"
+        title="Best Driving Lessons in Isle of Dogs | First 2 Hours Only £49!"
+        description="Learn to drive with Drive Dojo. Professional ADI instructors in Isle of Dogs. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
+        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Isle of Dogs, intensive driving lessons Isle of Dogs, automatic driving lessons Canary Wharf, DVSA approved instructor, driving school Isle of Dogs, E14 postcodes"
+        canonical="https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs"
+        serviceSchema={{
+          name: "Driving Lessons in Isle of Dogs",
+          description: "Professional driving lessons in Isle of Dogs with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          provider: {
+            name: "Drive Dojo",
+            url: "https://drivedojodrivingschool.com"
+          },
+          price: "49",
+          priceCurrency: "GBP",
+          areaServed: "Isle of Dogs, Canary Wharf, E14, East London"
+        }}
       />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - Dark theme */}
@@ -124,15 +135,22 @@ const IsleOfDogsLessons = () => {
                 >
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                      Expert Driving Lessons
+                      First 2 Hours Only £49
                     </span>{" "}
                     <br className="hidden md:block" />
-                    <span className="text-white">in Isle of Dogs</span>
+                    <span className="text-white">Driving Lessons in Isle of Dogs</span>
                   </h1>
+
+                  <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
+                    <p className="text-lg text-white font-medium">
+                      <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
+                      <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
+                    </p>
+                  </div>
 
                   <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                     <span className="font-semibold text-orange-400">
-                      Professional driving lessons in Isle of Dogs
+                      Professional DVSA approved ADI instructor in Isle of Dogs
                     </span>{" "}
                     — Learn from an official DVSA approved instructor who specializes in helping students pass first time. Expert instruction across all E14 postcodes.
                   </p>
