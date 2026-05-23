@@ -620,39 +620,36 @@ const Services = () => {
                         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <div className="absolute top-4 left-4 bg-[#ff6b35]/20 text-[#ff6b35] text-xs font-bold px-3 py-1 rounded-full">
-                        💰 Popular Choice
+                      <div className="absolute top-4 right-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                        ⚡ SAVE £40!
                       </div>
-                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-[rgba(255,107,53,0.1)] to-[rgba(255,255,255,0.05)]">
+                      <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-[rgba(255,107,53,0.15)] to-[rgba(255,255,255,0.05)]">
                         <h3 className="text-xl font-bold mb-2 text-white">
-                          10-Hour Package
+                          10-Hour Automatic Driving Lesson Block
                         </h3>
                         <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">
-                          Perfect for most learners
+                          Complete your learner journey faster
                         </p>
-                        <div className="mb-4">
+                        <div className="mb-3">
+                          <span className="text-lg text-[rgba(255,255,255,0.5)] line-through mr-2">£380</span>
                           <span className="text-4xl font-black text-white">£340</span>
                           <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(£34/hr)</span>
                         </div>
-                        <div className="bg-[#ff6b35]/20 text-[#ff6b35] text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
-                          🎉 You save £50!
+                        <div className="bg-gradient-to-r from-green-400/20 to-emerald-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block border border-green-400/30">
+                          💳 Or 3 interest-free payments of £113.33 with Klarna
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">10 hours of lessons</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">✅ Fully DVSA Qualified Instructors</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Structured learning plan</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">✅ Flexible pick-up & drop-off (Home, Work, or College)</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Progress tracking</span>
-                          </li>
-                          <li className="flex items-start">
-                            <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Mock test included</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">✅ Track your progress live through your student dashboard</span>
                           </li>
                         </ul>
                         <motion.div
@@ -663,7 +660,7 @@ const Services = () => {
                             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 group relative overflow-hidden"
                             onClick={() => window.location.href = '/booking/10hour'}
                           >
-                            Book Now
+                            Secure Block Booking Offer
                             <ArrowRight className="ml-2 h-4 w-4" />
                             <motion.div
                               className="absolute inset-0 bg-white"
