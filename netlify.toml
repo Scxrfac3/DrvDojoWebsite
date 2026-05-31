@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18.18.0"
+  NODE_VERSION = "20.18.0"
 
 [functions]
   directory = "netlify/functions"
@@ -427,6 +427,16 @@
 # Waitlist
 [[redirects]]
   from = "/waitlist"
+  to = "/index.html"
+  status = 200
+
+# Free Resources — SEO pages
+[[redirects]]
+  from = "/test-centres"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/practical-test-prep/show-me-tell-me"
   to = "/index.html"
   status = 200
 
