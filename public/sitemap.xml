@@ -436,4 +436,108 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ─── FREE RESOURCES ───────────────────────────────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/test-centres</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/practical-test-prep/show-me-tell-me</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ─── HUB & SPOKE — DRIVING TEST CENTRES ──────────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-test-centres/goodmayes</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-test-centres/wood-green</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-test-centres/barking</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-test-centres/hornchurch</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-test-centres/chingford</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/driving-test-centres/wanstead</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ─── HUB & SPOKE — LEARN TO DRIVE SYLLABUS ──────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/learn-to-drive/skills/roundabouts</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/learn-to-drive/skills/junctions</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/learn-to-drive/skills/emergency-stop</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/learn-to-drive/driving-manoeuvres/parallel-parking</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ─── SPECIALTY SERVICE PAGES ─────────────────────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/international-licence-conversion</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/female-driving-instructors</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/refresher-driving-lessons</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/pass-plus-courses</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

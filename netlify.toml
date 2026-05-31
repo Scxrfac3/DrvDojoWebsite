@@ -440,6 +440,36 @@
   to = "/index.html"
   status = 200
 
+# Hub & Spoke — Driving Test Centre pages
+[[redirects]]
+  from = "/driving-test-centres/*"
+  to = "/index.html"
+  status = 200
+
+# Hub & Spoke — Learn to Drive syllabus pages
+[[redirects]]
+  from = "/learn-to-drive/*"
+  to = "/index.html"
+  status = 200
+
+# Specialty Service pages
+[[redirects]]
+  from = "/international-licence-conversion"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/female-driving-instructors"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/refresher-driving-lessons"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/pass-plus-courses"
+  to = "/index.html"
+  status = 200
+
 # ─────────────────────────────────────────────────────────────
 # SPA CATCH-ALL — MUST BE THE LAST REDIRECT RULE
 # ─────────────────────────────────────────────────────────────

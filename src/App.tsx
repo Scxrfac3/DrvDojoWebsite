@@ -51,6 +51,12 @@ const BillingPortalPage = lazy(() => import('./components/pages/BillingPortalPag
 const TestCentreExplorer = lazy(() => import('./components/pages/TestCentreExplorer'));
 const ShowMeTellMe = lazy(() => import('./components/pages/ShowMeTellMe'));
 
+// Hub & Spoke SEO pages
+const TestCentrePage = lazy(() => import('./components/pages/TestCentrePage'));
+const SkillPage = lazy(() => import('./components/pages/SkillPage'));
+const ManoeuvrePage = lazy(() => import('./components/pages/ManoeuvrePage'));
+const SpecialtyServicePage = lazy(() => import('./components/pages/SpecialtyServicePage'));
+
 function App() {
   return (
     <Suspense
@@ -160,6 +166,19 @@ function App() {
           {/* Free Resources Routes */}
           <Route path='/test-centres' element={<TestCentreExplorer />} />
           <Route path='/practical-test-prep/show-me-tell-me' element={<ShowMeTellMe />} />
+
+          {/* Hub & Spoke SEO Routes — Test Centres */}
+          <Route path='/driving-test-centres/:slug' element={<TestCentrePage />} />
+
+          {/* Hub & Spoke SEO Routes — Learn to Drive */}
+          <Route path='/learn-to-drive/skills/:slug' element={<SkillPage />} />
+          <Route path='/learn-to-drive/driving-manoeuvres/:slug' element={<ManoeuvrePage />} />
+
+          {/* Specialty Service Pages */}
+          <Route path='/international-licence-conversion' element={<SpecialtyServicePage />} />
+          <Route path='/female-driving-instructors' element={<SpecialtyServicePage />} />
+          <Route path='/refresher-driving-lessons' element={<SpecialtyServicePage />} />
+          <Route path='/pass-plus-courses' element={<SpecialtyServicePage />} />
 
           {/* Blog routes */}
           <Route
