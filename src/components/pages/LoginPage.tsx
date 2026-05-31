@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
-import { Mail, Lock, Loader2, CheckCircle } from 'lucide-react';
+import { Mail, Lock, Loader2, CheckCircle, ArrowLeft } from 'lucide-react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   
-  const { signIn } = useAuth();
+  const { signIn, isAuthenticated, authRedirect, clearAuthRedirect, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -16,8 +16,26 @@ export default function LoginPage() {
   // Check if user just completed a purchase
   const purchasedProduct = searchParams.get('Purchased');
   
-  // Get the return URL from location state or query param
-  const redirectTo = searchParams.get('redirect') || searchParams.get('redirectTo') || '/dashboard';
+  // Determine the redirect destination, priority:
+  // 1. query param 'redirect' or 'redirectTo'
+  // 2. stored authRedirect (from signIn)
+  // 3. location state passed by ProtectedRoute
+  // 4. default: /dashboard
+  const redirectTo =
+    searchParams.get('redirect') ||
+    searchParams.get('redirectTo') ||
+    authRedirect ||
+    (location.state as any)?.from?.pathname ||
+    '/dashboard';
+
+  // If already authenticated, redirect immediately
+  useEffect(() => {
+    if (!authLoading && isAuthenticated) {
+      const target = redirectTo;
+      clearAuthRedirect();
+      navigate(target, { replace: true });
+    }
+  }, [authLoading, isAuthenticated]);
   
   // Show purchase success message if redirected from checkout
   useEffect(() => {

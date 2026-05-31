@@ -37,20 +37,10 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
-<!-- Prerender.io for SEO - Renders pages for search engine crawlers -->
-<script>
-  window.prerenderReady = false;
-  (function() {
-    var script = document.createElement('script');
-    script.src = 'https://cdn.prerender.io/prerender.js?token=zI9YgRULxkLZONjEYk8a';
-    script.async = true;
-    document.head.appendChild(script);
-    
-    script.onload = function() {
-      window.prerenderReady = true;
-    };
-  })();
-</script>
+<!-- Prerender.io Netlify Extension — Edge-level integration (replaces the JS SDK) -->
+<!-- The extension installs at the CDN edge and intercepts crawler requests automatically. -->
+<!-- No client-side JS is required — prerendered HTML is served directly by the edge. -->
+<!-- Status: Active via Netlify Extensions Dashboard -->
     <meta
       name="google-site-verification"
       content="A9YLmeKz6Eo3dH7anFMy15qfeXQRa85V4xsMqDtEbds"

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { ReactNode, useEffect } from 'react';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 
 interface ProtectedRouteProps {
@@ -7,12 +7,27 @@ interface ProtectedRouteProps {
   requireAuth?: boolean;
 }
 
-export default function ProtectedRoute({ 
-  children, 
-  requireAuth = true 
+export default function ProtectedRoute({
+  children,
+  requireAuth = true
 }: ProtectedRouteProps) {
-  const { user, loading, isAuthenticated } = useAuth();
+  const { user, loading, isAuthenticated, authRedirect, clearAuthRedirect } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handle post-auth redirect: when user just signed in via magic link
+  // and we have a stored redirect destination, navigate there
+  useEffect(() => {
+    if (isAuthenticated && !loading && authRedirect) {
+      const target = authRedirect;
+      clearAuthRedirect();
+      // Use setTimeout to ensure React state updates have settled
+      const timer = setTimeout(() => {
+        navigate(target, { replace: true });
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [isAuthenticated, loading, authRedirect, clearAuthRedirect, navigate]);
 
   // Show loading state
   if (loading) {
@@ -28,13 +43,19 @@ export default function ProtectedRoute({
 
   // If route requires auth but user is not authenticated
   if (requireAuth && !isAuthenticated) {
-    // Redirect to login page with return URL
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    // Redirect to login page, preserving the intended destination
+    const redirectParam = location.pathname !== '/login' ? `?redirect=${encodeURIComponent(location.pathname)}` : '';
+    return <Navigate to={`/login${redirectParam}`} state={{ from: location }} replace />;
   }
 
-  // If user is authenticated and trying to access login page, redirect to academy
+  // If user is authenticated and trying to access login page, check for stored redirect
   if (isAuthenticated && !requireAuth && location.pathname === '/login') {
-    return <Navigate to="/academy/blueprint-access" replace />;
+    if (authRedirect) {
+      const target = authRedirect;
+      clearAuthRedirect();
+      return <Navigate to={target} replace />;
+    }
+    return <Navigate to="/dashboard" replace />;
   }
 
   return <>{children}</>;

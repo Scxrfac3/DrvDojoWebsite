@@ -47,6 +47,10 @@ const SubscriptionPage = lazy(() => import('./components/pages/SubscriptionPage'
 const DashboardPage = lazy(() => import('./components/pages/DashboardPage'));
 const BillingPortalPage = lazy(() => import('./components/pages/BillingPortalPage'));
 
+// Free Resources pages
+const TestCentreExplorer = lazy(() => import('./components/pages/TestCentreExplorer'));
+const ShowMeTellMe = lazy(() => import('./components/pages/ShowMeTellMe'));
+
 function App() {
   return (
     <Suspense
@@ -152,6 +156,10 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* Free Resources Routes */}
+          <Route path='/test-centres' element={<TestCentreExplorer />} />
+          <Route path='/practical-test-prep/show-me-tell-me' element={<ShowMeTellMe />} />
 
           {/* Blog routes */}
           <Route

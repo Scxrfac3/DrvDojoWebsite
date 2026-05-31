@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AppProvider } from './hooks/useApp';
 import { Layout } from './components/Layout';
@@ -10,20 +10,30 @@ import { AddMileage } from './components/AddMileage';
 import { GoalsPage } from './components/Goals';
 import { SettingsPage } from './components/Settings';
 
-function App() {
+// Inner component that uses useLocation, wrapped inside MemoryRouter
+function FinancePlannerRoutes() {
   return (
-    <BrowserRouter>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/add-lesson" element={<AddLesson />} />
+        <Route path="/add-expense" element={<AddExpense />} />
+        <Route path="/add-mileage" element={<AddMileage />} />
+        <Route path="/goals" element={<GoalsPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+      </Routes>
+    </Layout>
+  );
+}
+
+function App() {
+  // Use MemoryRouter instead of BrowserRouter because this sub-app is rendered
+  // inside the parent's BrowserRouter context. A nested BrowserRouter would
+  // interfere with URL-based auth callbacks (magic link hash fragments).
+  return (
+    <MemoryRouter initialEntries={['/']} initialIndex={0}>
       <AppProvider>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/add-lesson" element={<AddLesson />} />
-            <Route path="/add-expense" element={<AddExpense />} />
-            <Route path="/add-mileage" element={<AddMileage />} />
-            <Route path="/goals" element={<GoalsPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-          </Routes>
-        </Layout>
+        <FinancePlannerRoutes />
         <Toaster
           position="bottom-center"
           toastOptions={{
@@ -49,7 +59,7 @@ function App() {
           }}
         />
       </AppProvider>
-    </BrowserRouter>
+    </MemoryRouter>
   );
 }
 

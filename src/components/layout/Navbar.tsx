@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Globe, Rocket, Phone, MessageCircle, Zap } from "lucide-react";
+import { Menu, X, ChevronDown, Globe, Rocket, Phone, MessageCircle, Zap, BookOpen, HelpCircle, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -259,6 +259,60 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                       Blog
                     </Link>
                   </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 text-white hover:text-primary text-base font-medium data-[active]:text-primary">
+                    Free Resources
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-[#1a1a1a]/95 border border-white/10 p-4 rounded-xl shadow-2xl backdrop-blur-xl">
+                    <div className="grid gap-2 p-2 w-[320px]">
+                      <Link
+                        to="/test-centres"
+                        className="group flex items-start gap-3 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      >
+                        <MapPin className="w-5 h-5 text-primary mt-0.5" />
+                        <div>
+                          <div className="text-sm font-medium text-white">
+                            Test Centre Cheat Sheets
+                          </div>
+                          <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                            Pass rates, trouble spots & instructor tips for every local centre
+                          </div>
+                        </div>
+                      </Link>
+                      <Link
+                        to="/practical-test-prep/show-me-tell-me"
+                        className="group flex items-start gap-3 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      >
+                        <HelpCircle className="w-5 h-5 text-primary mt-0.5" />
+                        <div>
+                          <div className="text-sm font-medium text-white">
+                            Show Me, Tell Me Flashcards
+                          </div>
+                          <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                            Interactive DVSA questions — master all 10 before test day
+                          </div>
+                        </div>
+                      </Link>
+                      <a
+                        href="https://drivedojodriving.autos/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-start gap-3 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      >
+                        <BookOpen className="w-5 h-5 text-primary mt-0.5" />
+                        <div>
+                          <div className="text-sm font-medium text-white">
+                            Free Theory Practice
+                          </div>
+                          <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                            3,000+ DVSA-approved questions & mock tests
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
                   <NavigationMenuItem>
                     <Link
