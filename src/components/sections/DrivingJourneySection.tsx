@@ -39,7 +39,7 @@ const STEPS: Step[] = [
       "We cover Wood Green, Goodmayes, and the wider London area. We pick you up from home, work, or college. Secure a massive discount with our 10-hour block booking for £340 (Klarna available!).",
     ],
     ctaText: 'Book Your £70 Assessment',
-    ctaLink: '/booking',
+    ctaLink: '/services',
   },
   {
     id: 2,
