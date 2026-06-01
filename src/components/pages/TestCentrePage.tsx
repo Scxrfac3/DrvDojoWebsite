@@ -162,13 +162,13 @@ export default function TestCentrePage() {
                   Master {centre.name} Routes
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
-                  Book your first 2 hours with a {centre.name} specialist for just £49. We'll drill the exact routes and junctions examiners use.
+                  Book a New Driver Assessment — 120 minutes for £70 with a {centre.name} specialist. We'll honestly assess where you are and drill the exact routes examiners use.
                 </p>
                 <Link
                   to="/booking"
                   className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl"
                 >
-                  Book Your £49 Intro
+                  Book Your £70 Assessment
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <div className="mt-4 space-y-2 text-xs text-gray-600">

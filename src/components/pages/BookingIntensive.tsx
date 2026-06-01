@@ -126,17 +126,17 @@ const BookingIntensive = () => {
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-white">
-                            Intensive Driving Course
+                            Intensive Pass Course
                           </h3>
-                          <p className="text-xs text-emerald-400">Fast-Track Your Learning</p>
+                          <p className="text-xs text-emerald-400">Pass in as little as 2 weeks</p>
                         </div>
                       </div>
                       <div className="text-3xl font-bold text-white mb-2">
-                        £150
-                        <span className="text-sm font-normal text-slate-400">/lesson</span>
+                        £650 – £950
+                        <span className="text-sm font-normal text-slate-400"> (12–30 hours)</span>
                       </div>
                       <p className="text-sm mb-4 text-slate-300">
-                        Complete your training quickly with our intensive course designed to get you test-ready fast.
+                        Fully immersive, structured daily lessons with an experienced ADI. Tailored to your starting ability — from £650 (12 hours) to £950 (30 hours).
                       </p>
                     </div>
                   </div>
@@ -144,19 +144,23 @@ const BookingIntensive = () => {
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
-                      <span className="text-slate-300">Comprehensive intensive training</span>
+                      <span className="text-slate-300">15–25 hours of intensive daily lessons</span>
                     </li>
                     <li className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
-                      <span className="text-slate-300">Flexible scheduling options</span>
+                      <span className="text-slate-300">Theory test support and guidance</span>
                     </li>
                     <li className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
-                      <span className="text-slate-300">Test preparation included</span>
+                      <span className="text-slate-300">Mock test the week before test date</span>
                     </li>
                     <li className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
-                      <span className="text-slate-300">Dedicated instructor</span>
+                      <span className="text-slate-300">Flexible scheduling around work or uni</span>
+                    </li>
+                    <li className="flex items-center text-sm">
+                      <CheckCircle className="h-4 w-4 text-emerald-500 mr-3 flex-shrink-0" />
+                      <span className="text-slate-300">Klarna — interest-free payments available</span>
                     </li>
                   </ul>
 
@@ -165,7 +169,7 @@ const BookingIntensive = () => {
                     onClick={triggerConfetti}
                   >
                     <Calendar className="h-4 w-4 mr-2" />
-                    Book This Course
+                    Book Intensive Pass Course
                   </Button>
                 </div>
               </div>
@@ -240,7 +244,7 @@ const BookingIntensive = () => {
                     </div>
                     <div className="px-3 py-1.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full">
                       <p className="text-xs text-emerald-400 font-medium">
-                        Intensive Course
+                        Intensive Pass Course
                       </p>
                     </div>
                   </div>

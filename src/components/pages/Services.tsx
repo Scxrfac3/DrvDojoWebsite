@@ -562,11 +562,11 @@ const Services = () => {
                           Try before you commit
                         </p>
                         <div className="mb-4">
-                          <span className="text-4xl font-black text-white">£49</span>
-                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(was £76 - use SAVE25)</span>
+                          <span className="text-4xl font-black text-white">£70</span>
+                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(was £95 - use SAVE25)</span>
                         </div>
                         <div className="bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-500/50 text-green-400 text-xs font-bold px-4 py-2 rounded-lg mb-4 inline-block">
-                          🎉 Use code <span className="text-white font-black">SAVE25</span> at checkout - Save £27!
+                          🎉 Use code <span className="text-white font-black">SAVE25</span> at checkout - Save £25!
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
@@ -750,7 +750,7 @@ const Services = () => {
                       </div>
                     </motion.div>
 
-                    {/* Intensive Course */}
+                    {/* Intensive Pass Course */}
                     <motion.div
                       className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-[rgba(255,255,255,0.1)] relative h-full"
                       initial={{ opacity: 0, y: 20 }}
@@ -767,34 +767,37 @@ const Services = () => {
                       </div>
                       <div className="pt-14 pb-6 px-6 bg-gradient-to-b from-[rgba(147,51,234,0.1)] to-[rgba(255,255,255,0.05)]">
                         <h3 className="text-xl font-bold mb-2 text-white">
-                          Intensive Course
+                          Intensive Pass Course
                         </h3>
                         <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">
-                          Pass in 2 weeks
+                          Pass in as little as 2 weeks
                         </p>
                         <div className="mb-4">
-                          <span className="text-4xl font-black text-white">£999</span>
-                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(30 hours)</span>
+                          <span className="text-4xl font-black text-white">£650 – £950</span>
+                          <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(12–30 hours)</span>
                         </div>
                         <div className="bg-purple-500/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
-                          🎉 Intensive 2-Week Course
+                          🎉 Fully immersive structured daily lessons
+                        </div>
+                        <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block border border-pink-400/30">
+                          💳 Klarna available — split payments interest-free
                         </div>
                         <ul className="space-y-2 mb-6">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">30 hours total</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">15–25 hours intensive daily lessons</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">2-week intensive</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Theory test support & guidance</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Test booking included</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Mock test the week before test date</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Car rental for test</span>
+                            <span className="text-sm text-[rgba(255,255,255,0.8)]">Flexible scheduling around work or uni</span>
                           </li>
                         </ul>
                         <motion.div
@@ -805,7 +808,7 @@ const Services = () => {
                             className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 group relative overflow-hidden"
                             onClick={() => window.location.href = '/booking/intensive'}
                           >
-                            Book Now
+                            Book Intensive Pass Course
                             <ArrowRight className="ml-2 h-4 w-4" />
                             <motion.div
                               className="absolute inset-0 bg-white"
@@ -886,7 +889,7 @@ const Services = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {/* Intensive Lessons */}
+                    {/* Intensive Pass Course */}
                     <motion.div
                       className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-[rgba(255,255,255,0.1)] relative"
                       initial={{ opacity: 0, y: 20 }}
@@ -907,32 +910,40 @@ const Services = () => {
                             <Zap className="h-8 w-8 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-white">Intensive Lessons</h3>
-                            <p className="text-orange-400 font-medium">Fast-track your learning</p>
+                            <h3 className="text-2xl font-bold text-white">Intensive Pass Course</h3>
+                            <p className="text-orange-400 font-medium">Pass your test in as little as 2 weeks</p>
                           </div>
                         </div>
                         
                         <div className="mb-6">
-                          <div className="text-4xl font-bold text-white mb-2">Contact for Quote</div>
-                          <div className="text-[rgba(255,255,255,0.6)]">/tailored course</div>
+                          <div className="text-4xl font-bold text-white mb-2">£650 – £950</div>
+                          <div className="text-[rgba(255,255,255,0.6)]">12–30 hours (tailored to ability)</div>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block border border-pink-400/30">
+                          💳 Klarna available — interest-free payments
                         </div>
 
                         <ul className="space-y-3 mb-8">
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-[rgba(255,255,255,0.8)]">Tailored to student needs</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">15–25 hours immersive daily lessons</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-[rgba(255,255,255,0.8)]">Contact for quote based on location</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Theory test support & guidance included</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-[rgba(255,255,255,0.8)]">Comprehensive training</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Mock test the week before test date</span>
                           </li>
                           <li className="flex items-start">
                             <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="text-[rgba(255,255,255,0.8)]">Pass your test in 1-2 weeks</span>
+                            <span className="text-[rgba(255,255,255,0.8)]">Flexible scheduling around work or university</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircleIcon className="h-6 w-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                            <span className="text-[rgba(255,255,255,0.8)]">Experienced ADI — fully structured daily syllabus</span>
                           </li>
                         </ul>
 
@@ -944,7 +955,7 @@ const Services = () => {
                             className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg group relative overflow-hidden"
                             onClick={() => window.location.href = '/booking/intensive'}
                           >
-                            Book Now
+                            Book Intensive Pass Course
                             <ArrowRight className="ml-2 h-4 w-4" />
                             <motion.div
                               className="absolute inset-0 bg-white"
@@ -2108,11 +2119,11 @@ const servicesData = [
   },
   {
     id: "intensive",
-    title: "Intensive Course",
-    price: "£600",
-    priceUnit: "/20 hours",
+    title: "Intensive Pass Course",
+    price: "£650 – £950",
+    priceUnit: "12–30 hours",
     shortDescription:
-      "Fast-track your learning with our comprehensive intensive course",
+      "Pass your test in as little as 2 weeks with fully immersive daily lessons",
     image: "/images/certifications/9.png",
     icon: <Zap className="h-5 w-5 text-green-400" />,
     colorClass: "bg-green-600/30 text-green-400",

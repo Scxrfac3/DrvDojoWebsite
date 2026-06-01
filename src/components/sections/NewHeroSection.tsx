@@ -126,8 +126,8 @@ const NewHeroSection = ({
               transition={{ delay: 0.6 }}
             >
               <div className="bg-white/5 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
-                <span className="text-primary font-bold">£49</span>
-                <span className="text-gray-400 text-sm ml-1">/ 2hr trial</span>
+                <span className="text-primary font-bold">£70</span>
+                <span className="text-gray-400 text-sm ml-1">/ 2hr assessment</span>
               </div>
               <div className="bg-white/5 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
                 <span className="text-primary font-bold">£340</span>

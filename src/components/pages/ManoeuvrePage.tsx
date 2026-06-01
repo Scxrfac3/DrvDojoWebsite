@@ -133,9 +133,9 @@ export default function ManoeuvrePage() {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.6 }} className="bg-gradient-to-br from-primary/10 to-amber-500/10 border border-primary/30 rounded-2xl p-6 md:p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">Ready to perfect your {manoeuvre.title.toLowerCase()}?</h3>
-            <p className="text-gray-400 mb-5 max-w-xl mx-auto">Book your first 2 hours with a DVSA-approved instructor for just £49. Manoeuvres are our specialty.</p>
+            <p className="text-gray-400 mb-5 max-w-xl mx-auto">Book a New Driver Assessment — 120 minutes for £70. A DVSA-approved instructor will honestly assess where you are and map the fastest route to your test.</p>
             <Link to="/booking" className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
-              Claim Your £49 First Lesson<ArrowRight className="w-5 h-5" />
+              Book Your £70 Assessment<ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>

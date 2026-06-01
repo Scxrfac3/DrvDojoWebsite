@@ -40,7 +40,7 @@ const SERVICES: Record<string, ServiceData> = {
     title: 'International Licence Conversion',
     subtitle: 'From overseas licence to UK-qualified driver',
     seoTitle: 'International Driving Licence Conversion — UK Lessons in East London | Drive Dojo',
-    seoDescription: 'Convert your overseas driving licence to a full UK licence with expert automatic lessons in East London. DVSA-approved training for international drivers. Book your £49 intro.',
+    seoDescription: 'Convert your overseas driving licence to a full UK licence with expert automatic lessons in East London. DVSA-approved training for international drivers. Book your £70 assessment.',
     icon: Globe,
     intro: 'Moving to the UK from abroad? You can drive on your international licence for 12 months, but after that you\'ll need a full UK driving licence. Our DVSA-approved instructors specialise in helping international drivers transition smoothly to UK roads — from understanding British road signs to mastering the practical test.',
     benefits: [
@@ -48,10 +48,10 @@ const SERVICES: Record<string, ServiceData> = {
       'Focus on UK-specific rules: roundabouts, speed limits, road markings',
       'Automatic-only tuition — no clutch or gear stress',
       'Help booking your theory and practical tests',
-      'Flexible lesson packages from £49 introductory offer',
+      'New Driver Assessment — 120 minutes for £70',
     ],
     pricing: [
-      { label: 'Introductory Lesson (2 hours)', price: '£49' },
+      { label: 'New Driver Assessment (2 hours)', price: '£70' },
       { label: 'Pay As You Go', price: '£38/hr' },
       { label: '10-Hour Block Booking', price: '£340' },
     ],
@@ -73,7 +73,7 @@ const SERVICES: Record<string, ServiceData> = {
     title: 'Female Driving Instructors',
     subtitle: 'Learn with instructors you feel comfortable with',
     seoTitle: 'Female Driving Instructors East London — DVSA Approved | Drive Dojo',
-    seoDescription: 'Book lessons with our female DVSA-approved driving instructors in East London. Comfortable, patient, and professional automatic tuition. £49 introductory offer available.',
+    seoDescription: 'Book lessons with our female DVSA-approved driving instructors in East London. Comfortable, patient, and professional automatic tuition. £70 New Driver Assessment available.',
     icon: UserCheck,
     intro: 'We understand that many learners — particularly women from certain cultural backgrounds, nervous drivers, or those who simply feel more comfortable — prefer a female driving instructor. We\'re proud to offer female ADIs who are patient, professional, and DVSA-approved.',
     benefits: [
@@ -84,7 +84,7 @@ const SERVICES: Record<string, ServiceData> = {
       'Flexible scheduling around school runs and work',
     ],
     pricing: [
-      { label: 'Introductory Lesson (2 hours)', price: '£49' },
+      { label: 'New Driver Assessment (2 hours)', price: '£70' },
       { label: '10-Hour Block Booking', price: '£340' },
       { label: 'Klarna — 3 payments of', price: '£113.33' },
     ],
@@ -103,34 +103,40 @@ const SERVICES: Record<string, ServiceData> = {
   },
   'refresher-driving-lessons': {
     slug: 'refresher-driving-lessons',
-    title: 'Refresher Driving Lessons',
-    subtitle: 'Get your confidence back behind the wheel',
-    seoTitle: 'Refresher Driving Lessons East London — Regain Your Confidence | Drive Dojo',
-    seoDescription: 'Nervous about driving again? Regain your confidence with patient, DVSA-approved refresher driving lessons in East London. Automatic tuition from £49. Book today.',
+    title: 'Driver Refresher Session',
+    subtitle: 'For qualified drivers — £40/hour | Minimum 2 hours',
+    seoTitle: 'Driver Refresher Sessions East London — £40/hr for Qualified Drivers | Drive Dojo',
+    seoDescription: 'Already passed your test but lost confidence? Book a Driver Refresher Session at £40/hr (min 2 hours) with DVSA-approved instructors in East London. Tailored to you — motorways, parking, city driving.',
     icon: RotateCcw,
-    intro: 'Haven\'t driven in a while? Whether you passed your test years ago and never drove, took a break after having children, or simply lost confidence after a near-miss — our refresher lessons are designed to get you back on the road safely and confidently.',
+    intro: 'For qualified drivers who haven\'t driven in a while or want to build confidence in specific situations. Whether you passed your test years ago, took a break, or simply feel rusty — our refresher sessions get you back behind the wheel safely and confidently. No test pressure. No syllabus. Just pure confidence building.',
     benefits: [
-      'Tailored to your specific concerns — motorways, city driving, parking',
-      'No test pressure — pure confidence building',
-      'Start from wherever you\'re comfortable',
-      'Use your own car or learn in our dual-controlled Mercedes',
-      'As few or as many hours as you need',
+      'Exclusively for qualified full UK licence holders',
+      'Tailored to your specific concerns — motorways, city driving, parking, night driving',
+      'No test pressure — pure confidence building at your pace',
+      'Start from wherever you\'re comfortable — we adapt to your level',
+      'Use your own car or learn in our dual-controlled Mercedes-Benz A-Class automatic',
+      'Book as few or as many hours as you need — minimum 2 hours',
+      'Flexible scheduling around work, school runs, and commitments',
     ],
     pricing: [
-      { label: 'Introductory Lesson (2 hours)', price: '£49' },
-      { label: 'Pay As You Go', price: '£38/hr' },
-      { label: '6-Hour Refresher Package', price: '£210' },
+      { label: 'Driver Refresher Session (per hour)', price: '£40/hr' },
+      { label: 'Minimum booking', price: '2 hours' },
+      { label: '6-Hour Confidence Package', price: '£220' },
     ],
-    ctaText: 'Book Your Refresher Lesson',
+    ctaText: 'Book Your Refresher Session',
     ctaLink: '/booking',
     bodySections: [
       {
-        heading: 'Who Are Refresher Lessons For?',
-        content: 'Refresher lessons are for anyone who already holds a full UK driving licence but hasn\'t driven for a while — or doesn\'t feel confident. Common reasons include: returning to driving after a long gap, moving to London from a quieter area, preparing for a new commute, or simply wanting to feel safer with children in the car.',
+        heading: 'Who Are Driver Refresher Sessions For?',
+        content: 'These sessions are exclusively for qualified drivers who already hold a full UK driving licence. Common reasons clients book: returning to driving after a long gap (years or even decades), moving to London from a quieter area and needing city-driving confidence, preparing for a new commute, wanting to feel safer with children in the car, or recovering confidence after an accident or near-miss. If you hold a provisional licence, our standard learner lessons are the right fit for you.',
       },
       {
-        heading: 'What We Cover',
-        content: 'Everything is tailored to you. Motorway driving, busy city junctions, parallel parking, night driving, school-run routes — you tell us what makes you nervous and we\'ll build your confidence in those exact scenarios. There\'s no fixed syllabus because there\'s no test at the end — just confident, safe driving.',
+        heading: 'What We Cover — Fully Tailored to You',
+        content: 'There\'s no fixed syllabus because you\'re already qualified. Everything is built around what YOU need. Motorway driving and joining at speed, busy city junctions and gyratories, parallel and bay parking practice, night driving, school-run routes, multi-storey car parks — you tell us what makes you nervous and we\'ll build your confidence in those exact scenarios. Your instructor is a fully qualified DVSA ADI who specialises in patient, confidence-building tuition.',
+      },
+      {
+        heading: 'Why £40/Hour?',
+        content: 'Our refresher rate of £40/hour reflects that you\'re already a qualified driver — there\'s no test to prepare for, no syllabus to follow, and you already know the Highway Code. This is pure, focused confidence building at a reduced rate compared to learner tuition. Minimum 2 hours so you have time to settle in and actually work on the areas that matter to you.',
       },
     ],
   },
@@ -247,7 +253,7 @@ export default function SpecialtyServicePage() {
           {/* CTA */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="bg-gradient-to-br from-primary/10 to-amber-500/10 border border-primary/30 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">Ready to get started?</h3>
-            <p className="text-gray-400 mb-5">Book your first 2 hours for just £49.</p>
+            <p className="text-gray-400 mb-5">Book a New Driver Assessment — 120 minutes for £70. We'll honestly assess where you are and map the fastest route to your test.</p>
             <Link to={service.ctaLink} className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
               {service.ctaText}<ArrowRight className="w-5 h-5" />
             </Link>

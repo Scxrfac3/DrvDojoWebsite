@@ -336,8 +336,8 @@ const EastLondonAutomatic = () => {
                   <h3 className="text-xl font-bold mb-2 text-white">First 2 Hours</h3>
                   <p className="text-sm text-[rgba(255,255,255,0.6)] mb-3">Try before you commit</p>
                   <div className="mb-4">
-                    <span className="text-4xl font-black text-white">£49</span>
-                    <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(£24.50/hr)</span>
+                    <span className="text-4xl font-black text-white">£70</span>
+                    <span className="text-sm text-[rgba(255,255,255,0.6)] ml-2">(£35/hr — use code SAVE25)</span>
                   </div>
                   <div className="bg-[#ff6b35]/20 text-[#ff6b35] text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
                     🎉 You save £50!

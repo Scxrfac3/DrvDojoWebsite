@@ -343,14 +343,14 @@ export default function TestCentreExplorer() {
                   Want to master the exact routes for <span className="text-primary">{selected.name}</span>?
                 </h3>
                 <p className="text-gray-400">
-                  Book your first 2 hours with a local expert for just £49. We'll take you through the specific routes and junctions that examiners use — so nothing comes as a surprise on test day.
+                  Book a New Driver Assessment — 120 minutes for £70 with a local expert. We'll honestly assess where you are and take you through the specific routes and junctions that examiners use — so nothing comes as a surprise on test day.
                 </p>
               </div>
               <Link
                 to="/booking"
                 className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
               >
-                Book Your £49 Intro
+                Book Your £70 Assessment
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

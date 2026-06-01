@@ -306,7 +306,7 @@ const AutomaticDrivingLessons = () => {
         {/* Welcome Offer Banner */}
         <div className="bg-gradient-to-r from-[#ff6b35] to-[#f5a623] py-4 text-center">
           <p className="font-semibold">
-            <strong>Welcome Offer:</strong> First 2 Hours for just £49 - Save £30! <strong>Limited slots available.</strong>
+            <strong>New Driver Assessment:</strong> 120 Minutes for £70 (was £95 with code SAVE25) <strong>Limited slots available.</strong>
           </p>
         </div>
 
@@ -695,7 +695,7 @@ const AutomaticDrivingLessons = () => {
                     <label className="block text-sm font-medium mb-2">Select Package</label>
                     <select className="w-full px-4 py-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] rounded-xl text-white focus:border-[#ff6b35] focus:bg-[rgba(255,107,53,0.05)] outline-none transition-all">
                       <option value="">Choose a package...</option>
-                      <option value="welcome">Welcome Offer - £49 (2 Hours)</option>
+                      <option value="welcome">New Driver Assessment - £70 (2 Hours)</option>
                       <option value="10hour">10-Hour Package - £340</option>
                       <option value="20hour">20-Hour Package - £680</option>
                       <option value="intensive">Intensive Course - £999</option>

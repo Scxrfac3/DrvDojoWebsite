@@ -35,10 +35,10 @@ const STEPS: Step[] = [
     icon: Calendar,
     headline: 'Book Your Introductory Lesson',
     paragraphs: [
-      "Book online in minutes. Take advantage of our introductory offer: First 2 hours for only £49, with standard rates starting at just £25/hour. No obligation, no pressure.",
+      "Book online in minutes. Take advantage of our New Driver Assessment: 120 minutes for only £70 — with standard rates starting at just £25/hour. No obligation, no pressure.",
       "We cover Wood Green, Goodmayes, and the wider London area. We pick you up from home, work, or college. Secure a massive discount with our 10-hour block booking for £340 (Klarna available!).",
     ],
-    ctaText: 'Claim Your £49 Offer',
+    ctaText: 'Book Your £70 Assessment',
     ctaLink: '/booking',
   },
   {

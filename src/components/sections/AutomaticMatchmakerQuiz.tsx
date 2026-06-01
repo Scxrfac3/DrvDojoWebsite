@@ -244,7 +244,7 @@ export default function AutomaticMatchmakerQuiz() {
                   to="/booking"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5"
                 >
-                  Claim Your £49 First Lesson
+                  Book Your £70 Assessment
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <button

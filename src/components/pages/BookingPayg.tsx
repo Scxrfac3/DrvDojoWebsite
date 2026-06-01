@@ -141,8 +141,8 @@ const BookingPayg = () => {
                       {/* Highlighted Pricing */}
                       <div className="mb-4">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-4xl font-bold text-white">£49</span>
-                          <span className="text-lg text-slate-400 line-through">£76</span>
+                          <span className="text-4xl font-bold text-white">£70</span>
+                          <span className="text-lg text-slate-400 line-through">£95</span>
                         </div>
                         <div className="mt-1 inline-block bg-green-500/20 border border-green-500/40 text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
                           Limited Time Offer
@@ -153,7 +153,7 @@ const BookingPayg = () => {
                         Perfect for new students - flexible, no commitment
                       </p>
                       <p className="text-xs text-green-400 mb-4 font-medium">
-                        ✨ Use code <span className="font-bold">SAVE25</span> at checkout to get this deal!
+                        ✨ Use code <span className="font-bold">SAVE25</span> at checkout — Save £25!
                       </p>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ const BookingPayg = () => {
                     onClick={triggerConfetti}
                   >
                     <Calendar className="h-4 w-4 mr-2" />
-                    Book Now - £49
+                    Book Now - £70
                   </Button>
                 </div>
               </div>
