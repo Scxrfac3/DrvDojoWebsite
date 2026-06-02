@@ -4,7 +4,7 @@ import NewTestimonialsSection from "./sections/NewTestimonialsSection";
 import CertificationsBar from "./sections/CertificationsBar";
 import DrivingJourneySection from "./sections/DrivingJourneySection";
 import FAQSection from "./sections/FAQSection";
-import CTASection from "./sections/CTASection";
+import LatestBlogSection from "./sections/LatestBlogSection";
 import PostcodesSection from "./sections/PostcodesSection";
 import TestCentreWidget from "./sections/TestCentreWidget";
 import AutomaticMatchmakerQuiz from "./sections/AutomaticMatchmakerQuiz";
@@ -66,8 +66,8 @@ const Home = () => {
           {/* 8. Objection Handling */}
           <FAQSection />
 
-          {/* 9. Final Close */}
-          <CTASection />
+          {/* 9. Blog Articles — Internal linking for SEO */}
+          <LatestBlogSection />
         </main>
 
         <Footer />
