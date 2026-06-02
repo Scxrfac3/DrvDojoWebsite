@@ -73,23 +73,23 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
           />
         </Link>
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-1">
+        <div className="hidden md:flex items-center space-x-6">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-6">
               <NavigationMenuItem>
                 <Link
                   to="/"
-                  className="px-3 py-2 text-base font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+                  className="px-2 py-2 text-sm tracking-wide font-medium text-white/80 hover:text-white hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                 >
                   Home
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 text-white hover:text-primary text-base font-medium data-[active]:text-primary">
+                <NavigationMenuTrigger className="bg-transparent hover:bg-white/5 text-white/80 hover:text-white text-sm tracking-wide font-medium data-[active]:text-white data-[active]:bg-white/5 rounded-lg px-2 py-2 transition-all duration-200">
                   Services
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-[#1a1a1a]/95 border border-white/10 p-4 rounded-xl shadow-2xl backdrop-blur-xl">
+                <NavigationMenuContent className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
                   <div className="grid grid-cols-2 gap-3 p-4 w-[500px]">
                     <Link
                       to="/services"
@@ -231,7 +231,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/about"
-                  className="px-3 py-2 text-base font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+                  className="px-2 py-2 text-sm tracking-wide font-medium text-white/80 hover:text-white hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                 >
                   About
                 </Link>
@@ -240,7 +240,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                 <Link
                   to="/contact"
-                  className="px-3 py-2 text-base font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+                  className="px-2 py-2 text-sm tracking-wide font-medium text-white/80 hover:text-white hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                 >
                   Contact
                 </Link>
@@ -249,7 +249,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
               <NavigationMenuItem>
                     <Link
                       to="/automatic-driving-lessons"
-                      className="px-2 py-2 text-base font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+                      className="px-2 py-2 text-sm tracking-wide font-medium text-white/80 hover:text-white hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                     >
                       Automatic Lessons
                     </Link>
@@ -258,7 +258,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                   <NavigationMenuItem>
                     <Link
                       to="/intensive-driving-courses-ilford"
-                      className="px-2 py-2 text-base font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+                      className="px-2 py-2 text-sm tracking-wide font-medium text-white/80 hover:text-white hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                     >
                       Intensive Courses
                     </Link>
@@ -267,7 +267,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                   <NavigationMenuItem>
                     <Link
                       to="/east-london-automatic"
-                      className="px-2 py-2 text-base font-semibold text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
+                      className="px-2 py-2 text-sm tracking-wide font-semibold text-primary hover:text-primary/80 hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                     >
                       East London
                     </Link>
@@ -276,7 +276,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                   <NavigationMenuItem>
                     <Link
                       to="/blog"
-                      className="px-3 py-2 text-base font-medium text-white hover:text-primary transition-colors whitespace-nowrap"
+                      className="px-2 py-2 text-sm tracking-wide font-medium text-white/80 hover:text-white hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                     >
                       Blog
                     </Link>
@@ -285,7 +285,7 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                   <NavigationMenuItem>
                     <Link
                       to="/adi-blueprint"
-                      className="px-3 py-2 text-base font-semibold text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
+                      className="px-2 py-2 text-sm tracking-wide font-semibold text-primary hover:text-primary/80 hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap inline-block"
                     >
                       ADI Blueprint
                     </Link>
@@ -294,32 +294,32 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-6">
             <Link
               to="/login"
-              className="flex items-center text-gray-300 hover:text-white transition-colors group px-3 py-2"
+              className="flex items-center text-sm tracking-wide font-medium text-white/60 hover:text-white/90 transition-all duration-200 hover:-translate-y-0.5 px-2 py-2"
             >
-              <span className="font-medium">Log In</span>
+              <span>Log In</span>
             </Link>
             <a
-              href="https://wa.me/442012345678"
-              className="flex items-center text-green-400 hover:text-green-300 transition-colors group"
+              href="https://wa.me/447487228866"
+              className="flex items-center text-sm tracking-wide font-medium text-green-400/80 hover:text-green-400 transition-all duration-200 hover:-translate-y-0.5 group"
             >
-              <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-              <span className="font-medium">WhatsApp</span>
+              <MessageCircle className="h-4 w-4 mr-1.5 group-hover:scale-110 transition-transform" />
+              <span>WhatsApp</span>
             </a>
             <a
-              href="tel:+442012345678"
-              className="flex items-center text-gray-300 hover:text-white transition-colors group"
+              href="tel:+447487228866"
+              className="flex items-center text-sm tracking-wide font-medium text-white/60 hover:text-white/90 transition-all duration-200 hover:-translate-y-0.5 group"
             >
-              <Phone className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-              <span className="font-medium">+4474 8722 8866</span>
+              <Phone className="h-4 w-4 mr-1.5 group-hover:scale-110 transition-transform" />
+              <span>+4474 8722 8866</span>
             </a>
             <Link
-              to="/contact"
-              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5 flex items-center"
+              to="/booking/payg"
+              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-xl text-sm tracking-wide font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_12px_40px_rgba(255,107,53,0.4)] hover:-translate-y-0.5 flex items-center"
             >
-              <Zap className="h-4 w-4 mr-2" />
+              <Zap className="h-4 w-4 mr-1.5" />
               Book Now
             </Link>
           </div>
@@ -346,44 +346,45 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
             transition={{ duration: 0.3 }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="px-2 pt-2 pb-4 space-y-0.5">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`flex items-center px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
+                    className={`flex items-center px-4 py-3.5 text-sm tracking-wide font-medium rounded-xl transition-all duration-200 active:scale-[0.98] ${
                       location.pathname === item.path
-                        ? 'text-white bg-primary'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        ? 'text-white bg-primary/20 border border-primary/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]'
+                        : 'text-white/70 hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <span className="mr-3 text-lg">{item.emoji}</span>
+                    <span className="mr-3 text-base">{item.emoji}</span>
                     {item.name}
                   </Link>
                 ))}
                 
-                <div className="pt-4 border-t border-white/10 space-y-2">
+                <div className="pt-4 mt-2 border-t border-white/10 space-y-2">
                   <a
-                    href="https://wa.me/442012345678"
-                    className="flex items-center px-4 py-3 text-base font-medium text-green-400 hover:text-green-300 rounded-xl hover:bg-white/5 transition-colors"
+                    href="https://wa.me/447487228866"
+                    className="flex items-center px-4 py-3.5 text-sm tracking-wide font-medium text-green-400 hover:text-green-300 rounded-xl hover:bg-white/5 transition-all duration-200 active:scale-[0.98]"
                   >
                     <MessageCircle className="h-5 w-5 mr-3" />
-                    WhatsApp 💬
+                    WhatsApp
                   </a>
                   <a
-                    href="tel:+442012345678"
-                    className="flex items-center px-4 py-3 text-base font-medium text-gray-300 hover:text-white rounded-xl hover:bg-white/5 transition-colors"
+                    href="tel:+447487228866"
+                    className="flex items-center px-4 py-3.5 text-sm tracking-wide font-medium text-white/70 hover:text-white rounded-xl hover:bg-white/5 transition-all duration-200 active:scale-[0.98]"
                   >
                     <Phone className="h-5 w-5 mr-3" />
                     +4474 8722 8866
                   </a>
                   <Link
-                    to="/contact"
-                    className="block mx-4 mt-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold text-center transition-all duration-300 hover:-translate-y-0.5"
+                    to="/booking/payg"
+                    className="flex items-center justify-center mx-2 mt-2 bg-primary hover:bg-primary/90 text-white px-6 py-3.5 rounded-xl text-sm tracking-wide font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(255,107,53,0.3)] hover:-translate-y-0.5 active:scale-[0.98]"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    🚀 Book Now
+                    <Zap className="h-4 w-4 mr-2" />
+                    Book Now
                   </Link>
                 </div>
               </div>
