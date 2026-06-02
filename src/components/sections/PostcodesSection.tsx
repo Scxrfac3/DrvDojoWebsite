@@ -1,88 +1,82 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, CheckCircle, Car } from "lucide-react";
+import { MapPin, ArrowRight, CheckCircle, CreditCard } from "lucide-react";
+
+interface AreaEntry {
+  name: string;
+  path: string;
+  postcode: string;
+}
+
+const areas: AreaEntry[] = [
+  { name: "Ilford", path: "/driving-lessons/ilford", postcode: "IG1–IG6" },
+  { name: "Goodmayes", path: "/driving-lessons/goodmayes", postcode: "IG3, IG4" },
+  { name: "Barking", path: "/driving-lessons/barking", postcode: "IG11" },
+  { name: "Romford", path: "/driving-lessons/romford", postcode: "RM1–RM7" },
+  { name: "East Ham", path: "/driving-lessons/east-ham", postcode: "E6" },
+  { name: "Forest Gate", path: "/driving-lessons/forest-gate", postcode: "E7" },
+  { name: "Canning Town", path: "/driving-lessons/canning-town", postcode: "E16" },
+  { name: "Docklands", path: "/driving-lessons/docklands", postcode: "E14" },
+  { name: "Walthamstow", path: "/driving-lessons/walthamstow", postcode: "E10, E11, E17" },
+  { name: "Isle of Dogs", path: "/driving-lessons/isle-of-dogs", postcode: "E14" },
+];
 
 const PostcodesSection = () => {
-  const areas = [
-    "Ilford", "Goodmayes", "Barking", "Romford", "East Ham", 
-    "Forest Gate", "Canning Town", "Docklands", "Walthamstow", "Isle of Dogs"
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
-
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+    <section className="py-20 bg-[#0d0d0d] relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      
-      <div className="container mx-auto relative z-10">
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/5 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+        {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center mb-3 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-sm font-medium text-white shadow-lg"
+            className="inline-flex items-center mb-4 bg-[rgba(255,107,53,0.15)] border border-[rgba(255,107,53,0.3)] px-5 py-2 rounded-full text-sm font-medium text-[#ff6b35]"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             <MapPin className="h-4 w-4 mr-2" />
             Areas We Cover
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-5xl font-bold mb-4 text-gray-900"
+            className="text-3xl md:text-5xl font-black mb-4 text-white"
+            style={{ letterSpacing: "-2px" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Serving <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">East London & Essex</span>
+            Serving{" "}
+            <span className="text-[#ff6b35]">East London & Essex</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-[#888] max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            We provide professional driving lessons across multiple postcodes in East London and Essex. 
-            Check if we cover your area!
+            We provide professional driving lessons across multiple postcodes in East London and Essex.
+            Door-to-door pickup included. Click your area to view local prices and book.
           </motion.p>
         </motion.div>
 
+        {/* Area Cards — Glassmorphism Grid */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12"
-          variants={containerVariants}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -90,45 +84,66 @@ const PostcodesSection = () => {
           {areas.map((area, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl p-4 shadow-md border border-blue-100 flex items-center justify-center text-center"
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.05, 
-                backgroundColor: "rgba(59, 130, 246, 0.05)",
-                borderColor: "rgba(59, 130, 246, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              viewport={{ once: true }}
             >
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                <span className="font-medium text-gray-800">{area}</span>
-              </div>
+              <Link
+                to={area.path}
+                className="block bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4 text-center shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] hover:border-[rgba(255,107,53,0.5)] hover:bg-white/[0.14] transition-all hover:-translate-y-1 group active:scale-[0.98]"
+              >
+                <MapPin className="h-5 w-5 mx-auto mb-2 text-[#ff6b35] group-hover:scale-110 transition-transform" />
+                <span className="text-white font-bold text-sm block group-hover:text-[#ff6b35] transition-colors">
+                  {area.name}
+                </span>
+                <span className="text-[#888] text-xs mt-0.5 block">{area.postcode}</span>
+                <span className="inline-flex items-center gap-1 text-[#ff6b35] text-xs font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Lessons
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* Klarna + CTA Strip */}
         <motion.div
-          className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
+          className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
         >
-          <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-3xl">
-            <div className="bg-white rounded-3xl px-8 py-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Don't see your area?
-              </h3>
-              <p className="text-gray-600 mb-4">Contact us to check availability in your location</p>
-              <motion.a
-                href="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-[#ff6b35]/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <CheckCircle className="w-6 h-6 text-[#ff6b35]" />
+              </div>
+              <div>
+                <h3 className="text-white font-bold text-lg">
+                  Don't see your area? We likely cover it.
+                </h3>
+                <p className="text-[#888] text-sm">
+                  Contact us to check availability in your location — door-to-door pickup across East London.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <div className="flex items-center gap-2 bg-pink-500/10 border border-pink-400/20 rounded-lg px-4 py-2 text-sm">
+                <CreditCard className="w-4 h-4 text-pink-400" />
+                <span className="text-pink-300 font-medium text-xs whitespace-nowrap">
+                  Klarna — Pay in 3
+                </span>
+              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-[#ff6b35] hover:bg-[#ff8555] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-[0_8px_30px_rgba(255,107,53,0.3)] hover:-translate-y-0.5 whitespace-nowrap"
               >
-                <Car className="mr-2 h-5 w-5" />
-                Contact Us
-              </motion.a>
+                Check My Postcode
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </motion.div>
