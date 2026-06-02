@@ -63,22 +63,18 @@ const GoodmayesLessons = () => {
   return (
     <>
       <SEO
-        title="Best Driving Lessons in Goodmayes | First 2 Hours Only £49!"
-        description="Learn to drive with Drive Dojo. Professional ADI instructors in Goodmayes. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
-        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Goodmayes, intensive driving lessons Goodmayes, automatic driving lessons Seven Kings, DVSA approved instructor, driving school Goodmayes, IG postcodes, driving instructor Goodmayes"
+        title="Book Driving Lessons in Goodmayes Instantly | Live Availability | Drive Dojo"
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Goodmayes DTC specialists. Covering IG postcodes & East London."
+        keywords="driving lessons Goodmayes, driving instructor Goodmayes, automatic driving lessons Seven Kings, intensive driving lessons Goodmayes, DVSA approved driving instructor Goodmayes, driving school Goodmayes, Goodmayes DTC driving lessons, IG postcodes driving lessons, Mercedes automatic driving lessons, best driving instructor Goodmayes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/goodmayes"
         serviceSchema={{
           name: "Driving Lessons in Goodmayes",
-          description: "Professional driving lessons in Goodmayes with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
-          provider: {
-            name: "Drive Dojo",
-            url: "https://drivedojodrivingschool.com"
-          },
-          price: "49",
-          priceCurrency: "GBP",
-          areaServed: "Goodmayes, IG postcodes, East London"
+          description: "Professional driving lessons in Goodmayes with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Goodmayes DTC specialists. Covering all IG postcodes.",
+          provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
+          price: "70", priceCurrency: "GBP", areaServed: "Goodmayes, Seven Kings, IG postcodes, East London"
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Goodmayes","description":"DVSA approved driving lessons in Goodmayes and Seven Kings. Automatic Mercedes-Benz A-Class. Goodmayes DTC specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/goodmayes","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Goodmayes","Seven Kings","IG1","IG2","IG3","IG4","IG5","IG6","East London"],"address":{"@type":"PostalAddress","addressLocality":"Goodmayes","addressRegion":"East London","postalCode":"IG3","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5588,"longitude":0.0736},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* Background decorative elements - Dark theme */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>

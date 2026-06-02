@@ -46,22 +46,18 @@ const BarkingLessons = () => {
   return (
     <>
       <SEO
-        title="Best Driving Lessons in Barking | First 2 Hours Only £49!"
-        description="Learn to drive with Drive Dojo. Professional ADI instructors in Barking. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
-        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Barking, intensive driving lessons Barking, automatic driving lessons Barking, DVSA approved instructor, driving school Barking, IG postcodes"
+        title="Book Driving Lessons in Barking Instantly | Live Availability | Drive Dojo"
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Barking test centre specialists. Covering IG11, RM8, RM9 & East London."
+        keywords="driving lessons Barking, driving instructor Barking, automatic driving lessons Barking, intensive driving lessons Barking, DVSA approved driving instructor Barking, driving school Barking, IG11 driving lessons, Barking test centre, cheap driving lessons Barking, best driving instructor Barking"
         canonical="https://drivedojodrivingschool.com/driving-lessons/barking"
         serviceSchema={{
           name: "Driving Lessons in Barking",
-          description: "Professional driving lessons in Barking with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
-          provider: {
-            name: "Drive Dojo",
-            url: "https://drivedojodrivingschool.com"
-          },
-          price: "49",
-          priceCurrency: "GBP",
-          areaServed: "Barking, IG postcodes, East London"
+          description: "Professional driving lessons in Barking with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering IG11, RM8, RM9.",
+          provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
+          price: "70", priceCurrency: "GBP", areaServed: "Barking, IG11, RM8, RM9, East London"
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Barking","description":"DVSA approved driving lessons in Barking. Automatic Mercedes-Benz A-Class. Barking test centre specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/barking","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Barking","IG11","RM8","RM9","Chadwell Heath","East London"],"address":{"@type":"PostalAddress","addressLocality":"Barking","addressRegion":"East London","postalCode":"IG11","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5390,"longitude":0.0810},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - Dark theme */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>

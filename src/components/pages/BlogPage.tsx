@@ -273,15 +273,12 @@ export default function BlogPage() {
                       Featured Post
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                      How Many Driving Lessons Do You Need? A Complete Guide
+                      Top Driving Instructor Near Me — Drive Dojo Canary Wharf
                     </h2>
                     <p className="text-white/70 mb-4 max-w-2xl text-sm md:text-base">
-                      Discover the optimal number of driving lessons required to
-                      pass your test. Learn about the average 40-45 hours of
-                      professional instruction and factors that can affect your
-                      learning timeline.
+                      The UK's driving test pass rate sits at just 48.65%. In Canary Wharf, Hither Green test centre reports only 39.4%. Here's how to find the right instructor and pass first time.
                     </p>
-                    <Link to="/blog/how-many-driving-lessons-do-you-need">
+                    <Link to="/blog/top-driving-instructor-near-me-canary-wharf">
                       <Button className="bg-[#ff6b35] hover:bg-[#ff8555] text-white w-fit shadow-[0_8px_30px_rgba(255,107,53,0.4)]">
                         Read Featured Post
                         <ArrowRight className="ml-2 h-4 w-4" />

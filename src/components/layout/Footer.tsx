@@ -49,11 +49,23 @@ const Footer = ({
   quickLinks = [
     { title: "About Us", href: "/about" },
     { title: "Contact", href: "/contact" },
-    { title: "Blog", href: "/about" },
+    { title: "Blog", href: "/blog" },
     { title: "FAQ", href: "/about" },
     { title: "Terms of Service", href: "/terms" },
     { title: "Privacy Policy", href: "/" },
     { title: "Careers", href: "/" },
+  ],
+  locationLinks = [
+    { title: "Ilford", href: "/driving-lessons/ilford" },
+    { title: "Goodmayes", href: "/driving-lessons/goodmayes" },
+    { title: "Barking", href: "/driving-lessons/barking" },
+    { title: "Romford", href: "/driving-lessons/romford" },
+    { title: "East Ham", href: "/driving-lessons/east-ham" },
+    { title: "Forest Gate", href: "/driving-lessons/forest-gate" },
+    { title: "Canning Town", href: "/driving-lessons/canning-town" },
+    { title: "Docklands", href: "/driving-lessons/docklands" },
+    { title: "Walthamstow", href: "/driving-lessons/walthamstow" },
+    { title: "Isle of Dogs", href: "/driving-lessons/isle-of-dogs" },
   ],
   socialLinks = [
     { platform: "instagram", href: "https://www.instagram.com/drive.dojo" },
@@ -241,8 +253,8 @@ const Footer = ({
                   onHoverEnd={() => setHoveredLink(null)}
                   whileHover={{ x: 5 }}
                 >
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="hover:text-primary transition-colors flex items-center space-x-1"
                   >
                     <motion.span
@@ -257,7 +269,28 @@ const Footer = ({
                       {hoveredLink === link.title ? "→" : "•"}
                     </motion.span>
                     <span>{link.title}</span>
-                  </a>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Areas We Cover - Location links for SEO */}
+            <h3 className="text-sm font-semibold text-[#888] mt-6 pt-4 border-t border-white/5">
+              Areas We Cover
+            </h3>
+            <div className="grid grid-cols-2 gap-1.5 text-gray-500 text-xs">
+              {locationLinks.map((link, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ x: 3 }}
+                >
+                  <Link
+                    to={link.href}
+                    className="hover:text-primary transition-colors flex items-center space-x-1"
+                  >
+                    <MapPin className="h-3 w-3 flex-shrink-0" />
+                    <span>{link.title}</span>
+                  </Link>
                 </motion.div>
               ))}
             </div>

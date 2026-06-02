@@ -191,6 +191,28 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                       </div>
                     </Link>
                     <Link
+                      to="/driving-lessons/walthamstow"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Walthamstow
+                      </div>
+                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                        Driving lessons in Walthamstow
+                      </div>
+                    </Link>
+                    <Link
+                      to="/driving-lessons/isle-of-dogs"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                    >
+                      <div className="text-sm font-medium text-white">
+                        Isle of Dogs
+                      </div>
+                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                        Driving lessons in Isle of Dogs
+                      </div>
+                    </Link>
+                    <Link
                       to="/dual-control-installation"
                       className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/20"
                     >

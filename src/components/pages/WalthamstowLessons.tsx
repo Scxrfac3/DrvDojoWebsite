@@ -27,28 +27,24 @@ const WalthamstowLessons = () => {
   return (
     <>
       <SEO
-        title="Best Driving Lessons in Walthamstow | First 2 Hours Only £49!"
-        description="Learn to drive with Drive Dojo. Professional ADI instructors in Walthamstow. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
-        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Walthamstow, intensive driving lessons Walthamstow, automatic driving lessons Walthamstow, DVSA approved instructor, driving school Walthamstow, E10, E11, E17 postcodes"
+        title="Book Driving Lessons in Walthamstow Instantly | Live Availability | Drive Dojo"
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Walthamstow & Chingford test centre prep. Covering E10, E11, E17 & East London."
+        keywords="driving lessons Walthamstow, driving instructor Walthamstow, automatic driving lessons Walthamstow, intensive driving lessons Walthamstow, DVSA approved driving instructor Walthamstow, driving school Walthamstow, E10 E11 E17 driving lessons, Walthamstow test centre, cheap driving lessons Walthamstow"
         canonical="https://drivedojodrivingschool.com/driving-lessons/walthamstow"
         serviceSchema={{
           name: "Driving Lessons in Walthamstow",
-          description: "Professional driving lessons in Walthamstow with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
-          provider: {
-            name: "Drive Dojo",
-            url: "https://drivedojodrivingschool.com"
-          },
-          price: "49",
-          priceCurrency: "GBP",
-          areaServed: "Walthamstow, E10, E11, E17, East London"
+          description: "Professional driving lessons in Walthamstow with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E10, E11, E17.",
+          provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
+          price: "70", priceCurrency: "GBP", areaServed: "Walthamstow, E10, E11, E17, East London"
         }}
       />
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Walthamstow","description":"DVSA approved driving lessons in Walthamstow. Automatic Mercedes-Benz A-Class. Chingford & Wanstead test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/walthamstow","telephone":"+447487228866","areaServed":["Walthamstow","E10","E11","E17","Leytonstone","East London"],"address":{"@type":"PostalAddress","addressLocality":"Walthamstow","addressRegion":"East London","postalCode":"E17","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5888,"longitude":-0.0236},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
+      {/* Background decorative elements - Dark theme */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
 
       <Navbar />
 

@@ -2,6 +2,274 @@
 import { BlogArticle } from '../types/BlogArticle';
 
 export const blogArticles: BlogArticle[] = [
+  // ─── TEENAGE DRIVING LESSONS GUIDE ───────────────────────────────────
+  {
+    id: "complete-guide-teenage-driving-lessons-london-2026",
+    title: "Complete Guide to Teenage Driving Lessons in London 2026",
+    slug: "complete-guide-teenage-driving-lessons-london-2026",
+    content: `# Complete Guide to Teenage Driving Lessons in London 2026
+
+Learning to drive in London is one of the most exciting — and occasionally nerve-wracking — milestones a teenager can experience. The official UK driving test pass rate for 2024–25 sat at 48.65% across all Category B (car) practical tests — meaning roughly half of all candidates fail on their first attempt. That figure is a clear signal: preparation, not luck, is what separates those who pass from those who don't. Therefore, if your teenager is planning to get behind the wheel in 2026, this guide is the complete roadmap you need.
+
+The average hourly rate for a driving lesson in the UK is between £30 and £40 for manual, depending on region — and London is the most expensive area, at £38–£48 per hour. For families budgeting for lessons, theory tests, and practical tests, the total investment can feel overwhelming. This guide — written with London-based learners firmly in mind — walks you through every stage of the journey: from applying for a provisional licence to booking your test and overcoming driving anxiety on the big day. For a trusted, DVSA-approved school to get started with, **Drive Dojo Driving School** offers structured teenage driving lessons across London.
+
+## Key Takeaways
+
+- **Start early and budget realistically:** The total cost to learn to drive in the UK in 2026 is typically £1,800 to £2,800 for a first-time passer. Plan your finances before lesson one — not halfway through.
+- **London wait times are long — book your test early:** London remains the hardest place in the UK to book a driving test, with centres like Belvedere, Sidcup, Wood Green, and Goodmayes consistently showing the longest waits, often exceeding 20 weeks. Book your practical test as soon as your theory pass certificate is in hand.
+- **45 hours is the DVSA-recommended benchmark:** The DVSA recommendation is 45 hours of professional lessons plus 22 hours of private practice, totalling 67 hours to reach test-ready. Falling significantly short of this increases your risk of a failed first attempt.
+- **Theory test: don't wing it:** About 45% of candidates pass the theory test on their first attempt, meaning more than half fail. Treat theory preparation as seriously as practical lessons — use mock tests daily in the final two weeks.
+- **New 2026 DVSA booking rules change everything:** Only the learner can book, change, cancel or swap their own car driving test — it is against the law for anyone else to do this on their behalf. Teenagers must take ownership of this process themselves from 2026 onwards.
+
+## What Age Can Teenagers Start Driving Lessons in London?
+
+In the UK, you can start taking car driving lessons at 17 as long as you hold a provisional driving licence. However, there is an exception: if you receive or apply for the higher rate mobility component of Personal Independence Payment (PIP), you can start at 16.
+
+Before you take your first driving lesson, you must apply for and receive your provisional licence. You can apply for one when you're 15 years and 9 months old, but it only becomes valid once you turn 17. The application costs **£34 online** via GOV.UK or £43 by post — always apply online to save money.
+
+**Why Starting at 17 Is an Advantage:** DVSA data shows that 17-year-olds had a pass rate of 56%, compared to just 37% for learners aged 35+. Starting earlier — when learning habits and reaction times are sharper — can potentially lead to a quicker and more successful learning process.
+
+**Pro Tip:** Apply for the provisional licence at 15 years and 9 months, so it arrives well before the 17th birthday. Then, book the first lesson for the very first week after turning 17 — getting an early start could save hundreds of pounds in total lesson costs.
+
+## How Many Driving Lessons Does a Teenager in London Need?
+
+Most teenagers in the UK need between 40 and 50 hours of professional driving lessons before they are ready to take the practical driving test. However, London is not the average UK location. Heavy traffic, complex junctions, bus lanes, and cycling infrastructure make London roads significantly more demanding than quieter suburban or rural areas.
+
+Learner anxiety is the single biggest hidden factor in lesson count. Nervous learners often need 50–70 hours simply to build the confidence to make decisions at junctions and roundabouts without overthinking. Therefore, parents and teenagers should budget for 50+ hours in London — not 45 — and avoid the disappointment of booking a test too early.
+
+**Lesson Frequency Matters:** A confident learner who drives twice a week can progress much faster than someone who drives once every two weeks. Gaps between lessons slow things down because skills are forgotten. If budget allows, two lessons per week produces the fastest progress.
+
+**Manual vs. Automatic — Which Is Right for Your Teenager?** In London, expect to pay £42–£55 per hour for automatic tuition. The bottom line: if your teenager is highly anxious or consistently stalling, switching to automatic lessons is a wise investment — the money saved on extra manual lessons often outweighs the higher hourly rate. Drive Dojo specialises in automatic driving instruction for teenagers.
+
+## Understanding Driving Lesson Costs in London 2026
+
+In London, lessons typically range from £38 to £50 per hour, with central London at the higher end. At Drive Dojo, our introductory offer is **£70 for your first 2 hours** (use code SAVE25), then from **£34/hr** with block bookings. We accept **Klarna — pay in 3 interest-free instalments.**
+
+Block booking is the smartest way to save. Booking 10 lessons upfront can save £20–£50 compared to single sessions. However, take two or three single lessons first, then block-book once you're confident the instructor is the right fit.
+
+**The Full Cost Breakdown (2026):** Total cost to learn to drive is typically £1,800–£2,800, covering provisional licence (£34), around 45 hours of lessons (£1,575–£1,800), theory test (£23), practical test (£62 weekday / £75 weekend), learner driver insurance (£100–£300), fuel (£60–£100), and study materials.
+
+## The Theory Test: Your First Major Milestone
+
+The DVSA theory test has two parts that you must both pass in the same sitting. The multiple-choice section contains 50 questions — you need at least 43 correct answers. The hazard perception section requires 44 out of 75 points.
+
+About 45% of candidates pass the UK theory test on their first attempt, meaning more than half fail. The official DVSA theory test costs £23 per attempt. Only book the theory test when you are consistently scoring 46+ out of 50 on timed mock tests using the official DVSA revision question bank.
+
+**Pro Tip:** Don't neglect hazard perception practice. Many learners focus all revision on the multiple-choice section and neglect hazard perception — both must be passed in the same sitting.
+
+## How to Book Your Driving Test in London 2026
+
+**New DVSA Booking Rules — Critical Changes:** From 12 May 2026, learner drivers must now book their own practical driving tests directly — driving schools, instructors, and third-party cancellation services are no longer allowed to do it for you. You can only make two changes to your car driving test booking. From 8 April 2025, learners must give 10 full working days' notice to change or cancel without losing their fee.
+
+**Step-by-Step Booking:**
+1. Pass your theory test first
+2. Go to GOV.UK's official driving test booking service — never use third-party sites
+3. Have your provisional licence number ready
+4. DVSA releases new driving test slots every Monday at 6am — these are highly competitive
+5. Pay £62 (weekday) or £75 (weekend/evening)
+6. Keep checking for earlier cancellations — checking the DVSA portal 2–3 times a day can occasionally turn up an earlier slot
+
+## Intensive Driving Courses in London: Are They Worth It?
+
+An intensive driving course compresses 30–40 hours of lessons into one or two weeks and costs £1,000–£2,000 in total. Some packages include the test fee and a guaranteed test date, which can be useful given London's long waiting times.
+
+Intensive courses work best for teenagers who have already had some lessons and need to get over the finish line quickly, rather than absolute beginners starting from zero. If your teenager is a complete novice, weekly structured lessons with a school like Drive Dojo will build a stronger foundation. [View Drive Dojo's intensive course options.](/booking/intensive)
+
+## How to Overcome Driving Anxiety as a Teenager
+
+Mental preparation proves critical for managing test anxiety, which affects approximately 60–70% of learners to some degree. Practical strategies include:
+
+- **Choose the right instructor** — instructor rapport is just as important as DVSA approval status
+- **Manage physical anxiety triggers** — cut back caffeine and eat a proper meal before lessons
+- **Use progressive desensitisation** — make a list of specific driving situations that trigger anxiety and work through them systematically
+- **Consider automatic lessons** — removing clutch and gear management significantly reduces cognitive load
+- **Effective test-day preparation:** adequate sleep (7–8 hours), light meals, and a brief warm-up drive (15–20 minutes) before the test
+
+## Mock Driving Tests and Driving Test Routes
+
+The learners who pass first time consistently complete at least two formal mock tests before their actual examination. A mock test replicates the full 40-minute practical test format, giving your teenager a realistic rehearsal under test conditions. [Book a mock driving test with Drive Dojo.](/booking/mocktest)
+
+**Route familiarity is a major advantage:** candidates who know the specific roads at their test centre perform better. Spending private practice time driving those exact roads — roundabouts, junctions, and all — gives a significant competitive edge.
+
+## What to Look for in the Best Driving Schools in London
+
+When assessing options, look for: DVSA-approved instructors (check via GOV.UK's ADI register), transparent pricing, genuine driving instructor reviews on Google, and female instructor availability. Drive Dojo Driving School is a DVSA-approved school offering structured teenage driving lessons across London, with experienced instructors, transparent pricing, and both manual and automatic tuition.
+
+---
+
+## 📊 How Many Lessons Does Your Teenager Need? Use Our Free Estimator
+
+Not sure how to budget? Our **Lesson Hours Estimator** calculates a personalised estimate based on your teenager's age, experience, practice availability, and learning pace — using official DVSA baseline data. [Try the estimator now on our homepage →](/) and get an accurate budget in under 60 seconds.
+
+---
+
+## ⚡ Ready to Book? Get Started with Drive Dojo's Tech Stack
+
+At **Drive Dojo**, we've built the most modern, convenient booking experience in East London:
+
+- **📅 Instant Calendly Booking** — View live instructor availability and book your teenage driving lessons online in 60 seconds. No phone calls, no waiting for callbacks.
+- **💳 Klarna "Pay in 3"** — Spread the cost of block bookings with interest-free monthly payments. Available on our 10-Hour Block and Intensive Pass Course.
+- **🚗 Mercedes-Benz A-Class Automatics** — All lessons conducted in premium dual-control vehicles for the safest, smoothest learning experience.
+- **📊 Live Progress Dashboard** — Track your teenager's progress through every DVSA syllabus milestone.
+- **📱 Book via WhatsApp** — Instant booking available at +44 748 722 8866.
+
+[Book your teenager's first lesson today →](/booking/payg)`,
+    excerpt: "Everything parents and teenagers need to know about learning to drive in London in 2026 — from costs and lesson counts to booking rules, test centres, anxiety management, and choosing the right driving school.",
+    featuredImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "June 1, 2026",
+    category: "Learning Tips",
+    tags: ["teenage driving lessons London", "driving lessons for teenagers", "learn to drive at 17", "London driving school 2026", "teenager driving test", "provisional licence", "DVSA booking rules 2026", "driving lesson costs London", "driving anxiety teenagers", "automatic driving lessons"],
+    readTime: 16,
+    views: 0, likes: 0, comments: 0,
+  },
+
+  // ─── FEATURED: TOP DRIVING INSTRUCTOR NEAR ME — CANARY WHARF ──────────
+  {
+    id: "top-driving-instructor-near-me-canary-wharf",
+    title: "Top Driving Instructor Near Me — Drive Dojo Canary Wharf",
+    slug: "top-driving-instructor-near-me-canary-wharf",
+    content: `# Top Driving Instructor Near Me — Drive Dojo Canary Wharf
+
+The UK's overall driving test pass rate sits at just 48.65% according to DVSA 2024–25 data — meaning more than half of all test-takers fail on their first attempt. In a demanding urban environment like Canary Wharf and East London, where the local test centre at London (Hither Green) reports a pass rate of only 39.4%, finding the right driving instructor near you is not just a convenience — it's the single most decisive factor in whether you pass first time or face weeks of waiting lists and additional costs.
+
+Therefore, if you're searching for a **"driving instructor near me"** in the Canary Wharf area, your priority should be working with a school that combines genuine local expertise, full DVSA qualification, and a structured learning approach. That's precisely what **Drive Dojo Driving School** offers — a professional, learner-focused driving school operating right in the heart of East London.
+
+In this guide, you'll find everything you need to know about choosing the best local driving instructor, understanding the unique driving environment around Canary Wharf and the Docklands, and taking the most direct path to passing your test with confidence.
+
+## Key Takeaways
+
+- **Local pass rates demand better preparation:** The London (Hither Green) test centre — the nearest to Canary Wharf — has a pass rate of only 39.4%, well below the national average of 48.65% (DVSA 2024–2025). Working with an instructor who knows those specific test routes is non-negotiable.
+- **DVSA-approved instructors are a legal requirement:** Always check your instructor is officially registered with the DVSA — only DVSA-approved instructors are legally allowed to charge for lessons. Verify the green badge before handing over a single penny.
+- **Expect around 45 hours of lessons:** The DVSA recommends 45 hours of professional driving lessons plus 22 hours of private practice — that is the national average for learners who pass first time. Budget accordingly and book a school with structured, milestone-based lesson plans.
+- **Canary Wharf is both challenging and rewarding to learn in:** Canary Wharf presents some of London's most distinctly modern driving conditions — wide Docklands roads, complex roundabout systems, tunnels, and routes to the A102. Mastering this unique road layout builds confidence that transfers to driving anywhere.
+- **Test waiting times are at historic highs:** As of March 2025, learners were waiting an average of 21.9 weeks — more than 5 months — to take their test, up from 16.1 weeks the year before. Book both your lessons and your test slot as early as possible.
+
+## Why Your Choice of Driving Instructor Near Me Matters
+
+Picking a driving instructor isn't just about who's available in your area or who charges the least — you're trusting someone to guide you through one of the most important skills you'll ever learn, and a bad instructor can turn lessons into a weekly nightmare.
+
+Consider the maths: average learners who need 40–50 hours of instruction face a total cost of £1,200–£2,000, while nervous learners who need 60–80 hours could spend between £1,800 and £3,200. Therefore, a slightly higher hourly rate from a better-qualified, more experienced instructor who cuts your total lesson hours by even 10 hours will save you money, not cost you more.
+
+### What DVSA Approval Actually Means
+
+There are 3 qualifying tests an instructor must pass: ADI Part 1 (theory test), ADI Part 2 (driving ability — 3 attempts allowed), and ADI Part 3 (instructional ability — 3 attempts allowed). This is a rigorous, multi-stage process that ensures only genuinely capable, knowledgeable professionals can legally charge for lessons. When you book with a DVSA-approved ADI at Drive Dojo, you have that assurance from day one.
+
+**Pro Tip:** Always ask to see your instructor's green ADI badge displayed in the windscreen of their car. An ADI (Approved Driving Instructor) is fully qualified and has passed all three DVSA qualification tests.
+
+## Understanding the Canary Wharf Driving Environment
+
+### The Isle of Dogs Advantage for Beginners
+
+The area around the Isle of Dogs and Canary Wharf is perfect for beginners compared to many other areas in London — the 'island' is well connected to the rest of the East End but has a somewhat isolated feel, meaning the roads around the Isle of Dogs are pretty much traffic-free. You'll find a long route over 3 miles long that loops around the island formed by Westferry Road, Manchester Road and Marsh Wall — an ideal beginner's course.
+
+### Complex Road Features That Require Specialist Instruction
+
+Learning to drive in Canary Wharf means practising in a busy London business district with tall buildings and narrow service roads — expect lots of buses, cycle lanes and pedestrians around Westferry Circus and North Colonnade. The private estate roads have their own rules and speed limits, and the modern infrastructure makes navigation straightforward once you understand the layout.
+
+### Your Test Centre: London (Hither Green)
+
+London (Hither Green) is the nearest DVSA test centre, about 3.2 miles from Canary Wharf, handling around 11,967 tests a year. Higher traffic and complex junctions around Canary Wharf can make tests tougher than in quieter outskirts. Therefore, if you're booking with any instructor in this area, confirm that they train you specifically on the Hither Green test routes — including the East India Dock Road and Blackwall Tunnel approaches.
+
+**Pro Tip:** Mid-morning on a weekday (Tuesday to Thursday, 10:00–11:30) typically offers the lightest traffic. Avoid rush hours and school run times.
+
+## How to Choose the Best Driving Instructor Near Me: A Complete Framework
+
+### 1. Verify DVSA Registration First
+Use the GOV.UK search tool to check your instructor is on the DVSA register. Ask for their ADI reference number, which is shown on their badge.
+
+### 2. Assess Local Road Knowledge
+An instructor who lives and teaches locally in the Canary Wharf and Tower Hamlets area will know which roads are quietest for early lessons, which junctions are most commonly tested, and how to structure your lessons to build confidence logically.
+
+### 3. Check Their Teaching Style
+Not all driving instructors have the same style of teaching. Some are great at keeping up with fast learners making lessons quick and efficient, while others are better at guiding those who prefer a slower pace.
+
+**Pro Tip:** Book a trial lesson — you'll know within 10 minutes whether you click with someone or not. Drive Dojo offers an introductory session so you can assess fit before committing to a full block.
+
+### 4. Read Reviews Carefully — But Contextually
+Look beyond the star rating. Pay attention to whether reviews mention specific qualities: patience with nervous learners, knowledge of local test routes, structured feedback after lessons, and consistent punctuality.
+
+### 5. Confirm Scheduling and Flexibility
+Driving instructors can be booked up weeks in advance — so check that their schedule fits around yours. Switching instructors mid-way through your learning journey can reset your progress unnecessarily.
+
+## Lesson Types Available in Canary Wharf
+
+### Standard Weekly Lessons
+The standard approach — two one-hour or one two-hour lesson per week — is best suited to learners who have several months before a specific deadline and prefer to build skills gradually.
+
+### Intensive Driving Courses
+For learners who need a licence urgently — perhaps for a new job that starts next month — an intensive course condenses learning into daily or multi-hour sessions over one to two weeks. [View Drive Dojo's intensive course options.](/booking/intensive)
+
+### Automatic vs. Manual Lessons
+Automatic learners typically need 30–35 hours instead of the manual average of 45 hours — the 10–15 hour difference is purely clutch control and gear coordination, which automatic cars remove. For city learners navigating stop-start Docklands traffic, automatic lessons can be a pragmatic first step.
+
+### Refresher Lessons
+If you haven't driven in a while, refresher lessons help rebuild road awareness and update drivers on changes to the local road network — including new cycle lanes and updated junctions around the Docklands.
+
+**Pro Tip:** If you've driven overseas and are adapting to UK roads for the first time, you may only need 10–20 hours to adjust. Book an initial assessment lesson to establish your baseline.
+
+## What to Expect: The Journey from First Lesson to Passing Your Test
+
+### Getting the Basics Right (Hours 1–10)
+Your first lessons will start on quieter residential roads, mastering the fundamentals. The Isle of Dogs' quieter back streets such as Saunders Ness Road provide ideal conditions for absolute beginners.
+
+### Building Confidence on Busy Roads (Hours 10–30)
+This is where you begin encountering the more demanding features of Canary Wharf and East London driving — roundabouts, dual carriageways, one-way systems, and complex junctions.
+
+### Test Preparation (Hours 30–45+)
+In the final stages, expect mock tests conducted on your actual test routes, debrief sessions that identify weak areas, and specific practice of the manoeuvres most commonly assessed.
+
+## Common Mistakes Learners Make When Searching for a Driving Instructor Near Me
+
+1. **Booking Based on Price Alone** — A slightly higher rate might mean better teaching, and fewer lessons overall. Evaluate total expected spend, not hourly rate.
+2. **Not Checking DVSA Registration** — Learning with an unregistered instructor means your lessons may not count toward any formal assessment of readiness.
+3. **Long Gaps Between Lessons** — Gaps between lessons slow progress because skills are forgotten. Committing to a regular schedule from the outset is one of the highest-return decisions you can make.
+4. **Waiting Too Long to Book the Practical Test** — As of March 2025, learners were waiting an average of 21.9 weeks to take their test. Book early.
+5. **Sticking With the Wrong Instructor Out of Loyalty** — If it's not working after a few lessons, there is no harm in switching.
+
+## Pricing: What Do Driving Lessons in Canary Wharf Cost?
+
+In the UK, driving lessons cost between £30 and £50 per hour on average. In the Canary Wharf area specifically, the average lesson cost is around £36 per hour. Block booking typically offers the most effective way to reduce per-lesson costs.
+
+At **Drive Dojo**, our introductory offer is **£70 for your first 2 hours** (use code SAVE25), then from **£34/hr** with block bookings. We accept **Klarna — pay in 3 interest-free instalments.**
+
+## Frequently Asked Questions
+
+**What should I look for in a driving instructor near me in Canary Wharf?**
+Look for a DVSA-approved ADI with a green badge, positive verified reviews, local route knowledge specific to East London and the Hither Green test centre, and a structured teaching approach that adapts to your learning style.
+
+**How many driving lessons will I need in Canary Wharf?**
+Most learners in Canary Wharf are test-ready within 30–50 hours of professional instruction, depending on lesson frequency and prior experience.
+
+**What is the pass rate at the nearest test centre to Canary Wharf?**
+London (Hither Green) has a pass rate of 39.4% (DVSA 2024–2025) — lower pass rates reflect the busy urban environment. The national average is 48.65%, making thorough, local test-route preparation even more important here.
+
+**Can I start driving lessons before passing my theory test?**
+Yes — you can start driving lessons before passing your driving theory test, and many learners prepare for both simultaneously.
+
+**Should I learn in an automatic or manual car?**
+For learners in the Canary Wharf stop-start traffic environment, automatic lessons can significantly reduce stress and speed up progress. Drive Dojo specialises in automatic instruction.
+
+**How long will I have to wait for a driving test in London?**
+As of March 2025, learners were waiting an average of 21.9 weeks — more than 5 months. Book your test slot as early as possible.
+
+## Ready to Book Your Driving Instructor Near Me? Start With Drive Dojo
+
+Finding the right driving instructor near me in Canary Wharf doesn't have to be overwhelming. The formula is straightforward: verify DVSA approval, confirm local route expertise, assess teaching style compatibility, and commit to a consistent lesson schedule.
+
+Drive Dojo Driving School brings together all of these qualities — fully qualified ADI instructors, genuine local knowledge of East London's roads and the Hither Green test routes, structured lesson plans tailored to individual learners, and a professional approach that prioritises your confidence and first-time pass rate.
+
+[Book your first lesson today](/booking/payg) or [contact us](/contact) to discuss your goals.`,
+    excerpt: "Looking for the best driving instructor in Canary Wharf? Drive Dojo's comprehensive guide covers local test routes, DVSA pass rates, lesson costs, and how to choose the right instructor near you in East London.",
+    featuredImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "May 30, 2025",
+    category: "Learning Tips",
+    tags: ["driving instructor near me", "Canary Wharf driving instructor", "Isle of Dogs driving lessons", "Hither Green test centre", "DVSA approved instructor", "East London driving school", "automatic driving lessons Canary Wharf", "Docklands driving instructor"],
+    readTime: 15,
+    views: 0, likes: 0, comments: 0,
+  },
+
   // HOW Articles
   {
     id: "how-many-driving-lessons-to-pass",

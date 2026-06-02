@@ -29,28 +29,29 @@ const IlfordLessons = () => {
   return (
     <>
       <SEO
-        title="Best Driving Lessons in Ilford | First 2 Hours Only £49!"
-        description="Learn to drive with Drive Dojo. Professional ADI instructors in Ilford. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
-        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Ilford, intensive driving lessons Ilford, automatic driving lessons Ilford, DVSA approved instructor, driving school Ilford, IG postcodes"
+        title="Book Driving Lessons in Ilford Instantly | Live Availability | Drive Dojo Driving School"
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book your driving lessons online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering IG1–IG6, Goodmayes & East London."
+        keywords="driving lessons Ilford, driving instructor Ilford, automatic driving lessons Ilford, intensive driving lessons Ilford, DVSA approved driving instructor Ilford, driving school Ilford, cheap driving lessons Ilford, learn to drive Ilford, IG1 IG2 IG3 IG4 IG5 IG6 driving lessons, Mercedes automatic driving lessons Ilford, best driving instructor Ilford"
         canonical="https://drivedojodrivingschool.com/driving-lessons/ilford"
         serviceSchema={{
           name: "Driving Lessons in Ilford",
-          description: "Professional driving lessons in Ilford with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
+          description: "Professional driving lessons in Ilford with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering all IG postcodes.",
           provider: {
-            name: "Drive Dojo",
+            name: "Drive Dojo Driving School",
             url: "https://drivedojodrivingschool.com"
           },
-          price: "49",
+          price: "70",
           priceCurrency: "GBP",
           areaServed: "Ilford, IG postcodes, East London"
         }}
       />
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Ilford","description":"DVSA approved driving lessons in Ilford. Automatic Mercedes-Benz A-Class. First 2 hours £70. Serving IG1–IG6 and all IG postcodes.","url":"https://drivedojodrivingschool.com/driving-lessons/ilford","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Ilford","IG1","IG2","IG3","IG4","IG5","IG6","East London"],"address":{"@type":"PostalAddress","addressLocality":"Ilford","addressRegion":"East London","postalCode":"IG1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5588,"longitude":0.0736},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
+      {/* Background decorative elements - Dark theme */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
 
       <Navbar />
 
@@ -66,23 +67,24 @@ const IlfordLessons = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    First 2 Hours Only £49
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff6b35] to-[#f5a623]">
+                    First 2 Hours Only £70
                   </span>{" "}
                   <br className="hidden md:block" />
-                  <span>Driving Lessons in Ilford</span>
+                  <span className="text-white">Driving Lessons in Ilford</span>
                 </h1>
 
-                <div className="mb-8 p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30">
-                  <p className="text-lg text-gray-800 font-medium">
-                    <span className="text-blue-600 font-bold">£49</span> for your first 2 hours — then{" "}
-                    <span className="text-blue-600 font-bold">£25/hr</span> ongoing. Book now!
+                <div className="mb-8 p-4 bg-gradient-to-r from-[#ff6b35]/20 to-[#f5a623]/20 rounded-xl border border-[#ff6b35]/30">
+                  <p className="text-lg text-white font-medium">
+                    <span className="text-[#ff6b35] font-bold">£70</span> for your first 2 hours (use code{" "}
+                    <span className="text-[#ff6b35] font-bold">SAVE25</span>) — then{" "}
+                    <span className="text-[#ff6b35] font-bold">£34/hr</span> ongoing. Book now!
                   </p>
                 </div>
 
-                <p className="text-xl text-gray-700 mb-8">
+                <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
                   Expert driving lessons in Ilford from a DVSA-approved instructor.
-                  Automatic lessons, intensive courses & 98% first-time pass rate.
+                  Automatic Mercedes-Benz A-Class, intensive courses & 98% first-time pass rate.
                   Book your first lesson today!
                 </p>
 
@@ -95,7 +97,7 @@ const IlfordLessons = () => {
                     <Input
                       type="text"
                       placeholder="Enter pickup postcode"
-                      className="pl-10 bg-white border-gray-200"
+                      className="pl-10 bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.1)] text-white placeholder:text-[rgba(255,255,255,0.4)]"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
                       required
@@ -103,7 +105,7 @@ const IlfordLessons = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                    className="bg-[#ff6b35] hover:bg-[#ff8555] text-white"
                   >
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -111,13 +113,13 @@ const IlfordLessons = () => {
                 </form>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <span className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="inline-flex items-center bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-medium border border-green-400/30">
                     ✓ DVSA Approved
                   </span>
-                  <span className="inline-flex items-center bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="inline-flex items-center bg-[#ff6b35]/20 text-[#ff6b35] px-3 py-1 rounded-full text-sm font-medium border border-[#ff6b35]/30">
                     ✓ 98% Pass Rate
                   </span>
-                  <span className="inline-flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="inline-flex items-center bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium border border-blue-400/30">
                     ✓ Automatic Only
                   </span>
                 </div>

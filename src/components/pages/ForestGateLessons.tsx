@@ -27,22 +27,18 @@ const ForestGateLessons = () => {
   return (
     <>
       <SEO
-        title="Best Driving Lessons in Forest Gate | First 2 Hours Only £49!"
-        description="Learn to drive with Drive Dojo. Professional ADI instructors in Forest Gate. Get your first 2 hours for just £49, then starting from £25/hr. Book today!"
-        keywords="cheap driving lessons in London, driving lesson block booking deals London, best driving instructor prices London, driving school hourly rates Forest Gate, intensive driving lessons E7, automatic driving lessons Forest Gate, DVSA approved instructor, driving lessons E7, driving instructor Forest Gate, first time pass"
+        title="Book Driving Lessons in Forest Gate Instantly | Live Availability | Drive Dojo"
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Wanstead test centre preparation. Covering E7, E11, E12, E15 & East London."
+        keywords="driving lessons Forest Gate, driving instructor Forest Gate, automatic driving lessons Forest Gate, intensive driving lessons E7, DVSA approved driving instructor Forest Gate, driving lessons E7, driving school Forest Gate, Wanstead test centre, cheap driving lessons Forest Gate, E7 driving instructor"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
         serviceSchema={{
           name: "Driving Lessons in Forest Gate",
-          description: "Professional driving lessons in Forest Gate with DVSA approved ADI instructor. First 2 hours £49, then from £25/hr. Automatic and manual lessons available.",
-          provider: {
-            name: "Drive Dojo",
-            url: "https://drivedojodrivingschool.com"
-          },
-          price: "49",
-          priceCurrency: "GBP",
-          areaServed: "Forest Gate, E7, East London"
+          description: "Professional driving lessons in Forest Gate with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E7 and surrounding E postcodes.",
+          provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
+          price: "70", priceCurrency: "GBP", areaServed: "Forest Gate, E7, E11, E12, E15, East London"
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Forest Gate","description":"DVSA approved driving lessons in Forest Gate. Automatic Mercedes-Benz A-Class. Wanstead, Barking & Goodmayes test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/forest-gate","telephone":"+447487228866","areaServed":["Forest Gate","E7","E11","E12","E15","Leytonstone","Stratford","East London"],"address":{"@type":"PostalAddress","addressLocality":"Forest Gate","addressRegion":"East London","postalCode":"E7","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5488,"longitude":0.0236},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
       {/* Background decorative elements - Dark theme */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>

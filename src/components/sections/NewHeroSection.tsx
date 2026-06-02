@@ -198,6 +198,21 @@ const NewHeroSection = ({
               )}
             </div>
 
+            {/* Klarna Trust Badge — Buy Now, Pay Later */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center justify-center gap-3 bg-pink-500/10 backdrop-blur-md border border-pink-400/20 rounded-xl px-5 py-3"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-pink-300 font-bold text-sm tracking-wide">Klarna.</span>
+                <span className="w-px h-4 bg-pink-400/30"></span>
+                <span className="text-white text-sm font-medium">Pay in 3 interest-free instalments</span>
+              </div>
+              <span className="text-pink-300 text-xs bg-pink-500/20 px-2 py-0.5 rounded-full font-semibold">AVAILABLE</span>
+            </motion.div>
+
             {/* Social Proof */}
             <div className="flex items-center space-x-6 text-sm">
               <div className="flex items-center">

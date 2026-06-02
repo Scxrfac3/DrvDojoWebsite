@@ -277,8 +277,8 @@ const IntensiveDrivingCoursesIlford = () => {
     <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* SEO - Full optimization for local intensive driving course searches */}
       <SEO
-        title="Intensive Driving Courses Ilford | Pass in 1–2 Weeks | DVSA Approved | Klarna Available"
-        description="Fast-track your driving licence with Drive Dojo's intensive driving courses in Ilford. 1–2 week crash courses covering Goodmayes, Barking & Wanstead test centres. DVSA approved instructor, Mercedes-Benz automatic, Klarna interest-free payments. From £650. Book now!"
+        title="Book Intensive Driving Courses in Ilford Instantly | Pass in 1–2 Weeks | Drive Dojo"
+        description="Book your intensive driving course instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic. From £650. Pass in 1–2 weeks. Goodmayes, Barking & Wanstead test centres."
         keywords="intensive driving courses Ilford, intensive driving lessons East London, crash course driving Ilford, fast track driving test Ilford, learn to drive fast Ilford, DVSA intensive driving course, automatic intensive driving course Ilford, driving crash course East London, intensive driving school Ilford, pass driving test quickly Ilford, intensive driving lessons IG1 IG2 IG3, Goodmayes DTC intensive course, Barking test centre crash course, Wanstead test centre intensive lessons, Klarna driving lessons, pay monthly driving lessons Ilford, 1 week driving course Ilford, 2 week driving course East London, intensive automatic driving lessons, cheap intensive driving courses London, driving instructor intensive course, Mercedes automatic driving lessons Ilford"
         canonical="https://drivedojodrivingschool.com/intensive-driving-courses-ilford"
         serviceSchema={{
