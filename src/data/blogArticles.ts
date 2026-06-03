@@ -115,12 +115,107 @@ At **Drive Dojo**, we've built the most modern, convenient booking experience in
 
 [Book your teenager's first lesson today →](/booking/payg)`,
     excerpt: "Everything parents and teenagers need to know about learning to drive in London in 2026 — from costs and lesson counts to booking rules, test centres, anxiety management, and choosing the right driving school.",
-    featuredImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
+    featuredImage: "/images/blog/NewLeaflet.png",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
     publishedDate: "June 1, 2026",
     category: "Learning Tips",
     tags: ["teenage driving lessons London", "driving lessons for teenagers", "learn to drive at 17", "London driving school 2026", "teenager driving test", "provisional licence", "DVSA booking rules 2026", "driving lesson costs London", "driving anxiety teenagers", "automatic driving lessons"],
     readTime: 16,
+    views: 0, likes: 0, comments: 0,
+  },
+
+  // ─── HOW TO AVOID LOSING YOUR DRIVING LICENCE — EAST LONDON ──────────
+  {
+    id: "how-to-avoid-losing-driving-licence-uk-east-london",
+    title: "How to Avoid Losing Your Driving Licence in the UK: A Guide for East London Drivers",
+    slug: "how-to-avoid-losing-driving-licence-uk-east-london",
+    content: `# How to Avoid Losing Your Driving Licence in the UK: A Guide for East London Drivers
+
+Passing your practical test in Wood Green or Goodmayes is an incredible milestone, but it is only the first step. Driving in the UK isn't just about passing your test — it is about meeting a strict set of legal standards each and every time you get behind the wheel.
+
+The UK penalty point system is designed to keep our roads safe. If your driving falls below the required standard, you will face consequences. While some offenses are obvious, others can catch even the most experienced drivers off guard.
+
+Whether you are a new driver navigating the busy streets of Canary Wharf or a seasoned commuter on the A406, here is what you need to know about how British drivers end up losing their licences — and how you can avoid becoming one of them.
+
+## Key Takeaways
+
+- **The 6-Point Rule for New Drivers:** If you accumulate six or more penalty points within two years of passing your test, your licence will be instantly revoked.
+- **The 12-Point Limit:** For experienced drivers, reaching 12 penalty points within a three-year period typically results in disqualification.
+- **AI Cameras are Active:** New AI-driven infrared cameras (like AcuSense) are currently being rolled out across the UK, capable of detecting mobile phone use and seatbelt offenses through your windscreen.
+- **"Careless Driving" is Broad:** You can be penalized for anything that impairs your control, including eating, drinking, or driving while overly fatigued.
+
+## 1. Speeding: The Most Common Trap
+
+Speeding is one of the most frequent reasons drivers accumulate penalty points. Depending on how far over the limit you are caught driving, you will typically receive between three and six penalty points on your licence.
+
+**Minor Offenses:** In less serious cases, you may be offered the chance to attend a Speed Awareness Course instead of receiving points.
+
+**Serious Offenses:** Excessive speeding can skip the points system entirely and result in an immediate driving ban and a court summons.
+
+## 2. Mobile Phone Use & New AI Cameras
+
+Using a mobile phone while driving is a heavily penalized offense. The law is deliberately strict: almost any handheld use — including taking calls, unlocking your device, messaging, or scrolling — is illegal.
+
+If caught, you will face a **£200 fine and six penalty points**. For a new driver in their first two years, a single mobile phone offense will result in the immediate loss of their driving licence. Furthermore, with the rollout of new AcuSense AI cameras taking long-range and top-down infrared shots into vehicle cabins, the chances of being caught in London are higher than ever.
+
+## 3. Drink and Drug Driving Limits
+
+The drink-driving limit in England (including London) is **80mg of alcohol per 100ml of blood**. However, because alcohol affects everyone differently, attempting to "guess" your limit is incredibly dangerous. Many drivers are caught the morning after a night out because alcohol is still in their system. The safest approach is simple: if you are driving, stick to soft drinks.
+
+Drug driving operates under strict legal limits for various substances, including cannabis, cocaine, and even certain prescription medications. If your driving is impaired, penalties include a driving ban, an unlimited fine, and potentially a prison sentence.
+
+## 4. Distractions and "Careless Driving"
+
+The law requires you to be in proper control of your vehicle at all times. This phrasing is intentionally broad. It covers anything that distracts you from driving safely — from eating a sandwich to driving while severely fatigued.
+
+While there is no specific offense for "driving while tired," by getting behind the wheel, you are legally declaring that you are fit to do so. If fatigue causes slower reactions, it can be classified as careless or dangerous driving, carrying significant penalties.
+
+## 5. Clear Vision and Vehicle Maintenance
+
+You must be able to see where you are going. This includes keeping your windscreen, windows, and mirrors clear of dirt, frost, or ice. If a police officer deems your vision obstructed, you can be penalized, regardless of your intent.
+
+## 6. Undisclosed Medical Conditions
+
+If you develop a medical condition that could affect your ability to drive safely (such as epilepsy, certain heart conditions, or severe vision issues), you are legally required to inform the DVLA. Over 10% of accidents in the UK are related to medical conditions. Failing to report yours can result in a hefty fine and the loss of your licence.
+
+## 7. Letting Someone Else Drive Your Car
+
+You can get into serious trouble for allowing an uninsured or unlicensed driver behind the wheel of your vehicle. Even if your own driving is perfect, you can be penalized for permitting someone else to drive your car illegally.
+
+---
+
+## 📊 How Many Lessons Before You're Road-Ready? Use Our Free Estimator
+
+Safe driving starts with proper training. Our **Lesson Hours Estimator** calculates a personalised estimate of how many professional hours you need based on your age, experience, and learning pace — using official DVSA baseline data. [Try the estimator now on our homepage →](/)
+
+---
+
+## ⚡ Protect Your Licence: Start with the Right Foundation
+
+Driving isn't just about learning the rules once to pass a test; it is about continuing to follow them. The penalty system is designed to gradually remove a driver's licence if their standard falls below the legal requirement.
+
+The best way to ensure a lifetime of safe driving is to learn the right habits from day one. At **Drive Dojo Driving School**, our Grade-A DVSA instructors don't just teach you how to pass the test; we teach you how to drive safely for life on London's busy roads.
+
+**Ready to build the right driving habits?**
+- [Book Your Introductory Lesson — First 2 Hours for £70 →](/booking/payg)
+- [View All Services & Packages →](/services)
+
+💳 **Spread the cost of your 10-hour block booking with Klarna — pay in 3 interest-free!**
+
+---
+
+### Sources & Further Reading
+
+- [DVSA The Highway Code: Rules for drivers and motorcyclists](https://www.gov.uk/guidance/the-highway-code)
+- [GOV.UK Penalty Points (Endorsements)](https://www.gov.uk/penalty-points-endorsements)
+- [Drive Dojo Academy — Advanced tips for mastering East London test routes](/blog)`,
+    excerpt: "Passing your test is just the beginning. Learn how the UK penalty point system works, what AI cameras now detect, and how East London drivers can protect their licence — from speeding to mobile phone laws.",
+    featuredImage: "/images/blog/NewLeaflet.png",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "June 3, 2026",
+    category: "Learning Tips",
+    tags: ["how to avoid losing driving licence", "UK penalty points", "driving licence revoked", "AI cameras driving", "AcuSense cameras", "mobile phone driving law", "drink driving UK", "careless driving", "East London driver guide", "DVSA rules", "new driver 6 points rule"],
+    readTime: 10,
     views: 0, likes: 0, comments: 0,
   },
 
@@ -261,7 +356,7 @@ Drive Dojo Driving School brings together all of these qualities — fully quali
 
 [Book your first lesson today](/booking/payg) or [contact us](/contact) to discuss your goals.`,
     excerpt: "Looking for the best driving instructor in Canary Wharf? Drive Dojo's comprehensive guide covers local test routes, DVSA pass rates, lesson costs, and how to choose the right instructor near you in East London.",
-    featuredImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    featuredImage: "/images/blog/NewLeaflet.png",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
     publishedDate: "May 30, 2025",
     category: "Learning Tips",

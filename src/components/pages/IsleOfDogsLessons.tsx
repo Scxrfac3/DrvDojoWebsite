@@ -91,7 +91,7 @@ const IsleOfDogsLessons = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `/booking?postcode=${postcode}`;
+    window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
   };
 
   return (
@@ -151,16 +151,17 @@ const IsleOfDogsLessons = () => {
                     — Learn from an official DVSA approved instructor who specializes in helping students pass first time. Expert instruction across all E14 postcodes.
                   </p>
 
+                  <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] max-w-md mx-auto lg:mx-0">
                   <form
                     onSubmit={handleSubmit}
-                    className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0"
+                    className="flex flex-col sm:flex-row gap-3"
                   >
                     <div className="relative flex-grow">
-                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[rgba(255,255,255,0.5)]" />
+                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
                       <Input
                         type="text"
                         placeholder="Enter E14 or other postcode"
-                        className="pl-10 bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.1)] text-white placeholder:text-[rgba(255,255,255,0.4)]"
+                        className="pl-10 bg-white/20 border border-white/30 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         value={postcode}
                         onChange={(e) => setPostcode(e.target.value)}
                         required
@@ -168,12 +169,13 @@ const IsleOfDogsLessons = () => {
                     </div>
                     <Button
                       type="submit"
-                      className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white group relative overflow-hidden"
+                      className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
                     >
                       Get Started Today
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-4 w-4" />
                     </Button>
                   </form>
+                </div>
                 </motion.div>
 
                 <motion.div
@@ -419,7 +421,7 @@ const IsleOfDogsLessons = () => {
                 <Button
                   size="lg"
                   className="bg-white text-orange-600 hover:bg-gray-100 shadow-lg"
-                  onClick={() => (window.location.href = "/booking")}
+                  onClick={() => (window.location.href = "/services")}
                 >
                   Book Your First Lesson
                   <ArrowRight className="ml-2 h-4 w-4" />

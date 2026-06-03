@@ -20,8 +20,7 @@ const CanningTownLessons = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle the postcode submission - in a real app this would redirect to booking
-    window.location.href = `/booking?postcode=${postcode}`;
+    window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
   };
 
   return (
@@ -81,36 +80,31 @@ const CanningTownLessons = () => {
                   — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre. Former instructor with Red Driving School and AA Driving School, serving all E16 postcodes.
                 </p>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0"
-                >
-                  <div className="relative flex-grow">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[rgba(255,255,255,0.5)]" />
-                    <Input
-                      type="text"
-                      placeholder="Enter E16, E14, E6, or other East London postcode"
-                      className="pl-10 bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.1)] text-white placeholder:text-[rgba(255,255,255,0.4)]"
-                      value={postcode}
-                      onChange={(e) => setPostcode(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white group relative overflow-hidden"
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] max-w-md mx-auto lg:mx-0">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col sm:flex-row gap-3"
                   >
-                    Get Started Today
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    <motion.div
-                      className="absolute inset-0 bg-white"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.4 }}
-                      style={{ opacity: 0.2 }}
-                    />
-                  </Button>
-                </form>
+                    <div className="relative flex-grow">
+                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+                      <Input
+                        type="text"
+                        placeholder="Enter E16, E14, E6, or other East London postcode"
+                        className="pl-10 bg-white/20 border border-white/30 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        value={postcode}
+                        onChange={(e) => setPostcode(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
+                    >
+                      Get Started Today
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </form>
+                </div>
               </motion.div>
 
               <motion.div

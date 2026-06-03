@@ -21,7 +21,7 @@ const featuredArticles: Article[] = [
       "The UK pass rate sits at just 48.65%. In Canary Wharf, Hither Green reports only 39.4%. Here's how to find the right instructor and pass first time in East London.",
     date: "May 30, 2025",
     readTime: 15,
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
+    image: "/images/blog/NewLeaflet.png",
     tag: "Local Guide",
   },
   {
@@ -31,7 +31,7 @@ const featuredArticles: Article[] = [
       "Everything parents and teenagers need to know — from costs and provisional licences to the new 2026 DVSA booking rules, test centres, and anxiety management.",
     date: "June 1, 2026",
     readTime: 16,
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80",
+    image: "/images/blog/NewLeaflet.png",
     tag: "Learning Tips",
   },
 ];

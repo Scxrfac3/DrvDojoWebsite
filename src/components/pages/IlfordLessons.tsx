@@ -23,7 +23,7 @@ const IlfordLessons = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `/booking?postcode=${postcode}`;
+    window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
   };
 
   return (
@@ -88,29 +88,31 @@ const IlfordLessons = () => {
                   Book your first lesson today!
                 </p>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0"
-                >
-                  <div className="relative flex-grow">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <Input
-                      type="text"
-                      placeholder="Enter pickup postcode"
-                      className="pl-10 bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.1)] text-white placeholder:text-[rgba(255,255,255,0.4)]"
-                      value={postcode}
-                      onChange={(e) => setPostcode(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="bg-[#ff6b35] hover:bg-[#ff8555] text-white"
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] max-w-md mx-auto lg:mx-0">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col sm:flex-row gap-3"
                   >
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
+                    <div className="relative flex-grow">
+                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+                      <Input
+                        type="text"
+                        placeholder="Enter pickup postcode"
+                        className="pl-10 bg-white/20 border border-white/30 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        value={postcode}
+                        onChange={(e) => setPostcode(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
+                    >
+                      Get Started
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </form>
+                </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
                   <span className="inline-flex items-center bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-medium border border-green-400/30">
