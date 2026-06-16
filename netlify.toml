@@ -71,17 +71,6 @@
 # REDIRECTS (order matters — first match wins)
 # ─────────────────────────────────────────────────────────────
 
-# --- TRAILING SLASH NORMALISATION ---
-# Remove trailing slashes to prevent duplicate content & redirect loops.
-# Netlify treats /page and /page/ as the same resource with SPA catch-all,
-# which causes infinite redirects if React Router also redirects on slashes.
-# These rules normalise everything to no trailing slash.
-[[redirects]]
-  from = "/*/"
-  to = "/:splat"
-  status = 301
-  force = true
-
 # --- API ENDPOINTS → NETLIFY FUNCTIONS ---
 # Must come BEFORE the catch-all SPA redirect
 [[redirects]]
