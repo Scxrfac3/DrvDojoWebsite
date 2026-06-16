@@ -44,7 +44,7 @@ const Footer = ({
   contactInfo = {
     email: "drivedojo@gmail.com",
     phone: "+44 748 722 8866",
-    address: "Goodmayes, Essex",
+    address: "Serving East London, Redbridge, Havering & Barking — Tower Hamlets, Newham, Hackney, Redbridge & more",
   },
   quickLinks = [
     { title: "About Us", href: "/about" },
@@ -171,14 +171,14 @@ const Footer = ({
               </div>
             </motion.div>
             <p className="text-gray-400 text-sm">
-              Premium automatic driving lessons in East London & Essex. Learn to drive in a Mercedes-Benz A-Class with DVSA approved instructors.
+              Premium automatic driving lessons across East London, Redbridge, Havering, Barking, Tower Hamlets, Newham, Hackney & beyond. Learn to drive in a Mercedes-Benz A-Class with DVSA approved instructors.
             </p>
             <motion.div
               className="flex items-center space-x-2 text-sm text-primary"
               whileHover={{ x: 5 }}
             >
               <Rocket className="h-4 w-4" />
-              <span>East London & Essex</span>
+              <span>Serving East London & surrounding boroughs</span>
             </motion.div>
           </motion.div>
 
@@ -293,6 +293,69 @@ const Footer = ({
                   </Link>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* Resources — internal linking for SEO */}
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-semibold text-white">
+              Resources
+            </h3>
+            <div className="grid grid-cols-1 gap-2 text-gray-400">
+              <Link to="/test-centres" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Test Centre Explorer</span>
+              </Link>
+              <Link to="/practical-test-prep/show-me-tell-me" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Show Me Tell Me</span>
+              </Link>
+              <Link to="/driving-test-centres/goodmayes" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Goodmayes Test Centre</span>
+              </Link>
+              <Link to="/driving-test-centres/barking" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Barking Test Centre</span>
+              </Link>
+              <Link to="/driving-test-centres/wanstead" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Wanstead Test Centre</span>
+              </Link>
+              <Link to="/learn-to-drive/skills/roundabouts" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Learn to Drive: Roundabouts</span>
+              </Link>
+              <Link to="/learn-to-drive/skills/junctions" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Learn to Drive: Junctions</span>
+              </Link>
+              <Link to="/learn-to-drive/driving-manoeuvres/parallel-parking" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Learn to Drive: Parallel Parking</span>
+              </Link>
+              <Link to="/international-licence-conversion" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>International Licence Conversion</span>
+              </Link>
+              <Link to="/refresher-driving-lessons" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Refresher Driving Lessons</span>
+              </Link>
+              <Link to="/pass-plus-courses" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Pass Plus Courses</span>
+              </Link>
+              <Link to="/sitemap" className="hover:text-primary transition-colors text-sm flex items-center space-x-1 font-medium text-primary">
+                <span>▸</span>
+                <span>Full Sitemap</span>
+              </Link>
             </div>
           </motion.div>
 

@@ -28,7 +28,7 @@ const WalthamstowLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Walthamstow Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Walthamstow & Chingford test centre prep. Covering E10, E11, E17 & East London."
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Walthamstow & Chingford test centre prep. Covering E10, E11, E17 & East London."
         keywords="driving lessons Walthamstow, driving instructor Walthamstow, automatic driving lessons Walthamstow, intensive driving lessons Walthamstow, DVSA approved driving instructor Walthamstow, driving school Walthamstow, E10 E11 E17 driving lessons, Walthamstow test centre, cheap driving lessons Walthamstow"
         canonical="https://drivedojodrivingschool.com/driving-lessons/walthamstow"
         serviceSchema={{
@@ -38,356 +38,312 @@ const WalthamstowLessons = () => {
           price: "70", priceCurrency: "GBP", areaServed: "Walthamstow, E10, E11, E17, East London"
         }}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Walthamstow","description":"DVSA approved driving lessons in Walthamstow. Automatic Mercedes-Benz A-Class. Chingford & Wanstead test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/walthamstow","telephone":"+447487228866","areaServed":["Walthamstow","E10","E11","E17","Leytonstone","East London"],"address":{"@type":"PostalAddress","addressLocality":"Walthamstow","addressRegion":"East London","postalCode":"E17","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5888,"longitude":-0.0236},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Walthamstow","description":"DVSA approved driving lessons in Walthamstow. Automatic Mercedes-Benz A-Class. Chingford & Wanstead test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/walthamstow","telephone":"+447487228866","areaServed":["Walthamstow","E10","E11","E17","Leytonstone","East London"],"address":{"@type":"PostalAddress","addressLocality":"Walthamstow","addressRegion":"East London","postalCode":"E17","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5888,"longitude":-0.0236},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
-      {/* Background decorative elements - Dark theme */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
 
-      <Navbar />
+        <Navbar />
 
-      <main className="pt-[100px] pb-20 relative z-10">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                className="text-center lg:text-left"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    First 2 Hours Only £49
-                  </span>{" "}
-                  <br className="hidden md:block" />
-                  <span>Driving Lessons in Walthamstow</span>
-                </h1>
-
-                <div className="mb-8 p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30">
-                  <p className="text-lg text-gray-800 font-medium">
-                    <span className="text-blue-600 font-bold">£49</span> for your first 2 hours — then{" "}
-                    <span className="text-blue-600 font-bold">£25/hr</span> ongoing. Book now!
-                  </p>
-                </div>
-
-                <p className="text-xl text-gray-700 mb-8">
-                  Expert driving lessons in Walthamstow from a DVSA-approved instructor.
-                  Automatic lessons, intensive courses & 98% first-time pass rate.
-                  Book your first lesson today!
-                </p>
-
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] max-w-md mx-auto lg:mx-0">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-col sm:flex-row gap-3"
-                  >
-                    <div className="relative flex-grow">
-                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
-                      <Input
-                        type="text"
-                        placeholder="Enter pickup postcode"
-                        className="pl-10 bg-white/20 border border-white/30 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        value={postcode}
-                        onChange={(e) => setPostcode(e.target.value)}
-                        required
-                      />
+        <main className="pt-[100px] pb-20 relative z-10">
+          {/* Hero Section - Premium dark redesign */}
+          <section className="relative py-16 md:py-24 overflow-hidden">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <motion.div
+                  className="text-center lg:text-left"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex items-center gap-4 mb-6 justify-center lg:justify-start">
+                    <div className="flex items-center bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/30">
+                      <CheckCircle className="h-5 w-5 text-primary mr-2" />
+                      <span className="text-sm font-medium">DVSA Approved</span>
                     </div>
-                    <Button
-                      type="submit"
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
-                    >
-                      Get Started
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </form>
-                </div>
-
-                <div className="mt-6 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-                  <span className="inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                    ✓ DVSA Approved
-                  </span>
-                  <span className="inline-flex items-center bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
-                    ✓ 98% Pass Rate
-                  </span>
-                  <span className="inline-flex items-center bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                    ✓ Automatic Only
-                  </span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-auto object-cover rounded-2xl"
-                  >
-                    <source src="/images/certifications/mercedesCTA.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center space-x-1 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className="h-5 w-5 text-yellow-400 fill-yellow-400"
-                        />
-                      ))}
-                      <span className="text-white ml-2 font-medium">
-                        4.9/5 (2,000+ reviews)
-                      </span>
+                    <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
+                      <span className="text-sm font-medium">E10, E11, E17</span>
                     </div>
-                    <p className="text-white/90 text-sm">
-                      "My instructor was amazing! Passed my test first time at
-                      Walthamstow Test Centre!"
-                    </p>
                   </div>
-                </div>
 
-                {/* Floating badges */}
-                <motion.div
-                  className="absolute -top-5 -right-5 bg-white rounded-full p-4 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.5, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <img
-                    src="/images/certifications/DVSA-ADI.png"
-                    alt="DVSA Approved Instructor"
-                    className="h-16 w-16 object-contain"
-                  />
-                </motion.div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-500">
+                      Driving Lessons
+                    </span>{" "}
+                    <br className="hidden md:block" />
+                    <span className="text-white">in Walthamstow</span>
+                  </h1>
 
-                <motion.div
-                  className="absolute -bottom-5 -left-5 bg-white rounded-full p-3 shadow-lg"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.7, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                >
-                  <img
-                    src="/images/certifications/PassPlus.png"
-                    alt="Pass Plus Certified"
-                    className="h-14 w-14 object-contain"
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+                  <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                    DVSA approved instructor covering E10, E11, and E17. Prep for Walthamstow and Chingford test centres.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
+                    <span className="text-primary font-semibold"> £25/hr</span>.
+                  </p>
 
-        {/* Features Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Choose Our Driving Lessons in Walthamstow?
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                We cover all Walthamstow postcodes including E10, E11, E17 with 
-                door-to-door pickup included in all lessons.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md border border-blue-200"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-blue-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  DVSA Approved Instructor
-                </h3>
-                <p className="text-gray-700">
-                  Learn from a fully qualified DVSA-approved driving instructor in Walthamstow. 
-                  All lessons in automatic Mercedes-Benz vehicles for easier learning.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md border border-purple-200"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-purple-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  98% First-Time Pass Rate
-                </h3>
-                <p className="text-gray-700">
-                  Our intensive driving lessons in Walthamstow have a 98% first-time pass rate — 
-                  13% higher than the national average. Learn faster, pass first time!
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md border border-green-200"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-green-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Car className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  Automatic Mercedes-Benz
-                </h3>
-                <p className="text-gray-700">
-                  Learn to drive in style with our automatic Mercedes-Benz A-Class. 
-                  No clutch, no gear changes — just smoother, faster learning in Walthamstow.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Local Area Section */}
-        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Why Learn to Drive in Walthamstow?
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Walthamstow offers the perfect environment for learner drivers
-                with its mix of quiet residential streets and busier main roads.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  Perfect for Test Preparation
-                </h3>
-                <p className="text-gray-700 mb-6">
-                  Walthamstow Test Centre is known for its diverse routes,
-                  making it an excellent place to prepare for your driving test.
-                  Our instructors have extensive knowledge of all local test
-                  routes and will ensure you're fully prepared.
-                </p>
-
-                <ul className="space-y-3">
-                  {[
-                    "Quiet residential areas perfect for beginners in E10, E11",
-                    "Practice on the North Circular (A406) for dual carriageway experience",
-                    "Challenging roundabouts and junctions for advanced skills",
-                    "Variety of road types to build comprehensive driving abilities",
-                    "Local instructors with specific Walthamstow Test Centre knowledge",
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      viewport={{ once: true }}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-col sm:flex-row gap-3"
                     >
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
+                      <div className="relative flex-grow">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+                        <Input
+                          type="text"
+                          placeholder="Enter pickup postcode"
+                          className="pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          value={postcode}
+                          onChange={(e) => setPostcode(e.target.value)}
+                          required
+                        />
+                      </div>
+                      <Button
+                        type="submit"
+                        className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
+                      >
+                        Check Availability
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </form>
+                  </div>
 
+                  <div className="mt-6 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+                    <span className="inline-flex items-center bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium border border-primary/30">
+                      DVSA Approved
+                    </span>
+                    <span className="inline-flex items-center bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm font-medium border border-orange-400/30">
+                      98% Pass Rate
+                    </span>
+                    <span className="inline-flex items-center bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-medium border border-green-400/30">
+                      Automatic Only
+                    </span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500">
+                    <video
+                      autoPlay muted loop playsInline
+                      className="w-full h-auto object-cover rounded-3xl"
+                    >
+                      <source src="/images/certifications/mercedesCTA.mp4" type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="flex items-center space-x-1 mb-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                        ))}
+                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                      </div>
+                      <p className="text-white/90 text-sm">
+                        "Passed first time at Walthamstow Test Centre!"
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Floating badges - premium backdrop styling */}
+                  <motion.div
+                    className="absolute -top-5 -right-5 bg-white/10 backdrop-blur-md rounded-full p-4 shadow-lg border border-white/10"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <img src="/images/certifications/DVSA-ADI.png" alt="DVSA Approved Instructor" className="h-16 w-16 object-contain" />
+                  </motion.div>
+                  <motion.div
+                    className="absolute -bottom-5 -left-5 bg-white/10 backdrop-blur-md rounded-full p-3 shadow-lg border border-white/10"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.7, type: "spring" }}
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                  >
+                    <img src="/images/certifications/PassPlus.png" alt="Pass Plus Certified" className="h-14 w-14 object-contain" />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section - Premium dark styling */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Why Choose Our Driving Lessons in Walthamstow?</h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Covering E10, E11, E17 with door-to-door pickup included in all lessons.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">DVSA Approved</h3>
+                  <p className="text-gray-400">
+                    Fully qualified DVSA-approved instructor. All lessons in automatic Mercedes-Benz vehicles for easier learning.
+                  </p>
+                </motion.div>
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Award className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">98% Pass Rate</h3>
+                  <p className="text-gray-400">
+                    13% above the national average. I teach until you are test-ready, not until the clock runs out.
+                  </p>
+                </motion.div>
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Car className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Mercedes-Benz A-Class</h3>
+                  <p className="text-gray-400">
+                    Automatic transmission. No clutch, no gear changes - just focus on the road and your driving.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Local Area Section - Premium dark styling */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
               <motion.div
-                className="rounded-xl overflow-hidden shadow-lg"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Why Learn to Drive in Walthamstow?</h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Mix of quiet residential streets and busier main roads around the North Circular.
+                </p>
+              </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-2xl font-bold mb-4 text-white">Perfect for Test Preparation</h3>
+                  <p className="text-gray-400 mb-6">
+                    Walthamstow Test Centre runs diverse routes. Your instructor targets them all.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Quiet residential areas perfect for beginners in E10, E11",
+                      "Practice on the North Circular (A406) for dual carriageway experience",
+                      "Challenging roundabouts and junctions for advanced skills",
+                      "Variety of road types to build comprehensive driving abilities",
+                      "Local instructors with specific Walthamstow Test Centre knowledge",
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 * index }}
+                        viewport={{ once: true }}
+                      >
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+                <motion.div
+                  className="rounded-2xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <img
+                    src="/images/certifications/C4.png"
+                    alt="Walthamstow driving area"
+                    className="w-full h-auto object-cover"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Special Offers Section */}
+          <SpecialOffersSection />
+
+          {/* CTA Section - Premium dark styling */}
+          <section className="py-16 bg-gradient-to-r from-primary to-orange-600 text-white">
+            <div className="container mx-auto px-4 text-center">
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Ready to Start Driving in Walthamstow?
+              </motion.h2>
+              <motion.p
+                className="text-xl mb-8 max-w-2xl mx-auto text-white/90"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                Book your first lesson today with free pickup from your home.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/images/certifications/C4.png"
-                  alt="Walthamstow driving area - Practice routes around Walthamstow"
-                  className="w-full h-auto object-cover"
-                />
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-gray-100 shadow-lg"
+                  onClick={() => (window.location.href = "/services")}
+                >
+                  Book Your First Lesson
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
 
-        {/* Special Offers Section */}
-        <SpecialOffersSection />
-
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Ready to Start Driving in Walthamstow?
-            </motion.h2>
-
-            <motion.p
-              className="text-xl mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Book your first lesson today and take the first step towards
-              driving freedom in Walthamstow. Free pickup from your home or work!
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Button
-                size="lg"
-                className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg"
-                onClick={() => (window.location.href = "/services")}
-              >
-                Book Your First Lesson
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
     </>
   );
 };

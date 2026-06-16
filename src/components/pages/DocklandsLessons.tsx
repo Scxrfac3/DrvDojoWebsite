@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -15,63 +15,11 @@ import {
   Award,
 } from "lucide-react";
 
-// FAQPage Schema for SEO
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much do driving lessons cost in Docklands?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Driving lessons in Docklands and E14 start from £45 for a 90-minute session. We offer intensive courses and block booking discounts for E14 and Canary Wharf areas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer automatic driving lessons in Canary Wharf?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes! We specialize in automatic driving lessons in Canary Wharf and all E14 postcodes. Automatic lessons are perfect for busy professionals in the Docklands area."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What driving test routes do you use in Docklands?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our instructors know all the local test routes in Docklands including Isle of Dogs, Poplar, and Canary Wharf test routes. We practice on A1261, Aspen Way, and Limehouse Link."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you cover all E14 and E16 postcodes in Docklands?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we serve all Docklands postcodes including E14, E16, and surrounding areas. Our intensive driving lessons in E14 Canary Wharf are popular with local residents."
-      }
-    }
-  ]
-};
-
 const DocklandsLessons = () => {
   const [postcode, setPostcode] = useState("");
 
-  // Inject FAQPage schema for SEO
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(faqSchema);
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect to services page with postcode parameter
     window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
   };
 
@@ -79,7 +27,7 @@ const DocklandsLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Docklands Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E14, E16, Canary Wharf & Isle of Dogs."
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E14, E16, Canary Wharf & Isle of Dogs."
         keywords="driving lessons Docklands, driving instructor Docklands, automatic driving lessons Canary Wharf, intensive driving lessons Docklands, DVSA approved driving instructor Docklands, driving school Docklands, E14 driving lessons, Canary Wharf driving instructor, Isle of Dogs driving lessons, cheap driving lessons Docklands"
         canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
         serviceSchema={{
@@ -89,321 +37,294 @@ const DocklandsLessons = () => {
           price: "70", priceCurrency: "GBP", areaServed: "Docklands, Canary Wharf, Isle of Dogs, E14, E16, East London"
         }}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Docklands","description":"DVSA approved driving lessons in Docklands and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £70. Covering E14, E16.","url":"https://drivedojodrivingschool.com/driving-lessons/docklands","telephone":"+447487228866","areaServed":["Docklands","Canary Wharf","Isle of Dogs","E14","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"Docklands","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5050,"longitude":-0.0200},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
-      <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
-      {/* Background decorative elements - Dark theme */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Docklands","description":"DVSA approved driving lessons in Docklands and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £70. Covering E14, E16.","url":"https://drivedojodrivingschool.com/driving-lessons/docklands","telephone":"+447487228866","areaServed":["Docklands","Canary Wharf","Isle of Dogs","E14","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"Docklands","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5050,"longitude":-0.0200},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
 
-      <Navbar />
+        <Navbar />
 
-      <main className="pt-[100px] pb-20 relative z-10">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                className="text-center lg:text-left"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                    First 2 Hours Only £49
-                  </span>{" "}
-                  <br className="hidden md:block" />
-                  <span className="text-white">Driving Lessons in Docklands</span>
-                </h1>
-
-                <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
-                  <p className="text-lg text-white font-medium">
-                    <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
-                    <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
-                  </p>
-                </div>
-
-                <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
-                  <span className="font-semibold text-orange-400">
-                    Professional DVSA approved ADI instructor in Docklands
-                  </span>{" "}
-                  — Learn from an official DVSA approved instructor who specializes in helping students pass first time. Former instructor with Red Driving School and AA Driving School, serving all Docklands postcodes.
-                </p>
-
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-col sm:flex-row gap-3"
-                  >
-                    <div className="relative flex-grow">
-                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
-                      <Input
-                        type="text"
-                        placeholder="Enter E14, E16, or other Docklands postcode"
-                        className="pl-10 bg-white/20 border border-white/30 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        value={postcode}
-                        onChange={(e) => setPostcode(e.target.value)}
-                        required
-                      />
+        <main className="pt-[100px] pb-20 relative z-10">
+          {/* Hero Section */}
+          <section className="relative py-16 md:py-24 overflow-hidden">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <motion.div
+                  className="text-center lg:text-left"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex items-center gap-4 mb-6 justify-center lg:justify-start">
+                    <div className="flex items-center bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/30">
+                      <CheckCircle className="h-5 w-5 text-primary mr-2" />
+                      <span className="text-sm font-medium">DVSA Approved</span>
                     </div>
-                    <Button
-                      type="submit"
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
-                    >
-                      Get Started Today
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </form>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="/images/certifications/BANNER_MAIN3276.png"
-                    alt="Driving lessons in Docklands"
-                    className="w-full h-auto object-cover rounded-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center space-x-1 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className="h-5 w-5 text-yellow-400 fill-yellow-400"
-                        />
-                      ))}
-                      <span className="text-white ml-2 font-medium">
-                        4.9/5 (2,000+ reviews)
-                      </span>
+                    <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
+                      <span className="text-sm font-medium">E14 & E16</span>
                     </div>
-                    <p className="text-white/90 text-sm">
-                      "My instructor was amazing! Passed my test first time with
-                      lessons in Docklands!"
-                    </p>
                   </div>
-                </div>
 
-                {/* Floating badges */}
-                <motion.div
-                  className="absolute -top-5 -right-5 bg-[rgba(255,255,255,0.1)] backdrop-blur-md rounded-full p-4 shadow-lg border border-[rgba(255,255,255,0.1)]"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.5, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <img
-                    src="/images/certifications/DVSA-ADI.png"
-                    alt="DVSA Approved"
-                    className="h-16 w-16 object-contain"
-                  />
-                </motion.div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-500">
+                      Driving Lessons
+                    </span>{" "}
+                    <br className="hidden md:block" />
+                    <span className="text-white">in Docklands</span>
+                  </h1>
 
-                <motion.div
-                  className="absolute -bottom-5 -left-5 bg-[rgba(255,255,255,0.1)] backdrop-blur-md rounded-full p-3 shadow-lg border border-[rgba(255,255,255,0.1)]"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.7, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                >
-                  <img
-                    src="/images/certifications/PassPlus.png"
-                    alt="Pass Plus"
-                    className="h-14 w-14 object-contain"
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+                  <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                    DVSA approved instructor covering E14, E16, Canary Wharf, and Isle of Dogs.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
+                    <span className="text-primary font-semibold"> £25/hr</span>.
+                  </p>
 
-        {/* Features Section - Dark Theme */}
-        <section className="py-16 bg-[#0d0d0d]">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
-                  DVSA Approved Instruction
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)]">
-                  Learn from an official DVSA approved instructor with experience at Red Driving School and AA Driving School. Specializing in intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
-                  First-Time Pass Specialist
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)]">
-                  Our first-time pass rate is 13% higher than the national average. We specialize in helping students pass first time with comprehensive intensive driving lessons in E14 Canary Wharf and surrounding areas.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Car className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
-                  Local Docklands Expert
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)]">
-                  Serving all Docklands postcodes including E14, E16, and surrounding areas. Our automatic driving lessons in Canary Wharf are designed for the unique road conditions of the Docklands area.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Local Area Section - Dark Theme */}
-        <section className="py-16 bg-[#0d0d0d]">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Comprehensive Driving Lessons Across Docklands
-              </h2>
-              <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
-                We offer specialized intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf, covering all Docklands postcodes with expert local knowledge.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  Expertise in Docklands Test Routes
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)] mb-6">
-                  Our intensive driving lessons in E14 Canary Wharf are designed by a DVSA approved instructor who knows every test route in the area. We specialize in helping students pass first time with focused training on local roads.
-                </p>
-
-                <ul className="space-y-3">
-                  {[
-                    "Serving E14, E16, and all Docklands postcodes",
-                    "Specialized automatic driving lessons in Canary Wharf",
-                    "Experience with Isle of Dogs and Poplar test routes",
-                    "Training on A1261, Aspen Way, and Limehouse Link",
-                    "Expert knowledge of Canary Wharf complex junctions",
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      viewport={{ once: true }}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-col sm:flex-row gap-3"
                     >
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-[rgba(255,255,255,0.8)]">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
+                      <div className="relative flex-grow">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+                        <Input
+                          type="text"
+                          placeholder="Enter E14, E16, or other Docklands postcode"
+                          className="pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          value={postcode}
+                          onChange={(e) => setPostcode(e.target.value)}
+                          required
+                        />
+                      </div>
+                      <Button
+                        type="submit"
+                        className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
+                      >
+                        Check Availability
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </form>
+                  </div>
+                </motion.div>
 
+                <motion.div
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500">
+                    <img
+                      src="/images/certifications/BANNER_MAIN3276.png"
+                      alt="Driving lessons in Docklands"
+                      className="w-full h-auto object-cover rounded-3xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="flex items-center space-x-1 mb-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star
+                            key={star}
+                            className="h-5 w-5 text-yellow-400 fill-yellow-400"
+                          />
+                        ))}
+                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                      </div>
+                      <p className="text-white/90 text-sm">
+                        "Passed first time - lessons in Docklands made all the difference."
+                      </p>
+                    </div>
+                  </div>
+
+                  <motion.div
+                    className="absolute -top-5 -right-5 bg-white/10 backdrop-blur-md rounded-full p-4 shadow-lg border border-white/10"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <img src="/images/certifications/DVSA-ADI.png" alt="DVSA Approved" className="h-16 w-16 object-contain" />
+                  </motion.div>
+                  <motion.div
+                    className="absolute -bottom-5 -left-5 bg-white/10 backdrop-blur-md rounded-full p-3 shadow-lg border border-white/10"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.7, type: "spring" }}
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                  >
+                    <img src="/images/certifications/PassPlus.png" alt="Pass Plus" className="h-14 w-14 object-contain" />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Why Learn in Docklands</h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  DVSA approved instructor who works E14 and E16 daily. No guesswork, just real local knowledge.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">DVSA Approved</h3>
+                  <p className="text-gray-400">
+                    Fully qualified instructor. Experience at Red Driving School and AA Driving School. Your lessons are structured and professional from day one.
+                  </p>
+                </motion.div>
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Award className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">98% Pass Rate</h3>
+                  <p className="text-gray-400">
+                    13% above the national average. I teach at your pace and only put you in for your test when you are ready.
+                  </p>
+                </motion.div>
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Car className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Mercedes-Benz A-Class</h3>
+                  <p className="text-gray-400">
+                    Automatic transmission. Modern dual controls. You focus on the road, not the clutch.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Local Area Section */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
               <motion.div
-                className="rounded-xl overflow-hidden shadow-lg"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Driving in Docklands</h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  E14, E16, Canary Wharf, Isle of Dogs, Poplar - every road type from quiet residential to A-road dual carriageway.
+                </p>
+              </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-2xl font-bold mb-4 text-white">Know the Routes Before Your Test</h3>
+                  <p className="text-gray-400 mb-6">
+                    Isle of Dogs, Poplar, A1261, Aspen Way, Limehouse Link - your lessons target the roads examiners use.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Serving E14, E16, and all Docklands postcodes",
+                      "Canary Wharf roundabouts and busy junctions",
+                      "A1261 and Aspen Way dual carriageway practice",
+                      "Isle of Dogs and Poplar test route knowledge",
+                      "Mock tests to DVSA standard before your real test",
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 * index }}
+                        viewport={{ once: true }}
+                      >
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+                <motion.div
+                  className="rounded-2xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <img src="/images/certifications/C6.png" alt="Docklands driving area" className="w-full h-auto object-cover" />
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-16 bg-gradient-to-r from-primary to-orange-600 text-white">
+            <div className="container mx-auto px-4 text-center">
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Ready to Start in Docklands?
+              </motion.h2>
+              <motion.p
+                className="text-xl mb-8 max-w-2xl mx-auto text-white/90"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                Book your first lesson today. Covering all E14 and E16 postcodes.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/images/certifications/C6.png"
-                  alt="Docklands driving area"
-                  className="w-full h-auto object-cover"
-                />
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-gray-100 shadow-lg"
+                  onClick={() => (window.location.href = "/services")}
+                >
+                  Book Your Lesson
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Start Your Journey to Driving Success in Docklands
-            </motion.h2>
-
-            <motion.p
-              className="text-xl mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Join thousands of successful students who passed their test first time with our intensive driving lessons in E14 Canary Wharf and automatic driving lessons in Canary Wharf.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Button
-                size="lg"
-                className="bg-white text-orange-600 hover:bg-gray-100 shadow-lg"
-                onClick={() => (window.location.href = "/services")}
-              >
-                Book Your Automatic Lesson Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
     </>
   );
 };

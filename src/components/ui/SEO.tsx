@@ -20,9 +20,41 @@ interface SEOProps {
   serviceSchema?: ServiceSchema;
 }
 
+/**
+ * Synchronously inject the canonical tag into <head> during render phase.
+ * This ensures the prerenderer captures the correct canonical URL before
+ * taking its HTML snapshot. Using useEffect for this is too late for SEO.
+ */
+function setCanonicalSync(canonical: string | undefined): void {
+  if (typeof document === "undefined") return;
+  if (!canonical) return;
+
+  // Target the placeholder tag we added in index.html
+  const existing = document.getElementById("canonical-tag");
+  if (existing) {
+    existing.setAttribute("href", canonical);
+  } else {
+    // Fallback: find or create
+    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (link) {
+      link.setAttribute("href", canonical);
+    } else {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      link.setAttribute("href", canonical);
+      document.head.appendChild(link);
+    }
+  }
+}
+
 const SEO = ({ title, description, keywords, canonical, serviceSchema }: SEOProps) => {
+  // SYNC canonical injection — runs during render, NOT in useEffect.
+  // This is critical for prerenderer: the canonical tag must be present
+  // in the HTML snapshot before JS finishes executing.
+  setCanonicalSync(canonical);
+
   useEffect(() => {
-    // Update document title
+    // Update document title (cannot be done synchronously — must be in effect)
     document.title = title;
 
     // Update meta description
@@ -46,19 +78,6 @@ const SEO = ({ title, description, keywords, canonical, serviceSchema }: SEOProp
         metaKeywords.setAttribute("name", "keywords");
         metaKeywords.setAttribute("content", keywords);
         document.head.appendChild(metaKeywords);
-      }
-    }
-
-    // Update canonical URL
-    if (canonical) {
-      let linkCanonical = document.querySelector('link[rel="canonical"]');
-      if (linkCanonical) {
-        linkCanonical.setAttribute("href", canonical);
-      } else {
-        linkCanonical = document.createElement("link");
-        linkCanonical.setAttribute("rel", "canonical");
-        linkCanonical.setAttribute("href", canonical);
-        document.head.appendChild(linkCanonical);
       }
     }
 
@@ -141,8 +160,11 @@ const SEO = ({ title, description, keywords, canonical, serviceSchema }: SEOProp
 
     // Cleanup function to reset meta tags when component unmounts
     return () => {
-      // Reset to default values if needed
-      // This is optional and depends on your application's needs
+      // Reset canonical back to homepage default
+      const canonicalTag = document.getElementById("canonical-tag");
+      if (canonicalTag) {
+        canonicalTag.setAttribute("href", "https://drivedojodrivingschool.com/");
+      }
     };
   }, [title, description, keywords, canonical, serviceSchema]);
 

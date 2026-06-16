@@ -15,8 +15,59 @@ import {
   Award,
 } from "lucide-react";
 
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Canning Town?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Canning Town start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which test centres do you prepare students for in Canning Town?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We prepare students for Goodmayes DTC, Wanstead driving test centre, and Chingford test centre. Your instructor knows the test routes and examiner expectations at all three."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer automatic driving lessons in Canning Town?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer automatic driving lessons in a Mercedes-Benz A-Class. Automatic transmission means you focus on road awareness without the distraction of a clutch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve all E16 postcodes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cover all E16 postcodes including Canning Town, Silvertown, and surrounding areas like E14, E15, E6, E7, and E13."
+      }
+    }
+  ]
+};
+
 const CanningTownLessons = () => {
   const [postcode, setPostcode] = useState("");
+
+  // Inject FAQPage schema for SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +78,7 @@ const CanningTownLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Canning Town Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E16, Silvertown & Docklands. Goodmayes, Wanstead & Chingford test centres."
+        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E16, Silvertown & Docklands. Goodmayes, Wanstead & Chingford test centres."
         keywords="driving lessons Canning Town, driving instructor Canning Town, automatic driving lessons Silvertown, intensive driving lessons Canning Town, DVSA approved driving instructor Canning Town, driving school Canning Town, E16 driving lessons, Silvertown driving instructor, cheap driving lessons Canning Town"
         canonical="https://drivedojodrivingschool.com/driving-lessons/canning-town"
         serviceSchema={{
@@ -37,321 +88,331 @@ const CanningTownLessons = () => {
           price: "70", priceCurrency: "GBP", areaServed: "Canning Town, Silvertown, E16, E14, East London"
         }}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School – Canning Town","description":"DVSA approved driving lessons in Canning Town and Silvertown. Automatic Mercedes-Benz A-Class. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/canning-town","telephone":"+447487228866","areaServed":["Canning Town","Silvertown","E16","E14","E15","East London"],"address":{"@type":"PostalAddress","addressLocality":"Canning Town","addressRegion":"East London","postalCode":"E16","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5150,"longitude":0.0080},"priceRange":"£70 – £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Canning Town","description":"DVSA approved driving lessons in Canning Town and Silvertown. Automatic Mercedes-Benz A-Class. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/canning-town","telephone":"+447487228866","areaServed":["Canning Town","Silvertown","E16","E14","E15","East London"],"address":{"@type":"PostalAddress","addressLocality":"Canning Town","addressRegion":"East London","postalCode":"E16","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5150,"longitude":0.0080},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
-      {/* Background decorative elements - Dark theme */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-[#f5a623]/10 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ff6b35]/10 rounded-full opacity-20 blur-3xl"></div>
+        {/* Background decorative elements - matching homepage premium aesthetic */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
 
-      <Navbar />
+        <Navbar />
 
-      <main className="pt-[100px] pb-20 relative z-10">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                className="text-center lg:text-left"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-                    First 2 Hours Only £49
-                  </span>{" "}
-                  <br className="hidden md:block" />
-                  <span className="text-white">Driving Lessons in Canning Town</span>
-                </h1>
-
-                <div className="mb-8 p-4 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl border border-orange-500/30">
-                  <p className="text-lg text-white font-medium">
-                    <span className="text-orange-400 font-bold">£49</span> for your first 2 hours — then{" "}
-                    <span className="text-orange-400 font-bold">£25/hr</span> ongoing. Book now!
-                  </p>
-                </div>
-
-                <p className="text-xl text-[rgba(255,255,255,0.8)] mb-8">
-                  <span className="font-semibold text-orange-400">
-                    Professional DVSA approved ADI instructor in Canning Town
-                  </span>{" "}
-                  — Learn from an official DVSA approved instructor who specializes in helping students pass first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre. Former instructor with Red Driving School and AA Driving School, serving all E16 postcodes.
-                </p>
-
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] max-w-md mx-auto lg:mx-0">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-col sm:flex-row gap-3"
-                  >
-                    <div className="relative flex-grow">
-                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
-                      <Input
-                        type="text"
-                        placeholder="Enter E16, E14, E6, or other East London postcode"
-                        className="pl-10 bg-white/20 border border-white/30 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        value={postcode}
-                        onChange={(e) => setPostcode(e.target.value)}
-                        required
-                      />
+        <main className="pt-[100px] pb-20 relative z-10">
+          {/* Hero Section - Premium redesign matching homepage */}
+          <section className="relative py-16 md:py-24 overflow-hidden">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <motion.div
+                  className="text-center lg:text-left"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex items-center gap-4 mb-6 justify-center lg:justify-start">
+                    <div className="flex items-center bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/30">
+                      <CheckCircle className="h-5 w-5 text-primary mr-2" />
+                      <span className="text-sm font-medium">DVSA Approved</span>
                     </div>
-                    <Button
-                      type="submit"
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
-                    >
-                      Get Started Today
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </form>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="/images/certifications/C7.png"
-                    alt="Driving lessons in Canning Town"
-                    className="w-full h-auto object-cover rounded-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center space-x-1 mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className="h-5 w-5 text-yellow-400 fill-yellow-400"
-                        />
-                      ))}
-                      <span className="text-white ml-2 font-medium">
-                        4.9/5 (2,000+ reviews)
-                      </span>
+                    <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
+                      <span className="text-sm font-medium">E16 & Docklands</span>
                     </div>
-                    <p className="text-white/90 text-sm">
-                      "My instructor was amazing! Passed my test first time with
-                      lessons in Canning Town!"
-                    </p>
                   </div>
-                </div>
 
-                {/* Floating badges */}
-                <motion.div
-                  className="absolute -top-5 -right-5 bg-[rgba(255,255,255,0.1)] backdrop-blur-md rounded-full p-4 shadow-lg border border-[rgba(255,255,255,0.1)]"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.5, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <img
-                    src="/images/certifications/DVSA-ADI.png"
-                    alt="DVSA Approved"
-                    className="h-16 w-16 object-contain"
-                  />
-                </motion.div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-500">
+                      Driving Lessons
+                    </span>{" "}
+                    <br className="hidden md:block" />
+                    <span className="text-white">in Canning Town</span>
+                  </h1>
 
-                <motion.div
-                  className="absolute -bottom-5 -left-5 bg-[rgba(255,255,255,0.1)] backdrop-blur-md rounded-full p-3 shadow-lg border border-[rgba(255,255,255,0.1)]"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.7, type: "spring" }}
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                >
-                  <img
-                    src="/images/certifications/PassPlus.png"
-                    alt="Pass Plus"
-                    className="h-14 w-14 object-contain"
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+                  <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                    DVSA approved instructor covering E16, Silvertown, and surrounding Docklands areas.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
+                    <span className="text-primary font-semibold"> £25/hr</span>.
+                    Prep for Goodmayes DTC, Wanstead, and Chingford test centres.
+                  </p>
 
-        {/* Features Section - Dark Theme */}
-        <section className="py-16 bg-[#0d0d0d]">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div
-                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
-                  DVSA Approved Instruction
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)]">
-                  Learn from an official DVSA approved instructor with experience at Red Driving School and AA Driving School. Specializing in intensive driving lessons in canning town and helping students pass first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
-                  First-Time Pass Specialist
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)]">
-                  Our first-time pass rate is 13% higher than the national average. We specialize in helping students pass first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre with comprehensive intensive driving lessons in canning town and automatic driving lessons in silver town.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="bg-[rgba(255,255,255,0.03)] backdrop-blur-md p-6 rounded-xl border border-[rgba(255,255,255,0.1)]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                  <Car className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
-                  Local E16 Postcode Expert
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)]">
-                  Serving all E16 postcodes and surrounding areas including E14, E15, E6, E7, and E13. Our automatic driving lessons in silver town are designed for the unique road conditions of the Canning Town and Silvertown area.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Local Area Section - Dark Theme */}
-        <section className="py-16 bg-[#0d0d0d]">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Comprehensive Driving Lessons Across Canning Town, Silvertown & Surrounding Areas
-              </h2>
-              <p className="text-[rgba(255,255,255,0.7)] max-w-2xl mx-auto">
-                We offer specialized intensive driving lessons in canning town and automatic driving lessons in silver town, covering all E16 postcodes with expert local knowledge to help you pass first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  Expertise in Local Test Routes
-                </h3>
-                <p className="text-[rgba(255,255,255,0.7)] mb-6">
-                  Our intensive driving lessons in canning town are designed by a DVSA approved instructor who knows every test route in the area. We specialize in helping students pass first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre with focused training on local roads.
-                </p>
-
-                <ul className="space-y-3">
-                  {[
-                    "Serving all E16 postcodes and surrounding areas: E14, E15, E6, E7, E13",
-                    "Specialized automatic driving lessons in silver town",
-                    "Experience with Goodmayes DTC, Wanstead driving test centre and Chingford test centre routes",
-                    "Training on A13, Silvertown Way, and surrounding East London areas",
-                    "Expert knowledge of Canning Town's complex junctions and roundabouts",
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      viewport={{ once: true }}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-col sm:flex-row gap-3"
                     >
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-[rgba(255,255,255,0.8)]">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+                      <div className="relative flex-grow">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+                        <Input
+                          type="text"
+                          placeholder="Enter E16, E14, E6, or other East London postcode"
+                          className="pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          value={postcode}
+                          onChange={(e) => setPostcode(e.target.value)}
+                          required
+                        />
+                      </div>
+                      <Button
+                        type="submit"
+                        className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
+                      >
+                        Check Availability
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </form>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500">
+                    <img
+                      src="/images/certifications/C7.png"
+                      alt="Driving lessons in Canning Town"
+                      className="w-full h-auto object-cover rounded-3xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="flex items-center space-x-1 mb-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star
+                            key={star}
+                            className="h-5 w-5 text-yellow-400 fill-yellow-400"
+                          />
+                        ))}
+                        <span className="text-white ml-2 font-medium">
+                          4.9/5 (2,000+ reviews)
+                        </span>
+                      </div>
+                      <p className="text-white/90 text-sm">
+                        "Great instructor - passed first time with lessons in Canning Town!"
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Floating badges */}
+                  <motion.div
+                    className="absolute -top-5 -right-5 bg-white/10 backdrop-blur-md rounded-full p-4 shadow-lg border border-white/10"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <img
+                      src="/images/certifications/DVSA-ADI.png"
+                      alt="DVSA Approved"
+                      className="h-16 w-16 object-contain"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    className="absolute -bottom-5 -left-5 bg-white/10 backdrop-blur-md rounded-full p-3 shadow-lg border border-white/10"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.7, type: "spring" }}
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                  >
+                    <img
+                      src="/images/certifications/PassPlus.png"
+                      alt="Pass Plus"
+                      className="h-14 w-14 object-contain"
+                    />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section - Premium styling matching homepage */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                  Why Canning Town Learners Choose Drive Dojo
+                </h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  DVSA approved instructor with experience at Red Driving School and AA Driving School.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">
+                    Multi-Test Centre Prep
+                  </h3>
+                  <p className="text-gray-400">
+                    Whether your test is at Goodmayes DTC, Wanstead, or Chingford, I tailor your lessons to the exact routes and conditions you will face. No generic training.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Award className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">
+                    E16 & Silvertown Expert
+                  </h3>
+                  <p className="text-gray-400">
+                    I work the E16, E14, and Docklands postcodes daily. That means I know the A13, Silvertown Way, and every junction that catches learners out.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-primary/40 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-primary text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                    <Car className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">
+                    Automatic Mercedes-Benz
+                  </h3>
+                  <p className="text-gray-400">
+                    2024 Mercedes-Benz A-Class with dual controls. Automatic transmission means one less thing to think about so you can focus on navigating Canning Town's busy junctions.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Local Area Section */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                  What Makes Canning Town Unique for Learners
+                </h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Mix of busy dual carriageways, residential streets, and riverside roads around Silvertown.
+                </p>
               </motion.div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    Real Road Training from Lesson One
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Canning Town gives you access to A13 dual carriageway work, Silvertown's industrial roads, and tight residential streets - all essential for test preparation at Goodmayes, Wanstead, or Chingford.
+                  </p>
+
+                  <ul className="space-y-3">
+                    {[
+                      "Covering all E16, E14, E15, E6, E7, and E13 postcodes",
+                      "Specialist automatic lessons across Silvertown and Docklands",
+                      "Training on A13 and Silvertown Way for dual carriageway confidence",
+                      "Complex junctions and roundabouts around Canning Town station",
+                      "Mock tests run to DVSA standard before your real test",
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.1 * index }}
+                        viewport={{ once: true }}
+                      >
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+
+                <motion.div
+                  className="rounded-2xl overflow-hidden shadow-2xl"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <img
+                    src="/images/certifications/c5.png"
+                    alt="Canning Town driving area"
+                    className="w-full h-auto object-cover"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-16 bg-gradient-to-r from-primary to-orange-600 text-white">
+            <div className="container mx-auto px-4 text-center">
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Ready to Start in Canning Town?
+              </motion.h2>
+
+              <motion.p
+                className="text-xl mb-8 max-w-2xl mx-auto text-white/90"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                Book your first lesson today and start training for your test at Goodmayes, Wanstead, or Chingford.
+              </motion.p>
+
               <motion.div
-                className="rounded-xl overflow-hidden shadow-lg"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/images/certifications/c5.png"
-                  alt="Canning Town driving area"
-                  className="w-full h-auto object-cover"
-                />
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-gray-100 shadow-lg"
+                  onClick={() => (window.location.href = "/services")}
+                >
+                  Book Your Lesson
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-orange-500 to-red-500 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Start Your Journey to Driving Success in Canning Town & Silvertown
-            </motion.h2>
-
-            <motion.p
-              className="text-xl mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Join thousands of successful students who passed their test first time in Goodmayes DTC, Wanstead driving test centre or Chingford test centre with our intensive driving lessons in canning town and automatic driving lessons in silver town. Book online today!
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Button
-                size="lg"
-                className="bg-white text-orange-600 hover:bg-gray-100 shadow-lg"
-                onClick={() => (window.location.href = "/services")}
-              >
-                Book Your Automatic Lesson Now - Online Booking Available
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
     </>
   );
 };

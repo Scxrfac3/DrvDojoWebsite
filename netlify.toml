@@ -81,7 +81,6 @@
   to = "/:splat"
   status = 301
   force = true
-  conditions = {Language = []}
 
 # --- API ENDPOINTS → NETLIFY FUNCTIONS ---
 # Must come BEFORE the catch-all SPA redirect
@@ -449,6 +448,12 @@
 # Hub & Spoke — Learn to Drive syllabus pages
 [[redirects]]
   from = "/learn-to-drive/*"
+  to = "/index.html"
+  status = 200
+
+# Sitemap page
+[[redirects]]
+  from = "/sitemap"
   to = "/index.html"
   status = 200
 

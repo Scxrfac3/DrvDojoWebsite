@@ -56,6 +56,7 @@ const TestCentrePage = lazy(() => import('./components/pages/TestCentrePage'));
 const SkillPage = lazy(() => import('./components/pages/SkillPage'));
 const ManoeuvrePage = lazy(() => import('./components/pages/ManoeuvrePage'));
 const SpecialtyServicePage = lazy(() => import('./components/pages/SpecialtyServicePage'));
+const SitemapPage = lazy(() => import('./components/pages/SitemapPage'));
 
 function App() {
   return (
@@ -179,6 +180,9 @@ function App() {
           <Route path='/female-driving-instructors' element={<SpecialtyServicePage />} />
           <Route path='/refresher-driving-lessons' element={<SpecialtyServicePage />} />
           <Route path='/pass-plus-courses' element={<SpecialtyServicePage />} />
+
+          {/* Sitemap */}
+          <Route path='/sitemap' element={<SitemapPage />} />
 
           {/* Blog routes */}
           <Route
