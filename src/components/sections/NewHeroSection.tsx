@@ -17,7 +17,7 @@ interface HeroSectionProps {
 
 const NewHeroSection = ({
   title = "Drive Like a Pro",
-  subtitle = "Pass first time with Drive Dojo. Our DVSA-approved instructors specialize in automatic driving lessons to help you achieve your licence goals.",
+  subtitle = "Premium automatic driving lessons in Canary Wharf, Isle of Dogs & Docklands. DVSA-approved instructor, Mercedes-Benz A-Class. First 2 hours £49, then £25/hr. Book online today.",
   ctaPrimaryText = "🚗 Book Your Automatic Lesson",
   ctaSecondaryText = "💰 View Packages",
   onBookLesson = () => (window.location.href = "/services"),
