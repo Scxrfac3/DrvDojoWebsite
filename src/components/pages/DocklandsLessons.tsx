@@ -68,7 +68,6 @@ const DocklandsLessons = () => {
       document.head.removeChild(script);
     };
   }, []);
-  const [postcode, setPostcode] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

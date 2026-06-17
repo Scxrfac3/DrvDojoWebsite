@@ -37,6 +37,10 @@ interface FooterProps {
     platform: "facebook" | "instagram" | "twitter" | "youtube" | "tiktok";
     href: string;
   }>;
+  locationLinks?: Array<{
+    title: string;
+    href: string;
+  }>;
 }
 
 const Footer = ({
