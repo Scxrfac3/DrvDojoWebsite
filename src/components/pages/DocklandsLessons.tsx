@@ -15,7 +15,59 @@ import {
   Award,
 } from "lucide-react";
 
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Docklands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Docklands start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer finance for driving lessons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We accept Klarna Pay in 3 interest-free instalments, so you can spread the cost of your driving lessons. Select Klarna at checkout when booking your block of lessons online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I start driving lessons in Docklands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can start immediately. Our live availability calendar shows real-time slots you can book online in 60 seconds — no waiting for callbacks. Simply enter your postcode and pick your lesson time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve all E14 and E16 postcodes in Docklands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we serve all Docklands postcodes including E14, E16, and surrounding areas including Canary Wharf and Isle of Dogs."
+      }
+    }
+  ]
+};
+
 const DocklandsLessons = () => {
+  const [postcode, setPostcode] = useState("");
+
+  // Inject FAQPage schema for SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   const [postcode, setPostcode] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,8 +79,8 @@ const DocklandsLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Docklands Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E14, E16, Canary Wharf & Isle of Dogs."
-        keywords="driving lessons Docklands, driving instructor Docklands, automatic driving lessons Canary Wharf, intensive driving lessons Docklands, DVSA approved driving instructor Docklands, driving school Docklands, E14 driving lessons, Canary Wharf driving instructor, Isle of Dogs driving lessons, cheap driving lessons Docklands"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Docklands, Canary Wharf & Isle of Dogs. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Docklands E14, Canary Wharf E14, Isle of Dogs E14, Tower Hamlets"
         canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
         serviceSchema={{
           name: "Driving Lessons in Docklands & Canary Wharf",
@@ -218,6 +270,22 @@ const DocklandsLessons = () => {
                     Automatic transmission. Modern dual controls. You focus on the road, not the clutch.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Live Availability & Pay in 3 with Klarna */}
+          <section className="py-8 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Live Availability</h3>
+                  <p className="text-gray-400 text-sm">View real-time slots and book your driving lesson online in 60 seconds. No waiting for callbacks.</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Pay in 3 with Klarna</h3>
+                  <p className="text-gray-400 text-sm">Spread the cost with Klarna interest-free instalments. Select Klarna at checkout when booking your block of lessons.</p>
+                </div>
               </div>
             </div>
           </section>

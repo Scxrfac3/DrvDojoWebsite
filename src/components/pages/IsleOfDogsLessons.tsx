@@ -52,6 +52,22 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Yes, we cover all E14 postcodes including Isle of Dogs, Canary Wharf, Poplar, and surrounding areas. Our instructors know all the local test routes."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer finance for driving lessons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We accept Klarna Pay in 3 interest-free instalments, so you can spread the cost of your driving lessons. Select Klarna at checkout when booking your block of lessons online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I start driving lessons in Isle of Dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can start immediately. Our live availability calendar shows real-time slots you can book online in 60 seconds — no waiting for callbacks. Simply enter your postcode and pick your lesson time."
+      }
     }
   ]
 };
@@ -79,8 +95,8 @@ const IsleOfDogsLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Isle of Dogs Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E14, Canary Wharf, Poplar & East London."
-        keywords="driving lessons Isle of Dogs, driving instructor Isle of Dogs, automatic driving lessons Isle of Dogs, intensive driving lessons Isle of Dogs, DVSA approved driving instructor Isle of Dogs, E14 driving lessons, Canary Wharf driving instructor, driving school Isle of Dogs, cheap driving lessons Isle of Dogs, Poplar driving lessons"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Isle of Dogs & Canary Wharf. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Isle of Dogs E14, Canary Wharf E14, Poplar E14, Tower Hamlets, Docklands E14, driving lessons Isle of Dogs"
         canonical="https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs"
         serviceSchema={{
           name: "Driving Lessons in Isle of Dogs",
@@ -293,6 +309,22 @@ const IsleOfDogsLessons = () => {
                     Automatic transmission in a 2024 Mercedes-Benz. Dual controls fitted. You learn smooth, modern driving - no clutch work, just focus on the road.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Live Availability & Pay in 3 with Klarna */}
+          <section className="py-8 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Live Availability</h3>
+                  <p className="text-gray-400 text-sm">View real-time slots and book your driving lesson online in 60 seconds. No waiting for callbacks.</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Pay in 3 with Klarna</h3>
+                  <p className="text-gray-400 text-sm">Spread the cost with Klarna interest-free instalments. Select Klarna at checkout when booking your block of lessons.</p>
+                </div>
               </div>
             </div>
           </section>

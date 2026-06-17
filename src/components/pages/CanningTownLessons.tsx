@@ -51,6 +51,22 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Yes, we cover all E16 postcodes including Canning Town, Silvertown, and surrounding areas like E14, E15, E6, E7, and E13."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer finance for driving lessons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We accept Klarna Pay in 3 interest-free instalments, so you can spread the cost of your driving lessons. Select Klarna at checkout when booking your block of lessons online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I start driving lessons in Canning Town?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can start immediately. Our live availability calendar shows real-time slots you can book online in 60 seconds — no waiting for callbacks. Simply enter your postcode and pick your lesson time."
+      }
     }
   ]
 };
@@ -78,8 +94,8 @@ const CanningTownLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Canning Town Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering E16, Silvertown & Docklands. Goodmayes, Wanstead & Chingford test centres."
-        keywords="driving lessons Canning Town, driving instructor Canning Town, automatic driving lessons Silvertown, intensive driving lessons Canning Town, DVSA approved driving instructor Canning Town, driving school Canning Town, E16 driving lessons, Silvertown driving instructor, cheap driving lessons Canning Town"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Canning Town & Silvertown. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        keywords="driving lessons Canning Town, driving instructor Canning Town, automatic driving lessons Silvertown, book driving lessons online East London, driving school with Klarna London, E16 driving lessons, Canning Town E16, Silvertown"
         canonical="https://drivedojodrivingschool.com/driving-lessons/canning-town"
         serviceSchema={{
           name: "Driving Lessons in Canning Town & Silvertown",
@@ -293,6 +309,22 @@ const CanningTownLessons = () => {
                     2024 Mercedes-Benz A-Class with dual controls. Automatic transmission means one less thing to think about so you can focus on navigating Canning Town's busy junctions.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Live Availability & Pay in 3 with Klarna */}
+          <section className="py-8 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Live Availability</h3>
+                  <p className="text-gray-400 text-sm">View real-time slots and book your driving lesson online in 60 seconds. No waiting for callbacks.</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Pay in 3 with Klarna</h3>
+                  <p className="text-gray-400 text-sm">Spread the cost with Klarna interest-free instalments. Select Klarna at checkout when booking your block of lessons.</p>
+                </div>
               </div>
             </div>
           </section>

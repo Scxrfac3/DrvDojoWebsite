@@ -15,8 +15,59 @@ import {
   Award,
 } from "lucide-react";
 
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Forest Gate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Forest Gate start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer finance for driving lessons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We accept Klarna Pay in 3 interest-free instalments, so you can spread the cost of your driving lessons. Select Klarna at checkout when booking your block of lessons online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I start driving lessons in Forest Gate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can start immediately. Our live availability calendar shows real-time slots you can book online in 60 seconds — no waiting for callbacks. Simply enter your postcode and pick your lesson time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve all E7 and London postcodes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cover E7, E11, E12, E15, IG postcodes and all surrounding East London areas. We prepare students for Wanstead, Barking, and Goodmayes test centres."
+      }
+    }
+  ]
+};
+
 const ForestGateLessons = () => {
   const [postcode, setPostcode] = useState("");
+
+  // Inject FAQPage schema for SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,8 +78,8 @@ const ForestGateLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Forest Gate Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Wanstead test centre preparation. Covering E7, E11, E12, E15 & East London."
-        keywords="driving lessons Forest Gate, driving instructor Forest Gate, automatic driving lessons Forest Gate, intensive driving lessons E7, DVSA approved driving instructor Forest Gate, driving lessons E7, driving school Forest Gate, Wanstead test centre, cheap driving lessons Forest Gate, E7 driving instructor"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Forest Gate & E7. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        keywords="driving lessons Forest Gate, driving instructor Forest Gate, automatic driving lessons E7, book driving lessons online East London, driving school with Klarna London, Forest Gate E7, Newham"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
         serviceSchema={{
           name: "Driving Lessons in Forest Gate",
@@ -246,6 +297,22 @@ const ForestGateLessons = () => {
                     Serving E6, E7, E11, E12, E13, E15, E16, and IG postcodes. Automatic Mercedes-Benz A-Class with dual controls.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Live Availability & Pay in 3 with Klarna */}
+          <section className="py-8 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Live Availability</h3>
+                  <p className="text-gray-400 text-sm">View real-time slots and book your driving lesson online in 60 seconds. No waiting for callbacks.</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Pay in 3 with Klarna</h3>
+                  <p className="text-gray-400 text-sm">Spread the cost with Klarna interest-free instalments. Select Klarna at checkout when booking your block of lessons.</p>
+                </div>
               </div>
             </div>
           </section>

@@ -18,8 +18,59 @@ import {
 } from "lucide-react";
 import SpecialOffersSection from "../sections/SpecialOffersSection";
 
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Ilford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Ilford start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer finance for driving lessons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We accept Klarna Pay in 3 interest-free instalments, so you can spread the cost of your driving lessons. Select Klarna at checkout when booking your block of lessons online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I start driving lessons in Ilford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can start immediately. Our live availability calendar shows real-time slots you can book online in 60 seconds — no waiting for callbacks. Simply enter your postcode and pick your lesson time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve all IG postcodes in Ilford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cover all IG postcodes including IG1, IG2, IG3, IG4, IG5, and IG6. Door-to-door pickup included with all lessons."
+      }
+    }
+  ]
+};
+
 const IlfordLessons = () => {
   const [postcode, setPostcode] = useState("");
+
+  // Inject FAQPage schema for SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,9 +80,9 @@ const IlfordLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Ilford Instantly | Live Availability | Drive Dojo Driving School"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book your driving lessons online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Covering IG1-IG6, Goodmayes & East London."
-        keywords="driving lessons Ilford, driving instructor Ilford, automatic driving lessons Ilford, intensive driving lessons Ilford, DVSA approved driving instructor Ilford, driving school Ilford, cheap driving lessons Ilford, learn to drive Ilford, IG1 IG2 IG3 IG4 IG5 IG6 driving lessons, Mercedes automatic driving lessons Ilford, best driving instructor Ilford"
+        title="Book Driving Lessons in Ilford Instantly | Live Availability | Drive Dojo"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Ilford. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        keywords="driving lessons Ilford, driving instructor Ilford, automatic driving lessons Ilford, book driving lessons online East London, driving school with Klarna London, Ilford IG1, Ilford IG postcodes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/ilford"
         serviceSchema={{
           name: "Driving Lessons in Ilford",
@@ -232,6 +283,22 @@ const IlfordLessons = () => {
                     Automatic transmission. No clutch, no gear changes - just focus on the road and your driving technique.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Live Availability & Pay in 3 with Klarna */}
+          <section className="py-8 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Live Availability</h3>
+                  <p className="text-gray-400 text-sm">View real-time slots and book your driving lesson online in 60 seconds. No waiting for callbacks.</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Pay in 3 with Klarna</h3>
+                  <p className="text-gray-400 text-sm">Spread the cost with Klarna interest-free instalments. Select Klarna at checkout when booking your block of lessons.</p>
+                </div>
               </div>
             </div>
           </section>

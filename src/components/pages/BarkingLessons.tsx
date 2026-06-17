@@ -17,8 +17,59 @@ import {
   BookOpen,
 } from "lucide-react";
 
+// FAQPage Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do driving lessons cost in Barking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Driving lessons in Barking start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer finance for driving lessons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We accept Klarna Pay in 3 interest-free instalments, so you can spread the cost of your driving lessons. Select Klarna at checkout when booking your block of lessons online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I start driving lessons in Barking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can start immediately. Our live availability calendar shows real-time slots you can book online in 60 seconds — no waiting for callbacks. Simply enter your postcode and pick your lesson time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve all IG11 and RM postcodes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we cover IG11, RM8, RM9, and all surrounding areas including Chadwell Heath and Hainault. We specialise in Barking Test Centre preparation."
+      }
+    }
+  ]
+};
+
 const BarkingLessons = () => {
   const [postcode, setPostcode] = useState("");
+
+  // Inject FAQPage schema for SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,8 +80,8 @@ const BarkingLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Barking Instantly | Live Availability | Drive Dojo"
-        description="Book your driving lessons instantly and spread the cost. We accept Klarna - pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz automatic, first 2 hours £70. Barking test centre specialists. Covering IG11, RM8, RM9 & East London."
-        keywords="driving lessons Barking, driving instructor Barking, automatic driving lessons Barking, intensive driving lessons Barking, DVSA approved driving instructor Barking, driving school Barking, IG11 driving lessons, Barking test centre, cheap driving lessons Barking, best driving instructor Barking"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Barking. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        keywords="driving lessons Barking, driving instructor Barking, automatic driving lessons Barking, book driving lessons online East London, driving school with Klarna London, Barking IG11, Barking test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/barking"
         serviceSchema={{
           name: "Driving Lessons in Barking",
@@ -229,6 +280,22 @@ const BarkingLessons = () => {
                     IG11 (Barking), RM8, RM9 (Dagenham), Chadwell Heath, and Hainault. Automatic Mercedes-Benz with dual controls.
                   </p>
                 </motion.div>
+              </div>
+            </div>
+          </section>
+
+          {/* Live Availability & Pay in 3 with Klarna */}
+          <section className="py-8 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Live Availability</h3>
+                  <p className="text-gray-400 text-sm">View real-time slots and book your driving lesson online in 60 seconds. No waiting for callbacks.</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-5 rounded-xl border border-white/10 text-center">
+                  <h3 className="text-lg font-bold text-white mb-2">Pay in 3 with Klarna</h3>
+                  <p className="text-gray-400 text-sm">Spread the cost with Klarna interest-free instalments. Select Klarna at checkout when booking your block of lessons.</p>
+                </div>
               </div>
             </div>
           </section>
