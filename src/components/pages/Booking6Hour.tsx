@@ -139,7 +139,7 @@ const Booking6Hour = () => {
                         </div>
                       </div>
                       <div className="text-3xl font-bold text-white mb-2">
-                        £210
+                        £220
                         <span className="text-sm font-normal text-slate-400">/package</span>
                       </div>
                       <p className="text-sm mb-4 text-slate-300">
@@ -194,6 +194,13 @@ const Booking6Hour = () => {
                   onClick={() => window.location.href = '/booking/10hour'}
                 >
                   10-Hour Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-purple-500/50 transition-colors"
+                  onClick={() => window.location.href = '/booking/20hour'}
+                >
+                  20-Hour Package
                 </Button>
                 <Button
                   variant="outline"

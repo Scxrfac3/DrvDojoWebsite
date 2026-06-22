@@ -25,7 +25,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Docklands?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Docklands start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+        "text": "Driving lessons in Docklands start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
       }
     },
     {
@@ -78,7 +78,7 @@ const DocklandsLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Docklands Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Docklands, Canary Wharf & Isle of Dogs. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Docklands, Canary Wharf & Isle of Dogs. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
         keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Docklands E14, Canary Wharf E14, Isle of Dogs E14, Tower Hamlets"
         canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
         serviceSchema={{
@@ -128,8 +128,8 @@ const DocklandsLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering E14, E16, Canary Wharf, and Isle of Dogs.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
-                    <span className="text-primary font-semibold"> £25/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
+                    <span className="text-primary font-semibold"> £38/hr</span>.
                   </p>
 
                   <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">

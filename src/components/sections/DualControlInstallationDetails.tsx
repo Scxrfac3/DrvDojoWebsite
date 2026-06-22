@@ -104,10 +104,10 @@ const DualControlInstallationDetails = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-blue-900 to-purple-900 text-white relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+    <section className="py-16 px-4 md:px-8 bg-[#0d0d0d] text-white relative overflow-hidden">
+      {/* Background elements - matching homepage premium aesthetic */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-12">
@@ -120,76 +120,71 @@ const DualControlInstallationDetails = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center mb-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center mb-3 bg-primary/20 backdrop-blur-sm border border-primary/30 px-4 py-2 rounded-full text-sm font-medium text-primary">
                 <Award className="h-4 w-4 mr-2" />
                 Official He-Man Partner
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Level Up Your Teaching Game! ✨
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-500">
+                  Dual Control Installation
+                </span>
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-blue-300">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
                 Ready to Transform Your Ride? 🚀
               </h2>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl text-gray-400 mb-8">
                 Join the squad of successful driving instructors! Get your dual
                 controls installed by the pros. 💯
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-primary/40 transition-colors">
                   <div className="flex items-center mb-4">
-                    <div className="bg-blue-500/20 p-3 rounded-full mr-3">
-                      <Zap className="h-6 w-6" />
+                    <div className="bg-primary/20 p-3 rounded-full mr-3">
+                      <Zap className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold">
+                    <h3 className="text-xl font-semibold text-white">
                       Quick Installation ⚡
                     </h3>
                   </div>
-                  <p className="text-white/80">
+                  <p className="text-gray-400">
                     Same-day service - back on the road ASAP!
                   </p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-primary/40 transition-colors">
                   <div className="flex items-center mb-4">
-                    <div className="bg-purple-500/20 p-3 rounded-full mr-3">
-                      <Calendar className="h-6 w-6" />
+                    <div className="bg-primary/20 p-3 rounded-full mr-3">
+                      <Calendar className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold">
+                    <h3 className="text-xl font-semibold text-white">
                       Flexible Scheduling 📅
                     </h3>
                   </div>
-                  <p className="text-white/80">
+                  <p className="text-gray-400">
                     Book a time that works for you!
                   </p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-primary/40 transition-colors">
                   <div className="flex items-center mb-4">
-                    <div className="bg-green-500/20 p-3 rounded-full mr-3">
-                      <Phone className="h-6 w-6" />
+                    <div className="bg-primary/20 p-3 rounded-full mr-3">
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold">24/7 Support 🆘</h3>
+                    <h3 className="text-xl font-semibold text-white">24/7 Support 🆘</h3>
                   </div>
-                  <p className="text-white/80">We've got your back, anytime!</p>
+                  <p className="text-gray-400">We've got your back, anytime!</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg group relative overflow-hidden"
+                  className="bg-primary hover:bg-primary/90 text-white shadow-lg group relative overflow-hidden"
                   onClick={() => (window.location.href = "/booking")}
                 >
                   Book Installation - £450
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  <motion.div
-                    className="absolute inset-0 bg-white"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.4 }}
-                    style={{ opacity: 0.2 }}
-                  />
                 </Button>
 
                 <Button
@@ -213,26 +208,26 @@ const DualControlInstallationDetails = () => {
             >
               <h3 className="text-2xl font-bold mb-6">Service Areas</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-                  <h4 className="text-xl font-semibold mb-2">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 text-center hover:border-primary/40 transition-colors">
+                  <h4 className="text-xl font-semibold mb-2 text-white">
                     East London (E)
                   </h4>
-                  <p className="text-white/80">Same-day service available</p>
+                  <p className="text-gray-400">Same-day service available</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-                  <h4 className="text-xl font-semibold mb-2">Ilford (IG)</h4>
-                  <p className="text-white/80">Same-day service available</p>
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 text-center hover:border-primary/40 transition-colors">
+                  <h4 className="text-xl font-semibold mb-2 text-white">Ilford (IG)</h4>
+                  <p className="text-gray-400">Same-day service available</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center">
-                  <h4 className="text-xl font-semibold mb-2">Romford (RM)</h4>
-                  <p className="text-white/80">Same-day service available</p>
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 text-center hover:border-primary/40 transition-colors">
+                  <h4 className="text-xl font-semibold mb-2 text-white">Romford (RM)</h4>
+                  <p className="text-gray-400">Same-day service available</p>
                 </div>
               </div>
             </motion.div>
 
             {/* Booking Form */}
             <motion.div
-              className="mb-12 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+              className="mb-12 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -249,7 +244,7 @@ const DualControlInstallationDetails = () => {
                   <input
                     type="text"
                     placeholder="John Smith"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -264,7 +259,7 @@ const DualControlInstallationDetails = () => {
                   <input
                     type="text"
                     placeholder="07123 456789"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white"
                     value={formData.phone}
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
@@ -279,7 +274,7 @@ const DualControlInstallationDetails = () => {
                   <input
                     type="text"
                     placeholder="Toyota Yaris 2022"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white"
                     value={formData.vehicle}
                     onChange={(e) =>
                       setFormData({ ...formData, vehicle: e.target.value })
@@ -294,7 +289,7 @@ const DualControlInstallationDetails = () => {
                   <input
                     type="text"
                     placeholder="Tell us what you need..."
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-white"
                     value={formData.questions}
                     onChange={(e) =>
                       setFormData({ ...formData, questions: e.target.value })
@@ -304,7 +299,7 @@ const DualControlInstallationDetails = () => {
               </div>
               <div className="flex flex-col space-y-4">
                 <Button
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white py-3 rounded-lg font-medium shadow-lg group relative overflow-hidden"
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium shadow-lg"
                   onClick={handleSubmit}
                   disabled={isSubmitting || submitStatus === "success"}
                 >
@@ -356,56 +351,56 @@ const DualControlInstallationDetails = () => {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <p className="text-white/90 mb-4">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-primary/40 transition-colors">
+                  <p className="text-gray-300 mb-4">
                     The team at East London Dual Controls did an amazing job
                     installing my dual control system. Professional, quick, and
                     reliable service.
                   </p>
                   <div className="flex items-center">
-                    <div className="h-10 w-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-3">
-                      <span className="font-bold">JS</span>
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                      <span className="font-bold text-primary">JS</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold">John Smith</h4>
-                      <p className="text-sm text-white/70">
+                      <h4 className="font-semibold text-white">John Smith</h4>
+                      <p className="text-sm text-gray-400">
                         Driving Instructor, Romford
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <p className="text-white/90 mb-4">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-primary/40 transition-colors">
+                  <p className="text-gray-300 mb-4">
                     We've been using their services for our entire fleet. The
                     quality of work and attention to detail is outstanding.
                   </p>
                   <div className="flex items-center">
-                    <div className="h-10 w-10 rounded-full bg-purple-500/20 flex items-center justify-center mr-3">
-                      <span className="font-bold">SW</span>
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                      <span className="font-bold text-primary">SW</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold">Sarah Williams</h4>
-                      <p className="text-sm text-white/70">
+                      <h4 className="font-semibold text-white">Sarah Williams</h4>
+                      <p className="text-sm text-gray-400">
                         Driving School Owner, Ilford
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <p className="text-white/90 mb-4">
+                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-primary/40 transition-colors">
+                  <p className="text-gray-300 mb-4">
                     Quick response times and excellent emergency support.
                     They've helped me multiple times when I needed urgent
                     repairs.
                   </p>
                   <div className="flex items-center">
-                    <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center mr-3">
-                      <span className="font-bold">DB</span>
+                    <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                      <span className="font-bold text-primary">DB</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold">David Brown</h4>
-                      <p className="text-sm text-white/70">
+                      <h4 className="font-semibold text-white">David Brown</h4>
+                      <p className="text-sm text-gray-400">
                         Independent Instructor, Chelmsford
                       </p>
                     </div>
@@ -423,8 +418,8 @@ const DualControlInstallationDetails = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center mb-6">
-                <div className="bg-blue-500/20 p-3 rounded-full mr-3">
-                  <Image className="h-6 w-6" />
+                <div className="bg-primary/20 p-3 rounded-full mr-3">
+                  <Image className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold">Installation Gallery</h3>
               </div>
@@ -575,7 +570,7 @@ const DualControlInstallationDetails = () => {
           {/* Right column - Service packages */}
           <div className="lg:w-1/3">
             <motion.div
-              className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-xl relative mb-8"
+              className="bg-white/5 backdrop-blur-md rounded-xl overflow-hidden border border-primary/30 shadow-xl relative mb-8"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -585,13 +580,13 @@ const DualControlInstallationDetails = () => {
                 <span>Popular</span>
               </div>
               <div className="p-6">
-                <div className="text-sm font-semibold text-orange-300 mb-2">
+                <div className="text-sm font-semibold text-primary mb-2">
                   Most Popular 🔥
                 </div>
                 <h3 className="text-xl font-bold mb-2">
                   He-Man Dual Control Installation
                 </h3>
-                <p className="text-white/80 mb-4">
+                <p className="text-gray-400 mb-4">
                   Level up your instructor game with pro He-Man dual controls.
                   Quick install, zero hassle! 🚀
                 </p>
@@ -620,24 +615,17 @@ const DualControlInstallationDetails = () => {
                 </div>
 
                 <Button
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 group relative overflow-hidden"
+                  className="w-full bg-primary hover:bg-primary/90 text-white"
                   onClick={() => (window.location.href = "/booking")}
                 >
                   Book Now
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  <motion.div
-                    className="absolute inset-0 bg-white"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.4 }}
-                    style={{ opacity: 0.2 }}
-                  />
                 </Button>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-xl"
+              className="bg-white/5 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-xl"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -647,35 +635,35 @@ const DualControlInstallationDetails = () => {
                 <h3 className="text-xl font-bold mb-4">Additional Services</h3>
 
                 <div className="space-y-4">
-                  <div className="border-b border-white/20 pb-4">
-                    <h4 className="font-semibold mb-1">
+                  <div className="border-b border-white/10 pb-4">
+                    <h4 className="font-semibold mb-1 text-white">
                       Maintenance & Repairs
                     </h4>
-                    <p className="text-sm text-white/70 mb-2">
+                    <p className="text-sm text-gray-400 mb-2">
                       Keep your controls in perfect condition. Quick fixes, no
                       drama! 🛠️
                     </p>
-                    <ul className="text-sm text-white/80 mb-2 space-y-1">
+                    <ul className="text-sm text-gray-300 mb-2 space-y-1">
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>24/7 emergency support</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Genuine parts</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Expert techs</span>
                       </li>
                       <li className="flex items-start">
-                        <Clock className="h-4 w-4 text-blue-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <Clock className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>1-3 hours</span>
                       </li>
                     </ul>
                     <div className="flex justify-between items-center">
                       <div className="text-sm">
-                        <span className="text-blue-300">From £99</span>
+                        <span className="text-primary">From £99</span>
                       </div>
                       <Button
                         size="sm"
@@ -688,33 +676,33 @@ const DualControlInstallationDetails = () => {
                     </div>
                   </div>
 
-                  <div className="border-b border-white/20 pb-4">
-                    <h4 className="font-semibold mb-1">System Upgrades</h4>
-                    <p className="text-sm text-white/70 mb-2">
+                  <div className="border-b border-white/10 pb-4">
+                    <h4 className="font-semibold mb-1 text-white">System Upgrades</h4>
+                    <p className="text-sm text-gray-400 mb-2">
                       Stay ahead with the latest He-Man tech. Future-proof your
                       ride! ⚡
                     </p>
-                    <ul className="text-sm text-white/80 mb-2 space-y-1">
+                    <ul className="text-sm text-gray-300 mb-2 space-y-1">
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Latest tech</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Enhanced safety</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Better control</span>
                       </li>
                       <li className="flex items-start">
-                        <Clock className="h-4 w-4 text-blue-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <Clock className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>2-4 hours</span>
                       </li>
                     </ul>
                     <div className="flex justify-between items-center">
                       <div className="text-sm">
-                        <span className="text-blue-300">From £299</span>
+                        <span className="text-primary">From £299</span>
                       </div>
                       <Button
                         size="sm"
@@ -728,32 +716,32 @@ const DualControlInstallationDetails = () => {
                   </div>
 
                   <div className="pb-2">
-                    <h4 className="font-semibold mb-1">Safety Inspections</h4>
-                    <p className="text-sm text-white/70 mb-2">
+                    <h4 className="font-semibold mb-1 text-white">Safety Inspections</h4>
+                    <p className="text-sm text-gray-400 mb-2">
                       Quick check-ups to keep you safe and certified. Easy
                       peasy! ✨
                     </p>
-                    <ul className="text-sm text-white/80 mb-2 space-y-1">
+                    <ul className="text-sm text-gray-300 mb-2 space-y-1">
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>DVSA compliance</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Digital report</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>Instant certificate</span>
                       </li>
                       <li className="flex items-start">
-                        <Clock className="h-4 w-4 text-blue-400 mr-2 flex-shrink-0 mt-0.5" />
+                        <Clock className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                         <span>1 hour</span>
                       </li>
                     </ul>
                     <div className="flex justify-between items-center">
                       <div className="text-sm">
-                        <span className="text-blue-300">From £79</span>
+                        <span className="text-primary">From £79</span>
                       </div>
                       <Button
                         size="sm"

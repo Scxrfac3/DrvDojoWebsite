@@ -130,6 +130,7 @@ const SitemapPage = () => {
                     { name: "Pay As You Go", path: "/booking/payg" },
                     { name: "6-Hour Block", path: "/booking/6hour" },
                     { name: "10-Hour Block", path: "/booking/10hour" },
+                    { name: "20-Hour Block", path: "/booking/20hour" },
                     { name: "Intensive Course", path: "/booking/intensive" },
                     { name: "Mock Test", path: "/booking/mocktest" },
                     { name: "Test Rental", path: "/booking/testrental" },

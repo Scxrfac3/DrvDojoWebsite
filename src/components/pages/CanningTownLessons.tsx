@@ -25,7 +25,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Canning Town?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Canning Town start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+        "text": "Driving lessons in Canning Town start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
       }
     },
     {
@@ -94,7 +94,7 @@ const CanningTownLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Canning Town Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Canning Town & Silvertown. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Canning Town & Silvertown. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
         keywords="driving lessons Canning Town, driving instructor Canning Town, automatic driving lessons Silvertown, book driving lessons online East London, driving school with Klarna London, E16 driving lessons, Canning Town E16, Silvertown"
         canonical="https://drivedojodrivingschool.com/driving-lessons/canning-town"
         serviceSchema={{
@@ -145,8 +145,8 @@ const CanningTownLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering E16, Silvertown, and surrounding Docklands areas.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
-                    <span className="text-primary font-semibold"> £25/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
+                    <span className="text-primary font-semibold"> £38/hr</span>.
                     Prep for Goodmayes DTC, Wanstead, and Chingford test centres.
                   </p>
 

@@ -96,7 +96,7 @@ const GoodmayesLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Goodmayes Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Goodmayes & Seven Kings. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Goodmayes & Seven Kings. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
         keywords="driving lessons Goodmayes, driving instructor Goodmayes, automatic driving lessons Seven Kings, driving school with Klarna London, book driving lessons online East London, IG postcodes driving lessons, Mercedes automatic driving lessons Goodmayes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/goodmayes"
         serviceSchema={{
@@ -147,8 +147,8 @@ const GoodmayesLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor and Goodmayes DTC specialist. Automatic Mercedes-Benz A-Class.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
-                    <span className="text-primary font-semibold"> £25/hr</span>. Covering all IG postcodes.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
+                    <span className="text-primary font-semibold"> £38/hr</span>. Covering all IG postcodes.
                   </p>
 
                   <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">

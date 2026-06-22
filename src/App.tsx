@@ -12,6 +12,7 @@ const Contact = lazy(() => import('./components/pages/Contact'));
 const BookingPayg = lazy(() => import('./components/pages/BookingPayg'));
 const Booking6Hour = lazy(() => import('./components/pages/Booking6Hour'));
 const Booking10Hour = lazy(() => import('./components/pages/Booking10Hour'));
+const Booking20Hour = lazy(() => import('./components/pages/Booking20Hour'));
 const BookingIntensive = lazy(() => import('./components/pages/BookingIntensive'));
 const BookingMockTest = lazy(() => import('./components/pages/BookingMockTest'));
 const BookingTestRental = lazy(() => import('./components/pages/BookingTestRental'));
@@ -31,6 +32,7 @@ const CanningTownLessons = lazy(() => import('./components/pages/CanningTownLess
 const DocklandsLessons = lazy(() => import('./components/pages/DocklandsLessons'));
 const DualControlInstallation = lazy(() => import('./components/pages/DualControlInstallation'));
 const Terms = lazy(() => import('./components/pages/Terms'));
+const PrivacyPolicyPage = lazy(() => import('./components/pages/PrivacyPolicyPage'));
 const Waitlist = lazy(() => import('./components/pages/Waitlist'));
 const BookingSuccess = lazy(() => import('./components/pages/BookingSuccess'));
 const BookingCancel = lazy(() => import('./components/pages/BookingCancel'));
@@ -77,6 +79,7 @@ function App() {
           <Route path='/booking/payg' element={<BookingPayg />} />
           <Route path='/booking/6hour' element={<Booking6Hour />} />
           <Route path='/booking/10hour' element={<Booking10Hour />} />
+          <Route path='/booking/20hour' element={<Booking20Hour />} />
           <Route path='/booking/intensive' element={<BookingIntensive />} />
           <Route path='/booking/mocktest' element={<BookingMockTest />} />
           <Route path='/booking/testrental' element={<BookingTestRental />} />
@@ -116,6 +119,7 @@ function App() {
             element={<DualControlInstallation />}
           />
           <Route path='/terms' element={<Terms />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
           <Route path='/waitlist' element={<Waitlist />} />
           <Route path='/booking/success' element={<BookingSuccess />} />
           <Route path='/booking/cancel' element={<BookingCancel />} />

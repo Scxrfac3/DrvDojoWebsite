@@ -144,9 +144,9 @@ const AutomaticDrivingLessons = () => {
       title: "First 2 Hours",
       subtitle: "Try before you commit",
       price: "£70",
-      originalPrice: "£95",
+      originalPrice: "£76",
       saving: "Save £25",
-      discountCode: "SAVE25",
+      discountCode: "",
       unit: "/ 2-hour assessment",
       features: [
         "2 hours of 1-to-1 tuition",
@@ -166,7 +166,7 @@ const AutomaticDrivingLessons = () => {
       title: "10-Hour Block",
       subtitle: "Structured learning block",
       price: "£340",
-      originalPrice: "£380",
+      originalPrice: "£420",
       saving: "Save £40",
       unit: "/ 10 hours (£34/hr)",
       features: [
@@ -188,10 +188,10 @@ const AutomaticDrivingLessons = () => {
       id: "20hour",
       title: "20-Hour Package",
       subtitle: "Complete beginner to test ready",
-      price: "£689",
+      price: "£679",
       originalPrice: "£839",
-      saving: "Save £150",
-      unit: "/ 20 hours (£34.45/hr)",
+      saving: "Save £81",
+      unit: "/ 20 hours (£33.95/hr)",
       features: [
         "20 hours of driving tuition",
         "Full structured learning plan",
@@ -212,7 +212,7 @@ const AutomaticDrivingLessons = () => {
       title: "Intensive Pass Course",
       subtitle: "Pass in as little as 2 weeks",
       price: "£650 – £950",
-      unit: "/ 12–30 hours",
+      unit: "/ 12–30 hrs",
       features: [
         "15–25 hours immersive daily lessons",
         "Theory test support & guidance",
@@ -397,7 +397,7 @@ const AutomaticDrivingLessons = () => {
                 name: "How much do automatic driving lessons cost in East London?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our automatic driving lessons start at £70 for a 2-hour assessment (use code SAVE25). Block bookings: 10 hours £340 (£34/hr), 20 hours £689 (£34.45/hr). Intensive courses from £650–£950. All in a Mercedes-Benz A-Class with door-to-door pickup. Klarna interest-free payments available.",
+                  text: "Our automatic driving lessons start at £70 for a 2-hour assessment (use code SAVE25). Block bookings: 10 hours £340 (£34/hr), 20 hours £679 (£33.95/hr). Intensive courses from £650–£950. All in a Mercedes-Benz A-Class with door-to-door pickup. Klarna interest-free payments available.",
                 },
               },
               {
@@ -531,7 +531,7 @@ const AutomaticDrivingLessons = () => {
                   </div>
                   <div className="bg-[#ff6b35]/20 backdrop-blur-md rounded-lg px-4 py-3 border border-[#ff6b35]/30">
                     <span className="text-[#ff6b35] font-bold text-lg">
-                      £689
+                      £679
                     </span>
                     <span className="text-gray-400 text-sm ml-2">
                       / 20hr (Popular)
@@ -704,7 +704,7 @@ const AutomaticDrivingLessons = () => {
           <p className="font-semibold text-white">
             <strong>New Driver Assessment:</strong> 120 Minutes for £70 (was £95
             with code{" "}
-            <span className="bg-white/20 px-2 py-0.5 rounded">SAVE25</span>){" "}
+            <span className="bg-white/20 px-2 py-0.5 rounded"></span>){" "}
             <strong>— Limited slots available.</strong>
           </p>
         </div>
@@ -1349,7 +1349,7 @@ const AutomaticDrivingLessons = () => {
                         10-Hour Block — £340 (£34/hr)
                       </option>
                       <option value="20hour">
-                        20-Hour Package — £689 (£34.45/hr)
+                        20-Hour Package — £679 (£33.95/hr)
                       </option>
                       <option value="intensive">
                         Intensive Pass Course — £650–£950

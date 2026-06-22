@@ -190,16 +190,20 @@ export default function NewTestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <section className="py-20 bg-[#0d0d0d] relative overflow-hidden">
+      {/* Background decorative elements - matching homepage premium aesthetic */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Driving lesson Reviews and
-            <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent"> Testimonials</span> 💬
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-500"> Testimonials</span> 💬
           </h2>
-          <p className="text-xl text-gray-600">
-            Don't just take our word for it - see what our students are saying! 
+          <p className="text-xl text-gray-400">
+            Don't just take our word for it - see what our students are saying!
             <span className="animate-pulse">🌟</span>
           </p>
         </div>
@@ -208,7 +212,7 @@ export default function NewTestimonialsSection() {
           {/* Main Testimonial Card */}
           <div className="relative">
             <ElectricBorder color="#FFD700" intensity="high" className="transform transition-all duration-500 hover:scale-105">
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <div className="bg-white/[0.03] backdrop-blur-md rounded-3xl border border-white/[0.08] overflow-hidden">
                 <div className="p-8 md:p-12">
                   <div className="flex flex-col md:flex-row items-center gap-8">
                     {/* Profile Section */}
@@ -217,7 +221,7 @@ export default function NewTestimonialsSection() {
                         <img
                           src={currentTestimonial.image}
                           alt={currentTestimonial.name}
-                          className="w-32 h-32 rounded-full object-cover shadow-xl border-4 border-white"
+                          className="w-32 h-32 rounded-full object-cover shadow-xl border-4 border-white/10"
                         />
                         <div className="absolute -top-2 -right-2 text-4xl animate-bounce">
                           {currentTestimonial.emoji}
@@ -238,14 +242,14 @@ export default function NewTestimonialsSection() {
                       </div>
 
                       {/* Testimonial Text */}
-                      <blockquote className="text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed font-medium">
+                      <blockquote className="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed font-medium">
                         "{currentTestimonial.quote}"
                       </blockquote>
 
                       {/* User Info */}
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                         <div>
-                          <div className="font-bold text-gray-900 text-xl">
+                          <div className="font-bold text-white text-xl">
                             {currentTestimonial.name}
                           </div>
                           <div className="text-gray-500 flex items-center justify-center md:justify-start">
@@ -260,7 +264,7 @@ export default function NewTestimonialsSection() {
                             className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
                               likedTestimonials.has(currentTestimonial.id)
                                 ? 'bg-red-500 text-white scale-110'
-                                : 'bg-gray-100 hover:bg-red-100 text-gray-600'
+                                : 'bg-white/5 hover:bg-red-500/20 text-gray-400 border border-white/10'
                             }`}
                           >
                             <Heart className={`h-4 w-4 ${likedTestimonials.has(currentTestimonial.id) ? 'fill-current' : ''}`} />
@@ -268,7 +272,7 @@ export default function NewTestimonialsSection() {
                               {likedTestimonials.has(currentTestimonial.id) ? currentTestimonial.likes + 1 : currentTestimonial.likes}
                             </span>
                           </button>
-                          <button className="flex items-center space-x-2 bg-blue-100 hover:bg-blue-200 text-blue-600 px-4 py-2 rounded-full transition-colors">
+                          <button className="flex items-center space-x-2 bg-white/5 hover:bg-white/10 text-gray-400 border border-white/10 px-4 py-2 rounded-full transition-colors">
                             <MessageCircle className="h-4 w-4" />
                             <span className="text-sm font-medium">Reply</span>
                           </button>
@@ -285,9 +289,9 @@ export default function NewTestimonialsSection() {
           <div className="flex justify-between items-center mt-8">
             <button
               onClick={goToPrevious}
-              className="bg-white hover:bg-gray-50 p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 group"
+              className="bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 group"
             >
-              <ChevronLeft className="h-6 w-6 text-gray-600 group-hover:text-blue-600" />
+              <ChevronLeft className="h-6 w-6 text-gray-400 group-hover:text-primary" />
             </button>
 
             {/* Dots Navigation */}
@@ -301,8 +305,8 @@ export default function NewTestimonialsSection() {
                   }}
                   className={`relative transition-all duration-300 ${
                     index === currentIndex
-                      ? 'w-12 h-12 bg-slate-800'
-                      : 'w-8 h-8 bg-gray-300 hover:bg-gray-400'
+                      ? 'w-12 h-12 bg-primary'
+                      : 'w-8 h-8 bg-white/10 hover:bg-white/20'
                   } rounded-full flex items-center justify-center`}
                 >
                   {index === currentIndex && (
@@ -314,9 +318,9 @@ export default function NewTestimonialsSection() {
 
             <button
               onClick={goToNext}
-              className="bg-white hover:bg-gray-50 p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 group"
+              className="bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 group"
             >
-              <ChevronRight className="h-6 w-6 text-gray-600 group-hover:text-blue-600" />
+              <ChevronRight className="h-6 w-6 text-gray-400 group-hover:text-primary" />
             </button>
           </div>
 
@@ -324,10 +328,10 @@ export default function NewTestimonialsSection() {
           <div className="text-center mt-6">
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                isAutoPlaying 
-                  ? 'bg-green-100 text-green-600' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${
+                isAutoPlaying
+                  ? 'bg-primary/20 text-primary border-primary/30'
+                  : 'bg-white/5 text-gray-400 hover:bg-white/10 border-white/10'
               }`}
             >
               {isAutoPlaying ? '⏸️ Pause' : '▶️ Auto-play'}
@@ -337,18 +341,18 @@ export default function NewTestimonialsSection() {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-3xl">
-            <div className="bg-white rounded-3xl px-8 py-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="inline-block bg-gradient-to-r from-primary to-orange-500 p-1 rounded-3xl">
+            <div className="bg-[#0d0d0d] rounded-3xl px-8 py-6">
+              <h3 className="text-2xl font-bold text-white mb-2">
                 Want to Join Them? 🚀
               </h3>
-              <p className="text-gray-600 mb-4">Start your driving journey today and become our next success story!</p>
+              <p className="text-gray-400 mb-4">Start your driving journey today and become our next success story!</p>
               <Link
-                to="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105"
+                to="/booking/payg"
+                className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-primary/20"
               >
                 <Trophy className="mr-2 h-5 w-5" />
-                Book My First Lesson! 
+                Book My First Lesson!
                 <span className="ml-2 animate-bounce">🎯</span>
               </Link>
             </div>

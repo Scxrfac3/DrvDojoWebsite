@@ -252,6 +252,10 @@
   from = "/booking/10hour"
   to = "/index.html"
   status = 200
+[[redirects]]
+  from = "/booking/20hour"
+  to = "/index.html"
+  status = 200
 
 [[redirects]]
   from = "/booking/intensive"
@@ -399,6 +403,12 @@
 # Terms page (React Router handles it — no 301 redirect to avoid loops)
 [[redirects]]
   from = "/terms"
+  to = "/index.html"
+  status = 200
+
+# Privacy Policy page
+[[redirects]]
+  from = "/privacy-policy"
   to = "/index.html"
   status = 200
 

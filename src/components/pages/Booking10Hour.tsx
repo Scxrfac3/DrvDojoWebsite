@@ -140,6 +140,7 @@ const Booking10Hour = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Button variant="outline" className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-amber-500/50 transition-colors" onClick={() => window.location.href = '/booking/payg'}>Pay As You Go</Button>
                 <Button variant="outline" className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-amber-500/50 transition-colors" onClick={() => window.location.href = '/booking/6hour'}>6-Hour Package</Button>
+                <Button variant="outline" className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-amber-500/50 transition-colors" onClick={() => window.location.href = '/booking/20hour'}>20-Hour Package</Button>
                 <Button variant="outline" className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-amber-500/50 transition-colors" onClick={() => window.location.href = '/booking/intensive'}>Intensive Course</Button>
                 <Button variant="outline" className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-amber-500/50 transition-colors" onClick={() => window.location.href = '/booking/mocktest'}>Mock Test</Button>
                 <Button variant="outline" className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-amber-500/50 transition-colors" onClick={() => window.location.href = '/booking/testrental'}>Test Car Rental</Button>

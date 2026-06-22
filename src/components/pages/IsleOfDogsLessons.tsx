@@ -95,7 +95,7 @@ const IsleOfDogsLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Isle of Dogs Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Isle of Dogs & Canary Wharf. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Isle of Dogs & Canary Wharf. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
         keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Isle of Dogs E14, Canary Wharf E14, Poplar E14, Tower Hamlets, Docklands E14, driving lessons Isle of Dogs"
         canonical="https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs"
         serviceSchema={{
@@ -132,7 +132,7 @@ const IsleOfDogsLessons = () => {
                       <span className="text-sm font-medium">DVSA Approved</span>
                     </div>
                     <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
-                      <span className="text-sm font-medium">First 2hrs £49</span>
+                      <span className="text-sm font-medium">First 2hrs £70</span>
                     </div>
                   </div>
 
@@ -146,8 +146,8 @@ const IsleOfDogsLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering all E14 postcodes. Automatic Mercedes-Benz A-Class.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
-                    <span className="text-primary font-semibold"> £25/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
+                    <span className="text-primary font-semibold"> £38/hr</span>.
                   </p>
 
                   <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">

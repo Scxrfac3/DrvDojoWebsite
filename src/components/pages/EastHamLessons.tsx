@@ -25,7 +25,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in East Ham?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in East Ham start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+        "text": "Driving lessons in East Ham start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
       }
     },
     {
@@ -94,7 +94,7 @@ const EastHamLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in East Ham Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in East Ham. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in East Ham. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
         keywords="driving lessons East Ham, driving instructor East Ham, automatic driving lessons East Ham, book driving lessons online East London, driving school with Klarna London, E6 driving lessons, Newham, East Ham E6"
         canonical="https://drivedojodrivingschool.com/driving-lessons/east-ham"
         serviceSchema={{
@@ -145,8 +145,8 @@ const EastHamLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering all E6 postcodes. Automatic Mercedes-Benz A-Class.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£49</span>, then
-                    <span className="text-primary font-semibold"> £25/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
+                    <span className="text-primary font-semibold"> £38/hr</span>.
                     Prep for Wanstead and Goodmayes test centres.
                   </p>
 

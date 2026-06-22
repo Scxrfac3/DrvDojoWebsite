@@ -56,7 +56,7 @@ const Footer = ({
     { title: "Blog", href: "/blog" },
     { title: "FAQ", href: "/about" },
     { title: "Terms of Service", href: "/terms" },
-    { title: "Privacy Policy", href: "/" },
+    { title: "Privacy Policy", href: "/privacy-policy" },
     { title: "Careers", href: "/" },
   ],
   locationLinks = [

@@ -89,138 +89,138 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                 <NavigationMenuTrigger className="bg-transparent hover:bg-white/5 text-white/80 hover:text-white text-sm tracking-wide font-medium data-[active]:text-white data-[active]:bg-white/5 rounded-lg px-2 py-2 transition-all duration-200">
                   Services
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
-                  <div className="grid grid-cols-2 gap-3 p-4 w-[500px]">
+                <NavigationMenuContent className="bg-[#1a1a1a]/95 backdrop-blur-xl border border-primary/30 p-4 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+                  <div className="grid grid-cols-2 gap-2 p-2 w-[500px]">
                     <Link
                       to="/services"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         All Services
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         View our complete range of driving lessons
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/goodmayes"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Goodmayes
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Goodmayes
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/barking"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Barking
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Barking
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/romford"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Romford
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Romford
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/isle-of-dogs"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Isle of Dogs
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Isle of Dogs
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/east-ham"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         East Ham
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in East Ham
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/forest-gate"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Forest Gate
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Forest Gate
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/canning-town"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Canning Town
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Canning Town
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/docklands"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Docklands
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Docklands
                       </div>
                     </Link>
                     <Link
                       to="/driving-lessons/walthamstow"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
                         Walthamstow
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Driving lessons in Walthamstow
                       </div>
                     </Link>
                     <Link
-                      to="/driving-lessons/isle-of-dogs"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10"
+                      to="/driving-lessons/ilford"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all border border-transparent hover:border-primary/30"
                     >
-                      <div className="text-sm font-medium text-white">
-                        Isle of Dogs
+                      <div className="text-sm font-medium text-white group-hover:text-primary transition-colors">
+                        Ilford
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
-                        Driving lessons in Isle of Dogs
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
+                        Driving lessons in Ilford
                       </div>
                     </Link>
                     <Link
                       to="/dual-control-installation"
-                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-white/5 transition-colors bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/20"
+                      className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/20"
                     >
-                      <div className="text-sm font-medium text-white flex items-center">
+                      <div className="text-sm font-medium text-white flex items-center group-hover:text-primary transition-colors">
                         <span className="text-primary mr-1">🔧</span> Dual
                         Control Installation
                       </div>
-                      <div className="text-xs text-gray-400 group-hover:text-gray-300">
+                      <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
                         Official He-Man partner for instructors
                       </div>
                     </Link>

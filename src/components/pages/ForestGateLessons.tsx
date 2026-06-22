@@ -25,7 +25,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Forest Gate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Forest Gate start from £45 for a 90-minute session. First 2 hours assessed at £49, then £25/hr. Block booking discounts available."
+        "text": "Driving lessons in Forest Gate start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
       }
     },
     {
@@ -78,7 +78,7 @@ const ForestGateLessons = () => {
     <>
       <SEO
         title="Book Driving Lessons in Forest Gate Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Forest Gate & E7. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £49!"
+        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Forest Gate & E7. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
         keywords="driving lessons Forest Gate, driving instructor Forest Gate, automatic driving lessons E7, book driving lessons online East London, driving school with Klarna London, Forest Gate E7, Newham"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
         serviceSchema={{
@@ -130,8 +130,8 @@ const ForestGateLessons = () => {
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering E7, E11, E12, and E15 postcodes.
                     Automatic Mercedes-Benz A-Class. First 2 hours assessed at
-                    <span className="text-primary font-semibold"> £49</span>, then
-                    <span className="text-primary font-semibold"> £25/hr</span>.
+                    <span className="text-primary font-semibold"> £70</span>, then
+                    <span className="text-primary font-semibold"> £38/hr</span>.
                   </p>
 
                   <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">

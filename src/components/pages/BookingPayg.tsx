@@ -208,6 +208,13 @@ const BookingPayg = () => {
                 <Button
                   variant="outline"
                   className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
+                  onClick={() => window.location.href = '/booking/20hour'}
+                >
+                  20-Hour Package
+                </Button>
+                <Button
+                  variant="outline"
+                  className="text-slate-300 border-slate-700 hover:bg-slate-800 hover:border-blue-500/50 transition-colors"
                   onClick={() => window.location.href = '/booking/intensive'}
                 >
                   Intensive Course
