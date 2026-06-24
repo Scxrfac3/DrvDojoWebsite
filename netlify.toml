@@ -262,6 +262,40 @@
   to = "/index.html"
   status = 200
 
+# Intensive package booking pages
+[[redirects]]
+  from = "/booking/intensive-12hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-16hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-20hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-25hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-30hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-35hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-40hr"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/intensive-45hr"
+  to = "/index.html"
+  status = 200
+
 [[redirects]]
   from = "/booking/mocktest"
   to = "/index.html"

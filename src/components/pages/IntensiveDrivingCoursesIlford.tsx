@@ -109,76 +109,124 @@ const IntensiveDrivingCoursesIlford = () => {
     },
   ];
 
-  // Pricing matching Services page
+  // Intensive course packages — 8-card grid
   const pricingPlans = [
     {
-      id: "first2hours",
-      title: "First 2 Hours",
-      subtitle: "Try before you commit",
-      price: "£70",
-      originalPrice: "£95",
-      saving: "Save £25",
-      discountCode: "SAVE25",
-      unit: "/ 2-hour assessment",
-      features: [
-        "2 hours of 1-to-1 tuition",
-        "Mercedes-Benz A-Class automatic",
-        "DVSA approved ADI instructor",
-        "Personalised assessment & plan",
-        "Door-to-door pickup included",
-      ],
+      id: "12hr",
+      hours: "12 Hours",
+      level: "REFRESHER",
+      price: "£575",
+      value: "Value £606",
+      saving: "You Save £31",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Almost test-ready and polishing a few final skills.",
+      duration: "5–10 days",
+      readyIn: "2–4 weeks",
       popular: false,
-      badge: "🎯 INTRO OFFER",
-      badgeColor: "from-orange-500 to-red-500",
-      ctaLink: "/booking/payg",
-      ctaText: "Book Assessment",
-      klarna: false,
+      ctaLink: "/booking/intensive-12hr",
     },
     {
-      id: "10hour",
-      title: "10-Hour Block",
-      subtitle: "Structured learning block",
-      price: "£340",
-      originalPrice: "£380",
-      saving: "Save £40",
-      unit: "/ 10 hours (£34/hr)",
-      features: [
-        "10 hours of driving tuition",
-        "Fully DVSA qualified instructors",
-        "Flexible pickup & drop-off",
-        "Live progress tracking dashboard",
-        "Mercedes-Benz A-Class automatic",
-      ],
+      id: "16hr",
+      hours: "16 Hours",
+      level: "REFRESHER",
+      price: "£715",
+      value: "Value £758",
+      saving: "You Save £43",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Experienced, with a couple of key areas to sharpen.",
+      duration: "1–2 weeks",
+      readyIn: "2–3 weeks",
       popular: false,
-      badge: "⚡ BEST VALUE",
-      badgeColor: "from-green-400 to-emerald-500",
-      ctaLink: "/booking/10hour",
-      ctaText: "Book 10-Hour Block",
-      klarna: true,
-      klarnaText: "Or 3 interest-free payments of £113.33 with Klarna",
+      ctaLink: "/booking/intensive-16hr",
     },
     {
-      id: "intensive",
-      title: "Intensive Pass Course",
-      subtitle: "Pass in as little as 2 weeks",
-      price: "£650 – £950",
-      unit: "/ 12–30 hours",
-      features: [
-        "15–25 hours immersive daily lessons",
-        "Theory test support & guidance included",
-        "Mock test the week before test date",
-        "Flexible scheduling around work/uni",
-        "Experienced ADI — structured daily syllabus",
-        "Test car hire on test day included",
-      ],
+      id: "20hr",
+      hours: "20 Hours",
+      level: "INTERMEDIATE",
+      price: "£850",
+      value: "Value £910",
+      saving: "You Save £60",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Roughly halfway, with solid basics and more to learn.",
+      duration: "2–3 weeks",
+      readyIn: "2–4 weeks",
+      popular: false,
+      ctaLink: "/booking/intensive-20hr",
+    },
+    {
+      id: "25hr",
+      hours: "25 Hours",
+      level: "INTERMEDIATE",
+      price: "£1,025",
+      value: "Value £1,100",
+      saving: "You Save £75",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Coming along well, with a way to go to test standard.",
+      duration: "3–4 weeks",
+      readyIn: "3–5 weeks",
+      popular: false,
+      ctaLink: "/booking/intensive-25hr",
+    },
+    {
+      id: "30hr",
+      hours: "30 Hours",
+      level: "INTERMEDIATE",
+      price: "£1,180",
+      value: "Value £1,290",
+      saving: "You Save £110",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Some experience and ready to push on to test-ready.",
+      duration: "3–5 weeks",
+      readyIn: "3–6 weeks",
       popular: true,
-      badge: "⭐ MOST POPULAR",
-      badgeColor: "from-[#ff6b35] to-[#f5a623]",
-      ctaLink: "/booking/intensive",
-      ctaText: "Book Intensive Course",
-      klarna: true,
-      klarnaText: "💳 Klarna available — split payments interest-free",
+      ctaLink: "/booking/intensive-30hr",
     },
+    {
+      id: "35hr",
+      hours: "35 Hours",
+      level: "BEGINNER",
+      price: "£1,350",
+      value: "Value £1,480",
+      saving: "You Save £130",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Limited experience, getting to grips with the basics.",
+      duration: "3–6 weeks",
+      readyIn: "3–7 weeks",
+      popular: false,
+      ctaLink: "/booking/intensive-35hr",
+    },
+    {
+      id: "40hr",
+      hours: "40 Hours",
+      level: "BEGINNER",
+      price: "£1,520",
+      value: "Value £1,670",
+      saving: "You Save £150",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "A beginner and a quick learner, eager to get test-ready.",
+      duration: "4–7 weeks",
+      readyIn: "4–8 weeks",
+      popular: false,
+      ctaLink: "/booking/intensive-40hr",
+    },
+    {
+      id: "45hr",
+      hours: "45 Hours",
+      level: "BEGINNER",
+      price: "£1,680",
+      value: "Value £1,860",
+      saving: "You Save £180",
+      features: "Automatic · incl. Pass Pledge & Fast-Track Test",
+      whoFor: "Starting from scratch, all the way to test-ready.",
+      duration: "4–10 weeks",
+      readyIn: "4–10 weeks",
+      popular: false,
+      ctaLink: "/booking/intensive-45hr",
+    },
+  ];
+
+  // Legacy plans kept for reference (mock test etc)
+  const legacyPlans = [
     {
       id: "mocktest",
       title: "Mock Driving Test",
@@ -822,103 +870,90 @@ const IntensiveDrivingCoursesIlford = () => {
               </p>
             </div>
 
+            {/* 8-Card Intensive Course Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {pricingPlans.map((plan, index) => (
                 <motion.div
                   key={plan.id}
-                  className={`bg-[rgba(255,255,255,0.03)] border rounded-2xl p-8 relative transition-all hover:-translate-y-1 group ${
+                  className={`bg-white/[0.03] backdrop-blur-xl rounded-2xl p-6 relative transition-all duration-300 ${
                     plan.popular
-                      ? "border-[#ff6b35] bg-gradient-to-b from-[rgba(255,107,53,0.1)] to-[rgba(255,107,53,0.02)] scale-[1.02] z-10"
-                      : "border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,107,53,0.5)]"
+                      ? "border-2 border-primary shadow-[0_0_30px_rgba(255,107,53,0.2)] transform scale-105 z-10"
+                      : "border border-white/[0.08] hover:border-primary/40"
                   }`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
                   viewport={{ once: true }}
-                  onMouseEnter={() => setHoveredPackage(plan.id)}
-                  onMouseLeave={() => setHoveredPackage(null)}
+                  whileHover={{ y: -5 }}
                 >
-                  {/* Badge */}
-                  <div
-                    className={`absolute top-0 left-0 right-0 bg-gradient-to-r ${plan.badgeColor} text-white text-xs font-bold px-3 py-2 text-center rounded-t-2xl`}
-                  >
-                    {plan.badge}
-                  </div>
-
+                  {/* MOST POPULAR ribbon */}
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#ff6b35] text-white px-5 py-1 rounded-full text-xs font-bold uppercase z-20">
-                      Most Popular
+                    <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-orange-500 text-white text-xs font-black px-5 py-1.5 rounded-b-lg tracking-wider uppercase shadow-lg whitespace-nowrap z-20">
+                      ⭐ Most Popular
                     </div>
                   )}
 
-                  <div className={plan.badge ? "pt-12" : "pt-4"}>
-                    <h3 className="text-2xl font-bold text-white mb-1">
-                      {plan.title}
-                    </h3>
-                    <p className="text-[#888] text-sm mb-6">{plan.subtitle}</p>
-
-                    {/* Price */}
-                    <div className="flex items-baseline gap-2 mb-1">
-                      <span className="text-4xl font-extrabold text-white">
-                        {plan.price}
+                  <div className={plan.popular ? "pt-10" : "pt-2"}>
+                    {/* Hours & Level */}
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-xl font-bold text-white">{plan.hours}</h3>
+                      <span className={`text-xs font-bold px-2 py-1 rounded-full ${plan.level === "BEGINNER" ? "bg-blue-500/20 text-blue-400" : plan.level === "INTERMEDIATE" ? "bg-primary/20 text-primary" : "bg-green-500/20 text-green-400"}`}>
+                        {plan.level}
                       </span>
                     </div>
-                    <div className="text-[#888] text-sm mb-3">{plan.unit}</div>
 
-                    {plan.originalPrice && (
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-gray-500 line-through text-sm">
-                          {plan.originalPrice}
-                        </span>
-                        <span className="bg-[rgba(16,185,129,0.15)] text-green-500 px-3 py-1 rounded-lg text-sm font-semibold">
-                          {plan.saving}
-                        </span>
-                      </div>
-                    )}
+                    {/* Price */}
+                    <div className="mb-2">
+                      <span className="text-3xl font-black text-white">{plan.price}</span>
+                    </div>
 
-                    {plan.discountCode && (
-                      <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 text-green-400 text-xs font-bold px-3 py-2 rounded-lg mb-4">
-                        🎉 Use code{" "}
-                        <span className="text-white font-black">
-                          {plan.discountCode}
-                        </span>{" "}
-                        at checkout
-                      </div>
-                    )}
-
-                    {/* Klarna Badge */}
-                    {plan.klarna && plan.klarnaText && (
-                      <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-400/30 text-pink-300 text-xs font-bold px-3 py-2 rounded-lg mb-4 flex items-center gap-2">
-                        <CreditCard className="w-3.5 h-3.5 flex-shrink-0" />
-                        {plan.klarnaText}
-                      </div>
-                    )}
+                    {/* Value & Savings */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-gray-500 text-sm line-through">{plan.value}</span>
+                      <span className="bg-green-500/15 text-green-400 px-2 py-0.5 rounded-md text-xs font-bold">{plan.saving}</span>
+                    </div>
 
                     {/* Features */}
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-[rgba(255,255,255,0.8)]">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-sm text-gray-400 mb-3">{plan.features}</p>
+
+                    {/* Who it's for */}
+                    <div className="bg-white/[0.02] rounded-lg p-3 mb-3 border border-white/[0.05]">
+                      <p className="text-xs text-gray-500 mb-1">Who it's for</p>
+                      <p className="text-sm text-gray-300">{plan.whoFor}</p>
+                    </div>
+
+                    {/* Duration & Ready In */}
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      <div className="bg-white/[0.02] rounded-lg p-2 border border-white/[0.05]">
+                        <p className="text-xs text-gray-500">Duration</p>
+                        <p className="text-sm text-gray-300 font-medium">{plan.duration}</p>
+                      </div>
+                      <div className="bg-white/[0.02] rounded-lg p-2 border border-white/[0.05]">
+                        <p className="text-xs text-gray-500">Ready In</p>
+                        <p className="text-sm text-gray-300 font-medium">{plan.readyIn}</p>
+                      </div>
+                    </div>
+
+                    {/* Klarna Badge */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="bg-pink-500/10 border border-pink-400/20 rounded-lg px-2 py-1.5 flex-1 text-center">
+                        <span className="text-pink-300 text-xs font-medium">💳 Pay in 3 with Klarna</span>
+                      </div>
+                    </div>
 
                     {/* CTA Button */}
                     <Button
-                      className={`w-full justify-center text-base font-semibold ${
+                      className={`w-full justify-center text-sm font-bold ${
                         plan.popular
-                          ? "bg-[#ff6b35] hover:bg-[#ff8555] text-white shadow-[0_8px_30px_rgba(255,107,53,0.4)]"
-                          : "bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.15)] text-white"
+                          ? "bg-gradient-to-r from-primary to-orange-500 hover:from-primary/90 hover:to-orange-600 text-white shadow-lg shadow-primary/20"
+                          : "bg-primary hover:bg-primary/90 text-white"
                       }`}
                       onClick={() => {
                         triggerConfetti();
                         window.location.href = plan.ctaLink;
                       }}
                     >
-                      {plan.ctaText}
+                      Choose This Course
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
@@ -940,11 +975,9 @@ const IntensiveDrivingCoursesIlford = () => {
                   Pay Later with Klarna
                 </span>
               </div>
-              <p className="text-[#888] text-sm max-w-xl mx-auto">
-                Spread the cost of your intensive driving course with
-                interest-free monthly payments. Available on our 10-Hour Block
-                and Intensive Pass Course. No fees, no interest — just
-                flexibility.
+              <p className="text-gray-400 text-sm max-w-xl mx-auto">
+                Spread the cost of your intensive driving course with 3 interest-free payments.
+                No fees, no interest — just flexibility. Available on all intensive course packages.
               </p>
             </motion.div>
           </div>

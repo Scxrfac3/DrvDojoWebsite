@@ -14,6 +14,7 @@ const Booking6Hour = lazy(() => import('./components/pages/Booking6Hour'));
 const Booking10Hour = lazy(() => import('./components/pages/Booking10Hour'));
 const Booking20Hour = lazy(() => import('./components/pages/Booking20Hour'));
 const BookingIntensive = lazy(() => import('./components/pages/BookingIntensive'));
+const BookingIntensivePackage = lazy(() => import('./components/pages/BookingIntensivePackage'));
 const BookingMockTest = lazy(() => import('./components/pages/BookingMockTest'));
 const BookingTestRental = lazy(() => import('./components/pages/BookingTestRental'));
 const BlogPage = lazy(() => import('./components/pages/BlogPage'));
@@ -81,6 +82,14 @@ function App() {
           <Route path='/booking/10hour' element={<Booking10Hour />} />
           <Route path='/booking/20hour' element={<Booking20Hour />} />
           <Route path='/booking/intensive' element={<BookingIntensive />} />
+          <Route path='/booking/intensive-12hr' element={<BookingIntensivePackage packageKey="12hr" />} />
+          <Route path='/booking/intensive-16hr' element={<BookingIntensivePackage packageKey="16hr" />} />
+          <Route path='/booking/intensive-20hr' element={<BookingIntensivePackage packageKey="20hr" />} />
+          <Route path='/booking/intensive-25hr' element={<BookingIntensivePackage packageKey="25hr" />} />
+          <Route path='/booking/intensive-30hr' element={<BookingIntensivePackage packageKey="30hr" />} />
+          <Route path='/booking/intensive-35hr' element={<BookingIntensivePackage packageKey="35hr" />} />
+          <Route path='/booking/intensive-40hr' element={<BookingIntensivePackage packageKey="40hr" />} />
+          <Route path='/booking/intensive-45hr' element={<BookingIntensivePackage packageKey="45hr" />} />
           <Route path='/booking/mocktest' element={<BookingMockTest />} />
           <Route path='/booking/testrental' element={<BookingTestRental />} />
           <Route path='/blog' element={<BlogPage />} />

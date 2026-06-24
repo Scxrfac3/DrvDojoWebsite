@@ -4381,4 +4381,342 @@ When you book your test, inform Drive Dojo. We'll arrange to have your instructo
     readTime: 6,
     views: 0, likes: 0, comments: 0,
   },
+  {
+    id: "how-many-driving-lessons-do-you-need",
+    title: "How Many Driving Lessons Do You Need? A Complete Guide",
+    slug: "how-many-driving-lessons-do-you-need",
+    content: `# How Many Driving Lessons Do You Need? A Complete Guide
+
+One of the most common questions learner drivers ask is: "How many lessons will I need before I'm ready for my test?" The honest answer is that it varies — but the DVSA provides clear guidance.
+
+## The DVSA Recommendation
+
+The Driver and Vehicle Standards Agency (DVSA) states that the average learner needs around **45 hours of professional instruction** plus **22 hours of private practice** to reach test standard.
+
+However, this is an average. Some students pass with 20 hours; others need 60+. Your number depends on several factors.
+
+## Factors That Affect Your Lesson Count
+
+- **Previous experience** — If you've had informal practice with family, you may need fewer professional hours
+- **Frequency of lessons** — Students who take 2-3 lessons per week tend to progress faster than those taking one weekly lesson
+- **Learning style** — Some people pick up practical skills quickly; others need more repetition
+- **Confidence levels** — Nervous drivers may need more time to build confidence before test readiness
+- **Age** — Statistically, younger learners tend to need fewer hours than older learners
+
+## How to Reduce Your Lesson Count
+
+1. **Take regular lessons** — 2-3 per week maintains momentum
+2. **Practice privately** — If possible, get supervised practice between lessons
+3. **Use an intensive course** — Daily lessons eliminate "re-learning" time
+4. **Track your progress** — Use our DVSA Syllabus Tracker to identify weak areas
+5. **Book mock tests** — These reveal exactly what needs work before the real test
+
+## Drive Dojo's Approach
+
+At Drive Dojo, we assess every student individually during their first 2-hour lesson. We then provide an honest estimate of how many hours you'll need based on your current ability, learning speed, and test date goals.
+
+[Book your assessment lesson today](/booking/payg) — first 2 hours for £70.`,
+    excerpt: "The DVSA recommends 45 hours of professional lessons plus 22 hours of private practice on average. Here's how to reduce your lesson count and pass faster.",
+    featuredImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "August 28, 2023",
+    category: "Learning to Drive",
+    tags: ["driving lessons", "how many lessons", "DVSA", "pass driving test", "learning to drive"],
+    readTime: 5,
+    views: 0, likes: 0, comments: 0,
+  },
+  {
+    id: "intensive-vs-standard-driving-courses",
+    title: "Intensive vs Standard Driving Courses: Which Is Right for You?",
+    slug: "intensive-vs-standard-driving-courses",
+    content: `# Intensive vs Standard Driving Courses: Which Is Right for You?
+
+Choosing between an intensive driving course and standard weekly lessons is one of the biggest decisions you'll make as a learner driver. Both approaches work — but they suit different people.
+
+## Standard Weekly Lessons
+
+**How it works:** 1-2 lessons per week, typically 1-2 hours each. Takes 3-6 months on average.
+
+**Best for:**
+- Students who want to learn at a steady pace
+- People with busy schedules who can't commit to daily lessons
+- Learners who need time to absorb information between sessions
+- Those on a tight weekly budget
+
+**Pros:**
+- Spreads the cost over time
+- Fits around work or college
+- Allows time for private practice between lessons
+
+**Cons:**
+- Takes longer overall
+- You may forget skills between lessons
+- Test date is further away
+
+## Intensive Driving Courses
+
+**How it works:** Daily lessons (2-4 hours) over 1-2 weeks. 12-30 hours total depending on experience.
+
+**Best for:**
+- Learners who need to pass quickly (new job, university deadline)
+- Students who can commit to full-time learning for a week or two
+- People who learn best through immersion
+- Those who have already had some lessons and want to fast-track
+
+**Pros:**
+- Pass in as little as 14 days
+- No "re-learning" gap between lessons
+- Focused, distraction-free learning
+- VIP priority booking — we rearrange our diary around your test date
+
+**Cons:**
+- Requires time off work or college
+- Higher upfront cost (though Klarna Pay in 3 is available)
+- Intense — not suitable for everyone
+
+## Which Should You Choose?
+
+Choose **standard lessons** if you have a flexible timeline and prefer steady progress.
+
+Choose an **intensive course** if you have a deadline or simply want to get it done quickly.
+
+[View our intensive course options](/booking/intensive) or [book a standard lesson](/booking/payg).`,
+    excerpt: "Standard lessons take 3-6 months; intensive courses can get you test-ready in 14 days. Here's how to choose the right approach for your lifestyle and goals.",
+    featuredImage: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "August 20, 2023",
+    category: "Intensive Courses",
+    tags: ["intensive driving course", "standard lessons", "driving lessons", "fast pass", "crash course"],
+    readTime: 4,
+    views: 0, likes: 0, comments: 0,
+  },
+  {
+    id: "hazard-perception-test-tips",
+    title: "Hazard Perception Test Tips: How to Spot Hazards and Pass First Time",
+    slug: "hazard-perception-test-tips",
+    content: `# Hazard Perception Test Tips: How to Spot Hazards and Pass First Time
+
+The hazard perception test is the second part of your theory test. It catches many learners off guard — but with the right approach, you can pass comfortably.
+
+## What Is the Hazard Perception Test?
+
+You'll watch 14 video clips showing everyday driving scenarios. Each clip contains at least one developing hazard — a situation that would cause you to take action (brake, slow down, or change direction).
+
+One clip contains two hazards. That's 15 hazards total across 14 clips.
+
+## How Scoring Works
+
+You can score up to 5 points per hazard. The earlier you click when you spot a developing hazard, the more points you score. Click too late and you score zero.
+
+**Maximum score: 75. Pass mark: 44.**
+
+## Top Tips for Passing
+
+### 1. Understand "Developing Hazards"
+A potential hazard is something that *might* happen. A developing hazard is something that *is* happening — it requires you to act. Only click for developing hazards.
+
+### 2. Click Once — But Be Ready
+Click once when you spot a developing hazard. Don't spam-click — the system will detect this and score you zero for that clip.
+
+### 3. Watch for Common Hazard Triggers
+- Pedestrians near crossings
+- Cyclists on narrow roads
+- Cars pulling out of side roads
+- Vehicles braking suddenly
+- Children near schools
+- Buses stopping
+- Animals in the road
+
+### 4. Practice with Official Clips
+The DVSA offers official practice clips. Use them — they're the closest thing to the real test.
+
+### 5. Stay Focused
+The clips move quickly. Don't let your mind wander between clips. Reset your focus for each new video.
+
+## Common Mistakes
+
+- Clicking too early (before the hazard develops)
+- Clicking too many times (flagged as cheating)
+- Missing the double-hazard clip
+- Losing concentration halfway through
+
+## Practice with Drive Dojo
+
+Your driving lessons with Drive Dojo include real-world hazard perception training. We'll point out developing hazards during your lessons so you learn to spot them naturally.
+
+[Book your first lesson](/booking/payg) — first 2 hours for £70.`,
+    excerpt: "The hazard perception test catches many learners off guard. Learn how to spot developing hazards, when to click, and how to avoid common mistakes.",
+    featuredImage: "https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "June 30, 2023",
+    category: "Theory Test",
+    tags: ["hazard perception", "theory test", "driving test tips", "DVSA"],
+    readTime: 4,
+    views: 0, likes: 0, comments: 0,
+  },
+  {
+    id: "get-over-failing-your-driving-test",
+    title: "How to Get Over Failing Your Driving Test (And Pass Next Time)",
+    slug: "get-over-failing-your-driving-test",
+    content: `# How to Get Over Failing Your Driving Test (And Pass Next Time)
+
+Failing your driving test feels awful. But here's the truth: it happens to thousands of people every year, and most of them pass on their next attempt. Here's how to bounce back.
+
+## It's More Common Than You Think
+
+The national average pass rate is around 47%. That means more than half of all test-takers fail their first attempt. You're not alone.
+
+## Step 1: Read Your DL25 Form
+
+The examiner gives you a DL25 form at the end of your test. This shows exactly what faults you committed:
+
+- **Driving faults (minors)** — up to 15 allowed
+- **Serious faults** — one means an automatic fail
+- **Dangerous faults** — one means an automatic fail
+
+Read this carefully. It tells you exactly what to work on.
+
+## Step 2: Don't Rush Back
+
+Take a few days to process the result. Don't book another test immediately out of frustration. Give yourself time to reflect and prepare properly.
+
+## Step 3: Book More Lessons
+
+Use your DL25 form to guide your next lessons. Focus on the specific areas where you committed faults. Your instructor can target these precisely.
+
+## Step 4: Book a Mock Test
+
+A mock test simulates real test conditions. It reveals whether you're actually ready or if you need more practice. At Drive Dojo, we run mock tests on your exact local test routes.
+
+## Step 5: Choose the Right Test Centre
+
+If you failed at a busy centre, consider switching. Some test centres have higher pass rates than others. Your instructor can advise on the best option.
+
+## Step 6: Book Your Next Test Strategically
+
+Don't book the earliest available slot if you're not ready. Book a date that gives you enough time to fix your faults — usually 2-4 weeks.
+
+## You Will Pass
+
+Failing is a setback, not a dead end. Every learner who passes has either failed before or knows someone who did. Use the experience to become a better driver.
+
+[Book a recovery lesson with Drive Dojo](/booking/payg) — we'll help you fix your faults and pass next time.`,
+    excerpt: "Failing your driving test is common — the national pass rate is 47%. Here's how to read your DL25 form, fix your faults, and pass your next attempt.",
+    featuredImage: "https://images.unsplash.com/photo-1492551557933-34265f7af79e?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "January 23, 2023",
+    category: "Test Preparation",
+    tags: ["failed driving test", "driving test tips", "DL25", "pass driving test", "mock test"],
+    readTime: 5,
+    views: 0, likes: 0, comments: 0,
+  },
+  {
+    id: "top-5-qualities-london-driving-instructor-goodmayes",
+    title: "Top 5 Qualities to Look for in a London Driving Instructor (Goodmayes Guide)",
+    slug: "top-5-qualities-london-driving-instructor-goodmayes",
+    content: `# Top 5 Qualities to Look for in a London Driving Instructor (Goodmayes Guide)
+
+Choosing the right driving instructor is the single biggest factor in how quickly you pass your test. If you're learning in Goodmayes, Ilford, or anywhere in East London, here are the five qualities that matter most.
+
+## 1. DVSA Approval (Not a PDI)
+
+Your instructor should be a fully qualified **Approved Driving Instructor (ADI)**, not a Potential Driving Instructor (PDI) still training. ADIs have passed all three DVSA qualifying exams and display a green badge in their car. PDIs display a pink badge.
+
+At Drive Dojo, we only use fully qualified ADIs. No trainees, no subcontractors.
+
+## 2. Local Test Route Knowledge
+
+An instructor who knows the Goodmayes test routes inside out gives you a massive advantage. They know:
+- Which junctions catch learners out
+- Where the tricky roundabouts are
+- Which roads the examiner commonly uses
+- Where to practice manoeuvres
+
+Drive Dojo's instructor has years of experience preparing students specifically for Goodmayes DTC.
+
+## 3. Patience and Calmness
+
+Learning to drive is stressful. Your instructor should never shout, sigh, or make you feel stupid. A calm, patient instructor helps you learn faster because you're not anxious about making mistakes.
+
+## 4. Structured Progress Tracking
+
+A good instructor tracks your progress against the DVSA syllabus. They should be able to tell you exactly what you've mastered and what still needs work. No guessing, no vague "you're doing well."
+
+Drive Dojo provides a live progress dashboard so you can see exactly where you stand.
+
+## 5. Modern, Reliable Vehicle
+
+You'll spend hours in this car. It should be:
+- Modern and well-maintained
+- Dual-controlled for safety
+- Automatic or manual based on your preference
+- Comfortable and easy to handle
+
+Drive Dojo uses a 2024 Mercedes-Benz A-Class — one of the best learner cars on the road.
+
+## Why Goodmayes Learners Choose Drive Dojo
+
+We tick all five boxes. Fully qualified ADI, expert Goodmayes route knowledge, patient instruction, structured progress tracking, and a premium Mercedes-Benz vehicle.
+
+[Book your first lesson in Goodmayes](/driving-lessons/goodmayes) — first 2 hours for £70.`,
+    excerpt: "Looking for a driving instructor in Goodmayes or East London? Here are the 5 qualities that separate great instructors from average ones — and how Drive Dojo delivers on all five.",
+    featuredImage: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "April 23, 2023",
+    category: "Driving Instructor",
+    tags: ["driving instructor Goodmayes", "driving instructor London", "ADI", "DVSA approved", "driving school East London"],
+    readTime: 5,
+    views: 0, likes: 0, comments: 0,
+  },
+  {
+    id: "why-now-is-perfect-time-to-become-driving-instructor",
+    title: "Why Now Is the Perfect Time to Become a Driving Instructor",
+    slug: "why-now-is-perfect-time-to-become-driving-instructor",
+    content: `# Why Now Is the Perfect Time to Become a Driving Instructor
+
+If you've ever considered becoming a driving instructor, 2026 is the year to do it. Here's why.
+
+## Massive Demand for Instructors
+
+The UK has a shortage of driving instructors. After the pandemic backlog, demand for lessons is at an all-time high. Learners are waiting weeks — sometimes months — for lessons. Qualified instructors are turning away students because they're fully booked.
+
+## Earning Potential
+
+A full-time driving instructor in East London can earn £40,000-£60,000 per year. With our premium positioning (Mercedes-Benz, automatic only, Klarna payments), Drive Dojo instructors earn at the top end of that range.
+
+## Flexible Hours
+
+You choose when you work. Early mornings, evenings, weekends — it's entirely up to you. Many instructors work school hours to fit around family life.
+
+## Job Security
+
+People will always need to learn to drive. It's one of the most recession-proof businesses you can run. When the economy dips, people still need licences for work.
+
+## How to Qualify
+
+To become an ADI, you need to:
+
+1. **Pass a DBS check** — criminal record check
+2. **Pass the ADI Part 1** — theory and hazard perception test
+3. **Pass the ADI Part 2** — advanced driving test
+4. **Pass the ADI Part 3** — instructional ability test
+5. **Get a green badge** — register with the DVSA
+
+The whole process takes 6-12 months. You can train while working your current job.
+
+## Drive Dojo Can Help
+
+If you're interested in becoming a driving instructor, Drive Dojo offers guidance and mentorship. We also provide dual control installation services for instructors setting up their own vehicles.
+
+[Learn more about our ADI Blueprint](/adi-blueprint) or [contact us](/contact) to discuss instructor opportunities.`,
+    excerpt: "The UK has a shortage of driving instructors and demand is at an all-time high. Here's why 2026 is the perfect year to qualify as an ADI and start earning £40-60k.",
+    featuredImage: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800&q=80",
+    author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
+    publishedDate: "January 20, 2023",
+    category: "Driving Instructor",
+    tags: ["become driving instructor", "ADI training", "driving instructor career", "DVSA", "driving school business"],
+    readTime: 4,
+    views: 0, likes: 0, comments: 0,
+  },
+
 ];

@@ -352,6 +352,10 @@ const Footer = ({
                 <span>•</span>
                 <span>Refresher Driving Lessons</span>
               </Link>
+              <Link to="/intensive-driving-courses-ilford" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                <span>•</span>
+                <span>Intensive Driving Courses</span>
+              </Link>
               <Link to="/pass-plus-courses" className="hover:text-primary transition-colors text-sm flex items-center space-x-1">
                 <span>•</span>
                 <span>Pass Plus Courses</span>
