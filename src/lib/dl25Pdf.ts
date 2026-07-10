@@ -326,12 +326,11 @@ export async function generateDL25PDF(data: DL25ReportData): Promise<jsPDF> {
     const indentPx = row.indent ? 3 : 1.5;
     doc.text(row.label.slice(0, 38), x + indentPx, rowY + 2.9);
 
-    // fault cells — use filled rectangles instead of text for reliable rendering
+    // fault cells — solid filled blocks for maximum visibility (mirrors official DL25)
     const fcW = 7;
     const fcStart = x + colWidth - fcW * 3 - 1;
     const fault = data.faults[row.key] || "none";
-    const sqPad = 1.2;  // padding inside cell
-    const sqH = rowH - sqPad * 2;
+    const cellPad = 0.4; // hairline gap between cells
 
     const drawCell = (
       cx: number,
@@ -339,14 +338,14 @@ export async function generateDL25PDF(data: DL25ReportData): Promise<jsPDF> {
       bg: [number, number, number],
     ) => {
       if (active) {
-        // filled coloured rectangle
+        // solid filled block — fills the entire cell for high visibility
         doc.setFillColor(...bg);
-        doc.rect(cx + sqPad, rowY + sqPad, fcW - sqPad * 2, sqH, "F");
+        doc.rect(cx + cellPad, rowY + cellPad, fcW - cellPad * 2, rowH - cellPad * 2, "F");
       } else {
-        // empty outline
-        doc.setDrawColor(200, 205, 200);
-        doc.setLineWidth(0.15);
-        doc.rect(cx + sqPad, rowY + sqPad, fcW - sqPad * 2, sqH, "S");
+        // faint empty cell outline
+        doc.setDrawColor(210, 215, 210);
+        doc.setLineWidth(0.1);
+        doc.rect(cx + cellPad, rowY + cellPad, fcW - cellPad * 2, rowH - cellPad * 2, "S");
       }
     };
 

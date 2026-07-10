@@ -168,9 +168,9 @@ export function generateAIDebrief(input: DebriefInput): string {
 
       const hasSerious = group.serious.length > 0;
       const hasDangerous = group.dangerous.length > 0;
-      const severityTag = hasDangerous ? "[DANGER]" : hasSerious ? "[SERIOUS]" : "[DRIVING]";
+      const severityTag = hasDangerous ? "[CRITICAL ERROR]" : hasSerious ? "[SERIOUS]" : "";
 
-      lines.push(`${severityTag} ${group.label}:`);
+      lines.push(`${severityTag ? severityTag + " - " : ""}${group.label}:`);
 
       // List specific faults
       const listFaults = (keys: string[], prefix: string) => {
@@ -179,8 +179,8 @@ export function generateAIDebrief(input: DebriefInput): string {
         lines.push(`   ${prefix} ${labels.join(", ")}`);
       };
 
-      listFaults(group.dangerous, "* DANGEROUS -");
-      listFaults(group.serious, "* SERIOUS -");
+      listFaults(group.dangerous, "* Critical error -");
+      listFaults(group.serious, "* Serious fault -");
       if (group.driving.length > 0 && group.driving.length <= 3) {
         listFaults(group.driving, "* Driving fault -");
       } else if (group.driving.length > 3) {
@@ -201,7 +201,7 @@ export function generateAIDebrief(input: DebriefInput): string {
   const dangerousGroups = groups.filter((g) => g.dangerous.length > 0);
   for (const group of dangerousGroups) {
     lines.push(
-      `${recNum}. URGENT - ${group.label}: Address dangerous fault${group.dangerous.length > 1 ? "s" : ""} immediately. These represent a direct risk to road safety. Book at least 2-3 focused lessons on ${group.label.toLowerCase()} before any mock or real test.`,
+      `${recNum}. URGENT - ${group.label}: Address the critical error${group.dangerous.length > 1 ? "s" : ""} immediately. These represent a direct risk to road safety and must be resolved before any further test attempts. Book at least 2-3 focused lessons on ${group.label.toLowerCase()} before any mock or real test.`,
     );
     recNum++;
   }
