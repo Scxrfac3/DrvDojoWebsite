@@ -53,6 +53,7 @@ const BillingPortalPage = lazy(() => import('./components/pages/BillingPortalPag
 // Free Resources pages
 const TestCentreExplorer = lazy(() => import('./components/pages/TestCentreExplorer'));
 const ShowMeTellMe = lazy(() => import('./components/pages/ShowMeTellMe'));
+const DL25ReportGenerator = lazy(() => import('./components/pages/DL25ReportGenerator'));
 
 // Hub & Spoke SEO pages
 const TestCentrePage = lazy(() => import('./components/pages/TestCentrePage'));
@@ -180,6 +181,7 @@ function App() {
           {/* Free Resources Routes */}
           <Route path='/test-centres' element={<TestCentreExplorer />} />
           <Route path='/practical-test-prep/show-me-tell-me' element={<ShowMeTellMe />} />
+          <Route path='/practical-test-prep/dl25-report' element={<DL25ReportGenerator />} />
 
           {/* Hub & Spoke SEO Routes — Test Centres */}
           <Route path='/driving-test-centres/:slug' element={<TestCentrePage />} />
