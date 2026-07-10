@@ -228,7 +228,7 @@ export async function generateDL25PDF(data: DL25ReportData): Promise<jsPDF> {
   doc.text("Declarations:", margin + 2, y + 5);
   doc.setFont("helvetica", "normal");
   doc.text(
-    `Insurance ${data.insurance ? "✓" : "✗"}   ·   UK Residency ≥185d ${data.residency ? "✓" : "✗"}`,
+    `Insurance ${data.insurance ? "Yes" : "No"}   ·   UK Residency ≥185d ${data.residency ? "Yes" : "No"}`,
     margin + 22,
     y + 5,
   );
@@ -291,12 +291,19 @@ export async function generateDL25PDF(data: DL25ReportData): Promise<jsPDF> {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(6.5);
     doc.text("Category", x + 1.5, gridTop + 3.5);
-    // fault column headers
+    // fault column headers — use small coloured legend squares
     const fcW = 7;
     const fcStart = x + colWidth - fcW * 3 - 1;
-    doc.text("✓", fcStart + fcW / 2, gridTop + 3.5, { align: "center" });
-    doc.text("S", fcStart + fcW + fcW / 2, gridTop + 3.5, { align: "center" });
-    doc.text("D", fcStart + fcW * 2 + fcW / 2, gridTop + 3.5, { align: "center" });
+    const sq = 2.2; // legend square size
+    // Driving fault legend (amber square)
+    doc.setFillColor(...C.amberBg);
+    doc.rect(fcStart + (fcW - sq) / 2, gridTop + 1.4, sq, sq, "F");
+    // Serious legend (red square)
+    doc.setFillColor(...C.redBg);
+    doc.rect(fcStart + fcW + (fcW - sq) / 2, gridTop + 1.4, sq, sq, "F");
+    // Dangerous legend (dark red square)
+    doc.setFillColor(...C.redDarkBg);
+    doc.rect(fcStart + fcW * 2 + (fcW - sq) / 2, gridTop + 1.4, sq, sq, "F");
   };
   drawColHeader(col1X);
   drawColHeader(col2X);
@@ -319,35 +326,33 @@ export async function generateDL25PDF(data: DL25ReportData): Promise<jsPDF> {
     const indentPx = row.indent ? 3 : 1.5;
     doc.text(row.label.slice(0, 38), x + indentPx, rowY + 2.9);
 
-    // fault cells
+    // fault cells — use filled rectangles instead of text for reliable rendering
     const fcW = 7;
     const fcStart = x + colWidth - fcW * 3 - 1;
     const fault = data.faults[row.key] || "none";
+    const sqPad = 1.2;  // padding inside cell
+    const sqH = rowH - sqPad * 2;
 
-    // cell backgrounds + text
     const drawCell = (
       cx: number,
       active: boolean,
       bg: [number, number, number],
-      textCol: [number, number, number],
-      label: string,
     ) => {
       if (active) {
+        // filled coloured rectangle
         doc.setFillColor(...bg);
-        doc.rect(cx, rowY + 0.3, fcW, rowH - 0.6, "F");
-        doc.setTextColor(...textCol);
-        doc.setFont("helvetica", "bold");
+        doc.rect(cx + sqPad, rowY + sqPad, fcW - sqPad * 2, sqH, "F");
       } else {
-        doc.setTextColor(180, 185, 180);
-        doc.setFont("helvetica", "normal");
+        // empty outline
+        doc.setDrawColor(200, 205, 200);
+        doc.setLineWidth(0.15);
+        doc.rect(cx + sqPad, rowY + sqPad, fcW - sqPad * 2, sqH, "S");
       }
-      doc.setFontSize(6.5);
-      doc.text(label, cx + fcW / 2, rowY + 2.9, { align: "center" });
     };
 
-    drawCell(fcStart, fault === "driver", C.amberBg, C.amberText, "✓");
-    drawCell(fcStart + fcW, fault === "serious", C.redBg, C.redText, "S");
-    drawCell(fcStart + fcW * 2, fault === "dangerous", C.redDarkBg, C.redText, "D");
+    drawCell(fcStart, fault === "driver", C.amberBg);
+    drawCell(fcStart + fcW, fault === "serious", C.redBg);
+    drawCell(fcStart + fcW * 2, fault === "dangerous", C.redDarkBg);
   };
 
   // Column 1
@@ -406,47 +411,93 @@ export async function generateDL25PDF(data: DL25ReportData): Promise<jsPDF> {
   y += totalsH + 4;
 
   // ═══════════════════════════════════════════════════════════════════════════
-  //  INSTRUCTOR DEBRIEF NOTES
+  //  INSTRUCTOR DEBRIEF NOTES  (with auto-pagination)
   // ═══════════════════════════════════════════════════════════════════════════
-  const debriefH = 42;
-  doc.setFillColor(...C.panelBg);
-  doc.setDrawColor(...C.emerald);
-  doc.setLineWidth(0.3);
-  doc.roundedRect(margin, y, pageWidth - margin * 2, debriefH, 1.5, 1.5, "FD");
-
-  doc.setTextColor(...C.ink);
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(7.5);
-  doc.text("INSTRUCTOR DEBRIEF NOTES", margin + 3, y + 5);
-
-  // divider
-  doc.setDrawColor(200, 205, 200);
-  doc.setLineWidth(0.2);
-  doc.line(margin + 3, y + 7, pageWidth - margin - 3, y + 7);
-
-  // notes text (wrapped)
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(7);
-  doc.setTextColor(40, 50, 45);
   const notes = data.debriefNotes?.trim()
     ? data.debriefNotes
     : "— No debrief notes recorded —";
-  const splitNotes = doc.splitTextToSize(notes, pageWidth - margin * 2 - 8);
-  doc.text(splitNotes.slice(0, 8), margin + 3, y + 11);
+  const textWidth = pageWidth - margin * 2 - 8;
+  const allLines: string[] = doc.splitTextToSize(notes, textWidth) as string[];
+  const lineH = 3.8; // mm per line of text
+  const debriefHeaderH = 10; // mm for the "INSTRUCTOR DEBRIEF NOTES" header + divider
+  const footerPad = 10; // mm reserved for footer at bottom
 
-  y += debriefH + 4;
+  let pageNum = 1;
+  let lineIdx = 0;
+
+  while (lineIdx < allLines.length) {
+    // How much space is left on this page?
+    const availableH = pageHeight - margin - y - footerPad;
+    // First chunk on a page needs the header; subsequent chunks don't
+    const isFirstChunkOnPage = lineIdx === 0 || (lineIdx > 0 && y <= margin + 5);
+    const contentStartY = isFirstChunkOnPage ? y + debriefHeaderH : y;
+    const maxLinesOnPage = Math.floor((availableH - (isFirstChunkOnPage ? debriefHeaderH : 0)) / lineH);
+
+    if (maxLinesOnPage <= 0) {
+      // Not enough room — force a new page
+      doc.addPage();
+      y = margin;
+      pageNum++;
+      continue;
+    }
+
+    const linesToRender = Math.min(maxLinesOnPage, allLines.length - lineIdx);
+    const boxH = (isFirstChunkOnPage ? debriefHeaderH : 0) + linesToRender * lineH + 4;
+
+    // Draw the panel background
+    doc.setFillColor(...C.panelBg);
+    doc.setDrawColor(...C.emerald);
+    doc.setLineWidth(0.3);
+    doc.roundedRect(margin, y, pageWidth - margin * 2, boxH, 1.5, 1.5, "FD");
+
+    if (isFirstChunkOnPage) {
+      // Section header
+      doc.setTextColor(...C.ink);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(7.5);
+      doc.text("INSTRUCTOR DEBRIEF NOTES", margin + 3, y + 5);
+
+      // divider
+      doc.setDrawColor(200, 205, 200);
+      doc.setLineWidth(0.2);
+      doc.line(margin + 3, y + 7, pageWidth - margin - 3, y + 7);
+    }
+
+    // Render text lines
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(7);
+    doc.setTextColor(40, 50, 45);
+    const textStartY = isFirstChunkOnPage ? y + debriefHeaderH + 1 : y + 2;
+    for (let i = 0; i < linesToRender; i++) {
+      doc.text(allLines[lineIdx + i], margin + 3, textStartY + i * lineH);
+    }
+
+    lineIdx += linesToRender;
+    y += boxH + 3;
+
+    // If more lines remain, add a new page
+    if (lineIdx < allLines.length) {
+      doc.addPage();
+      y = margin;
+      pageNum++;
+    }
+  }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  //  FOOTER
+  //  FOOTER  (on every page)
   // ═══════════════════════════════════════════════════════════════════════════
-  doc.setFontSize(6);
-  doc.setTextColor(...C.muted);
-  doc.text(
-    "Drive Dojo — Mock test report. This is a training aid and not an official DVSA DL25 document.",
-    margin,
-    pageHeight - 5,
-  );
-  doc.text("Page 1", pageWidth - margin, pageHeight - 5, { align: "right" });
+  const totalPages = pageNum;
+  for (let p = 1; p <= totalPages; p++) {
+    doc.setPage(p);
+    doc.setFontSize(6);
+    doc.setTextColor(...C.muted);
+    doc.text(
+      "Drive Dojo — Mock test report. This is a training aid and not an official DVSA DL25 document.",
+      margin,
+      pageHeight - 5,
+    );
+    doc.text(`Page ${p} of ${totalPages}`, pageWidth - margin, pageHeight - 5, { align: "right" });
+  }
 
   return doc;
 }

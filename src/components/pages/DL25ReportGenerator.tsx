@@ -46,6 +46,7 @@ import {
   countDangerousFaults,
   type DL25ReportData,
 } from "../../lib/dl25Pdf";
+import { generateAIDebrief } from "../../lib/dl25DebriefAI";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -335,6 +336,7 @@ export default function DL25ReportGenerator() {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [faults, setFaults] = useState<Record<string, FaultType>>({});
   const [generating, setGenerating] = useState(false);
+  const [debriefGenerating, setDebriefGenerating] = useState(false);
   const [activeTab, setActiveTab] = useState(DL25_SEGMENTS[0].id);
   const [detailsOpen, setDetailsOpen] = useState(true);
 
@@ -418,6 +420,30 @@ export default function DL25ReportGenerator() {
     },
     [form, faults],
   );
+
+  // ── Generate AI Debrief ────────────────────────────────────────────────────
+  const handleGenerateDebrief = useCallback(() => {
+    setDebriefGenerating(true);
+    // Small delay to show the loading animation for UX delight
+    setTimeout(() => {
+      try {
+        const debrief = generateAIDebrief({
+          faults,
+          result: form.result,
+          candidateName: form.candidateName,
+          weather: form.weather,
+          transmission: form.transmission,
+        });
+        updateForm("debriefNotes", debrief);
+        // Auto-switch to debrief tab so the user sees the result
+        setActiveTab("debrief");
+      } catch (err) {
+        console.error("AI debrief generation failed:", err);
+      } finally {
+        setDebriefGenerating(false);
+      }
+    }, 600);
+  }, [faults, form.result, form.candidateName, form.weather, form.transmission, updateForm]);
 
   // ── Current segment categories ─────────────────────────────────────────────
   const currentSegment = DL25_SEGMENTS.find((s) => s.id === activeTab);
@@ -815,6 +841,31 @@ export default function DL25ReportGenerator() {
                       rows={6}
                       className="w-full bg-white/[0.05] border border-white/[0.1] rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all resize-y"
                     />
+
+                    {/* AI Debrief Generator */}
+                    <div className="mt-4 flex items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={handleGenerateDebrief}
+                        disabled={debriefGenerating}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-violet-600/20 hover:shadow-violet-500/30 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      >
+                        {debriefGenerating ? (
+                          <>
+                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Analysing faults...
+                          </>
+                        ) : (
+                          <>
+                            <Sparkles className="w-4 h-4" />
+                            Generate AI Debrief
+                          </>
+                        )}
+                      </button>
+                      <span className="text-[11px] text-gray-500">
+                        Automatically analyses fault patterns and generates a professional summary
+                      </span>
+                    </div>
                   </div>
 
                   {/* Generate buttons */}
