@@ -333,6 +333,13 @@ const SitemapPage = () => {
                     { name: "Top Instructor Near Me Canary Wharf", path: "/blog/top-driving-instructor-near-me-canary-wharf" },
                     { name: "Complete Guide Teenage Lessons London 2026", path: "/blog/complete-guide-teenage-driving-lessons-london-2026" },
                     { name: "How to Avoid Losing Your Licence UK", path: "/blog/how-to-avoid-losing-driving-licence-uk-east-london" },
+                    { name: "Why Choose Drive Dojo London", path: "/blog/why-choose-drive-dojo-driving-lessons-london" },
+                    { name: "Online Booking System Saves You Time", path: "/blog/drive-dojo-online-booking-system-saves-time" },
+                    { name: "Choosing the Right Package for Your Goals", path: "/blog/choosing-right-package-driving-goals" },
+                    { name: "Understanding the DVSA Syllabus", path: "/blog/understanding-dvsa-syllabus-driving-test-success" },
+                    { name: "Compare Packages to Fit Your Budget", path: "/blog/compare-driving-lesson-packages-budget" },
+                    { name: "Mercedes-Benz Learning Experience", path: "/blog/modern-mercedes-benz-vehicles-enhance-learning" },
+                    { name: "What to Expect in East London Lessons", path: "/blog/what-to-expect-driving-lessons-east-london" },
                   ].map((link) => (
                     <li key={link.path}>
                       <Link

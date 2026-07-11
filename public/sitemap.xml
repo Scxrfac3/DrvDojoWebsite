@@ -518,6 +518,50 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- ─── NEW BLOG ARTICLES (July 2026) ─────────────────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/why-choose-drive-dojo-driving-lessons-london</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/drive-dojo-online-booking-system-saves-time</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/choosing-right-package-driving-goals</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/understanding-dvsa-syllabus-driving-test-success</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/compare-driving-lesson-packages-budget</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/modern-mercedes-benz-vehicles-enhance-learning</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/blog/what-to-expect-driving-lessons-east-london</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- ─── FREE RESOURCES ───────────────────────────────────────────────────── -->
   <url>
     <loc>https://drivedojodrivingschool.com/test-centres</loc>
