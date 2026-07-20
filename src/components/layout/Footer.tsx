@@ -73,7 +73,7 @@ const Footer = ({
   ],
   socialLinks = [
     { platform: "instagram", href: "https://www.instagram.com/drive.dojo" },
-    { platform: "tiktok", href: "https://www.tiktok.com/@drivedojods" },
+    { platform: "tiktok", href: "https://www.tiktok.com/@drivedojodrivingschool" },
   ],
 }: FooterProps) => {
   const [email, setEmail] = useState("");
