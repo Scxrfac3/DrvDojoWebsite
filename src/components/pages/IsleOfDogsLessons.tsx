@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import confetti from "canvas-confetti";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import SEO from "@/components/ui/SEO";
+import PostcodeChecker from "@/components/ui/PostcodeChecker";
+import { PostcodeCheckResult } from "@/lib/postcodeChecker";
 import {
-  MapPin,
   CheckCircle,
   Star,
   ArrowRight,
@@ -73,8 +74,6 @@ const faqSchema = {
 };
 
 const IsleOfDogsLessons = () => {
-  const [postcode, setPostcode] = useState("");
-
   // Inject FAQPage schema for SEO
   React.useEffect(() => {
     const script = document.createElement('script');
@@ -86,9 +85,20 @@ const IsleOfDogsLessons = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
+  const handlePostcodeChecked = (result: { isCovered: boolean }) => {
+    if (result.isCovered) {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+    }
+  };
+
+  const handleLessonSelected = (lessonType: string) => {
+    if (lessonType === "automatic") {
+      window.location.href = "/booking/payg";
+    }
   };
 
   return (
@@ -150,30 +160,20 @@ const IsleOfDogsLessons = () => {
                     <span className="text-primary font-semibold"> £38/hr</span>.
                   </p>
 
-                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">
-                    <form
-                      onSubmit={handleSubmit}
-                      className="flex flex-col sm:flex-row gap-3"
+                  <div className="max-w-md mx-auto lg:mx-0 space-y-4">
+                    <PostcodeChecker
+                      onPostcodeChecked={handlePostcodeChecked}
+                      onLessonSelected={handleLessonSelected}
+                      className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-glow"
+                    />
+
+                    <Button
+                      onClick={() => (window.location.href = "/booking/payg")}
+                      className="w-full bg-primary hover:bg-primary/90 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-lg"
                     >
-                      <div className="relative flex-grow">
-                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
-                        <Input
-                          type="text"
-                          placeholder="Enter E14 or other postcode"
-                          className="pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          value={postcode}
-                          onChange={(e) => setPostcode(e.target.value)}
-                          required
-                        />
-                      </div>
-                      <Button
-                        type="submit"
-                        className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
-                      >
-                        Check Availability
-                        <ArrowRight className="h-4 w-4" />
-                      </Button>
-                    </form>
+                      Book Your First Lesson — £70
+                      <ArrowRight className="h-5 w-5" />
+                    </Button>
                   </div>
                 </motion.div>
 
@@ -184,9 +184,12 @@ const IsleOfDogsLessons = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500">
-                    <img
-                      src="/images/certifications/c5.png"
-                      alt="Driving lessons in Isle of Dogs"
+                    <video
+                      src="/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
                       className="w-full h-auto object-cover rounded-3xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
