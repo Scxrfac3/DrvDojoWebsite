@@ -209,7 +209,6 @@ const IsleOfDogsLessons = () => {
                       muted
                       playsInline
                       preload="auto"
-                      poster="/images/certifications/c5.png"
                       className="w-full h-auto object-cover rounded-3xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
