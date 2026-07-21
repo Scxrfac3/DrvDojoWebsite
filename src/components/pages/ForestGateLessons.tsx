@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import SEO from "@/components/ui/SEO";
+import PostcodeChecker from "@/components/ui/PostcodeChecker";
+import HeroVideo from "@/components/ui/HeroVideo";
 import {
-  MapPin,
   CheckCircle,
   Star,
   ArrowRight,
@@ -56,8 +56,6 @@ const faqSchema = {
 };
 
 const ForestGateLessons = () => {
-  const [postcode, setPostcode] = useState("");
-
   // Inject FAQPage schema for SEO
   React.useEffect(() => {
     const script = document.createElement('script');
@@ -68,11 +66,6 @@ const ForestGateLessons = () => {
       document.head.removeChild(script);
     };
   }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.location.href = `/services?postcode=${encodeURIComponent(postcode)}`;
-  };
 
   return (
     <>
@@ -134,31 +127,11 @@ const ForestGateLessons = () => {
                     <span className="text-primary font-semibold"> £38/hr</span>.
                   </p>
 
-                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-glow max-w-md mx-auto lg:mx-0">
-                    <form
-                      onSubmit={handleSubmit}
-                      className="flex flex-col sm:flex-row gap-3"
-                    >
-                      <div className="relative flex-grow">
-                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50" />
-                        <Input
-                          type="text"
-                          placeholder="Enter pickup postcode"
-                          className="pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          value={postcode}
-                          onChange={(e) => setPostcode(e.target.value)}
-                          required
-                        />
-                      </div>
-                      <Button
-                        type="submit"
-                        className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 shadow-lg"
-                      >
-                        Check Availability
-                        <ArrowRight className="h-4 w-4" />
-                      </Button>
-                    </form>
-                  </div>
+                  <PostcodeChecker
+                    onPostcodeChecked={() => {}}
+                    onLessonSelected={() => {}}
+                    className="max-w-md mx-auto lg:mx-0"
+                  />
                 </motion.div>
 
                 <motion.div
@@ -168,15 +141,10 @@ const ForestGateLessons = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
+                    <HeroVideo
+                      src="/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4"
                       className="w-full h-auto object-cover rounded-3xl"
-                    >
-                      <source src="/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4" type="video/mp4" />
-                    </video>
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <div className="flex items-center space-x-1 mb-2">
