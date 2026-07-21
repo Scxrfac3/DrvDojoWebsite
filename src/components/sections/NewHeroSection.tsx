@@ -236,10 +236,18 @@ const NewHeroSection = ({
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                 <video
                   key={heroVideos[currentImageIndex]}
+                  ref={(el) => {
+                    if (el) {
+                      el.muted = true;
+                      el.defaultMuted = true;
+                      el.play().catch(() => {});
+                    }
+                  }}
                   autoPlay
                   muted
                   loop
                   playsInline
+                  preload="auto"
                   className="w-full h-96 object-cover transition-opacity duration-700"
                 >
                   <source src={heroVideos[currentImageIndex]} type="video/mp4" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import Navbar from "../layout/Navbar";
@@ -83,6 +83,23 @@ const IsleOfDogsLessons = () => {
     return () => {
       document.head.removeChild(script);
     };
+  }, []);
+
+  // Force the hero video to actually play. React does not reliably set the
+  // `muted` DOM *property* from the JSX attribute, so on stricter live origins
+  // (HTTPS) the browser blocks autoplay of a video that has an audio track and
+  // renders a black square. Setting muted via ref + calling play() fixes it.
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  React.useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
+    // Some browsers need a tick after mount before play() is honoured
+    const t = setTimeout(tryPlay, 300);
+    return () => clearTimeout(t);
   }, []);
 
   const handlePostcodeChecked = (result: { isCovered: boolean }) => {
@@ -185,11 +202,14 @@ const IsleOfDogsLessons = () => {
                 >
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500">
                     <video
+                      ref={heroVideoRef}
                       src="/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4"
                       autoPlay
                       loop
                       muted
                       playsInline
+                      preload="auto"
+                      poster="/images/certifications/c5.png"
                       className="w-full h-auto object-cover rounded-3xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
