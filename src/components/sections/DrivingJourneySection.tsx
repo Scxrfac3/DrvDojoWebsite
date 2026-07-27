@@ -97,11 +97,11 @@ export default function DrivingJourneySection() {
   const ActiveIcon = activeData.icon;
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-[#0d0d0d] relative overflow-hidden">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-50 rounded-full blur-3xl opacity-60" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -109,31 +109,31 @@ export default function DrivingJourneySection() {
           {/* ─── HEADER ───────────────────────────────────── */}
           <div className="text-center mb-16">
             <motion.div
-              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-green-50 border border-green-100"
+              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30"
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <Sparkles className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-medium text-green-700">Start Your Journey</span>
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Start Your Journey</span>
             </motion.div>
 
             <motion.h2
-              className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl lg:text-5xl font-bold text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
               Your{' '}
-              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
                 Driving Journey
               </span>
             </motion.h2>
 
             <motion.p
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              className="text-xl text-gray-400 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -158,13 +158,13 @@ export default function DrivingJourneySection() {
                   viewport={{ once: true }}
                   whileHover={isActive ? { scale: 1.03 } : { scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
-                  className={`p-6 rounded-xl transition-all duration-300 text-left ${
+                  className={`p-6 rounded-xl transition-all duration-300 text-left border ${
                     isActive
-                      ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-xl scale-105'
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                      ? 'bg-gradient-to-br from-primary to-orange-600 text-white shadow-glow scale-105 border-transparent'
+                      : 'bg-white/5 border-white/10 hover:bg-white/10 text-gray-400'
                   }`}
                 >
-                  <div className={`mb-4 ${isActive ? 'text-white' : 'text-blue-600'}`}>
+                  <div className={`mb-4 ${isActive ? 'text-white' : 'text-primary'}`}>
                     <StepIcon className="w-8 h-8" />
                   </div>
                   <div className="font-bold mb-2">{step.number}</div>
@@ -182,7 +182,7 @@ export default function DrivingJourneySection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 lg:p-12 border border-blue-100"
+              className="bg-white/5 rounded-2xl p-8 lg:p-12 border border-white/10 backdrop-blur-md"
             >
               <div className="max-w-3xl mx-auto">
                 {/* Icon + Headline row */}
@@ -191,11 +191,11 @@ export default function DrivingJourneySection() {
                     initial={{ rotate: -10, scale: 0 }}
                     animate={{ rotate: 0, scale: 1 }}
                     transition={{ type: 'spring', stiffness: 200, delay: 0.1 }}
-                    className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg"
+                    className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center shadow-lg shadow-primary/20"
                   >
                     <ActiveIcon className="w-7 h-7 text-white" />
                   </motion.div>
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-3xl font-bold text-white">
                     {activeData.headline}
                   </h3>
                 </div>
@@ -205,7 +205,7 @@ export default function DrivingJourneySection() {
                   {activeData.paragraphs.map((para, i) => (
                     <p
                       key={i}
-                      className={`${i === 0 ? 'text-xl text-gray-700' : 'text-gray-600'} leading-relaxed`}
+                      className={`${i === 0 ? 'text-xl text-gray-300' : 'text-gray-400'} leading-relaxed`}
                     >
                       {para}
                     </p>
@@ -219,7 +219,7 @@ export default function DrivingJourneySection() {
                       <Link
                         key={i}
                         to={link.to}
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                       >
                         <ExternalLink className="w-4 h-4" />
                         {link.text}
@@ -234,7 +234,7 @@ export default function DrivingJourneySection() {
                     href={activeData.ctaLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                    className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5"
                   >
                     {activeData.ctaText}
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -242,7 +242,7 @@ export default function DrivingJourneySection() {
                 ) : (
                   <Link
                     to={activeData.ctaLink}
-                    className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                    className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5"
                   >
                     {activeData.ctaText}
                     <ArrowRight className="w-5 h-5 ml-2" />

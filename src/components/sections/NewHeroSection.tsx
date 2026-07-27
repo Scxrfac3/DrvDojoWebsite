@@ -38,8 +38,6 @@ const NewHeroSection = ({
   const heroVideos = [
     "/images/certifications/kling_20260203_Image_to_Video_create_a_s_5342_0.mp4",
     "/images/certifications/kling_20260203_Image_to_Video_create_a_s_5415_0.mp4",
-    "/images/certifications/kling_20260203_Image_to_Video_create_a_s_5450_0.mp4",
-    "/images/certifications/kling_20260210_Image_to_Video__zoomed_in_4973_0.mp4"
   ];
 
   useEffect(() => {
@@ -49,7 +47,7 @@ const NewHeroSection = ({
     
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroVideos.length);
-    }, 5000); // Change video every 5 seconds
+    }, 10000); // Change video every 10 seconds
     
     return () => {
       clearInterval(statInterval);
@@ -245,7 +243,6 @@ const NewHeroSection = ({
                   }}
                   autoPlay
                   muted
-                  loop
                   playsInline
                   preload="auto"
                   className="w-full h-96 object-cover transition-opacity duration-700"
