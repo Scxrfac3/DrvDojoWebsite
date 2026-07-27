@@ -62,10 +62,12 @@ const BlogArticleContent = ({ content }: BlogArticleContentProps) => {
       {paragraphs.map((paragraph, index) => {
         // Check if paragraph is a heading (starts with # or ##)
         if (paragraph.startsWith("# ")) {
+          // Render top-level markdown headings as H2 — the page already
+          // outputs exactly one H1 (the article title) in BlogArticleDetail.
           return (
-            <motion.h1
+            <motion.h2
               key={index}
-              className="text-3xl font-bold mt-8 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+              className="text-2xl font-bold mt-8 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
               custom={index}
               initial="hidden"
               whileInView="visible"
@@ -73,7 +75,7 @@ const BlogArticleContent = ({ content }: BlogArticleContentProps) => {
               viewport={{ once: true, margin: "-50px" }}
             >
               {paragraph.substring(2)}
-            </motion.h1>
+            </motion.h2>
           );
         } else if (paragraph.startsWith("## ")) {
           return (

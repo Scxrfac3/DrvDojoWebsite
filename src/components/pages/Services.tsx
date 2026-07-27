@@ -46,6 +46,7 @@ import {
   Play,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import SEO from "@/components/ui/SEO";
 
 const DrivingGallery = () => {
   return (
@@ -234,6 +235,10 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
+      <SEO
+        title="Driving Lessons & Services East London | Drive Dojo"
+        description="Explore Drive Dojo's driving lesson services in East London - PAYG, intensive, automatic, mock tests, test car hire and more. DVSA-approved."
+      />
       {/* Background decorative elements with new design */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full"></div>
@@ -271,7 +276,7 @@ const Services = () => {
 
       <Navbar />
 
-      <main className="pt-[100px] relative z-10">
+      <main className="pt-[140px] relative z-10">
         <AnimatePresence mode="wait">
           {showDetails && selectedService ? (
             <ServiceDetails

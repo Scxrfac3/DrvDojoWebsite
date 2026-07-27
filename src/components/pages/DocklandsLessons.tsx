@@ -4,6 +4,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -70,8 +72,8 @@ const DocklandsLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Docklands Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Docklands, Canary Wharf & Isle of Dogs. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Docklands | Book Online, Klarna"
+        description="Driving lessons in Docklands. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Docklands E14, Canary Wharf E14, Isle of Dogs E14, Tower Hamlets"
         canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
         serviceSchema={{
@@ -79,8 +81,7 @@ const DocklandsLessons = () => {
           description: "Professional driving lessons in Docklands with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E14, E16, Isle of Dogs.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Docklands, Canary Wharf, Isle of Dogs, E14, E16, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Docklands","description":"DVSA approved driving lessons in Docklands and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £70. Covering E14, E16.","url":"https://drivedojodrivingschool.com/driving-lessons/docklands","telephone":"+447487228866","areaServed":["Docklands","Canary Wharf","Isle of Dogs","E14","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"Docklands","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5050,"longitude":-0.0200},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -90,7 +91,7 @@ const DocklandsLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

@@ -4,6 +4,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -70,8 +72,8 @@ const RomfordLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Romford Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Romford. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Romford | Book Online, Klarna"
+        description="Driving lessons in Romford. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Romford, driving instructor Romford, automatic driving lessons Romford, book driving lessons online East London, driving school with Klarna London, Romford RM postcodes, Hornchurch test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/romford"
         serviceSchema={{
@@ -79,8 +81,7 @@ const RomfordLessons = () => {
           description: "Professional driving lessons in Romford with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering all RM postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Romford, RM postcodes, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Romford","description":"DVSA approved driving lessons in Romford. Automatic Mercedes-Benz A-Class. Hornchurch & Goodmayes DTC specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/romford","telephone":"+447487228866","areaServed":["Romford","RM1","RM2","RM3","RM4","RM5","RM6","RM7","RM8","RM9","RM10","RM11","RM12","RM13","East London"],"address":{"@type":"PostalAddress","addressLocality":"Romford","addressRegion":"East London","postalCode":"RM1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5788,"longitude":0.1836},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -90,7 +91,7 @@ const RomfordLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

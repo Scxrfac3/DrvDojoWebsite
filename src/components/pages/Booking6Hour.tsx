@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import CalendlyWidget from "../ui/CalendlyWidget";
 import { ArrowRight, Calendar, Car, CheckCircle, ChevronRight, Sparkles, Award, Shield, Zap } from "lucide-react";
 import confetti from "canvas-confetti";
+import SEO from "../ui/SEO";
 
 const Booking6Hour = () => {
   const [animateBackground, setAnimateBackground] = React.useState(false);
@@ -30,6 +31,12 @@ const Booking6Hour = () => {
     <div
       className={`min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
+      <SEO
+        title="Book 6-Hour Lessons | Online Instantly, Klarna"
+        description="Book 6 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        keywords="6 hour driving lessons, driving lesson block booking, East London driving school, intensive driving lessons, Mercedes driving instructor"
+        canonical="https://drivedojodrivingschool.com/booking/6hour"
+      />
       {/* Premium dark background with subtle grid pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
@@ -71,7 +78,7 @@ const Booking6Hour = () => {
 
       <Navbar />
 
-      <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+      <div className="pt-36 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -95,7 +102,7 @@ const Booking6Hour = () => {
               Drive
             </span>
             <br />
-            <span className="text-purple-400 inline-block">Smart</span>
+            <span className="text-purple-400 inline-block">Smart Driving Lessons</span>
             <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 

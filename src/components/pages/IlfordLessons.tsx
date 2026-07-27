@@ -5,6 +5,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -73,8 +75,8 @@ const IlfordLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Ilford Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Ilford. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Ilford | Book Online, Klarna"
+        description="Driving lessons in Ilford. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Ilford, driving instructor Ilford, automatic driving lessons Ilford, book driving lessons online East London, driving school with Klarna London, Ilford IG1, Ilford IG postcodes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/ilford"
         serviceSchema={{
@@ -82,8 +84,7 @@ const IlfordLessons = () => {
           description: "Professional driving lessons in Ilford with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering all IG postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Ilford, IG postcodes, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Ilford","description":"DVSA approved driving lessons in Ilford. Automatic Mercedes-Benz A-Class. First 2 hours £70. Serving IG1-IG6 and all IG postcodes.","url":"https://drivedojodrivingschool.com/driving-lessons/ilford","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Ilford","IG1","IG2","IG3","IG4","IG5","IG6","East London"],"address":{"@type":"PostalAddress","addressLocality":"Ilford","addressRegion":"East London","postalCode":"IG1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5588,"longitude":0.0736},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -93,7 +94,7 @@ const IlfordLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium dark redesign */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">
@@ -342,6 +343,51 @@ const IlfordLessons = () => {
 
           {/* Special Offers Section */}
           <SpecialOffersSection />
+
+          
+        {/* Local Insights: Map, Landmarks & Nearest Test Centre */}
+        <section className="py-16 bg-[#0d0d0d]">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Driving in Ilford: Local Insights</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">From the bustle of Ilford Hill and The Exchange to the green calm of Valentines Park, Ilford gives learners a mix of busy high-street driving and quiet residential roads.</p>
+            </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 min-h-[360px]">
+                <LocationMap query="Ilford, London" />
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+                <h3 className="text-2xl font-bold mb-4 text-white">Your Nearest Test Centre</h3>
+                <p className="text-gray-300 mb-4">Most Ilford learners take their test at Goodmayes (IG3, 58% pass rate) or Barking (IG11) — both minutes from your doorstep, with routes your instructor knows intimately.</p>
+                <ul className="space-y-3">
+                  <li key="Ilford Hill & The Exchange shopping district" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Ilford Hill & The Exchange shopping district</span>
+                  </li>
+                  <li key="Valentines Park and Valentines Mansion" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Valentines Park and Valentines Mansion</span>
+                  </li>
+                  <li key="Quiet IG1–IG6 residential streets for first lessons" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Quiet IG1–IG6 residential streets for first lessons</span>
+                  </li>
+                  <li key="A406 North Circular dual-carriageway practice" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">A406 North Circular dual-carriageway practice</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
           {/* Related Blog Articles - Premium dark styling */}
           <section className="py-16 bg-[#111111]">

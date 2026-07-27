@@ -4,6 +4,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -86,8 +88,8 @@ const CanningTownLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Canning Town Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Canning Town & Silvertown. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons Canning Town | Book Online, Klarna"
+        description="Driving lessons in Canning Town. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Canning Town, driving instructor Canning Town, automatic driving lessons Silvertown, book driving lessons online East London, driving school with Klarna London, E16 driving lessons, Canning Town E16, Silvertown"
         canonical="https://drivedojodrivingschool.com/driving-lessons/canning-town"
         serviceSchema={{
@@ -95,8 +97,7 @@ const CanningTownLessons = () => {
           description: "Professional driving lessons in Canning Town and Silvertown with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E16.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Canning Town, Silvertown, E16, E14, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Canning Town","description":"DVSA approved driving lessons in Canning Town and Silvertown. Automatic Mercedes-Benz A-Class. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/canning-town","telephone":"+447487228866","areaServed":["Canning Town","Silvertown","E16","E14","E15","East London"],"address":{"@type":"PostalAddress","addressLocality":"Canning Town","addressRegion":"East London","postalCode":"E16","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5150,"longitude":0.0080},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
@@ -107,7 +108,7 @@ const CanningTownLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium redesign matching homepage */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

@@ -30,8 +30,8 @@ const SKILLS: Record<string, SkillPage> = {
   roundabouts: {
     slug: 'roundabouts',
     title: 'Roundabouts',
-    seoTitle: 'How to Navigate Roundabouts — Complete Guide for Learner Drivers | Drive Dojo',
-    seoDescription: 'Master roundabouts with our step-by-step DVSA guide. Learn mini-roundabouts, multi-lane spirals, and how to avoid the top 5 mistakes that cause test fails. Free resource.',
+    seoTitle: 'How to Navigate Roundabouts | Drive Dojo',
+    seoDescription: 'Master roundabouts with our step-by-step DVSA guide. Learn mini-roundabouts, multi-lane spirals and the top 5 mistakes that fail driving tests.',
     icon: '🔄',
     intro: 'Roundabouts are one of the most common causes of driving test failures in the UK. From mini-roundabouts on quiet residential streets to massive multi-lane spirals on A-roads, mastering the correct approach, lane discipline, and exit technique is essential for both your test and real-world driving.',
     sections: [
@@ -68,8 +68,8 @@ const SKILLS: Record<string, SkillPage> = {
   junctions: {
     slug: 'junctions',
     title: 'Junctions',
-    seoTitle: 'How to Handle Junctions Safely — Learner Driver Guide | Drive Dojo',
-    seoDescription: 'Master T-junctions, crossroads, and slip roads. Learn the MSPSL routine, emerging safely, and the most common junction mistakes that fail driving tests.',
+    seoTitle: 'How to Handle Junctions Safely | Drive Dojo',
+    seoDescription: 'Master T-junctions, crossroads and slip roads. Learn the MSPSL routine, emerging safely and the common junction mistakes that fail tests.',
     icon: '🚦',
     intro: 'Junctions are where the majority of serious driving faults occur on UK tests. Whether you\'re emerging from a T-junction, navigating a busy crossroads, or joining a dual carriageway via a slip road, the MSPSL routine (Mirrors, Signal, Position, Speed, Look) is your foundation for every junction.',
     sections: [
@@ -102,8 +102,8 @@ const SKILLS: Record<string, SkillPage> = {
   'emergency-stop': {
     slug: 'emergency-stop',
     title: 'Emergency Stop',
-    seoTitle: 'How to Perform an Emergency Stop — DVSA Test Guide | Drive Dojo',
-    seoDescription: 'Learn the correct emergency stop technique for your UK driving test. Step-by-step DVSA guide covering braking, clutch control, and the all-clear check. Free resource.',
+    seoTitle: 'How to Perform an Emergency Stop | Drive Dojo',
+    seoDescription: 'Learn the correct emergency stop for your UK driving test. Step-by-step DVSA guide covering braking, clutch control and the all-clear check.',
     icon: '🛑',
     intro: 'The emergency stop is one of the most dramatic moments of your driving test — but it\'s also one of the most straightforward if you know the technique. You\'ll be asked to perform it in about one in three tests. The examiner will say "Stop!" and you must react instantly and safely.',
     sections: [

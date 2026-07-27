@@ -4,13 +4,18 @@ import { Instagram, Camera, Users, Star } from 'lucide-react';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import InstagramFeed from '../sections/InstagramFeed';
+import SEO from "@/components/ui/SEO";
 
 const Gallery = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
+      <SEO
+        title="Drive Dojo Gallery | Driving Lessons East London"
+        description="See Drive Dojo's Mercedes-Benz fleet, happy learners and East London driving lessons in our photo gallery."
+      />
       <Navbar />
       
-      <main className="pt-[100px]">
+      <main className="pt-[140px]">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-r from-pink-50 via-purple-50 to-indigo-50">
           <div className="container mx-auto px-4">

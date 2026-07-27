@@ -220,7 +220,7 @@ export default function ShowMeTellMe() {
     <div className="min-h-screen bg-[#0d0d0d] text-white">
       <SEO
         title="Show Me, Tell Me Flashcards | Free DVSA Test Practice"
-        description="Master all 10 DVSA 'Show Me, Tell Me' questions with interactive flip cards. Practice the exact questions you'll face on your practical driving test. Free resource from Drive Dojo."
+        description="Master all 10 DVSA 'Show Me, Tell Me' questions with flip cards. Practice the exact questions from your driving test. Free from Drive Dojo."
       />
 
       <Navbar />

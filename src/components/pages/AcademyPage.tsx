@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Lock, Menu, X, BookOpen, LogOut, User } from 'lucide-react';
+import SEO from "@/components/ui/SEO";
 
 export default function AcademyPage() {
   const { user, loading, isAuthenticated, signOut } = useAuth();
@@ -55,6 +56,12 @@ export default function AcademyPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <SEO
+        title="ADI Blueprint Academy | Training & Resources for ADIs"
+        description="Access the ADI Blueprint Academy: step-by-step ADI training, Part 1/2/3 prep and business templates to build a 5-star instructor business."
+        keywords="ADI training, driving instructor course, ADI Part 1 2 3, driving instructor business, ADI Blueprint"
+        canonical="https://drivedojodrivingschool.com/academy/adi-blueprint"
+      />
       {/* Mobile Menu Toggle */}
       <button 
         onClick={() => setShowMobileMenu(!showMobileMenu)}

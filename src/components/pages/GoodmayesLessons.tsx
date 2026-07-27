@@ -5,6 +5,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -88,8 +90,8 @@ const GoodmayesLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Goodmayes Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Goodmayes & Seven Kings. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Goodmayes | Book Online, Klarna"
+        description="Driving lessons in Goodmayes. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Goodmayes, driving instructor Goodmayes, automatic driving lessons Seven Kings, driving school with Klarna London, book driving lessons online East London, IG postcodes driving lessons, Mercedes automatic driving lessons Goodmayes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/goodmayes"
         serviceSchema={{
@@ -97,8 +99,7 @@ const GoodmayesLessons = () => {
           description: "Professional driving lessons in Goodmayes with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Goodmayes DTC specialists. Covering all IG postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Goodmayes, Seven Kings, IG postcodes, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Goodmayes","description":"DVSA approved driving lessons in Goodmayes and Seven Kings. Automatic Mercedes-Benz A-Class. Goodmayes DTC specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/goodmayes","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Goodmayes","Seven Kings","IG1","IG2","IG3","IG4","IG5","IG6","East London"],"address":{"@type":"PostalAddress","addressLocality":"Goodmayes","addressRegion":"East London","postalCode":"IG3","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5588,"longitude":0.0736},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
@@ -109,7 +110,7 @@ const GoodmayesLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium redesign matching homepage */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">
@@ -373,6 +374,51 @@ const GoodmayesLessons = () => {
               </div>
             </div>
           </section>
+
+          
+        {/* Local Insights: Map, Landmarks & Nearest Test Centre */}
+        <section className="py-16 bg-[#0d0d0d]">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Driving in Goodmayes: Local Insights</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">Goodmayes blends family streets around Goodmayes Park with the retail buzz of the High Road, ideal for building confidence from day one.</p>
+            </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 min-h-[360px]">
+                <LocationMap query="Goodmayes, London" />
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+                <h3 className="text-2xl font-bold mb-4 text-white">Your Nearest Test Centre</h3>
+                <p className="text-gray-300 mb-4">Your local test centre is Goodmayes (IG3, 58% pass rate) on the High Road — examiners love the station-area roundabouts, which we drill in every mock.</p>
+                <ul className="space-y-3">
+                  <li key="Goodmayes Park and Goodmayes Retail Park" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Goodmayes Park and Goodmayes Retail Park</span>
+                  </li>
+                  <li key="Seven Kings and Chadwell Heath nearby" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Seven Kings and Chadwell Heath nearby</span>
+                  </li>
+                  <li key="High Road pedestrian crossings and bus lanes" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">High Road pedestrian crossings and bus lanes</span>
+                  </li>
+                  <li key="Residential IG3 streets perfect for beginners" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Residential IG3 streets perfect for beginners</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
           {/* Related Blog Articles */}
           <section className="py-16 bg-[#111111]">

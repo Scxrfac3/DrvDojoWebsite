@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
+import SEO from "../ui/SEO";
 import { Button } from "../ui/button";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
@@ -125,6 +126,12 @@ const About = () => {
 
   return (
     <div className="bg-[#0d0d0d] min-h-screen relative overflow-hidden">
+      <SEO
+        title="About Drive Dojo | East London Driving School"
+        description="Meet Drive Dojo — East London's DVSA-approved driving school with Mercedes-Benz cars and patient instructors. Rated 4.9/5 by 2,000+ learners."
+        keywords="about Drive Dojo, driving school East London, DVSA instructors, learn to drive, Mercedes driving school"
+        canonical="https://drivedojodrivingschool.com/about"
+      />
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0d0d0d] via-[#1a1a2e] to-[#0d0d0d]"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#ff6b35]/10 to-transparent rounded-full blur-3xl"></div>

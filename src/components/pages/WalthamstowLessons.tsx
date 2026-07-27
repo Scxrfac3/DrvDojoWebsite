@@ -4,6 +4,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -71,8 +73,8 @@ const WalthamstowLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Walthamstow Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Walthamstow & Chingford. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Walthamstow | Book Online, Klarna"
+        description="Driving lessons in Walthamstow. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Walthamstow, driving instructor Walthamstow, automatic driving lessons Walthamstow, book driving lessons online East London, driving school with Klarna London, Walthamstow E17, Chingford test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/walthamstow"
         serviceSchema={{
@@ -80,8 +82,7 @@ const WalthamstowLessons = () => {
           description: "Professional driving lessons in Walthamstow with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E10, E11, E17.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Walthamstow, E10, E11, E17, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Walthamstow","description":"DVSA approved driving lessons in Walthamstow. Automatic Mercedes-Benz A-Class. Chingford & Wanstead test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/walthamstow","telephone":"+447487228866","areaServed":["Walthamstow","E10","E11","E17","Leytonstone","East London"],"address":{"@type":"PostalAddress","addressLocality":"Walthamstow","addressRegion":"East London","postalCode":"E17","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5888,"longitude":-0.0236},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -91,7 +92,7 @@ const WalthamstowLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium dark redesign */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

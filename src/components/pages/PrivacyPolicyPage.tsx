@@ -10,7 +10,7 @@ const PrivacyPolicyPage = () => {
     <>
       <SEO
         title="Privacy Policy | Drive Dojo Driving School"
-        description="Drive Dojo Driving School Privacy Policy. Learn how we collect, use, and protect your personal information when you book driving lessons with us in East London."
+        description="Drive Dojo Driving School Privacy Policy. Learn how we collect, use and protect your information when you book driving lessons in East London."
         keywords="privacy policy, Drive Dojo privacy, driving school privacy policy, data protection, UK GDPR, East London driving school"
         canonical="https://drivedojodrivingschool.com/privacy-policy"
       />
@@ -20,7 +20,7 @@ const PrivacyPolicyPage = () => {
 
         <Navbar />
 
-        <main className="pt-[120px] pb-20 relative z-10">
+        <main className="pt-[160px] pb-20 relative z-10">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div
               className="text-center mb-12"

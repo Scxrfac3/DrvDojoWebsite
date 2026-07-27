@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import CalendlyWidget from "../ui/CalendlyWidget";
 import { ArrowRight, Calendar, Car, CheckCircle, ChevronRight, Sparkles, Award, Shield, Zap } from "lucide-react";
 import confetti from "canvas-confetti";
+import SEO from "../ui/SEO";
 
 const BookingPayg = () => {
   const [animateBackground, setAnimateBackground] = React.useState(false);
@@ -29,6 +30,12 @@ const BookingPayg = () => {
     <div
       className={`min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
+      <SEO
+        title="Book PAYG Driving Lessons | Online & Klarna"
+        description="Book PAYG lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        keywords="pay as you go driving lessons, driving lessons East London, book driving lessons, DVSA instructor, Mercedes driving school"
+        canonical="https://drivedojodrivingschool.com/booking/payg"
+      />
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
@@ -67,7 +74,7 @@ const BookingPayg = () => {
 
       <Navbar />
 
-      <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+      <div className="pt-36 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -91,7 +98,7 @@ const BookingPayg = () => {
               Drive
             </span>
             <br />
-            <span className="text-blue-400 inline-block">Smart</span>
+            <span className="text-blue-400 inline-block">Smart Driving Lessons</span>
             <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 

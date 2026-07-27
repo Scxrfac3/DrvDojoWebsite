@@ -28,8 +28,8 @@ const EastLondonAutomatic = () => {
   return (
     <>
       <SEO
-        title="Automatic Driving Lessons in East London | Mercedes-Benz | Drive Dojo"
-        description="Book automatic driving lessons in East London. DVSA-approved instructor, Mercedes-Benz A-Class automatic. First 2 hours £70, then £38/hr. Pay in 3 with Klarna. Covering Ilford, Goodmayes, Barking, Romford, Tower Hamlets, Newham & all East London."
+        title="Automatic Driving Lessons in East London | Drive Dojo"
+        description="Automatic driving lessons across East London with Drive Dojo. DVSA-approved, Mercedes-Benz A-Class. First 2 hours £70, pay in 3 with Klarna."
         keywords="automatic driving lessons East London, automatic driving lessons Ilford, learn automatic car East London, Mercedes automatic driving lessons, automatic driving instructor Ilford, automatic driving school East London, DVSA automatic lessons, automatic driving lessons Barking, automatic driving lessons Goodmayes, automatic driving lessons Romford, automatic driving lessons Forest Gate, automatic driving lessons Walthamstow, automatic driving lessons Docklands, automatic driving lessons Tower Hamlets, automatic driving lessons Newham, automatic driving lessons Hackney, cheap automatic driving lessons London, book automatic driving lessons online, driving school with Klarna London"
         canonical="https://drivedojodrivingschool.com/east-london-automatic"
       />
@@ -42,7 +42,7 @@ const EastLondonAutomatic = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium dark matching homepage */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

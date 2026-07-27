@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion, AnimatePresence } from "framer-motion";
+import UspBar from "./UspBar";
 
 interface NavbarProps {
   logo?: string;
@@ -54,12 +55,13 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`w-full fixed top-0 left-0 right-0 z-50 pt-9 transition-all duration-300 ${
         isScrolled || isBookingPage
           ? 'bg-[#0d0d0d]/95 backdrop-blur-xl border-b border-white/10 shadow-xl'
           : transparent ? 'bg-transparent' : 'bg-[#0d0d0d]/90 backdrop-blur-md shadow-lg'
       }`}
     >
+      <UspBar />
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         {/* Logo */}

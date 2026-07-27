@@ -4,6 +4,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -70,8 +72,8 @@ const ForestGateLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Forest Gate Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Forest Gate & E7. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Forest Gate | Book Online, Klarna"
+        description="Driving lessons in Forest Gate. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Forest Gate, driving instructor Forest Gate, automatic driving lessons E7, book driving lessons online East London, driving school with Klarna London, Forest Gate E7, Newham"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
         serviceSchema={{
@@ -79,8 +81,7 @@ const ForestGateLessons = () => {
           description: "Professional driving lessons in Forest Gate with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E7 and surrounding E postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Forest Gate, E7, E11, E12, E15, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Forest Gate","description":"DVSA approved driving lessons in Forest Gate. Automatic Mercedes-Benz A-Class. Wanstead, Barking & Goodmayes test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/forest-gate","telephone":"+447487228866","areaServed":["Forest Gate","E7","E11","E12","E15","Leytonstone","Stratford","East London"],"address":{"@type":"PostalAddress","addressLocality":"Forest Gate","addressRegion":"East London","postalCode":"E7","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5488,"longitude":0.0236},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
@@ -91,7 +92,7 @@ const ForestGateLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium redesign matching homepage */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

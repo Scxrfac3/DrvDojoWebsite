@@ -6,10 +6,15 @@ import CertificationsBar from "../sections/CertificationsBar";
 import GetStartedSection from "../sections/GetStartedSection";
 import FAQSection from "../sections/FAQSection";
 import { motion } from "framer-motion";
+import SEO from "@/components/ui/SEO";
 
 const DualControlInstallation = () => {
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
+      <SEO
+        title="Dual Control Car Installation East London | Drive Dojo"
+        description="Professional dual control installation for driving instructor cars in East London. DVSA-compliant, fitted by experts. Drive Dojo."
+      />
       {/* Background decorative elements - matching homepage premium aesthetic */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -18,7 +23,7 @@ const DualControlInstallation = () => {
 
       <Navbar />
 
-      <main className="pt-[100px] relative z-10">
+      <main className="pt-[140px] relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

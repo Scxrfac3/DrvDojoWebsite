@@ -4,6 +4,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -86,8 +88,8 @@ const EastHamLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in East Ham Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in East Ham. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in East Ham | Book Online, Klarna"
+        description="Driving lessons in East Ham. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons East Ham, driving instructor East Ham, automatic driving lessons East Ham, book driving lessons online East London, driving school with Klarna London, E6 driving lessons, Newham, East Ham E6"
         canonical="https://drivedojodrivingschool.com/driving-lessons/east-ham"
         serviceSchema={{
@@ -95,8 +97,7 @@ const EastHamLessons = () => {
           description: "Professional driving lessons in East Ham with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E6 and surrounding E postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "East Ham, E6, E7, E12, E13, E15, E16, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - East Ham","description":"DVSA approved driving lessons in East Ham. Automatic Mercedes-Benz A-Class. Wanstead & Goodmayes test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/east-ham","telephone":"+447487228866","areaServed":["East Ham","E6","E7","E12","E13","E15","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"East Ham","addressRegion":"East London","postalCode":"E6","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5288,"longitude":0.0520},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
@@ -107,7 +108,7 @@ const EastHamLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium redesign matching homepage */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

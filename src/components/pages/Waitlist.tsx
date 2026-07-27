@@ -5,6 +5,7 @@ import Footer from '../layout/Footer';
 import { Button } from '../ui/button';
 import { CheckCircle, Mail, Phone, User, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import SEO from "@/components/ui/SEO";
 
 const Waitlist = () => {
   const [searchParams] = useSearchParams();
@@ -69,6 +70,10 @@ const Waitlist = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+      <SEO
+        title="Join the Drive Dojo Waitlist | East London"
+        description="Join the Drive Dojo waitlist for priority driving lesson slots in East London. Be first to book with our DVSA-approved instructors."
+      />
       <Navbar />
       
       <div className="container mx-auto px-4 py-16">

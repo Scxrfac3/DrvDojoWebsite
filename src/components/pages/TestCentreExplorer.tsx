@@ -143,7 +143,7 @@ export default function TestCentreExplorer() {
     <div className="min-h-screen bg-[#0d0d0d] text-white">
       <SEO
         title="Driving Test Centre Routes & Tips | Drive Dojo"
-        description="Explore local driving test centres with pass rates, notorious trouble spots, and expert instructor tips. Master the exact routes for Goodmayes, Wood Green, Barking, and more."
+        description="Explore local driving test centres with pass rates, trouble spots and expert tips. Master the exact routes for Goodmayes, Wood Green & Barking."
       />
 
       <Navbar />

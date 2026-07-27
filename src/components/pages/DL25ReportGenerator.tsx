@@ -457,7 +457,7 @@ export default function DL25ReportGenerator() {
     <div className="min-h-screen bg-[#060606] text-white">
       <SEO
         title="DL25 Mock Test Report Generator | Drive Dojo"
-        description="Generate professional mock driving test reports that mirror the official DVSA DL25 examiner sheet. Perfect for driving instructors to provide structured feedback."
+        description="Generate professional mock driving test reports mirroring the DVSA DL25 examiner sheet. Built for driving instructors to give structured feedback."
       />
 
       <Navbar />

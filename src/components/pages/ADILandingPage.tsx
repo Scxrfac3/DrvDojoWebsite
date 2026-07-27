@@ -6,6 +6,7 @@ import EarningsCalculator from '@/components/EarningsCalculator';
 import FeatureExplorer from '@/components/FeatureExplorer';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import SEO from "@/components/ui/SEO";
 
 // Animation variants
 const fadeInUp = {
@@ -155,6 +156,12 @@ export default function ADILandingPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <SEO
+        title="ADI Blueprint | Driving Instructor Business | Drive Dojo"
+        description="The ADI Blueprint helps new and trainee ADIs build a 5-star driving-instructor business with tools, calculators and a student portal. Join Drive Dojo."
+        keywords="ADI Blueprint, driving instructor business, ADI franchise alternative, become a driving instructor, ADI course"
+        canonical="https://drivedojodrivingschool.com/adi-blueprint"
+      />
       <Navbar transparent={false} />
 
       {/* Urgency Banner */}

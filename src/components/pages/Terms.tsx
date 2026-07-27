@@ -2,10 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion'; // Import motion
 import Navbar from '../layout/Navbar'; // Import Navbar
 import Footer from '../layout/Footer'; // Import Footer
+import SEO from "@/components/ui/SEO";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
+      <SEO
+        title="Terms of Service | Drive Dojo Driving School"
+        description="Drive Dojo Driving School terms of service. Read our terms for driving lessons, bookings and payments in East London."
+      />
       {/* Background decorative elements - similar to Services.tsx */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-600/20 rounded-full opacity-20 blur-3xl animate-pulse-slow"></div>
       <div className="absolute top-1/3 -left-40 w-80 h-80 bg-purple-600/20 rounded-full opacity-20 blur-3xl animate-pulse-slow"></div>
@@ -42,7 +47,7 @@ const Terms = () => {
 
       <Navbar /> {/* Add Navbar */}
 
-      <main className="pt-[100px] relative z-10">
+      <main className="pt-[140px] relative z-10">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Terms of Service</h1>
 

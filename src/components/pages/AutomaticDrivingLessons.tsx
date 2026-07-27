@@ -283,8 +283,8 @@ const AutomaticDrivingLessons = () => {
     <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* SEO */}
       <SEO
-        title="Book Automatic Driving Lessons Online Instantly | Live Availability | Drive Dojo"
-        description="Book your automatic driving lessons instantly and spread the cost. We accept Klarna — pay in 3 interest-free! View live availability and book 10-hour blocks online in 60 seconds with Drive Dojo. DVSA approved, Mercedes-Benz A-Class, first 2 hours £70. Covering Ilford, Goodmayes, Barking, Romford & all East London."
+        title="Automatic Driving Lessons East London | Drive Dojo"
+        description="Learn automatic driving in East London with Drive Dojo. DVSA-approved, Mercedes-Benz A-Class. First 2 hours £70, pay later with Klarna."
         keywords="automatic driving lessons East London, automatic driving lessons Ilford, learn automatic car East London, Mercedes automatic driving lessons, automatic driving instructor Ilford, automatic driving school East London, DVSA automatic lessons, automatic driving lessons Barking, automatic driving lessons Goodmayes, automatic driving lessons Romford, automatic driving lessons Forest Gate, automatic driving lessons Walthamstow, automatic driving lessons Docklands, cheap automatic driving lessons London, best automatic driving instructor, Klarna driving lessons, pay monthly driving lessons, intensive automatic driving course, automatic crash course London, Mercedes A-Class driving lessons"
         canonical="https://drivedojodrivingschool.com/automatic-driving-lessons"
         serviceSchema={{
@@ -423,7 +423,7 @@ const AutomaticDrivingLessons = () => {
 
       <Navbar />
 
-      <main className="pt-[100px] relative z-10">
+      <main className="pt-[140px] relative z-10">
         {/* === HERO SECTION === */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           {/* Video Background */}

@@ -119,8 +119,8 @@ const BookingIntensivePackage = ({ packageKey }: BookingIntensivePackageProps) =
   return (
     <>
       <SEO
-        title={`Book ${pkg.hours} Intensive Driving Course | ${pkg.price} | Drive Dojo`}
-        description={`Book your ${pkg.hours} intensive driving course online. ${pkg.features}. ${pkg.saving}. Pay in 3 with Klarna. DVSA-approved, Mercedes-Benz automatic. East London & Essex.`}
+        title={`Book ${pkg.hours} Intensive Course | Online & Klarna`}
+        description={`Book an intensive driving course online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners.`}
         keywords={`intensive driving course ${pkg.hours}, book intensive driving lessons, fast track driving test, driving test package, Klarna driving lessons, East London intensive course`}
         canonical={pkg.canonical}
       />
@@ -147,7 +147,7 @@ const BookingIntensivePackage = ({ packageKey }: BookingIntensivePackageProps) =
 
         <Navbar />
 
-        <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+        <div className="pt-36 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
           <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <motion.div className="inline-flex items-center mb-4 bg-primary/20 border border-primary/30 px-5 py-2.5 rounded-full text-sm font-medium text-primary backdrop-blur-sm" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} whileHover={{ scale: 1.05 }}>
               <Zap className="h-4 w-4 mr-2" />
@@ -156,7 +156,7 @@ const BookingIntensivePackage = ({ packageKey }: BookingIntensivePackageProps) =
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="bg-gradient-to-r from-white via-amber-100 to-primary bg-clip-text text-transparent">{pkg.hours}</span>
               <br />
-              <span className="text-primary inline-block">Intensive Course</span>
+              <span className="text-primary inline-block">Intensive Driving Lessons</span>
             </h1>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg">Book your {pkg.hours} intensive driving package with our premium scheduling system. Klarna Pay in 3 available.</p>
           </motion.div>

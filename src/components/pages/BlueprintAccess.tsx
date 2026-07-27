@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Menu, X, BookOpen, LogOut, User, ChevronLeft, ChevronRight } from 'lucide-react';
+import SEO from "@/components/ui/SEO";
 
 export default function BlueprintAccess() {
   const { user, loading, isAuthenticated, signOut } = useAuth();
@@ -68,6 +69,12 @@ export default function BlueprintAccess() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <SEO
+        title="Blueprint Access | ADI Blueprint Member Portal"
+        description="Log in to your ADI Blueprint member portal for the full course, booking system and tools to grow your instructor business."
+        keywords="ADI Blueprint login, driving instructor portal, ADI course access, instructor business tools"
+        canonical="https://drivedojodrivingschool.com/academy/blueprint-access"
+      />
       {/* Mobile Menu Toggle */}
       <button 
         onClick={() => setShowSidebar(!showSidebar)}

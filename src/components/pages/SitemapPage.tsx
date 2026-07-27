@@ -20,7 +20,7 @@ const SitemapPage = () => {
 
         <Navbar />
 
-        <main className="pt-[120px] pb-20 relative z-10">
+        <main className="pt-[160px] pb-20 relative z-10">
           <div className="container mx-auto px-4 max-w-5xl">
             <motion.div
               className="text-center mb-12"
@@ -60,6 +60,7 @@ const SitemapPage = () => {
                     { name: "East London Automatic", path: "/east-london-automatic" },
                     { name: "About Us", path: "/about" },
                     { name: "Contact Us", path: "/contact" },
+                    { name: "Reviews", path: "/reviews" },
                     { name: "Blog", path: "/blog" },
                     { name: "Terms of Service", path: "/terms" },
                     { name: "Sitemap", path: "/sitemap" },

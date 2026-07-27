@@ -325,8 +325,8 @@ const IntensiveDrivingCoursesIlford = () => {
     <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       {/* SEO - Full optimization for local intensive driving course searches */}
       <SEO
-        title="Intensive Driving Lessons in East London | Fast Track Driving Test | Drive Dojo"
-        description="Skip the waiting list. Book your intensive driving course in Ilford & East London. Pass in as little as 14 days with VIP priority booking. DVSA-approved, Mercedes-Benz automatic. Pay in 3 with Klarna. From £650. Goodmayes, Barking & Wanstead test centres."
+        title="Intensive Driving Courses Ilford | Drive Dojo"
+        description="Pass fast with intensive driving courses in Ilford & East London. DVSA-approved, Mercedes-Benz automatic. Pay in 3 with Klarna. From £650."
         keywords="intensive driving lessons, fast track driving test, driving test package, intensive driving courses Ilford, intensive driving lessons East London, crash course driving Ilford, fast track driving test Ilford, learn to drive fast Ilford, DVSA intensive driving course, automatic intensive driving course Ilford, driving crash course East London, intensive driving school Ilford, pass driving test quickly Ilford, 1 week driving course, 2 week driving course, intensive automatic driving lessons, driving test package East London, VIP intensive driving course, quick driving test London, fast pass driving course, Klarna driving lessons, Mercedes automatic intensive course"
         canonical="https://drivedojodrivingschool.com/intensive-driving-courses-ilford"
         serviceSchema={{
@@ -480,7 +480,7 @@ const IntensiveDrivingCoursesIlford = () => {
 
       <Navbar />
 
-      <main className="pt-[100px] relative z-10">
+      <main className="pt-[140px] relative z-10">
         {/* === HERO SECTION === */}
         <section className="relative min-h-screen flex items-center overflow-hidden">
           {/* Video Background */}

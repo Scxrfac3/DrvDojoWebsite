@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import CalendlyWidget from "../ui/CalendlyWidget";
 import { Calendar, CheckCircle, Award, Zap } from "lucide-react";
 import confetti from "canvas-confetti";
+import SEO from "../ui/SEO";
 
 const Booking10Hour = () => {
   const [animateBackground, setAnimateBackground] = React.useState(false);
@@ -27,6 +28,12 @@ const Booking10Hour = () => {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}>
+      <SEO
+        title="Book 10-Hour Lessons | Online Instantly, Klarna"
+        description="Book 10 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        keywords="10 hour driving lessons, driving lesson package, East London driving school, book driving course, Mercedes driving instructor"
+        canonical="https://drivedojodrivingschool.com/booking/10hour"
+      />
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div>
@@ -65,7 +72,7 @@ const Booking10Hour = () => {
 
       <Navbar />
 
-      <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+      <div className="pt-36 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
         <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <motion.div className="inline-flex items-center mb-4 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 px-5 py-2.5 rounded-full text-sm font-medium text-amber-300 backdrop-blur-sm" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Zap className="h-4 w-4 mr-2 text-amber-400" />
@@ -75,7 +82,7 @@ const Booking10Hour = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white via-amber-100 to-amber-300 bg-clip-text text-transparent">Drive</span>
             <br />
-            <span className="text-amber-400 inline-block">Smart</span>
+            <span className="text-amber-400 inline-block">Smart Driving Lessons</span>
             <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 

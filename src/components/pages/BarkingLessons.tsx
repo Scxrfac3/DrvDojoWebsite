@@ -5,6 +5,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import {
@@ -72,8 +74,8 @@ const BarkingLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Barking Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Barking. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons in Barking | Book Online, Klarna"
+        description="Driving lessons in Barking. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Barking, driving instructor Barking, automatic driving lessons Barking, book driving lessons online East London, driving school with Klarna London, Barking IG11, Barking test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/barking"
         serviceSchema={{
@@ -81,8 +83,7 @@ const BarkingLessons = () => {
           description: "Professional driving lessons in Barking with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering IG11, RM8, RM9.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Barking, IG11, RM8, RM9, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Barking","description":"DVSA approved driving lessons in Barking. Automatic Mercedes-Benz A-Class. Barking test centre specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/barking","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Barking","IG11","RM8","RM9","Chadwell Heath","East London"],"address":{"@type":"PostalAddress","addressLocality":"Barking","addressRegion":"East London","postalCode":"IG11","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5390,"longitude":0.0810},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -92,7 +93,7 @@ const BarkingLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">
@@ -332,6 +333,51 @@ const BarkingLessons = () => {
               </div>
             </div>
           </section>
+
+          
+        {/* Local Insights: Map, Landmarks & Nearest Test Centre */}
+        <section className="py-16 bg-[#0d0d0d]">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Driving in Barking: Local Insights</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">Barking pairs historic Barking Abbey and the lively market with fast A13 links, so you'll master both calm town driving and higher-speed roads.</p>
+            </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 min-h-[360px]">
+                <LocationMap query="Barking, London" />
+              </div>
+              <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+                <h3 className="text-2xl font-bold mb-4 text-white">Your Nearest Test Centre</h3>
+                <p className="text-gray-300 mb-4">Barking Test Centre (IG11, 55% pass rate) on Ripple Road is where most local learners test — including the A13 gyratory our instructors know inside out.</p>
+                <ul className="space-y-3">
+                  <li key="Barking Abbey and Abbey Road" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Barking Abbey and Abbey Road</span>
+                  </li>
+                  <li key="Barking Market and Station" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">Barking Market and Station</span>
+                  </li>
+                  <li key="A13 dual-carriageway experience" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">A13 dual-carriageway experience</span>
+                  </li>
+                  <li key="IG11 residential estates for early lessons" className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300">IG11 residential estates for early lessons</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
           {/* Related Blog Articles */}
           <section className="py-16 bg-[#111111]">

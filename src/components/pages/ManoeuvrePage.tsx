@@ -28,8 +28,8 @@ const MANOEUVRES: Record<string, ManoeuvrePage> = {
   'parallel-parking': {
     slug: 'parallel-parking',
     title: 'Parallel Parking',
-    seoTitle: 'How to Parallel Park — Step-by-Step DVSA Guide | Drive Dojo',
-    seoDescription: 'Master parallel parking for your UK driving test with our DVSA step-by-step guide. Reference points, common mistakes, and expert tips from East London instructors.',
+    seoTitle: 'How to Parallel Park | Drive Dojo',
+    seoDescription: 'Master parallel parking for your UK driving test with our DVSA step-by-step guide. Reference points, common mistakes and East London instructor tips.',
     icon: '🅿️',
     intro: 'Parallel parking is one of the four possible manoeuvres on your UK driving test, and for many learners it\'s the most intimidating. But with the right reference points and a calm, methodical approach, it becomes one of the most predictable and repeatable skills you\'ll learn.',
     sections: [

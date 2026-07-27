@@ -5,6 +5,8 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/ui/SEO";
+import { reviewSchema } from "@/data/reviewSchema";
+import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import { PostcodeCheckResult } from "@/lib/postcodeChecker";
 import {
@@ -121,8 +123,8 @@ const IsleOfDogsLessons = () => {
   return (
     <>
       <SEO
-        title="Book Driving Lessons in Isle of Dogs Instantly | Live Availability | Drive Dojo"
-        description="Skip the waiting lists. View live availability and book your driving lessons instantly in Isle of Dogs & Canary Wharf. Learn in a modern Mercedes A-Class with DVSA Approved instructors. Pay in 3 with Klarna. First 2 hours for £70!"
+        title="Driving Lessons Isle of Dogs | Book Online, Klarna"
+        description="Driving lessons in Isle of Dogs. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Isle of Dogs E14, Canary Wharf E14, Poplar E14, Tower Hamlets, Docklands E14, driving lessons Isle of Dogs"
         canonical="https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs"
         serviceSchema={{
@@ -130,8 +132,7 @@ const IsleOfDogsLessons = () => {
           description: "Professional driving lessons in Isle of Dogs with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E14.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Isle of Dogs, Canary Wharf, Poplar, E14, East London"
-        }}
-      />
+        }} jsonLd={reviewSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Isle of Dogs","description":"DVSA approved driving lessons in Isle of Dogs and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £70. Covering E14.","url":"https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs","telephone":"+447487228866","areaServed":["Isle of Dogs","Canary Wharf","Poplar","E14","East London"],"address":{"@type":"PostalAddress","addressLocality":"Isle of Dogs","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.4950,"longitude":-0.0150},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
@@ -142,7 +143,7 @@ const IsleOfDogsLessons = () => {
 
         <Navbar />
 
-        <main className="pt-[100px] pb-20 relative z-10">
+        <main className="pt-[140px] pb-20 relative z-10">
           {/* Hero Section - Premium redesign matching homepage */}
           <section className="relative py-16 md:py-24 overflow-hidden">
             <div className="container mx-auto px-4">

@@ -18,6 +18,9 @@ interface SEOProps {
   keywords?: string;
   canonical?: string;
   serviceSchema?: ServiceSchema;
+  /** Generic JSON-LD object(s) injected as a separate <script type="application/ld+json"> tag.
+   *  Use for rich-result schemas the component doesn't natively build (e.g. AggregateRating, Review). */
+  jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
 /**
@@ -27,27 +30,35 @@ interface SEOProps {
  */
 function setCanonicalSync(canonical: string | undefined): void {
   if (typeof document === "undefined") return;
-  if (!canonical) return;
+
+  // Default to the current page URL so every unique landing page is
+  // self-canonical instead of inheriting the homepage canonical.
+  const target =
+    canonical ||
+    (typeof window !== "undefined"
+      ? window.location.origin + window.location.pathname
+      : undefined);
+  if (!target) return;
 
   // Target the placeholder tag we added in index.html
   const existing = document.getElementById("canonical-tag");
   if (existing) {
-    existing.setAttribute("href", canonical);
+    existing.setAttribute("href", target);
   } else {
     // Fallback: find or create
     let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (link) {
-      link.setAttribute("href", canonical);
+      link.setAttribute("href", target);
     } else {
       link = document.createElement("link");
       link.setAttribute("rel", "canonical");
-      link.setAttribute("href", canonical);
+      link.setAttribute("href", target);
       document.head.appendChild(link);
     }
   }
 }
 
-const SEO = ({ title, description, keywords, canonical, serviceSchema }: SEOProps) => {
+const SEO = ({ title, description, keywords, canonical, serviceSchema, jsonLd }: SEOProps) => {
   // SYNC canonical injection — runs during render, NOT in useEffect.
   // This is critical for prerenderer: the canonical tag must be present
   // in the HTML snapshot before JS finishes executing.
@@ -155,6 +166,24 @@ const SEO = ({ title, description, keywords, canonical, serviceSchema }: SEOProp
         schemaScript.type = "application/ld+json";
         schemaScript.textContent = JSON.stringify(schemaData);
         document.head.appendChild(schemaScript);
+      }
+    }
+
+    // Inject generic JSON-LD (e.g. AggregateRating / Review rich snippets).
+    // Kept in its own tagged script so it never collides with the
+    // serviceSchema script above.
+    if (jsonLd) {
+      const data = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+      const scriptId = "seo-page-jsonld";
+      let existing = document.getElementById(scriptId) as HTMLScriptElement | null;
+      if (existing) {
+        existing.textContent = JSON.stringify(data);
+      } else {
+        const jsonLdScript = document.createElement("script");
+        jsonLdScript.id = scriptId;
+        jsonLdScript.type = "application/ld+json";
+        jsonLdScript.textContent = JSON.stringify(data);
+        document.head.appendChild(jsonLdScript);
       }
     }
 

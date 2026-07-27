@@ -23,6 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import SEO from "@/components/ui/SEO";
 const Contact = () => {
   const [formState, setFormState] = useState({
     name: "",
@@ -98,6 +99,12 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact Drive Dojo | Driving Lesson Enquiry | East London"
+        description="Contact Drive Dojo Driving School in East London. WhatsApp, call or message us to book your first DVSA-approved lesson today."
+        keywords="contact Drive Dojo, driving school contact, book driving lessons East London, driving instructor enquiry"
+        canonical="https://drivedojodrivingschool.com/contact"
+      />
       <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0">
@@ -137,7 +144,7 @@ const Contact = () => {
 
         <Navbar />
 
-        <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+        <div className="pt-36 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
       <motion.div
         className="text-center mb-12"
         initial={{ opacity: 0, y: 20 }}

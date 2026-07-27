@@ -39,8 +39,8 @@ const SERVICES: Record<string, ServiceData> = {
     slug: 'international-licence-conversion',
     title: 'International Licence Conversion',
     subtitle: 'From overseas licence to UK-qualified driver',
-    seoTitle: 'International Driving Licence Conversion — UK Lessons in East London | Drive Dojo',
-    seoDescription: 'Convert your overseas driving licence to a full UK licence with expert automatic lessons in East London. DVSA-approved training for international drivers. Book your £70 assessment.',
+    seoTitle: 'International Licence Conversion East London | Drive Dojo',
+    seoDescription: 'Convert your overseas licence to a full UK licence with expert automatic lessons in East London. DVSA-approved training for international drivers.',
     icon: Globe,
     intro: 'Moving to the UK from abroad? You can drive on your international licence for 12 months, but after that you\'ll need a full UK driving licence. Our DVSA-approved instructors specialise in helping international drivers transition smoothly to UK roads — from understanding British road signs to mastering the practical test.',
     benefits: [
@@ -72,8 +72,8 @@ const SERVICES: Record<string, ServiceData> = {
     slug: 'female-driving-instructors',
     title: 'Female Driving Instructors',
     subtitle: 'Learn with instructors you feel comfortable with',
-    seoTitle: 'Female Driving Instructors East London — DVSA Approved | Drive Dojo',
-    seoDescription: 'Book lessons with our female DVSA-approved driving instructors in East London. Comfortable, patient, and professional automatic tuition. £70 New Driver Assessment available.',
+    seoTitle: 'Female Driving Instructors East London | Drive Dojo',
+    seoDescription: 'Book lessons with our female DVSA-approved driving instructors in East London. Comfortable, patient and professional automatic tuition from £70.',
     icon: UserCheck,
     intro: 'We understand that many learners — particularly women from certain cultural backgrounds, nervous drivers, or those who simply feel more comfortable — prefer a female driving instructor. We\'re proud to offer female ADIs who are patient, professional, and DVSA-approved.',
     benefits: [
@@ -105,8 +105,8 @@ const SERVICES: Record<string, ServiceData> = {
     slug: 'refresher-driving-lessons',
     title: 'Driver Refresher Session',
     subtitle: 'For qualified drivers — £40/hour | Minimum 2 hours',
-    seoTitle: 'Driver Refresher Sessions East London — £40/hr for Qualified Drivers | Drive Dojo',
-    seoDescription: 'Already passed your test but lost confidence? Book a Driver Refresher Session at £40/hr (min 2 hours) with DVSA-approved instructors in East London. Tailored to you — motorways, parking, city driving.',
+    seoTitle: 'Driver Refresher Sessions East London | Drive Dojo',
+    seoDescription: 'Already passed but lost confidence? Book a Driver Refresher Session at £40/hr (min 2 hours) in East London. Motorways, parking and city driving.',
     icon: RotateCcw,
     intro: 'For qualified drivers who haven\'t driven in a while or want to build confidence in specific situations. Whether you passed your test years ago, took a break, or simply feel rusty — our refresher sessions get you back behind the wheel safely and confidently. No test pressure. No syllabus. Just pure confidence building.',
     benefits: [
@@ -144,8 +144,8 @@ const SERVICES: Record<string, ServiceData> = {
     slug: 'pass-plus-courses',
     title: 'Pass Plus Courses',
     subtitle: 'Advanced skills for newly qualified drivers',
-    seoTitle: 'Pass Plus Courses East London — Advanced Driving Skills | Drive Dojo',
-    seoDescription: 'Take your driving to the next level with a Pass Plus course in East London. Motorway training, night driving, all-weather skills. Reduce your insurance premium too.',
+    seoTitle: 'Pass Plus Courses East London | Drive Dojo',
+    seoDescription: 'Take your driving to the next level with a Pass Plus course in East London. Motorway, night and all-weather training to cut your insurance premium.',
     icon: Award,
     intro: 'Just passed your test? Congratulations! Now take your driving to the next level with Pass Plus — a DVSA-designed advanced course covering motorways, night driving, bad weather, and more. Completing Pass Plus can also reduce your insurance premium with many major UK insurers.',
     benefits: [

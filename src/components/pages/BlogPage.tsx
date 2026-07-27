@@ -154,8 +154,8 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
       <SEO
-        title="Driving Tips & Blog | Drive Dojo | DVSA Approved Instructor Insights"
-        description="Expert driving tips, test preparation guides, and instructor insights from Drive Dojo. DVSA approved advice for learners in East London. Read our blog for driving test tips, intensive course guides, and more."
+        title="Driving Tips & Blog | Drive Dojo"
+        description="Driving tips, test guides and instructor insights from Drive Dojo. DVSA-approved advice for learners across East London. Read our blog."
         keywords="driving blog, driving tips blog, learn to drive blog UK, driving test tips blog, driving instructor blog London, DVSA blog driving lessons, intensive driving course blog, automatic driving lessons blog, East London driving blog"
         canonical="https://drivedojodrivingschool.com/blog"
       />

@@ -16,6 +16,7 @@ import {
   Zap,
 } from "lucide-react";
 import confetti from "canvas-confetti";
+import SEO from "@/components/ui/SEO";
 
 const Booking = () => {
   const [animateBackground, setAnimateBackground] = useState(false);
@@ -205,6 +206,10 @@ const Booking = () => {
     <div
       className={`min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}
     >
+      <SEO
+        title="Book Driving Lessons | Drive Dojo"
+        description="Book driving lessons in East London with Drive Dojo. DVSA-approved, Mercedes-Benz automatic. Pay in 3 with Klarna. Choose PAYG, block or intensive."
+      />
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
@@ -267,7 +272,7 @@ const Booking = () => {
               Drive
             </span>
             <br />
-            <span className="text-orange-400 animate-bounce inline-block">Smart</span>
+            <span className="text-orange-400 animate-bounce inline-block">Smart Driving Lessons</span>
             <span className="text-2xl lg:text-3xl ml-4">🏎️</span>
           </h1>
 

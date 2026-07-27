@@ -29,8 +29,8 @@ const Booking20Hour = () => {
   return (
     <>
       <SEO
-        title="Book 20-Hour Driving Lesson Package Online | £679 | Live Availability | Drive Dojo"
-        description="Book your 20-hour driving lesson package online instantly in East London, Redbridge, Havering, Romford, Barking, Tower Hamlets, Newham, Hackney & more. DVSA-approved instructor, Mercedes-Benz A-Class. Pay in 3 with Klarna. Save £81 vs PAYG."
+        title="Book 20-Hour Lessons | Online Instantly, Klarna"
+        description="Book 20 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
         keywords="driving lessons East London, driving lessons Redbridge, driving lessons Havering, driving lessons Romford, driving lessons Barking, driving lessons Tower Hamlets, driving lessons Newham, driving lessons Hackney, 20-hour driving package, book driving lessons online, driving school with Klarna London, Mercedes automatic driving lessons, DVSA approved driving instructor East London"
         canonical="https://drivedojodrivingschool.com/booking/20hour"
       />
@@ -73,7 +73,7 @@ const Booking20Hour = () => {
 
       <Navbar />
 
-      <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
+      <div className="pt-36 pb-16 px-4 md:px-6 max-w-7xl mx-auto relative z-10">
         <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <motion.div className="inline-flex items-center mb-4 bg-primary/20 border border-primary/30 px-5 py-2.5 rounded-full text-sm font-medium text-primary backdrop-blur-sm" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Zap className="h-4 w-4 mr-2" />
@@ -83,7 +83,7 @@ const Booking20Hour = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-white via-amber-100 to-primary bg-clip-text text-transparent">20-Hour</span>
             <br />
-            <span className="text-primary inline-block">Package</span>
+            <span className="text-primary inline-block">Driving Lessons</span>
             <span className="text-2xl lg:text-3xl ml-4">🎯</span>
           </h1>
 

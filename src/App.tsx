@@ -61,6 +61,7 @@ const SkillPage = lazy(() => import('./components/pages/SkillPage'));
 const ManoeuvrePage = lazy(() => import('./components/pages/ManoeuvrePage'));
 const SpecialtyServicePage = lazy(() => import('./components/pages/SpecialtyServicePage'));
 const SitemapPage = lazy(() => import('./components/pages/SitemapPage'));
+const Reviews = lazy(() => import('./components/pages/Reviews'));
 
 function App() {
   return (
@@ -198,6 +199,7 @@ function App() {
 
           {/* Sitemap */}
           <Route path='/sitemap' element={<SitemapPage />} />
+          <Route path='/reviews' element={<Reviews />} />
 
           {/* Blog routes */}
           <Route
