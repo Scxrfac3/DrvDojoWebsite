@@ -17,6 +17,8 @@ interface SEOProps {
   description: string;
   keywords?: string;
   canonical?: string;
+  /** When true, adds <meta name="robots" content="noindex"> so the page is excluded from search indexes (e.g. login, account pages). */
+  noindex?: boolean;
   serviceSchema?: ServiceSchema;
   /** Generic JSON-LD object(s) injected as a separate <script type="application/ld+json"> tag.
    *  Use for rich-result schemas the component doesn't natively build (e.g. AggregateRating, Review). */
@@ -58,11 +60,31 @@ function setCanonicalSync(canonical: string | undefined): void {
   }
 }
 
-const SEO = ({ title, description, keywords, canonical, serviceSchema, jsonLd }: SEOProps) => {
-  // SYNC canonical injection — runs during render, NOT in useEffect.
-  // This is critical for prerenderer: the canonical tag must be present
-  // in the HTML snapshot before JS finishes executing.
+/**
+ * Synchronously inject a noindex robots meta tag during render so the
+ * prerenderer captures it before snapshotting. Only acts when `noindex`
+ * is explicitly true; otherwise leaves any existing robots meta untouched.
+ */
+function setRobotsSync(noindex: boolean | undefined): void {
+  if (typeof document === "undefined" || !noindex) return;
+
+  let meta = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+  if (meta) {
+    meta.setAttribute("content", "noindex, nofollow");
+  } else {
+    meta = document.createElement("meta");
+    meta.setAttribute("name", "robots");
+    meta.setAttribute("content", "noindex, nofollow");
+    document.head.appendChild(meta);
+  }
+}
+
+const SEO = ({ title, description, keywords, canonical, noindex, serviceSchema, jsonLd }: SEOProps) => {
+  // SYNC canonical + robots injection — runs during render, NOT in useEffect.
+  // This is critical for prerenderer: these tags must be present in the
+  // HTML snapshot before JS finishes executing.
   setCanonicalSync(canonical);
+  setRobotsSync(noindex);
 
   useEffect(() => {
     // Update document title (cannot be done synchronously — must be in effect)
@@ -187,6 +209,19 @@ const SEO = ({ title, description, keywords, canonical, serviceSchema, jsonLd }:
       }
     }
 
+    // Update robots meta (noindex for private pages like login)
+    if (noindex) {
+      let robotsMeta = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+      if (robotsMeta) {
+        robotsMeta.setAttribute("content", "noindex, nofollow");
+      } else {
+        robotsMeta = document.createElement("meta");
+        robotsMeta.setAttribute("name", "robots");
+        robotsMeta.setAttribute("content", "noindex, nofollow");
+        document.head.appendChild(robotsMeta);
+      }
+    }
+
     // Cleanup function to reset meta tags when component unmounts
     return () => {
       // Reset canonical back to homepage default
@@ -194,8 +229,13 @@ const SEO = ({ title, description, keywords, canonical, serviceSchema, jsonLd }:
       if (canonicalTag) {
         canonicalTag.setAttribute("href", "https://drivedojodrivingschool.com/");
       }
+      // Reset robots back to default indexable state
+      const robotsTag = document.querySelector('meta[name="robots"]');
+      if (robotsTag) {
+        robotsTag.setAttribute("content", "index, follow");
+      }
     };
-  }, [title, description, keywords, canonical, serviceSchema]);
+  }, [title, description, keywords, canonical, noindex, serviceSchema]);
 
   return null; // This component doesn't render anything
 };

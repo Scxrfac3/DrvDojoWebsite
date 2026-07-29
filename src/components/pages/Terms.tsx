@@ -55,7 +55,7 @@ const Terms = () => {
             <p className="text-lg text-white/90 mb-6">Welcome to Drive Dojo Driving School! We are committed to providing you with the highest quality of driving tuition. Please take a moment to read through our terms of service, which govern our lessons and services.</p>
             
             <div className="bg-blue-900/30 border-l-4 border-blue-500 p-4 mb-6 rounded">
-              <h3 className="text-xl font-semibold text-blue-300 mb-2">Important Policy: Driving Test Car Hire</h3>
+              <h2 className="text-xl font-semibold text-blue-300 mb-2">Important Policy: Driving Test Car Hire</h2>
               <p className="text-white/90">Please note that the hire of a Drive Dojo Driving School car for a practical driving test is exclusively available to students who have completed a minimum of 10 hours of practical training with one of our instructors.</p>
             </div>
           </section>

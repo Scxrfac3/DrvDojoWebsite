@@ -327,9 +327,9 @@ export default function ShowMeTellMe() {
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
                     <Car className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
-                    Nervous about the practical test?
-                  </h3>
+                  <h2 className="text-xl md:text-2xl font-bold text-white">
+                  Nervous about the practical test?
+                  </h2>
                 </div>
                 <p className="text-gray-400">
                   We cover all of this in your first lesson. Secure your 10-Hour Block Booking today — just 3 interest-free payments of <span className="text-white font-semibold">£113.33</span> with Klarna.

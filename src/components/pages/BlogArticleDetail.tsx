@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "../layout/Navbar";
@@ -36,9 +36,10 @@ const sampleBlogArticles: BlogArticle[] = blogArticles;
 const BlogArticleDetail = () => {
   const { slug = "" } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const [article, setArticle] = useState<BlogArticle | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const article = useMemo(
+    () => sampleBlogArticles.find((a) => a.slug.toLowerCase() === slug.trim().toLowerCase()) || null,
+    [slug],
+  );
   const [liked, setLiked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
   const [copyLinkText, setCopyLinkText] = useState("Copy Link");
@@ -57,45 +58,6 @@ const BlogArticleDetail = () => {
       .slice(0, 3); // Get up to 3 related articles
   };
 
-  // Find the article based on the slug
-  useEffect(() => {
-    if (!slug) {
-      setError("No article slug provided");
-      setIsLoading(false);
-      return;
-    }
-
-    setIsLoading(true);
-    setError(null);
-
-    // Normalize the slug for comparison (trim whitespace, ensure lowercase)
-    const normalizedSlug = slug.trim().toLowerCase();
-
-    console.log("Looking for article with slug:", normalizedSlug);
-    console.log(
-      "Available articles:",
-      sampleBlogArticles.map((a) => a.slug),
-    );
-
-    // Simulate API call delay
-    setTimeout(() => {
-      // Find article with case-insensitive comparison
-      const foundArticle = sampleBlogArticles.find(
-        (a) => a.slug.toLowerCase() === normalizedSlug,
-      );
-
-      if (foundArticle) {
-        console.log("Found article:", foundArticle.title);
-        setArticle(foundArticle);
-        setIsLoading(false);
-      } else {
-        console.error("Article not found for slug:", normalizedSlug);
-        setError("Article not found");
-        setIsLoading(false);
-      }
-    }, 500);
-  }, [slug]);
-
   const handleLike = () => {
     setLiked(!liked);
     // In a real app, you would update the likes count in the database
@@ -112,22 +74,7 @@ const BlogArticleDetail = () => {
     setTimeout(() => setCopyLinkText("Copy Link"), 2000);
   };
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
-        <Navbar />
-        <div className="pt-[120px] pb-20 flex justify-center items-center">
-          <div className="animate-pulse flex flex-col items-center">
-            <div className="h-8 bg-slate-200 rounded w-60 mb-4"></div>
-            <div className="h-6 bg-slate-200 rounded w-40"></div>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (error || !article) {
+  if (!article) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden">
         <Navbar />
@@ -155,6 +102,7 @@ const BlogArticleDetail = () => {
         title={article.title.length > 60 ? `${article.title.slice(0, 57).trimEnd()}…` : article.title}
         description={article.excerpt.length > 150 ? `${article.excerpt.slice(0, 147).trimEnd()}…` : article.excerpt}
         keywords={article.tags.join(", ")}
+        canonical={`https://drivedojodrivingschool.com/blog/${article.slug}`}
       />
       {/* Background decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>

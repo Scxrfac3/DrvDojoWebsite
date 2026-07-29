@@ -333,7 +333,7 @@ export default function ADILandingPage() {
                   className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-[#ffd700]/30"
                 >
                   <item.icon className="w-6 h-6 text-[#ffd700] mb-3" />
-                  <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                  <h3 className="text-white font-semibold mb-2">{item.title}</h3>
                   <p className="text-gray-400 text-sm">{item.desc}</p>
                 </motion.div>
               ))}
