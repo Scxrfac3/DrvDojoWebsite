@@ -17,6 +17,7 @@ import {
   Shield,
   Award,
   BookOpen,
+  X,
 } from "lucide-react";
 
 // FAQPage Schema for SEO
@@ -419,6 +420,85 @@ const GoodmayesLessons = () => {
           </div>
         </section>
 
+
+          {/* Competitor conquesting — franchise pain points + CTAs */}
+          <section className="py-16 bg-[#0d0d0d]">
+            <div className="container mx-auto px-4">
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                  What to Watch For When Choosing Driving Lessons in Goodmayes
+                </h2>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Not all driving schools are the same. Before you book with a national franchise or an independent, here is what East London learners tell us they wish they had known.
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+                {[
+                  "Instructor churn — franchise instructors pay high weekly fees, so they take on huge student numbers. That can mean less 1-to-1 attention and lessons that feel rushed.",
+                  "Long waiting lists — popular franchises often have weeks of backlog before your first lesson.",
+                  "Trainee PDIs — some franchise lessons are with trainee instructors still building their hours, not fully qualified ADIs.",
+                  "Hidden fees — franchise overheads can creep into lesson pricing, with costs that are not clear upfront.",
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-start">
+                      <X className="h-5 w-5 text-red-400 mr-3 flex-shrink-0 mt-0.5" />
+                      <p className="text-gray-300">{item}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 border border-primary/20 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold mb-4 text-white text-center">How Drive Dojo Is Different in Goodmayes</h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                  {[
+                    "Book live in 60 seconds — no waiting list",
+                    "Fully qualified DVSA ADI, never a trainee",
+                    "Same 1-to-1 instructor every lesson",
+                    "2024 Mercedes-Benz A-Class (automatic)",
+                    "Klarna Pay in 3, interest-free",
+                    "All-inclusive pricing, no hidden fees",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-white"
+                    onClick={() => (window.location.href = "/booking/payg")}
+                  >
+                    Book Your First Lesson — £70
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Link
+                    to="/alternatives/red-driving-school"
+                    className="inline-flex items-center justify-center text-primary hover:text-primary/80 font-medium"
+                  >
+                    Compare us to RED & AA
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Related Blog Articles */}
           <section className="py-16 bg-[#111111]">

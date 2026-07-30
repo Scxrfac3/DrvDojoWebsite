@@ -672,4 +672,66 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- ─── COMPETITOR ALTERNATIVES (CONQUESTING) ─────────────────────────── -->
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/red-driving-school</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/aa-driving-school</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/bsm-driving-school</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/drivethrul</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/ezlicense</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/abbies-driving-school</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/kims-driving-school</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/first-drive-group</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/alternatives/local-independent-east-london</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

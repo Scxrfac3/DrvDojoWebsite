@@ -62,6 +62,8 @@ const ManoeuvrePage = lazy(() => import('./components/pages/ManoeuvrePage'));
 const SpecialtyServicePage = lazy(() => import('./components/pages/SpecialtyServicePage'));
 const SitemapPage = lazy(() => import('./components/pages/SitemapPage'));
 const Reviews = lazy(() => import('./components/pages/Reviews'));
+const CompetitorAlternative = lazy(() => import('./components/pages/CompetitorAlternative'));
+const AlternativesHub = lazy(() => import('./components/pages/AlternativesHub'));
 
 function App() {
   return (
@@ -200,6 +202,8 @@ function App() {
           {/* Sitemap */}
           <Route path='/sitemap' element={<SitemapPage />} />
           <Route path='/reviews' element={<Reviews />} />
+          <Route path='/alternatives' element={<AlternativesHub />} />
+          <Route path='/alternatives/:slug' element={<CompetitorAlternative />} />
 
           {/* Blog routes */}
           <Route
