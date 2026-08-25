@@ -57,6 +57,7 @@ export default function AcademyPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       <SEO
+        noindex
         title="ADI Blueprint Academy | Training & Resources for ADIs"
         description="Access the ADI Blueprint Academy: step-by-step ADI training, Part 1/2/3 prep and business templates to build a 5-star instructor business."
         keywords="ADI training, driving instructor course, ADI Part 1 2 3, driving instructor business, ADI Blueprint"

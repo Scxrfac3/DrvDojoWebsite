@@ -70,6 +70,7 @@ export default function BlueprintAccess() {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       <SEO
+        noindex
         title="Blueprint Access | ADI Blueprint Member Portal"
         description="Log in to your ADI Blueprint member portal for the full course, booking system and tools to grow your instructor business."
         keywords="ADI Blueprint login, driving instructor portal, ADI course access, instructor business tools"

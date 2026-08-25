@@ -61,6 +61,7 @@ const SkillPage = lazy(() => import('./components/pages/SkillPage'));
 const ManoeuvrePage = lazy(() => import('./components/pages/ManoeuvrePage'));
 const SpecialtyServicePage = lazy(() => import('./components/pages/SpecialtyServicePage'));
 const SitemapPage = lazy(() => import('./components/pages/SitemapPage'));
+const NotFound = lazy(() => import('./components/pages/NotFound'));
 const Reviews = lazy(() => import('./components/pages/Reviews'));
 const CompetitorAlternative = lazy(() => import('./components/pages/CompetitorAlternative'));
 const AlternativesHub = lazy(() => import('./components/pages/AlternativesHub'));
@@ -204,6 +205,9 @@ function App() {
           <Route path='/reviews' element={<Reviews />} />
           <Route path='/alternatives' element={<AlternativesHub />} />
           <Route path='/alternatives/:slug' element={<CompetitorAlternative />} />
+
+          {/* 404 — catch-all for unknown paths (noindex to avoid soft-404s) */}
+          <Route path='*' element={<NotFound />} />
 
           {/* Blog routes */}
           <Route

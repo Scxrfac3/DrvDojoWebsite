@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { CheckCircle, ArrowRight, Loader2, Zap, Shield, Clock, CreditCard } from 'lucide-react';
+import SEO from "@/components/ui/SEO";
 
 interface SubscriptionPageProps {
   monthlyPriceId?: string;
@@ -70,6 +71,7 @@ export default function SubscriptionPage({
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <SEO noindex title="Subscription | Drive Dojo" description="Drive Dojo subscription plans." />
       {/* Header */}
       <header className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">

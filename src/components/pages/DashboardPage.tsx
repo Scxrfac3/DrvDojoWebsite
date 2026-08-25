@@ -17,6 +17,7 @@ import {
   Target,
   Settings
 } from 'lucide-react';
+import SEO from "@/components/ui/SEO";
 
 interface Profile {
   id: string;
@@ -175,6 +176,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <SEO noindex title="Dashboard | Drive Dojo" description="Drive Dojo instructor dashboard." />
       {/* Trial Started Banner */}
       <AnimatePresence>
         {trialStarted && !dismissedTrial && (

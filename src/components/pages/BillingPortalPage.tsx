@@ -11,6 +11,7 @@ import {
   AlertTriangle,
   CheckCircle
 } from 'lucide-react';
+import SEO from "@/components/ui/SEO";
 
 export default function BillingPortalPage() {
   const { user, loading: authLoading } = useAuth();
@@ -95,6 +96,7 @@ export default function BillingPortalPage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center px-4">
+      <SEO noindex title="Billing Portal | Drive Dojo" description="Drive Dojo billing portal." />
       <div className="max-w-md w-full">
         {error ? (
           <motion.div

@@ -90,6 +90,11 @@ const SEO = ({ title, description, keywords, canonical, noindex, serviceSchema, 
     // Update document title (cannot be done synchronously — must be in effect)
     document.title = title;
 
+    // Re-assert the canonical on every effect run so client-side navigations
+    // keep the correct self-referencing canonical (the synchronous call during
+    // render can be overwritten by the previous page's cleanup on unmount).
+    setCanonicalSync(canonical);
+
     // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -224,11 +229,6 @@ const SEO = ({ title, description, keywords, canonical, noindex, serviceSchema, 
 
     // Cleanup function to reset meta tags when component unmounts
     return () => {
-      // Reset canonical back to homepage default
-      const canonicalTag = document.getElementById("canonical-tag");
-      if (canonicalTag) {
-        canonicalTag.setAttribute("href", "https://drivedojodrivingschool.com/");
-      }
       // Reset robots back to default indexable state
       const robotsTag = document.querySelector('meta[name="robots"]');
       if (robotsTag) {
