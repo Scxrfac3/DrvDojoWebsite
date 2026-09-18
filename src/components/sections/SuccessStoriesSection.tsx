@@ -60,7 +60,7 @@ const students = [
     name: 'Dami S.',
     testCenter: 'Hornchurch DTC',
     passDate: 'July 2025',
-    image: '/images/certifications/14.jpg',
+    image: '/images/certifications/14.png',
     emoji: '🚀',
     achievement: 'Amazing Pass!',
     likes: 145
@@ -140,7 +140,7 @@ export default function SuccessStoriesSection() {
                   <img
                     src={student.image}
                     alt={`${student.name} - Passed`}
-                    className={`w-full h-64 object-cover transition-transform duration-500 ${
+                    className={`w-full aspect-[3/4] object-cover transition-transform duration-500 ${
                       isHovered ? 'scale-110' : 'scale-100'
                     }`}
                   />
