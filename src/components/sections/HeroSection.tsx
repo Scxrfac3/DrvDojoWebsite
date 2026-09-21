@@ -14,7 +14,7 @@ export default function HeroSection() {
 
   const stats = [
     { icon: Star, number: '98%', label: 'Pass Rate', color: 'text-accent-400' },
-    { icon: Users, number: '2000+', label: 'Students', color: 'text-primary-300' },
+    { icon: Users, number: '200+', label: 'Students', color: 'text-primary-300' },
     { icon: Trophy, number: '8+', label: 'Years', color: 'text-secondary-400' },
     { icon: Zap, number: '24hr', label: 'Response', color: 'text-accent-400' }
   ];
@@ -150,11 +150,11 @@ export default function HeroSection() {
                     <div key={i} className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-500 rounded-full border-2 border-white"></div>
                   ))}
                 </div>
-                <span className="text-blue-200">2000+ drivers</span>
+                <span className="text-blue-200">200+ drivers</span>
               </div>
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                <span className="text-blue-200">4.9/5 rating</span>
+                <span className="text-blue-200">5.0/5 rating</span>
               </div>
             </div>
           </div>

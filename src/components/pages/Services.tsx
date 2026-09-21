@@ -351,7 +351,7 @@ const Services = () => {
                           </div>
                           <div className="text-center">
                             <Users className="h-6 w-6 mx-auto mb-2 text-blue-300" />
-                            <div className="text-2xl font-bold text-blue-300">2000+</div>
+                            <div className="text-2xl font-bold text-blue-300">200+</div>
                             <div className="text-xs text-blue-200">Students</div>
                           </div>
                           <div className="text-center">
@@ -431,11 +431,11 @@ const Services = () => {
                               <div key={i} className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
                             ))}
                           </div>
-                          <span className="text-blue-200">2000+ successful drivers</span>
+                          <span className="text-blue-200">200+ successful drivers</span>
                         </div>
                         <div className="flex items-center">
                           <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                          <span className="text-blue-200">4.9/5 rating</span>
+                          <span className="text-blue-200">5.0/5 rating</span>
                         </div>
                       </motion.div>
                     </div>
@@ -956,7 +956,7 @@ const Services = () => {
                         <h3 className="text-2xl font-bold text-white mb-2">
                           Ready to Start Your Driving Journey? 🎉
                         </h3>
-                        <p className="text-gray-400 mb-4">Join 2000+ successful students with our professional training.</p>
+                        <p className="text-gray-400 mb-4">Join 200+ successful students with our professional training.</p>
                         <Button
                           className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-primary/20"
                           onClick={() => window.location.href = "/booking/payg"}
@@ -1037,7 +1037,7 @@ const Services = () => {
                         </div>
                         <div className="text-center">
                           <Users className="h-6 w-6 mx-auto mb-2 text-primary" />
-                          <div className="text-2xl font-bold text-primary">2000+</div>
+                          <div className="text-2xl font-bold text-primary">200+</div>
                           <div className="text-xs text-gray-500">Students</div>
                         </div>
                         <div className="text-center">
@@ -1057,7 +1057,7 @@ const Services = () => {
                       Ready to Start Driving?
                     </h2>
                     <p className="text-xl text-gray-400 mb-8 max-w-xl mx-auto">
-                      Join 2000+ successful drivers. Book your first lesson today — first 2 hours £70, then £38/hr.
+                      Join 200+ successful drivers. Book your first lesson today — first 2 hours £70, then £38/hr.
                     </p>
 
                     <motion.div
@@ -1103,11 +1103,11 @@ const Services = () => {
                             <div key={i} className="w-8 h-8 bg-primary/30 rounded-full border-2 border-white/20"></div>
                           ))}
                         </div>
-                        <span className="text-gray-500">2000+ successful drivers</span>
+                        <span className="text-gray-500">200+ successful drivers</span>
                       </div>
                       <div className="flex items-center">
                         <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                        <span className="text-gray-500">4.9/5 rating</span>
+                        <span className="text-gray-500">5.0/5 rating</span>
                       </div>
                     </motion.div>
                   </motion.div>
@@ -1685,8 +1685,8 @@ const servicesData = [
       "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700",
     category: "intermediate",
     duration: "10 hours",
-    students: 2800,
-    rating: 4.9,
+    students: 200,
+    rating: 5.0,
     features: [
       "Save £30 compared to hourly rate",
       "Structured learning plan tailored to you",

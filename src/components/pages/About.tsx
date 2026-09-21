@@ -128,7 +128,7 @@ const About = () => {
     <div className="bg-[#0d0d0d] min-h-screen relative overflow-hidden">
       <SEO
         title="About Drive Dojo | East London Driving School"
-        description="Meet Drive Dojo — East London's DVSA-approved driving school with Mercedes-Benz cars and patient instructors. Rated 4.9/5 by 2,000+ learners."
+        description="Meet Drive Dojo — East London's DVSA-approved driving school with Mercedes-Benz cars and patient instructors. Rated 5.0/5 by 200+ learners."
         keywords="about Drive Dojo, driving school East London, DVSA instructors, learn to drive, Mercedes driving school"
         canonical="https://drivedojodrivingschool.com/about"
       />
@@ -418,7 +418,7 @@ const About = () => {
                           color: "blue",
                         },
                         {
-                          value: "95%",
+                          value: "98%",
                           label: "First-Time Pass Rate",
                           icon: Award,
                           color: "green",
@@ -430,7 +430,7 @@ const About = () => {
                           color: "purple",
                         },
                         {
-                          value: "4.9/5",
+                          value: "5.0/5",
                           label: "Student Rating",
                           icon: Star,
                           color: "yellow",

@@ -164,7 +164,7 @@ export default function WhyChooseUsSection() {
               <h3 className="text-2xl font-bold text-white mb-2">
                 Ready to Start Your Journey? 🎉
               </h3>
-              <p className="text-gray-400 mb-4">Join 2000+ students who chose the fun way to learn!</p>
+              <p className="text-gray-400 mb-4">Join 200+ students who chose the fun way to learn!</p>
               <Link
                 to="/contact"
                 className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-glow hover:shadow-glow-lg"

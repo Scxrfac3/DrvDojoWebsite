@@ -32,7 +32,7 @@ const BookingIntensive = () => {
     >
       <SEO
         title="Book Intensive Course | Online Instantly, Klarna"
-        description="Book an intensive driving course online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book an intensive driving course online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="intensive driving course, fast track driving test, intensive driving lessons East London, crash course driving, driving test quick"
         canonical="https://drivedojodrivingschool.com/booking/intensive"
       />

@@ -173,8 +173,8 @@ export default function TestCentrePage() {
                 </Link>
                 <div className="mt-4 space-y-2 text-xs text-gray-600">
                   <div className="flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-blue-400" /> DVSA Approved</div>
-                  <div className="flex items-center gap-1.5"><Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> 4.9/5 Rating</div>
-                  <div className="flex items-center gap-1.5"><Users className="w-3 h-3 text-green-400" /> 2,000+ Students</div>
+                  <div className="flex items-center gap-1.5"><Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> 5.0/5 Rating</div>
+                  <div className="flex items-center gap-1.5"><Users className="w-3 h-3 text-green-400" /> 200+ Students</div>
                 </div>
               </div>
             </div>

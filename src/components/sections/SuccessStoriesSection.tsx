@@ -222,7 +222,7 @@ export default function SuccessStoriesSection() {
           <div className="inline-flex items-center bg-primary px-8 py-4 rounded-xl shadow-glow">
             <Trophy className="h-6 w-6 text-white mr-3" />
             <span className="text-white font-bold text-lg">
-              87% Pass Rate - Join Our Success Stories!
+              98% Pass Rate - Join Our Success Stories!
             </span>
             <Zap className="h-6 w-6 text-white/80 ml-3" />
           </div>

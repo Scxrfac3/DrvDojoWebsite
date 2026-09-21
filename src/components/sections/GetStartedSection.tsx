@@ -211,7 +211,7 @@ const GetStartedSection = ({
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Join over 2,000 successful {location} drivers who passed first time with Drive Dojo
+            Join over 200 successful {location} drivers who passed first time with Drive Dojo
           </motion.p>
         </motion.div>
       </div>

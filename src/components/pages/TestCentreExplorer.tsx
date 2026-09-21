@@ -308,7 +308,7 @@ export default function TestCentreExplorer() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 text-sm text-gray-400">
                       <Users className="w-4 h-4 text-blue-400" />
-                      2,000+ Students Trained
+                      200+ Students Trained
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-400">
                       <Award className="w-4 h-4 text-yellow-400" />

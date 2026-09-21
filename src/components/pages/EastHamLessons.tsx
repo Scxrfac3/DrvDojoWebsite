@@ -89,7 +89,7 @@ const EastHamLessons = () => {
     <>
       <SEO
         title="Driving Lessons in East Ham | Book Online, Klarna"
-        description="Driving lessons in East Ham. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in East Ham. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons East Ham, driving instructor East Ham, automatic driving lessons East Ham, book driving lessons online East London, driving school with Klarna London, E6 driving lessons, Newham, East Ham E6"
         canonical="https://drivedojodrivingschool.com/driving-lessons/east-ham"
         serviceSchema={{
@@ -172,7 +172,7 @@ const EastHamLessons = () => {
                           />
                         ))}
                         <span className="text-white ml-2 font-medium">
-                          4.9/5 (2,000+ reviews)
+                          5.0/5 (200+ reviews)
                         </span>
                       </div>
                       <p className="text-white/90 text-sm">

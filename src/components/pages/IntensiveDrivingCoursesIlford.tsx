@@ -615,14 +615,14 @@ const IntensiveDrivingCoursesIlford = () => {
                     <div className="text-center">
                       <Users className="h-6 w-6 mx-auto mb-2 text-blue-300" />
                       <div className="text-2xl font-bold text-blue-300">
-                        2000+
+                        200+
                       </div>
                       <div className="text-xs text-gray-400">Students</div>
                     </div>
                     <div className="text-center">
                       <Star className="h-6 w-6 mx-auto mb-2 text-green-400" />
                       <div className="text-2xl font-bold text-green-400">
-                        4.9
+                        5.0
                       </div>
                       <div className="text-xs text-gray-400">Rating</div>
                     </div>
@@ -699,12 +699,12 @@ const IntensiveDrivingCoursesIlford = () => {
                       ))}
                     </div>
                     <span className="text-gray-400">
-                      2000+ successful drivers
+                      200+ successful drivers
                     </span>
                   </div>
                   <div className="flex items-center">
                     <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                    <span className="text-gray-400">4.9/5 rating</span>
+                    <span className="text-gray-400">5.0/5 rating</span>
                   </div>
                 </motion.div>
               </div>
@@ -1180,9 +1180,9 @@ const IntensiveDrivingCoursesIlford = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                 {[
                   { value: "98%", label: "Pass Rate", icon: Trophy },
-                  { value: "2000+", label: "Students", icon: Users },
+                  { value: "200+", label: "Students", icon: Users },
                   { value: "1–2", label: "Weeks to Pass", icon: Zap },
-                  { value: "4.9", label: "Star Rating", icon: Star },
+                  { value: "5.0", label: "Star Rating", icon: Star },
                 ].map((stat, i) => (
                   <div
                     key={i}

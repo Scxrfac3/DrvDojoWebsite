@@ -261,8 +261,8 @@ export default function SkillPage() {
             </Link>
             <div className="flex justify-center gap-4 mt-4 text-xs text-gray-600">
               <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> DVSA Approved</span>
-              <span>4.9/5 Rating</span>
-              <span>2,000+ Students</span>
+              <span>5.0/5 Rating</span>
+              <span>200+ Students</span>
             </div>
           </motion.div>
         </div>

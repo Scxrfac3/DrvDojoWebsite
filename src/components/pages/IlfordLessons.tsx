@@ -76,7 +76,7 @@ const IlfordLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Ilford | Book Online, Klarna"
-        description="Driving lessons in Ilford. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Ilford. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Ilford, driving instructor Ilford, automatic driving lessons Ilford, book driving lessons online East London, driving school with Klarna London, Ilford IG1, Ilford IG postcodes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/ilford"
         serviceSchema={{
@@ -166,7 +166,7 @@ const IlfordLessons = () => {
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
-                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                        <span className="text-white ml-2 font-medium">5.0/5 (200+ reviews)</span>
                       </div>
                       <p className="text-white/90 text-sm">
                         "Passed first time at Ilford Test Centre - could not have done it without my instructor."

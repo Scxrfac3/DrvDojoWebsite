@@ -14,7 +14,7 @@ interface SubscriptionPageProps {
 export default function SubscriptionPage({
   monthlyPriceId = 'price_monthly_subscription',
   yearlyPriceId = 'price_yearly_subscription',
-  monthlyPrice = 4.99,
+  monthlyPrice = 5.09,
   yearlyPrice = 45
 }: SubscriptionPageProps) {
   const { user, loading: authLoading } = useAuth();

@@ -33,7 +33,7 @@ const BookingTestRental = () => {
     >
       <SEO
         title="Book Test Car Hire | Online Instantly, Klarna"
-        description="Book driving test car hire online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book driving test car hire online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving test car hire, test day car rental, dual control car, driving test East London, Mercedes test car"
         canonical="https://drivedojodrivingschool.com/booking/testrental"
       />

@@ -33,7 +33,7 @@ const Booking6Hour = () => {
     >
       <SEO
         title="Book 6-Hour Lessons | Online Instantly, Klarna"
-        description="Book 6 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book 6 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="6 hour driving lessons, driving lesson block booking, East London driving school, intensive driving lessons, Mercedes driving instructor"
         canonical="https://drivedojodrivingschool.com/booking/6hour"
       />

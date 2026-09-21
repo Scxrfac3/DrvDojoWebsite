@@ -30,7 +30,7 @@ const Booking20Hour = () => {
     <>
       <SEO
         title="Book 20-Hour Lessons | Online Instantly, Klarna"
-        description="Book 20 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book 20 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons East London, driving lessons Redbridge, driving lessons Havering, driving lessons Romford, driving lessons Barking, driving lessons Tower Hamlets, driving lessons Newham, driving lessons Hackney, 20-hour driving package, book driving lessons online, driving school with Klarna London, Mercedes automatic driving lessons, DVSA approved driving instructor East London"
         canonical="https://drivedojodrivingschool.com/booking/20hour"
       />

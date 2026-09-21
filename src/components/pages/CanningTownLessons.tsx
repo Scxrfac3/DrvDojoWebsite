@@ -89,7 +89,7 @@ const CanningTownLessons = () => {
     <>
       <SEO
         title="Driving Lessons Canning Town | Book Online, Klarna"
-        description="Driving lessons in Canning Town. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Canning Town. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Canning Town, driving instructor Canning Town, automatic driving lessons Silvertown, book driving lessons online East London, driving school with Klarna London, E16 driving lessons, Canning Town E16, Silvertown"
         canonical="https://drivedojodrivingschool.com/driving-lessons/canning-town"
         serviceSchema={{
@@ -172,7 +172,7 @@ const CanningTownLessons = () => {
                           />
                         ))}
                         <span className="text-white ml-2 font-medium">
-                          4.9/5 (2,000+ reviews)
+                          5.0/5 (200+ reviews)
                         </span>
                       </div>
                       <p className="text-white/90 text-sm">

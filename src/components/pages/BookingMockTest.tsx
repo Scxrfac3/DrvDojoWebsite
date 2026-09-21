@@ -33,7 +33,7 @@ const BookingMockTest = () => {
     >
       <SEO
         title="Book Mock Driving Test | Online Instantly, Klarna"
-        description="Book a mock driving test online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book a mock driving test online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="mock driving test, driving test practice, DL25 report, driving test routes East London, pre-test assessment"
         canonical="https://drivedojodrivingschool.com/booking/mocktest"
       />

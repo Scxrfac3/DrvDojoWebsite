@@ -73,7 +73,7 @@ const RomfordLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Romford | Book Online, Klarna"
-        description="Driving lessons in Romford. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Romford. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Romford, driving instructor Romford, automatic driving lessons Romford, book driving lessons online East London, driving school with Klarna London, Romford RM postcodes, Hornchurch test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/romford"
         serviceSchema={{
@@ -150,7 +150,7 @@ const RomfordLessons = () => {
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
-                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                        <span className="text-white ml-2 font-medium">5.0/5 (200+ reviews)</span>
                       </div>
                       <p className="text-white/90 text-sm">"Passed first time at Romford - brilliant instructor!"</p>
                     </div>

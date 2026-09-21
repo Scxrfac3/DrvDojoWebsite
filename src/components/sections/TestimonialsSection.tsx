@@ -186,7 +186,7 @@ const TestimonialsSection = ({
             </div>
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-blue-600">
-                4.9
+                5.0
               </p>
               <p className="text-sm text-gray-500">Average Rating</p>
             </div>

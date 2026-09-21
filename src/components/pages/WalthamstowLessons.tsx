@@ -74,7 +74,7 @@ const WalthamstowLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Walthamstow | Book Online, Klarna"
-        description="Driving lessons in Walthamstow. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Walthamstow. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Walthamstow, driving instructor Walthamstow, automatic driving lessons Walthamstow, book driving lessons online East London, driving school with Klarna London, Walthamstow E17, Chingford test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/walthamstow"
         serviceSchema={{
@@ -163,7 +163,7 @@ const WalthamstowLessons = () => {
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
-                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                        <span className="text-white ml-2 font-medium">5.0/5 (200+ reviews)</span>
                       </div>
                       <p className="text-white/90 text-sm">
                         "Passed first time at Walthamstow Test Centre!"

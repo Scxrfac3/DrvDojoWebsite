@@ -73,7 +73,7 @@ const DocklandsLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Docklands | Book Online, Klarna"
-        description="Driving lessons in Docklands. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Docklands. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Canary Wharf, driving instructors Isle of Dogs, automatic driving lessons Docklands, book driving lessons online East London, driving school with Klarna London, Docklands E14, Canary Wharf E14, Isle of Dogs E14, Tower Hamlets"
         canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
         serviceSchema={{
@@ -153,7 +153,7 @@ const DocklandsLessons = () => {
                             className="h-5 w-5 text-yellow-400 fill-yellow-400"
                           />
                         ))}
-                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                        <span className="text-white ml-2 font-medium">5.0/5 (200+ reviews)</span>
                       </div>
                       <p className="text-white/90 text-sm">
                         "Passed first time - lessons in Docklands made all the difference."

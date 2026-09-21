@@ -78,7 +78,7 @@ const STEPS: Step[] = [
     headline: 'Pass Your Test With Confidence',
     paragraphs: [
       "When your instructor confirms you're test-ready, we'll help you find the earliest available test date. Our students consistently achieve first-time pass rates well above the national average at key local test centres including Goodmayes, Wood Green, and Barking.",
-      "From mock tests to test-day car rental, we handle everything so you can focus on what matters — driving safely and confidently. Join over 2,000 drivers who've passed first time with Drive Dojo.",
+      "From mock tests to test-day car rental, we handle everything so you can focus on what matters — driving safely and confidently. Join over 200 drivers who've passed first time with Drive Dojo.",
     ],
     ctaText: 'View Our Pass Rates',
     ctaLink: '/services',

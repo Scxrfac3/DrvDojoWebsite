@@ -141,7 +141,7 @@ const EastLondonAutomatic = () => {
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
-                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                        <span className="text-white ml-2 font-medium">5.0/5 (200+ reviews)</span>
                       </div>
                       <p className="text-white/90 text-sm">"Passed first time — automatic was the right choice!"</p>
                     </div>
@@ -368,7 +368,7 @@ const EastLondonAutomatic = () => {
                 className="text-xl mb-8 max-w-2xl mx-auto text-white/90"
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}
               >
-                Join 2000+ successful drivers in East London. Book your automatic lesson today.
+                Join 200+ successful drivers in East London. Book your automatic lesson today.
               </motion.p>
               <motion.div
                 className="flex flex-col sm:flex-row justify-center gap-4"

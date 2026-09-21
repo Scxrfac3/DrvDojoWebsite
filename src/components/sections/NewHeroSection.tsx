@@ -29,8 +29,8 @@ const NewHeroSection = ({
   const [selectedLesson, setSelectedLesson] = useState<string | null>(null);
 
   const stats = [
-    { icon: Star, number: '87%', label: 'Pass Rate', color: 'text-yellow-400' },
-    { icon: Users, number: '1000+', label: 'Students', color: 'text-blue-300' },
+    { icon: Star, number: '98%', label: 'Pass Rate', color: 'text-yellow-400' },
+    { icon: Users, number: '200+', label: 'Students', color: 'text-blue-300' },
     { icon: Trophy, number: '8+', label: 'Years', color: 'text-green-400' },
     { icon: Zap, number: '24hr', label: 'Response', color: 'text-orange-400' }
   ];
@@ -219,11 +219,11 @@ const NewHeroSection = ({
                     <div key={i} className="w-8 h-8 bg-primary/30 rounded-full border-2 border-white/20"></div>
                   ))}
                 </div>
-                <span className="text-gray-400">1000+ happy drivers</span>
+                <span className="text-gray-400">200+ happy drivers</span>
               </div>
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                <span className="text-gray-400">4.5/5 rating</span>
+                <span className="text-gray-400">5.0/5 rating</span>
               </div>
             </div>
           </div>
@@ -265,7 +265,7 @@ const NewHeroSection = ({
 
                 {/* Floating Success Badge */}
                 <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-xl shadow-glow">
-                  <div className="text-2xl font-bold">87%</div>
+                  <div className="text-2xl font-bold">98%</div>
                   <div className="text-xs">Pass Rate 🎉</div>
                 </div>
               </div>

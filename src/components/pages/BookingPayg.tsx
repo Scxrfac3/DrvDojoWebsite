@@ -32,7 +32,7 @@ const BookingPayg = () => {
     >
       <SEO
         title="Book PAYG Driving Lessons | Online & Klarna"
-        description="Book PAYG lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book PAYG lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="pay as you go driving lessons, driving lessons East London, book driving lessons, DVSA instructor, Mercedes driving school"
         canonical="https://drivedojodrivingschool.com/booking/payg"
       />

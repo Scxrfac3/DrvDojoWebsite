@@ -48,7 +48,7 @@ const Gallery = () => {
                   <div className="bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full p-4 w-16 h-16 mx-auto mb-2 flex items-center justify-center">
                     <Users className="h-8 w-8" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">2,000+</div>
+                  <div className="text-2xl font-bold text-gray-900">200+</div>
                   <div className="text-gray-600">Happy Students</div>
                 </motion.div>
 
@@ -59,7 +59,7 @@ const Gallery = () => {
                   <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full p-4 w-16 h-16 mx-auto mb-2 flex items-center justify-center">
                     <Star className="h-8 w-8" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">4.9/5</div>
+                  <div className="text-2xl font-bold text-gray-900">5.0/5</div>
                   <div className="text-gray-600">Average Rating</div>
                 </motion.div>
 

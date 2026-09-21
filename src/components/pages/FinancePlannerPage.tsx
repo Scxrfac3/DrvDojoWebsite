@@ -213,7 +213,7 @@ export default function FinancePlannerPage({ price = 29 }: FinancePlannerPagePro
             <Sparkles className="w-4 h-4 text-[#ffd700]" />
             <span className="text-[#ffd700] text-sm font-semibold tracking-wide">The UK's #1 Finance Tool for ADIs</span>
             <div className="glass-dot" />
-            <span className="text-gray-400 text-xs flex items-center gap-1"><Star className="w-3 h-3 fill-[#ffd700] text-[#ffd700]" /> 4.9</span>
+            <span className="text-gray-400 text-xs flex items-center gap-1"><Star className="w-3 h-3 fill-[#ffd700] text-[#ffd700]" /> 5.0</span>
           </motion.div>
 
           {/* Headline */}
@@ -311,7 +311,7 @@ export default function FinancePlannerPage({ price = 29 }: FinancePlannerPagePro
               { icon: Users, value: '200+', label: 'Active Instructors' },
               { icon: DollarSign, value: '£2,847', label: 'Avg. Tax Saved/Year', trend: 'per instructor' },
               { icon: BarChart3, value: '£5M+', label: 'Revenue Tracked' },
-              { icon: Star, value: '4.9/5', label: 'User Rating', trend: '200+ reviews' },
+              { icon: Star, value: '5.0/5', label: 'User Rating', trend: '200+ reviews' },
             ].map((s, i) => (
               <GlassStatCard key={i} {...s} delay={i * 0.1} />
             ))}

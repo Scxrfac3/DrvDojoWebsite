@@ -191,7 +191,7 @@ const SpecialOffersSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Join 2000+ successful drivers in East London. Book your lesson today.
+            Join 200+ successful drivers in East London. Book your lesson today.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"

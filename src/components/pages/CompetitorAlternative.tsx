@@ -351,9 +351,9 @@ const CompetitorAlternative = () => {
               >
                 <span className="inline-flex items-center gap-1 mr-2">
                   <Star className="h-4 w-4 fill-yellow-300 text-yellow-300" />
-                  4.9/5
+                  5.0/5
                 </span>
-                from 2,000+ East London learners. Book live in 60 seconds — no waiting list.
+                from 200+ East London learners. Book live in 60 seconds — no waiting list.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

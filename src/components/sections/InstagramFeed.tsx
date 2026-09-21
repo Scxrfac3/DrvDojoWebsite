@@ -183,7 +183,7 @@ const InstagramFeed = () => {
           </motion.div>
           <p className="text-gray-600 max-w-2xl mx-auto mb-6">
             Get inspired by our latest student successes, behind-the-scenes moments, 
-            and driving tips. Join our community of over 2,000+ learners!
+            and driving tips. Join our community of over 200+ learners!
           </p>
           
           <Button

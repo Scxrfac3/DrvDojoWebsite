@@ -567,7 +567,7 @@ export default function ShowMeTellMe() {
                       <ShieldCheck className="w-3 h-3" /> DVSA Approved
                     </span>
                     <span className="flex items-center gap-1">
-                      <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" /> 4.9/5
+                      <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" /> 5.0/5
                     </span>
                   </div>
                 </div>

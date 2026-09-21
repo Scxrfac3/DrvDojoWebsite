@@ -1,74 +1,63 @@
 // Shared Organization / LocalBusiness JSON-LD used site-wide (homepage + location pages)
 // to enable Google review rich snippets and to feed AI search engines (ChatGPT, Perplexity,
-// Gemini, Claude) exact, extractable data about Drive Dojo's service areas, pricing,
-// ratings and instant booking. Reflects the business's stated 4.9/5 from 2,000+ Google reviews.
+// Gemini, Claude) exact, extractable data about Drive Dojo.
+// All values come from the canonical business source (src/data/business.ts).
+
+import { BUSINESS } from "./business";
+
 export const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Drive Dojo Driving School",
-  url: "https://drivedojodrivingschool.com",
+  name: BUSINESS.name,
+  url: BUSINESS.url,
   image: "https://drivedojodrivingschool.com/images/certifications/DDojo.png",
   logo: "https://drivedojodrivingschool.com/images/certifications/DDojo.png",
-  description:
-    "DVSA-approved automatic driving lessons across East London in a Mercedes-Benz A-Class. Rated 4.9/5 from 2,000+ Google reviews. Book instantly via Calendly and pay later with Klarna.",
-  email: "info@drivedojodrivingschool.com",
-  telephone: "+442012345678",
+  description: BUSINESS.description,
+  email: BUSINESS.email,
+  telephone: BUSINESS.phone,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "10 James Town Way",
-    addressLocality: "London",
-    addressRegion: "Greater London",
-    postalCode: "E14 2DH",
-    addressCountry: "GB",
+    streetAddress: BUSINESS.address.streetAddress,
+    addressLocality: BUSINESS.address.addressLocality,
+    addressRegion: BUSINESS.address.addressRegion,
+    postalCode: BUSINESS.address.postalCode,
+    addressCountry: BUSINESS.address.addressCountry,
   },
-  areaServed: [
-    { "@type": "Place", name: "East London" },
-    { "@type": "Place", name: "Canary Wharf" },
-    { "@type": "Place", name: "Goodmayes" },
-    { "@type": "Place", name: "Wanstead" },
-    { "@type": "Place", name: "Barking" },
-    { "@type": "Place", name: "Havering" },
-    { "@type": "Place", name: "Isle of Dogs" },
-    { "@type": "Place", name: "Docklands" },
-    { "@type": "Place", name: "Romford" },
-    { "@type": "Place", name: "Forest Gate" },
-    { "@type": "Place", name: "East Ham" },
-    { "@type": "Place", name: "Canning Town" },
-  ],
+  areaServed: BUSINESS.areasServed.map((name) => ({ "@type": "Place", name })),
   makesOffer: [
     {
       "@type": "Offer",
-      name: "Pay As You Go Driving Lessons",
-      price: "38",
+      name: BUSINESS.pricing.payg.label,
+      price: String(BUSINESS.pricing.payg.priceNumber),
       priceCurrency: "GBP",
       description: "Book individual automatic driving lessons by the hour, no commitment.",
       url: "https://drivedojodrivingschool.com/booking/payg",
     },
     {
       "@type": "Offer",
-      name: "10-Hour Block Booking",
-      price: "340",
+      name: BUSINESS.pricing.block10.label,
+      price: String(BUSINESS.pricing.block10.priceNumber),
       priceCurrency: "GBP",
       description: "10 hours of automatic tuition at £34/hr — save £40 vs PAYG.",
       url: "https://drivedojodrivingschool.com/booking/10hour",
     },
     {
       "@type": "Offer",
-      name: "Intensive Pass Course",
-      price: "650",
+      name: BUSINESS.pricing.intensive.label,
+      price: String(BUSINESS.pricing.intensive.priceFrom),
       priceCurrency: "GBP",
-      description: "Intensive automatic course, 12–30 hours, pass in as little as 2 weeks. From £650.",
+      description: "Intensive automatic course, 12–30 hours, from £650.",
       url: "https://drivedojodrivingschool.com/booking/intensive",
     },
   ],
-  paymentAccepted: "Cash, Credit Card, Debit Card, Bank Transfer, Klarna",
+  paymentAccepted: BUSINESS.paymentAccepted,
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
+    ratingValue: BUSINESS.ratingValue,
     bestRating: "5",
     worstRating: "1",
-    ratingCount: "2000",
-    reviewCount: "2000",
+    ratingCount: String(BUSINESS.reviewCountNumber),
+    reviewCount: String(BUSINESS.reviewCountNumber),
   },
   review: [
     {
@@ -96,8 +85,5 @@ export const reviewSchema = {
       reviewRating: { "@type": "Rating", ratingValue: "5" },
     },
   ],
-  sameAs: [
-    "https://www.facebook.com/drivedojodrivingschool",
-    "https://www.instagram.com/drivedojodrivingschool",
-  ],
+  sameAs: BUSINESS.sameAs,
 };

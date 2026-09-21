@@ -30,7 +30,7 @@ const Booking10Hour = () => {
     <div className={`min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden ${animateBackground ? "animate-background" : ""}`}>
       <SEO
         title="Book 10-Hour Lessons | Online Instantly, Klarna"
-        description="Book 10 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Book 10 hours of lessons online in 60 seconds. Pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="10 hour driving lessons, driving lesson package, East London driving school, book driving course, Mercedes driving instructor"
         canonical="https://drivedojodrivingschool.com/booking/10hour"
       />

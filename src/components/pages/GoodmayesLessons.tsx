@@ -92,7 +92,7 @@ const GoodmayesLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Goodmayes | Book Online, Klarna"
-        description="Driving lessons in Goodmayes. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Goodmayes. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Goodmayes, driving instructor Goodmayes, automatic driving lessons Seven Kings, driving school with Klarna London, book driving lessons online East London, IG postcodes driving lessons, Mercedes automatic driving lessons Goodmayes"
         canonical="https://drivedojodrivingschool.com/driving-lessons/goodmayes"
         serviceSchema={{
@@ -174,7 +174,7 @@ const GoodmayesLessons = () => {
                           />
                         ))}
                         <span className="text-white ml-2 font-medium">
-                          4.9/5 (2,000+ reviews)
+                          5.0/5 (200+ reviews)
                         </span>
                       </div>
                       <p className="text-white/90 text-sm">

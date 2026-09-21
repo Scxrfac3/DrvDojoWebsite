@@ -73,7 +73,7 @@ const ForestGateLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Forest Gate | Book Online, Klarna"
-        description="Driving lessons in Forest Gate. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Forest Gate. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Forest Gate, driving instructor Forest Gate, automatic driving lessons E7, book driving lessons online East London, driving school with Klarna London, Forest Gate E7, Newham"
         canonical="https://drivedojodrivingschool.com/driving-lessons/forest-gate"
         serviceSchema={{
@@ -156,7 +156,7 @@ const ForestGateLessons = () => {
                           />
                         ))}
                         <span className="text-white ml-2 font-medium">
-                          4.9/5 (2,000+ reviews)
+                          5.0/5 (200+ reviews)
                         </span>
                       </div>
                       <p className="text-white/90 text-sm">

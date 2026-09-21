@@ -256,7 +256,7 @@ export default function PricingOffersSection() {
           </span>
           <span className="w-1 h-1 bg-gray-700 rounded-full" />
           <span className="flex items-center gap-1.5">
-            <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> 4.9/5 Rating
+            <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> 5.0/5 Rating
           </span>
           <span className="w-1 h-1 bg-gray-700 rounded-full" />
           <span className="flex items-center gap-1.5">

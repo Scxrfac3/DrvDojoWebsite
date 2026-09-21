@@ -2,6 +2,10 @@ User-agent: *
 Allow: /
 
 # Allow AI search crawlers to index and cite Drive Dojo in AI-generated answers
+# OAI-SearchBot: OpenAI's crawler for ChatGPT Search / AI answers (must not be blocked)
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 

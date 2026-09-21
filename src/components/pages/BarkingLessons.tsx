@@ -75,7 +75,7 @@ const BarkingLessons = () => {
     <>
       <SEO
         title="Driving Lessons in Barking | Book Online, Klarna"
-        description="Driving lessons in Barking. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 4.9/5 from 2,000+ learners."
+        description="Driving lessons in Barking. Book instantly online, pay later with Klarna. DVSA-approved automatic cars. 5.0/5 from 200+ learners."
         keywords="driving lessons Barking, driving instructor Barking, automatic driving lessons Barking, book driving lessons online East London, driving school with Klarna London, Barking IG11, Barking test centre"
         canonical="https://drivedojodrivingschool.com/driving-lessons/barking"
         serviceSchema={{
@@ -139,10 +139,10 @@ const BarkingLessons = () => {
                   <div className="flex items-center space-x-6 text-sm mt-6 justify-center lg:justify-start">
                     <div className="flex items-center">
                       <Star className="h-4 w-4 text-yellow-400 mr-1" />
-                      <span className="text-gray-400">4.9/5 rating</span>
+                      <span className="text-gray-400">5.0/5 rating</span>
                     </div>
                     <div className="flex items-center">
-                      <span className="text-gray-400">2000+ successful drivers</span>
+                      <span className="text-gray-400">200+ successful drivers</span>
                     </div>
                   </div>
                 </motion.div>
@@ -164,7 +164,7 @@ const BarkingLessons = () => {
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                         ))}
-                        <span className="text-white ml-2 font-medium">4.9/5 (2,000+ reviews)</span>
+                        <span className="text-white ml-2 font-medium">5.0/5 (200+ reviews)</span>
                       </div>
                       <p className="text-white/90 text-sm">
                         "Passed first time at Barking Test Centre!"

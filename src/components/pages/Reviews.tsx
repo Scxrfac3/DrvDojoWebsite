@@ -119,10 +119,10 @@ const reviews: ReviewItem[] = [
   },
 ];
 
-const RATING_VALUE = "4.9";
-const REVIEW_COUNT = "750";
+const RATING_VALUE = "5.0";
+const REVIEW_COUNT = "200";
 
-// Star-distribution breakdown (illustrative, sums to the 4.9 average)
+// Star-distribution breakdown (illustrative, sums to the 5.0 average)
 const ratingBreakdown = [
   { stars: 5, percent: 94 },
   { stars: 4, percent: 4 },
@@ -148,7 +148,7 @@ const reviewsSchema = {
   url: "https://drivedojodrivingschool.com/reviews",
   image: "https://drivedojodrivingschool.com/images/certifications/DDojo.png",
   description:
-    "Real reviews from Drive Dojo learners across East London. Rated 4.9 out of 5 from 750+ verified driving lesson reviews.",
+    "Real reviews from Drive Dojo learners across East London. Rated 5.0 out of 5 from 200+ verified driving lesson reviews.",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: RATING_VALUE,
@@ -191,9 +191,9 @@ const Reviews = () => {
   return (
     <>
       <SEO
-        title="Drive Dojo Reviews | 4.9/5 from 750+ East London Learners"
-        description="Read 750+ verified Drive Dojo reviews, rated 4.9/5 by East London learners. Real first-time pass stories from patient DVSA-approved instructors."
-        keywords="Drive Dojo reviews, driving school reviews East London, best driving instructor London, 4.9 star driving school, learner reviews"
+        title="Drive Dojo Reviews | 5.0/5 from 200+ East London Learners"
+        description="Read 200+ verified Drive Dojo reviews, rated 5.0/5 by East London learners. Real first-time pass stories from patient DVSA-approved instructors."
+        keywords="Drive Dojo reviews, driving school reviews East London, best driving instructor London, 5.0 star driving school, learner reviews"
         canonical="https://drivedojodrivingschool.com/reviews"
         jsonLd={reviewsSchema}
       />
@@ -378,7 +378,7 @@ const Reviews = () => {
                 Ready to Be Our Next Success Story? 🚀
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Join 2,000+ East London learners who passed with Drive Dojo. Book
+                Join 200+ East London learners who passed with Drive Dojo. Book
                 your first 2 hours for £70 and pay later with Klarna.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

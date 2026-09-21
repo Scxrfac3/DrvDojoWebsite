@@ -1203,7 +1203,7 @@ const Contact = () => {
                 whileHover={{ opacity: 1 }}
               />
               <p className="text-3xl font-bold text-green-300 mb-2 relative z-10">
-                4.9/5
+                5.0/5
               </p>
               <p className="text-purple-100 text-sm relative z-10">
                 Average Rating
