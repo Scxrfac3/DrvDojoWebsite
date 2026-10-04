@@ -152,15 +152,13 @@ export default function PassPlusPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <a
-                href={BUSINESS.calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/booking/pass-plus"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
               >
                 <Calendar className="w-5 h-5" />
-                Book Instantly on Calendly
-              </a>
+                Book Your Pass Plus Course
+              </Link>
               <Link
                 to="/booking"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] rounded-xl text-white font-semibold transition-all"
@@ -371,15 +369,13 @@ export default function PassPlusPage() {
                 <p className="text-gray-400 text-sm mb-6">
                   No test. Official DVSA certificate. Up to 30% off insurance.
                 </p>
-                <a
-                  href={BUSINESS.calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/booking/pass-plus"
                   className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
                 >
                   Book Your Pass Plus Course
                   <ArrowRight className="w-5 h-5" />
-                </a>
+                </Link>
                 <div className="flex items-center justify-center gap-3 mt-4 text-[11px] text-gray-600">
                   <span className="flex items-center gap-1">
                     <CreditCard className="w-3 h-3" /> Klarna Pay in 3
