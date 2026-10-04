@@ -371,7 +371,7 @@ export const servicesData: ServiceData[] = [
   {
     id: "pass-plus",
     title: "Pass Plus Course",
-    price: "£200",
+    price: "£250",
     priceUnit: "/course",
     shortDescription:
       "Build confidence and skills after passing your test with this government-recognized course",

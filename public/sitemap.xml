@@ -84,6 +84,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/booking/pass-plus</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- ─── SPECIALITY SERVICE PAGES ─────────────────────────────────────────── -->
   <url>
@@ -686,8 +692,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drivedojodrivingschool.com/pass-plus-courses</loc>
-    <lastmod>2026-05-31</lastmod>
+    <loc>https://drivedojodrivingschool.com/pass-plus</loc>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

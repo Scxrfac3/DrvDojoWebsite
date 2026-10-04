@@ -17,6 +17,7 @@ const BookingIntensive = lazy(() => import('./components/pages/BookingIntensive'
 const BookingIntensivePackage = lazy(() => import('./components/pages/BookingIntensivePackage'));
 const BookingMockTest = lazy(() => import('./components/pages/BookingMockTest'));
 const BookingTestRental = lazy(() => import('./components/pages/BookingTestRental'));
+const BookingPassPlus = lazy(() => import('./components/pages/BookingPassPlus'));
 const BlogPage = lazy(() => import('./components/pages/BlogPage'));
 const AutomaticDrivingLessons = lazy(() => import('./components/pages/AutomaticDrivingLessons'));
 const IntensiveDrivingCoursesIlford = lazy(() => import('./components/pages/IntensiveDrivingCoursesIlford'));
@@ -60,6 +61,7 @@ const TestCentrePage = lazy(() => import('./components/pages/TestCentrePage'));
 const SkillPage = lazy(() => import('./components/pages/SkillPage'));
 const ManoeuvrePage = lazy(() => import('./components/pages/ManoeuvrePage'));
 const SpecialtyServicePage = lazy(() => import('./components/pages/SpecialtyServicePage'));
+const PassPlusPage = lazy(() => import('./components/pages/PassPlusPage'));
 const SitemapPage = lazy(() => import('./components/pages/SitemapPage'));
 const NotFound = lazy(() => import('./components/pages/NotFound'));
 const Reviews = lazy(() => import('./components/pages/Reviews'));
@@ -97,6 +99,7 @@ function App() {
           <Route path='/booking/intensive-45hr' element={<BookingIntensivePackage packageKey="45hr" />} />
           <Route path='/booking/mocktest' element={<BookingMockTest />} />
           <Route path='/booking/testrental' element={<BookingTestRental />} />
+          <Route path='/booking/pass-plus' element={<BookingPassPlus />} />
           <Route path='/blog' element={<BlogPage />} />
           <Route path='/automatic-driving-lessons' element={<AutomaticDrivingLessons />} />
           <Route path='/intensive-driving-courses-ilford' element={<IntensiveDrivingCoursesIlford />} />
@@ -199,6 +202,7 @@ function App() {
           <Route path='/female-driving-instructors' element={<SpecialtyServicePage />} />
           <Route path='/refresher-driving-lessons' element={<SpecialtyServicePage />} />
           <Route path='/pass-plus-courses' element={<SpecialtyServicePage />} />
+          <Route path='/pass-plus' element={<PassPlusPage />} />
 
           {/* Sitemap */}
           <Route path='/sitemap' element={<SitemapPage />} />

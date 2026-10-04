@@ -15,7 +15,8 @@ import PricingOffersSection from "./sections/PricingOffersSection";
 import Banner from "./ui/Banner";
 import SEO from "./ui/SEO";
 import { reviewSchema } from "@/data/reviewSchema";
-import { CreditCard } from "lucide-react";
+import { CreditCard, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
@@ -118,6 +119,27 @@ const Home = () => {
 
           {/* 4. The Pitch — Pricing & Offers */}
           <PricingOffersSection />
+
+          {/* 4b. Pass Plus promo — internal link to dedicated landing page */}
+          <section className="py-10 bg-[#111111]">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-br from-primary/10 to-amber-500/10 border border-primary/30 rounded-2xl p-6 md:p-8">
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold text-white mb-1">Just passed your test?</h2>
+                  <p className="text-gray-400">
+                    Complete your DVSA Pass Plus course in an automatic Mercedes A-Class. No test, up to 30% off insurance.
+                  </p>
+                </div>
+                <Link
+                  to="/pass-plus"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 flex-shrink-0"
+                >
+                  Pass Plus Courses
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </section>
 
           {/* 5. How It Works */}
           <DrivingJourneySection />

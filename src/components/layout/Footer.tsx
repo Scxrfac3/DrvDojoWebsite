@@ -55,6 +55,7 @@ const Footer = ({
     { title: "Contact", href: "/contact" },
     { title: "Reviews", href: "/reviews" },
     { title: "Blog", href: "/blog" },
+    { title: "Pass Plus", href: "/pass-plus" },
     { title: "FAQ", href: "/about" },
     { title: "Terms of Service", href: "/terms" },
     { title: "Privacy Policy", href: "/privacy-policy" },

@@ -156,7 +156,7 @@ const SERVICES: Record<string, ServiceData> = {
       'Complete in a single day or spread across sessions',
     ],
     pricing: [
-      { label: 'Full Pass Plus Course (6 hours)', price: '£210' },
+      { label: 'Full Pass Plus Course (6 hours)', price: '£250 (was £280)' },
       { label: 'Pay As You Go', price: '£38/hr' },
     ],
     ctaText: 'Book Your Pass Plus Course',

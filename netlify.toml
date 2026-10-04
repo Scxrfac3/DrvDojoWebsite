@@ -305,6 +305,10 @@
   from = "/booking/testrental"
   to = "/index.html"
   status = 200
+[[redirects]]
+  from = "/booking/pass-plus"
+  to = "/index.html"
+  status = 200
 
 # Old .html booking URLs
 [[redirects]]
@@ -503,8 +507,14 @@
   from = "/refresher-driving-lessons"
   to = "/index.html"
   status = 200
+
+# Pass Plus — dedicated landing page (old /pass-plus-courses consolidates here)
 [[redirects]]
   from = "/pass-plus-courses"
+  to = "/pass-plus"
+  status = 301
+[[redirects]]
+  from = "/pass-plus"
   to = "/index.html"
   status = 200
 

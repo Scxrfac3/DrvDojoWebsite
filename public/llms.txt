@@ -32,7 +32,7 @@ Drive Dojo is an automatic driving school based in East London. A DVSA-approved 
 - 10-Hour Block: £340 (£34 per hour)
 - 20-Hour Block: £679
 - Intensive Pass Course: £650 to £950 (12 to 30 hours)
-- Pass Plus: £289 per course
+- Pass Plus: £250 per course (was £280)
 - Test car hire: £150 per test
 - Klarna Pay in 3 available
 
@@ -57,7 +57,22 @@ Drive Dojo is an automatic driving school based in East London. A DVSA-approved 
 - [Wanstead](https://drivedojodrivingschool.com/driving-test-centres/wanstead)
 
 ## Booking
-- [Book driving lessons](https://drivedojodrivingschool.com/booking/payg)
+- [Pay As You Go (£38/hr, first 2 hours £70)](https://drivedojodrivingschool.com/booking/payg) — https://calendly.com/drivedojo-qnua/120min
+- [6-Hour Package](https://drivedojodrivingschool.com/booking/6hour) — https://calendly.com/drivedojo-qnua/6-hour-package
+- [10-Hour Package (£340)](https://drivedojodrivingschool.com/booking/10hour) — https://calendly.com/drivedojo-qnua/6-hour-package-clone
+- [20-Hour Package (£679)](https://drivedojodrivingschool.com/booking/20hour) — https://calendly.com/drivedojo-qnua/20-hour-package
+- [Intensive Course (£650–£950)](https://drivedojodrivingschool.com/booking/intensive) — https://calendly.com/drivedojo-qnua/intensive
+- [Intensive 12-Hour (£575)](https://drivedojodrivingschool.com/booking/intensive-12hr) — https://calendly.com/drivedojo-qnua/12-hours-intensive
+- [Intensive 16-Hour (£715)](https://drivedojodrivingschool.com/booking/intensive-16hr) — https://calendly.com/drivedojo-qnua/12-hours-intensive-clone
+- [Intensive 20-Hour (£850)](https://drivedojodrivingschool.com/booking/intensive-20hr) — https://calendly.com/drivedojo-qnua/16-hours-intensive-clone
+- [Intensive 25-Hour (£1,025)](https://drivedojodrivingschool.com/booking/intensive-25hr) — https://calendly.com/drivedojo-qnua/20-hours-intensive-clone
+- [Intensive 30-Hour (£1,180)](https://drivedojodrivingschool.com/booking/intensive-30hr) — https://calendly.com/drivedojo-qnua/25-hours-intensive-clone
+- [Intensive 35-Hour (£1,350)](https://drivedojodrivingschool.com/booking/intensive-35hr) — https://calendly.com/drivedojo-qnua/30-hours-intensive-clone
+- [Intensive 40-Hour (£1,520)](https://drivedojodrivingschool.com/booking/intensive-40hr) — https://calendly.com/drivedojo-qnua/35-hours-intensive-clone
+- [Intensive 45-Hour (£1,680)](https://drivedojodrivingschool.com/booking/intensive-45hr) — https://calendly.com/drivedojo-qnua/40-hours-intensive-clone
+- [Mock Driving Test](https://drivedojodrivingschool.com/booking/mocktest) — https://calendly.com/drivedojo-qnua/mocktest
+- [Test Car Hire (£150)](https://drivedojodrivingschool.com/booking/testrental) — https://calendly.com/drivedojo-qnua/testcarrental
+- [Pass Plus Course (£250, was £280)](https://drivedojodrivingschool.com/booking/pass-plus) — https://calendly.com/drivedojo-qnua/pass-plus
 - [Services and pricing](https://drivedojodrivingschool.com/services)
 
 ## Reviews
