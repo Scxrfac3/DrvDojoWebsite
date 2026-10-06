@@ -144,6 +144,7 @@ export default function TestCentreExplorer() {
       <SEO
         title="Driving Test Centre Routes & Tips | Drive Dojo"
         description="Explore local driving test centres with pass rates, trouble spots and expert tips. Master the exact routes for Goodmayes, Wood Green & Barking."
+        canonical="https://drivedojodrivingschool.com/test-centres"
       />
 
       <Navbar />

@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
+# Keep crawl budget on clean URLs: parameterised filter/sort views are
+# duplicates of their parent page (which carries a rel="canonical" back to it).
+Disallow: /*?tag=
+Disallow: /*?centre=
+Disallow: /*?category=
+Disallow: /*?postcode=
 
 # Allow AI search crawlers to index and cite Drive Dojo in AI-generated answers
 # OAI-SearchBot: OpenAI's crawler for ChatGPT Search / AI answers (must not be blocked)

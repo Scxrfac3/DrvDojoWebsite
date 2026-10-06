@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import SpecialOffersSection from "../sections/SpecialOffersSection";
 import PostTestCoursesSection from "../sections/PostTestCoursesSection";
+import AreasWeCoverSection from "../sections/AreasWeCoverSection";
 
 // FAQPage Schema for SEO
 const faqSchema = {
@@ -341,6 +342,9 @@ const WalthamstowLessons = () => {
 
           {/* Special Offers Section */}
           <SpecialOffersSection />
+
+          {/* Areas We Cover */}
+          <AreasWeCoverSection />
 
           {/* Post-Test Courses */}
           <PostTestCoursesSection />

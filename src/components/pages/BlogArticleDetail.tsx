@@ -282,7 +282,7 @@ const BlogArticleDetail = () => {
                 {article.tags.map((tag, index) => (
                   <Link
                     key={index}
-                    to={`/blog?tag=${tag}`}
+                    to={`/blog?tag=${encodeURIComponent(tag)}`}
                     className="bg-gray-100 hover:bg-purple-100 text-gray-700 hover:text-purple-700 px-3 py-1 rounded-full text-sm transition-colors"
                   >
                     #{tag.replace(/\s+/g, "")}
@@ -451,7 +451,7 @@ const BlogArticleDetail = () => {
                   ].map((tag, index) => (
                     <Link
                       key={index}
-                      to={`/blog?tag=${tag}`}
+                      to={`/blog?tag=${encodeURIComponent(tag)}`}
                       className="bg-gray-100 hover:bg-purple-100 text-gray-700 hover:text-purple-700 px-3 py-1 rounded-full text-sm transition-colors"
                     >
                       #{tag.replace(/\s+/g, "")}

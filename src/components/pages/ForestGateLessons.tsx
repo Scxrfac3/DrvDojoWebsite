@@ -9,6 +9,7 @@ import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
 import PostTestCoursesSection from "../sections/PostTestCoursesSection";
+import AreasWeCoverSection from "../sections/AreasWeCoverSection";
 import {
   CheckCircle,
   Star,
@@ -358,6 +359,9 @@ const ForestGateLessons = () => {
               </div>
             </div>
           </section>
+
+          {/* Areas We Cover */}
+          <AreasWeCoverSection />
 
           {/* Post-Test Courses */}
           <PostTestCoursesSection />
