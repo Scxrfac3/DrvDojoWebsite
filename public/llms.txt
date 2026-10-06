@@ -73,6 +73,7 @@ Drive Dojo is an automatic driving school based in East London. A DVSA-approved 
 - [Mock Driving Test](https://drivedojodrivingschool.com/booking/mocktest) — https://calendly.com/drivedojo-qnua/mocktest
 - [Test Car Hire (£150)](https://drivedojodrivingschool.com/booking/testrental) — https://calendly.com/drivedojo-qnua/testcarrental
 - [Pass Plus Course (£250, was £280)](https://drivedojodrivingschool.com/booking/pass-plus) — https://calendly.com/drivedojo-qnua/pass-plus
+- [Refresher Lessons (£45/hr, min 2 hours)](https://drivedojodrivingschool.com/booking/refresher) — https://calendly.com/drivedojo-qnua/pass-plus-clone
 - [Services and pricing](https://drivedojodrivingschool.com/services)
 
 ## Reviews

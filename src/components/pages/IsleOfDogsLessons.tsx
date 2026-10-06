@@ -20,6 +20,7 @@ import {
   X,
 } from "lucide-react";
 import SpecialOffersSection from "../sections/SpecialOffersSection";
+import PostTestCoursesSection from "../sections/PostTestCoursesSection";
 
 // FAQPage Schema for SEO
 const faqSchema = {
@@ -507,6 +508,9 @@ const IsleOfDogsLessons = () => {
 
           {/* Special Offers Section */}
           <SpecialOffersSection />
+
+          {/* Post-Test Courses */}
+          <PostTestCoursesSection />
 
           {/* CTA Section */}
           <section className="py-16 bg-gradient-to-r from-primary to-orange-600 text-white">

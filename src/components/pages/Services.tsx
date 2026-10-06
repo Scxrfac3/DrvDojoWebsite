@@ -44,6 +44,7 @@ import {
   Smartphone,
   MessageSquare,
   Play,
+  RefreshCw,
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import SEO from "@/components/ui/SEO";
@@ -758,6 +759,42 @@ const Services = () => {
                       </div>
                     </div>
                   </motion.div>
+
+                  {/* Pass Plus + Refresher — Side by side */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <motion.div className="bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/[0.08] overflow-hidden relative"
+                      initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }} whileHover={{ y: -5 }}>
+                      <div className="p-6">
+                        <h3 className="text-lg font-bold mb-2 text-white">Pass Plus Course</h3>
+                        <p className="text-sm text-gray-400 mb-3">Up to 30% off insurance · no test at the end</p>
+                        <div className="mb-2"><span className="text-3xl font-black text-white">£250</span><span className="text-sm text-gray-400 ml-2">/6 hours</span></div>
+                        <ul className="space-y-2 mb-5">
+                          <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Motorway, night & all-weather driving</span></li>
+                          <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Automatic Mercedes A-Class</span></li>
+                          <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Klarna Pay in 3</span></li>
+                        </ul>
+                        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                          <Button className="w-full bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white font-bold" onClick={() => window.location.href = '/pass-plus'}>Book Pass Plus <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                    <motion.div className="bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/[0.08] overflow-hidden relative"
+                      initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} viewport={{ once: true }} whileHover={{ y: -5 }}>
+                      <div className="p-6">
+                        <h3 className="text-lg font-bold mb-2 text-white">Refresher Lessons</h3>
+                        <p className="text-sm text-gray-400 mb-3">Regain your confidence behind the wheel</p>
+                        <div className="mb-2"><span className="text-3xl font-black text-white">£45</span><span className="text-sm text-gray-400 ml-2">/hour · min 2 hours</span></div>
+                        <ul className="space-y-2 mb-5">
+                          <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Motorway, night & city practice</span></li>
+                          <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Automatic Mercedes A-Class</span></li>
+                          <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">DVSA-approved instructor</span></li>
+                        </ul>
+                        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                          <Button className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-bold" onClick={() => window.location.href = '/refresher-lessons'}>Find Out More <ArrowRight className="ml-2 h-4 w-4" /></Button>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </div>
 
                   {/* Mock Test + Car Rental — Side by side */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1900,10 +1937,10 @@ const servicesData = [
   {
     id: "pass-plus",
     title: "Pass Plus Course",
-    price: "£200",
-    priceUnit: "/course",
+    price: "£250",
+    priceUnit: "6 hours",
     shortDescription:
-      "Build confidence and skills after passing your test with this government-recognized course",
+      "Slash first-year insurance costs and build motorway, night and all-weather confidence after passing your test",
     image: "/images/certifications/PassPlus.png",
     icon: <Award className="h-5 w-5 text-yellow-400" />,
     colorClass: "bg-yellow-600/30 text-yellow-400",
@@ -1911,15 +1948,17 @@ const servicesData = [
       "bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700",
     category: "post-test",
     duration: "6 hours",
-    students: 850,
-    rating: 4.8,
+    students: 200,
+    rating: 5,
+    linkTo: "/pass-plus",
+    buttonText: "Book Pass Plus",
     features: [
-      "Government-recognized certification",
-      "Potential insurance discounts",
-      "Motorway driving experience",
-      "Rural and urban driving skills",
-      "Night and adverse weather driving",
-      "Advanced hazard perception training",
+      "Up to 30% off first-year insurance",
+      "Motorway driving confidence",
+      "Night and all-weather handling",
+      "Automatic Mercedes-Benz A-Class",
+      "No test — official DVSA certificate",
+      "Klarna Pay in 3 available",
     ],
     description: [
       "The Pass Plus course is designed for newly qualified drivers who want to build their confidence and skills after passing their test. This government-recognized course covers areas not fully explored in standard driving lessons, such as motorway driving and handling difficult weather conditions.",
@@ -2029,6 +2068,99 @@ const servicesData = [
         date: "1 month ago",
         comment:
           "Really worthwhile investment. I feel much more confident now, especially in bad weather. The instructor was patient and gave lots of practical advice I use every day.",
+      },
+    ],
+  },
+  {
+    id: "refresher",
+    title: "Refresher Lessons",
+    price: "£45",
+    priceUnit: "/hour · min 2 hours",
+    shortDescription:
+      "Rebuild your confidence behind the wheel with a DVSA-approved instructor in an automatic Mercedes A-Class",
+    image: "/images/certifications/FrontLOW.png",
+    icon: <RefreshCw className="h-5 w-5 text-cyan-400" />,
+    colorClass: "bg-cyan-600/30 text-cyan-400",
+    buttonClass:
+      "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700",
+    category: "post-test",
+    duration: "2 hours minimum",
+    students: 150,
+    rating: 5,
+    linkTo: "/refresher-lessons",
+    buttonText: "Find Out More",
+    features: [
+      "For qualified drivers who want their confidence back",
+      "Motorway, night and city driving practice",
+      "Automatic Mercedes-Benz A-Class",
+      "DVSA-approved instructor",
+      "Klarna Pay in 3 available",
+      "Book instantly online",
+    ],
+    description: [
+      "Refresher lessons are for qualified drivers who have lost confidence behind the wheel, taken a long break from driving, or want to brush up on specific skills. You train one-to-one with a DVSA-approved instructor in an automatic Mercedes-Benz A-Class.",
+      "Each session is tailored to you. We start with a short assessment, then focus on the areas that matter: motorway driving, night driving, city traffic, parking, or whatever you need to feel confident again.",
+      "Lessons are £45 per hour with a minimum 2-hour booking. Book online in about 60 seconds and pay with Klarna if you prefer.",
+    ],
+    outcomes: [
+      "Regain confidence behind the wheel",
+      "Handle motorways, night driving and busy traffic",
+      "Refresh your knowledge of the Highway Code",
+      "Practice parking and manoeuvres",
+      "Get honest feedback from a DVSA-approved instructor",
+    ],
+    audience: [
+      "Qualified drivers returning after a break",
+      "Newly passed drivers who want extra practice",
+      "Drivers who feel anxious on motorways or at night",
+      "Anyone preparing for a driving assessment or job",
+    ],
+    curriculum: [
+      {
+        title: "Module 1: Confidence Assessment",
+        duration: "30 minutes",
+        lessons: 1,
+        topics: [
+          "Short drive to assess your current level",
+          "Identify the areas you want to work on",
+          "Agree a plan for your refresher sessions",
+        ],
+      },
+      {
+        title: "Module 2: Core Skills",
+        duration: "1 hour",
+        lessons: 1,
+        topics: [
+          "Junctions, roundabouts and lane discipline",
+          "Parking and manoeuvres",
+          "City and residential driving",
+        ],
+      },
+      {
+        title: "Module 3: Advanced Conditions",
+        duration: "1 hour",
+        lessons: 1,
+        topics: [
+          "Motorway joining, lane discipline and exits",
+          "Night driving and visibility",
+          "Adverse weather handling",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Priya S",
+        rating: 5,
+        date: "1 month ago",
+        comment:
+          "I hadn't driven in years and was terrified. My instructor was so patient and within a few sessions I felt completely confident again. Worth every penny.",
+      },
+      {
+        name: "James W",
+        rating: 5,
+        date: "2 months ago",
+        comment:
+          "Brilliant refresher. I needed motorway practice for a new job and the instructor took me through everything calmly. Highly recommend.",
       },
     ],
   },

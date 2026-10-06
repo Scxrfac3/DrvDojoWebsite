@@ -2,28 +2,28 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  Award,
+  RefreshCw,
   Car,
-  CloudRain,
-  TreePine,
   Moon,
-  Route,
   Gauge,
+  MapPin,
   ShieldCheck,
   CreditCard,
   Calendar,
   Star,
   CheckCircle,
   ArrowRight,
-  Zap,
-  BadgeCheck,
+  Award,
   Clock,
   ChevronDown,
   Sparkles,
   UserCheck,
   Users,
+  Heart,
   MessageCircle,
-  MapPin,
+  Route,
+  CloudRain,
+  TreePine,
 } from 'lucide-react';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
@@ -32,112 +32,6 @@ import PostcodeChecker from '../ui/PostcodeChecker';
 import { BUSINESS } from '../../data/business';
 
 // ─── DATA ──────────────────────────────────────────────────
-
-const MODULES = [
-  {
-    icon: Route,
-    title: 'Town Driving',
-    desc: 'Advanced urban traffic and junction management. Busy streets, tight spaces, and the decisions that keep you moving safely.',
-  },
-  {
-    icon: CloudRain,
-    title: 'All-Weather Driving',
-    desc: 'Rain, glare and low visibility. How to read the road when conditions turn against you.',
-  },
-  {
-    icon: TreePine,
-    title: 'Rural Roads',
-    desc: 'Country lanes and unexpected hazards. Blind bends, farm traffic, and the confidence to handle them.',
-  },
-  {
-    icon: Moon,
-    title: 'Night Driving',
-    desc: 'Headlight dazzle and managing visibility in the dark. Reading the road when you cannot see as far.',
-  },
-  {
-    icon: Gauge,
-    title: 'Dual Carriageways',
-    desc: 'Speed confidence, joining and overtaking. Getting up to speed and holding your lane.',
-  },
-  {
-    icon: Car,
-    title: 'Motorways',
-    desc: 'High-speed confidence, lane discipline, and joining and exiting safely. Ideal for local routes like the A13 and M11.',
-  },
-];
-
-const PERSONAS = [
-  {
-    icon: BadgeCheck,
-    title: 'Just passed your test',
-    desc: 'You have the licence but limited real-world experience. Pass Plus fills the gap the test cannot cover.',
-  },
-  {
-    icon: Users,
-    title: 'Nervous on motorways',
-    desc: 'Never driven on a motorway? The A13 and M11 are on our doorstep. We build your high-speed confidence safely.',
-  },
-  {
-    icon: Clock,
-    title: 'Facing high insurance',
-    desc: 'First-year premiums are painful. Completing Pass Plus can cut them by up to 30% with many insurers.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Want all-weather confidence',
-    desc: 'Rain, glare, darkness. Learn to handle the conditions that catch new drivers out.',
-  },
-];
-
-const STEPS = [
-  {
-    num: '01',
-    title: 'Book online',
-    desc: 'Pick a time on our live calendar in about 60 seconds. No phone calls, no waiting.',
-  },
-  {
-    num: '02',
-    title: 'Meet your instructor',
-    desc: 'A DVSA-approved ADI plans your six hours around your experience and goals.',
-  },
-  {
-    num: '03',
-    title: 'Work through the 6 modules',
-    desc: 'Town, all-weather, rural, night, dual carriageways and motorways — assessed continuously.',
-  },
-  {
-    num: '04',
-    title: 'Get your certificate',
-    desc: 'No test at the end. You finish with an official DVSA certificate and up to 30% off insurance.',
-  },
-];
-
-const FAQS = [
-  {
-    q: 'What is Pass Plus?',
-    a: 'Pass Plus is a DVSA-approved course for newly qualified drivers. It takes at least six hours and covers town driving, all-weather driving, rural roads, night driving, dual carriageways and motorways.',
-  },
-  {
-    q: 'Is there a test at the end?',
-    a: 'No. There is no test. Your instructor assesses you continuously during the six hours, and you finish with an official DVSA certificate.',
-  },
-  {
-    q: 'How much can I save on insurance?',
-    a: 'Many UK insurers offer discounts of up to 30% on your first-year premium for drivers who complete Pass Plus. The exact discount depends on your insurer.',
-  },
-  {
-    q: 'Do I need to have just passed my test?',
-    a: 'No. Pass Plus is open to any newly qualified driver. You can take it any time after passing your practical test.',
-  },
-  {
-    q: 'Can I pay with Klarna?',
-    a: 'Yes. You can split the cost of your Pass Plus course into three interest-free payments with Klarna Pay in 3.',
-  },
-  {
-    q: 'What car will I train in?',
-    a: 'Your Pass Plus training is in our automatic Mercedes-Benz A-Class with dual controls, with a DVSA-approved instructor.',
-  },
-];
 
 const AREAS = [
   { name: "Ilford", path: "/driving-lessons/ilford", postcode: "IG1–IG6" },
@@ -152,19 +46,129 @@ const AREAS = [
   { name: "Isle of Dogs", path: "/driving-lessons/isle-of-dogs", postcode: "E14" },
 ];
 
-const WHATSAPP_URL = "https://wa.me/447487228866?text=Hey%20Drive%20Dojo!%20I'd%20like%20to%20book%20a%20Pass%20Plus%20course.";
+const PERSONAS = [
+  {
+    icon: Clock,
+    title: 'Returning after a break',
+    desc: "Haven't driven in months or years? Life gets busy. We rebuild your skills from where you left off, without judgement.",
+  },
+  {
+    icon: Heart,
+    title: 'Lost your confidence',
+    desc: 'A near-miss, a bad experience, or just time away. We take it at your pace, starting on quiet roads.',
+  },
+  {
+    icon: Users,
+    title: 'Newly qualified drivers',
+    desc: 'Passed your test but still feel unsure on motorways or at night? You are not alone — and we can help.',
+  },
+  {
+    icon: UserCheck,
+    title: 'New job or life change',
+    desc: 'Starting a role that involves driving, moving to a new area, or preparing for an assessment. We get you ready.',
+  },
+];
+
+const COVERAGE = [
+  {
+    icon: Gauge,
+    title: 'Motorways',
+    desc: 'Joining, lane discipline, overtaking and exits. The roads that make most drivers nervous, made simple.',
+  },
+  {
+    icon: Moon,
+    title: 'Night Driving',
+    desc: 'Headlight dazzle, reduced visibility and reading the road in the dark with confidence.',
+  },
+  {
+    icon: MapPin,
+    title: 'City & Busy Traffic',
+    desc: 'Roundabouts, junctions, bus lanes and cyclists. The everyday East London driving that needs practice.',
+  },
+  {
+    icon: Car,
+    title: 'Parking & Manoeuvres',
+    desc: 'Parallel parking, bay parking and tight spaces. The skills that fade fastest when you stop driving.',
+  },
+  {
+    icon: CloudRain,
+    title: 'All-Weather Driving',
+    desc: 'Rain, glare and low visibility. How to read the road when conditions turn against you.',
+  },
+  {
+    icon: Award,
+    title: 'Highway Code Refresh',
+    desc: 'Signs, rules and priorities brought up to date. You will leave knowing the road again.',
+  },
+];
+
+const STEPS = [
+  {
+    num: '01',
+    title: 'Book online',
+    desc: 'Pick a time on our live calendar in about 60 seconds. No phone calls, no waiting.',
+  },
+  {
+    num: '02',
+    title: 'Short assessment',
+    desc: 'Your first session starts with a relaxed drive so we can see where you are.',
+  },
+  {
+    num: '03',
+    title: 'Tailored plan',
+    desc: 'We agree what to work on: motorways, night driving, parking, or whatever matters to you.',
+  },
+  {
+    num: '04',
+    title: 'Build confidence',
+    desc: 'Each session builds on the last, at your pace, until driving feels normal again.',
+  },
+];
+
+const FAQS = [
+  {
+    q: 'Who are refresher lessons for?',
+    a: 'Qualified drivers who have lost confidence, taken a long break from driving, or want to brush up on specific skills like motorways, night driving or parking.',
+  },
+  {
+    q: 'How much do refresher lessons cost?',
+    a: 'Refresher lessons are £45 per hour with a minimum 2-hour booking.',
+  },
+  {
+    q: 'What car will I drive?',
+    a: 'You train in our automatic Mercedes-Benz A-Class with dual controls, with a DVSA-approved instructor.',
+  },
+  {
+    q: 'Do I need to have just passed my test?',
+    a: 'No. Refresher lessons are for any qualified driver, whether you passed last month or last decade.',
+  },
+  {
+    q: 'I am an older driver. Is this suitable for me?',
+    a: 'Yes. Many of our refresher students are returning to driving later in life. Lessons are calm, patient and paced entirely around you.',
+  },
+  {
+    q: 'Can I pay with Klarna?',
+    a: 'Yes. You can split the cost of your refresher lessons into three interest-free payments with Klarna Pay in 3.',
+  },
+  {
+    q: 'How do I book?',
+    a: 'Book online in about 60 seconds on our live Calendly calendar. No phone tag, instant confirmation.',
+  },
+];
+
+const WHATSAPP_URL = "https://wa.me/447487228866?text=Hey%20Drive%20Dojo!%20I'd%20like%20to%20book%20refresher%20driving%20lessons.";
 
 // ─── COMPONENT ─────────────────────────────────────────────
 
-export default function PassPlusPage() {
+export default function RefresherLessonsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-white">
       <SEO
-        title="Pass Plus Driving Course London | Save on Insurance | Drive Dojo"
-        description="Complete your DVSA Pass Plus course in an automatic Mercedes A-Class. 6 modules, no test, and up to 30% off insurance. Book instantly online with Drive Dojo."
-        canonical="https://drivedojodrivingschool.com/pass-plus"
+        title="Refresher Driving Lessons East London | £45/hr | Drive Dojo"
+        description="Regain your driving confidence with refresher lessons in East London. £45/hr, minimum 2 hours, in an automatic Mercedes A-Class with a DVSA-approved instructor. Book online."
+        canonical="https://drivedojodrivingschool.com/refresher-lessons"
       />
 
       <Navbar />
@@ -182,7 +186,7 @@ export default function PassPlusPage() {
             {/* Glassmorphism background image */}
             <div className="absolute inset-0">
               <img
-                src="/images/certifications/refresher4.png"
+                src="/images/certifications/refresher3.png"
                 alt=""
                 aria-hidden="true"
                 className="w-full h-full object-cover"
@@ -193,22 +197,22 @@ export default function PassPlusPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-                  <Award className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-primary">DVSA Pass Plus · No Test at the End</span>
+                  <RefreshCw className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-primary">For Qualified Drivers · £45/hr</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4">
-                  Pass Plus Courses in <span className="text-primary">East London</span> | BOOK ONLINE
+                  Refresher Lessons in <span className="text-primary">East London</span>
                 </h1>
                 <p className="text-gray-400 text-lg max-w-xl mx-auto lg:mx-0 mb-8">
-                  Six hours of structured training in our automatic Mercedes A-Class. No test. An official DVSA certificate. And up to 30% off your car insurance.
+                  Got your licence but lost your nerve? Rebuild your confidence behind the wheel with a DVSA-approved instructor in an automatic Mercedes A-Class. From £45 per hour, minimum 2 hours.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
                   <Link
-                    to="/booking/pass-plus"
+                    to="/booking/refresher"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
                   >
                     <Calendar className="w-5 h-5" />
-                    Book Your Pass Plus Course
+                    Book Your Refresher
                   </Link>
                   <a
                     href={WHATSAPP_URL}
@@ -256,27 +260,21 @@ export default function PassPlusPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
               <div className="rounded-2xl border border-primary/30 bg-primary/[0.06] p-8 text-center relative">
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-[#0d0d0d] text-xs font-bold">
-                  FULL COURSE
+                  MINIMUM 2 HOURS
                 </span>
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Clock className="w-5 h-5 text-primary" />
-                  <span className="text-gray-400">6 hours of training</span>
+                  <span className="text-gray-400">Tailored one-to-one sessions</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 mb-1">
-                  <span className="text-2xl text-gray-500 line-through">{BUSINESS.pricing.passPlus.originalPrice}</span>
-                  <span className="text-5xl font-black text-white">{BUSINESS.pricing.passPlus.price}</span>
-                </div>
-                <span className="inline-block mb-2 px-3 py-1 rounded-full bg-green-500/15 text-green-400 text-xs font-bold">
-                  SAVE £{BUSINESS.pricing.passPlus.originalPriceNumber - BUSINESS.pricing.passPlus.priceNumber}
-                </span>
+                <div className="text-5xl font-black text-white mb-2">£45<span className="text-2xl text-gray-400">/hr</span></div>
                 <p className="text-gray-400 text-sm mb-6">
-                  No test. Official DVSA certificate. Up to 30% off insurance.
+                  Minimum 2-hour booking. Automatic Mercedes A-Class. DVSA-approved instructor.
                 </p>
                 <Link
-                  to="/booking/pass-plus"
+                  to="/booking/refresher"
                   className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
                 >
-                  Book Your Pass Plus Course
+                  Book Your Refresher
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -288,7 +286,7 @@ export default function PassPlusPage() {
                 </div>
                 <div className="text-5xl font-black text-white mb-2">£70<span className="text-2xl text-gray-400">/2 hrs</span></div>
                 <p className="text-gray-400 text-sm mb-6">
-                  New Driver Assessment: 120 minutes with a DVSA-approved instructor who will honestly assess where you are.
+                  New Driver Assessment: 120 minutes with a DVSA-approved instructor who will honestly map your fastest route back to confident driving.
                 </p>
                 <Link
                   to="/booking/payg"
@@ -301,7 +299,7 @@ export default function PassPlusPage() {
             </div>
           </motion.section>
 
-          {/* ─── 3. WHAT IS PASS PLUS? ───────────────────── */}
+          {/* ─── 3. WHAT ARE REFRESHER LESSONS? ──────────── */}
           <motion.section
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -310,19 +308,20 @@ export default function PassPlusPage() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">What is Pass Plus?</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">What are refresher lessons?</h2>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Pass Plus is a DVSA-approved course for newly qualified drivers. It takes at least six hours and covers the driving the standard test does not: town traffic, all-weather conditions, rural roads, night driving, dual carriageways and motorways.
+                  Refresher lessons are one-to-one driving sessions for people who already hold a licence. A break from driving, a stressful experience, or a new set of roads can knock your confidence. Refresher lessons are a calm, structured way to get it back.
                 </p>
                 <p className="text-gray-400 leading-relaxed mb-6">
-                  There is no test at the end. Your instructor assesses you continuously, and you finish with an official DVSA certificate that many insurers reward with a discount of up to 30% on your first-year premium.
+                  You train with a DVSA-approved instructor in an automatic Mercedes-Benz A-Class. We start where you are, focus on what you need, and build from there. No judgement, no pressure.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    '6 hours of structured, one-to-one training',
-                    'No test — continuous assessment only',
-                    'Official DVSA certificate on completion',
-                    'Up to 30% off your car insurance',
+                    '£45 per hour, minimum 2 hours',
+                    'Tailored to you — motorways, night, city, parking',
+                    'Automatic Mercedes-Benz A-Class',
+                    'DVSA-approved instructor',
+                    'Book online in about 60 seconds',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-gray-300">
                       <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
@@ -336,7 +335,7 @@ export default function PassPlusPage() {
                 <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] overflow-hidden">
                   <img
                     src="/images/certifications/Refresher1.png"
-                    alt="Pass Plus training in an automatic Mercedes A-Class"
+                    alt="Refresher driving lesson in an automatic Mercedes A-Class"
                     className="w-full aspect-[3/4] object-cover"
                     loading="lazy"
                   />
@@ -345,7 +344,7 @@ export default function PassPlusPage() {
             </div>
           </motion.section>
 
-          {/* ─── 4. WHO IS IT FOR? ───────────────────────── */}
+          {/* ─── 4. WHO ARE THEY FOR? ────────────────────── */}
           <motion.section
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -353,9 +352,9 @@ export default function PassPlusPage() {
             transition={{ duration: 0.6, delay: 0.25 }}
           >
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Who is Pass Plus for?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Who are they for?</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                If you have passed your test but want more real-world experience, this course is for you.
+                If you hold a licence but driving no longer feels easy, these sessions are for you.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -377,7 +376,7 @@ export default function PassPlusPage() {
             </div>
           </motion.section>
 
-          {/* ─── 5. WHY DRIVERS BOOK ─────────────────────── */}
+          {/* ─── 5. REBUILDING CONFIDENCE ────────────────── */}
           <motion.section
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -387,20 +386,20 @@ export default function PassPlusPage() {
             <div className="bg-gradient-to-br from-primary/10 to-amber-500/10 border border-primary/30 rounded-2xl p-8 md:p-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-[60px]" />
               <div className="relative z-10 max-w-3xl">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Why drivers book Pass Plus</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Rebuilding confidence, one session at a time</h2>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  1 in 5 new drivers has an accident in their first year of driving. Pass Plus exists to change that: six hours of real-world training in the conditions that cause most first-year crashes.
+                  Confidence behind the wheel is a skill, and skills come back with practice. Most of our refresher students feel a noticeable difference within two or three sessions, because the lessons are built around exactly what they find hard.
                 </p>
                 <p className="text-gray-400 leading-relaxed mb-6">
-                  Drivers book with us because the training is practical, the car is an automatic Mercedes A-Class, and the certificate can pay for itself in one insurance renewal.
+                  Why drivers book with us: a patient DVSA-approved instructor, an automatic car that removes the hardest part of driving, and a plan that starts on roads you feel comfortable with before building up.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <Link
-                    to="/booking/pass-plus"
+                    to="/booking/refresher"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20"
                   >
                     <Calendar className="w-5 h-5" />
-                    Book Your Pass Plus Course
+                    Book Your Refresher
                   </Link>
                   <a
                     href={WHATSAPP_URL}
@@ -416,7 +415,7 @@ export default function PassPlusPage() {
             </div>
           </motion.section>
 
-          {/* ─── 6. THE 6 MODULES (3-COL) ────────────────── */}
+          {/* ─── 6. WHAT YOU CAN COVER (3-COL) ───────────── */}
           <motion.section
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -424,15 +423,15 @@ export default function PassPlusPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
           >
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">The 6 DVSA Pass Plus modules</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">What you can cover</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                The official DVSA framework, delivered in an automatic Mercedes A-Class with a DVSA-approved instructor.
+                Every session is built around you. Pick the areas that matter, or let us assess and recommend.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {MODULES.map((mod, i) => (
+              {COVERAGE.map((item, i) => (
                 <motion.div
-                  key={mod.title}
+                  key={item.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
@@ -440,11 +439,11 @@ export default function PassPlusPage() {
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center">
-                      <mod.icon className="w-5 h-5 text-primary" />
+                      <item.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-white">{mod.title}</h3>
+                    <h3 className="text-lg font-bold text-white">{item.title}</h3>
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">{mod.desc}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -460,7 +459,7 @@ export default function PassPlusPage() {
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-2">How it works</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Four simple steps from booking to your DVSA certificate.
+                Four simple steps from booking to confident driving.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -490,18 +489,18 @@ export default function PassPlusPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8">
                 <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
-                  <Zap className="w-5 h-5 text-primary" />
+                  <Users className="w-5 h-5 text-primary" />
                 </div>
-                <h2 className="text-xl md:text-2xl font-bold mb-3">Newly qualified drivers</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-3">Refresher lessons for older drivers</h2>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  The practical test proves you can drive safely under exam conditions. It cannot cover everything: motorways, long journeys, night driving and bad weather. Pass Plus fills those gaps in six focused hours.
+                  Returning to driving later in life is more common than you might think. Whether you stopped driving years ago, want to keep your independence, or need to renew your confidence after a health break, our instructors take a calm and patient approach.
                 </p>
                 <ul className="space-y-2">
                   {[
-                    'Motorway experience the test cannot include',
-                    'Night and all-weather handling',
-                    'Advanced hazard perception',
-                    'A certificate insurers reward',
+                    'Paced entirely around you',
+                    'Quiet roads to start, building gradually',
+                    'Patient, supportive instruction',
+                    'No test pressure — just confidence',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
@@ -517,13 +516,13 @@ export default function PassPlusPage() {
                 </div>
                 <h2 className="text-xl md:text-2xl font-bold mb-3">Why choose automatic?</h2>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  All our Pass Plus training is in an automatic Mercedes-Benz A-Class. With no clutch and no gears to manage, you can put your full attention on the road, the traffic and the conditions.
+                  All our refresher lessons are in an automatic Mercedes-Benz A-Class. With no clutch and no gears to manage, you can put your full attention on the road, the traffic and your own confidence.
                 </p>
                 <ul className="space-y-2">
                   {[
                     'No clutch, no stalling, no gear stress',
                     'Modern, comfortable dual-controlled car',
-                    'Focus entirely on the road and conditions',
+                    'Focus entirely on the road',
                     'The same car most new drivers learn in today',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-gray-300 text-sm">
@@ -546,17 +545,17 @@ export default function PassPlusPage() {
             <div className="bg-gradient-to-br from-primary/10 to-amber-500/10 border border-primary/30 rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-[60px]" />
               <div className="relative z-10">
-                <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to drive with confidence?</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to feel confident again?</h2>
                 <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-                  Six hours. No test. Up to 30% off insurance. Book your Pass Plus course in an automatic Mercedes A-Class today.
+                  Book a 2-hour refresher in an automatic Mercedes A-Class. £45 per hour, DVSA-approved instruction, instant online booking.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
-                    to="/booking/pass-plus"
+                    to="/booking/refresher"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
                   >
                     <Calendar className="w-5 h-5" />
-                    Book Your Pass Plus Course
+                    Book Your Refresher
                   </Link>
                   <a
                     href={WHATSAPP_URL}
@@ -627,7 +626,7 @@ export default function PassPlusPage() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Pass Plus questions, answered</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Refresher questions, answered</h2>
             </div>
             <div className="max-w-3xl mx-auto space-y-3">
               {FAQS.map((faq, i) => {

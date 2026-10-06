@@ -92,7 +92,7 @@ const ServiceCard = ({
                   }
                 }}
               >
-                View Details
+                {service.buttonText || "View Details"}
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>

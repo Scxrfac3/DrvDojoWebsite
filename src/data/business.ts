@@ -43,6 +43,7 @@ export const BUSINESS = {
     block20: { label: "20-Hour Block", price: "£679", per: "20 hours", priceNumber: 679, perHour: 33.95 },
     intensive: { label: "Intensive Pass Course", price: "£650 – £950", per: "12–30 hours", priceFrom: 650, priceTo: 950 },
     passPlus: { label: "Pass Plus", price: "£250", per: "course", priceNumber: 250, originalPrice: "£280", originalPriceNumber: 280 },
+    refresher: { label: "Refresher Lessons", price: "£45", per: "hour", priceNumber: 45, minHours: 2 },
     testCar: { label: "Test Car Hire", price: "£150", per: "test", priceNumber: 150 },
   },
   paymentAccepted: "Cash, Credit Card, Debit Card, Bank Transfer, Klarna",
@@ -50,6 +51,7 @@ export const BUSINESS = {
   bookingUrl: "https://drivedojodrivingschool.com/booking",
   calendlyUrl: "https://calendly.com/drivedojo-qnua",
   passPlusCalendlyUrl: "https://calendly.com/drivedojo-qnua/pass-plus",
+  refresherCalendlyUrl: "https://calendly.com/drivedojo-qnua/pass-plus-clone",
   areasServed: [
     "East London",
     "Canary Wharf",

@@ -149,11 +149,6 @@
   status = 301
 
 [[redirects]]
-  from = "/pass-plus"
-  to = "/"
-  status = 301
-
-[[redirects]]
   from = "/theory-test"
   to = "/"
   status = 301
@@ -307,6 +302,10 @@
   status = 200
 [[redirects]]
   from = "/booking/pass-plus"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/booking/refresher"
   to = "/index.html"
   status = 200
 
@@ -505,6 +504,10 @@
   status = 200
 [[redirects]]
   from = "/refresher-driving-lessons"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/refresher-lessons"
   to = "/index.html"
   status = 200
 

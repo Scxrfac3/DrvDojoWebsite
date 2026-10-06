@@ -9,6 +9,7 @@ import { reviewSchema } from "@/data/reviewSchema";
 import LocationMap from "@/components/ui/LocationMap";
 import PostcodeChecker from "@/components/ui/PostcodeChecker";
 import HeroVideo from "@/components/ui/HeroVideo";
+import PostTestCoursesSection from "../sections/PostTestCoursesSection";
 import {
   CheckCircle,
   Star,
@@ -436,6 +437,9 @@ const BarkingLessons = () => {
               </div>
             </div>
           </section>
+
+          {/* Post-Test Courses */}
+          <PostTestCoursesSection />
 
           {/* CTA Section */}
           <section className="py-16 bg-gradient-to-r from-primary to-orange-600 text-white">

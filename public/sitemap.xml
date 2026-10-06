@@ -90,6 +90,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/booking/refresher</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- ─── SPECIALITY SERVICE PAGES ─────────────────────────────────────────── -->
   <url>
@@ -694,6 +700,12 @@
   <url>
     <loc>https://drivedojodrivingschool.com/pass-plus</loc>
     <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drivedojodrivingschool.com/refresher-lessons</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
