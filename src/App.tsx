@@ -4,6 +4,7 @@ import Home from './components/home';
 import WhatsAppStickyButton from './components/ui/WhatsAppStickyButton';
 import routes from 'tempo-routes';
 import ProtectedRoute from './components/ProtectedRoute';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy loaded page components
 const Services = lazy(() => import('./components/pages/Services'));
@@ -33,7 +34,7 @@ const EastHamLessons = lazy(() => import('./components/pages/EastHamLessons'));
 const ForestGateLessons = lazy(() => import('./components/pages/ForestGateLessons'));
 const CanningTownLessons = lazy(() => import('./components/pages/CanningTownLessons'));
 const DocklandsLessons = lazy(() => import('./components/pages/DocklandsLessons'));
-const DualControlInstallation = lazy(() => import('./components/pages/DualControlInstallation'));
+const StratfordLessons = lazy(() => import('./components/pages/StratfordLessons'));
 const Terms = lazy(() => import('./components/pages/Terms'));
 const PrivacyPolicyPage = lazy(() => import('./components/pages/PrivacyPolicyPage'));
 const Waitlist = lazy(() => import('./components/pages/Waitlist'));
@@ -80,6 +81,7 @@ function App() {
       }
     >
       <>
+        <ScrollToTop />
         <Routes>
           {/* Existing routes */}
           <Route path='/' element={<Home />} />
@@ -134,10 +136,7 @@ function App() {
             path='/driving-lessons/docklands'
             element={<DocklandsLessons />}
           />
-          <Route
-            path='/dual-control-installation'
-            element={<DualControlInstallation />}
-          />
+          <Route path='/driving-lessons/stratford' element={<StratfordLessons />} />
           <Route path='/terms' element={<Terms />} />
           <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
           <Route path='/waitlist' element={<Waitlist />} />

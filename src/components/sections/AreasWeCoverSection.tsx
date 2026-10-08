@@ -15,6 +15,7 @@ const AREAS = [
   { name: "Docklands", path: "/driving-lessons/docklands", postcode: "E14" },
   { name: "Walthamstow", path: "/driving-lessons/walthamstow", postcode: "E10, E11, E17" },
   { name: "Isle of Dogs", path: "/driving-lessons/isle-of-dogs", postcode: "E14" },
+  { name: "Stratford", path: "/driving-lessons/stratford", postcode: "E15" },
 ];
 
 /**

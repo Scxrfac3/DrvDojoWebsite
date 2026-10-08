@@ -59,7 +59,6 @@ const Footer = ({
     { title: "Refresher Lessons", href: "/refresher-lessons" },
     { title: "Female Instructors", href: "/female-driving-instructors" },
     { title: "International Licences", href: "/international-licence-conversion" },
-    { title: "Dual Control Fitting", href: "/dual-control-installation" },
     { title: "FAQ", href: "/about" },
     { title: "Terms of Service", href: "/terms" },
     { title: "Privacy Policy", href: "/privacy-policy" },
@@ -76,6 +75,7 @@ const Footer = ({
     { title: "Docklands", href: "/driving-lessons/docklands" },
     { title: "Walthamstow", href: "/driving-lessons/walthamstow" },
     { title: "Isle of Dogs", href: "/driving-lessons/isle-of-dogs" },
+    { title: "Stratford", href: "/driving-lessons/stratford" },
   ],
   socialLinks = [
     { platform: "instagram", href: "https://www.instagram.com/drive.dojo" },

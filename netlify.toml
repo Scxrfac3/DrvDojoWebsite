@@ -144,6 +144,11 @@
   status = 301
 
 [[redirects]]
+  from = "/dual-control-installation"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/manual-lessons"
   to = "/"
   status = 301
@@ -390,11 +395,6 @@
   from = "/east-london-automatic"
   to = "/index.html"
   status = 200
-[[redirects]]
-  from = "/dual-control-installation"
-  to = "/index.html"
-  status = 200
-
 # ADI Blueprint & Auth routes
 [[redirects]]
   from = "/adi-blueprint"

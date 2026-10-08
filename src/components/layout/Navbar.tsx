@@ -215,15 +215,14 @@ const Navbar = ({ logo = "/favicon.png", transparent = false }: NavbarProps) => 
                       </div>
                     </Link>
                     <Link
-                      to="/dual-control-installation"
+                      to="/driving-lessons/stratford"
                       className="group flex flex-col gap-1 rounded-lg p-3 hover:bg-gradient-to-r hover:from-primary/20 hover:to-orange-500/10 transition-all bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/20"
                     >
                       <div className="text-sm font-medium text-white flex items-center group-hover:text-primary transition-colors">
-                        <span className="text-primary mr-1">🔧</span> Dual
-                        Control Installation
+                        <span className="text-primary mr-1">🚉</span> Stratford
                       </div>
                       <div className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
-                        Official He-Man partner for instructors
+                        Driving lessons in Stratford E15
                       </div>
                     </Link>
                   </div>

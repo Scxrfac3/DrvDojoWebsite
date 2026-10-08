@@ -261,7 +261,7 @@ const SitemapPage = () => {
                     { name: "Female Driving Instructors", path: "/female-driving-instructors" },
                     { name: "Refresher Driving Lessons", path: "/refresher-driving-lessons" },
                     { name: "Pass Plus Courses", path: "/pass-plus-courses" },
-                    { name: "Dual Control Installation", path: "/dual-control-installation" },
+                    { name: "Stratford", path: "/driving-lessons/stratford" },
                   ].map((link) => (
                     <li key={link.path}>
                       <Link
