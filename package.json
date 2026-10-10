@@ -70,6 +70,7 @@
     "three": "^0.179.1",
     "three-stdlib": "^2.36.0",
     "vaul": "^0.9.1",
+    "vgpu": "^0.5.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

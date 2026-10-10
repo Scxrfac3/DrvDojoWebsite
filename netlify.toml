@@ -239,6 +239,10 @@
 
 # Booking pages
 [[redirects]]
+  from = "/booking"
+  to = "/index.html"
+  status = 200
+[[redirects]]
   from = "/booking/payg"
   to = "/index.html"
   status = 200

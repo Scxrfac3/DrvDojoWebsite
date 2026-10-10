@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 const Services = lazy(() => import('./components/pages/Services'));
 const About = lazy(() => import('./components/pages/About'));
 const Contact = lazy(() => import('./components/pages/Contact'));
+const BookingHub = lazy(() => import('./components/pages/BookingHub'));
 const BookingPayg = lazy(() => import('./components/pages/BookingPayg'));
 const Booking6Hour = lazy(() => import('./components/pages/Booking6Hour'));
 const Booking10Hour = lazy(() => import('./components/pages/Booking10Hour'));
@@ -88,6 +89,7 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/booking' element={<BookingHub />} />
           <Route path='/booking/payg' element={<BookingPayg />} />
           <Route path='/booking/6hour' element={<Booking6Hour />} />
           <Route path='/booking/10hour' element={<Booking10Hour />} />
