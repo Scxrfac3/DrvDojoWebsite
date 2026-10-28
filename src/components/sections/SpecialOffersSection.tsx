@@ -21,9 +21,9 @@ const packages: Package[] = [
     badge: "Pay As You Go",
     title: "2-Hour Assessment",
     description: "Try before you commit",
-    price: "£70",
+    price: "£78",
     perHour: "first 2 hours",
-    saving: "Then £38/hr ongoing",
+    saving: "Then £39/hr ongoing",
     features: [
       "DVSA-approved instructor",
       "Mercedes-Benz A-Class",
@@ -49,8 +49,8 @@ const packages: Package[] = [
     badge: "Most Popular",
     title: "10-Hour Package",
     description: "Best value for progression",
-    price: "£340",
-    perHour: "~£34/hr",
+    price: "£350",
+    perHour: "~£35/hr",
     saving: "Save £40 vs PAYG",
     features: [
       "Dedicated instructor",
@@ -64,8 +64,8 @@ const packages: Package[] = [
     badge: "Best Value",
     title: "20-Hour Package",
     description: "Ultimate test preparation",
-    price: "£679",
-    perHour: "~£33.95/hr",
+    price: "£699",
+    perHour: "~£34.95/hr",
     saving: "Save £81 vs PAYG",
     features: [
       "20 hours of pro tuition",

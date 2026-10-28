@@ -29,7 +29,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Romford?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Romford start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
+        "text": "Driving lessons in Romford start from £58.50 for a 90-minute session. First 2 hours assessed at £78, then £39/hr. Block booking discounts available."
       }
     },
     {
@@ -80,11 +80,11 @@ const RomfordLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/romford"
         serviceSchema={{
           name: "Driving Lessons in Romford",
-          description: "Professional driving lessons in Romford with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering all RM postcodes.",
+          description: "Professional driving lessons in Romford with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering all RM postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Romford, RM postcodes, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Romford","description":"DVSA approved driving lessons in Romford. Automatic Mercedes-Benz A-Class. Hornchurch & Goodmayes DTC specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/romford","telephone":"+447487228866","areaServed":["Romford","RM1","RM2","RM3","RM4","RM5","RM6","RM7","RM8","RM9","RM10","RM11","RM12","RM13","East London"],"address":{"@type":"PostalAddress","addressLocality":"Romford","addressRegion":"East London","postalCode":"RM1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5788,"longitude":0.1836},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Romford","description":"DVSA approved driving lessons in Romford. Automatic Mercedes-Benz A-Class. Hornchurch & Goodmayes DTC specialists. First 2 hours £78.","url":"https://drivedojodrivingschool.com/driving-lessons/romford","telephone":"+447487228866","areaServed":["Romford","RM1","RM2","RM3","RM4","RM5","RM6","RM7","RM8","RM9","RM10","RM11","RM12","RM13","East London"],"address":{"@type":"PostalAddress","addressLocality":"Romford","addressRegion":"East London","postalCode":"RM1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5788,"longitude":0.1836},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -124,8 +124,8 @@ const RomfordLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering all RM postcodes. Prep for Hornchurch and Goodmayes test centres.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                   </p>
 
                   <PostcodeChecker

@@ -29,7 +29,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Docklands?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Docklands start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
+        "text": "Driving lessons in Docklands start from £58.50 for a 90-minute session. First 2 hours assessed at £78, then £39/hr. Block booking discounts available."
       }
     },
     {
@@ -80,11 +80,11 @@ const DocklandsLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/docklands"
         serviceSchema={{
           name: "Driving Lessons in Docklands & Canary Wharf",
-          description: "Professional driving lessons in Docklands with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E14, E16, Isle of Dogs.",
+          description: "Professional driving lessons in Docklands with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering E14, E16, Isle of Dogs.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Docklands, Canary Wharf, Isle of Dogs, E14, E16, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Docklands","description":"DVSA approved driving lessons in Docklands and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £70. Covering E14, E16.","url":"https://drivedojodrivingschool.com/driving-lessons/docklands","telephone":"+447487228866","areaServed":["Docklands","Canary Wharf","Isle of Dogs","E14","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"Docklands","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5050,"longitude":-0.0200},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Docklands","description":"DVSA approved driving lessons in Docklands and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £78. Covering E14, E16.","url":"https://drivedojodrivingschool.com/driving-lessons/docklands","telephone":"+447487228866","areaServed":["Docklands","Canary Wharf","Isle of Dogs","E14","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"Docklands","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5050,"longitude":-0.0200},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -124,8 +124,8 @@ const DocklandsLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering E14, E16, Canary Wharf, and Isle of Dogs.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                   </p>
 
                   <PostcodeChecker

@@ -26,7 +26,7 @@ const StratfordLessons = () => {
     <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
       <SEO
         title="Driving Lessons in Stratford E15 | Book Online, Klarna"
-        description="Driving lessons in Stratford E15 with a DVSA-approved instructor. Automatic Mercedes A-Class, door-to-door pickup across E15. First 2 hours £70, then £38/hr. Book online in 60 seconds."
+        description="Driving lessons in Stratford E15 with a DVSA-approved instructor. Automatic Mercedes A-Class, door-to-door pickup across E15. First 2 hours £78, then £39/hr. Book online in 60 seconds."
         keywords="driving lessons Stratford, driving instructor Stratford E15, automatic driving lessons Stratford, driving school Stratford London, book driving lessons online East London, driving lessons with Klarna London, Newham driving lessons, Stratford E15"
         canonical="https://drivedojodrivingschool.com/driving-lessons/stratford"
       />
@@ -82,7 +82,7 @@ const StratfordLessons = () => {
                 className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4"
                 onClick={() => (window.location.href = "/booking/payg")}
               >
-                Book Your First Lesson — £70
+                Book Your First Lesson — £78
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Link
@@ -120,8 +120,8 @@ const StratfordLessons = () => {
           <div className="container mx-auto max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
-                { icon: Clock, title: "First 2 Hours — £70", desc: "A full 2-hour assessment with a DVSA-approved instructor. Was £95." },
-                { icon: Car, title: "Then £38/hr", desc: "Pay-as-you-go automatic lessons in a Mercedes A-Class. No commitment." },
+                { icon: Clock, title: "First 2 Hours — £78", desc: "A full 2-hour assessment with a DVSA-approved instructor. Was £95." },
+                { icon: Car, title: "Then £39/hr", desc: "Pay-as-you-go automatic lessons in a Mercedes A-Class. No commitment." },
                 { icon: CreditCard, title: "Klarna Pay in 3", desc: "Split any package into three interest-free payments at checkout." },
               ].map((card, i) => (
                 <motion.div
@@ -205,7 +205,7 @@ const StratfordLessons = () => {
                   className="bg-primary hover:bg-primary/90 text-white"
                   onClick={() => (window.location.href = "/booking/payg")}
                 >
-                  Book Your First Lesson — £70
+                  Book Your First Lesson — £78
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Link
@@ -291,7 +291,7 @@ const StratfordLessons = () => {
                 },
                 {
                   q: "How much do driving lessons in Stratford cost?",
-                  a: "Your first 2 hours are £70 (was £95), then £38 per hour pay-as-you-go. Block bookings start at £340 for 10 hours (£34/hr), and Klarna Pay in 3 is available on every package.",
+                  a: "Your first 2 hours are £78 (was £95), then £39 per hour pay-as-you-go. Block bookings start at £350 for 10 hours (£35/hr), and Klarna Pay in 3 is available on every package.",
                 },
                 {
                   q: "How many lessons will I need?",
@@ -358,7 +358,7 @@ const StratfordLessons = () => {
                 className="bg-white text-[#0d0d0d] hover:bg-gray-100 font-bold px-10 py-4"
                 onClick={() => (window.location.href = "/booking/payg")}
               >
-                Book Your First Lesson — £70
+                Book Your First Lesson — £78
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>

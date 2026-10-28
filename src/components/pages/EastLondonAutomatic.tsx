@@ -29,7 +29,7 @@ const EastLondonAutomatic = () => {
     <>
       <SEO
         title="Automatic Driving Lessons in East London | Drive Dojo"
-        description="Automatic driving lessons across East London with Drive Dojo. DVSA-approved, Mercedes-Benz A-Class. First 2 hours £70, pay in 3 with Klarna."
+        description="Automatic driving lessons across East London with Drive Dojo. DVSA-approved, Mercedes-Benz A-Class. First 2 hours £78, pay in 3 with Klarna."
         keywords="automatic driving lessons East London, automatic driving lessons Ilford, learn automatic car East London, Mercedes automatic driving lessons, automatic driving instructor Ilford, automatic driving school East London, DVSA automatic lessons, automatic driving lessons Barking, automatic driving lessons Goodmayes, automatic driving lessons Romford, automatic driving lessons Forest Gate, automatic driving lessons Walthamstow, automatic driving lessons Docklands, automatic driving lessons Tower Hamlets, automatic driving lessons Newham, automatic driving lessons Hackney, cheap automatic driving lessons London, book automatic driving lessons online, driving school with Klarna London"
         canonical="https://drivedojodrivingschool.com/east-london-automatic"
       />
@@ -73,8 +73,8 @@ const EastLondonAutomatic = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering all East London postcodes. Automatic Mercedes-Benz A-Class.
-                    First 2 hours <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>. Pay in 3 with Klarna.
+                    First 2 hours <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>. Pay in 3 with Klarna.
                   </p>
 
                   <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
@@ -271,8 +271,8 @@ const EastLondonAutomatic = () => {
                   <div className="pt-12 pb-6 px-6">
                     <h3 className="text-lg font-bold mb-2 text-white">2-Hour Assessment</h3>
                     <p className="text-sm text-gray-400 mb-3">Try before you commit</p>
-                    <div className="mb-2"><span className="text-4xl font-black text-white">£70</span><span className="text-sm text-gray-400 ml-2">first 2 hours</span></div>
-                    <p className="text-xs text-gray-500 mb-4">Then £38/hr ongoing</p>
+                    <div className="mb-2"><span className="text-4xl font-black text-white">£78</span><span className="text-sm text-gray-400 ml-2">first 2 hours</span></div>
+                    <p className="text-xs text-gray-500 mb-4">Then £39/hr ongoing</p>
                     <ul className="space-y-2 mb-5">
                       <li className="flex items-start"><CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">DVSA-approved instructor</span></li>
                       <li className="flex items-start"><CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Mercedes-Benz A-Class</span></li>
@@ -311,7 +311,7 @@ const EastLondonAutomatic = () => {
                   <div className="pt-14 pb-6 px-6">
                     <h3 className="text-lg font-bold mb-2 text-white">10-Hour Package</h3>
                     <p className="text-sm text-gray-400 mb-3">Best value for progression</p>
-                    <div className="mb-2"><span className="text-4xl font-black text-white">£340</span><span className="text-sm text-gray-400 ml-2">~£34/hr</span></div>
+                    <div className="mb-2"><span className="text-4xl font-black text-white">£350</span><span className="text-sm text-gray-400 ml-2">~£35/hr</span></div>
                     <p className="text-xs text-green-400 font-medium mb-4">Save £40 vs PAYG</p>
                     <ul className="space-y-2 mb-5">
                       <li className="flex items-start"><CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Dedicated instructor</span></li>
@@ -336,7 +336,7 @@ const EastLondonAutomatic = () => {
                   <div className="pt-12 pb-6 px-6">
                     <h3 className="text-lg font-bold mb-2 text-white">20-Hour Package</h3>
                     <p className="text-sm text-gray-400 mb-3">Ultimate test preparation</p>
-                    <div className="mb-2"><span className="text-4xl font-black text-white">£679</span><span className="text-sm text-gray-400 ml-2">~£33.95/hr</span></div>
+                    <div className="mb-2"><span className="text-4xl font-black text-white">£699</span><span className="text-sm text-gray-400 ml-2">~£34.95/hr</span></div>
                     <p className="text-xs text-green-400 font-medium mb-4">Save £81 vs PAYG</p>
                     <ul className="space-y-2 mb-5">
                       <li className="flex items-start"><CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">20 hours of pro tuition</span></li>

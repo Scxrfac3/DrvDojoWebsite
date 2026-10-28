@@ -127,7 +127,7 @@ const BookingPayg = () => {
                 {/* Special Offer Banner */}
                 <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-b border-green-500/30 px-4 py-2 flex items-center justify-center">
                   <Sparkles className="h-4 w-4 text-green-400 mr-2" />
-                  <span className="text-green-400 font-semibold text-sm">🎉 New Student Offer - Save £27!</span>
+                  <span className="text-green-400 font-semibold text-sm">🎉 New Student Offer - Save £17!</span>
                 </div>
                 
                 <div className="p-6">
@@ -148,7 +148,7 @@ const BookingPayg = () => {
                       {/* Highlighted Pricing */}
                       <div className="mb-4">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-4xl font-bold text-white">£70</span>
+                          <span className="text-4xl font-bold text-white">£78</span>
                           <span className="text-lg text-slate-400 line-through">£95</span>
                         </div>
                         <div className="mt-1 inline-block bg-green-500/20 border border-green-500/40 text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
@@ -189,7 +189,7 @@ const BookingPayg = () => {
                     onClick={triggerConfetti}
                   >
                     <Calendar className="h-4 w-4 mr-2" />
-                    Book Now - £70
+                    Book Now - £78
                   </Button>
                 </div>
               </div>

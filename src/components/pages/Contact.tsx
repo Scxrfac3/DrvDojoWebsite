@@ -790,7 +790,7 @@ const Contact = () => {
                       </p>
                       <div className="flex items-end mb-4">
                         <span className="text-3xl font-bold text-white">
-                          £340
+                          £350
                         </span>
                         <span className="text-lg text-orange-200 ml-2 mb-1">
                           /package

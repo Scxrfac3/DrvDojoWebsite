@@ -250,13 +250,13 @@ export default function SkillPage() {
               Ready to master {skill.title.toLowerCase()}?
             </h3>
             <p className="text-gray-400 mb-5 max-w-xl mx-auto">
-              Book a New Driver Assessment — 120 minutes for £70. A DVSA-approved instructor will honestly assess where you are and map the fastest route to your test.
+              Book a New Driver Assessment — 120 minutes for £78. A DVSA-approved instructor will honestly assess where you are and map the fastest route to your test.
             </p>
             <Link
               to="/booking"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl"
             >
-              Book Your £70 Assessment
+              Book Your £78 Assessment
               <ArrowRight className="w-5 h-5" />
             </Link>
             <div className="flex justify-center gap-4 mt-4 text-xs text-gray-600">

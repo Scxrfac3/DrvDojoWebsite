@@ -561,10 +561,10 @@ const Services = () => {
                         <h3 className="text-lg font-bold mb-2 text-white">2-Hour Assessment</h3>
                         <p className="text-sm text-gray-400 mb-3">Try before you commit</p>
                         <div className="mb-2">
-                          <span className="text-4xl font-black text-white">£70</span>
+                          <span className="text-4xl font-black text-white">£78</span>
                           <span className="text-sm text-gray-400 ml-2">first 2 hours</span>
                         </div>
-                        <p className="text-xs text-gray-500 mb-4">Then £38/hr ongoing</p>
+                        <p className="text-xs text-gray-500 mb-4">Then £39/hr ongoing</p>
                         <ul className="space-y-2 mb-5">
                           <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">DVSA-approved instructor</span></li>
                           <li className="flex items-start"><CheckCircleIcon className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-300">Mercedes-Benz A-Class</span></li>
@@ -627,8 +627,8 @@ const Services = () => {
                         <h3 className="text-lg font-bold mb-2 text-white">10-Hour Package</h3>
                         <p className="text-sm text-gray-400 mb-3">Best value for progression</p>
                         <div className="mb-2">
-                          <span className="text-4xl font-black text-white">£340</span>
-                          <span className="text-sm text-gray-400 ml-2">~£34/hr</span>
+                          <span className="text-4xl font-black text-white">£350</span>
+                          <span className="text-sm text-gray-400 ml-2">~£35/hr</span>
                         </div>
                         <p className="text-xs text-green-400 font-medium mb-4">Save £40 vs PAYG</p>
                         <ul className="space-y-2 mb-5">
@@ -672,8 +672,8 @@ const Services = () => {
                         <h3 className="text-lg font-bold mb-2 text-white">20-Hour Package</h3>
                         <p className="text-sm text-gray-400 mb-3">Ultimate test preparation</p>
                         <div className="mb-2">
-                          <span className="text-4xl font-black text-white">£679</span>
-                          <span className="text-sm text-gray-400 ml-2">~£33.95/hr</span>
+                          <span className="text-4xl font-black text-white">£699</span>
+                          <span className="text-sm text-gray-400 ml-2">~£34.95/hr</span>
                         </div>
                         <p className="text-xs text-green-400 font-medium mb-4">Save £81 vs PAYG</p>
                         <ul className="space-y-2 mb-5">
@@ -1094,7 +1094,7 @@ const Services = () => {
                       Ready to Start Driving?
                     </h2>
                     <p className="text-xl text-gray-400 mb-8 max-w-xl mx-auto">
-                      Join 200+ successful drivers. Book your first lesson today — first 2 hours £70, then £38/hr.
+                      Join 200+ successful drivers. Book your first lesson today — first 2 hours £78, then £39/hr.
                     </p>
 
                     <motion.div
@@ -1612,7 +1612,7 @@ const servicesData = [
   {
     id: "beginner",
     title: "Beginner Course",
-    price: "£38",
+    price: "£39",
     priceUnit: "/hour",
     shortDescription:
       "Perfect for first-time drivers with no previous experience",

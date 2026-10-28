@@ -284,7 +284,7 @@ export default function RefresherLessonsPage() {
                   <Sparkles className="w-5 h-5 text-primary" />
                   <span className="text-gray-400">Not sure yet?</span>
                 </div>
-                <div className="text-5xl font-black text-white mb-2">£70<span className="text-2xl text-gray-400">/2 hrs</span></div>
+                <div className="text-5xl font-black text-white mb-2">£78<span className="text-2xl text-gray-400">/2 hrs</span></div>
                 <p className="text-gray-400 text-sm mb-6">
                   New Driver Assessment: 120 minutes with a DVSA-approved instructor who will honestly map your fastest route back to confident driving.
                 </p>

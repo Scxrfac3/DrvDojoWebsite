@@ -48,12 +48,12 @@ const SERVICES: Record<string, ServiceData> = {
       'Focus on UK-specific rules: roundabouts, speed limits, road markings',
       'Automatic-only tuition — no clutch or gear stress',
       'Help booking your theory and practical tests',
-      'New Driver Assessment — 120 minutes for £70',
+      'New Driver Assessment — 120 minutes for £78',
     ],
     pricing: [
-      { label: 'New Driver Assessment (2 hours)', price: '£70' },
-      { label: 'Pay As You Go', price: '£38/hr' },
-      { label: '10-Hour Block Booking', price: '£340' },
+      { label: 'New Driver Assessment (2 hours)', price: '£78' },
+      { label: 'Pay As You Go', price: '£39/hr' },
+      { label: '10-Hour Block Booking', price: '£350' },
     ],
     ctaText: 'Convert Your Licence',
     ctaLink: '/booking',
@@ -73,7 +73,7 @@ const SERVICES: Record<string, ServiceData> = {
     title: 'Female Driving Instructors',
     subtitle: 'Learn with instructors you feel comfortable with',
     seoTitle: 'Female Driving Instructors East London | Drive Dojo',
-    seoDescription: 'Book lessons with our female DVSA-approved driving instructors in East London. Comfortable, patient and professional automatic tuition from £70.',
+    seoDescription: 'Book lessons with our female DVSA-approved driving instructors in East London. Comfortable, patient and professional automatic tuition from £78.',
     icon: UserCheck,
     intro: 'We understand that many learners — particularly women from certain cultural backgrounds, nervous drivers, or those who simply feel more comfortable — prefer a female driving instructor. We\'re proud to offer female ADIs who are patient, professional, and DVSA-approved.',
     benefits: [
@@ -84,9 +84,9 @@ const SERVICES: Record<string, ServiceData> = {
       'Flexible scheduling around school runs and work',
     ],
     pricing: [
-      { label: 'New Driver Assessment (2 hours)', price: '£70' },
-      { label: '10-Hour Block Booking', price: '£340' },
-      { label: 'Klarna — 3 payments of', price: '£113.33' },
+      { label: 'New Driver Assessment (2 hours)', price: '£78' },
+      { label: '10-Hour Block Booking', price: '£350' },
+      { label: 'Klarna — 3 payments of', price: '£116.67' },
     ],
     ctaText: 'Book With a Female Instructor',
     ctaLink: '/booking',
@@ -157,7 +157,7 @@ const SERVICES: Record<string, ServiceData> = {
     ],
     pricing: [
       { label: 'Full Pass Plus Course (6 hours)', price: '£250 (was £280)' },
-      { label: 'Pay As You Go', price: '£38/hr' },
+      { label: 'Pay As You Go', price: '£39/hr' },
     ],
     ctaText: 'Book Your Pass Plus Course',
     ctaLink: '/booking',
@@ -253,7 +253,7 @@ export default function SpecialtyServicePage() {
           {/* CTA */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="bg-gradient-to-br from-primary/10 to-amber-500/10 border border-primary/30 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">Ready to get started?</h3>
-            <p className="text-gray-400 mb-5">Book a New Driver Assessment — 120 minutes for £70. We'll honestly assess where you are and map the fastest route to your test.</p>
+            <p className="text-gray-400 mb-5">Book a New Driver Assessment — 120 minutes for £78. We'll honestly assess where you are and map the fastest route to your test.</p>
             <Link to={service.ctaLink} className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
               {service.ctaText}<ArrowRight className="w-5 h-5" />
             </Link>

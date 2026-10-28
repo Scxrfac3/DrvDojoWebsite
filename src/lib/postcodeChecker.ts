@@ -57,7 +57,7 @@ export const LESSON_TYPES: LessonType[] = [
     id: '10hour',
     title: '10-Hour Package',
     description: 'Most Popular - Best value for money!',
-    price: '£340',
+    price: '£350',
     duration: '10 hours',
     popular: true,
     icon: '🔥'

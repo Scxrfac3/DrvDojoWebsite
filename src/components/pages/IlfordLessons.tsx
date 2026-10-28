@@ -32,7 +32,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Ilford?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Ilford start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
+        "text": "Driving lessons in Ilford start from £58.50 for a 90-minute session. First 2 hours assessed at £78, then £39/hr. Block booking discounts available."
       }
     },
     {
@@ -83,11 +83,11 @@ const IlfordLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/ilford"
         serviceSchema={{
           name: "Driving Lessons in Ilford",
-          description: "Professional driving lessons in Ilford with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering all IG postcodes.",
+          description: "Professional driving lessons in Ilford with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering all IG postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Ilford, IG postcodes, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Ilford","description":"DVSA approved driving lessons in Ilford. Automatic Mercedes-Benz A-Class. First 2 hours £70. Serving IG1-IG6 and all IG postcodes.","url":"https://drivedojodrivingschool.com/driving-lessons/ilford","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Ilford","IG1","IG2","IG3","IG4","IG5","IG6","East London"],"address":{"@type":"PostalAddress","addressLocality":"Ilford","addressRegion":"East London","postalCode":"IG1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5588,"longitude":0.0736},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Ilford","description":"DVSA approved driving lessons in Ilford. Automatic Mercedes-Benz A-Class. First 2 hours £78. Serving IG1-IG6 and all IG postcodes.","url":"https://drivedojodrivingschool.com/driving-lessons/ilford","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Ilford","IG1","IG2","IG3","IG4","IG5","IG6","East London"],"address":{"@type":"PostalAddress","addressLocality":"Ilford","addressRegion":"East London","postalCode":"IG1","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5588,"longitude":0.0736},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -128,8 +128,8 @@ const IlfordLessons = () => {
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering IG1 through IG6 and all IG postcodes.
                     Automatic Mercedes-Benz A-Class. First 2 hours assessed at
-                    <span className="text-primary font-semibold"> £70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    <span className="text-primary font-semibold"> £78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                   </p>
 
                   <PostcodeChecker

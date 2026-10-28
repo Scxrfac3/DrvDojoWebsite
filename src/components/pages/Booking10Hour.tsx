@@ -110,7 +110,7 @@ const Booking10Hour = () => {
                           <p className="text-xs text-amber-400">Most Popular</p>
                         </div>
                       </div>
-                      <div className="text-3xl font-bold text-white mb-2">£340<span className="text-sm font-normal text-slate-400">/package</span></div>
+                      <div className="text-3xl font-bold text-white mb-2">£350<span className="text-sm font-normal text-slate-400">/package</span></div>
                       <p className="text-sm mb-4 text-slate-300">Best value for money - perfect for learners who want to progress quickly</p>
                     </div>
                   </div>

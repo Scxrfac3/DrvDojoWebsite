@@ -27,10 +27,10 @@ Drive Dojo is an automatic driving school based in East London. A DVSA-approved 
 - Mercedes-Benz A-Class automatic with dual controls
 
 ## Pricing
-- First 2 hours: £70
-- Pay As You Go: £38 per hour
-- 10-Hour Block: £340 (£34 per hour)
-- 20-Hour Block: £679
+- First 2 hours: £78
+- Pay As You Go: £39 per hour
+- 10-Hour Block: £350 (£35 per hour)
+- 20-Hour Block: £699
 - Intensive Pass Course: £650 to £950 (12 to 30 hours)
 - Pass Plus: £250 per course (was £280)
 - Test car hire: £150 per test
@@ -57,10 +57,10 @@ Drive Dojo is an automatic driving school based in East London. A DVSA-approved 
 - [Wanstead](https://drivedojodrivingschool.com/driving-test-centres/wanstead)
 
 ## Booking
-- [Pay As You Go (£38/hr, first 2 hours £70)](https://drivedojodrivingschool.com/booking/payg) — https://calendly.com/drivedojo-qnua/120min
+- [Pay As You Go (£39/hr, first 2 hours £78)](https://drivedojodrivingschool.com/booking/payg) — https://calendly.com/drivedojo-qnua/120min
 - [6-Hour Package](https://drivedojodrivingschool.com/booking/6hour) — https://calendly.com/drivedojo-qnua/6-hour-package
-- [10-Hour Package (£340)](https://drivedojodrivingschool.com/booking/10hour) — https://calendly.com/drivedojo-qnua/6-hour-package-clone
-- [20-Hour Package (£679)](https://drivedojodrivingschool.com/booking/20hour) — https://calendly.com/drivedojo-qnua/20-hour-package
+- [10-Hour Package (£350)](https://drivedojodrivingschool.com/booking/10hour) — https://calendly.com/drivedojo-qnua/6-hour-package-clone
+- [20-Hour Package (£699)](https://drivedojodrivingschool.com/booking/20hour) — https://calendly.com/drivedojo-qnua/20-hour-package
 - [Intensive Course (£650–£950)](https://drivedojodrivingschool.com/booking/intensive) — https://calendly.com/drivedojo-qnua/intensive
 - [Intensive 12-Hour (£575)](https://drivedojodrivingschool.com/booking/intensive-12hr) — https://calendly.com/drivedojo-qnua/12-hours-intensive
 - [Intensive 16-Hour (£715)](https://drivedojodrivingschool.com/booking/intensive-16hr) — https://calendly.com/drivedojo-qnua/12-hours-intensive-clone

@@ -461,7 +461,7 @@ export default function ShowMeTellMe() {
                   <span className="text-white font-semibold">Pay As You Go</span>
                 </div>
                 <div className="mb-1">
-                  <span className="text-3xl font-black text-white">£38</span>
+                  <span className="text-3xl font-black text-white">£39</span>
                   <span className="text-gray-500">/hour</span>
                 </div>
                 <p className="text-gray-500 text-sm mb-4">Flexible automatic lessons, no commitment.</p>
@@ -489,10 +489,10 @@ export default function ShowMeTellMe() {
                   <span className="text-white font-semibold">10-Hour Block</span>
                 </div>
                 <div className="mb-1">
-                  <span className="text-3xl font-black text-white">£340</span>
-                  <span className="text-gray-500"> · £34/hr</span>
+                  <span className="text-3xl font-black text-white">£350</span>
+                  <span className="text-gray-500"> · £35/hr</span>
                 </div>
-                <p className="text-gray-500 text-sm mb-4">Save £40 vs PAYG. 3 interest-free payments of £113.33 with Klarna.</p>
+                <p className="text-gray-500 text-sm mb-4">Save £40 vs PAYG. 3 interest-free payments of £116.67 with Klarna.</p>
                 <ul className="text-sm text-gray-400 space-y-2 mb-6 flex-1">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-400" /> Build skills progressively</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-400" /> Perfect starter package</li>
@@ -547,7 +547,7 @@ export default function ShowMeTellMe() {
                     </h3>
                   </div>
                   <p className="text-gray-400">
-                    We cover all of this in your first lesson. Secure your 10-Hour Block Booking today — just 3 interest-free payments of <span className="text-white font-semibold">£113.33</span> with Klarna.
+                    We cover all of this in your first lesson. Secure your 10-Hour Block Booking today — just 3 interest-free payments of <span className="text-white font-semibold">£116.67</span> with Klarna.
                   </p>
                 </div>
 

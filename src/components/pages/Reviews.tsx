@@ -379,7 +379,7 @@ const Reviews = () => {
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                 Join 200+ East London learners who passed with Drive Dojo. Book
-                your first 2 hours for £70 and pay later with Klarna.
+                your first 2 hours for £78 and pay later with Klarna.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

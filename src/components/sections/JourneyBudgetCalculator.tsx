@@ -295,9 +295,9 @@ export default function JourneyBudgetCalculator() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[50px]" />
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <h4 className="text-white font-bold">10-Hour Block Booking — £340</h4>
+                <h4 className="text-white font-bold">10-Hour Block Booking — £350</h4>
                 <p className="text-gray-400 text-sm">
-                  or 3 interest-free payments of <span className="text-white font-semibold">£113.33</span> with Klarna
+                  or 3 interest-free payments of <span className="text-white font-semibold">£116.67</span> with Klarna
                 </p>
               </div>
               <Link

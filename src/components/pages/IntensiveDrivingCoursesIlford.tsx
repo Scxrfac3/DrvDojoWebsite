@@ -382,7 +382,7 @@ const IntensiveDrivingCoursesIlford = () => {
               latitude: 51.5588,
               longitude: 0.0736,
             },
-            priceRange: "£70 – £950",
+            priceRange: "£78 – £950",
             paymentAccepted: "Cash, Credit Card, Klarna",
             currenciesAccepted: "GBP",
             hasOfferCatalog: {
@@ -446,7 +446,7 @@ const IntensiveDrivingCoursesIlford = () => {
                 name: "Can I pay for my intensive driving course with Klarna?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes! We offer Klarna interest-free payments on our 10-Hour Block (£340 split into 3 payments of £113.33) and Intensive Pass Course (£650–£950). This lets you spread the cost without any interest charges, so you can start learning now.",
+                  text: "Yes! We offer Klarna interest-free payments on our 10-Hour Block (£350 split into 3 payments of £116.67) and Intensive Pass Course (£650–£950). This lets you spread the cost without any interest charges, so you can start learning now.",
                 },
               },
               {
@@ -454,7 +454,7 @@ const IntensiveDrivingCoursesIlford = () => {
                 name: "How much does an intensive driving course cost in Ilford?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our intensive driving courses in Ilford range from £650 for 12 hours up to £950 for 30 hours, depending on your starting ability. We also offer a 10-Hour Block at £340 (£34/hr) and a 2-hour assessment at £70. All prices include door-to-door pickup in a Mercedes-Benz A-Class automatic.",
+                  text: "Our intensive driving courses in Ilford range from £650 for 12 hours up to £950 for 30 hours, depending on your starting ability. We also offer a 10-Hour Block at £350 (£35/hr) and a 2-hour assessment at £78. All prices include door-to-door pickup in a Mercedes-Benz A-Class automatic.",
                 },
               },
               {
@@ -571,7 +571,7 @@ const IntensiveDrivingCoursesIlford = () => {
                 >
                   <div className="bg-white/5 backdrop-blur-md rounded-lg px-4 py-3 border border-white/10">
                     <span className="text-[#ff6b35] font-bold text-lg">
-                      £70
+                      £78
                     </span>
                     <span className="text-gray-400 text-sm ml-2">
                       / 2hr assessment
@@ -579,7 +579,7 @@ const IntensiveDrivingCoursesIlford = () => {
                   </div>
                   <div className="bg-white/5 backdrop-blur-md rounded-lg px-4 py-3 border border-white/10">
                     <span className="text-[#ff6b35] font-bold text-lg">
-                      £340
+                      £350
                     </span>
                     <span className="text-gray-400 text-sm ml-2">
                       / 10hr block

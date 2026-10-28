@@ -29,7 +29,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in East Ham?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in East Ham start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
+        "text": "Driving lessons in East Ham start from £58.50 for a 90-minute session. First 2 hours assessed at £78, then £39/hr. Block booking discounts available."
       }
     },
     {
@@ -96,11 +96,11 @@ const EastHamLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/east-ham"
         serviceSchema={{
           name: "Driving Lessons in East Ham",
-          description: "Professional driving lessons in East Ham with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E6 and surrounding E postcodes.",
+          description: "Professional driving lessons in East Ham with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering E6 and surrounding E postcodes.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "East Ham, E6, E7, E12, E13, E15, E16, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - East Ham","description":"DVSA approved driving lessons in East Ham. Automatic Mercedes-Benz A-Class. Wanstead & Goodmayes test centre preparation. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/east-ham","telephone":"+447487228866","areaServed":["East Ham","E6","E7","E12","E13","E15","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"East Ham","addressRegion":"East London","postalCode":"E6","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5288,"longitude":0.0520},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - East Ham","description":"DVSA approved driving lessons in East Ham. Automatic Mercedes-Benz A-Class. Wanstead & Goodmayes test centre preparation. First 2 hours £78.","url":"https://drivedojodrivingschool.com/driving-lessons/east-ham","telephone":"+447487228866","areaServed":["East Ham","E6","E7","E12","E13","E15","E16","East London"],"address":{"@type":"PostalAddress","addressLocality":"East Ham","addressRegion":"East London","postalCode":"E6","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5288,"longitude":0.0520},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -141,8 +141,8 @@ const EastHamLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering all E6 postcodes. Automatic Mercedes-Benz A-Class.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                     Prep for Wanstead and Goodmayes test centres.
                   </p>
 

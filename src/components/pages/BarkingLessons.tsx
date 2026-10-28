@@ -31,7 +31,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Barking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Barking start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
+        "text": "Driving lessons in Barking start from £58.50 for a 90-minute session. First 2 hours assessed at £78, then £39/hr. Block booking discounts available."
       }
     },
     {
@@ -82,11 +82,11 @@ const BarkingLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/barking"
         serviceSchema={{
           name: "Driving Lessons in Barking",
-          description: "Professional driving lessons in Barking with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering IG11, RM8, RM9.",
+          description: "Professional driving lessons in Barking with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering IG11, RM8, RM9.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Barking, IG11, RM8, RM9, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Barking","description":"DVSA approved driving lessons in Barking. Automatic Mercedes-Benz A-Class. Barking test centre specialists. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/barking","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Barking","IG11","RM8","RM9","Chadwell Heath","East London"],"address":{"@type":"PostalAddress","addressLocality":"Barking","addressRegion":"East London","postalCode":"IG11","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5390,"longitude":0.0810},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Barking","description":"DVSA approved driving lessons in Barking. Automatic Mercedes-Benz A-Class. Barking test centre specialists. First 2 hours £78.","url":"https://drivedojodrivingschool.com/driving-lessons/barking","telephone":"+447487228866","email":"drivedojo@gmail.com","areaServed":["Barking","IG11","RM8","RM9","Chadwell Heath","East London"],"address":{"@type":"PostalAddress","addressLocality":"Barking","addressRegion":"East London","postalCode":"IG11","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5390,"longitude":0.0810},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -126,8 +126,8 @@ const BarkingLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor and Barking test centre specialist.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                     Covering IG11, RM8, RM9 and all surrounding areas.
                   </p>
 

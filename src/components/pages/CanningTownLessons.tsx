@@ -29,7 +29,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Canning Town?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Canning Town start from £45 for a 90-minute session. First 2 hours assessed at £70, then £38/hr. Block booking discounts available."
+        "text": "Driving lessons in Canning Town start from £58.50 for a 90-minute session. First 2 hours assessed at £78, then £39/hr. Block booking discounts available."
       }
     },
     {
@@ -96,11 +96,11 @@ const CanningTownLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/canning-town"
         serviceSchema={{
           name: "Driving Lessons in Canning Town & Silvertown",
-          description: "Professional driving lessons in Canning Town and Silvertown with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E16.",
+          description: "Professional driving lessons in Canning Town and Silvertown with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering E16.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Canning Town, Silvertown, E16, E14, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Canning Town","description":"DVSA approved driving lessons in Canning Town and Silvertown. Automatic Mercedes-Benz A-Class. First 2 hours £70.","url":"https://drivedojodrivingschool.com/driving-lessons/canning-town","telephone":"+447487228866","areaServed":["Canning Town","Silvertown","E16","E14","E15","East London"],"address":{"@type":"PostalAddress","addressLocality":"Canning Town","addressRegion":"East London","postalCode":"E16","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5150,"longitude":0.0080},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Canning Town","description":"DVSA approved driving lessons in Canning Town and Silvertown. Automatic Mercedes-Benz A-Class. First 2 hours £78.","url":"https://drivedojodrivingschool.com/driving-lessons/canning-town","telephone":"+447487228866","areaServed":["Canning Town","Silvertown","E16","E14","E15","East London"],"address":{"@type":"PostalAddress","addressLocality":"Canning Town","addressRegion":"East London","postalCode":"E16","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5150,"longitude":0.0080},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -141,8 +141,8 @@ const CanningTownLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering E16, Silvertown, and surrounding Docklands areas.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                     Prep for Goodmayes DTC, Wanstead, and Chingford test centres.
                   </p>
 

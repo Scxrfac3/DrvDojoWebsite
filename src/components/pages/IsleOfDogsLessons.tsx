@@ -33,7 +33,7 @@ const faqSchema = {
       "name": "How much do driving lessons cost in Isle of Dogs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Driving lessons in Isle of Dogs start from £45 for a 90-minute session. We offer block booking discounts and intensive courses for faster learning."
+        "text": "Driving lessons in Isle of Dogs start from £58.50 for a 90-minute session. We offer block booking discounts and intensive courses for faster learning."
       }
     },
     {
@@ -133,11 +133,11 @@ const IsleOfDogsLessons = () => {
         canonical="https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs"
         serviceSchema={{
           name: "Driving Lessons in Isle of Dogs",
-          description: "Professional driving lessons in Isle of Dogs with DVSA approved ADI instructor. First 2 hours £70, then from £34/hr. Automatic Mercedes-Benz A-Class. Covering E14.",
+          description: "Professional driving lessons in Isle of Dogs with DVSA approved ADI instructor. First 2 hours £78, then from £34.95/hr. Automatic Mercedes-Benz A-Class. Covering E14.",
           provider: { name: "Drive Dojo Driving School", url: "https://drivedojodrivingschool.com" },
           price: "70", priceCurrency: "GBP", areaServed: "Isle of Dogs, Canary Wharf, Poplar, E14, East London"
         }} jsonLd={reviewSchema} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Isle of Dogs","description":"DVSA approved driving lessons in Isle of Dogs and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £70. Covering E14.","url":"https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs","telephone":"+447487228866","areaServed":["Isle of Dogs","Canary Wharf","Poplar","E14","East London"],"address":{"@type":"PostalAddress","addressLocality":"Isle of Dogs","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.4950,"longitude":-0.0150},"priceRange":"£70 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","name":"Drive Dojo Driving School - Isle of Dogs","description":"DVSA approved driving lessons in Isle of Dogs and Canary Wharf. Automatic Mercedes-Benz A-Class. First 2 hours £78. Covering E14.","url":"https://drivedojodrivingschool.com/driving-lessons/isle-of-dogs","telephone":"+447487228866","areaServed":["Isle of Dogs","Canary Wharf","Poplar","E14","East London"],"address":{"@type":"PostalAddress","addressLocality":"Isle of Dogs","addressRegion":"East London","postalCode":"E14","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.4950,"longitude":-0.0150},"priceRange":"£78 - £950","paymentAccepted":"Cash, Credit Card, Klarna"}) }} />
       <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
         {/* Background decorative elements - matching homepage premium aesthetic */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -164,7 +164,7 @@ const IsleOfDogsLessons = () => {
                       <span className="text-sm font-medium">DVSA Approved</span>
                     </div>
                     <div className="flex items-center bg-orange-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-400/30">
-                      <span className="text-sm font-medium">First 2hrs £70</span>
+                      <span className="text-sm font-medium">First 2hrs £78</span>
                     </div>
                   </div>
 
@@ -178,8 +178,8 @@ const IsleOfDogsLessons = () => {
 
                   <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                     DVSA approved instructor covering all E14 postcodes. Automatic Mercedes-Benz A-Class.
-                    First 2 hours assessed at <span className="text-primary font-semibold">£70</span>, then
-                    <span className="text-primary font-semibold"> £38/hr</span>.
+                    First 2 hours assessed at <span className="text-primary font-semibold">£78</span>, then
+                    <span className="text-primary font-semibold"> £39/hr</span>.
                   </p>
 
                   <div className="max-w-md mx-auto lg:mx-0 space-y-4">
@@ -193,7 +193,7 @@ const IsleOfDogsLessons = () => {
                       onClick={() => (window.location.href = "/booking/payg")}
                       className="w-full bg-primary hover:bg-primary/90 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-lg"
                     >
-                      Book Your First Lesson — £70
+                      Book Your First Lesson — £78
                       <ArrowRight className="h-5 w-5" />
                     </Button>
                   </div>
@@ -492,7 +492,7 @@ const IsleOfDogsLessons = () => {
                     className="bg-primary hover:bg-primary/90 text-white"
                     onClick={() => (window.location.href = "/booking/payg")}
                   >
-                    Book Your First Lesson — £70
+                    Book Your First Lesson — £78
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   <Link

@@ -551,7 +551,7 @@ export default function LessonHoursEstimator() {
                   <p className="text-sm text-gray-300">{result!.tip}</p>
                 </motion.div>
 
-                {/* CTA — Claim £70 Intro Offer */}
+                {/* CTA — Claim £78 Intro Offer */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -566,7 +566,7 @@ export default function LessonHoursEstimator() {
                         <Sparkles className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-white font-bold text-lg">Claim Your £70 Introductory Offer</h3>
+                        <h3 className="text-white font-bold text-lg">Claim Your £78 Introductory Offer</h3>
                         <p className="text-gray-400 text-sm">
                           Your first 2 hours — use code{' '}
                           <span className="text-primary font-bold">SAVE25</span> (was £95)
@@ -576,16 +576,16 @@ export default function LessonHoursEstimator() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
                       <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl p-3 text-center">
-                        <p className="text-2xl font-bold text-white">£70</p>
+                        <p className="text-2xl font-bold text-white">£78</p>
                         <p className="text-xs text-gray-500">2-hour assessment</p>
                       </div>
                       <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl p-3 text-center">
-                        <p className="text-2xl font-bold text-white">3 × £113.33</p>
+                        <p className="text-2xl font-bold text-white">3 × £116.67</p>
                         <p className="text-xs text-gray-500">Klarna on 10hr block</p>
                       </div>
                       <div className="bg-white/[0.04] border border-white/[0.06] rounded-xl p-3 text-center">
                         <p className="text-2xl font-bold text-green-400">Save £40</p>
-                        <p className="text-xs text-gray-500">vs. PAYG £38/hr</p>
+                        <p className="text-xs text-gray-500">vs. PAYG £39/hr</p>
                       </div>
                     </div>
 
@@ -594,7 +594,7 @@ export default function LessonHoursEstimator() {
                         to="/booking/payg"
                         className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5"
                       >
-                        Claim Your £70 Offer
+                        Claim Your £78 Offer
                         <ArrowRight className="w-5 h-5" />
                       </Link>
                       <button
@@ -608,7 +608,7 @@ export default function LessonHoursEstimator() {
                     <div className="flex flex-wrap items-center justify-center gap-4 mt-4 text-[11px] text-gray-500">
                       <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> DVSA Approved</span>
                       <span className="flex items-center gap-1"><CreditCard className="w-3 h-3" /> Klarna Available</span>
-                      <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3" /> £34/hr Effective Rate</span>
+                      <span className="flex items-center gap-1"><CheckCircle className="w-3 h-3" /> £35/hr Effective Rate</span>
                     </div>
                   </div>
                 </motion.div>

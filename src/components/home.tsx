@@ -92,7 +92,7 @@ const Home = () => {
     <>
       <SEO
         title="Drive Dojo | DVSA-Approved Driving Lessons in East London"
-        description="Learn to drive in East London with Drive Dojo — DVSA-approved instructors and Mercedes-Benz cars. First 2 hours £70, pay later with Klarna."
+        description="Learn to drive in East London with Drive Dojo — DVSA-approved instructors and Mercedes-Benz cars. First 2 hours £78, pay later with Klarna."
         keywords="driving lessons East London, DVSA approved instructor, automatic driving lessons, Mercedes driving school, learn to drive London"
         canonical="https://drivedojodrivingschool.com/"
         jsonLd={reviewSchema}

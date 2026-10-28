@@ -111,7 +111,7 @@ const Booking20Hour = () => {
                           <p className="text-xs text-primary">Best Value — Save £81 vs PAYG</p>
                         </div>
                       </div>
-                      <div className="text-3xl font-bold text-white mb-2">£679<span className="text-sm font-normal text-slate-400">/package</span></div>
+                      <div className="text-3xl font-bold text-white mb-2">£699<span className="text-sm font-normal text-slate-400">/package</span></div>
                       <p className="text-sm mb-4 text-slate-300">The ultimate test preparation package — 2 mock tests included</p>
                     </div>
                   </div>

@@ -17,7 +17,7 @@ interface HeroSectionProps {
 
 const NewHeroSection = ({
   title = "Drive Like a Pro",
-  subtitle = "Premium automatic driving lessons in Canary Wharf, Isle of Dogs & Docklands. DVSA-approved instructor, Mercedes-Benz A-Class. First 2 hours £70, then £38/hr. Book online today.",
+  subtitle = "Premium automatic driving lessons in Canary Wharf, Isle of Dogs & Docklands. DVSA-approved instructor, Mercedes-Benz A-Class. First 2 hours £78, then £39/hr. Book online today.",
   ctaPrimaryText = "🚗 Book Your Automatic Lesson",
   ctaSecondaryText = "💰 View Packages",
   onBookLesson = () => (window.location.href = "/services"),
@@ -124,15 +124,15 @@ const NewHeroSection = ({
               transition={{ delay: 0.6 }}
             >
               <div className="bg-white/5 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
-                <span className="text-primary font-bold">£70</span>
+                <span className="text-primary font-bold">£78</span>
                 <span className="text-gray-400 text-sm ml-1">/ first 2hr</span>
               </div>
               <div className="bg-white/5 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
-                <span className="text-primary font-bold">£38</span>
+                <span className="text-primary font-bold">£39</span>
                 <span className="text-gray-400 text-sm ml-1">/ hr ongoing</span>
               </div>
               <div className="bg-primary/20 backdrop-blur-md rounded-lg px-3 py-2 border border-primary/30">
-                <span className="text-primary font-bold">£340</span>
+                <span className="text-primary font-bold">£350</span>
                 <span className="text-gray-400 text-sm ml-1">/ 10hr (Save £40)</span>
               </div>
             </motion.div>

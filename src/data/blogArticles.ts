@@ -11,7 +11,7 @@ export const blogArticles: BlogArticle[] = [
 
 Learning to drive in London is one of the most exciting — and occasionally nerve-wracking — milestones a teenager can experience. The official UK driving test pass rate for 2024–25 sat at 48.65% across all Category B (car) practical tests — meaning roughly half of all candidates fail on their first attempt. That figure is a clear signal: preparation, not luck, is what separates those who pass from those who don't. Therefore, if your teenager is planning to get behind the wheel in 2026, this guide is the complete roadmap you need.
 
-The average hourly rate for a driving lesson in the UK is between £30 and £40 for manual, depending on region — and London is the most expensive area, at £38–£48 per hour. For families budgeting for lessons, theory tests, and practical tests, the total investment can feel overwhelming. This guide — written with London-based learners firmly in mind — walks you through every stage of the journey: from applying for a provisional licence to booking your test and overcoming driving anxiety on the big day. For a trusted, DVSA-approved school to get started with, **Drive Dojo Driving School** offers structured teenage driving lessons across London.
+The average hourly rate for a driving lesson in the UK is between £30 and £40 for manual, depending on region — and London is the most expensive area, at £39–£48 per hour. For families budgeting for lessons, theory tests, and practical tests, the total investment can feel overwhelming. This guide — written with London-based learners firmly in mind — walks you through every stage of the journey: from applying for a provisional licence to booking your test and overcoming driving anxiety on the big day. For a trusted, DVSA-approved school to get started with, **Drive Dojo Driving School** offers structured teenage driving lessons across London.
 
 ## Key Takeaways
 
@@ -43,7 +43,7 @@ Learner anxiety is the single biggest hidden factor in lesson count. Nervous lea
 
 ## Understanding Driving Lesson Costs in London 2026
 
-In London, lessons typically range from £38 to £50 per hour, with central London at the higher end. At Drive Dojo, our introductory offer is **£70 for your first 2 hours** (use code SAVE25), then from **£34/hr** with block bookings. We accept **Klarna — pay in 3 interest-free instalments.**
+In London, lessons typically range from £39 to £50 per hour, with central London at the higher end. At Drive Dojo, our introductory offer is **£78 for your first 2 hours** (use code SAVE25), then from **£35/hr** with block bookings. We accept **Klarna — pay in 3 interest-free instalments.**
 
 Block booking is the smartest way to save. Booking 10 lessons upfront can save £20–£50 compared to single sessions. However, take two or three single lessons first, then block-book once you're confident the instructor is the right fit.
 
@@ -197,7 +197,7 @@ Driving isn't just about learning the rules once to pass a test; it is about con
 The best way to ensure a lifetime of safe driving is to learn the right habits from day one. At **Drive Dojo Driving School**, our Grade-A DVSA instructors don't just teach you how to pass the test; we teach you how to drive safely for life on London's busy roads.
 
 **Ready to build the right driving habits?**
-- [Book Your Introductory Lesson — First 2 Hours for £70 →](/booking/payg)
+- [Book Your Introductory Lesson — First 2 Hours for £78 →](/booking/payg)
 - [View All Services & Packages →](/services)
 
 💳 **Spread the cost of your 10-hour block booking with Klarna — pay in 3 interest-free!**
@@ -326,7 +326,7 @@ In the final stages, expect mock tests conducted on your actual test routes, deb
 
 In the UK, driving lessons cost between £30 and £50 per hour on average. In the Canary Wharf area specifically, the average lesson cost is around £36 per hour. Block booking typically offers the most effective way to reduce per-lesson costs.
 
-At **Drive Dojo**, our introductory offer is **£70 for your first 2 hours** (use code SAVE25), then from **£34/hr** with block bookings. We accept **Klarna — pay in 3 interest-free instalments.**
+At **Drive Dojo**, our introductory offer is **£78 for your first 2 hours** (use code SAVE25), then from **£35/hr** with block bookings. We accept **Klarna — pay in 3 interest-free instalments.**
 
 ## Frequently Asked Questions
 
@@ -2521,10 +2521,10 @@ In this guide, we break down driving lesson costs specifically for **East London
 
 | Lesson Type | Price Range | Notes |
 |---|---|---|
-| Standard 1-hour lesson (PAYG) | £38–£52/hr | Varies by instructor experience |
-| Block booking (10 hours) | £340–£460 | Discounted vs PAYG |
+| Standard 1-hour lesson (PAYG) | £39–£52/hr | Varies by instructor experience |
+| Block booking (10 hours) | £350–£460 | Discounted vs PAYG |
 | Intensive course (30+ hrs) | £900–£1,400 | Pass in 1–3 weeks |
-| Mock driving test | £45–£70 | Single session, test format |
+| Mock driving test | £45–£78 | Single session, test format |
 | Test car hire (for DVSA test) | £45–£60 | Includes pre-test lesson |
 
 **Drive Dojo rates** sit competitively within this range. [See our current prices here](/booking/payg).
@@ -4415,7 +4415,7 @@ However, this is an average. Some students pass with 20 hours; others need 60+. 
 
 At Drive Dojo, we assess every student individually during their first 2-hour lesson. We then provide an honest estimate of how many hours you'll need based on your current ability, learning speed, and test date goals.
 
-[Book your assessment lesson today](/booking/payg) — first 2 hours for £70.`,
+[Book your assessment lesson today](/booking/payg) — first 2 hours for £78.`,
     excerpt: "The DVSA recommends 45 hours of professional lessons plus 22 hours of private practice on average. Here's how to reduce your lesson count and pass faster.",
     featuredImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
@@ -4544,7 +4544,7 @@ The clips move quickly. Don't let your mind wander between clips. Reset your foc
 
 Your driving lessons with Drive Dojo include real-world hazard perception training. We'll point out developing hazards during your lessons so you learn to spot them naturally.
 
-[Book your first lesson](/booking/payg) — first 2 hours for £70.`,
+[Book your first lesson](/booking/payg) — first 2 hours for £78.`,
     excerpt: "The hazard perception test catches many learners off guard. Learn how to spot developing hazards, when to click, and how to avoid common mistakes.",
     featuredImage: "https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?w=800&q=80",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
@@ -4658,7 +4658,7 @@ Drive Dojo uses a 2024 Mercedes-Benz A-Class — one of the best learner cars on
 
 We tick all five boxes. Fully qualified ADI, expert Goodmayes route knowledge, patient instruction, structured progress tracking, and a premium Mercedes-Benz vehicle.
 
-[Book your first lesson in Goodmayes](/driving-lessons/goodmayes) — first 2 hours for £70.`,
+[Book your first lesson in Goodmayes](/driving-lessons/goodmayes) — first 2 hours for £78.`,
     excerpt: "Looking for a driving instructor in Goodmayes or East London? Here are the 5 qualities that separate great instructors from average ones — and how Drive Dojo delivers on all five.",
     featuredImage: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
@@ -4764,10 +4764,10 @@ Drive Dojo specialises in automatic driving instruction. If you've tried manual 
 
 No "admin fees." No "registration fees." No "test day surcharges." Our pricing is straightforward:
 
-- **First 2 hours: £70** (use code SAVE25)
-- **Standard rate: from £34/hr** on block bookings
+- **First 2 hours: £78** (use code SAVE25)
+- **Standard rate: from £34.95/hr** on block bookings
 - **Klarna available** on 10-hour blocks and intensive courses
-- **10-Hour Block: £380** — saves you £60 compared to PAYG
+- **10-Hour Block: £390** — saves you £60 compared to PAYG
 - **Intensive Pass Course: from £999** including test fees
 
 [View full pricing and packages →](/booking/payg)
@@ -4780,7 +4780,7 @@ Sure, a national school can teach you to drive. But do they know that the Goodma
 
 Book your first lesson online in 60 seconds. No calls, no commitment — just pick a time that works and we'll see you there.
 
-[Book your first 2 hours for £70 →](/booking/payg)`,
+[Book your first 2 hours for £78 →](/booking/payg)`,
     excerpt: "Stop scrolling and read exactly why Drive Dojo is different from every other driving school in London — tech-first booking, Mercedes-Benz fleet, transparent pricing, and real local expertise.",
     featuredImage: "https://images.unsplash.com/photo-1594366195558-32e1c1f4e6c2?w=800&q=80",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
@@ -4831,7 +4831,7 @@ Time is the one thing you can't buy more of. Yet most driving schools still oper
 
 ## Klarna "Pay in 3" — Spread the Cost
 
-Block bookings save you money — £380 for 10 hours instead of £440 PAYG. But dropping £380 in one go can sting. That's why we offer Klarna Pay in 3, splitting the cost into three interest-free monthly payments. You get the block discount without the upfront hit. Available on all 10-hour blocks and the Intensive Pass Course.
+Block bookings save you money — £390 for 10 hours instead of £440 PAYG. But dropping £390 in one go can sting. That's why we offer Klarna Pay in 3, splitting the cost into three interest-free monthly payments. You get the block discount without the upfront hit. Available on all 10-hour blocks and the Intensive Pass Course.
 
 ## Live Progress Dashboard — No More Mystery
 
@@ -4843,7 +4843,7 @@ Ever finished a lesson and thought "wait, am I actually getting better?" Every D
 
 You could wait for a callback. Or you could book your first lesson in the time it takes to make a cup of tea. Your call.
 
-[Book your first 2 hours for £70 now →](/booking/payg)`,
+[Book your first 2 hours for £78 now →](/booking/payg)`,
     excerpt: "Tired of phoning driving schools and waiting for callbacks? Drive Dojo's online booking system lets you book, pay, and manage everything from your phone in under 60 seconds.",
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
@@ -4865,9 +4865,9 @@ Not every learner needs the same thing. Maybe you're a complete beginner who's n
 
 ## Key Takeaways
 
-- **PAYG (£34/hr+):** Best for beginners testing the waters or learners who only need occasional sessions.
+- **PAYG (£35/hr+):** Best for beginners testing the waters or learners who only need occasional sessions.
 - **6-Hour Block (£210):** Ideal for refresher sessions or short-term intensive prep before a test.
-- **10-Hour Block (£380):** The sweet spot for most learners — saves £60 vs PAYG and gives you momentum.
+- **10-Hour Block (£390):** The sweet spot for most learners — saves £60 vs PAYG and gives you momentum.
 - **20-Hour Block (£720):** For committed learners aiming for test-ready in structured, regular lessons.
 - **Intensive Pass Course (£999+):** Crash course format — pass in 1-2 weeks with a guaranteed test date.
 - **Not sure?** Use our [Lesson Hours Estimator](/), which uses DVSA baseline data to calculate your personal needs in under 60 seconds.
@@ -4880,17 +4880,17 @@ Not every learner needs the same thing. Maybe you're a complete beginner who's n
 | Need a refresher before test | 6-Hour Block |
 | Are test-ready this month | Intensive Pass Course |
 | Want the best value per hour | 20-Hour Block |
-| Just want to try it out | PAYG (first 2hrs for £70) |
+| Just want to try it out | PAYG (first 2hrs for £78) |
 
 ## PAYG — The Taster Option
 
-Perfect if you're not sure whether driving is for you, or if you only need a session every couple of weeks. No commitment, pay as you go. Use code **SAVE25** for your first 2 hours at £70.
+Perfect if you're not sure whether driving is for you, or if you only need a session every couple of weeks. No commitment, pay as you go. Use code **SAVE25** for your first 2 hours at £78.
 
 **Best for:** Complete beginners who want to test the waters, or experienced learners who only need occasional top-up sessions.
 
 ## 10-Hour Block — The Sweet Spot
 
-Most Drive Dojo students choose the 10-hour block. Here's why: booking single lessons at £44/hr adds up to £440 for 10 hours. The 10-hour block costs £380 — that's £60 saved, and it locks in consistent weekly sessions that build real progress.
+Most Drive Dojo students choose the 10-hour block. Here's why: booking single lessons at £44/hr adds up to £440 for 10 hours. The 10-hour block costs £390 — that's £60 saved, and it locks in consistent weekly sessions that build real progress.
 
 **Best for:** Learners who've had 1-3 lessons and are ready to commit. The block discount + regular sessions = fastest improvement.
 
@@ -4912,7 +4912,7 @@ If you're unsure how many hours you'll need, our free [Lesson Hours Estimator](/
 
 ## ⚡ Book Your Ideal Package Now
 
-Pick the package that matches your goals and book online in 60 seconds. First 2 hours £70 with code SAVE25.
+Pick the package that matches your goals and book online in 60 seconds. First 2 hours £78 with code SAVE25.
 
 [View all packages →](/booking/payg)`,
     excerpt: "PAYG, 10-hour block, 20-hour block, or intensive course? Use our guide to find the perfect Drive Dojo package for your experience level, budget, and deadline.",
@@ -4999,7 +4999,7 @@ Most learners have no idea which categories they've covered and which they haven
 
 ## ⚡ Ready to Start Your DVSA Journey?
 
-Book your first lesson online in 60 seconds. First 2 hours for £70 with code SAVE25. You'll get access to your progress dashboard from lesson one.
+Book your first lesson online in 60 seconds. First 2 hours for £78 with code SAVE25. You'll get access to your progress dashboard from lesson one.
 
 [Book your first lesson →](/booking/payg)`,
     excerpt: "Full breakdown of the DVSA practical driving test syllabus — all 33 categories, how faults are scored, and how to track your progress with Drive Dojo's live dashboard.",
@@ -5024,7 +5024,7 @@ Learning to drive in London isn't cheap. With average costs ranging from £1,800
 ## Key Takeaways
 
 - **Block bookings save 14-18%** compared to PAYG rates — the 20-hour block saves you £160.
-- **First 2 hours for £70** with code SAVE25 — try before you commit with zero risk.
+- **First 2 hours for £78** with code SAVE25 — try before you commit with zero risk.
 - **Klarna Pay in 3** — spread the cost interest-free on all blocks.
 - **Intensive courses from £999** — all-inclusive with test fees and guaranteed test dates.
 - **Use the Lesson Hours Estimator** on our homepage to calculate your personalised budget in 60 seconds.
@@ -5034,9 +5034,9 @@ Learning to drive in London isn't cheap. With average costs ranging from £1,800
 | Package | Total Price | Per Hour | Saving vs PAYG | Best For |
 |---|---|---|---|---|
 | **PAYG** | £44/hr | £44.00 | — | Try before you commit |
-| **First 2hrs (SAVE25)** | £70 | £35.00 | £18 | Absolute beginners |
+| **First 2hrs (SAVE25)** | £78 | £35.00 | £18 | Absolute beginners |
 | **6-Hour Block** | £210 | £35.00 | £54 | Refreshers / test prep |
-| **10-Hour Block** | £380 | £38.00 | £60 | Most learners |
+| **10-Hour Block** | £390 | £39.00 | £60 | Most learners |
 | **20-Hour Block** | £720 | £36.00 | £160 | Maximum value |
 | **Intensive Pass** | £999+ | ~£28-33 | Varies | Fast-track learners |
 
@@ -5052,9 +5052,9 @@ PAYG is the most expensive per hour (£44), but it's the most flexible. Choose t
 
 ## The 10-Hour Block — Best for Most People
 
-At £380 total (£38/hr), the 10-hour block is the most popular choice. It's 14% cheaper than PAYG and gives you enough sessions to build real momentum. Most learners who stick to weekly sessions with a 10-hour block reach test standard within 2-3 months.
+At £390 total (£39/hr), the 10-hour block is the most popular choice. It's 14% cheaper than PAYG and gives you enough sessions to build real momentum. Most learners who stick to weekly sessions with a 10-hour block reach test standard within 2-3 months.
 
-**Real math:** 10 PAYG lessons = £440. 10-hour block = £380. You save £60. That's a free lesson and a half.
+**Real math:** 10 PAYG lessons = £440. 10-hour block = £390. You save £60. That's a free lesson and a half.
 
 ## The 20-Hour Block — Maximum Savings
 
@@ -5068,11 +5068,11 @@ Starting at £999, the Intensive Pass Course includes 30-40 hours of tuition plu
 
 **Best for:** Learners who can dedicate 1-2 weeks full-time and want a guaranteed test date.
 
-## Try Before You Buy — £70 for 2 Hours
+## Try Before You Buy — £78 for 2 Hours
 
-Not sure which package is right? Start with our introductory offer: first 2 hours for £70 using code **SAVE25**. If you like the instructor and the car, upgrade to a block booking and the £70 counts toward your total.
+Not sure which package is right? Start with our introductory offer: first 2 hours for £78 using code **SAVE25**. If you like the instructor and the car, upgrade to a block booking and the £78 counts toward your total.
 
-[Claim your first 2 hours for £70 →](/booking/payg)
+[Claim your first 2 hours for £78 →](/booking/payg)
 
 ## ⚡ Use the Lesson Hours Estimator
 
@@ -5145,7 +5145,7 @@ We don't use aftermarket "bolt-on" dual controls. Every Drive Dojo vehicle has p
 
 ## ⚡ Experience the Difference Yourself
 
-The best way to understand why the car matters is to try it. Book your first 2 hours for £70 with code SAVE25 and see for yourself.
+The best way to understand why the car matters is to try it. Book your first 2 hours for £78 with code SAVE25 and see for yourself.
 
 [Book a lesson now →](/booking/payg)`,
     excerpt: "Why Drive Dojo uses only Mercedes-Benz A-Class automatics for lessons — and how a modern, automatic car with proper safety features helps you learn to drive faster and safer.",
@@ -5173,7 +5173,7 @@ So you've booked your first driving lesson. Maybe you're excited. Maybe you're t
 - **East London roads are unique** — expect bus lanes, 20mph zones, complex roundabouts, and lots of cyclists.
 - **Most common local test centres** — Goodmayes, Barking, Belvedere, Wood Green. We train on all their routes.
 - **Typical progression** — controls → moving off → junctions → roundabouts → dual carriageways → mock tests → real test.
-- **Your first 2 hours for £70** — use code SAVE25.
+- **Your first 2 hours for £78** — use code SAVE25.
 
 ## Your First Lesson — What Actually Happens
 
@@ -5223,10 +5223,10 @@ Knowing these routes doesn't mean memorising them — it means your instructor w
 
 ## ⚡ Ready to Start? Book Online in 60 Seconds
 
-No calls. No waiting. Just pick your time, pick your package, and get started. First 2 hours for £70 with code SAVE25.
+No calls. No waiting. Just pick your time, pick your package, and get started. First 2 hours for £78 with code SAVE25.
 
 [Book your first lesson →](/booking/payg)`,
-    excerpt: "Complete walkthrough of what your first driving lesson in East London looks like — from the cockpit drill to navigating Goodmayes, Barking, and the A12. First 2 hours for £70.",
+    excerpt: "Complete walkthrough of what your first driving lesson in East London looks like — from the cockpit drill to navigating Goodmayes, Barking, and the A12. First 2 hours for £78.",
     featuredImage: "https://images.unsplash.com/photo-1455621480556-0437aba0f796?w=800&q=80",
     author: { name: "Drive Dojo Team", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DriveDojo" },
     publishedDate: "July 11, 2026",

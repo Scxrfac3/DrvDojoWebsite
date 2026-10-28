@@ -166,7 +166,7 @@ export const competitors: Competitor[] = [
       "RED Driving School",
       "Many learners come to Drive Dojo after experiencing RED's waiting lists and trainee instructors. They want a guaranteed 1-to-1 slot with a fully qualified ADI, a calmer car, and the ability to pay in instalments — without the franchise overhead."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "aa-driving-school",
@@ -192,7 +192,7 @@ export const competitors: Competitor[] = [
       "AA Driving School",
       "AA Driving School has brand trust, but East London learners tell us they switched for live booking, a premium car, and a consistent ADI rather than being assigned whoever is free."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "bsm-driving-school",
@@ -218,7 +218,7 @@ export const competitors: Competitor[] = [
       "BSM",
       "BSM's heritage is appealing, yet learners often switch for flexibility — instant booking, Klarna, and a Mercedes-Benz A-Class instead of a standard hatchback."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "drivethrul",
@@ -247,7 +247,7 @@ export const competitors: Competitor[] = [
       "DriveThruL",
       "DriveThruL is a genuine local option, but a single instructor's diary limits slots. Learners switch to Drive Dojo for the same local knowledge plus live availability and a backup instructor."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "ezlicense",
@@ -273,7 +273,7 @@ export const competitors: Competitor[] = [
       "EzLicense",
       "EzLicense works for some, but learners switch to Drive Dojo for transparent all-inclusive pricing, Klarna instalments, and a newer automatic car."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "abbies-driving-school",
@@ -299,7 +299,7 @@ export const competitors: Competitor[] = [
       "Abbie's Driving School",
       "Abbie's offers personal tuition, yet availability is limited. Learners switch for instant booking, Klarna, and a Mercedes-Benz A-Class with dual controls."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "kims-driving-school",
@@ -325,7 +325,7 @@ export const competitors: Competitor[] = [
       "Kim's Driving School",
       "Kim's is well regarded locally, but learners switch to Drive Dojo for live slots, instalment payments, and a consistent ADI in a premium car."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "first-drive-group",
@@ -351,7 +351,7 @@ export const competitors: Competitor[] = [
       "First Drive Group",
       "First Drive Group covers East London, but learners switch for no waiting lists, Klarna Pay in 3, and a Mercedes-Benz A-Class."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
   {
     slug: "local-independent-east-london",
@@ -381,7 +381,7 @@ export const competitors: Competitor[] = [
       "independent instructors in East London and Ilford",
       "Independent instructors offer personal 1-to-1 tuition, but a single diary means limited slots and no backup. Learners switch to Drive Dojo for the same local knowledge plus live availability, Klarna, and a backup instructor."
     ),
-    ctaText: "Book Your First Lesson — £70",
+    ctaText: "Book Your First Lesson — £78",
   },
 ];
 

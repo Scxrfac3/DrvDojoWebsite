@@ -18,8 +18,8 @@ const OFFERS = [
   {
     badge: 'BEST VALUE',
     title: '10-Hour Block Booking',
-    price: '£340',
-    perHourLabel: '£34/hr',
+    price: '£350',
+    perHourLabel: '£35/hr',
     savingsLabel: 'Save £40 vs PAYG',
     features: [
       '10 hours of professional automatic tuition',
@@ -35,7 +35,7 @@ const OFFERS = [
   {
     badge: 'FLEXIBLE',
     title: 'Pay As You Go',
-    price: '£38',
+    price: '£39',
     perHourLabel: '/hour',
     savingsLabel: 'No commitment needed',
     features: [
@@ -229,7 +229,7 @@ export default function PricingOffersSection() {
               <div>
                 <h3 className="text-white font-bold text-lg">Pay in 3 with Klarna</h3>
                 <p className="text-gray-400 text-sm">
-                  Split your £340 block booking into 3 interest-free payments of <span className="text-white font-semibold">£113.33</span>. No fees, no interest — just smooth monthly instalments.
+                  Split your £350 block booking into 3 interest-free payments of <span className="text-white font-semibold">£116.67</span>. No fees, no interest — just smooth monthly instalments.
                 </p>
               </div>
             </div>

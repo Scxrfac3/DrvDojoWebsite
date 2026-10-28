@@ -34,9 +34,9 @@ const PACKAGES = [
     icon: Clock,
     emoji: "⏱️",
     title: "Pay As You Go",
-    price: "£38",
+    price: "£39",
     unit: "/hour",
-    highlight: "First 2 hours £70",
+    highlight: "First 2 hours £78",
     desc: "Zero commitment. Just book, drive, repeat.",
     features: ["2-hour lessons", "DVSA-approved instructor", "Mercedes A-Class"],
     href: "/booking/payg",
@@ -47,9 +47,9 @@ const PACKAGES = [
     icon: Car,
     emoji: "🚗",
     title: "6-Hour Package",
-    price: "£228",
+    price: "£222",
     unit: "/6 hours",
-    highlight: "£38/hr",
+    highlight: "£37/hr",
     desc: "A focused block to level up fast or polish before your test.",
     features: ["6 hours of tuition", "Flexible scheduling", "Klarna available"],
     href: "/booking/6hour",
@@ -60,11 +60,11 @@ const PACKAGES = [
     icon: Zap,
     emoji: "🔥",
     title: "10-Hour Block",
-    price: "£340",
+    price: "£350",
     unit: "/10 hours",
-    highlight: "Save £40 — £34/hr",
+    highlight: "Save £40 — £35/hr",
     desc: "The one everyone books. Build skills, save money, pass faster.",
-    features: ["10 hours of tuition", "Save £40 vs PAYG", "3× £113.33 with Klarna"],
+    features: ["10 hours of tuition", "Save £40 vs PAYG", "3× £116.67 with Klarna"],
     href: "/booking/10hour",
     cta: "Book 10 Hours",
     featured: true,
@@ -73,9 +73,9 @@ const PACKAGES = [
     icon: Gauge,
     emoji: "📈",
     title: "20-Hour Block",
-    price: "£679",
+    price: "£699",
     unit: "/20 hours",
-    highlight: "£33.95/hr",
+    highlight: "£34.95/hr",
     desc: "The full journey to test-ready in one package.",
     features: ["20 hours of tuition", "Best hourly rate", "Klarna available"],
     href: "/booking/20hour",
@@ -206,7 +206,7 @@ export default function BookingHub() {
     <div className="min-h-screen bg-[#0d0d0d] text-white relative overflow-hidden">
       <SEO
         title="Book Driving Lessons Online | East London | Drive Dojo"
-        description="Book driving lessons online in 60 seconds. PAYG from £38/hr, block bookings from £340, intensive courses from £650. Automatic Mercedes A-Class, DVSA-approved. Klarna Pay in 3."
+        description="Book driving lessons online in 60 seconds. PAYG from £39/hr, block bookings from £350, intensive courses from £650. Automatic Mercedes A-Class, DVSA-approved. Klarna Pay in 3."
         keywords="book driving lessons online, book driving lessons East London, driving lesson prices, book intensive driving course, book mock driving test, Klarna driving lessons"
         canonical="https://drivedojodrivingschool.com/booking"
       />
@@ -537,7 +537,7 @@ export default function BookingHub() {
                   Not sure which package fits? 🤔
                 </h2>
                 <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-                  Book the £70 New Driver Assessment — 2 hours with a DVSA-approved instructor who will honestly tell you where you are and what you need. No upsell, just the truth.
+                  Book the £78 New Driver Assessment — 2 hours with a DVSA-approved instructor who will honestly tell you where you are and what you need. No upsell, just the truth.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
@@ -545,7 +545,7 @@ export default function BookingHub() {
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
                   >
                     <Calendar className="w-5 h-5" />
-                    Book the £70 Assessment
+                    Book the £78 Assessment
                   </Link>
                   <a
                     href="https://wa.me/447487228866?text=Hey%20Drive%20Dojo!%20I'd%20like%20help%20choosing%20a%20package."

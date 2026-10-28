@@ -143,8 +143,8 @@ const AutomaticDrivingLessons = () => {
       id: "first2hours",
       title: "First 2 Hours",
       subtitle: "Try before you commit",
-      price: "£70",
-      originalPrice: "£76",
+      price: "£78",
+      originalPrice: "£95",
       saving: "Save £25",
       discountCode: "",
       unit: "/ 2-hour assessment",
@@ -165,10 +165,10 @@ const AutomaticDrivingLessons = () => {
       id: "10hour",
       title: "10-Hour Block",
       subtitle: "Structured learning block",
-      price: "£340",
+      price: "£350",
       originalPrice: "£420",
       saving: "Save £40",
-      unit: "/ 10 hours (£34/hr)",
+      unit: "/ 10 hours (£35/hr)",
       features: [
         "10 hours of driving tuition",
         "Fully DVSA qualified instructors",
@@ -182,16 +182,16 @@ const AutomaticDrivingLessons = () => {
       ctaLink: "/booking/10hour",
       ctaText: "Book 10-Hour Block",
       klarna: true,
-      klarnaText: "Or 3 interest-free payments of £113.33 with Klarna",
+      klarnaText: "Or 3 interest-free payments of £116.67 with Klarna",
     },
     {
       id: "20hour",
       title: "20-Hour Package",
       subtitle: "Complete beginner to test ready",
-      price: "£679",
+      price: "£699",
       originalPrice: "£839",
       saving: "Save £81",
-      unit: "/ 20 hours (£33.95/hr)",
+      unit: "/ 20 hours (£34.95/hr)",
       features: [
         "20 hours of driving tuition",
         "Full structured learning plan",
@@ -270,7 +270,7 @@ const AutomaticDrivingLessons = () => {
     {
       question: "Can I pay with Klarna?",
       answer:
-        "Yes! We offer Klarna interest-free payments on our 10-Hour Block (£340 → 3 payments of £113.33), 20-Hour Package, and Intensive Pass Course. This lets you spread the cost without any interest charges, so you can start learning now and pay later.",
+        "Yes! We offer Klarna interest-free payments on our 10-Hour Block (£350 → 3 payments of £116.67), 20-Hour Package, and Intensive Pass Course. This lets you spread the cost without any interest charges, so you can start learning now and pay later.",
     },
     {
       question: "Can I book an intensive automatic course?",
@@ -284,7 +284,7 @@ const AutomaticDrivingLessons = () => {
       {/* SEO */}
       <SEO
         title="Automatic Driving Lessons East London | Drive Dojo"
-        description="Learn automatic driving in East London with Drive Dojo. DVSA-approved, Mercedes-Benz A-Class. First 2 hours £70, pay later with Klarna."
+        description="Learn automatic driving in East London with Drive Dojo. DVSA-approved, Mercedes-Benz A-Class. First 2 hours £78, pay later with Klarna."
         keywords="automatic driving lessons East London, automatic driving lessons Ilford, learn automatic car East London, Mercedes automatic driving lessons, automatic driving instructor Ilford, automatic driving school East London, DVSA automatic lessons, automatic driving lessons Barking, automatic driving lessons Goodmayes, automatic driving lessons Romford, automatic driving lessons Forest Gate, automatic driving lessons Walthamstow, automatic driving lessons Docklands, cheap automatic driving lessons London, best automatic driving instructor, Klarna driving lessons, pay monthly driving lessons, intensive automatic driving course, automatic crash course London, Mercedes A-Class driving lessons"
         canonical="https://drivedojodrivingschool.com/automatic-driving-lessons"
         serviceSchema={{
@@ -341,7 +341,7 @@ const AutomaticDrivingLessons = () => {
               latitude: 51.5588,
               longitude: 0.0736,
             },
-            priceRange: "£70 – £950",
+            priceRange: "£78 – £950",
             paymentAccepted: "Cash, Credit Card, Klarna",
             hasOfferCatalog: {
               "@type": "OfferCatalog",
@@ -397,7 +397,7 @@ const AutomaticDrivingLessons = () => {
                 name: "How much do automatic driving lessons cost in East London?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our automatic driving lessons start at £70 for a 2-hour assessment (use code SAVE25). Block bookings: 10 hours £340 (£34/hr), 20 hours £679 (£33.95/hr). Intensive courses from £650–£950. All in a Mercedes-Benz A-Class with door-to-door pickup. Klarna interest-free payments available.",
+                  text: "Our automatic driving lessons start at £78 for a 2-hour assessment (use code SAVE25). Block bookings: 10 hours £350 (£35/hr), 20 hours £699 (£34.95/hr). Intensive courses from £650–£950. All in a Mercedes-Benz A-Class with door-to-door pickup. Klarna interest-free payments available.",
                 },
               },
               {
@@ -515,7 +515,7 @@ const AutomaticDrivingLessons = () => {
                 >
                   <div className="bg-white/5 backdrop-blur-md rounded-lg px-4 py-3 border border-white/10">
                     <span className="text-[#ff6b35] font-bold text-lg">
-                      £70
+                      £78
                     </span>
                     <span className="text-gray-400 text-sm ml-2">
                       / 2hr assessment
@@ -523,7 +523,7 @@ const AutomaticDrivingLessons = () => {
                   </div>
                   <div className="bg-white/5 backdrop-blur-md rounded-lg px-4 py-3 border border-white/10">
                     <span className="text-[#ff6b35] font-bold text-lg">
-                      £340
+                      £350
                     </span>
                     <span className="text-gray-400 text-sm ml-2">
                       / 10hr block
@@ -531,7 +531,7 @@ const AutomaticDrivingLessons = () => {
                   </div>
                   <div className="bg-[#ff6b35]/20 backdrop-blur-md rounded-lg px-4 py-3 border border-[#ff6b35]/30">
                     <span className="text-[#ff6b35] font-bold text-lg">
-                      £679
+                      £699
                     </span>
                     <span className="text-gray-400 text-sm ml-2">
                       / 20hr (Popular)
@@ -702,7 +702,7 @@ const AutomaticDrivingLessons = () => {
         {/* Welcome Offer Banner */}
         <div className="bg-gradient-to-r from-[#ff6b35] to-[#f5a623] py-4 text-center">
           <p className="font-semibold text-white">
-            <strong>New Driver Assessment:</strong> 120 Minutes for £70 (was £95
+            <strong>New Driver Assessment:</strong> 120 Minutes for £78 (was £95
             with code{" "}
             <span className="bg-white/20 px-2 py-0.5 rounded"></span>){" "}
             <strong>— Limited slots available.</strong>
@@ -1343,13 +1343,13 @@ const AutomaticDrivingLessons = () => {
                     <select className="w-full px-4 py-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] rounded-xl text-white focus:border-[#ff6b35] focus:bg-[rgba(255,107,53,0.05)] outline-none transition-all">
                       <option value="">Choose a package...</option>
                       <option value="welcome">
-                        New Driver Assessment — £70 (2 Hours)
+                        New Driver Assessment — £78 (2 Hours)
                       </option>
                       <option value="10hour">
-                        10-Hour Block — £340 (£34/hr)
+                        10-Hour Block — £350 (£35/hr)
                       </option>
                       <option value="20hour">
-                        20-Hour Package — £679 (£33.95/hr)
+                        20-Hour Package — £699 (£34.95/hr)
                       </option>
                       <option value="intensive">
                         Intensive Pass Course — £650–£950

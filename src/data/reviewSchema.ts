@@ -38,7 +38,7 @@ export const reviewSchema = {
       name: BUSINESS.pricing.block10.label,
       price: String(BUSINESS.pricing.block10.priceNumber),
       priceCurrency: "GBP",
-      description: "10 hours of automatic tuition at £34/hr — save £40 vs PAYG.",
+      description: "10 hours of automatic tuition at £35/hr — save £40 vs PAYG.",
       url: "https://drivedojodrivingschool.com/booking/10hour",
     },
     {

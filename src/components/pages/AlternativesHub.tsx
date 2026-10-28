@@ -53,7 +53,7 @@ const AlternativesHub = () => {
                     className="bg-primary hover:bg-primary/90 text-white"
                     onClick={() => (window.location.href = "/booking/payg")}
                   >
-                    Book Your First Lesson — £70
+                    Book Your First Lesson — £78
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   <Link
@@ -217,7 +217,7 @@ const AlternativesHub = () => {
                   className="bg-white text-primary hover:bg-gray-100 shadow-lg"
                   onClick={() => (window.location.href = "/booking/payg")}
                 >
-                  Book Your First Lesson — £70
+                  Book Your First Lesson — £78
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </motion.div>

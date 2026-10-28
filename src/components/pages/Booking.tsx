@@ -84,7 +84,7 @@ const Booking = () => {
     {
       id: "payg",
       name: "Pay As You Go Lesson 2 hours",
-      price: "£76",
+      price: "£95",
       unit: "/2 hours",
       description: "Perfect for trying us out",
       features: [
@@ -114,7 +114,7 @@ const Booking = () => {
     {
       id: "10hour",
       name: "10-Hour Package",
-      price: "£340",
+      price: "£350",
       unit: "/package",
       description: "Most Popular - Best value for money!",
       features: [
